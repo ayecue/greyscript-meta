@@ -1,6 +1,6 @@
 {
     "name": "greyscript-meta",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Meta description for greyscript API",
     "main": "dist/index",
     "typings": "dist/index",
@@ -9,8 +9,8 @@
         "build": "npm run clean && tsc -p .",
         "watch": "tsc -w -p .",
         "clean": "rm -rf dist",
-        "lint": "eslint 'src/**/*.ts'",
-        "lint:fix": "eslint --fix 'src/**/*.ts'"
+        "lint": "eslint ./src/**/*.ts",
+        "lint:fix": "eslint --fix ./src/**/*.ts"
     },
     "repository": {
         "type": "git",
