@@ -11,7 +11,8 @@
         "clean": "rm -rf dist",
         "lint": "eslint ./src/**/*.ts",
         "lint:fix": "eslint --fix ./src/**/*.ts",
-        "fetch:translations": "rm -rf assets && mkdir assets && git clone https://github.com/LoadingHome/Grey-Texts.git assets/grey-texts"
+        "fetch:translations": "rm -rf assets && mkdir assets && git clone https://github.com/LoadingHome/Grey-Texts.git assets/grey-texts",
+        "update:translations": "npm run fetch:translations && node ./scripts/import.js"
     },
     "repository": {
         "type": "git",
