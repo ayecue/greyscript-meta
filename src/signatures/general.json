@@ -139,7 +139,10 @@
         ],
         "returns": [
             "crypto",
-            "metaxploit"
+            "metaxploit",
+            "service",
+            "blockchain",
+            "aptClient"
         ]
     },
     "import_code": {
