@@ -1,0 +1,37 @@
+import React, { useState } from 'react';
+import language from './grammar/language';
+import { signatures } from '../index';
+import ContentTable from './components/content-table';
+import Definitions from './components/definitions';
+import monacoLoader from '@monaco-editor/loader';
+
+export default function() {
+    const [filter, setFilter] = useState('');
+    const [monaco, setMonaco] = useState(null);
+
+    if (monaco === null) {
+        monacoLoader.init().then((resolvedMonaco) => {
+            resolvedMonaco.languages.register({ id: 'greyscript' });
+            resolvedMonaco.languages.setMonarchTokensProvider('greyscript', language);
+
+            setMonaco(resolvedMonaco);
+        });
+
+        return <div>Loading</div>
+    }
+
+    return (
+        <div>
+            <input type='text' onChange={(ev) => setFilter(ev.target.value)} />
+            <ContentTable signatures={signatures} filter={filter} />
+            <div className='readme'>
+                <h1>GreyScript API</h1>
+                <ul>
+                    <li><a href="https://github.com/ayecue/greybel-js" target='_blank'>Greybel CLI</a></li>
+                    <li><a href="https://github.com/ayecue/greybel-vs" target='_blank'>Greybel VS</a></li>
+                </ul>
+            </div>
+            <Definitions signatures={signatures} filter={filter} monaco={monaco} />
+        </div>
+    )
+}

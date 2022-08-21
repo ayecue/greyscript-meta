@@ -1,8 +1,8 @@
 import en from './en.json';
 
 export interface LanguageFile {
-  //DOC_$TYPE_$METHOD: string
-  //DOC_$TYPE_$METHOD_EXAMPLE: string[]
+  // DOC_$TYPE_$METHOD: string
+  // DOC_$TYPE_$METHOD_EXAMPLE: string[]
   [key: string]: any;
 }
 

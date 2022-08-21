@@ -185,12 +185,12 @@
     "DOC_METAMAIL_DELETE": "Delete the mail that corresponds with mail_ID. Returns `true` if it was removed successfully or a `string` with the error message.",
     "DOC_APTCLIENT_DEL_REPO": "Remove the repository address in the `/etc/apt/sources.txt` file.",
     "DOC_COMPUTER_LOCAL_IP_EXAMPLE": [
-        "print( host_computer.local_ip )",
+        "print( get_shell.host_computer.local_ip )",
         "print( get_router.local_ip )"
     ],
     "DOC_COMPUTER_PUBLIC_IP_EXAMPLE": [
         "print(\"Public ip:\" + get_router.public_ip)",
-        "print(\"Public ip:\" + host_computer.public_ip)"
+        "print(\"Public ip:\" + get_shell.host_computer.public_ip)"
     ],
     "DOC_COMPUTER_FILE_EXAMPLE": [
         "file = get_shell.host_computer.File(\"/etc/passwd\")",
@@ -239,13 +239,13 @@
         "typeObj = typeof(myvalue)",
         "print(\"Type is: \" + typeObj)",
         "",
-        "#Output: Type is: string"
+        "//#Output: Type is: string"
     ],
     "DOC_GENERAL_PRINT_EXAMPLE": [
         "print(\"Hello world!\")",
         "",
-        "#Output",
-        "Hello world!"
+        "//#Output",
+        "//Hello world!"
     ],
     "DOC_GENERAL_USER_INPUT_EXAMPLE": [
         "name = user_input(\"Type your name: \")",
@@ -266,34 +266,34 @@
         "//my_module.src",
         "print(\"hello!\")",
         "",
-        "Result after compiling main.src and launch it",
+        "//Result after compiling main.src and launch it",
         "",
-        "#Output",
-        "hello!",
-        "bye",
+        "//#Output",
+        "//hello!",
+        "//bye",
         ""
     ],
     "DOC_GENERAL_EXIT_EXAMPLE": [
-        " print (\"Hello\")",
-        "exit (\"I finish the program\")",
-        "print (\"bye\")",
+        "print(\"Hello\")",
+        "exit(\"I finish the program\")",
+        "print(\"bye\")",
         "",
-        "#Output:",
-        "Hello",
-        "I finish the program"
+        "//#Output:",
+        "//Hello",
+        "//I finish the program"
     ],
     "DOC_GENERAL_COMMAND_INFO_EXAMPLE": [
         "info = command_info(\"cp_usage\")",
         "print(info)",
         "",
-        "#Output: Usage: cp [path to file] [path to copy]"
+        "//#Output: Usage: cp [path to file] [path to copy]"
     ],
     "DOC_GENERAL_BITWISE_EXAMPLE": [
         "result = bitwise(\"&\", 12, 25)",
         "print(\"Result: \" + result)",
         "",
-        "#Output",
-        "Result: 8"
+        "//#Output",
+        "//Result: 8"
     ],
     "DOC_GENERAL_ABS_EXAMPLE": [
         "abs(p) // 4",
@@ -705,7 +705,7 @@
         "newPath = parent_path (\"/home/user/Desktop\")",
         "print (\"new path:\" + newPath)",
         "",
-        "#Output: new path: /home/user"
+        "//#Output: new path: /home/user"
     ],
     "DOC_ROUTER_PORT_INFO_EXAMPLE": [
         "router = get_router",
