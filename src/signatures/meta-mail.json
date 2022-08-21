@@ -1,33 +1,51 @@
 {
     "delete": {
-        "arguments": [{
-            "label": "mailId",
-            "type": "string"
-        }],
-        "returns": ["number", "string"]
+        "arguments": [
+            {
+                "label": "mailId",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
     },
-        "fetch": {
+    "fetch": {
         "arguments": [],
-        "returns": ["list:string", "string"]
+        "returns": [
+            "list:string",
+            "string"
+        ]
     },
     "read": {
-        "arguments": [{
-            "label": "mailId",
-            "type": "string"
-        }],
-        "returns": ["string"]
+        "arguments": [
+            {
+                "label": "mailId",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
     },
     "send": {
-        "arguments": [{
-            "label": "emailAddress",
-            "type": "string"
-        }, {
-            "label": "subject",
-            "type": "string"
-        }, {
-            "label": "message",
-            "type": "string"
-        }],
-        "returns": ["string"]
+        "arguments": [
+            {
+                "label": "emailAddress",
+                "type": "string"
+            },
+            {
+                "label": "subject",
+                "type": "string"
+            },
+            {
+                "label": "message",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
     }
 }

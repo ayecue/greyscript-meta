@@ -1,65 +1,109 @@
 {
     "coin_price": {
-        "returns": ["null", "string", "number"]
+        "returns": [
+            "null",
+            "string",
+            "number"
+        ]
     },
     "show_history": {
-        "arguments": [{
-            "label": "coinName",
-            "type": "string"
-        }],
-        "returns": ["map:string", "null", "string"]
+        "arguments": [
+            {
+                "label": "coinName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "map:string",
+            "null",
+            "string"
+        ]
     },
     "amount_mined": {
-        "arguments": [{
-            "label": "coinName",
-            "type": "string"
-        }],
-        "returns": ["null", "string", "number"]
+        "arguments": [
+            {
+                "label": "coinName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "null",
+            "string",
+            "number"
+        ]
     },
     "get_coin": {
-        "arguments": [{
-            "label": "coinName",
-            "type": "string"
-        }, {
-            "label": "user",
-            "type": "string"
-        }, {
-            "label": "password",
-            "type": "string"
-        }],
-        "returns": ["boolean", "coin"]
+        "arguments": [
+            {
+                "label": "coinName",
+                "type": "string"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "password",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "boolean",
+            "coin"
+        ]
     },
     "login_wallet": {
-        "arguments": [{
-            "label": "user",
-            "type": "string"
-        }, {
-            "label": "password",
-            "type": "string"
-        }],
-        "returns": ["null", "string", "wallet"]
+        "arguments": [
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "password",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "null",
+            "string",
+            "wallet"
+        ]
     },
     "create_wallet": {
-        "arguments": [{
-            "label": "user",
-            "type": "string"
-        }, {
-            "label": "password",
-            "type": "string"
-        }],
-        "returns": ["string", "boolean", "wallet"]
+        "arguments": [
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "password",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "boolean",
+            "wallet"
+        ]
     },
     "delete_coin": {
-        "arguments": [{
-            "label": "coinName",
-            "type": "string"
-        }, {
-            "label": "user",
-            "type": "string"
-        }, {
-            "label": "password",
-            "type": "string"
-        }],
-        "returns": ["boolean", "string"]
+        "arguments": [
+            {
+                "label": "coinName",
+                "type": "string"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "password",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "boolean",
+            "string"
+        ]
     }
 }

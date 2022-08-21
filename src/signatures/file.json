@@ -1,155 +1,187 @@
 {
     "chmod": {
-        "arguments": [{
-            "label": "perms",
-            "type": "string"
-        }, {
-            "label": "recursive",
-            "type": "boolean",
-            "opt": true
-        }],
-        "example": [
-            "comp = get_shell.host_computer",
-            "pwd = comp.File(\"/etc/passwd\")",
-            "etc = comp.File(\"/etc\")",
-            "",
-            "pwd.chmod(\"o-wrx\") //removes read, write, and execute permissions for guest on the file",
-            "etc.chmod(\"o-wrx\", 1) //removes rwx permissions for guest on /etc and all files within /etc"
+        "arguments": [
+            {
+                "label": "perms",
+                "type": "string"
+            },
+            {
+                "label": "recursive",
+                "type": "boolean",
+                "opt": true
+            }
         ],
-        "returns": ["string"]
+        "returns": [
+            "string"
+        ]
     },
     "copy": {
-        "arguments": [{
-            "label": "path",
-            "type": "string",
-            "default": "\"\""
-        }, {
-            "label": "name",
-            "type": "string",
-            "default": "\"\""
-        }],
-        "example": [
-            "comp = get_shell.host_computer",
-            "comp.File(\"/etc/passwd\").copy(current_path, \"passfile\")"
+        "arguments": [
+            {
+                "label": "path",
+                "type": "string",
+                "default": "\"\""
+            },
+            {
+                "label": "name",
+                "type": "string",
+                "default": "\"\""
+            }
         ],
-        "returns": ["string", "boolean", "null"]
+        "returns": [
+            "string",
+            "boolean",
+            "null"
+        ]
     },
     "move": {
-        "arguments": [{
-            "label": "path",
-            "type": "string"
-        }, {
-            "label": "name",
-            "type": "string"
-        }],
-        "example": [
-            "get_shell.host_computer.File(\"/home/user/Downloads\").move(\"/home/user/Desktop\", \"Downloads\")"
+        "arguments": [
+            {
+                "label": "path",
+                "type": "string"
+            },
+            {
+                "label": "name",
+                "type": "string"
+            }
         ],
-        "returns": ["string", "boolean", "null"]
+        "returns": [
+            "string",
+            "boolean",
+            "null"
+        ]
     },
     "rename": {
-        "arguments": [{
-            "label": "name",
-            "type": "string"
-        }],
-        "example": [
-            "fruit = get_shell.host_computer.File(\"apple\")",
-            "if(typeof(fruit) == \"file\") then",
-            "  fruit.rename(\"banana\")",
-            "end if"
+        "arguments": [
+            {
+                "label": "name",
+                "type": "string"
+            }
         ],
-        "returns": ["string"]
+        "returns": [
+            "string"
+        ]
     },
     "path": {
-        "example": [
-            "computer = get_shell.host_computer",
-            "file = computer.File(\"/root/Config/Bank.txt\")",
-            "",
-            "print(file.path) // /root/Config/Bank.txt",
-            "print(file.parent.path) // /root/Config"
-        ],
-        "returns": ["string"]
+        "returns": [
+            "string"
+        ]
     },
     "parent": {
-        "example": [
-            "comp = get_shell.host_computer",
-            "print(comp.File(\"/Public/htdocs/downloads\").parent.name)"
-        ],
-        "returns": ["file", "null"]
+        "returns": [
+            "file",
+            "null"
+        ]
     },
     "name": {
-        "returns": ["string"],
-        "description": "Returns the name of the file (`string`)."
+        "returns": [
+            "string"
+        ]
     },
     "get_content": {
-        "returns": ["string", "null"],
-        "description": "Returns the contents of the file (`string`)."
+        "returns": [
+            "string",
+            "null"
+        ]
     },
     "set_content": {
-        "arguments": [{
-            "label": "content",
-            "type": "string"
-        }],
-        "example": [
-            "myfile = get_shell.host_computer.File(\"/etc/passwd\")",
-            "myfile.set_content(\"blah\") // sets the content of /etc/passwd to \"blah\""
+        "arguments": [
+            {
+                "label": "content",
+                "type": "string"
+            }
         ],
-        "returns": ["string", "null"]
+        "returns": [
+            "string",
+            "null"
+        ]
     },
     "is_binary": {
-        "returns": ["boolean"]
+        "returns": [
+            "boolean"
+        ]
     },
     "has_permission": {
-        "arguments": [{
-            "label": "perms",
-            "type": "string"
-        }],
-        "returns": ["boolean"]
+        "arguments": [
+            {
+                "label": "perms",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "boolean"
+        ]
     },
     "delete": {
-        "returns": ["string"]
+        "returns": [
+            "string"
+        ]
     },
     "get_folders": {
-        "returns": ["list:file"]
+        "returns": [
+            "list:file"
+        ]
     },
     "get_files": {
-        "returns": ["list:file"]
+        "returns": [
+            "list:file"
+        ]
     },
     "permissions": {
-        "returns": ["string"]
+        "returns": [
+            "string"
+        ]
     },
     "owner": {
-        "returns": ["string"]
+        "returns": [
+            "string"
+        ]
     },
     "set_owner": {
-        "arguments": [{
-            "label": "owner",
-            "type": "string"
-        }, {
-            "label": "recursive",
-            "type": "boolean",
-            "opt": true
-        }],
-        "returns": ["boolean"]
+        "arguments": [
+            {
+                "label": "owner",
+                "type": "string"
+            },
+            {
+                "label": "recursive",
+                "type": "boolean",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "boolean"
+        ]
     },
     "group": {
-        "returns": ["string"]
+        "returns": [
+            "string"
+        ]
     },
     "set_group": {
-        "arguments": [{
-            "label": "group",
-            "type": "string"
-        }, {
-            "label": "recursive",
-            "type": "boolean",
-            "opt": true
-        }],
-        "returns": ["boolean"]
+        "arguments": [
+            {
+                "label": "group",
+                "type": "string"
+            },
+            {
+                "label": "recursive",
+                "type": "boolean",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "boolean"
+        ]
     },
     "size": {
-        "returns": ["number"]
+        "returns": [
+            "number"
+        ]
     },
     "meta_info": {
-        "returns": ["null"]
+        "returns": [
+            "null"
+        ]
     }
 }

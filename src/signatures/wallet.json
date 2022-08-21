@@ -1,85 +1,145 @@
 {
     "list_coins": {
-        "returns": ["list:string", "string", "boolean"]
+        "returns": [
+            "list:string",
+            "string",
+            "boolean"
+        ]
     },
     "get_balance": {
-        "arguments": [{
-            "label": "coinName",
-            "type": "string"
-        }],
-        "returns": ["number", "boolean", "string"]
+        "arguments": [
+            {
+                "label": "coinName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "boolean",
+            "string"
+        ]
     },
     "buy_coin": {
-        "arguments": [{
-            "label": "coinName",
-            "type": "string"
-        }, {
-            "label": "coinAmount",
-            "type": "number"
-        }, {
-            "label": "unitPrice",
-            "type": "number"
-        }, {
-            "label": "subwalletUser",
-            "type": "string"
-        }],
-        "returns": ["boolean", "string"]
+        "arguments": [
+            {
+                "label": "coinName",
+                "type": "string"
+            },
+            {
+                "label": "coinAmount",
+                "type": "number"
+            },
+            {
+                "label": "unitPrice",
+                "type": "number"
+            },
+            {
+                "label": "subwalletUser",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "boolean",
+            "string"
+        ]
     },
     "sell_coin": {
-        "arguments": [{
-            "label": "coinName",
-            "type": "string"
-        }, {
-            "label": "coinAmount",
-            "type": "number"
-        }, {
-            "label": "unitPrice",
-            "type": "number"
-        }, {
-            "label": "subwalletUser",
-            "type": "string"
-        }],
-        "returns": ["boolean", "string"]
+        "arguments": [
+            {
+                "label": "coinName",
+                "type": "string"
+            },
+            {
+                "label": "coinAmount",
+                "type": "number"
+            },
+            {
+                "label": "unitPrice",
+                "type": "number"
+            },
+            {
+                "label": "subwalletUser",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "boolean",
+            "string"
+        ]
     },
     "get_pending_trade": {
-        "arguments": [{
-            "label": "coinName",
-            "type": "string"
-        }],
-        "returns": ["boolean", "string", "list:any"]
+        "arguments": [
+            {
+                "label": "coinName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "boolean",
+            "string",
+            "list:any"
+        ]
     },
     "cancel_pending_trade": {
-        "arguments": [{
-            "label": "coinName",
-            "type": "string"
-        }],
-        "returns": ["string", "boolean"]
+        "arguments": [
+            {
+                "label": "coinName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "boolean"
+        ]
     },
     "get_global_offers": {
-        "arguments": [{
-            "label": "coinName",
-            "type": "string"
-        }],
-        "returns": ["boolean", "string", "map:any"]
+        "arguments": [
+            {
+                "label": "coinName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "boolean",
+            "string",
+            "map:any"
+        ]
     },
     "list_global_coins": {
-        "returns": ["boolean", "list:string"]
+        "returns": [
+            "boolean",
+            "list:string"
+        ]
     },
     "show_nodes": {
-        "arguments": [{
-            "label": "coinName",
-            "type": "string"
-        }],
-        "returns": ["boolean", "string", "number"]
+        "arguments": [
+            {
+                "label": "coinName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "boolean",
+            "string",
+            "number"
+        ]
     },
     "reset_password": {
-        "arguments": [{
-            "label": "newPassword",
-            "type": "string"
-        }],
-        "returns": ["boolean", "string"]
+        "arguments": [
+            {
+                "label": "newPassword",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "boolean",
+            "string"
+        ]
     },
     "get_pin": {
-        "returns": ["boolean", "string"]
+        "returns": [
+            "boolean",
+            "string"
+        ]
     }
 }

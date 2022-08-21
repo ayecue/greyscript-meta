@@ -1,47 +1,76 @@
 {
     "device_ports": {
-        "arguments": [{
-            "label": "ip",
-            "type": "string"
-        }],
-        "returns": ["list:port"]
+        "arguments": [
+            {
+                "label": "ip",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "list:port"
+        ]
     },
     "devices_lan_ip": {
-        "returns": ["list:string"]
+        "returns": [
+            "list:string"
+        ]
     },
     "bssid_name": {
-        "returns": ["string"]
+        "returns": [
+            "string"
+        ]
     },
     "essid_name": {
-        "returns": ["string"]
+        "returns": [
+            "string"
+        ]
     },
     "firewall_rules": {
-        "returns": ["string"]
+        "returns": [
+            "string"
+        ]
     },
     "kernel_version": {
-        "returns": ["string"]
+        "returns": [
+            "string"
+        ]
     },
     "local_ip": {
-        "returns": ["string"]
+        "returns": [
+            "string"
+        ]
     },
     "public_ip": {
-        "returns": ["string"]
+        "returns": [
+            "string"
+        ]
     },
     "used_ports": {
-        "returns": ["list:port"]
+        "returns": [
+            "list:port"
+        ]
     },
     "ping_port": {
-        "arguments": [{
-            "label": "port",
-            "type": "number"
-        }],
-        "returns": ["port", "null"]
+        "arguments": [
+            {
+                "label": "port",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "port",
+            "null"
+        ]
     },
     "port_info": {
-        "arguments": [{
-            "label": "port",
-            "type": "port"
-        }],
-        "returns": ["string"]
+        "arguments": [
+            {
+                "label": "port",
+                "type": "port"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
     }
 }

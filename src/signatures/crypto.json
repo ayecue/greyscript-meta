@@ -1,60 +1,79 @@
 {
     "aircrack": {
-        "arguments": [{
-            "label": "path",
-            "type": "string"
-        }],
-        "returns": ["null", "string"]
+        "arguments": [
+            {
+                "label": "path",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "null",
+            "string"
+        ]
     },
     "airmon": {
-        "arguments": [{
-            "label": "option",
-            "type": "string"
-        }, {
-            "label": "interface",
-            "type": "string"
-        }],
-        "example": [
-            "crypto = include_lib(\"/lib/crypto.so\")",
-            "crypto.airmon(\"start\", \"eth0\")"
+        "arguments": [
+            {
+                "label": "option",
+                "type": "string"
+            },
+            {
+                "label": "interface",
+                "type": "string"
+            }
         ],
-        "description": "Enables/Disables WiFi monitoring. Requires an option (`string`: either \"`start`\" or \"`stop`\") and network interface (e.g. \"`eth0`\").",
-        "returns": ["number", "string"]
+        "returns": [
+            "number",
+            "string"
+        ]
     },
     "aireplay": {
-        "arguments": [{
-            "label": "bssid",
-            "type": "string"
-        }, {
-            "label": "essid",
-            "type": "string"
-        }, {
-            "label": "maxAcks",
-            "type": "string",
-            "opt": true
-        }],
-        "returns": ["null", "string"]
+        "arguments": [
+            {
+                "label": "bssid",
+                "type": "string"
+            },
+            {
+                "label": "essid",
+                "type": "string"
+            },
+            {
+                "label": "maxAcks",
+                "type": "string",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "null",
+            "string"
+        ]
     },
     "decipher": {
-        "arguments": [{
-            "label": "encPass",
-            "type": "string"
-        }],
-        "returns": ["null", "string"]
+        "arguments": [
+            {
+                "label": "encPass",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "null",
+            "string"
+        ]
     },
     "smtp_user_List": {
-        "arguments": [{
-            "label": "ip",
-            "type": "string"
-        }, {
-            "label": "port",
-            "type": "number"
-        }],
-        "example": [
-            "crypto = include_lib(\"/lib/crypto.so\")",
-            "mail = crypto.smtp_user_list(\"88.231.19.24\", 25)",
-            "print(mail)"
+        "arguments": [
+            {
+                "label": "ip",
+                "type": "string"
+            },
+            {
+                "label": "port",
+                "type": "number"
+            }
         ],
-        "returns": ["list:string", "string"]
+        "returns": [
+            "list:string",
+            "string"
+        ]
     }
 }

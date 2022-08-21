@@ -1,74 +1,126 @@
 {
     "set_cycle_mining": {
-        "arguments": [{
-            "label": "rateHours",
-            "type": "number"
-        }],
-        "returns": ["boolean", "number"]
+        "arguments": [
+            {
+                "label": "rateHours",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "boolean",
+            "number"
+        ]
     },
     "get_cycle_mining": {
-        "returns": ["boolean", "number"]
+        "returns": [
+            "boolean",
+            "number"
+        ]
     },
     "get_reward": {
-        "returns": ["boolean", "number"]
+        "returns": [
+            "boolean",
+            "number"
+        ]
     },
     "set_reward": {
-        "arguments": [{
-            "label": "coinAmount",
-            "type": "number"
-        }],
-        "returns": ["boolean", "string"]
+        "arguments": [
+            {
+                "label": "coinAmount",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "boolean",
+            "string"
+        ]
     },
     "transaction": {
-        "arguments": [{
-            "label": "subWalletOrig",
-            "type": "string"
-        }, {
-            "label": "subWalletDest",
-            "type": "string"
-        }, {
-            "label": "valAmount",
-            "type": "number"
-        }],
-        "returns": ["string", "boolean"]
+        "arguments": [
+            {
+                "label": "subWalletOrig",
+                "type": "string"
+            },
+            {
+                "label": "subWalletDest",
+                "type": "string"
+            },
+            {
+                "label": "valAmount",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "string",
+            "boolean"
+        ]
     },
     "create_subwallet": {
-        "arguments": [{
-            "label": "walletID",
-            "type": "string"
-        }, {
-            "label": "pin",
-            "type": "string"
-        }, {
-            "label": "subWalletUser",
-            "type": "string"
-        }, {
-            "label": "subWalletPass",
-            "type": "string"
-        }],
-        "returns": ["string", "boolean"]
+        "arguments": [
+            {
+                "label": "walletID",
+                "type": "string"
+            },
+            {
+                "label": "pin",
+                "type": "string"
+            },
+            {
+                "label": "subWalletUser",
+                "type": "string"
+            },
+            {
+                "label": "subWalletPass",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "boolean"
+        ]
     },
     "get_subwallet": {
-        "arguments": [{
-            "label": "subWalletUser",
-            "type": "string"
-        }],
-        "returns": ["boolean", "string", "subWallet"]
+        "arguments": [
+            {
+                "label": "subWalletUser",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "boolean",
+            "string",
+            "subWallet"
+        ]
     },
     "get_subwallets": {
-        "returns": ["boolean", "string", "list:subWallet"]
+        "returns": [
+            "boolean",
+            "string",
+            "list:subWallet"
+        ]
     },
     "set_address": {
-        "arguments": [{
-            "label": "address",
-            "type": "string"
-        }],
-        "returns": ["boolean", "string"]
+        "arguments": [
+            {
+                "label": "address",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "boolean",
+            "string"
+        ]
     },
     "get_address": {
-        "returns": ["boolean", "string"]
+        "returns": [
+            "boolean",
+            "string"
+        ]
     },
     "get_mined_coins": {
-        "returns": ["boolean", "number"]
+        "returns": [
+            "boolean",
+            "number"
+        ]
     }
 }

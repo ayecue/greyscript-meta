@@ -1,142 +1,162 @@
 {
     "host_computer": {
-        "example": [
-            "mycomputer = get_shell.host_computer",
-            "",
-            "print(mycomputer.File(\"/etc/passwd\").content)",
-            "// prints the contents of /etc/passwd on the user machine"
-        ],
-        "returns": ["computer", "null"]
+        "returns": [
+            "computer",
+            "null"
+        ]
     },
     "start_terminal": {
-        "example": [
-            "shell = get_shell.connect_service(\"88.137.62.95\", 21, \"root\", \"kuroshitsuji\", \"ftp\")",
-            "if shell then shell.start_terminal"
-        ],
-        "returns": ["null"]
+        "returns": [
+            "null"
+        ]
     },
     "build": {
-        "arguments": [{
-            "label": "srcpath",
-            "type": "string"
-        }, {
-            "label": "buildpath",
-            "type": "string"
-        }, {
-            "label": "importsEnabled",
-            "type": "boolean",
-            "opt": true
-        }],
-        "example": [
-            "get_shell.build(\"/home/user/myprogram.src\", \"/home/user\")"
+        "arguments": [
+            {
+                "label": "srcpath",
+                "type": "string"
+            },
+            {
+                "label": "buildpath",
+                "type": "string"
+            },
+            {
+                "label": "importsEnabled",
+                "type": "boolean",
+                "opt": true
+            }
         ],
-        "returns": ["string"]
+        "returns": [
+            "string"
+        ]
     },
     "connect_service": {
-        "arguments": [{
-            "label": "ip",
-            "type": "string"
-        }, {
-            "label": "port",
-            "type": "number"
-        }, {
-            "label": "user",
-            "type": "string"
-        }, {
-            "label": "pass",
-            "type": "string"
-        }, {
-            "label": "service",
-            "type": "string",
-            "opt": true
-        }],
-        "example": [
-            "mypc = get_shell",
-            "remote = mypc.connect_service(\"39.62.143.12\", 22, \"root\", \"We<3nigma\")",
-            "",
-            "if remote then",
-            "  print(remote.host_computer.File(\"/etc/passwd\").content)",
-            "  //prints the contents of /etc/passwd on this remote machine",
-            "end if"
+        "arguments": [
+            {
+                "label": "ip",
+                "type": "string"
+            },
+            {
+                "label": "port",
+                "type": "number"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "pass",
+                "type": "string"
+            },
+            {
+                "label": "service",
+                "type": "string",
+                "opt": true
+            }
         ],
-        "returns": ["shell", "null"]
+        "returns": [
+            "shell",
+            "null"
+        ]
     },
     "launch": {
-        "arguments": [{
-            "label": "program",
-            "type": "string"
-        }, {
-            "label": "params",
-            "type": "string",
-            "opt": true
-        }],
-        "example": [
-            "get_shell.launch(\"/bin/cat\", \"/etc/passwd\")"
+        "arguments": [
+            {
+                "label": "program",
+                "type": "string"
+            },
+            {
+                "label": "params",
+                "type": "string",
+                "opt": true
+            }
         ],
-        "returns": ["null", "number"]
+        "returns": [
+            "null",
+            "number"
+        ]
     },
     "ping": {
-        "arguments": [{
-            "label": "ip",
-            "type": "string",
-            "opt": false
-        }],
-        "returns": ["boolean"]
+        "arguments": [
+            {
+                "label": "ip",
+                "type": "string",
+                "opt": false
+            }
+        ],
+        "returns": [
+            "boolean"
+        ]
     },
     "scp": {
-        "arguments": [{
-            "label": "file",
-            "type": "string"
-        }, {
-            "label": "folder",
-            "type": "string"
-        }, {
-            "label": "remoteShell",
-            "type": "shell"
-        }],
-        "example": [
-            "myPC = get_shell",
-            "remote = myPC.connect_service(\"31.19.44.137\", 22, \"root\", \"AceofSpades\")",
-            "",
-            "myPC.scp(\"/var/system.log\", \"/root\", remote)",
-            "// uploads system.log from the user machine to the root directory on the remote machine",
-            "",
-            "remote.scp(\"/var/system.log\", home_dir, myPC)",
-            "// downloads system.log from the remote server to the user directory on the user machine"
+        "arguments": [
+            {
+                "label": "file",
+                "type": "string"
+            },
+            {
+                "label": "folder",
+                "type": "string"
+            },
+            {
+                "label": "remoteShell",
+                "type": "shell"
+            }
         ],
-        "returns": ["number", "string"]
+        "returns": [
+            "number",
+            "string"
+        ]
     },
     "masterkey": {
-        "arguments": [{
-            "label": "ip",
-            "type": "string"
-        }, {
-            "label": "port",
-            "type": "number"
-        }, {
-            "label": "user",
-            "type": "string"
-        }],
-        "returns": ["shell", "null"]
+        "arguments": [
+            {
+                "label": "ip",
+                "type": "string"
+            },
+            {
+                "label": "port",
+                "type": "number"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "shell",
+            "null"
+        ]
     },
     "masterkey_direct": {
-        "arguments": [{
-            "label": "publicIp",
-            "type": "string"
-        }, {
-            "label": "localIp",
-            "type": "number"
-        }, {
-            "label": "user",
-            "type": "string"
-        }],
-        "returns": ["shell", "null"]
+        "arguments": [
+            {
+                "label": "publicIp",
+                "type": "string"
+            },
+            {
+                "label": "localIp",
+                "type": "number"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "shell",
+            "null"
+        ]
     },
     "restore_network": {
-        "arguments": [{
-            "label": "publicIp",
-            "type": "string"
-        }],
-        "returns": ["null"]
+        "arguments": [
+            {
+                "label": "publicIp",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "null"
+        ]
     }
 }

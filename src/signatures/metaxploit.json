@@ -1,62 +1,96 @@
 {
     "load": {
-        "arguments": [{
-            "label": "path",
-            "type": "string"
-        }],
-        "returns": ["null", "metaLib"]
+        "arguments": [
+            {
+                "label": "path",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "null",
+            "metaLib"
+        ]
     },
     "net_use": {
-        "arguments": [{
-            "label": "ip",
-            "type": "string"
-        }, {
-            "label": "port",
-            "type": "number"
-        }],
-        "returns": ["null", "netSession"]
+        "arguments": [
+            {
+                "label": "ip",
+                "type": "string"
+            },
+            {
+                "label": "port",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "null",
+            "netSession"
+        ]
     },
     "rshell_client": {
-        "arguments": [{
-            "label": "ip",
-            "type": "string"
-        }, {
-            "label": "port",
-            "type": "number"
-        }, {
-            "label": "processName",
-            "type": "string",
-            "opt": true
-        }],
-        "returns": ["null"]
+        "arguments": [
+            {
+                "label": "ip",
+                "type": "string"
+            },
+            {
+                "label": "port",
+                "type": "number"
+            },
+            {
+                "label": "processName",
+                "type": "string",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "null"
+        ]
     },
     "rshell_server": {
         "arguments": [],
-        "returns": ["list:shell"]
+        "returns": [
+            "list:shell"
+        ]
     },
     "scan": {
-        "arguments": [{
-            "label": "metaLib",
-            "type": "metaLib"
-        }],
-        "returns": ["null", "list:string"]
+        "arguments": [
+            {
+                "label": "metaLib",
+                "type": "metaLib"
+            }
+        ],
+        "returns": [
+            "null",
+            "list:string"
+        ]
     },
     "scan_address": {
-        "arguments": [{
-            "label": "metaLib",
-            "type": "metaLib"
-        }, {
-            "label": "memoryAddress",
-            "type": "string"
-        }],
-        "returns": ["null", "string"]
+        "arguments": [
+            {
+                "label": "metaLib",
+                "type": "metaLib"
+            },
+            {
+                "label": "memoryAddress",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "null",
+            "string"
+        ]
     },
     "sniffer": {
-        "arguments": [{
-            "label": "saveEncSource",
-            "type": "boolean",
-            "opt": true
-        }],
-        "returns": ["string"]
+        "arguments": [
+            {
+                "label": "saveEncSource",
+                "type": "boolean",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "string"
+        ]
     }
 }
