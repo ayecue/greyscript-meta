@@ -78,7 +78,7 @@ const language: Monaco.languages.IMonarchLanguage = {
               token: 'keyword.decl',
               bracket: '@open'
             },
-            'aptClient|computer|crypto|file|ftpShell|list|map|metaLib|metaMail|metaxploit|netSession|port|router|shell|string|number|null|boolean|any':
+            [[...allTypes.filter((item: string) => item !== 'general'), 'any'].join('|')]:
               'type',
             debugger: 'debug-token',
             default: 'constant',
