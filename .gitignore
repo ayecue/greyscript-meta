@@ -4,3 +4,5 @@ dist
 test.js
 assets
 extract.js
+# Local Netlify folder
+.netlify

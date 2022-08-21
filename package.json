@@ -59,6 +59,7 @@
         "eslint-plugin-security": "^1.5.0",
         "eslint-plugin-simple-import-sort": "^7.0.0",
         "jest": "^27.4.5",
+        "netlify-cli": "^11.3.0",
         "nodemon": "^2.0.15",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
