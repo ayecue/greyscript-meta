@@ -82,7 +82,7 @@ const language: Monaco.languages.IMonarchLanguage = {
               'type',
             debugger: 'debug-token',
             default: 'constant',
-            [Object.keys(getDefinitions(['default'])).join('|')]:
+            [Object.keys(getDefinitions(['general'])).join('|')]:
               'variable.name',
             [Object.keys(getDefinitions(allTypes)).join('|')]: 'variable.name',
             '@keywords': 'keyword',
