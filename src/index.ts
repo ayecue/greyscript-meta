@@ -1,9 +1,11 @@
 import AptClient from './signatures/apt-client.json';
+import Blockchain from './signatures/blockchain.json';
+import Coin from './signatures/coin.json';
 import Computer from './signatures/computer.json';
 import Crypto from './signatures/crypto.json';
 import File from './signatures/file.json';
 import FtpShell from './signatures/ftp-shell.json';
-import Generic from './signatures/generic.json';
+import Generic from './signatures/general.json';
 import List from './signatures/list.json';
 import MapSignature from './signatures/map.json';
 import MetaLib from './signatures/meta-lib.json';
@@ -12,13 +14,18 @@ import Metaxploit from './signatures/metaxploit.json';
 import NetSession from './signatures/net-session.json';
 import Port from './signatures/port.json';
 import Router from './signatures/router.json';
+import Service from './signatures/service.json';
 import Shell from './signatures/shell.json';
 import String from './signatures/string.json';
+import SubWallet from './signatures/sub-wallet.json';
+import Wallet from './signatures/wallet.json';
+import { getDescription } from './languages';
 
 export interface SignatureDefinitionArg {
   label: string;
   type: string;
   opt?: boolean;
+  default?: string;
 }
 
 export interface SignatureDefinition {
@@ -36,6 +43,18 @@ export interface Signature {
   type: string;
   definitions: SignatureDefinitionContainer;
 }
+
+const enrichContainer = (type: string, container: SignatureDefinitionContainer, language?: string): SignatureDefinitionContainer => {
+  return Object.entries(container).reduce((result: SignatureDefinitionContainer, [name, def]) => (
+    {
+      ...result,
+      [name]: {
+        ...def,
+        description: getDescription(type, name, language)
+      }
+    }
+  ), {})
+};
 
 export const signatures: Signature[] = [
   {
@@ -59,7 +78,7 @@ export const signatures: Signature[] = [
     definitions: <SignatureDefinitionContainer>(<unknown>FtpShell)
   },
   {
-    type: 'default',
+    type: 'general',
     definitions: <SignatureDefinitionContainer>(<unknown>Generic)
   },
   {
@@ -101,6 +120,26 @@ export const signatures: Signature[] = [
   {
     type: 'string',
     definitions: <SignatureDefinitionContainer>(<unknown>String)
+  },
+  {
+    type: 'blockchain',
+    definitions: <SignatureDefinitionContainer>(<unknown>Blockchain)
+  },
+  {
+    type: 'coin',
+    definitions: <SignatureDefinitionContainer>(<unknown>Coin)
+  },
+  {
+    type: 'service',
+    definitions: <SignatureDefinitionContainer>(<unknown>Service)
+  },
+  {
+    type: 'sub-wallet',
+    definitions: <SignatureDefinitionContainer>(<unknown>SubWallet)
+  },
+  {
+    type: 'wallet',
+    definitions: <SignatureDefinitionContainer>(<unknown>Wallet)
   }
 ];
 
@@ -114,7 +153,7 @@ export const signaturesByType: { [key: string]: SignatureDefinitionContainer } =
   }, {});
 
 export const getDefinitions = (
-  types: string[]
+  types: string[], language?: string
 ): SignatureDefinitionContainer => {
   if (types.includes('any')) {
     return getDefinitions(allTypes);
@@ -122,7 +161,7 @@ export const getDefinitions = (
   return types
     .map((type) => {
       const [main] = type.split(':');
-      return signaturesByType[main] || {};
+      return enrichContainer(main, signaturesByType[main] || {}, language);
     })
     .reduce((result, definitions) => {
       Object.assign(result, definitions);
@@ -132,9 +171,9 @@ export const getDefinitions = (
 
 export const getDefinition = (
   types: string[],
-  property: string
+  property: string, language?: string
 ): SignatureDefinition | null => {
-  const definitions = getDefinitions(types);
+  const definitions = getDefinitions(types, language);
   return definitions[property] || null;
 };
 

@@ -6,7 +6,6 @@
             "libssh = net.dump_lib",
             "print(libssh.lib_name + \" v\" + libssh.version)"
         ],
-        "description": "Returns the MetaLib object of the library behind the service to which the NetSession belongs.",
         "returns": ["metaLib"]
     }
 }

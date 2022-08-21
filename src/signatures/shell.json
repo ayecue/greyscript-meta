@@ -6,7 +6,6 @@
             "print(mycomputer.File(\"/etc/passwd\").content)",
             "// prints the contents of /etc/passwd on the user machine"
         ],
-        "description": "Returns the shell's `Computer object`.",
         "returns": ["computer", "null"]
     },
     "start_terminal": {
@@ -14,7 +13,6 @@
             "shell = get_shell.connect_service(\"88.137.62.95\", 21, \"root\", \"kuroshitsuji\", \"ftp\")",
             "if shell then shell.start_terminal"
         ],
-        "description": "Launches an active terminal. The colour of the terminal will change and show the IP of the connected shell.",
         "returns": ["null"]
     },
     "build": {
@@ -32,7 +30,6 @@
         "example": [
             "get_shell.build(\"/home/user/myprogram.src\", \"/home/user\")"
         ],
-        "description": "Compiles an executable binary from a source file. Requires a path to a source file (`string`) and a directory path (`string`) to where the binary will be saved. The binary will be created with the same name as the source file, without a file extension. Returns a `string` (empty on success, or with an error on failure).",
         "returns": ["string"]
     },
     "connect_service": {
@@ -62,7 +59,6 @@
             "  //prints the contents of /etc/passwd on this remote machine",
             "end if"
         ],
-        "description": "Connects to a remote service (i.e. ssh/ftp) to obtain a remote shell. Requires an IP address (`string`), port (`int`), username (`string`), password (`string`), and takes an optional service (`string`). Returns a `Shell` object or `null` on failure.",
         "returns": ["shell", "null"]
     },
     "launch": {
@@ -77,7 +73,6 @@
         "example": [
             "get_shell.launch(\"/bin/cat\", \"/etc/passwd\")"
         ],
-        "description": "Executes a program (`string` path to program) with optional parameters (`string`). Returns `null` on success, or `0` on failure.",
         "returns": ["null", "number"]
     },
     "ping": {
@@ -109,7 +104,6 @@
             "remote.scp(\"/var/system.log\", home_dir, myPC)",
             "// downloads system.log from the remote server to the user directory on the user machine"
         ],
-        "description": "Upload or download files to/from the local shell to/from a remote shell. Takes the path (`string`) to a file on the shell machine, path to a folder (`string`) on the remote shell machine, and the shell (`Shell`) of the machine to copy the file to. Returns `1` on success, or a `string` (containing an error) on failure.",
         "returns": ["number", "string"]
     },
     "masterkey": {

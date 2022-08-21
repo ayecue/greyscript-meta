@@ -7,7 +7,6 @@
             "label": "pass",
             "type": "string"
         }],
-        "description": "Login into mail. Returns MetaMail object.",
         "returns": ["metaMail", "null"]
     },
     "typeof": {
@@ -15,7 +14,6 @@
             "label": "value",
             "type": "any"
         }],
-        "description": "Takes a variable (`any`). Returns the type of variable (`string`).",
         "example": [
             "v = 32",
             "w = \"thirty two\"",
@@ -39,7 +37,6 @@
             "label": "ipAddress",
             "type": "string"
         }],
-        "description": "Takes an IP address (`string`) - lan or public. If no IP is provided, defaults to the user's router. Returns a `Router object` or `null` if not found.",
         "returns": ["router", "null"]
     },
     "get_switch": {
@@ -47,7 +44,6 @@
             "label": "ipAddress",
             "type": "string"
         }],
-        "description": "Takes an IP address (`string`) - lan or public. If no IP is provided, defaults to the user's router. Returns a `Router object` or `null` if not found.",
         "returns": ["router", "null"]
     },
     "nslookup": {
@@ -55,16 +51,18 @@
             "label": "host",
             "type": "string"
         }],
-        "description": "Takes a domain name (`string`). Returns `string` - either the public IP of the provided domain or `Not found`.",
         "returns": ["string"]
     },
     "print": {
         "arguments": [{
             "label": "value",
             "type": "any",
-            "opt": true
+            "default": "\"\""
+        }, {
+            "label": "replaceText",
+            "type": "boolean",
+            "default": "false"
         }],
-        "description": "Takes data (optional `any`) and prints it to the terminal. If no data is supplied, prints an empty line to the terminal.",
         "example": [
             "print(123)",
             "print(\"123\")",
@@ -75,7 +73,6 @@
         "returns": ["null"]
     },
     "clear_screen": {
-        "description": "Clears all text from the terminal that is running the script.",
         "returns": ["null"]
     },
     "active_user": {
@@ -83,11 +80,9 @@
             "print(\"Current user: \" + active_user + \"\\n\\nCurrent processes:\")",
             "print(get_shell.host_computer.show_procs)"
         ],
-        "description": "Returns a `string` listing the processes currently running on the machine.",
         "returns": ["string"]
     },
     "home_dir": {
-        "description": "Returns the path (`string`) to the active user's home directory (e.g. `/home/username`).",
         "returns": ["string"]
     },
     "get_shell": {
@@ -105,7 +100,6 @@
             "file = myshell.host_computer.File(\"/etc/passwd\")",
             "print(file.name)"
         ],
-        "description": "Returns a `Shell object` for the shell executing the script. Takes an optional username and password to return a shell for that user.",
         "returns": ["shell", "null"]
     },
     "user_input": {
@@ -125,7 +119,6 @@
             "name = user_input(\"What is your name?\")",
             "print(\"Hello \" + name + \"!\")"
         ],
-        "description": "Requests the user's input, along with an optional message and password mask (`int` 0 or 1), and returns the input to a variable. If isPassword is provided and is `1` then the user's input will be masked in the terminal (e.g. `*******` instead of `machina`).",
         "returns": ["string"]
     },
     "include_lib": {
@@ -138,11 +131,9 @@
             "if not cryptools then exit(\"Error: Missing crypto library\") //error handling",
             "print(cryptools.decipher(\"/etc/passwd\")) //prints the deciphered root password"
         ],
-        "description": "Includes an external library on the executing machine, specified by its file path (`string`). Libraries contain their own methods, and operate as custom objects. Returns a `Metaxploit object` that corresponds to the provided library, or `null` on failure.",
         "returns": ["crypto", "metaxploit"]
     },
     "import_code": {
-        "description": "Include code from other file. Keep in mind to use an absolute path.",
         "example": [
             "import_code(\"/root/file.src\") //normal import",
             "import_code(\"/root/file.src\":\"/my/real/filesystem.src\") //import with using greybel for automatic import resolving"
@@ -166,7 +157,6 @@
             "",
             "print(\"Goodbye\")"
         ],
-        "description": "Exits the script, optionally printing a provided message (`string`). The script will abort and no further lines of code will be processed.",
         "returns": ["null"]
     },
     "user_mail_address": {
@@ -182,15 +172,14 @@
             "label": "ip",
             "type": "string"
         }],
-        "description": "Takes a public IP address (`string`). Returns a `string` containing several lines of whois information or `No Info available`.",
         "returns": ["string"]
     },
     "wait": {
         "arguments": [{
             "label": "delay",
-            "type": "number"
+            "type": "number",
+            "default": "1"
         }],
-        "description": "Pauses the script for the indicated duration (`number`). If duration is not specified, the default value is `1` second.",
         "returns": ["null"]
     },
     "command_info": {
@@ -205,7 +194,6 @@
         "returns": ["string"]
     },
     "program_path": {
-        "description": "Returns the absolute path (`string`) to the executing script (e.g. `/bin/myprogram`).",
         "returns": ["string"]
     },
     "current_path": {
@@ -222,11 +210,9 @@
             "data = data + \"\\nthing1 thing2 thing3\" //add another row",
             "print(format_columns(data))"
         ],
-        "description": "Returns `string` data  formatted into columns (such as for use in the nmap command). Rows should be separated by a new line, while columns are separated by a space. See the below example.",
         "returns": ["string"]
     },
     "current_date": {
-        "description": "Returns a `string` with the current date and time on the player's clock.",
         "returns": ["string"]
     },
     "is_lan_ip": {
@@ -234,7 +220,6 @@
             "label": "ip",
             "type": "string"
         }],
-        "description": "Evaluates whether a string is a valid LAN IPv4 address (ranging from `192.168.0.0` to `192.168.255.255`). Takes a `string` and returns `0` (false) or `1` (true).",
         "returns": ["boolean"]
     },
     "is_valid_ip": {
@@ -252,7 +237,6 @@
             "print(tof(is_valid_ip(\"192.168.0.99\")))",
             "print(tof(is_valid_ip(\"192.168.0.999\")))"
         ],
-        "description": "Evaluates whether a string is a valid `IPv4` address. Takes a `string` and returns `0` (false) or `1` (true).",
         "returns": ["boolean"]
     },
     "bitwise": {
@@ -270,25 +254,25 @@
             "result = bitwise(\"&\", 12, 25)",
             "print(\"Result: \" + result)"
         ],
-        "description": "Manipulate data at the bit level. Bitwise operates on one or more bit patterns or binary numerals at the level of their individual bits.",
         "returns": ["number"]
     },
     "abs": {
         "arguments": [{
             "label": "value",
-            "type": "number"
+            "type": "number",
+            "default": "0"
         }],
         "example": [
             "abs(p) // 4",
             "abs(r) // 3.142"
         ],
-        "description": "Returns the absolute value of num (`number`, i.e. `int` or `float`).",
         "returns": ["number"]
     },
     "acos": {
         "arguments": [{
             "label": "value",
-            "type": "number"
+            "type": "number",
+            "default": "0"
         }],
         "example": [
             "acos(p) // error: NaN",
@@ -296,13 +280,13 @@
             "acos(r) // error: NaN",
             "acos(s) // 3.14159265358979"
         ],
-        "description": "Returns the arccosine of num in radians (`number`).",
         "returns": ["number"]
     },
     "asin": {
         "arguments": [{
             "label": "value",
-            "type": "number"
+            "type": "number",
+            "default": "0"
         }],
         "example": [
             "asin(p) // error: NaN",
@@ -310,13 +294,13 @@
             "asin(r) // error: NaN",
             "asin(s) // -1.5707963267949"
         ],
-        "description": "Returns the arcsine of num in radians (`number`).",
         "returns": ["number"]
     },
     "atan": {
         "arguments": [{
             "label": "value",
-            "type": "number"
+            "type": "number",
+            "default": "0"
         }],
         "example": [
             "atan(p) // 1.32581766366803",
@@ -324,13 +308,13 @@
             "atan(r) // 1.26266472700191",
             "atan(s) // -0.785398163397448"
         ],
-        "description": "Returns the arctangent of num in radians (`number`).",
         "returns": ["number"]
     },
     "tan": {
         "arguments": [{
             "label": "value",
-            "type": "number"
+            "type": "number",
+            "default": "0"
         }],
         "example": [
             "tan(p) // 1.15782128234958",
@@ -338,13 +322,13 @@
             "tan(r) // 0.000407346432737146",
             "tan(s) // -1.5574077246549"
         ],
-        "description": "Returns the tangent of rad (`number` radians).",
         "returns": ["number"]
     },
     "cos": {
         "arguments": [{
             "label": "value",
-            "type": "number"
+            "type": "number",
+            "default": "0"
         }],
         "example": [
             "cos(p) // -0.653643620863612",
@@ -352,13 +336,25 @@
             "cos(r) // -0.999999917034452",
             "cos(s) // 0.54030230586814"
         ],
-        "description": "Returns the cosine of rad (`number` radians).",
+        "returns": ["number"]
+    },
+    "code": {
+        "arguments": [{
+            "label": "value",
+            "type": "string"
+        }],
+        "example": [
+            "code(title) // 83 (unicode decimal for \"S\")",
+            "code(title[7:]) // 80 (unicode decimal for \"P\")",
+            "code(\"x\") // 120"
+        ],
         "returns": ["number"]
     },
     "char": {
         "arguments": [{
             "label": "value",
-            "type": "number"
+            "type": "number",
+            "default": "65"
         }],
         "example": [
             "char(120) // \"x\"",
@@ -366,13 +362,13 @@
             "char(82) // \"R\"",
             "char(9999999) // null"
         ],
-        "description": "Returns the unicode character (`string`) with code point `int`.",
         "returns": ["string"]
     },
     "sin": {
         "arguments": [{
             "label": "value",
-            "type": "number"
+            "type": "number",
+            "default": "0"
         }],
         "example": [
             "sin(p) // -0.756802495307928",
@@ -380,29 +376,30 @@
             "sin(r) // -0.000407346398941426",
             "sin(s) // -0.841470984807897"
         ],
-        "description": "Returns the sine of rad (`number` radians).",
         "returns": ["number"]
     },
     "floor": {
         "arguments": [{
             "label": "value",
-            "type": "number"
+            "type": "number",
+            "default": "0"
         }],
         "example": [
             "floor(q) // 0",
             "floor(r) // 3",
             "floor(4.97381) // 4"
         ],
-        "description": "Returns a `number` floored to the base integer.",
         "returns": ["number"]
     },
     "range": {
         "arguments": [{
             "label": "start",
-            "type": "number"
+            "type": "number",
+            "default": "0"
         }, {
             "label": "end",
-            "type": "number"
+            "type": "number",
+            "default": "0"
         }, {
             "label": "inc",
             "type": "number",
@@ -418,16 +415,17 @@
             "//the only required parameter is the starting number",
             "range(p) // [4, 3, 2, 1, 0] (counts down to default end 0 in increment of -1)"
         ],
-        "description": "Returns a `list object` containing values from start through to end, in increments of inc. Takes a starting `number`, optional end (`number`) and optional inc (`number`). If inc is not defined, the increment defaults to 1 (if end &gt; start) or otherwise to -1.",
         "returns": ["list:number"]
     },
     "round": {
         "arguments": [{
             "label": "value",
-            "type": "number"
+            "type": "number",
+            "default": "0"
         }, {
             "label": "fixed",
-            "type": "number"
+            "type": "number",
+            "default": "0"
         }],
         "example": [
             "round(q) // 0 (0.5 or less will be rounded down)",
@@ -438,7 +436,6 @@
             "round(r, 1) // 3.1",
             "round(6.275, 2) // 6.27"
         ],
-        "description": "Returns a `number` rounded to d decimal places.",
         "returns": ["number"]
     },
     "rnd": {
@@ -454,13 +451,13 @@
             "rnd(9.2) // 819 (same seed means the same result)",
             "floor((rnd * 10) + 1)"
         ],
-        "description": "Returns a random `float` between 0 and 1. If seed `number` is provided, this seeds the random number generator with the given value.",
         "returns": ["number"]
     },
     "sign": {
         "arguments": [{
             "label": "value",
-            "type": "number"
+            "type": "number",
+            "default": "0"
         }],
         "example": [
             "sign(p) // 1",
@@ -469,13 +466,13 @@
             "sign(s) // -1",
             "sign(0) // 0"
         ],
-        "description": "Returns the sign of num, either `-1` (if num &lt; 0), `0` (if num == 0), or `1` if num &gt; 0.",
         "returns": ["number"]
     },
     "sqrt": {
         "arguments": [{
             "label": "value",
-            "type": "number"
+            "type": "number",
+            "default": "0"
         }],
         "example": [
             "sqrt(p) // 2",
@@ -485,7 +482,6 @@
             "sqrt(0) // 0",
             "sqrt(36) // 6"
         ],
-        "description": "Returns the square root of num (`number`).",
         "returns": ["number"]
     },
     "str": {
@@ -502,7 +498,6 @@
             "str(\"4\") // \"4\" (if the input data is already a string, it will be returned)",
             "str(\"abc\") // \"abc\""
         ],
-        "description": "Returns the `string` value of n.",
         "returns": ["string"]
     },
     "ceil": {
@@ -516,11 +511,9 @@
             "ceil(r) // 3",
             "ceil(4.0001) // 5"
         ],
-        "description": "Returns a `number` raised to the next or equal integer.",
         "returns": ["number"]
     },
     "pi": {
-        "description": "Returns `3.14159265358979` (`float`).",
         "returns": ["number"]
     },
     "launch_path": {
@@ -545,7 +538,6 @@
             "",
             "slice(companies, 2) // [\"Facebook\", \"Apple\", \"Microsoft\"]"
         ],
-        "description": "Takes a list, start (`int` index) and optional end (`int` index). Returns a separate list containing the elements in `list` from index `start` to index `end`.",
         "returns": ["list:any"]
     },
     "md5": {
@@ -558,7 +550,6 @@
             "print(md5(\"orange\"))",
             "print(md5(str(X)))"
         ],
-        "description": "Returns the md5 hash (`string`) of the provided `string`.",
         "returns": ["string"]
     },
     "hash": {
@@ -566,7 +557,6 @@
             "label": "value",
             "type": "any"
         }],
-        "description": "Returns numeric hash.",
         "returns": ["number"]
     },
     "time": {

@@ -1,0 +1,37 @@
+{
+    "get_balance": {
+        "returns": ["number", "string"]
+    },
+    "set_info": {
+        "arguments": [{
+            "label": "info",
+            "type": "string"
+        }],
+        "returns": ["boolean", "null", "string"]
+    },
+    "get_info": {
+        "returns": ["boolean", "string"]
+    },
+    "delete": {
+        "returns": ["boolean"]
+    },
+    "get_user": {
+        "returns": ["boolean", "string"]
+    },
+    "last_transaction": {
+        "returns": ["list:any", "boolean"]
+    },
+    "mining": {
+        "returns": ["boolean", "string"]
+    },
+    "check_password": {
+        "arguments": [{
+            "label": "password",
+            "type": "string"
+        }],
+        "returns": ["boolean", "string"]
+    },
+    "wallet_username": {
+        "returns": ["boolean", "string"]
+    }
+}

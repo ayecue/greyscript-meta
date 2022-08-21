@@ -6,10 +6,8 @@
         }],
         "returns": ["number", "string"]
     },
-    "description": "Delete mail with certain id.",
-    "fetch": {
+        "fetch": {
         "arguments": [],
-        "description": "Fetch list of mails.",
         "returns": ["list:string", "string"]
     },
     "read": {
@@ -17,7 +15,6 @@
             "label": "mailId",
             "type": "string"
         }],
-        "description": "Returns content of an email.",
         "returns": ["string"]
     },
     "send": {
@@ -31,7 +28,6 @@
             "label": "message",
             "type": "string"
         }],
-        "description": "Send email to address.",
         "returns": ["string"]
     }
 }

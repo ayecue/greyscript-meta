@@ -1,0 +1,11 @@
+{
+    "install_service": {
+        "returns": ["boolean"]
+    },
+    "start_service": {
+        "returns": ["boolean", "null", "string"]
+    },
+    "stop_service": {
+        "returns": ["boolean"]
+    }
+}

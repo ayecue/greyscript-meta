@@ -15,7 +15,6 @@
             "map.remove(map.indexOf([3,4,5])) //remove an item from map by its value",
             "print(map) // {\"1\": \"one\"}"
         ],
-        "description": "Remove an item from a map, by its key (`string` or `int`). Returns `1` (true) or `0` (false).",
         "returns": ["null"]
     },
     "push": {
@@ -35,7 +34,6 @@
             "map[6] = \"six\";",
             "// {0: \"zero\", \"1\": \"one\", \"two\": 2, \"more\": [3, 4, 5], \"j\": 1, \"k\": 1, \"l\": 12, 6: \"six\"}"
         ],
-        "description": "Pushes a new key (`string` or `number`) onto the end of map, with value of `1`. Returns the updated `map` object.",
         "returns": ["map:any"]
     },
     "pop": {
@@ -45,7 +43,6 @@
             "desserts.pop // \"peach\"",
             "print(desserts) // {\"apple\": \"pie\"}"
         ],
-        "description": "Returns the key (`string` or `int`) of the first element in the map, and removes that element from the map.",
         "returns": ["string"]
     },
     "shuffle": {
@@ -56,14 +53,12 @@
             "map.shuffle",
             "print(map) // {0: [3, 4, 5], \"1\": 2, \"two\": \"zero\", \"more\": \"one\"}"
         ],
-        "description": "Randomly remaps values in a map, leaving the keys in their original order. Returns `null`.",
         "returns": ["null"]
     },
     "sum": {
         "example": [
             "map.sum // 2 (2 is the only sole integer value in our example map)"
         ],
-        "description": "Returns the total (`int`) of all numeric values in the map. This applies to `numbers` only and excludes strings, lists and maps within the map.",
         "returns": ["number"]
     },
     "hasIndex": {
@@ -78,7 +73,6 @@
             "map.hasIndex(\"two\") // 1",
             "map.hasIndex(\"five\") // 0"
         ],
-        "description": "Does map.key exist? The key may be a string or integer. Returns `1` (true) or `0` (false).",
         "returns": ["boolean"]
     },
     "indexOf": {
@@ -97,7 +91,6 @@
             "map[99] = 2 // {0: \"zero\", \"1\": \"one\", \"two\": 2, \"more\": [3, 4, 5], 99: 2}",
             "map.indexOf(2, \"two\") // 99"
         ],
-        "description": "Get the index (in maps, this will be the key) of a value. Optionally searches after begin (`any` key). Returns key (`string` or `int`) or `null` (key/value not found).",
         "returns": ["string"]
     },
     "indexes": {
@@ -107,21 +100,18 @@
             "list = map.indexes //instantiates the list to this variable",
             "print(list[2]) //prints the third key: \"two\""
         ],
-        "description": "Returns a `list object` containing all the map keys.",
         "returns": ["list:string"]
     },
     "len": {
         "example": [
             "map.len // 4"
         ],
-        "description": "Returns the length of the map (`int`).",
         "returns": ["number"]
     },
     "values": {
         "example": [
             "map.values // [\"zero\", \"one\", 2, [3, 4, 5]]"
         ],
-        "description": "Returns a `list` containing all the values within the map.",
         "returns": ["list:any"]
     }
 }

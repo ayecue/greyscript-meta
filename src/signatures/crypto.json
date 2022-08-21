@@ -4,7 +4,6 @@
             "label": "path",
             "type": "string"
         }],
-        "description": "Cracks a router's WiFi password. Requires the path to a pcap file created by the aireplay command. Returns the target router's WiFi password (`string`) or `null` on failure (the terminal will also output an error).",
         "returns": ["null", "string"]
     },
     "airmon": {
@@ -34,7 +33,6 @@
             "type": "string",
             "opt": true
         }],
-        "description": "Capture packets from a wireless interface. Requires bssid (`string`) and essid (`string`), and an optional maxAcks (`number`). If maxAcks is not provided, use `Ctrl+C` to stop the capturing and save data to a file `file.cap` in the current directory. If maxAcks is provided, the command will stop automatically once the number of ACKs received exceeds maxAcks, saving the `file.cap` as described above. Returns `null`, or a `string` containing an error message.",
         "returns": ["null", "string"]
     },
     "decipher": {
@@ -42,7 +40,6 @@
             "label": "encPass",
             "type": "string"
         }],
-        "description": "Attempts to decipher an encrypted password. Takes a username (`string`) and encrypted password (hash `string`). Returns either the deciphered password (`string`), or `null` on failure.",
         "returns": ["null", "string"]
     },
     "smtp_user_List": {
@@ -58,7 +55,6 @@
             "mail = crypto.smtp_user_list(\"88.231.19.24\", 25)",
             "print(mail)"
         ],
-        "description": "Connects to a mail service and returns a list object of all users on the machine, along with their email address on the server (or otherwise an `email not found` string). Takes an IP address and port (`int`).",
         "returns": ["list:string", "string"]
     }
 }
