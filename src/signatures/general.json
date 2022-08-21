@@ -131,7 +131,7 @@
             "if not cryptools then exit(\"Error: Missing crypto library\") //error handling",
             "print(cryptools.decipher(\"/etc/passwd\")) //prints the deciphered root password"
         ],
-        "returns": ["crypto", "metaxploit"]
+        "returns": ["crypto", "metaxploit", "service", "blockchain", "aptClient"]
     },
     "import_code": {
         "example": [
