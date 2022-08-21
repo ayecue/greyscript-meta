@@ -1,4 +1,4 @@
-import { getDescription } from './languages';
+import { getDescription, getExample } from './languages';
 import AptClient from './signatures/apt-client.json';
 import Blockchain from './signatures/blockchain.json';
 import Coin from './signatures/coin.json';
@@ -54,7 +54,8 @@ const enrichContainer = (
       ...result,
       [name]: {
         ...def,
-        description: getDescription(type, name, language)
+        description: getDescription(type, name, language),
+        example: getExample(type, name, language)
       }
     }),
     {}

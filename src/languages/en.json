@@ -44,7 +44,7 @@
     "DOC_FILE_SIZE": "Returns a `string` with the size of the file in bytes.",
     "DOC_FTPSHELL_HOST_COMPUTER": "Returns the shell's `Computer object`.",
     "DOC_FTPSHELL_START_TERMINAL": "Launches an active terminal. The colour of the terminal will change and show the IP of the connected shell.",
-    "DOC_FTPSHELL_PUT": "Upload or download files to/from the local shell to/from a remote shell. Takes the path (`string`) to a file on the shell machine, path to a folder (`string`) on the remote shell machine, and the shell (`Shell`) of the machine to copy the file to. Returns `1` on success, or a `string` (containing an error) on failure.",
+    "DOC_FTPSHELL_PUT": "Copy a file from one computer to the other through the network.",
     "DOC_GENERAL_MAIL_LOGIN": "Access the email account and returns a `MetaMail` type object if the login has been correct. In case of error, it returns a `string`.",
     "DOC_GENERAL_TYPEOF": "Returns a string with the type of the object passed as a parameter.",
     "DOC_GENERAL_GET_ROUTER": "Returns the router whose public IP matches, otherwise returns null. If the ip_address parameter is not specified, returns the router to which the computer executing this command is connected.",
@@ -170,7 +170,6 @@
     "DOC_GENERAL_CURRENT_PATH": "It returns a `string` with the path in which the terminal is at the moment of launching the script.",
     "DOC_IS_FOLDER": "Returns `true` if the file is a folder, `false` otherwise.",
     "DOC_INJECT_LIB": "Injects the local library passed as a parameter to the victim's computer, if the library through which the null connection is being made has a vulnerability that allows it.  This is useful to be able to use `include_lib` from a library that does not physically exist on the victim's computer, such as metaxploit.so.  If the injection is done correctly, the terminal will be busy keeping the library in memory of the victim's computer.  To stop the process, press the key combination `Ctrl+C` on the terminal.",
-    "DOC_SHELL_PUT": "Copy a file from one computer to the other through the network.",
     "DOC_COMPUTER_CONNECT_ETHERNET": "Set up a new IP address on the machine through the ethernet connection. Returns a `string` with the error message if the connection failed. In case of success, an empty `string` is returned.",
     "DOC_COMPUTER_NETWORK_GATEWAY": "Returns a string with the gateway configured on the computer.",
     "DOC_COMPUTER_ACTIVE_NET_CARD": "Returns a `string` with the keyword `WIFI` if the current device is connected to a router by WiFi, if it is connected by cable a `string` with the keyword `ETHERNET` is returned.",
@@ -186,86 +185,39 @@
     "DOC_METAMAIL_DELETE": "Delete the mail that corresponds with mail_ID. Returns `true` if it was removed successfully or a `string` with the error message.",
     "DOC_APTCLIENT_DEL_REPO": "Remove the repository address in the `/etc/apt/sources.txt` file.",
     "DOC_COMPUTER_LOCAL_IP_EXAMPLE": [
-        "print(host_computer.local_ip)",
-        "print(get_router.local_ip)"
+        "print( host_computer.local_ip )",
+        "print( get_router.local_ip )"
     ],
     "DOC_COMPUTER_PUBLIC_IP_EXAMPLE": [
-        "print(host_computer.public_ip)",
-        "print(get_router.public_ip)"
+        "print(\"Public ip:\" + get_router.public_ip)",
+        "print(\"Public ip:\" + host_computer.public_ip)"
     ],
     "DOC_COMPUTER_FILE_EXAMPLE": [
-        "comp = get_shell.host_computer",
-        "myfile = comp.File(\"/path/to/file\")",
-        "myfile.delete",
-        "",
-        "comp.File(\"/path/to/directory\").delete"
-    ],
-    "DOC_COMPUTER_CREATE_FOLDER_EXAMPLE": [
-        "comp = get_shell.host_computer",
-        "comp.create_folder(current_path, \"foldername\")"
-    ],
-    "DOC_COMPUTER_TOUCH_EXAMPLE": [
-        "comp = get_shell.host_computer",
-        "comp.touch(\"/path/to/directory\", \"filename\")",
-        "print(comp.File(\"/path/to/directory/filename\").name) // \"filename\""
-    ],
-    "DOC_COMPUTER_SHOW_PROCS_EXAMPLE": [
-        "print(\"Current user: \" + active_user + \"\\n\\nCurrent processes:\")",
-        "print(get_shell.host_computer.show_procs)"
-    ],
-    "DOC_COMPUTER_NETWORK_DEVICES_EXAMPLE": [
-        "print(get_shell.host_computer.network_devices)"
-    ],
-    "DOC_COMPUTER_WIFI_NETWORKS_EXAMPLE": [
-        "networks = get_shell.host_computer.wifi_networks(\"eth0\")",
-        "for net in networks",
-        "  print(net.split(\" \")[0])",
-        "end for"
-    ],
-    "DOC_CRYPTO_AIRMON_EXAMPLE": [
-        "crypto = include_lib(\"/lib/crypto.so\")",
-        "crypto.airmon(\"start\", \"eth0\")"
-    ],
-    "DOC_CRYPTO_SMTP_USER_LIST_EXAMPLE": [
-        "crypto = include_lib(\"/lib/crypto.so\")",
-        "mail = crypto.smtp_user_list(\"88.231.19.24\", 25)",
-        "print(mail)"
-    ],
-    "DOC_FILE_CHMOD_EXAMPLE": [
-        "comp = get_shell.host_computer",
-        "pwd = comp.File(\"/etc/passwd\")",
-        "etc = comp.File(\"/etc\")",
-        "",
-        "pwd.chmod(\"o-wrx\") //removes read, write, and execute permissions for guest on the file",
-        "etc.chmod(\"o-wrx\", 1) //removes rwx permissions for guest on /etc and all files within /etc"
-    ],
-    "DOC_FILE_COPY_EXAMPLE": [
-        "comp = get_shell.host_computer",
-        "comp.File(\"/etc/passwd\").copy(current_path, \"passfile\")"
-    ],
-    "DOC_FILE_MOVE_EXAMPLE": [
-        "get_shell.host_computer.File(\"/home/user/Downloads\").move(\"/home/user/Desktop\", \"Downloads\")"
-    ],
-    "DOC_FILE_RENAME_EXAMPLE": [
-        "fruit = get_shell.host_computer.File(\"apple\")",
-        "if(typeof(fruit) == \"file\") then",
-        "  fruit.rename(\"banana\")",
+        "file = get_shell.host_computer.File(\"/etc/passwd\")",
+        "if file != null then",
+        "   print(file.content)",
         "end if"
     ],
-    "DOC_FILE_PATH_EXAMPLE": [
+    "DOC_COMPUTER_CREATE_FOLDER_EXAMPLE": [
+        "get_shell.host_computer.create_folder(\"/home/user/Desktop\", \"myfolder\")"
+    ],
+    "DOC_COMPUTER_WIFI_NETWORKS_EXAMPLE": [
         "computer = get_shell.host_computer",
-        "file = computer.File(\"/root/Config/Bank.txt\")",
+        "networks = computer.wifi_networks(\"wlan0\")",
         "",
-        "print(file.path) // /root/Config/Bank.txt",
-        "print(file.parent.path) // /root/Config"
+        "info = \"BSSID PWR ESSID\"",
+        "for network in networks",
+        "   info = info + \"\\n\" + network",
+        "end for",
+        "print(format_columns(info))"
     ],
-    "DOC_FILE_PARENT_EXAMPLE": [
-        "comp = get_shell.host_computer",
-        "print(comp.File(\"/Public/htdocs/downloads\").parent.name)"
+    "DOC_FILE_COPY_EXAMPLE": [
+        "origFile = get_shell.host_computer.File(\"/home/user/myfile.txt\")",
+        "origFile.copy(\"/home/user/Desktop\", \"copyfile.txt\")"
     ],
-    "DOC_FILE_SET_CONTENT_EXAMPLE": [
-        "myfile = get_shell.host_computer.File(\"/etc/passwd\")",
-        "myfile.set_content(\"blah\") // sets the content of /etc/passwd to \"blah\""
+    "DOC_FILE_MOVE_EXAMPLE": [
+        "origFile = get_shell.host_computer.File(\"/home/user/myfile.txt\")",
+        "origFile.move(\"/home/user/Desktop\", \"movefile.txt\")"
     ],
     "DOC_FTPSHELL_HOST_COMPUTER_EXAMPLE": [
         "mycomputer = get_shell.host_computer",
@@ -278,91 +230,70 @@
         "if shell then shell.start_terminal"
     ],
     "DOC_FTPSHELL_PUT_EXAMPLE": [
-        "myPC = get_shell",
-        "remote = myPC.connect_service(\"31.19.44.137\", 22, \"root\", \"AceofSpades\")",
-        "",
-        "myPC.put(\"/var/system.log\", \"/root\", remote)",
-        "// uploads system.log from the user machine to the root directory on the remote machine",
-        "",
-        "remote.put(\"/var/system.log\", home_dir, myPC)",
-        "// downloads system.log from the remote server to the user directory on the user machine"
+        " hostShell = get_shell",
+        "remoteFtpShell = hostShell.connect_service(\"120.123.12.12\", 21, \"username\", \"mypass\")",
+        "remoteFtpShell.put(\"/home/user1/file.txt\", \"/home/user2/downloads\", hostShell)"
     ],
     "DOC_GENERAL_TYPEOF_EXAMPLE": [
-        "v = 32",
-        "w = \"thirty two\"",
-        "x = [3, 2]",
-        "y = {32: \"thirty two\"}",
-        "z = function()",
-        "\t//do something",
-        "\treturn 1",
-        "end function",
-        "typeof(v)",
-        "typeof(w)",
-        "typeof(x)",
-        "typeof(y)",
-        "typeof(z)",
-        "typeof(@z)"
+        "myvalue = \"hello\"",
+        "typeObj = typeof(myvalue)",
+        "print(\"Type is: \" + typeObj)",
+        "",
+        "#Output: Type is: string"
     ],
     "DOC_GENERAL_PRINT_EXAMPLE": [
-        "print(123)",
-        "print(\"123\")",
-        "print(range(1, 5))",
-        "print({\"a\":\"b\"})",
-        "print(1==1)"
-    ],
-    "DOC_GENERAL_ACTIVE_USER_EXAMPLE": [
-        "print(\"Current user: \" + active_user + \"\\n\\nCurrent processes:\")",
-        "print(get_shell.host_computer.show_procs)"
-    ],
-    "DOC_GENERAL_GET_SHELL_EXAMPLE": [
-        "myshell = get_shell",
-        "print(\"Type: \" + typeof(myshell))",
+        "print(\"Hello world!\")",
         "",
-        "file = myshell.host_computer.File(\"/etc/passwd\")",
-        "print(file.name)"
+        "#Output",
+        "Hello world!"
     ],
     "DOC_GENERAL_USER_INPUT_EXAMPLE": [
-        "name = user_input(\"What is your name?\")",
-        "print(\"Hello \" + name + \"!\")"
+        "name = user_input(\"Type your name: \")",
+        "pass = user_input(\"Type your password: \", true)",
+        "print(\"Good! your name is \" + name +\". And your  password is \" + pass)"
     ],
     "DOC_GENERAL_INCLUDE_LIB_EXAMPLE": [
-        "cryptools = include_lib(\"/lib/crypto.so\") //providing /lib/crypto.so exists, returns the crypto object",
-        "if not cryptools then exit(\"Error: Missing crypto library\") //error handling",
-        "print(cryptools.decipher(\"/etc/passwd\")) //prints the deciphered root password"
+        "newTools = include_lib(\"/lib/somelib.so\")",
+        "if not newTools then exit(\"Missing lib!\")",
+        "newTools.someMethod(\"foo\")"
     ],
     "DOC_GENERAL_IMPORT_CODE_EXAMPLE": [
-        "import_code(\"/root/file.src\") //normal import",
-        "import_code(\"/root/file.src\":\"/my/real/filesystem.src\") //import with using greybel for automatic import resolving"
+        "//main.src",
+        "import_code(\"/home/user/my_module.src\")",
+        "print(\"bye\")",
+        "Content of my_module.src",
+        "",
+        "//my_module.src",
+        "print(\"hello!\")",
+        "",
+        "Result after compiling main.src and launch it",
+        "",
+        "#Output",
+        "hello!",
+        "bye",
+        ""
     ],
     "DOC_GENERAL_EXIT_EXAMPLE": [
-        "print(\"Hello\")",
+        " print (\"Hello\")",
+        "exit (\"I finish the program\")",
+        "print (\"bye\")",
         "",
-        "exit(\"Script Exited\")",
-        "",
-        "print(\"Goodbye\")"
+        "#Output:",
+        "Hello",
+        "I finish the program"
     ],
     "DOC_GENERAL_COMMAND_INFO_EXAMPLE": [
-        "print(command_info(\"ftp_usage\"))"
-    ],
-    "DOC_GENERAL_FORMAT_COLUMNS_EXAMPLE": [
-        "data = \"COL1 COL2 COL3\" //define our column titles",
-        "data = data + \"\\none two three\" //define our data, each column data separated by a space",
-        "data = data + \"\\nthing1 thing2 thing3\" //add another row",
-        "print(format_columns(data))"
-    ],
-    "DOC_GENERAL_IS_VALID_IP_EXAMPLE": [
-        "tof = function(v)",
-        "  return (\"in\" * (v == 0)) + \"valid\"",
-        "end function",
+        "info = command_info(\"cp_usage\")",
+        "print(info)",
         "",
-        "print(tof(is_valid_ip(\"abc\")))",
-        "print(tof(is_valid_ip(\"192.168.0.1\")))",
-        "print(tof(is_valid_ip(\"192.168.0.99\")))",
-        "print(tof(is_valid_ip(\"192.168.0.999\")))"
+        "#Output: Usage: cp [path to file] [path to copy]"
     ],
     "DOC_GENERAL_BITWISE_EXAMPLE": [
         "result = bitwise(\"&\", 12, 25)",
-        "print(\"Result: \" + result)"
+        "print(\"Result: \" + result)",
+        "",
+        "#Output",
+        "Result: 8"
     ],
     "DOC_GENERAL_ABS_EXAMPLE": [
         "abs(p) // 4",
@@ -671,59 +602,16 @@
     "DOC_MAP_VALUES_EXAMPLE": [
         "map.values // [\"zero\", \"one\", 2, [3, 4, 5]]"
     ],
-    "DOC_METALIB_OVERFLOW_EXAMPLE": [
-        "meta = include_lib(\"/lib/metaxploit.so\")",
-        "lib = meta.load(\"/lib/kernel_module.so\")",
-        "flow = lib.overflow(\"0x2CF07FF0\", \"bl_treel\")",
-        "print(\"Returned: \" + typeof(flow))"
-    ],
-    "DOC_METALIB_VERSION_EXAMPLE": [
-        "meta = include_lib(\"/lib/metaxploit.so\")",
-        "if not meta then exit(\"Error: missing /lib/metaxploit.so\")",
-        "lib = meta.load(\"/lib/init.so\")",
-        "if not lib then exit(\"Error: missing /lib/init.so\")",
-        "print(lib.version) // 1.0.0"
-    ],
-    "DOC_NETSESSION_DUMP_LIB_EXAMPLE": [
-        "meta = include_lib(\"/lib/metaxploit.so\")",
-        "net = meta.net_use(\"88.231.19.24\", 22)",
-        "libssh = net.dump_lib",
-        "print(libssh.lib_name + \" v\" + libssh.version)"
-    ],
-    "DOC_SHELL_HOST_COMPUTER_EXAMPLE": [
-        "mycomputer = get_shell.host_computer",
-        "",
-        "print(mycomputer.File(\"/etc/passwd\").content)",
-        "// prints the contents of /etc/passwd on the user machine"
-    ],
-    "DOC_SHELL_START_TERMINAL_EXAMPLE": [
-        "shell = get_shell.connect_service(\"88.137.62.95\", 21, \"root\", \"kuroshitsuji\", \"ftp\")",
-        "if shell then shell.start_terminal"
-    ],
     "DOC_SHELL_BUILD_EXAMPLE": [
-        "get_shell.build(\"/home/user/myprogram.src\", \"/home/user\")"
-    ],
-    "DOC_SHELL_CONNECT_SERVICE_EXAMPLE": [
-        "mypc = get_shell",
-        "remote = mypc.connect_service(\"39.62.143.12\", 22, \"root\", \"We<3nigma\")",
-        "",
-        "if remote then",
-        "  print(remote.host_computer.File(\"/etc/passwd\").content)",
-        "  //prints the contents of /etc/passwd on this remote machine",
-        "end if"
+        "get_shell.build(\"/home/user/myprogram.src\", \"/home/user/Desktop\")"
     ],
     "DOC_SHELL_LAUNCH_EXAMPLE": [
         "get_shell.launch(\"/bin/cat\", \"/etc/passwd\")"
     ],
     "DOC_SHELL_SCP_EXAMPLE": [
-        "myPC = get_shell",
-        "remote = myPC.connect_service(\"31.19.44.137\", 22, \"root\", \"AceofSpades\")",
-        "",
-        "myPC.scp(\"/var/system.log\", \"/root\", remote)",
-        "// uploads system.log from the user machine to the root directory on the remote machine",
-        "",
-        "remote.scp(\"/var/system.log\", home_dir, myPC)",
-        "// downloads system.log from the remote server to the user directory on the user machine"
+        " hostShell = get_shell",
+        "remoteShell = hostShell.connect_service (\"120.123.12.12\", 22, \"username\", \"mypass\")",
+        "hostShell.scp(\"/home/user1/file.txt\", \"/home/user2/downloads\", remoteShell)"
     ],
     "DOC_STRING_REMOVE_EXAMPLE": [
         "title.remove(\"nope\") // \"Saving Private Ryan\" (unaltered)",
@@ -808,5 +696,86 @@
         "n.to_int // \"3 8\" (string)",
         "n[0].to_int // 3 (int number)",
         "n.remove(\" \").to_int // 38 (int number)"
+    ],
+    "DOC_GENERAL_WHOIS_EXAMPLE": [
+        "info = whois(\"125.58.74.52\")",
+        "print(info)"
+    ],
+    "DOC_GENERAL_PARENT_PATH_EXAMPLE": [
+        "newPath = parent_path (\"/home/user/Desktop\")",
+        "print (\"new path:\" + newPath)",
+        "",
+        "#Output: new path: /home/user"
+    ],
+    "DOC_ROUTER_PORT_INFO_EXAMPLE": [
+        "router = get_router",
+        "ports = router.used_ports",
+        "for port in ports",
+        "    print(\"info: \" + router.port_info(port))",
+        "end for"
+    ],
+    "DOC_ROUTER_USED_PORTS_EXAMPLE": [
+        "router = get_router",
+        "ports = router.used_ports",
+        "for port in ports",
+        "    print(\"info: \" + router.port_info(port))",
+        "end for"
+    ],
+    "DOC_COMPUTER_GET_PORTS_EXAMPLE": [
+        "router = get_router",
+        "ports = get_shell.host_computer.get_ports",
+        "for port in ports",
+        "    print(\"Info: \" + router.port_info(port))",
+        "end for"
+    ],
+    "DOC_FILE_HAS_PERMISSION_EXAMPLE": [
+        "file = get_shell.host_computer.File(\"/home/user/test.txt\")",
+        "if file.has_permission(\"r\") then",
+        "   print(file.content)",
+        "else",
+        "   print(\"permission denied\")",
+        "end if"
+    ],
+    "DOC_FILE_DELETE_EXAMPLE": [
+        "file = get_shell.host_computer.File(\"/home/user/myfile.txt\")",
+        "if file.has_permission(\"w\") then",
+        "   file.delete",
+        "else",
+        "   print(\"permission denied\")",
+        "end if"
+    ],
+    "DOC_FILE_GET_FOLDERS_EXAMPLE": [
+        "parent = get_shell.host_computer.File(\"/home/user\")",
+        "if parent.is_folder then",
+        "   folders = parent.get_folders",
+        "   for folder in folders",
+        "       print(\"Folder name: \" + folder.name)",
+        "   end for",
+        "end if"
+    ],
+    "DOC_FILE_GET_FILES_EXAMPLE": [
+        "parent = get_shell.host_computer.File(\"/home/user/Desktop\")",
+        "if parent.is_folder then",
+        "   files = parent.get_files",
+        "   for file in files",
+        "       print(\"File name: \" + file.name)",
+        "   end for",
+        "end if"
+    ],
+    "DOC_GENERAL_HOME_DIR_EXAMPLE": [
+        "print(\"User home path: \" + home_dir)"
+    ],
+    "DOC_INJECT_LIB_EXAMPLE": [
+        "metaxploit = include(\"metaxploit\")",
+        "library = get_shell.host_computer.File(\"/lib/metaxploit.so\")",
+        "null_session = metaxploit.net_use( \"50.85.78.47\", 22 )",
+        "null_session.inject_lib(library)"
+    ],
+    "DOC_COMPUTER_CREATE_GROUP_EXAMPLE": [
+        "//We will create the staff group for the regular user myuser",
+        "output = get_shell.host_computer.create_group(\"myuser\", \"staff\")",
+        "if output == true then exit(\"Group \" + group + \" added to user \" + user)",
+        "if output then exit(output)",
+        "print(\"Error: the group could not be created.\")"
     ]
 }
