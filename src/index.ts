@@ -1,3 +1,4 @@
+import { getDescription } from './languages';
 import AptClient from './signatures/apt-client.json';
 import Blockchain from './signatures/blockchain.json';
 import Coin from './signatures/coin.json';
@@ -19,7 +20,6 @@ import Shell from './signatures/shell.json';
 import String from './signatures/string.json';
 import SubWallet from './signatures/sub-wallet.json';
 import Wallet from './signatures/wallet.json';
-import { getDescription } from './languages';
 
 export interface SignatureDefinitionArg {
   label: string;
@@ -44,16 +44,21 @@ export interface Signature {
   definitions: SignatureDefinitionContainer;
 }
 
-const enrichContainer = (type: string, container: SignatureDefinitionContainer, language?: string): SignatureDefinitionContainer => {
-  return Object.entries(container).reduce((result: SignatureDefinitionContainer, [name, def]) => (
-    {
+const enrichContainer = (
+  type: string,
+  container: SignatureDefinitionContainer,
+  language?: string
+): SignatureDefinitionContainer => {
+  return Object.entries(container).reduce(
+    (result: SignatureDefinitionContainer, [name, def]) => ({
       ...result,
       [name]: {
         ...def,
         description: getDescription(type, name, language)
       }
-    }
-  ), {})
+    }),
+    {}
+  );
 };
 
 export const signatures: Signature[] = [
@@ -153,7 +158,8 @@ export const signaturesByType: { [key: string]: SignatureDefinitionContainer } =
   }, {});
 
 export const getDefinitions = (
-  types: string[], language?: string
+  types: string[],
+  language?: string
 ): SignatureDefinitionContainer => {
   if (types.includes('any')) {
     return getDefinitions(allTypes);
@@ -171,7 +177,8 @@ export const getDefinitions = (
 
 export const getDefinition = (
   types: string[],
-  property: string, language?: string
+  property: string,
+  language?: string
 ): SignatureDefinition | null => {
   const definitions = getDefinitions(types, language);
   return definitions[property] || null;
