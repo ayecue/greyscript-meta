@@ -99,7 +99,7 @@ const language: Monaco.languages.IMonarchLanguage = {
       [/@symbols/, { cases: { '@operators': 'operator', '@default': '' } }],
 
       // strings
-      [/'/, { token: 'string.quote', bracket: '@open', next: '@string' }],
+      [/"/, { token: 'string.quote', bracket: '@open', next: '@string' }],
 
       // numbers
       [/\d*\.\d+([eE][-+]?\d+)?/, 'number.float'],
@@ -111,9 +111,9 @@ const language: Monaco.languages.IMonarchLanguage = {
     ],
 
     string: [
-      [/[^\\']+/, 'string'],
-      [/''/, 'string.escape'],
-      [/'/, { token: 'string.quote', bracket: '@close', next: '@pop' }]
+      [/[^"]+/, 'string'],
+      [/""/, 'string.escape'],
+      [/"/, { token: 'string.quote', bracket: '@close', next: '@pop' }]
     ],
 
     whitespace: [
