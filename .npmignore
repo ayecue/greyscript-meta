@@ -14,3 +14,9 @@ dist/web.bundled.js
 dist/index.html
 dist/index.css
 dist/netlify.toml
+.netlify
+netlify.toml
+.editorconfig
+rollup.config.js
+extract.js
+.eslintrc
