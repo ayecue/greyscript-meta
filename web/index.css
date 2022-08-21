@@ -1,107 +1,54 @@
 html {
-	background: #333;
-	color: #CCC;
-	font-family: monospace;
+    background: #333;
+    color: #CCC;
+    font-family: monospace;
 }
 
 #root > div > input {
-	border: none;
-	-webkit-appearance: none;
-	-ms-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	background: #f2f2f2;
-	padding: 12px;
-	border-radius: 3px;
-	position: fixed;
-	left: 0;
-	top: 0;
-	height: 9px;
-	width: 200px;
-	font-size: 14px;
-	margin: 10px;
-	z-index: 999;
-}
-
-.editor {
-	min-height: 100px;
-	width: auto;
-}
-
-.content-table {
-	margin: 0;
-	position: fixed;
-	top: 55px;
-	bottom: 0;
-	left: 0;
-	position: fixed;
-	width: 235px;
-	overflow: auto;
-	-ms-overflow-style: auto;
-	scrollbar-color: darkgreen green;
-	scrollbar-width: thin;
-}
-
-.content-table::-webkit-scrollbar-thumb {
-	background-color: darkgreen;
-}
-.content-table::-webkit-scrollbar-track {
-	background-color: green;
-}
-.content-table::-webkit-scrollbar-corner {
-	background-color: green;
-}
-.content-table::-webkit-scrollbar {
-	width: 0.5rem;
-	height: 0.5rem;
-}
-
-.content-table ul {
-	margin: 0;
-	padding: 0;
-}
-
-.content-table li {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-.content-table .first {
-	margin: 0 0 0 10px;
-}
-
-.content-table .second {
-	margin: 0 0 10px 10px;
-}
-
-.content-table a {
-	color: #CCC;
-	cursor: pointer;
+    border: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #f2f2f2;
+    padding: 12px;
+    border-radius: 3px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 9px;
+    width: 200px;
+    font-size: 14px;
+    margin: 10px;
+    z-index: 999;
 }
 
 .readme {
-	margin: 0 0 0 235px;
+    margin: 0 0 0 235px;
+}
+
+.readme h1 {
+    color: #FFF;
 }
 
 .readme ul {
-	margin: 0;
-	padding: 0;
-	right: 0;
+    margin: 0;
+    padding: 0;
+    right: 0;
     top: 0;
-	position: fixed;
-	z-index: 999;
+    position: fixed;
+    z-index: 999;
 }
 
 .readme li {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
 }
 
 .readme a {
-	display: inline-block;
+    display: inline-block;
     padding: 0.7em 1.4em;
     margin: 1em 0.3em 0.3em 0;
     border-radius: 0.15em;
@@ -119,99 +66,172 @@ html {
 }
 
 .readme a:active {
-	border: 1px solid #000;
+    border: 1px solid #000;
+}
+
+.editor {
+    min-height: 100px;
+    width: auto;
+}
+
+.content-table {
+    margin: 0;
+    position: fixed;
+    top: 55px;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    width: 235px;
+    overflow: auto;
+    -ms-overflow-style: auto;
+    scrollbar-color: darkgreen green;
+    scrollbar-width: thin;
+}
+
+.content-table::-webkit-scrollbar-thumb {
+    background-color: darkgreen;
+}
+.content-table::-webkit-scrollbar-track {
+    background-color: green;
+}
+.content-table::-webkit-scrollbar-corner {
+    background-color: green;
+}
+.content-table::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.content-table ul {
+    margin: 0;
+    padding: 0;
+}
+
+.content-table li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.content-table .first {
+    margin: 0 0 0 10px;
+}
+
+.content-table .first > li > a {
+    color: #3dc9b0;
+    text-transform: capitalize;
+}
+
+.content-table .second {
+    margin: 0 0 10px 10px;
+}
+
+.content-table .second > li > a {
+    color: #74b0df;
+}
+
+.content-table a {
+    text-decoration: none;
+    color: #CCC;
+    cursor: pointer;
 }
 
 .definitions {
-	margin: 0 0 0 235px;
+    margin: 0 0 0 235px;
 }
 
 .definitions ul, .definitions p {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .definitions li {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .definitions .hidden {
-	display: none;
+    display: none;
 }
 
 .definitions .first {
-	border: 1px solid #000;
+    border: 1px solid #000;
 }
 
 .definitions .first > li:first-child {
-	margin: 10px;
+    margin: 10px;
 }
 
 .definitions .first > li {
-	margin: 20px 10px;
+    margin: 20px 10px;
 }
 
 .definitions .second {
-	margin: 0 0 0 10px;
+    margin: 0 0 0 10px;
 }
 
 .definitions .second > li {
-	border-bottom: 1px solid #000;
-	padding: 10px;
-	margin: 0 0 10px;
+    border-bottom: 1px solid #000;
+    padding: 10px;
+    margin: 0 0 10px;
+}
+
+.definitions h2 {
+    color: #3dc9b0;
 }
 
 .definitions .definition h3 {
-	margin-top: 0;
+    margin-top: 0;
+    color: #74b0df;
 }
 
 .definitions .definition > ul {
-	display: table;
-	table-layout: fixed;
-	width: 100%;
-	margin: 0 0 0 10px;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin: 0 0 0 10px;
 }
 
 .definitions .definition > ul > li {
-	display: table-cell;
+    display: table-cell;
 }
 
 .definitions .definition .labels {
-	width: 100px;
+    width: 100px;
+    color: #FFF;
 }
 
 .definitions .definition > ul > li > ul > li {
-	margin: 0 0 10px;
+    margin: 0 0 10px;
 }
 
 .definitions .definition .signature .args, .definitions .definition .returns {
-	display: inline-block;
+    display: inline-block;
 }
 
 .definitions .definition .signature .args .label {
-	color: #d4d4d4;
+    color: #d4d4d4;
 }
 
 .definitions .definition .signature .args .type {
-	color: #3dc9b0;
+    color: #3dc9b0;
 }
 
 .definitions .definition .signature .returns .type {
-	color: #3dc9b0;
+    color: #3dc9b0;
 }
 
 .definitions .definition .signature .returns .or {
-	margin: 0 5px;
-	color: #569cd6;
+    margin: 0 5px;
+    color: #569cd6;
 }
 .definitions .definition .meta .description .highlight {
-	color: #3dc9b0;
+    color: #3dc9b0;
 }
 
 .definitions .definition .editorWrapper .run {
-	display: inline-block;
+    display: inline-block;
     padding: 0.7em 1.4em;
     margin: 1em 0.3em 0.3em 0;
     border-radius: 0.15em;
@@ -229,5 +249,5 @@ html {
 }
 
 .definitions .definition .editorWrapper .run:active {
-	border: 1px solid #000;
+    border: 1px solid #000;
 }

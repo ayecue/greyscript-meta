@@ -25,7 +25,7 @@ export default function() {
             <input type='text' onChange={(ev) => setFilter(ev.target.value)} />
             <ContentTable signatures={signatures} filter={filter} />
             <div className='readme'>
-                <h1>GreyScript API</h1>
+                <h1>GreyScript API (unofficial)</h1>
                 <ul>
                     <li><a href="https://github.com/ayecue/greybel-js" target='_blank'>Greybel CLI</a></li>
                     <li><a href="https://github.com/ayecue/greybel-vs" target='_blank'>Greybel VS</a></li>
