@@ -7,3 +7,10 @@ test.js
 assets
 scripts
 web
+dist/web
+dist/web.js
+dist/web.d.ts
+dist/web.bundled.js
+dist/index.html
+dist/index.css
+dist/netlify.toml
