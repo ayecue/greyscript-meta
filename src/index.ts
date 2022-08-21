@@ -140,7 +140,7 @@ export const signatures: Signature[] = [
     definitions: <SignatureDefinitionContainer>(<unknown>Service)
   },
   {
-    type: 'sub-wallet',
+    type: 'subWallet',
     definitions: <SignatureDefinitionContainer>(<unknown>SubWallet)
   },
   {
