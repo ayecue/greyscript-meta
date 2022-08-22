@@ -91,22 +91,24 @@ function renderDefinition(type: string, methodName: string, definition: Signatur
     return (
         <article className='definition'>
             <h3 id={key}>{methodName}</h3>
-            <ul>
-                <li className='labels'>
-                    <ul>
-                        <li className='signature-label'>Signature:</li>
-                        {description ? <li className='description-label'>Description:</li> : null }
-                        {example ? <li className='example-label'>Example:</li> : null }
-                    </ul>
-                </li>
-                <li className='meta'>
-                    <ul>
-                        <li className='signature'>({renderArguments(definition.arguments)}): {renderReturn(definition.returns)}</li>
-                        {description ? <li className='description'>{renderDescription(description)}</li> : null}
-                        {example ? <li className='example'>{renderEditor(monaco, example.join('\n'), key)}</li> : null}
-                    </ul>
-                </li>
-            </ul>
+            <table>
+                <tr>
+                    <td className='signature label'>Signature:</td>
+                    <td className='signature'>({renderArguments(definition.arguments)}): {renderReturn(definition.returns)}</td>
+                </tr>
+                {description ? (
+                    <tr>
+                        <td className='description label'>Description:</td>
+                        <td className='description'>{renderDescription(description)}</td>
+                    </tr>
+                ) : null }
+                {example ? (
+                    <tr>
+                        <td className='example label'>Example:</td>
+                        <td className='example'>{renderEditor(monaco, example.join('\n'), key)}</td>
+                    </tr>
+                ) : null }
+            </table>
         </article>
     );
 }

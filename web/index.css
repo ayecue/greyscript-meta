@@ -181,29 +181,19 @@ html {
     color: #3dc9b0;
 }
 
+.definitions .definition table {
+    width: 100%;
+}
+
 .definitions .definition h3 {
     margin-top: 0;
     color: #74b0df;
 }
 
-.definitions .definition > ul {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-    margin: 0 0 0 10px;
-}
-
-.definitions .definition > ul > li {
-    display: table-cell;
-}
-
-.definitions .definition .labels {
+.definitions .definition .label {
     width: 100px;
     color: #FFF;
-}
-
-.definitions .definition > ul > li > ul > li {
-    margin: 0 0 10px;
+    vertical-align: top;
 }
 
 .definitions .definition .signature .args, .definitions .definition .returns {
