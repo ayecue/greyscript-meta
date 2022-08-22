@@ -1,5 +1,5 @@
 import React, { ComponentState } from 'react';
-import { Signature } from '../../index';
+import { Signature } from '../../meta';
 
 export interface ContentTableState extends ComponentState {
     signatures: Signature[];

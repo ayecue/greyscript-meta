@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import language from './grammar/language';
-import { signatures } from '../index';
+import { signatures } from '../meta';
 import ContentTable from './components/content-table';
 import Definitions from './components/definitions';
 import Basics from './components/basics';

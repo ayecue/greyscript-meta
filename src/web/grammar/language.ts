@@ -1,6 +1,6 @@
 import Monaco from 'monaco-editor/esm/vs/editor/editor.api';
 
-import { allTypes, getDefinitions } from '../../index';
+import { allTypes, getDefinitions } from '../../meta';
 
 const language: Monaco.languages.IMonarchLanguage = {
   // setup via https://microsoft.github.io/monaco-editor/monarch.html

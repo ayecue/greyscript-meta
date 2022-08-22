@@ -1,5 +1,5 @@
 import React, { ComponentState, useRef, useEffect } from 'react';
-import { Signature, SignatureDefinition, SignatureDefinitionArg } from '../../index';
+import { Signature, SignatureDefinition, SignatureDefinitionArg } from '../../meta';
 import { getDescription, getExample } from '../../languages';
 import Monaco from 'monaco-editor/esm/vs/editor/editor.api';
 import reactStringReplace from 'react-string-replace';

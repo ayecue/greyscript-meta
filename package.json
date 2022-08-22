@@ -1,6 +1,6 @@
 {
     "name": "greyscript-meta",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Meta description for greyscript API",
     "main": "dist/index",
     "typings": "dist/index",
@@ -36,7 +36,6 @@
         "@babel/plugin-transform-runtime": "^7.16.8",
         "@babel/preset-env": "^7.16.8",
         "@babel/preset-react": "^7.18.6",
-        "@monaco-editor/loader": "^1.3.2",
         "@rollup/plugin-babel": "^5.3.0",
         "@rollup/plugin-commonjs": "^21.0.1",
         "@rollup/plugin-json": "^4.1.0",
@@ -71,7 +70,8 @@
     },
     "peerDependencies": {
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "@monaco-editor/loader": "^1.3.2"
     },
     "keywords": [
         "greyscript",
