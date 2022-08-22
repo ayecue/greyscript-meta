@@ -1,5 +1,5 @@
 html {
-    background: #333;
+    background: #1e1e1e;
     color: #CCC;
     font-family: monospace;
 }
@@ -28,7 +28,7 @@ html {
 }
 
 .readme h1 {
-    color: #FFF;
+	color: #ce9178;
 }
 
 .readme ul {
@@ -72,6 +72,7 @@ html {
 .editor {
     min-height: 100px;
     width: auto;
+	border: 1px groove #333;
 }
 
 .content-table {
@@ -84,18 +85,18 @@ html {
     width: 235px;
     overflow: auto;
     -ms-overflow-style: auto;
-    scrollbar-color: darkgreen green;
+    scrollbar-color: #CCC #333;
     scrollbar-width: thin;
 }
 
 .content-table::-webkit-scrollbar-thumb {
-    background-color: darkgreen;
+    background-color: #CCC;
 }
 .content-table::-webkit-scrollbar-track {
-    background-color: green;
+    background-color: #333;
 }
 .content-table::-webkit-scrollbar-corner {
-    background-color: green;
+    background-color: #333;
 }
 .content-table::-webkit-scrollbar {
     width: 0.5rem;
@@ -156,7 +157,7 @@ html {
 }
 
 .definitions .first {
-    border: 1px solid #000;
+    border: 1px groove #333;
 }
 
 .definitions .first > li:first-child {
@@ -172,13 +173,26 @@ html {
 }
 
 .definitions .second > li {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px groove #333;
     padding: 10px;
     margin: 0 0 10px;
 }
 
 .definitions h2 {
     color: #3dc9b0;
+	text-transform: capitalize;
+}
+
+.definitions .definition {
+	position: relative;
+}
+
+.definitions .definition .share {
+	position: absolute;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+	color: #ce9178;
 }
 
 .definitions .definition table {
@@ -216,8 +230,13 @@ html {
     margin: 0 5px;
     color: #569cd6;
 }
-.definitions .definition .meta .description .highlight {
+
+.definitions .definition .description .highlight.type {
     color: #3dc9b0;
+}
+
+.definitions .definition .description .highlight.string {
+    color: #ce9178;
 }
 
 .definitions .definition .editorWrapper .run {

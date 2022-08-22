@@ -6,7 +6,9 @@ import Definitions from './components/definitions';
 import monacoLoader from '@monaco-editor/loader';
 
 export default function() {
-    const [filter, setFilter] = useState('');
+    const urlSearchParams = new URLSearchParams(location.search);
+    const filterInit = urlSearchParams.get('filter') || '';
+    const [filter, setFilter] = useState(filterInit);
     const [monaco, setMonaco] = useState(null);
 
     if (monaco === null) {
@@ -22,7 +24,7 @@ export default function() {
 
     return (
         <div>
-            <input type='text' onChange={(ev) => setFilter(ev.target.value)} />
+            <input type='text' onChange={(ev) => setFilter(ev.target.value)} value={filter} />
             <ContentTable signatures={signatures} filter={filter} />
             <div className='readme'>
                 <h1>GreyScript API (unofficial)</h1>

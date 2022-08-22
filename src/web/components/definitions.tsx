@@ -46,7 +46,7 @@ function renderArguments(args: SignatureDefinitionArg[] = []) {
         <div className='args'>
             {args.map((item: SignatureDefinitionArg, index: number) => {
                 return (
-                    <span>
+                    <span key={index}>
                         <span className='label'>{item.label}</span>: <span className='type'>{item.type}</span>
                         { index < args.length - 1 ? ', ' : '' }
                     </span>
@@ -61,9 +61,11 @@ function renderReturn(returns: string[]) {
         <div className='returns'>
             <p>
                 {returns.map((item: string, index: number) => {
+                    const [type, subType] = item.split(':');
+
                     return (
-                        <span>
-                            <span className='type'>{item}</span>
+                        <span key={index}>
+                            <span className='type'>{subType ? `${type}<${subType}>` : type}</span>
                             { index < returns.length - 1 ? <span className='or'>or</span> : '' }
                         </span>
                     );
@@ -76,11 +78,22 @@ function renderReturn(returns: string[]) {
 function renderDescription(description: string) {
     return (
         <p>
-            {reactStringReplace(description, /`([^`]+)`/, (match, i) => {
-                return <span className='highlight'>{match}</span>
+            {reactStringReplace(description, /(`[^`]+`|"[^"]+")/g, (match, index) => {
+                if (match.startsWith('"')) {
+                    return <span key={index} className='highlight string'>{match}</span>;
+                }
+
+                return <span key={index} className='highlight type'>{match.slice(1, -1)}</span>;
             })}
         </p>
     );
+}
+
+function shareLink(type: string, methodName: string) {
+    const url = new URL(location.href);
+    url.searchParams.set('filter', `${type}.${methodName}`);
+
+    navigator.clipboard.writeText(url.toString());
 }
 
 function renderDefinition(type: string, methodName: string, definition: SignatureDefinition, monaco: typeof Monaco) {
@@ -91,23 +104,26 @@ function renderDefinition(type: string, methodName: string, definition: Signatur
     return (
         <article className='definition'>
             <h3 id={key}>{methodName}</h3>
+            <a className='share' onClick={() => shareLink(type, methodName)}>copy</a>
             <table>
-                <tr>
-                    <td className='signature label'>Signature:</td>
-                    <td className='signature'>({renderArguments(definition.arguments)}): {renderReturn(definition.returns)}</td>
-                </tr>
-                {description ? (
+                <tbody>
                     <tr>
-                        <td className='description label'>Description:</td>
-                        <td className='description'>{renderDescription(description)}</td>
+                        <td className='signature label'>Signature:</td>
+                        <td className='signature'>({renderArguments(definition.arguments)}): {renderReturn(definition.returns)}</td>
                     </tr>
-                ) : null }
-                {example ? (
-                    <tr>
-                        <td className='example label'>Example:</td>
-                        <td className='example'>{renderEditor(monaco, example.join('\n'), key)}</td>
-                    </tr>
-                ) : null }
+                    {description ? (
+                        <tr>
+                            <td className='description label'>Description:</td>
+                            <td className='description'>{renderDescription(description)}</td>
+                        </tr>
+                    ) : null }
+                    {example ? (
+                        <tr>
+                            <td className='example label'>Example:</td>
+                            <td className='example'>{renderEditor(monaco, example.join('\n'), key)}</td>
+                        </tr>
+                    ) : null }
+                </tbody>
             </table>
         </article>
     );

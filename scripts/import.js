@@ -9,13 +9,13 @@ const BLOCK_PATTERN_DESCRIPTOR = '\\[[^\\]]+\\]';
 const BLOCK_PATTERN_DESCRIPTOR_WITH_VAR = '\\[([^\\]]+)\\]'
 const BLOCK_PATTERN_DESCRIPTOR_END = '</b></mark>';
 
-const CODE_BLOCK_START = '<font="SourceCodePro-Regular SDF">\n?';
-const CODE_BLOCK_END = '\n?</font>';
+const CODE_BLOCK_START = '<font="SourceCodePro-Regular SDF">\\n?';
+const CODE_BLOCK_END = '\\n?</font>';
 
 const BLOCK_PATTERN = new RegExp(`${BLOCK_PATTERN_DESCRIPTOR_START}${BLOCK_PATTERN_DESCRIPTOR}${BLOCK_PATTERN_DESCRIPTOR_END}([\\s\\S]*?)((?=${BLOCK_PATTERN_DESCRIPTOR_START})|$)`, 'g');
 const DESCRIPTOR_PATTERN = new RegExp(`${BLOCK_PATTERN_DESCRIPTOR_START}${BLOCK_PATTERN_DESCRIPTOR_WITH_VAR}${BLOCK_PATTERN_DESCRIPTOR_END}`);
 
-const CODE_PATTERN = new RegExp(`${CODE_BLOCK_START}\\s*?([\\s\\S]*?)\\s*?${CODE_BLOCK_END}`);
+const CODE_PATTERN = new RegExp(`${CODE_BLOCK_START}\\s*?([\\s\\S]*?)\\s*?${CODE_BLOCK_END}`, 'g');
 
 const getMetaInfo = (description) => {
     const segments = description.match(BLOCK_PATTERN);
@@ -28,28 +28,18 @@ const getMetaInfo = (description) => {
                 value = item
                     .replace(DESCRIPTOR_PATTERN, '')
                     .replace(CODE_PATTERN, '$1')
+                    .replace(/#output[\s\S]*$/i, '')
+                    .replace(/<\/?[^>]+>/g, '')
+                    .replace(/^[\s\n\r]*/, '')
+                    .replace(/[\s\n\r]*$/, '')
                     .split('\n');
-
-                if (value[value.length - 1] === '') {
-                    value.pop();
-                }
-
-                if (value[0] === '') {
-                    value.shift();
-                }
-
-                value = value.map((line) => {
-                    return line
-                        .replace(/^\s*?/, '')
-                        .replace(/\s*?$/, '')
-                        .replace(/<\/?[^>]+>/g, '');
-                });
                 
                 break;
             default:
                 value = item
                     .replace(DESCRIPTOR_PATTERN, '')
                     .replace(/\n/g, ' ')
+                    .replace(/<color=yellow>([^>]+)<\/color>/g, '"$1"')
                     .replace(/<\/?[^>]+>/g, '`')
                     .trim();
 
@@ -93,7 +83,7 @@ const getUpdatedTranslations = (existingJSON) => {
             console.log(`Found change in "${actualKey}".`);
         }
 
-        if (existingJSON[exampleKey] !== meta.example) {
+        if (existingJSON[exampleKey]?.toString() !== meta.example?.toString()) {
             outputJSON[exampleKey] = meta.example;
             console.log(`Found change in "${exampleKey}".`);
         }

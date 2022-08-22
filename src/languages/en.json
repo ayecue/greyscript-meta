@@ -176,21 +176,21 @@
     "DOC_SHELL_PING": "Returns `true` if the remote address could be reached, `false` otherwise. Firewalls do not block ping requests.",
     "DOC_ROUTER_KERNEL_VERSION": "Returns a string with the version of the `kernel_router.so` library.",
     "DOC_FIREWALL_OVERFLOW": "Due to a vulnerability in some versions of `kernel_router.so`, an attacker can bypass the firewall by sending a certain sequence of traffic patterns and disable the firewall rules.",
-    "DOC_APTCLIENT_ADD_REPO": "Add the repository address in the `/etc/apt/sources.txt` file.",
-    "DOC_APTCLIENT_INSTALL": "Install the program or library from a remote repository listed in `/etc/apt/sources.txt`. Unless a path is specified, the program installs in `/lib` if it is a library or in `/bin` otherwise.",
-    "DOC_APTCLIENT_UPDATE": "Update the list of available packages after adding a new repository in `/etc/apt/sources.txt`, or if the remote repository has updated its information in `/server/conf/repod.conf`.",
-    "DOC_APTCLIENT_SEARCH": "Search specifically for the package in any of the repositories listed in `/etc/apt/sources.txt`.",
-    "DOC_APTCLIENT_SHOW": "Shows all packages available in the repository. The repository must be added in the `/etc/apt/sources.txt` file.",
+    "DOC_APTCLIENT_ADD_REPO": "Add the repository address in the \"/etc/apt/sources.txt\" file.",
+    "DOC_APTCLIENT_INSTALL": "Install the program or library from a remote repository listed in \"/etc/apt/sources.txt\". Unless a path is specified, the program installs in \"/lib\" if it is a library or in \"/bin\" otherwise.",
+    "DOC_APTCLIENT_UPDATE": "Update the list of available packages after adding a new repository in \"/etc/apt/sources.txt\", or if the remote repository has updated its information in \"/server/conf/repod.conf\".",
+    "DOC_APTCLIENT_SEARCH": "Search specifically for the package in any of the repositories listed in \"/etc/apt/sources.txt\".",
+    "DOC_APTCLIENT_SHOW": "Shows all packages available in the repository. The repository must be added in the \"/etc/apt/sources.txt\" file.",
     "DOC_APTCLIENT_CHECK_UPGRADE": "Check if there is a newer version of the file in the repository.",
     "DOC_METAMAIL_DELETE": "Delete the mail that corresponds with mail_ID. Returns `true` if it was removed successfully or a `string` with the error message.",
-    "DOC_APTCLIENT_DEL_REPO": "Remove the repository address in the `/etc/apt/sources.txt` file.",
+    "DOC_APTCLIENT_DEL_REPO": "Remove the repository address in the \"/etc/apt/sources.txt\" file.",
     "DOC_COMPUTER_LOCAL_IP_EXAMPLE": [
-        "print( get_shell.host_computer.local_ip )",
+        "print( host_computer.local_ip )",
         "print( get_router.local_ip )"
     ],
     "DOC_COMPUTER_PUBLIC_IP_EXAMPLE": [
         "print(\"Public ip:\" + get_router.public_ip)",
-        "print(\"Public ip:\" + get_shell.host_computer.public_ip)"
+        "print(\"Public ip:\" + host_computer.public_ip)"
     ],
     "DOC_COMPUTER_FILE_EXAMPLE": [
         "file = get_shell.host_computer.File(\"/etc/passwd\")",
@@ -230,22 +230,17 @@
         "if shell then shell.start_terminal"
     ],
     "DOC_FTPSHELL_PUT_EXAMPLE": [
-        " hostShell = get_shell",
+        "hostShell = get_shell",
         "remoteFtpShell = hostShell.connect_service(\"120.123.12.12\", 21, \"username\", \"mypass\")",
         "remoteFtpShell.put(\"/home/user1/file.txt\", \"/home/user2/downloads\", hostShell)"
     ],
     "DOC_GENERAL_TYPEOF_EXAMPLE": [
         "myvalue = \"hello\"",
         "typeObj = typeof(myvalue)",
-        "print(\"Type is: \" + typeObj)",
-        "",
-        "//#Output: Type is: string"
+        "print(\"Type is: \" + typeObj)"
     ],
     "DOC_GENERAL_PRINT_EXAMPLE": [
-        "print(\"Hello world!\")",
-        "",
-        "//#Output",
-        "//Hello world!"
+        "print(\"Hello world!\")"
     ],
     "DOC_GENERAL_USER_INPUT_EXAMPLE": [
         "name = user_input(\"Type your name: \")",
@@ -262,38 +257,22 @@
         "import_code(\"/home/user/my_module.src\")",
         "print(\"bye\")",
         "Content of my_module.src",
-        "",
         "//my_module.src",
         "print(\"hello!\")",
-        "",
-        "//Result after compiling main.src and launch it",
-        "",
-        "//#Output",
-        "//hello!",
-        "//bye",
-        ""
+        "Result after compiling main.src and launch it"
     ],
     "DOC_GENERAL_EXIT_EXAMPLE": [
-        "print(\"Hello\")",
-        "exit(\"I finish the program\")",
-        "print(\"bye\")",
-        "",
-        "//#Output:",
-        "//Hello",
-        "//I finish the program"
+        "print (\"Hello\")",
+        "exit (\"I finish the program\")",
+        "print (\"bye\")"
     ],
     "DOC_GENERAL_COMMAND_INFO_EXAMPLE": [
         "info = command_info(\"cp_usage\")",
-        "print(info)",
-        "",
-        "//#Output: Usage: cp [path to file] [path to copy]"
+        "print(info)"
     ],
     "DOC_GENERAL_BITWISE_EXAMPLE": [
         "result = bitwise(\"&\", 12, 25)",
-        "print(\"Result: \" + result)",
-        "",
-        "//#Output",
-        "//Result: 8"
+        "print(\"Result: \" + result)"
     ],
     "DOC_GENERAL_ABS_EXAMPLE": [
         "abs(p) // 4",
@@ -609,7 +588,7 @@
         "get_shell.launch(\"/bin/cat\", \"/etc/passwd\")"
     ],
     "DOC_SHELL_SCP_EXAMPLE": [
-        " hostShell = get_shell",
+        "hostShell = get_shell",
         "remoteShell = hostShell.connect_service (\"120.123.12.12\", 22, \"username\", \"mypass\")",
         "hostShell.scp(\"/home/user1/file.txt\", \"/home/user2/downloads\", remoteShell)"
     ],
@@ -703,9 +682,7 @@
     ],
     "DOC_GENERAL_PARENT_PATH_EXAMPLE": [
         "newPath = parent_path (\"/home/user/Desktop\")",
-        "print (\"new path:\" + newPath)",
-        "",
-        "//#Output: new path: /home/user"
+        "print (\"new path:\" + newPath)"
     ],
     "DOC_ROUTER_PORT_INFO_EXAMPLE": [
         "router = get_router",
@@ -732,7 +709,7 @@
         "file = get_shell.host_computer.File(\"/home/user/test.txt\")",
         "if file.has_permission(\"r\") then",
         "   print(file.content)",
-        "else",
+        "else ",
         "   print(\"permission denied\")",
         "end if"
     ],
