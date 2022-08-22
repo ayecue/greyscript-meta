@@ -188,3 +188,5 @@ export const getDefinition = (
 export const isNative = (types: string[], property: string): boolean => {
   return !!getDefinition(types, property);
 };
+
+export { default as WebAppView } from './web/app';
