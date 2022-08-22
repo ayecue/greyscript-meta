@@ -75,6 +75,28 @@ html {
 	border: 1px groove #333;
 }
 
+.editorWrapper .run {
+    display: inline-block;
+    padding: 0.7em 1.4em;
+    margin: 1em 0.3em 0.3em 0;
+    border-radius: 0.15em;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #333;
+    background-color: #999;
+    box-shadow: inset 0 -0.6em 0 -0.35em rgb(0 0 0 / 17%);
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.editorWrapper .run:active {
+    border: 1px solid #000;
+}
+
 .content-table {
     margin: 0;
     position: fixed;
@@ -135,6 +157,57 @@ html {
     text-decoration: none;
     color: #CCC;
     cursor: pointer;
+}
+
+.basics {
+    margin: 0 0 0 235px;
+}
+
+.basics > a {
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 999;
+    display: inline-block;
+    padding: 0.7em 1.4em;
+    margin: 1em 0.3em 0.3em 0;
+    border-radius: 0.15em;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #333;
+    background-color: #999;
+    box-shadow: inset 0 -0.6em 0 -0.35em rgb(0 0 0 / 17%);
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.basics > a:active {
+    border: 1px solid #000;
+}
+
+.basics > div {
+    border: 1px groove #333;
+    padding: 10px;
+    margin: 0 0 10px;
+}
+
+.basics .editorWrapper {
+    margin: 10px 0 0;
+}
+
+.basics h2 {
+    color: #3dc9b0;
+}
+
+.collapse {
+    cursor: pointer;
+}
+
+.basics .hidden {
+    display: none;
 }
 
 .definitions {
@@ -237,26 +310,4 @@ html {
 
 .definitions .definition .description .highlight.string {
     color: #ce9178;
-}
-
-.definitions .definition .editorWrapper .run {
-    display: inline-block;
-    padding: 0.7em 1.4em;
-    margin: 1em 0.3em 0.3em 0;
-    border-radius: 0.15em;
-    box-sizing: border-box;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 400;
-    color: #333;
-    background-color: #999;
-    box-shadow: inset 0 -0.6em 0 -0.35em rgb(0 0 0 / 17%);
-    text-align: center;
-    position: relative;
-    cursor: pointer;
-    border: 1px solid transparent;
-}
-
-.definitions .definition .editorWrapper .run:active {
-    border: 1px solid #000;
 }

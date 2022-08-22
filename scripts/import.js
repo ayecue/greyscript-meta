@@ -57,7 +57,31 @@ const getMetaInfo = (description) => {
     return meta;
 }
 
+const getBasicsInfo = (description) => {
+    const segments = description.match(BLOCK_PATTERN);
+    const meta = segments.reduce((result, item) => {
+        const metaKey = (item.match(DESCRIPTOR_PATTERN).pop() || '')
+            .replace(/<\/?[^>]+>/g, '')
+            .replace(/^:|:$/g, '')
+            .trim();
+        const value = item
+            .replace(DESCRIPTOR_PATTERN, '')
+            .replace(CODE_PATTERN, '[code]$1[/code]')
+            .replace(/<\/?[^>]+>/g, '`')
+            .trim();
+
+        return {
+            ...result,
+            [metaKey]: value
+        }
+    }, {});
+
+    return meta;
+}
+
 //collect translations
+const BASICS_KEY = 'DOC_BASICS';
+
 const convertKey = (key) => {
     switch (key) {
         case 'DOC_SHELL_PUT':
@@ -72,7 +96,10 @@ const getUpdatedTranslations = (existingJSON) => {
 
     existingJSON = existingJSON || {};
 
-    Object.keys(lang).filter((item) => item.startsWith('DOC')).forEach((key) => {
+    //get api descriptions
+    Object.keys(lang).filter((item) => {
+        return item !== BASICS_KEY && item.startsWith('DOC');
+    }).forEach((key) => {
         const description = lang[key];
         const actualKey = convertKey(key);
         const exampleKey = `${actualKey}_EXAMPLE`; 
@@ -88,6 +115,9 @@ const getUpdatedTranslations = (existingJSON) => {
             console.log(`Found change in "${exampleKey}".`);
         }
     });
+
+    //get basics
+    outputJSON[BASICS_KEY] = getBasicsInfo(lang[BASICS_KEY]);
 
     return outputJSON;
 };

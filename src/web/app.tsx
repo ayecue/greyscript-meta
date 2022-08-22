@@ -3,6 +3,7 @@ import language from './grammar/language';
 import { signatures } from '../index';
 import ContentTable from './components/content-table';
 import Definitions from './components/definitions';
+import Basics from './components/basics';
 import monacoLoader from '@monaco-editor/loader';
 
 export default function() {
@@ -33,6 +34,7 @@ export default function() {
                     <li><a href="https://github.com/ayecue/greybel-vs" target='_blank'>Greybel VS</a></li>
                 </ul>
             </div>
+            <Basics monaco={monaco} />
             <Definitions signatures={signatures} filter={filter} monaco={monaco} />
         </div>
     )

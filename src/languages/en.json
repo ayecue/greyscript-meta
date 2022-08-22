@@ -754,5 +754,20 @@
         "if output == true then exit(\"Group \" + group + \" added to user \" + user)",
         "if output then exit(output)",
         "print(\"Error: the group could not be created.\")"
-    ]
+    ],
+    "DOC_BASICS": {
+        "Clean Syntax": "Put one statement per line, with no semicolons.\nCode blocks are delimited by keywords (see below). Indentation doesn't matter (except for readability).\n\nComments begin with //.\nAll variables are local by default.",
+        "if / else if / else / end if": "Use if blocks to do different things depending on some condition. \nInclude zero or more else if blocks and one optional else block.\n\n[code]if 2+2 == 4 then\n     print(\"math works!\")\nelse if pi > 3 then\n     print(\"pi is tasty\")\nelse if \"a\" < \"b\" then\n     print(\"I can sort\")\nelse\n     print(\"last chance\")\nend if[/code]",
+        "while / end while": "Use a while block to loop as long as a condition is true.\n\n[code]s = \"Spam\"\nwhile s.len < 50\n   s = s + \", spam\"\nend while\nprint(s + \" and spam!\")[/code]",
+        "for / end for": "A for loop can loop over any list, including ones easily created with the range function.\n\n[code]for i in range(10, 1)\n   print i + \"...\"\nend for\nprint(\"Liftoff!\")[/code]",
+        "break & continue": "The break statement jumps out of a while or for loop. The continue statement jumps to the top of the loop, skipping the rest of the current iteration.",
+        "Numbers": "All numbers are stored in full-precision format.\nNumbers also represent true (1) and false (0).",
+        "Operators": "`map concatenation`: +\n`get/set value with key k`: [k]\n`get/set value by identifier`: .ident",
+        "Strings": "Text is stored in strings of Unicode characters. Write strings by surrounding them with quotes.\nIf you need to include a quotation mark in the string, write it twice.\n\nprint(\"OK, \"\"Bob\"\".\")",
+        "Lists": "Create a list with square brackets. Then iterate over the list with for, or pull out individual items with a 0-based index in square brackets.\nA negative index counts from the end. Get a slice (subset) of a list with two indices, separated by a colon.\n\n[code]x = [2, 4, 6, 8]\nx[0] // 2\nx[-1] // 8\nx[1:3] // [4, 6]\nx[2]=5 // x now [2,4,5,8][/code]",
+        "Maps": "A map is a set of values associated with unique keys. Create a map with curly braces; get or set a single value with square brackets.\nKeys and values may be any type.\n\n[code]m = {1:\"one\", 2:\"two\"}\nm[1] // \"one\"\nm[2] = \"dos\"[/code]",
+        "Functions": "Create a function with function(), including parameters with optional default values.\nAssign the result to a variable. Invoke by using that variable.\n\nParentheses are needed on the call only when passing arguments. Use @ to reference a function without invoking.\n\n[code]triple = function(n=1)\n     return n*3\nend function\nprint(triple) // 3\nprint(triple(5)) // 15\nf = @triple\nprint(f(5)) // also 15[/code]",
+        "Classes & Objects": "[code]Shape = {\"sides\":0}\nSquare = new Shape\nSquare.sides = 4\nx = new Square\nx.sides // 4[/code]\n\nFunctions invoked via dot syntax get a self variable that refers to the object they were invoked on.\n\n[code]Shape.degrees = function()\n     return 180*(self.sides-2)\nend function\nx.degrees // 360[/code]",
+        "Base Functions": "`Numeric`[code]abs(x)\t\tacos(x)\t\tasin(x)\natan(x)\t\tcos(r)\t\tpi\nround(x,d)\t\trnd\t\trnd(seed)\nsign(x)\t\tsin(r)\t\tsqrt(x)\nstr(x)\t\ttan(r)\t\tchar(i)\nfloor(i)[/code]\n\n`String`[code].hasIndex(i)\t.indexOf(s)\n.len\t\t.val\n.remove(s)\t\t.lower\n.code\t\t.upper\n.lastIndexOf(i)\t.trim\n.replace(s, s)\t.split(s)[/code]\n\n`List/Map`[code].pull\t.indexOf(x)\n.indexes\t.values\n.len\t.sum\n.push(x)\t.pop\n.shuffle\t.remove(i)\n.hasIndex(i)\nrange(from, to, step)\nslice(l, from, to)[/code]\n\n`List-specific`[code].reverse\n.join(s)[/code]\n\n`Other`\n[code]print(s)[/code]"
+    }
 }

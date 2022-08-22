@@ -3,40 +3,12 @@ import { Signature, SignatureDefinition, SignatureDefinitionArg } from '../../in
 import { getDescription, getExample } from '../../languages';
 import Monaco from 'monaco-editor/esm/vs/editor/editor.api';
 import reactStringReplace from 'react-string-replace';
-
-const GREYBEL_UI_URL = 'https://greybel-ui.netlify.app/';
+import Editor from './editor';
 
 export interface DefinitionsState extends ComponentState {
     signatures: Signature[];
     filter: string;
     monaco: typeof Monaco;
-}
-
-function renderEditor(monaco: typeof Monaco, content: string, key: string) {
-    const containerRef = useRef(null);
-    const url = new URL(GREYBEL_UI_URL);
-    url.searchParams.set('c', btoa(content));
-
-    useEffect(() => {
-        const editorModel = monaco.editor.createModel(content, 'greyscript');
-
-        monaco.editor.create(containerRef.current, {
-            model: editorModel,
-            theme: 'vs-dark',
-            readOnly: true,
-            automaticLayout: true,
-            minimap: {
-                enabled: false
-            }
-        });
-    }, []);
-
-    return (
-        <div className='editorWrapper'>
-            <div className={`editor ${key}`} ref={containerRef}></div>
-            <a className='run' target='_blank' href={url.toString()}>Run code</a>
-        </div>
-    )
 }
 
 function renderArguments(args: SignatureDefinitionArg[] = []) {
@@ -120,7 +92,7 @@ function renderDefinition(type: string, methodName: string, definition: Signatur
                     {example ? (
                         <tr>
                             <td className='example label'>Example:</td>
-                            <td className='example'>{renderEditor(monaco, example.join('\n'), key)}</td>
+                            <td className='example'><Editor monaco={monaco} content={example.join('\n')} name={key} /></td>
                         </tr>
                     ) : null }
                 </tbody>
