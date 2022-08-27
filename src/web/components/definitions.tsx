@@ -9,6 +9,8 @@ export interface DefinitionsState extends ComponentState {
     signatures: Signature[];
     filter: string;
     monaco: typeof Monaco;
+    onCodeRunClick: Function;
+    onCopyClick: Function;
 }
 
 function renderArguments(args: SignatureDefinitionArg[] = []) {
@@ -61,14 +63,7 @@ function renderDescription(description: string) {
     );
 }
 
-function shareLink(type: string, methodName: string) {
-    const url = new URL(location.href);
-    url.searchParams.set('filter', `${type}.${methodName}`);
-
-    navigator.clipboard.writeText(url.toString());
-}
-
-function renderDefinition(type: string, methodName: string, definition: SignatureDefinition, monaco: typeof Monaco) {
+function renderDefinition(type: string, methodName: string, definition: SignatureDefinition, monaco: typeof Monaco, onCodeRunClick: Function, onCopyClick: Function) {
     const description = getDescription(type, methodName);
     const example = getExample(type, methodName);
     const key = `${type.toUpperCase()}_${methodName.toUpperCase()}`;
@@ -76,7 +71,7 @@ function renderDefinition(type: string, methodName: string, definition: Signatur
     return (
         <article className='definition'>
             <h3 id={key}>{methodName}</h3>
-            <a className='share' onClick={() => shareLink(type, methodName)}>copy</a>
+            <a className='share' onClick={() => onCopyClick(type, methodName)}>copy</a>
             <table>
                 <tbody>
                     <tr>
@@ -92,7 +87,7 @@ function renderDefinition(type: string, methodName: string, definition: Signatur
                     {example ? (
                         <tr>
                             <td className='example label'>Example:</td>
-                            <td className='example'><Editor monaco={monaco} content={example.join('\n')} name={key} /></td>
+                            <td className='example'><Editor monaco={monaco} content={example.join('\n')} name={key} onClick={onCodeRunClick} /></td>
                         </tr>
                     ) : null }
                 </tbody>
@@ -101,7 +96,7 @@ function renderDefinition(type: string, methodName: string, definition: Signatur
     );
 }
 
-function renderDefinitions({ signatures, filter, monaco }: DefinitionsState) {
+function renderDefinitions({ signatures, filter, monaco, onCodeRunClick, onCopyClick }: DefinitionsState) {
     const pattern = filter ? new RegExp(filter, 'i') : null;
     const items = signatures.map((item, index) => {
         let visibleItems = 0;
@@ -115,7 +110,7 @@ function renderDefinitions({ signatures, filter, monaco }: DefinitionsState) {
 
             return (
                 <li key={subIndex} className={isHidden ? 'hidden' : ''}>
-                    {renderDefinition(item.type, methodName, definition, monaco)}
+                    {renderDefinition(item.type, methodName, definition, monaco, onCodeRunClick, onCopyClick)}
                 </li>
             );
         });

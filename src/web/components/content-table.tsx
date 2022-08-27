@@ -4,9 +4,10 @@ import { Signature } from '../../meta';
 export interface ContentTableState extends ComponentState {
     signatures: Signature[];
     filter: string;
+    onClick: Function;
 }
 
-function renderSignatures({ signatures, filter }: ContentTableState) {
+function renderSignatures({ signatures, filter, onClick }: ContentTableState) {
     return (
         <ul className='first'>
             {
@@ -26,14 +27,14 @@ function renderSignatures({ signatures, filter }: ContentTableState) {
 
                     return (
                         <li key={index}>
-                            <a href={`#${item.type.toUpperCase()}`}>{item.type}</a>
+                            <a href={`#${item.type.toUpperCase()}`} onClick={() => onClick(item.type)}>{item.type}</a>
                             <ul className='second'>
                                 {
                                     intrinsics.map((methodName: string, subIndex: number) => {
                                         const key = `${item.type.toUpperCase()}_${methodName.toUpperCase()}`;
                                         return (
                                             <li key={subIndex}>
-                                                <a href={`#${key}`}>{methodName}</a>
+                                                <a href={`#${key}`} onClick={() => onClick(`${item.type}.${methodName}`)}>{methodName}</a>
                                             </li>
                                         );
                                     })
