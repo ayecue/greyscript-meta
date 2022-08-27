@@ -58,22 +58,17 @@ const getMetaInfo = (description) => {
 }
 
 const getBasicsInfo = (description) => {
-    const segments = description.match(BLOCK_PATTERN);
+    const segments = JSON.parse(description);
     const meta = segments.reduce((result, item) => {
-        const metaKey = (item.match(DESCRIPTOR_PATTERN).pop() || '')
-            .replace(/<\/?[^>]+>/g, '')
-            .replace(/^:|:$/g, '')
-            .trim();
-        const value = item
-            .replace(DESCRIPTOR_PATTERN, '')
+        const value = item.content
             .replace(CODE_PATTERN, '[code]$1[/code]')
             .replace(/<\/?[^>]+>/g, '`')
             .trim();
 
         return {
             ...result,
-            [metaKey]: value
-        }
+            [item.title]: value
+        };
     }, {});
 
     return meta;
