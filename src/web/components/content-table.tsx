@@ -1,10 +1,11 @@
-import React, { ComponentState } from 'react';
+import React, { ComponentState, useState } from 'react';
 import { Signature } from '../../meta';
 
 export interface ContentTableState extends ComponentState {
     signatures: Signature[];
     filter: string;
     onClick: Function;
+    hidden?: boolean;
 }
 
 function renderSignatures({ signatures, filter, onClick }: ContentTableState) {
@@ -49,9 +50,13 @@ function renderSignatures({ signatures, filter, onClick }: ContentTableState) {
 };
 
 export default function(state: ContentTableState) {
+    const initHidden = state.hidden || true;
+    const [hidden, setHidden] = useState<boolean>(initHidden);
+
     return (
         <div className='content-table'>
-            {renderSignatures(state)}        
+            <a className={`collapse material-icons ${!hidden ? 'active' : ''}`} onClick={() => setHidden(hidden ? false : true)}></a>
+            <div className={hidden ? 'hidden' : ''}>{renderSignatures(state)}</div>       
         </div>
     );
 }

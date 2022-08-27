@@ -11,20 +11,11 @@ html {
     -moz-appearance: none;
     appearance: none;
     background: #f2f2f2;
-    padding: 12px;
+    padding: 12px 2%;
     border-radius: 3px;
-    position: fixed;
-    left: 0;
-    top: 0;
     height: 9px;
-    width: 200px;
+    width: 96%;
     font-size: 14px;
-    margin: 10px;
-    z-index: 999;
-}
-
-.readme {
-    margin: 0 0 0 235px;
 }
 
 .readme h1 {
@@ -48,25 +39,7 @@ html {
 }
 
 .readme a {
-    display: inline-block;
-    padding: 0.7em 1.4em;
-    margin: 1em 0.3em 0.3em 0;
-    border-radius: 0.15em;
-    box-sizing: border-box;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 400;
-    color: #333;
-    background-color: #999;
-    box-shadow: inset 0 -0.6em 0 -0.35em rgb(0 0 0 / 17%);
-    text-align: center;
-    position: relative;
-    cursor: pointer;
-    border: 1px solid transparent;
-}
-
-.readme a:active {
-    border: 1px solid #000;
+    display: none;
 }
 
 .editor {
@@ -98,31 +71,56 @@ html {
 }
 
 .content-table {
-    margin: 0;
-    position: fixed;
-    top: 55px;
-    bottom: 0;
+    overflow: hidden;
+    max-height: 100px;
+    margin: 10px 0 0;
+    min-height: 34px;
+    position: relative;
+}
+
+.content-table .collapse {
+    font-size: 30px;
+    border: 1px solid;
+    position: absolute;
+    top: 0;
     left: 0;
-    position: fixed;
-    width: 235px;
+}
+
+.content-table .collapse:before {
+    content: "\e5d2";
+}
+
+.content-table .collapse.active {
+    color: #ce9178;
+}
+
+.content-table > div {
+    margin: 0 0 0 36px;
     overflow: auto;
-    -ms-overflow-style: auto;
+    height: 100px;
     scrollbar-color: #CCC #333;
     scrollbar-width: thin;
 }
 
-.content-table::-webkit-scrollbar-thumb {
+.content-table::-webkit-scrollbar-thumb, .content-table > div::-webkit-scrollbar-thumb {
     background-color: #CCC;
 }
-.content-table::-webkit-scrollbar-track {
+
+.content-table::-webkit-scrollbar-thumb, .content-table > div::-webkit-scrollbar-track {
     background-color: #333;
 }
-.content-table::-webkit-scrollbar-corner {
+
+.content-table::-webkit-scrollbar-thumb, .content-table > div::-webkit-scrollbar-corner {
     background-color: #333;
 }
-.content-table::-webkit-scrollbar {
+
+.content-table::-webkit-scrollbar-thumb, .content-table > div::-webkit-scrollbar {
     width: 0.5rem;
     height: 0.5rem;
+}
+
+.content-table > .hidden {
+    display: none;
 }
 
 .content-table ul {
@@ -140,6 +138,10 @@ html {
     margin: 0 0 0 10px;
 }
 
+.content-table .first > li {
+    clear: both;
+}
+
 .content-table .first > li > a {
     color: #3dc9b0;
     text-transform: capitalize;
@@ -149,18 +151,32 @@ html {
     margin: 0 0 10px 10px;
 }
 
+.content-table .second > li {
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+.content-table .second > li:first-child:before {
+    content: '';
+}
+
+.content-table .second > li:before {
+    content: '-';
+}
+
 .content-table .second > li > a {
     color: #74b0df;
+    margin: 0 0 0 10px;
+}
+
+.content-table .second > li:first-child > a {
+    margin: 0;
 }
 
 .content-table a {
     text-decoration: none;
     color: #CCC;
     cursor: pointer;
-}
-
-.basics {
-    margin: 0 0 0 235px;
 }
 
 .basics > a {
@@ -208,10 +224,6 @@ html {
 
 .basics .hidden {
     display: none;
-}
-
-.definitions {
-    margin: 0 0 0 235px;
 }
 
 .definitions ul, .definitions p {
@@ -310,4 +322,83 @@ html {
 
 .definitions .definition .description .highlight.string {
     color: #ce9178;
+}
+
+@media screen and (min-width: 760px) {
+    #root > div > input {
+        position: fixed;
+        left: 0;
+        top: 0;
+        padding: 12px;
+        height: 9px;
+        width: 200px;
+        margin: 10px;
+        z-index: 999;
+    }
+
+    .readme a {
+        display: inline-block;
+        padding: 0.7em 1.4em;
+        margin: 1em 0.3em 0.3em 0;
+        border-radius: 0.15em;
+        box-sizing: border-box;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: #333;
+        background-color: #999;
+        box-shadow: inset 0 -0.6em 0 -0.35em rgb(0 0 0 / 17%);
+        text-align: center;
+        position: relative;
+        cursor: pointer;
+        border: 1px solid transparent;
+    }
+    
+    .readme a:active {
+        border: 1px solid #000;
+    }
+
+    .content-wrapper {
+        margin: 0 0 0 235px;
+    }
+
+    .content-table {
+        margin: 0;
+        max-height: none;
+        top: 55px;
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        width: 235px;
+        overflow: auto;
+        -ms-overflow-style: auto;
+        scrollbar-color: #CCC #333;
+        scrollbar-width: thin;
+    }
+
+    .content-table .collapse {
+        display: none;
+    }
+
+    .content-table > div {
+        margin: 0;
+        height: auto;
+    }
+
+    .content-table > .hidden {
+        display: block;
+    }
+
+    .content-table .second > li {
+        float: none;
+        margin: 0;
+    }
+
+    .content-table .second > li:before {
+        content: '';
+    }
+
+    .content-table .second > li > a {
+        margin: 0;
+    }
 }

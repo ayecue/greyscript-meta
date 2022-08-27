@@ -45,20 +45,22 @@ export default function({ filterInit, externalLinks, onSidebarClick = () => {}, 
         <div>
             <input type='text' onChange={(ev) => setFilter(ev.target.value)} value={filter} />
             <ContentTable signatures={signatures} filter={filter} onClick={onSidebarClick} />
-            <div className='readme'>
-                <h1>GreyScript API (unofficial)</h1>
-                <ul>
-                    {
-                        externalLinks.map((externalLink: AppExternalLink, index) => {
-                            return (
-                                <li key={index}><a href={externalLink.href} target='_blank'>{externalLink.label}</a></li>
-                            )
-                        })
-                    }
-                </ul>
+            <div className='content-wrapper'>
+                <div className='readme'>
+                    <h1>GreyScript API (unofficial)</h1>
+                    <ul>
+                        {
+                            externalLinks.map((externalLink: AppExternalLink, index) => {
+                                return (
+                                    <li key={index}><a href={externalLink.href} target='_blank'>{externalLink.label}</a></li>
+                                )
+                            })
+                        }
+                    </ul>
+                </div>
+                <Basics monaco={monaco} onCodeRunClick={onCodeRunClick} />
+                <Definitions signatures={signatures} filter={filter} monaco={monaco} onCodeRunClick={onCodeRunClick} onCopyClick={onCopyClick} />
             </div>
-            <Basics monaco={monaco} onCodeRunClick={onCodeRunClick} />
-            <Definitions signatures={signatures} filter={filter} monaco={monaco} onCodeRunClick={onCodeRunClick} onCopyClick={onCopyClick} />
         </div>
     )
 }
