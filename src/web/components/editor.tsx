@@ -7,9 +7,10 @@ export interface EditorState extends ComponentState {
     content: string;
     monaco: typeof Monaco;
     name?: string;
+    onClick: Function;
 }
 
-export default function({ monaco, content, name }: EditorState) {
+export default function({ monaco, content, name, onClick }: EditorState) {
     const containerRef = useRef(null);
     const url = new URL(GREYBEL_UI_URL);
     url.searchParams.set('c', btoa(content));
@@ -31,7 +32,7 @@ export default function({ monaco, content, name }: EditorState) {
     return (
         <div className='editorWrapper'>
             <div className={`editor ${name}`} ref={containerRef}></div>
-            <a className='run' target='_blank' href={url.toString()}>Run code</a>
+            <a className='run' target='_blank' href={url.toString()} onClick={() => onClick(content, name)}>Run code</a>
         </div>
     )
 }

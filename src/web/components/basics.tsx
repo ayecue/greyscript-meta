@@ -6,10 +6,11 @@ import Editor from './editor';
 
 export interface BasicsState extends ComponentState {
     monaco: typeof Monaco;
+    onCodeRunClick: Function;
     hidden?: boolean;
 }
 
-function renderBasics({ monaco }: BasicsState) {
+function renderBasics({ monaco, onCodeRunClick }: BasicsState) {
     const file = getLanguageFile();
     const basics = file['DOC_BASICS'];
     const items = Object.entries(basics).map(([title, content], index) => {
@@ -22,7 +23,7 @@ function renderBasics({ monaco }: BasicsState) {
                             return <span key={index} className='highlight string'>{match.slice(1, -1)}</span>;
                         }
 
-                        return <Editor monaco={monaco} content={match.slice(6, -7)} key={index} />;
+                        return <Editor monaco={monaco} content={match.slice(6, -7)} key={index} onClick={onCodeRunClick} />;
                     })}
                 </article>
             </div>
