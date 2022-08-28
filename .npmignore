@@ -10,7 +10,6 @@ dist/web.js
 dist/web.d.ts
 dist/web.bundled.js
 dist/index.html
-dist/index.css
 dist/netlify.toml
 .netlify
 netlify.toml
