@@ -43,8 +43,10 @@ export default function({ filterInit, externalLinks, onSidebarClick = () => {}, 
 
     return (
         <div>
-            <input type='text' onChange={(ev) => setFilter(ev.target.value)} value={filter} />
-            <ContentTable signatures={signatures} filter={filter} onClick={onSidebarClick} />
+            <div className="navigation">
+                <input type='text' onChange={(ev) => setFilter(ev.target.value)} value={filter} />
+                <ContentTable signatures={signatures} filter={filter} onClick={onSidebarClick} />
+            </div>
             <div className='content-wrapper'>
                 <div className='readme'>
                     <h1>GreyScript API (unofficial)</h1>

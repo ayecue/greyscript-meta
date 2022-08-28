@@ -4,7 +4,17 @@ html {
     font-family: monospace;
 }
 
-#root > div > input {
+.navigation {
+    background: #1e1e1e;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    z-index: 999;
+}
+
+.navigation > input {
     border: none;
     -webkit-appearance: none;
     -ms-appearance: none;
@@ -16,6 +26,10 @@ html {
     height: 9px;
     width: 96%;
     font-size: 14px;
+}
+
+.readme {
+    margin: 110px 0 0;
 }
 
 .readme h1 {
@@ -156,20 +170,20 @@ html {
     margin: 0 10px 0 0;
 }
 
-.content-table .second > li:first-child:before {
+.content-table .second > li:last-child:after {
     content: '';
 }
 
-.content-table .second > li:before {
+.content-table .second > li:after {
     content: '-';
 }
 
 .content-table .second > li > a {
     color: #74b0df;
-    margin: 0 0 0 10px;
+    margin: 0 10px 0 0;
 }
 
-.content-table .second > li:first-child > a {
+.content-table .second > li:last-child > a {
     margin: 0;
 }
 
@@ -325,7 +339,12 @@ html {
 }
 
 @media screen and (min-width: 760px) {
-    #root > div > input {
+    .navigation {
+        position: relative;
+        padding: 0;
+    }
+
+    .navigation > input {
         position: fixed;
         left: 0;
         top: 0;
@@ -334,6 +353,10 @@ html {
         width: 200px;
         margin: 10px;
         z-index: 999;
+    }
+
+    .readme {
+        margin: 0;
     }
 
     .readme a {
@@ -394,7 +417,7 @@ html {
         margin: 0;
     }
 
-    .content-table .second > li:before {
+    .content-table .second > li:after {
         content: '';
     }
 

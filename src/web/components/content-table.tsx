@@ -1,6 +1,26 @@
 import React, { ComponentState, useState } from 'react';
 import { Signature } from '../../meta';
 
+export const SCROLL_OFFSET_MEDIA_QUERY = '(min-width: 760px)';
+export const DEFAULT_SCROLL_OFFSET = 10;
+export const SCROLL_OFFSET_ON_MATCHING_MEDIA_QUERY = 175;
+
+export const scrollTo = (id: string) => {
+    const element = document.getElementById(id);
+
+    if (!element) return;
+
+    const { matches } = window.matchMedia(SCROLL_OFFSET_MEDIA_QUERY);
+    const offset = matches ? DEFAULT_SCROLL_OFFSET : SCROLL_OFFSET_ON_MATCHING_MEDIA_QUERY;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+   });
+};
+
 export interface ContentTableState extends ComponentState {
     signatures: Signature[];
     filter: string;
@@ -28,14 +48,20 @@ function renderSignatures({ signatures, filter, onClick }: ContentTableState) {
 
                     return (
                         <li key={index}>
-                            <a href={`#${item.type.toUpperCase()}`} onClick={() => onClick(item.type)}>{item.type}</a>
+                            <a onClick={() => {
+                                scrollTo(item.type.toUpperCase());
+                                onClick(item.type);
+                            }}>{item.type}</a>
                             <ul className='second'>
                                 {
                                     intrinsics.map((methodName: string, subIndex: number) => {
                                         const key = `${item.type.toUpperCase()}_${methodName.toUpperCase()}`;
                                         return (
                                             <li key={subIndex}>
-                                                <a href={`#${key}`} onClick={() => onClick(`${item.type}.${methodName}`)}>{methodName}</a>
+                                                <a onClick={() => {
+                                                    scrollTo(key);
+                                                    onClick(`${item.type}.${methodName}`);
+                                                }}>{methodName}</a>
                                             </li>
                                         );
                                     })
