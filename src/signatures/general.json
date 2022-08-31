@@ -15,6 +15,32 @@
             "null"
         ]
     },
+    "parent_path": {
+        "arguments": [
+            {
+                "label": "directory",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "hasIndex": {
+        "arguments": [
+            {
+                "label": "value",
+                "type": "any"
+            },
+            {
+                "label": "index",
+                "type": "any"
+            }
+        ],
+        "returns": [
+            "boolean"
+        ]
+    },
     "typeof": {
         "arguments": [
             {
@@ -107,6 +133,181 @@
         "returns": [
             "shell",
             "null"
+        ]
+    },
+    "indexes": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "any"
+            }
+        ],
+        "returns": [
+            "list:any"
+        ]
+    },
+    "values": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "any"
+            }
+        ],
+        "returns": [
+            "list:any"
+        ]
+    },
+    "indexOf": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "any"
+            },
+            {
+                "label": "value",
+                "type": "any"
+            },
+            {
+                "label": "after",
+                "type": "any"
+            }
+        ],
+        "returns": [
+            "any"
+        ]
+    },
+    "len": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "any"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "shuffle": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "any"
+            }
+        ],
+        "returns": [
+            "null"
+        ]
+    },
+    "val": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "any"
+            }
+        ],
+        "returns": [
+            "number",
+            "null"
+        ]
+    },
+    "lower": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "upper": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "sum": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "any"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "pop": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "any"
+            }
+        ],
+        "returns": [
+            "any"
+        ]
+    },
+    "pull": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "any"
+            }
+        ],
+        "returns": [
+            "any"
+        ]
+    },
+    "push": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "any"
+            },
+            {
+                "label": "value",
+                "type": "any"
+            }
+        ],
+        "returns": [
+            "any"
+        ]
+    },
+    "sort": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "any"
+            },
+            {
+                "label": "byKey",
+                "type": "any"
+            }
+        ],
+        "returns": [
+            "any"
+        ]
+    },
+    "remove": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "any"
+            },
+            {
+                "label": "key",
+                "type": "any"
+            }
+        ],
+        "returns": [
+            "any"
         ]
     },
     "user_input": {

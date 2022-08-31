@@ -100,8 +100,9 @@ function renderDefinitions({ signatures, filter, monaco, onCodeRunClick, onCopyC
     const pattern = filter ? new RegExp(filter, 'i') : null;
     const items = signatures.map((item, index) => {
         let visibleItems = 0;
-        const intrinsics = Object.entries(item.definitions);
-        const items = intrinsics.map(([methodName, definition], subIndex: number) => {
+        const intrinsicKeys = Object.keys(item.definitions).sort();
+        const items = intrinsicKeys.map((methodName: string, subIndex: number) => {
+            const definition = item.definitions[methodName];
             const isHidden = pattern && !pattern.test(`${item.type}.${methodName}`);
 
             if (!isHidden) {

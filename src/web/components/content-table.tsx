@@ -33,7 +33,7 @@ function renderSignatures({ signatures, filter, onClick }: ContentTableState) {
         <ul className='first'>
             {
                 signatures.map((item, index) => {
-                    let intrinsics = Object.keys(item.definitions);
+                    let intrinsics = Object.keys(item.definitions).sort();
 
                     if (filter !== '') {
                         intrinsics = intrinsics.filter((methodName) => {
