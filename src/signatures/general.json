@@ -12,6 +12,7 @@
         ],
         "returns": [
             "metaMail",
+            "string",
             "null"
         ]
     },
@@ -143,7 +144,8 @@
             }
         ],
         "returns": [
-            "list:any"
+            "list:any",
+            "null"
         ]
     },
     "values": {
@@ -184,7 +186,8 @@
             }
         ],
         "returns": [
-            "number"
+            "number",
+            "null"
         ]
     },
     "shuffle": {

@@ -8,7 +8,8 @@
         ],
         "returns": [
             "boolean",
-            "number"
+            "number",
+            "null"
         ]
     },
     "get_cycle_mining": {
@@ -31,6 +32,7 @@
             }
         ],
         "returns": [
+            "null",
             "boolean",
             "string"
         ]
@@ -51,6 +53,7 @@
             }
         ],
         "returns": [
+            "null",
             "string",
             "boolean"
         ]
@@ -87,6 +90,7 @@
             }
         ],
         "returns": [
+            "null",
             "boolean",
             "string",
             "subWallet"
@@ -108,7 +112,8 @@
         ],
         "returns": [
             "boolean",
-            "string"
+            "string",
+            "null"
         ]
     },
     "get_address": {

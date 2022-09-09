@@ -12,7 +12,8 @@
             }
         ],
         "returns": [
-            "string"
+            "string",
+            "null"
         ]
     },
     "copy": {
@@ -59,12 +60,18 @@
             }
         ],
         "returns": [
-            "string"
+            "string",
+            "boolean"
         ]
     },
     "path": {
         "returns": [
             "string"
+        ]
+    },
+    "is_folder": {
+        "returns": [
+            "boolean"
         ]
     },
     "parent": {
@@ -76,6 +83,11 @@
     "name": {
         "returns": [
             "string"
+        ]
+    },
+    "allow_import": {
+        "returns": [
+            "boolean"
         ]
     },
     "get_content": {
@@ -93,6 +105,7 @@
         ],
         "returns": [
             "string",
+            "boolean",
             "null"
         ]
     },
@@ -150,7 +163,9 @@
             }
         ],
         "returns": [
-            "boolean"
+            "boolean",
+            "string",
+            "null"
         ]
     },
     "group": {
@@ -171,17 +186,13 @@
             }
         ],
         "returns": [
-            "boolean"
+            "string",
+            "null"
         ]
     },
     "size": {
         "returns": [
-            "number"
-        ]
-    },
-    "meta_info": {
-        "returns": [
-            "null"
+            "string"
         ]
     }
 }

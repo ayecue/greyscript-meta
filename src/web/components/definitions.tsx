@@ -13,6 +13,16 @@ export interface DefinitionsState extends ComponentState {
     onCopyClick: Function;
 }
 
+function renderArgumentLabel(arg: SignatureDefinitionArg) {
+    return <span className='label'>{arg.label}{arg.opt ? '?' : ''}</span>;
+}
+
+function renderArgumentDefault(arg: SignatureDefinitionArg) {
+    if (arg.default === undefined) return;
+
+    return <span className='default'> = <span className={arg.type}>{arg.default}</span></span>;
+}
+
 function renderArguments(args: SignatureDefinitionArg[] = []) {
     if (args.length === 0) return;
 
@@ -21,7 +31,8 @@ function renderArguments(args: SignatureDefinitionArg[] = []) {
             {args.map((item: SignatureDefinitionArg, index: number) => {
                 return (
                     <span key={index}>
-                        <span className='label'>{item.label}</span>: <span className='type'>{item.type}</span>
+                        {renderArgumentLabel(item)}: <span className='type'>{item.type}</span>
+                        {renderArgumentDefault(item)}
                         { index < args.length - 1 ? ', ' : '' }
                     </span>
                 );

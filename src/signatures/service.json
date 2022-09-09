@@ -1,7 +1,8 @@
 {
     "install_service": {
         "returns": [
-            "boolean"
+            "boolean",
+            "string"
         ]
     },
     "start_service": {
@@ -13,7 +14,8 @@
     },
     "stop_service": {
         "returns": [
-            "boolean"
+            "boolean",
+            "string"
         ]
     }
 }

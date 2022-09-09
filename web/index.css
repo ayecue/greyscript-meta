@@ -321,6 +321,18 @@ html {
     color: #3dc9b0;
 }
 
+.definitions .definition .signature .args .default .string {
+    color: #ce9178;
+}
+
+.definitions .definition .signature .args .default .number {
+    color: #b5cea8;
+}
+
+.definitions .definition .signature .args .default .boolean {
+    color: #569cd6;
+}
+
 .definitions .definition .signature .returns .type {
     color: #3dc9b0;
 }

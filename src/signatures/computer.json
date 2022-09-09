@@ -34,6 +34,7 @@
             }
         ],
         "returns": [
+            "string",
             "boolean",
             "null"
         ]
@@ -61,12 +62,12 @@
     },
     "show_procs": {
         "returns": [
-            "list:string"
+            "string"
         ]
     },
     "network_devices": {
         "returns": [
-            "list:string"
+            "string"
         ]
     },
     "change_password": {
@@ -181,13 +182,14 @@
             }
         ],
         "returns": [
+            "null",
             "list:string"
         ]
     },
     "connect_wifi": {
         "arguments": [
             {
-                "label": "interface",
+                "label": "netDevice",
                 "type": "string"
             },
             {
@@ -212,7 +214,7 @@
     "connect_ethernet": {
         "arguments": [
             {
-                "label": "interface",
+                "label": "netDevice",
                 "type": "string"
             },
             {

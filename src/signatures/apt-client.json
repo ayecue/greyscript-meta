@@ -18,12 +18,14 @@
             }
         ],
         "returns": [
-            "string"
+            "string",
+            "null"
         ]
     },
     "update": {
         "returns": [
-            "string"
+            "string",
+            "boolean"
         ]
     },
     "add_repo": {
@@ -35,11 +37,12 @@
             {
                 "label": "port",
                 "type": "number",
-                "opt": true
+                "default": "1542.0"
             }
         ],
         "returns": [
-            "string"
+            "string",
+            "null"
         ]
     },
     "del_repo": {
@@ -50,7 +53,8 @@
             }
         ],
         "returns": [
-            "string"
+            "string",
+            "null"
         ]
     },
     "install": {
@@ -77,7 +81,8 @@
             }
         ],
         "returns": [
-            "string"
+            "string",
+            "boolean"
         ]
     }
 }

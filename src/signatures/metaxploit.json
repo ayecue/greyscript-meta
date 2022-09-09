@@ -35,21 +35,24 @@
             },
             {
                 "label": "port",
-                "type": "number"
+                "type": "number",
+                "default": "1222"
             },
             {
                 "label": "processName",
                 "type": "string",
-                "opt": true
+                "default": "\"rshell_client\""
             }
         ],
         "returns": [
-            "null"
+            "string",
+            "boolean"
         ]
     },
     "rshell_server": {
         "arguments": [],
         "returns": [
+            "string",
             "list:shell"
         ]
     },
@@ -90,7 +93,8 @@
             }
         ],
         "returns": [
-            "string"
+            "string",
+            "null"
         ]
     }
 }

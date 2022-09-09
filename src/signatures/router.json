@@ -7,6 +7,8 @@
             }
         ],
         "returns": [
+            "null",
+            "string",
             "list:port"
         ]
     },
@@ -27,7 +29,7 @@
     },
     "firewall_rules": {
         "returns": [
-            "string"
+            "list:string"
         ]
     },
     "kernel_version": {

@@ -13,15 +13,15 @@
     "build": {
         "arguments": [
             {
-                "label": "srcpath",
+                "label": "pathSource",
                 "type": "string"
             },
             {
-                "label": "buildpath",
+                "label": "pathBinary",
                 "type": "string"
             },
             {
-                "label": "importsEnabled",
+                "label": "allowImport",
                 "type": "boolean",
                 "opt": true
             }
@@ -51,11 +51,12 @@
             {
                 "label": "service",
                 "type": "string",
-                "opt": true
+                "default": "\"ssh\""
             }
         ],
         "returns": [
             "shell",
+            "string",
             "null"
         ]
     },
@@ -72,8 +73,8 @@
             }
         ],
         "returns": [
-            "null",
-            "number"
+            "string",
+            "boolean"
         ]
     },
     "ping": {
@@ -85,6 +86,7 @@
             }
         ],
         "returns": [
+            "string",
             "boolean"
         ]
     },

@@ -18,12 +18,12 @@
                 "type": "string"
             },
             {
-                "label": "interface",
+                "label": "device",
                 "type": "string"
             }
         ],
         "returns": [
-            "number",
+            "boolean",
             "string"
         ]
     },

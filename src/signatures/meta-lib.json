@@ -17,6 +17,7 @@
         ],
         "returns": [
             "null",
+            "boolean",
             "string",
             "number",
             "shell",
