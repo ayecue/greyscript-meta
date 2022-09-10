@@ -13,7 +13,8 @@ export interface EditorState extends ComponentState {
 export default function({ monaco, content, name, onClick }: EditorState) {
     const containerRef = useRef(null);
     const url = new URL(GREYBEL_UI_URL);
-    url.searchParams.set('c', btoa(content));
+    const encoded = encodeURIComponent(content);
+    url.searchParams.set('c', btoa(encoded));
 
     useEffect(() => {
         const editorModel = monaco.editor.createModel(content, 'greyscript');
