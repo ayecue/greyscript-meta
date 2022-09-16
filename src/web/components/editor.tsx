@@ -34,7 +34,7 @@ export default function({ monaco, content, contentWithRef, name, onClick }: Edit
     return (
         <div className='editorWrapper'>
             <div className={`editor ${name}`} ref={containerRef}></div>
-            <a className='run' target='_blank' href={url.toString()} onClick={() => onClick(content, name)}>Run code</a>
+            <a className='run' target='_blank' href={url.toString()} onClick={() => onClick(contentWithRef || content, name)}>Run code</a>
         </div>
     )
 }
