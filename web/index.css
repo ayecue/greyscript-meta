@@ -40,8 +40,8 @@ html {
 .readme ul {
     margin: 0;
     padding: 0;
-    right: 0;
-    top: 0;
+    right: 5px;
+    top: 5px;
     position: fixed;
     z-index: 999;
 }
@@ -195,13 +195,13 @@ html {
 }
 
 .basics > a {
-    right: 0;
-    bottom: 0;
+    right: 5px;
+    bottom: 5px;
     position: fixed;
     z-index: 999;
     display: inline-block;
     padding: 0.7em 1.4em;
-    margin: 1em 0.3em 0.3em 0;
+    margin: 0;
     border-radius: 0.15em;
     box-sizing: border-box;
     text-decoration: none;
@@ -375,7 +375,7 @@ html {
     .readme a {
         display: inline-block;
         padding: 0.7em 1.4em;
-        margin: 1em 0.3em 0.3em 0;
+        margin: 0 0 0 0.3em;
         border-radius: 0.15em;
         box-sizing: border-box;
         text-decoration: none;
