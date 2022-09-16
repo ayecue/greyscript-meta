@@ -33,6 +33,7 @@ html {
 }
 
 .readme h1 {
+    margin: 0.67em 10px;
 	color: #ce9178;
 }
 
