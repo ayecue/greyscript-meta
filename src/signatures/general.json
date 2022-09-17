@@ -124,11 +124,13 @@
         "arguments": [
             {
                 "label": "user",
-                "type": "string"
+                "type": "string",
+                "opt": true
             },
             {
                 "label": "pass",
-                "type": "string"
+                "type": "string",
+                "opt": true
             }
         ],
         "returns": [

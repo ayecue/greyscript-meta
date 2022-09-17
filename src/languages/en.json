@@ -80,10 +80,10 @@
     "DOC_GENERAL_CHAR": "Returns the unicode character (`string`) with code point `int`.",
     "DOC_GENERAL_SIN": "Returns the sine of rad (`number` radians).",
     "DOC_GENERAL_FLOOR": "Returns a `number` floored to the base integer.",
-    "DOC_GENERAL_RANGE": "Returns a `list object` containing values from start through to end, in increments of inc. Takes a starting `number`, optional end (`number`) and optional inc (`number`). If inc is not defined, the increment defaults to 1 (if end &gt; start) or otherwise to -1.",
+    "DOC_GENERAL_RANGE": "Returns a `list object` containing values from start through to end, in increments of inc. Takes a starting `number`, optional end (`number`) and optional inc (`number`). If inc is not defined, the increment defaults to 1 (if end > start) or otherwise to -1.",
     "DOC_GENERAL_ROUND": "Returns a `number` rounded to d decimal places.",
     "DOC_GENERAL_RND": "Returns a random `float` between 0 and 1. If seed `number` is provided, this seeds the random number generator with the given value.",
-    "DOC_GENERAL_SIGN": "Returns the sign of num, either `-1` (if num &lt; 0), `0` (if num == 0), or `1` if num &gt; 0.",
+    "DOC_GENERAL_SIGN": "Returns the sign of num, either `-1` (if num < 0), `0` (if num == 0), or `1` if num > 0.",
     "DOC_GENERAL_SQRT": "Returns the square root of num (`number`).",
     "DOC_GENERAL_STR": "Returns the `string` value of n.",
     "DOC_GENERAL_CEIL": "Returns a `number` raised to the next or equal integer.",
@@ -185,9 +185,10 @@
     "DOC_METAMAIL_DELETE": "Delete the mail that corresponds with mail_ID. Returns `true` if it was removed successfully or a `string` with the error message.",
     "DOC_APTCLIENT_DEL_REPO": "Remove the repository address in the \"/etc/apt/sources.txt\" file.",
     "DOC_COMPUTER_LOCAL_IP_EXAMPLE": [
-        "print( host_computer.local_ip )"
+        "print(host_computer.local_ip)"
     ],
     "DOC_COMPUTER_PUBLIC_IP_EXAMPLE": [
+        "host_computer = get_shell.host_computer",
         "print(\"Public ip:\" + host_computer.public_ip)"
     ],
     "DOC_COMPUTER_FILE_EXAMPLE": [
@@ -271,6 +272,12 @@
     "DOC_GENERAL_BITWISE_EXAMPLE": [
         "result = bitwise(\"&\", 12, 25)",
         "print(\"Result: \" + result)"
+    ],
+    "DOC_NUMBER_EXAMPLE_REFERENCE": [
+        "p = 4",
+        "q = 0.5",
+        "r = 3.142",
+        "s = -1"
     ],
     "DOC_GENERAL_ABS_EXAMPLE": [
         "abs(p) // 4",
@@ -401,6 +408,11 @@
         "wait(0.2)",
         "print(time)"
     ],
+    "DOC_LIST_EXAMPLE_REFERENCE": [
+        "nums = [2, 4, 6, 8]",
+        "fruits = [\"apple\", \"orange\", \"banana\", \"pineapple\"]",
+        "mixed = [5, \"six\", [7, 8, 9], { 10: \"ten\" }, fruits]"
+    ],
     "DOC_LIST_REMOVE_EXAMPLE": [
         "companies.remove(1)",
         "print(companies) // [\"Google\", \"Facebook\", \"Apple\", \"Microsoft\"]",
@@ -510,6 +522,9 @@
     "DOC_LIST_VALUES_EXAMPLE": [
         "companies.values // [\"Google\", \"Twitter\", \"Facebook\", \"Apple\", \"Microsoft\", \"Amazon\"]"
     ],
+    "DOC_MAP_EXAMPLE_REFERENCE": [
+        "map = {0: \"zero\", \"1\": \"one\", \"two\": 2, \"more\": [3, 4, 5]}"
+    ],
     "DOC_MAP_REMOVE_EXAMPLE": [
         "map.remove(0)",
         "map.remove(\"two\")",
@@ -589,6 +604,9 @@
         "hostShell = get_shell",
         "remoteShell = hostShell.connect_service (\"120.123.12.12\", 22, \"username\", \"mypass\")",
         "hostShell.scp(\"/home/user1/file.txt\", \"/home/user2/downloads\", remoteShell)"
+    ],
+    "DOC_STRING_EXAMPLE_REFERENCE": [
+        "title = \"Saving Private Ryan\""
     ],
     "DOC_STRING_REMOVE_EXAMPLE": [
         "title.remove(\"nope\") // \"Saving Private Ryan\" (unaltered)",
@@ -679,8 +697,8 @@
         "print(info)"
     ],
     "DOC_GENERAL_PARENT_PATH_EXAMPLE": [
-        "newPath = parent_path (\"/home/user/Desktop\")",
-        "print (\"new path:\" + newPath)"
+        "newPath = parent_path(\"/home/user/Desktop\")",
+        "print(\"new path:\" + newPath)"
     ],
     "DOC_ROUTER_PORT_INFO_EXAMPLE": [
         "router = get_router",
