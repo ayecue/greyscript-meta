@@ -328,7 +328,7 @@
             },
             {
                 "label": "anyKey",
-                "type": "string",
+                "type": "boolean",
                 "opt": true
             }
         ],
