@@ -759,5 +759,95 @@
         "returns": [
             "number"
         ]
+    },
+    "bitAnd": {
+        "arguments": [
+            {
+                "label": "a",
+                "type": "number"
+            },
+            {
+                "label": "b",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "bitOr": {
+        "arguments": [
+            {
+                "label": "a",
+                "type": "number"
+            },
+            {
+                "label": "b",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "bitXor": {
+        "arguments": [
+            {
+                "label": "a",
+                "type": "number"
+            },
+            {
+                "label": "b",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "log": {
+        "arguments": [
+            {
+                "label": "value",
+                "type": "number"
+            },
+            {
+                "label": "base",
+                "type": "number",
+                "default": "10"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "yield": {
+        "returns": [
+            "null"
+        ]
+    },
+    "get_custom_object": {
+        "returns": [
+            "map:any"
+        ]
+    },
+    "insert": {
+        "arguments": [
+            {
+                "label": "object",
+                "value": "any"
+            },
+            {
+                "label": "index",
+                "type": "number"
+            },
+            {
+                "label": "value",
+                "value": "any"
+            }
+        ],
+        "returns": [
+            "any"
+        ]
     }
 }
