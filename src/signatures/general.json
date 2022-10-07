@@ -813,11 +813,22 @@
             },
             {
                 "label": "base",
-                "type": "number"
+                "type": "number",
+                "default": "10"
             }
         ],
         "returns": [
             "number"
+        ]
+    },
+    "yield": {
+        "returns": [
+            "null"
+        ]
+    },
+    "get_custom_object": {
+        "returns": [
+            "map:any"
         ]
     }
 }
