@@ -29,7 +29,7 @@
             },
             {
                 "label": "value",
-                "value": "string"
+                "type": "string"
             }
         ],
         "returns": [

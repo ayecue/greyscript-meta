@@ -168,7 +168,7 @@
     "DOC_STRING_LEN": "Returns length of string (`int`).",
     "DOC_STRING_LOWER": "Returns str in lowercase (`string`).",
     "DOC_STRING_UPPER": "Returns str in uppercase (`string`).",
-    "DOC_STRING_INSERT": "Returns a string with an inserted string at a certain index.",
+    "DOC_STRING_INSERT": "Returns a string with an inserted value at a certain index.",
     "DOC_STRING_VAL": "Converts str to a number. Returns `number` if string represents a valid number, `0` if not.",
     "DOC_STRING_VALUES": "Returns a `list object` consisting of all the individual characters in str.",
     "DOC_STRING_TO_INT": "Converts str to an integer. Returns `int` if string represents a valid integer, or otherwise returns `string` str.",
