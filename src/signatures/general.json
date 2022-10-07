@@ -830,5 +830,24 @@
         "returns": [
             "map:any"
         ]
+    },
+    "insert": {
+        "arguments": [
+            {
+                "label": "object",
+                "value": "any"
+            },
+            {
+                "label": "index",
+                "type": "number"
+            },
+            {
+                "label": "value",
+                "value": "any"
+            }
+        ],
+        "returns": [
+            "any"
+        ]
     }
 }
