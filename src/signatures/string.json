@@ -21,6 +21,21 @@
             "boolean"
         ]
     },
+    "insert": {
+        "arguments": [
+            {
+                "label": "index",
+                "type": "number"
+            },
+            {
+                "label": "value",
+                "value": "string"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
     "indexOf": {
         "arguments": [
             {

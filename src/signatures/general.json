@@ -759,5 +759,65 @@
         "returns": [
             "number"
         ]
+    },
+    "bitAnd": {
+        "arguments": [
+            {
+                "label": "a",
+                "type": "number"
+            },
+            {
+                "label": "b",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "bitOr": {
+        "arguments": [
+            {
+                "label": "a",
+                "type": "number"
+            },
+            {
+                "label": "b",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "bitXor": {
+        "arguments": [
+            {
+                "label": "a",
+                "type": "number"
+            },
+            {
+                "label": "b",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "log": {
+        "arguments": [
+            {
+                "label": "value",
+                "type": "number"
+            },
+            {
+                "label": "base",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
     }
 }

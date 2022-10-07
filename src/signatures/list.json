@@ -10,6 +10,21 @@
             "null"
         ]
     },
+    "insert": {
+        "arguments": [
+            {
+                "label": "index",
+                "type": "number"
+            },
+            {
+                "label": "value",
+                "value": "any"
+            }
+        ],
+        "returns": [
+            "null"
+        ]
+    },
     "push": {
         "arguments": [
             {
