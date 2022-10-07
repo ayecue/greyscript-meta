@@ -78,7 +78,7 @@
     "DOC_GENERAL_COS": "Returns the cosine of rad (`number` radians).",
     "DOC_GENERAL_CODE": "Returns the unicode code point (`int`) of the first character of the string.",
     "DOC_GENERAL_CHAR": "Returns the unicode character (`string`) with code point `int`.",
-    "DOC_GENERAL_SIN": "Returns the sin of rad (`number` radians).",
+    "DOC_GENERAL_SIN": "Returns the sine of rad (`number` radians).",
     "DOC_GENERAL_FLOOR": "Returns a `number` floored to the base integer.",
     "DOC_GENERAL_RANGE": "Returns a `list object` containing values from start through to end, in increments of inc. Takes a starting `number`, optional end (`number`) and optional inc (`number`). If inc is not defined, the increment defaults to 1 (if end > start) or otherwise to -1.",
     "DOC_GENERAL_ROUND": "Returns a `number` rounded to d decimal places.",
