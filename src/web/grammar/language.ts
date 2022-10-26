@@ -10,6 +10,7 @@ const language: Monaco.languages.IMonarchLanguage = {
     'new',
     'if',
     'self',
+    'super',
     'break',
     'else',
     'return',
