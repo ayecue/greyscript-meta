@@ -1,0 +1,17 @@
+{
+    "port_number": {
+        "returns": [
+            "number"
+        ]
+    },
+    "is_closed": {
+        "returns": [
+            "boolean"
+        ]
+    },
+    "get_lan_ip": {
+        "returns": [
+            "string"
+        ]
+    }
+}

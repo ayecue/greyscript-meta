@@ -1,0 +1,138 @@
+{
+    "remove": {
+        "arguments": [
+            {
+                "label": "toDelete",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "hasIndex": {
+        "arguments": [
+            {
+                "label": "index",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "boolean"
+        ]
+    },
+    "insert": {
+        "arguments": [
+            {
+                "label": "index",
+                "type": "number"
+            },
+            {
+                "label": "value",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "indexOf": {
+        "arguments": [
+            {
+                "label": "value",
+                "type": "string"
+            },
+            {
+                "label": "offset",
+                "type": "number",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "lastIndexOf": {
+        "arguments": [
+            {
+                "label": "value",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "split": {
+        "arguments": [
+            {
+                "label": "delimiter",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "list:string"
+        ]
+    },
+    "replace": {
+        "arguments": [
+            {
+                "label": "toReplace",
+                "type": "string"
+            },
+            {
+                "label": "newString",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "trim": {
+        "returns": [
+            "string"
+        ]
+    },
+    "indexes": {
+        "returns": [
+            "list:number"
+        ]
+    },
+    "code": {
+        "returns": [
+            "number"
+        ]
+    },
+    "len": {
+        "returns": [
+            "number"
+        ]
+    },
+    "lower": {
+        "returns": [
+            "string"
+        ]
+    },
+    "upper": {
+        "returns": [
+            "string"
+        ]
+    },
+    "val": {
+        "returns": [
+            "number"
+        ]
+    },
+    "values": {
+        "returns": [
+            "list:string"
+        ]
+    },
+    "to_int": {
+        "returns": [
+            "string",
+            "number"
+        ]
+    }
+}

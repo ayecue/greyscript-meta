@@ -1,0 +1,165 @@
+{
+    "host_computer": {
+        "returns": [
+            "computer",
+            "null"
+        ]
+    },
+    "start_terminal": {
+        "returns": [
+            "null"
+        ]
+    },
+    "build": {
+        "arguments": [
+            {
+                "label": "pathSource",
+                "type": "string"
+            },
+            {
+                "label": "pathBinary",
+                "type": "string"
+            },
+            {
+                "label": "allowImport",
+                "type": "boolean",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "connect_service": {
+        "arguments": [
+            {
+                "label": "ip",
+                "type": "string"
+            },
+            {
+                "label": "port",
+                "type": "number"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "pass",
+                "type": "string"
+            },
+            {
+                "label": "service",
+                "type": "string",
+                "default": "\"ssh\""
+            }
+        ],
+        "returns": [
+            "shell",
+            "ftpShell",
+            "string",
+            "null"
+        ]
+    },
+    "launch": {
+        "arguments": [
+            {
+                "label": "program",
+                "type": "string"
+            },
+            {
+                "label": "params",
+                "type": "string",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "string",
+            "boolean"
+        ]
+    },
+    "ping": {
+        "arguments": [
+            {
+                "label": "ip",
+                "type": "string",
+                "opt": false
+            }
+        ],
+        "returns": [
+            "string",
+            "boolean"
+        ]
+    },
+    "scp": {
+        "arguments": [
+            {
+                "label": "file",
+                "type": "string"
+            },
+            {
+                "label": "folder",
+                "type": "string"
+            },
+            {
+                "label": "remoteShell",
+                "type": "shell"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "masterkey": {
+        "arguments": [
+            {
+                "label": "ip",
+                "type": "string"
+            },
+            {
+                "label": "port",
+                "type": "number"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "shell",
+            "null"
+        ]
+    },
+    "masterkey_direct": {
+        "arguments": [
+            {
+                "label": "publicIp",
+                "type": "string"
+            },
+            {
+                "label": "localIp",
+                "type": "number"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "shell",
+            "null"
+        ]
+    },
+    "restore_network": {
+        "arguments": [
+            {
+                "label": "publicIp",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "null"
+        ]
+    }
+}

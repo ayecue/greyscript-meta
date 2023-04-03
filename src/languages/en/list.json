@@ -1,0 +1,130 @@
+{
+    "remove": {
+        "description": "Removes an item from the `list` with the provided index. Due to the removal the `list` will get mutated.",
+        "example": [
+            "myList = [1, 42, 3]",
+            "myList.remove(1)",
+            "print(\"This list does not contain the answer to everything: \" + myList.split(\", \"))"
+        ]
+    },
+    "insert": {
+        "description": "Inserts a value into the `list` at the index provided. Due to the inseration the `list` will get mutated.",
+        "example": [
+            "myList = [1, 3]",
+            "myList.insert(1, 42)",
+            "print(\"This list does contain the answer to everything: \" + myList.split(\", \"))"
+        ]
+    },
+    "push": {
+        "description": "Appends a value to the end of the `list`. This operation will mutate the `list`. Additionally this method will return the updated `list`.",
+        "example": [
+            "myList = [1, 3]",
+            "myList.push(42)",
+            "print(\"This list does contain the answer to everything: \" + myList.split(\", \"))"
+        ]
+    },
+    "pop": {
+        "description": "Returns and removes the last item in the `list`. This operation will mutate the `list`.",
+        "example": [
+            "myList = [1, 3, 42]",
+            "answer = myList.pop",
+            "print(\"Answer to everything: \" + answer)"
+        ]
+    },
+    "pull": {
+        "description": "Returns and removes the first item in the `list`.  This operation will mutate the `list`.",
+        "example": [
+            "myList = [42, 1, 3]",
+            "answer = myList.pull",
+            "print(\"Answer to everything: \" + answer)"
+        ]
+    },
+    "shuffle": {
+        "description": "Shuffles all values in the `list`. This operation will mutate the `list`.",
+        "example": [
+            "myList = [42, 1, 3]",
+            "myList.shuffle",
+            "print(\"New list order: \" + myList.split(\", \"))"
+        ]
+    },
+    "reverse": {
+        "description": "Reverse order of all values in the `list`. This operation will mutate the `list`.",
+        "example": [
+            "myList = [42, 1, 3]",
+            "myList.reverse",
+            "print(\"Reversed list: \" + myList.split(\", \"))"
+        ]
+    },
+    "sum": {
+        "description": "Returns sum of all values inside the `list`. Any values which are non numeric will be considered as a zero.",
+        "example": [
+            "myList = [42, 1, 3]",
+            "sum = myList.sum",
+            "print(\"Sum of all items in list: \" + sum)"
+        ]
+    },
+    "hasIndex": {
+        "description": "Returns `true` if the provided index is available in the `list`. Otherwise this method will return `false`.",
+        "example": [
+            "myList = [42, 1, 3]",
+            "containsIndex = myList.hasIndex(1)",
+            "if containsIndex then",
+            "   print(\"List contains index of 1.\")",
+            "else",
+            "   print(\"List does not contain index of 1.\")",
+            "end if"
+        ]
+    },
+    "indexOf": {
+        "description": "Returns `number` which indicates the index of the provided value inside the `list`. In case the value does not exist inside the `list` a `null` gets returned.",
+        "example": [
+            "myList = [42, 1, 3]",
+            "index = myList.indexOf(42)",
+            "if index != null then",
+            "   print(\"The answer for everything is at the following index: \" + index)",
+            "else",
+            "   print(\"No answer for everything found.\")",
+            "end if"
+        ]
+    },
+    "sort": {
+        "description": "Sort `list` values alphanumerically. This operation will mutate the `list`. Optionally a key can be provided which which is used in case the items are maps. Additionally this method will return the updated `list`.",
+        "example": [
+            "myList = [{ \"key\": 42 }, { \"key\": 2 }, { \"key\": 1 }]",
+            "myList.sort(\"key\")",
+            "print(myList)"
+        ]
+    },
+    "join": {
+        "description": "Returns a concatenated `string` containing all stringified values inside the `list`. These values will be seperated via the provided seperator.",
+        "example": [
+            "myList = [42, 1, 3]",
+            "print(myList.join(\" .-*'*-. \"))"
+        ]
+    },
+    "indexes": {
+        "description": "Returns a `list` containing all available indexes.",
+        "example": [
+            "myList = [42, 1, 3]",
+            "for i in myList.indexes",
+            "   print(myList[i])",
+            "end for"
+        ]
+    },
+    "len": {
+        "description": "Returns a `number` representing the amount of values inside the `list`.",
+        "example": [
+            "myList = [42, 1, 3]",
+            "print(\"myList contains \" + myList.len + \" items\")"
+        ]
+    },
+    "values": {
+        "description": "Returns a `list` containing all available values.",
+        "example": [
+            "myList = [42, 1, 3]",
+            "for v in myList.values",
+            "   print(v)",
+            "end for"
+        ]
+    }
+}

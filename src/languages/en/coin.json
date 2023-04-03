@@ -1,0 +1,35 @@
+{
+    "set_cycle_mining": {
+        "description": "Assign the hours (game time) that each mining cycle lasts. When a cycle ends, it is decided who gets the reward (1 coin) and the next cycle begins."
+    },
+    "get_cycle_mining": {
+        "description": "Returns an `int` with the number of hours (game time) that each mining cycle lasts. When a cycle ends, it is decided who gets the reward (1 coin) and the next cycle begins."
+    },
+    "get_reward": {
+        "description": "Returns an `int` with the number of coins that will be received as a reward after each mining cycle."
+    },
+    "set_reward": {
+        "description": "Assign the reward that miners will receive after each mining cycle."
+    },
+    "transaction": {
+        "description": "Make a transaction of the currency between the indicated subwallets. In case of error, a `string` with the details is returned."
+    },
+    "create_subwallet": {
+        "description": "Register a new account in the Coin that can be used to manage services such as stores. It is necessary to use the PIN that the owner of the wallet that wants to register has to provide."
+    },
+    "get_subwallet": {
+        "description": "Returns an object of type SubWallet, in case of error it returns a `string` with the details."
+    },
+    "get_subwallets": {
+        "description": "Returns a list of objects of type SubWallet with all the accounts registered in the crypto currency, in case of error it returns a `string` with the details."
+    },
+    "set_address": {
+        "description": "Configure a valid address that will be shown to users who do not have the currency, indicating where to register."
+    },
+    "get_address": {
+        "description": "Returns the configured address that will be shown to users who do not have the currency, indicating where they have to register."
+    },
+    "get_mined_coins": {
+        "description": "Returns an int with the number of coins that have been mined so far."
+    }
+}
