@@ -1,165 +1,82 @@
 {
     "host_computer": {
-        "returns": [
-            "computer",
-            "null"
+        "description": "Returns a `computer` related to the `shell`.",
+        "example": [
+            "shell = get_shell",
+            "computer = shell.host_computer",
+            "print(\"Computer public IP is: \" + computer.public_ip)"
         ]
     },
     "start_terminal": {
-        "returns": [
-            "null"
+        "description": "Launches an active terminal. The colour of the terminal will change and show the IP of the connected shell. Script execution will be stopped when starting a new terminal.",
+        "example": [
+            "shell = get_shell",
+            "shell.start_terminal"
         ]
     },
     "build": {
-        "arguments": [
-            {
-                "label": "pathSource",
-                "type": "string"
-            },
-            {
-                "label": "pathBinary",
-                "type": "string"
-            },
-            {
-                "label": "allowImport",
-                "type": "boolean",
-                "opt": true
-            }
-        ],
-        "returns": [
-            "string"
+        "description": "Compiles a plain code file provided in the arguments to a binary. On success the new binary will be available under the provided build folder. The binary name will be the same as the source file just without file extension. Optionally an allowImport flag can be set which enables to use `import_code` on the binary. All provided paths must be absolute. Returns an empty `string` on success. On failure it will return a `string` as well but this time containing valuable information on why the compilation failed.",
+        "example": [
+            "shell = get_shell",
+            "buildResult = shell.build(\"/home/test/myprogram.src\", \"/home/test/Desktop\")",
+            "if buildResult != \"\" then",
+            "   print(\"There was an error while compiling: \" + buildResult)",
+            "else",
+            "   print(\"File has been compiled.\")",
+            "end if"
         ]
     },
     "connect_service": {
-        "arguments": [
-            {
-                "label": "ip",
-                "type": "string"
-            },
-            {
-                "label": "port",
-                "type": "number"
-            },
-            {
-                "label": "user",
-                "type": "string"
-            },
-            {
-                "label": "pass",
-                "type": "string"
-            },
-            {
-                "label": "service",
-                "type": "string",
-                "default": "\"ssh\""
-            }
-        ],
-        "returns": [
-            "shell",
-            "ftpShell",
-            "string",
-            "null"
+        "description": "Returns a `shell` if the connection attempt to the provided IP was successful. This method can only connect to ports running a SSH or FTP service. SSH services usually run on port 22 and FTP services usually on port 21. Keep in mind to pass the right service value depending on which service is going to be used. By default it will pass SSH as the used service. In case of failure a `string` is going to be returned containing details.",
+        "example": [
+            "shell = get_shell",
+            "connectionResult = shell.connect_service(\"1.1.1.1\", 22, \"test\", \"test\")",
+            "if typeof(connectionResult) != \"shell\" then",
+            "   print(\"There was an error while connecting: \" + connectionResult)",
+            "else",
+            "   print(\"Connected!\")",
+            "end if"
         ]
     },
     "launch": {
-        "arguments": [
-            {
-                "label": "program",
-                "type": "string"
-            },
-            {
-                "label": "params",
-                "type": "string",
-                "opt": true
-            }
-        ],
-        "returns": [
-            "string",
-            "boolean"
+        "description": "Launches the binary which was at the provided path. Returns `true` when launch was successful otherwise this method will return `false`.",
+        "example": [
+            "shell = get_shell",
+            "shell.launch(\"/bin/cat\", \"/etc/passwd\")"
         ]
     },
     "ping": {
-        "arguments": [
-            {
-                "label": "ip",
-                "type": "string",
-                "opt": false
-            }
-        ],
-        "returns": [
-            "string",
-            "boolean"
+        "description": "Returns `true` if the remote address could be reached, `false` otherwise. Firewalls do not block ping requests.",
+        "example": [
+            "shell = get_shell",
+            "isPingable = shell.ping(\"1.1.1.1\")",
+            "if isPingable then",
+            "   print(\"Ping was successful!\")",
+            "else",
+            "   print(\"Ping failed!\")",
+            "end if"
         ]
     },
     "scp": {
-        "arguments": [
-            {
-                "label": "file",
-                "type": "string"
-            },
-            {
-                "label": "folder",
-                "type": "string"
-            },
-            {
-                "label": "remoteShell",
-                "type": "shell"
-            }
-        ],
-        "returns": [
-            "number",
-            "string"
+        "description": "Send a `file` to the `computer` which is related to the provided `shell`. You require permissions to read the `file` on the `computer` from which you are uploading and write permissions in the folder of the `computer` you are trying to upload to. In case of failure this method will return a `string` with the cause. Otherwise `true` gets returned.",
+        "example": [
+            "shell = get_shell",
+            "remoteShell = shell.connect_service(\"1.1.1.1\", 22, \"test\", \"test\")",
+            "result = remoteShell.scp(\"/bin/ls\", \"/etc/\", shell)",
+            "if typeof(result) == \"string\" then",
+            "   print(\"There was an error while sending file: \" + result)",
+            "else",
+            "   print(\"File got sent successfully.\")",
+            "end if"
         ]
     },
     "masterkey": {
-        "arguments": [
-            {
-                "label": "ip",
-                "type": "string"
-            },
-            {
-                "label": "port",
-                "type": "number"
-            },
-            {
-                "label": "user",
-                "type": "string"
-            }
-        ],
-        "returns": [
-            "shell",
-            "null"
-        ]
+        "description": "Unknown usage. Only usable for admins."
     },
     "masterkey_direct": {
-        "arguments": [
-            {
-                "label": "publicIp",
-                "type": "string"
-            },
-            {
-                "label": "localIp",
-                "type": "number"
-            },
-            {
-                "label": "user",
-                "type": "string"
-            }
-        ],
-        "returns": [
-            "shell",
-            "null"
-        ]
+        "description": "Unknown usage. Only usable for admins."
     },
     "restore_network": {
-        "arguments": [
-            {
-                "label": "publicIp",
-                "type": "string"
-            }
-        ],
-        "returns": [
-            "null"
-        ]
+        "description": "Unknown usage. Only usable for admins."
     }
 }
