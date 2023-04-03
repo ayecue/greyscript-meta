@@ -11,7 +11,7 @@
         ]
     },
     "net_use": {
-        "description": "Returns a `netSession` object for the provided IP address and port. The difference to `load` is that it can be used remotely. The main purpose is to gain a `netSession` and then use `dump_lib` to receive a `metaLib` object in order to exploit vulnerabilities. In case of failure this method will return `null`",
+        "description": "Returns a `netSession` object for the provided IP address and port. Note that if the port zero is provided it will return a `netSession` related to the kernel router. The difference to `load` is that it can be used remotely. The main purpose is to gain a `netSession` and then use `dump_lib` to receive a `metaLib` object in order to exploit vulnerabilities. In case of failure this method will return `null`.",
         "example": [
             "metax = include_lib(\"/lib/metaxploit.so\")",
             "ports = get_router(\"1.1.1.1\").used_ports",
