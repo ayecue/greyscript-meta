@@ -53,7 +53,7 @@ export default function({ filterInit, externalLinks, onSidebarClick = () => {}, 
                         {
                             externalLinks.map((externalLink: AppExternalLink, index) => {
                                 return (
-                                    <li key={index}><a href={externalLink.href} target='_blank'>{externalLink.label}</a></li>
+                                    <li key={index} className='external-links'><a href={externalLink.href} target='_blank'>{externalLink.label}</a></li>
                                 )
                             })
                         }

@@ -351,11 +351,11 @@ html {
     padding: 10px 0 0;
 }
 
-.definitions .definition .description .highlight.type {
+p .highlight.type {
     color: #3dc9b0;
 }
 
-.definitions .definition .description .highlight.string {
+p .highlight.string {
     color: #ce9178;
 }
 
@@ -384,7 +384,7 @@ html {
         margin: 0;
     }
 
-    .readme a {
+    .readme .external-links a {
         display: inline-block;
         padding: 0.7em 1.4em;
         margin: 0 0 0 0.3em;
@@ -393,13 +393,10 @@ html {
         text-decoration: none;
         text-transform: uppercase;
         font-weight: 400;
-        color: #333;
-        background-color: #999;
-        box-shadow: inset 0 -0.6em 0 -0.35em rgb(0 0 0 / 17%);
+        color: #fff;
         text-align: center;
         position: relative;
         cursor: pointer;
-        border: 1px solid transparent;
     }
     
     .readme a:active {
