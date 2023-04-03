@@ -119,7 +119,7 @@
         ]
     },
     "has_permission": {
-        "desciption": "Returns `true` if the user who launched the script has the necessary permissions. In case permissions are lacking `false` will be returned. There are three different permission types. Those permissions include read \"r\", write \"w\" and execute \"x\".",
+        "description": "Returns `true` if the user who launched the script has the necessary permissions. In case permissions are lacking `false` will be returned. There are three different permission types. Those permissions include read \"r\", write \"w\" and execute \"x\".",
         "example": [
             "host_computer = get_shell.host_computer",
             "lsBinary = host_computer.File(\"/bin/ls\")",

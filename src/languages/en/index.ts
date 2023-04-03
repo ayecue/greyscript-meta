@@ -1,0 +1,50 @@
+import AptClient from './apt-client.json';
+import Blockchain from './blockchain.json';
+import Coin from './coin.json';
+import Computer from './computer.json';
+import Crypto from './crypto.json';
+import File from './file.json';
+import FtpShell from './ftp-shell.json';
+import Generic from './general.json';
+import List from './list.json';
+import MapLanguage from './map.json';
+import MetaLib from './meta-lib.json';
+import MetaMail from './meta-mail.json';
+import Metaxploit from './metaxploit.json';
+import NetSession from './net-session.json';
+import Port from './port.json';
+import Router from './router.json';
+import Service from './service.json';
+import Shell from './shell.json';
+import String from './string.json';
+import SubWallet from './sub-wallet.json';
+import Wallet from './wallet.json';
+import Number from './number.json';
+import { Descriptions } from '../default/type';
+
+const descriptions: Descriptions = {
+  'aptClient': AptClient,
+  'blockchain': Blockchain,
+  'coin': Coin,
+  'computer': Computer,
+  'crypto': Crypto,
+  'file': File,
+  'ftpShell': FtpShell,
+  'general': Generic,
+  'list': List,
+  'map': MapLanguage,
+  'metaLib': MetaLib,
+  'metaMail': MetaMail,
+  'metaxploit': Metaxploit,
+  'netSession': NetSession,
+  'port': Port,
+  'router': Router,
+  'service': Service,
+  'shell': Shell,
+  'string': String,
+  'subWallet': SubWallet,
+  'wallet': Wallet,
+  'number': Number
+};
+
+export default descriptions;

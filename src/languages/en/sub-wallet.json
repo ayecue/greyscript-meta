@@ -24,6 +24,6 @@
         "description": "Returns `true` if the credentials are correct, `false` otherwise."
     },
     "wallet_username": {
-        "desciption": "Returns a `string` with the name of the `wallet` to which this subwallet belongs."
+        "description": "Returns a `string` with the name of the `wallet` to which this subwallet belongs."
     }
 }

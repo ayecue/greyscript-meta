@@ -1,9 +1,8 @@
-import React, { ComponentProps, useState } from 'react';
+import React, { useState } from 'react';
 import language from './grammar/language';
 import { signatures } from '../meta';
 import ContentTable from './components/content-table';
 import Definitions from './components/definitions';
-import Basics from './components/basics';
 import monacoLoader from '@monaco-editor/loader';
 
 export interface AppExternalLink {
@@ -60,7 +59,6 @@ export default function({ filterInit, externalLinks, onSidebarClick = () => {}, 
                         }
                     </ul>
                 </div>
-                <Basics monaco={monaco} onCodeRunClick={onCodeRunClick} />
                 <Definitions signatures={signatures} filter={filter} monaco={monaco} onCodeRunClick={onCodeRunClick} onCopyClick={onCopyClick} />
             </div>
         </div>

@@ -3,7 +3,7 @@
         "description": "Returns a `list` where each item is a `string` with the names of the coins available in the `wallet`."
     },
     "get_balance": {
-        "desciption": "Returns a `number` of coins of a given currency. In case of error, a `string` with the details is returned."
+        "description": "Returns a `number` of coins of a given currency. In case of error, a `string` with the details is returned."
     },
     "buy_coin": {
         "description": "Publish a purchase offer indicating the `number` of coins you wish to buy and the price ($) per unit you are willing to pay. The purchase will be finalized if there is any sale offer with a price less than or equal to the one proposed in the purchase. If there is no eligible offer to sell at that time, the offer to buy will remain publicly visible until a new offer to sell satisfies the requirements. If the publication has been successful, true is returned, in case of error a `string` with the details is returned."
@@ -12,7 +12,7 @@
         "description": "Publish a sale offer indicating the amount of coins you want to sell and the price ($) per unit you want to assign. The sale will be finalized if there is any purchase offer with a price greater than or equal to that proposed in the sale. If there is no existing offer to buy that matches the requirements at that time, the offer to sell will remain publicly visible until a new offer to buy satisfies the requirements. If the publication has been successful, true is returned, in case of error a `string` with the details is returned."
     },
     "get_pending_trade": {
-        "desciption": "Returns a `list` with the pending sale or purchase offer of this wallet of a certain currency. Index 0 of the `list` represents the type of offer with a `string` (Buy/Sell), index 1 represents the quantity to be sold or bought, and index 2 represents the price per unit."
+        "description": "Returns a `list` with the pending sale or purchase offer of this wallet of a certain currency. Index 0 of the `list` represents the type of offer with a `string` (Buy/Sell), index 1 represents the quantity to be sold or bought, and index 2 represents the price per unit."
     },
     "cancel_pending_trade": {
         "description": "Cancel any pending offer of a certain coin."

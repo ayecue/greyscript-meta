@@ -1,4 +1,4 @@
-import { getDescription, getExample, getExampleReference } from './languages';
+import { getDescription, getExample } from './languages';
 import AptClient from './signatures/apt-client.json';
 import Blockchain from './signatures/blockchain.json';
 import Coin from './signatures/coin.json';

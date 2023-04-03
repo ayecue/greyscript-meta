@@ -5,16 +5,15 @@ const GREYBEL_UI_URL = 'https://greybel-ui.netlify.app/';
 
 export interface EditorState extends ComponentState {
     content: string;
-    contentWithRef?: string;
     monaco: typeof Monaco;
     name?: string;
     onClick: Function;
 }
 
-export default function({ monaco, content, contentWithRef, name, onClick }: EditorState) {
+export default function({ monaco, content, name, onClick }: EditorState) {
     const containerRef = useRef(null);
     const url = new URL(GREYBEL_UI_URL);
-    const encoded = encodeURIComponent(contentWithRef || content);
+    const encoded = encodeURIComponent(content);
     url.searchParams.set('c', btoa(encoded));
 
     useEffect(() => {
@@ -34,7 +33,7 @@ export default function({ monaco, content, contentWithRef, name, onClick }: Edit
     return (
         <div className='editorWrapper'>
             <div className={`editor ${name}`} ref={containerRef}></div>
-            <a className='run' target='_blank' href={url.toString()} onClick={() => onClick(contentWithRef || content, name)}>Run code</a>
+            <a className='run' target='_blank' href={url.toString()} onClick={() => onClick(content, name)}>Run code</a>
         </div>
     )
 }

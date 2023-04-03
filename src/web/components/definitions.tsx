@@ -1,6 +1,6 @@
 import React, { ComponentState } from 'react';
 import { Signature, SignatureDefinition, SignatureDefinitionArg } from '../../meta';
-import { getDescription, getExample, getExampleReference } from '../../languages';
+import { getDescription, getExample, getMetaDescription, getMetaExample } from '../../languages';
 import Monaco from 'monaco-editor/esm/vs/editor/editor.api';
 import reactStringReplace from 'react-string-replace';
 import Editor from './editor';
@@ -77,7 +77,6 @@ function renderDescription(description: string) {
 function renderDefinition(type: string, methodName: string, definition: SignatureDefinition, monaco: typeof Monaco, onCodeRunClick: Function, onCopyClick: Function) {
     const description = getDescription(type, methodName);
     const example = getExample(type, methodName);
-    const exampleRef = getExampleReference(type, methodName);
     const key = `${type.toUpperCase()}_${methodName.toUpperCase()}`;
 
     return (
@@ -103,7 +102,6 @@ function renderDefinition(type: string, methodName: string, definition: Signatur
                                 <Editor
                                     monaco={monaco}
                                     content={example.join('\n')}
-                                    contentWithRef={exampleRef.concat(example).join('\n')}
                                     name={key}
                                     onClick={onCodeRunClick}
                                 />
@@ -135,10 +133,20 @@ function renderDefinitions({ signatures, filter, monaco, onCodeRunClick, onCopyC
                 </li>
             );
         });
+        const metaDescription = getMetaDescription(item.type);
+        const metaExample = getMetaExample(item.type);
 
         return (
             <li className={visibleItems === 0 ? 'hidden' : ''} key={index}>
                 <h2 id={item.type.toUpperCase()}>{item.type}</h2>
+                {metaDescription ? renderDescription(metaDescription) : null }
+                {metaExample ? <Editor
+                                monaco={monaco}
+                                content={metaExample.join('\n')}
+                                name={item.type.toUpperCase()}
+                                onClick={onCodeRunClick}
+                            />
+                    : null }
                 <ul className='second'>
                     {items}
                 </ul>

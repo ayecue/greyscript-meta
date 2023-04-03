@@ -252,6 +252,10 @@ html {
     list-style: none;
 }
 
+.definitions li > p {
+    margin: 10px 0;
+}
+
 .definitions .hidden {
     display: none;
 }
@@ -343,12 +347,20 @@ html {
     color: #569cd6;
 }
 
+.definitions .definition .description {
+    padding: 10px 0 0;
+}
+
 .definitions .definition .description .highlight.type {
     color: #3dc9b0;
 }
 
 .definitions .definition .description .highlight.string {
     color: #ce9178;
+}
+
+.definitions .definition .example {
+    padding: 10px 0 0;
 }
 
 @media screen and (min-width: 760px) {

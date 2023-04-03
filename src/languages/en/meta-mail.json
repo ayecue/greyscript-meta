@@ -17,7 +17,7 @@
         ]
     },
     "fetch": {
-        "desciption": "Returns a `list` where each item is a `string` containing mail id, from, subject and a small preview of the content.",
+        "description": "Returns a `list` where each item is a `string` containing mail id, from, subject and a small preview of the content.",
         "example": [
             "metaMail = mail_login(user_mail_address, \"test\")",
             "mails = metaMail.fetch",

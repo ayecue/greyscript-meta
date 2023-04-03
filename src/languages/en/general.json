@@ -299,7 +299,7 @@
         ]
     },
     "program_path": {
-        "desciption": "Returns a `string` containing the path of the script that is currently executed.",
+        "description": "Returns a `string` containing the path of the script that is currently executed.",
         "example": [
             "path = program_path",
             "print(\"Script gets executed within: \" + parent_path(path))"
@@ -313,7 +313,7 @@
         ]
     },
     "format_columns": {
-        "desciption": "Returns a `string` which is the formatted version of the provided text. Keep in mind that TextMeshPro rich-text tags might srew up the output. When using tags consider applying these after formatting.",
+        "description": "Returns a `string` which is the formatted version of the provided text. Keep in mind that TextMeshPro rich-text tags might srew up the output. When using tags consider applying these after formatting.",
         "example": [
             "text = \"FIRST SECOND THIRD",
             "1 2 3\"",
@@ -321,7 +321,7 @@
         ]
     },
     "current_date": {
-        "desciption": "Returns a `string` containing the current date and time. The format is as follows: \"[day]/[month]/[year] - [hours]:[minutes]\". Here an example: \"27/Jan/2000 - 08:19\"",
+        "description": "Returns a `string` containing the current date and time. The format is as follows: \"[day]/[month]/[year] - [hours]:[minutes]\". Here an example: \"27/Jan/2000 - 08:19\"",
         "example": [
             "dateStr = current_date",
             "dateSegments = dateStr.split(\" - \")",
@@ -336,13 +336,13 @@
         ]
     },
     "is_lan_ip": {
-        "desciption": "Returns `true` in case the provided IP address is a valid Lan IP address. Otherwise `false` will get returned.",
+        "description": "Returns `true` in case the provided IP address is a valid Lan IP address. Otherwise `false` will get returned.",
         "example": [
             "print(\"Is Lan IP: \" + is_lan_ip(\"192.168.0.1\"))"
         ]
     },
     "is_valid_ip": {
-        "desciption": "Returns `true` in case the provided IP address is valid. Otherwise `false` will get returned.",
+        "description": "Returns `true` in case the provided IP address is valid. Otherwise `false` will get returned.",
         "example": [
             "print(\"Is valid IP: \" + is_lan_ip(\"1.1.1.1\"))"
         ]
@@ -396,7 +396,7 @@
         ]
     },
     "tan": {
-        "desciption": "Returns the tangent of a `number` in radians.",
+        "description": "Returns the tangent of a `number` in radians.",
         "example": [
             "degrees = 90",
             "tanFromDegrees = tan(degress * pi / 180)",
@@ -404,7 +404,7 @@
         ]
     },
     "cos": {
-        "desciption": "Returns the cosine of a `number` in radians.",
+        "description": "Returns the cosine of a `number` in radians.",
         "example": [
             "radians = 1",
             "radius = 10",
@@ -413,7 +413,7 @@
         ]
     },
     "code": {
-        "desciption": "Returns the unicode `number` of the first character of the string. In case an empty `string` is provided the script execution will crash.",
+        "description": "Returns the unicode `number` of the first character of the string. In case an empty `string` is provided the script execution will crash.",
         "example": [
             "key = user_input(\"Press a key!\", false, true)",
             "isA = key.code == 97",
@@ -425,7 +425,7 @@
         ]
     },
     "char": {
-        "desciption": "Returns the unicode character `string` related to the provided unicode `number`. The provided `number` needs to be between 0 and 65535. Any `number` which is outside this range will cause the script to throw a runtime error.",
+        "description": "Returns the unicode character `string` related to the provided unicode `number`. The provided `number` needs to be between 0 and 65535. Any `number` which is outside this range will cause the script to throw a runtime error.",
         "example": [
             "key = user_input(\"Press a key!\", false, true)",
             "isA = key == char(97)",
@@ -437,7 +437,7 @@
         ]
     },
     "sin": {
-        "desciption": "Returns the sine of a `number` in radians.",
+        "description": "Returns the sine of a `number` in radians.",
         "example": [
             "radians = 1",
             "radius = 10",
@@ -486,7 +486,7 @@
         ]
     },
     "sign": {
-        "desciption": "Returns a one or minus one, indicating the sign of the number passed as argument. If the input is zero, it will be returned as-is.",
+        "description": "Returns a one or minus one, indicating the sign of the number passed as argument. If the input is zero, it will be returned as-is.",
         "example": [
             "print(sign(40))",
             "print(sign(-40))",
@@ -494,7 +494,7 @@
         ]
     },
     "sqrt": {
-        "desciption": "Returns the square root of a `number`.",
+        "description": "Returns the square root of a `number`.",
         "example": [
             "a = 3",
             "b = 4",
@@ -528,7 +528,7 @@
         ]
     },
     "launch_path": {
-        "desciption": "Returns a `string` containing the path of the script that is currently executed.",
+        "description": "Returns a `string` containing the path of the script that is currently executed.",
         "example": [
             "path = program_path",
             "print(\"Script gets executed within: \" + parent_path(path))"
@@ -542,14 +542,14 @@
         ]
     },
     "md5": {
-        "desciption": "Returns the md5 hash `string` of the provided `string`.",
+        "description": "Returns the md5 hash `string` of the provided `string`.",
         "example": [
             "passwordHash = md5(\"test\")",
             "print(\"Hash for the password 'test' is \" + passwordHash)"
         ]
     },
     "hash": {
-        "desciption": "Returns numeric hash for the provided data.",
+        "description": "Returns numeric hash for the provided data.",
         "example": [
             "hashA = hash({ \"a\": 2, \"b\": 1 })",
             "hashB = hash({ \"b\": 1, \"a\": 2 })",
@@ -608,7 +608,7 @@
         ]
     },
     "get_custom_object": {
-        "desciption": "Returns `map` which shared throughout all script executions. Can be helpful in case forwarding an entity is desired.",
+        "description": "Returns `map` which shared throughout all script executions. Can be helpful in case forwarding an entity is desired.",
         "example": [
             "get_custom_object.shouldEndScript = false",
             "while (get_custom_object.shouldEndScript)",
