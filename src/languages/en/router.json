@@ -1,78 +1,107 @@
 {
     "device_ports": {
-        "arguments": [
-            {
-                "label": "ip",
-                "type": "string"
-            }
-        ],
-        "returns": [
-            "null",
-            "string",
-            "list:port"
+        "description": "Returns a `list` where each item is an open `port` related to the device of the provided LAN IP address. The device needs to be within the network of the `router`. In case of failure this method will return `null`.",
+        "example": [
+            "router = get_router",
+            "devices = router.devices_lan_ip",
+            "for ip in devices",
+            "   ports = router.device_ports(ip)",
+            "   print(ip + \" contains following open ports:\")",
+            "   for port in ports",
+            "      print(port.port_number)",
+            "   end for",
+            "end for"
         ]
     },
     "devices_lan_ip": {
-        "returns": [
-            "list:string"
+        "description": "Returns a `list` where each item is a `string` representing a LAN IP address. All devices are within the network of the router and can be reached by using the `ping` method. Some of the devices might be behin a firewall.",
+        "example": [
+            "router = get_router",
+            "devices = router.devices_lan_ip",
+            "for ip in devices",
+            "   print(ip + \" found!\")",
+            "end for"
         ]
     },
     "bssid_name": {
-        "returns": [
-            "string"
+        "description": "Returns a `string` with the `BSSID` value of the router.",
+        "example": [
+            "router = get_router",
+            "bssid = router.bssid_name",
+            "print(\"BSSID: \" + bssid)"
         ]
     },
     "essid_name": {
-        "returns": [
-            "string"
+        "description": "Returns a `string` with the `ESSID` value of the router.",
+        "example": [
+            "router = get_router",
+            "essid = router.essid_name",
+            "print(\"ESSID: \" + essid)"
         ]
     },
     "firewall_rules": {
-        "returns": [
-            "list:string"
+        "description": "Returns a `list` where each item is a `string` containg a firewall rule.",
+        "example": [
+            "router = get_router",
+            "rules = router.firewall_rules",
+            "print(\"Firewall rules: \" + rules.join(\", \"))"
         ]
     },
     "kernel_version": {
-        "returns": [
-            "string"
+        "description": "Returns a `string` with the version of the `kernel_router.so` library.",
+        "example": [
+            "router = get_router",
+            "version = router.kernel_version",
+            "print(\"Kernel router version: \" + version)"
         ]
     },
     "local_ip": {
-        "returns": [
-            "string"
+        "description": "Returns a `string` with the local IP address of the router.",
+        "example": [
+            "router = get_router",
+            "localIp = router.local_ip",
+            "print(\"Local IP: \" + localIp)"
         ]
     },
     "public_ip": {
-        "returns": [
-            "string"
+        "description": "Returns a `string` with the public IP address of the router.",
+        "example": [
+            "router = get_router",
+            "publicIp = router.public_ip",
+            "print(\"Public IP: \" + publicIp)"
         ]
     },
     "used_ports": {
-        "returns": [
-            "list:port"
+        "description": "Returns a `list` where each item is a `port` used inside the router.",
+        "example": [
+            "router = get_router",
+            "ports = router.used_ports",
+            "for port in ports",
+            "   print(\"Port \" + port.port_number + \" is available!\")",
+            "end for"
         ]
     },
     "ping_port": {
-        "arguments": [
-            {
-                "label": "port",
-                "type": "number"
-            }
-        ],
-        "returns": [
-            "port",
-            "null"
+        "description": "Returns a `port` that is behind the port `number` provided. In case the `port` does not exist `null` gets returned.",
+        "example": [
+            "router = get_router",
+            "ports = router.used_ports",
+            "for port in ports",
+            "   pingedPort = router.ping_port(port.port_number)",
+            "   if (pingedPort == null) then continue",
+            "   print(\"Pinged \" + pingedPort.port_number)",
+            "end for"
         ]
     },
     "port_info": {
-        "arguments": [
-            {
-                "label": "port",
-                "type": "port"
-            }
-        ],
-        "returns": [
-            "string"
+        "description": "Returns a `string` with information of the port that has been provided. These information contain data on which service is running and which version is used. An example would be: \"http 1.0.0\". In case of failure `null` will get returned",
+        "example": [
+            "router = get_router",
+            "ports = router.used_ports",
+            "for port in ports",
+            "   info = router.port_info(port)",
+            "   print(info)",
+            "end for"
         ]
     }
 }
