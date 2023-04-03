@@ -1,17 +1,34 @@
 {
     "port_number": {
-        "returns": [
-            "number"
+        "description": "Returns the `number` which is used for the port.",
+        "example": [
+            "router = get_router",
+            "ports = router.used_ports",
+            "for port in ports",
+            "   print(\"Port \" + port.port_number + \" is in use!\")",
+            "end for"
         ]
     },
     "is_closed": {
-        "returns": [
-            "boolean"
+        "description": "Returns `true` if this port is closed, `false` if the port is open.",
+        "example": [
+            "router = get_router",
+            "ports = router.used_ports",
+            "for port in ports",
+            "   state = \"open\"",
+            "   if (port.is_closed) then state = \"closed\"",
+            "   print(\"Port \" + port.port_number + \" is \" + state + \"!\")",
+            "end for"
         ]
     },
     "get_lan_ip": {
+        "description": "Returns a `string` containing the local IP address of the computer to which the port is pointing to.",
         "returns": [
-            "string"
+            "router = get_router",
+            "ports = router.used_ports",
+            "for port in ports",
+            "   print(\"Port \" + port.port_number + \" is pointed to \" + port.get_lan_ip + \"!\")",
+            "end for"
         ]
     }
 }
