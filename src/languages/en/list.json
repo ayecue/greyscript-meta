@@ -1,4 +1,16 @@
 {
+    "$meta": {
+        "description": "Create a list with square brackets. Then iterate over the list with for, or pull out individual items with a 0-based index in square brackets. A negative index counts from the end. Get a slice (subset) of a list with two indices, separated by a colon.",
+        "example": [
+            "x = [2, 4, 6, 8]",
+            "print(x[0])) // get first item from list",
+            "print(x[-1]) // get last item from list",
+            "print(x[1:3]) // slice items from index 1 to 3",
+            "x[2] = 5 // set item at index 2 to 5",
+            "print(x)",
+            "print(x + [42]) // concatinate two lists"
+        ]
+    },
     "remove": {
         "description": "Removes an item from the `list` with the provided index. Due to the removal the `list` will get mutated.",
         "example": [

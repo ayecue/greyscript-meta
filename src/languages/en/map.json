@@ -1,4 +1,13 @@
 {
+    "$meta": {
+        "description": "A map is a set of values associated with unique keys. Create a map with curly braces; get or set a single value with square brackets. Keys and values may be any type.",
+        "example": [
+            "x = { \"test\": 123 }",
+            "x.foo = 42 // set property foo to 42",
+            "print(x.foo) // get value of property foo",
+            "print(x + { \"bar\": 2 }) // concatinate two maps"
+        ]
+    },
     "remove": {
         "description": "Removes an item from the `map` with the provided key. Due to the removal the `map` will get mutated.",
         "example": [

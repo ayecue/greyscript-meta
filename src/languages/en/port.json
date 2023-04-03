@@ -1,4 +1,7 @@
 {
+    "$meta": {
+        "description": "Generally there are no restriction in regards of which service runs on which port but there are some default ports for each service. Here a list of the most common ports: 21 (FTP), 22 (SSH), 25 (SMTP), 80 (HTTP), 141 (SQL), 8080 (HTTP), 1222 (RSHELL), 1542 (Repository), 3306 (SQL), 3307 (SQL), 3308 (SQL), 6667 (Chat), 37777 (CCTV)"
+    },
     "port_number": {
         "description": "Returns the `number` which is used for the port.",
         "example": [

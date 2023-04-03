@@ -1,4 +1,7 @@
 {
+    "$meta": {
+        "description": "A `file` object can be aquired by either using `File` or `overflow`."
+    },
     "chmod": {
         "description": "Modifies the `file` permissions. Optionally these permissions can also be applied recursively. The format for applying permissions is as follows: \"[userType][operator][permissionType]\". The user type gets defined through three possible types. These user types include user \"u\", group \"g\" and other \"o\". The operator is used to define if permissions get added \"+\" or removed \"-\". There are three different permission types which can be modified. Those permissions include read \"r\", write \"w\" and execute \"x\". So as an example \"o-wrx\" would remove all possible permissions for other. In order to add all permissions for other again \"o+wrx\" would be used. In case the modification fails this method will return a `string` containing information of the reason. Otherwise an empty `string` gets returned.",
         "example": [

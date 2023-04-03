@@ -1,4 +1,13 @@
 {
+    "$meta": {
+        "description": "Text is stored in strings of Unicode characters. Write strings by surrounding them with quotes. If you need to include a quotation mark in the string, write it twice.",
+        "example": [
+            "a = \"hello\"",
+            "b = \"world\"",
+            "print(a + b) // concatinate a and b",
+            "print(a * 10) // repeat hello ten times"
+        ]
+    },
     "remove": {
         "description": "Returns a new `string` where the provided `string` got removed.",
         "example": [

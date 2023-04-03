@@ -1,4 +1,7 @@
 {
+    "$meta": {
+        "description": "A `computer` object can be obtained by either using `host_computer` or `overflow`."
+    },
     "get_ports": {
         "description": "Returns a `list` of `port`s on the `computer` which are active.",
         "example": [

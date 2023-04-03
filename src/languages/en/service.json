@@ -1,4 +1,7 @@
 {
+    "$meta": {
+        "description": "The service object can be obtained through using `include_lib`. Here a list of all installable services: FTP, SSH, HTTP, Repository, Chat"
+    },
     "install_service": {
         "description": "Installs the necessary files for the correct functioning of the service and starts it. Returns `true` if the installation has been completed successfully, in case of error a `string` with the details is returned."
     },

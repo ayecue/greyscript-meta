@@ -1,4 +1,7 @@
 {
+    "$meta": {
+        "description": "A `shell` object can be aquired by either using `get_shell`, `connect_service` or `overflow`. In case you want to use `connect_service` to connect to a SSH port it will be usually at port 22."
+    },
     "host_computer": {
         "description": "Returns a `computer` related to the `shell`.",
         "example": [
