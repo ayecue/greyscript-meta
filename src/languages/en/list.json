@@ -8,7 +8,7 @@
         ]
     },
     "insert": {
-        "description": "Inserts a value into the `list` at the index provided. Due to the inseration the `list` will get mutated.",
+        "description": "Inserts a value into the `list` at the index provided. Due to the insertion the `list` will get mutated.",
         "example": [
             "myList = [1, 3]",
             "myList.insert(1, 42)",
@@ -48,7 +48,7 @@
         ]
     },
     "reverse": {
-        "description": "Reverse order of all values in the `list`. This operation will mutate the `list`.",
+        "description": "Reverses order of all values in the `list`. This operation will mutate the `list`.",
         "example": [
             "myList = [42, 1, 3]",
             "myList.reverse",
@@ -76,7 +76,7 @@
         ]
     },
     "indexOf": {
-        "description": "Returns `number` which indicates the index of the provided value inside the `list`. In case the value does not exist inside the `list` a `null` gets returned.",
+        "description": "Returns a `number` which indicates the first matching index of the provided value inside the `list`. Optionally a start index can be provided. In case the value does not exist inside the `list` a `null` gets returned.",
         "example": [
             "myList = [42, 1, 3]",
             "index = myList.indexOf(42)",
@@ -88,7 +88,7 @@
         ]
     },
     "sort": {
-        "description": "Sort `list` values alphanumerically. This operation will mutate the `list`. Optionally a key can be provided which which is used in case the items are maps. Additionally this method will return the updated `list`.",
+        "description": "Sorts `list` values alphanumerically. This operation will mutate the `list`. Optionally a key can be provided which which is used in case the items are maps. Additionally this method will return the updated `list`.",
         "example": [
             "myList = [{ \"key\": 42 }, { \"key\": 2 }, { \"key\": 1 }]",
             "myList.sort(\"key\")",
@@ -96,7 +96,7 @@
         ]
     },
     "join": {
-        "description": "Returns a concatenated `string` containing all stringified values inside the `list`. These values will be seperated via the provided seperator.",
+        "description": "Returns a concatenated `string` containing all stringified values inside the `list`. These values will be separated via the provided separator.",
         "example": [
             "myList = [42, 1, 3]",
             "print(myList.join(\" .-*'*-. \"))"
