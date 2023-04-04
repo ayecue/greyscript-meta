@@ -12,9 +12,14 @@ html {
     right: 0;
     padding: 10px;
     z-index: 999;
+    width: 96%;
 }
 
-.navigation > input {
+.navigation .search {
+    position: relative;
+}
+
+.navigation .search input {
     border: none;
     -webkit-appearance: none;
     -ms-appearance: none;
@@ -26,6 +31,16 @@ html {
     height: 9px;
     width: 96%;
     font-size: 14px;
+}
+
+.navigation .search .clear {
+    cursor: pointer;
+    color: #000;
+    position: absolute;
+    z-index: 999;
+    right: 10px;
+    font-size: 20px;
+    top: 4px;
 }
 
 .readme {
@@ -369,7 +384,17 @@ p .highlight.string {
         padding: 0;
     }
 
-    .navigation > input {
+    .navigation .search {
+        width: 234px;
+    }
+
+    .navigation .search .clear {
+        position: absolute;
+        top: -2px;
+        right: 15px;
+    }
+
+    .navigation .search input {
         position: fixed;
         left: 0;
         top: 0;

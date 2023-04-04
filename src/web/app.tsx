@@ -35,8 +35,11 @@ export default function({ filterInit, externalLinks, onSidebarClick = () => {}, 
 
     return (
         <div>
-            <div className="navigation">
-                <input type='text' onChange={(ev) => setFilter(ev.target.value)} value={filter} />
+            <div className='navigation'>
+                <div className='search'>
+                    <input type='text' onChange={(ev) => setFilter(ev.target.value)} value={filter} />
+                    { filter.length > 0 ? <span className='clear' onClick={() => setFilter('')}>X</span> : null }
+                </div>
                 <ContentTable signatures={signatures} filter={filter} onClick={onSidebarClick} />
             </div>
             <div className='content-wrapper'>
