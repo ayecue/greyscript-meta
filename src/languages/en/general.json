@@ -23,7 +23,7 @@
         ]
     },
     "typeof": {
-        "description": "Returns a `string` containing the type of the entity provided. There are following types by default: \"string\", \"number\", \"function\", \"map\", \"list\", \"null\", \"file\", \"shell\", \"computer\", \"metaMail\", \"metaLib\", \"metaxploit\", \"crypto\", \"port\", \"router\", \"netSession\", \"service\", \"subWallet\", \"wallet\", \"coin\", \"aptClient\", \"blockchain\". Custom types can be added as well by using the `classID` propery in a map.",
+        "description": "Returns a `string` containing the type of the entity provided. There are following types by default: \"aptClient\", \"blockchain\", \"coin\", \"computer\", \"crypto\", \"file\", \"function\", \"list\", \"map\", \"metaLib\", \"metaMail\", \"metaxploit\", \"netSession\", \"null\", \"number\", \"port\", \"router\", \"service\", \"shell\", \"string\", \"subWallet\", \"wallet\". Custom types can be added as well by using the `classID` propery in a map.",
         "example": [
             "myObj = { \"classID\": \"myType\" }",
             "if typeof(myObj) == \"myType\" then",

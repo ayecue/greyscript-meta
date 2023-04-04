@@ -4,7 +4,6 @@ import { signatures } from '../meta';
 import ContentTable from './components/content-table';
 import Definitions from './components/definitions';
 import monacoLoader from '@monaco-editor/loader';
-import handleViewport from 'react-in-viewport';
 
 export interface AppExternalLink {
     label: string;

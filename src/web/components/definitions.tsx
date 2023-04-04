@@ -145,6 +145,11 @@ function renderDefinitions({ signatures, filter, monaco, onCodeRunClick, onCopyC
         });
         const metaDescription = getMetaDescription(item.type);
         const metaExample = getMetaExample(item.type);
+        const isHidden = pattern && !pattern.test(`${item.type}`);
+
+        if (!isHidden) {
+            visibleItems++;
+        }
 
         const getDimensions = useCallback(() => {
             return {

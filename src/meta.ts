@@ -9,6 +9,7 @@ import FtpShell from './signatures/ftp-shell.json';
 import Generic from './signatures/general.json';
 import List from './signatures/list.json';
 import MapSignature from './signatures/map.json';
+import NumberSignature from './signatures/number.json';
 import MetaLib from './signatures/meta-lib.json';
 import MetaMail from './signatures/meta-mail.json';
 import Metaxploit from './signatures/metaxploit.json';
@@ -68,6 +69,14 @@ export const signatures: Signature[] = [
     definitions: <SignatureDefinitionContainer>(<unknown>AptClient)
   },
   {
+    type: 'blockchain',
+    definitions: <SignatureDefinitionContainer>(<unknown>Blockchain)
+  },
+  {
+    type: 'coin',
+    definitions: <SignatureDefinitionContainer>(<unknown>Coin)
+  },
+  {
     type: 'computer',
     definitions: <SignatureDefinitionContainer>(<unknown>Computer)
   },
@@ -112,6 +121,10 @@ export const signatures: Signature[] = [
     definitions: <SignatureDefinitionContainer>(<unknown>NetSession)
   },
   {
+    type: 'number',
+    definitions: <SignatureDefinitionContainer>(<unknown>NumberSignature)
+  },
+  {
     type: 'port',
     definitions: <SignatureDefinitionContainer>(<unknown>Port)
   },
@@ -120,24 +133,16 @@ export const signatures: Signature[] = [
     definitions: <SignatureDefinitionContainer>(<unknown>Router)
   },
   {
+    type: 'service',
+    definitions: <SignatureDefinitionContainer>(<unknown>Service)
+  },
+  {
     type: 'shell',
     definitions: <SignatureDefinitionContainer>(<unknown>Shell)
   },
   {
     type: 'string',
     definitions: <SignatureDefinitionContainer>(<unknown>String)
-  },
-  {
-    type: 'blockchain',
-    definitions: <SignatureDefinitionContainer>(<unknown>Blockchain)
-  },
-  {
-    type: 'coin',
-    definitions: <SignatureDefinitionContainer>(<unknown>Coin)
-  },
-  {
-    type: 'service',
-    definitions: <SignatureDefinitionContainer>(<unknown>Service)
   },
   {
     type: 'subWallet',
