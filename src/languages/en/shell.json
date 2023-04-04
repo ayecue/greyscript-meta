@@ -42,9 +42,9 @@
         ]
     },
     "launch": {
-        "description": "Launches the binary which was at the provided path. Returns `true` when launch was successful otherwise this method will return `false`.",
+        "description": "Launches the binary which is at the provided path. Optionally parameters can be passed. Returns `true` when launch was successful otherwise this method will return `false`. Cannot be used to execute binaries with an EXE extension.",
         "example": [
-            "shell = get_shell",
+            "shell = get_shell(\"root\", \"test\")",
             "shell.launch(\"/bin/cat\", \"/etc/passwd\")"
         ]
     },

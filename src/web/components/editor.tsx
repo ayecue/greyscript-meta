@@ -46,7 +46,8 @@ export default function({ monaco, content, name, onClick, rerenderDelay = 500, g
                     minimap: {
                         enabled: false
                     },
-                    wordWrap: 'on'
+                    wordWrap: 'on',
+                    scrollBeyondLastLine: false
                 });
 
                 setEditorInstance(newEditorInstance);
