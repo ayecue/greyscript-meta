@@ -67,16 +67,12 @@ html {
     margin: 0;
     padding: 0;
     list-style: none;
-    display: inline-block;
+    display: none;
 }
 
 .readme ul .collapse {
     cursor: pointer;
     padding: 0.7em 1.4em;
-}
-
-.readme a {
-    display: none;
 }
 
 .editor {
@@ -414,6 +410,10 @@ p .highlight.string {
 
     .readme {
         margin: 0;
+    }
+
+    .readme li {
+        display: inline-block;
     }
 
     .readme .external-links a {
