@@ -58,7 +58,7 @@ html {
 }
 
 .editor {
-    min-height: 100px;
+    height: 100px;
     width: auto;
 	border: 1px groove #333;
 }

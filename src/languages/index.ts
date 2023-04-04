@@ -10,18 +10,12 @@ export const getLanguageFile = (language: string = 'en'): Descriptions => {
   }
 };
 
-export const getMetaDescription = (
-  type: string,
-  language?: string
-): string => {
+export const getMetaDescription = (type: string, language?: string): string => {
   const lang = getLanguageFile(language);
   return lang?.[type]?.$meta?.description;
 };
 
-export const getMetaExample = (
-  type: string,
-  language?: string
-): string[] => {
+export const getMetaExample = (type: string, language?: string): string[] => {
   const lang = getLanguageFile(language);
   return lang?.[type]?.$meta?.example;
 };
