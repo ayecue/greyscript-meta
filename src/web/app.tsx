@@ -10,12 +10,57 @@ export interface AppExternalLink {
     href: string;
 }
 
+export interface ExternalLinksProps {
+    externalLinks: AppExternalLink[];
+    maxLinks?: number;
+}
+
 export interface AppProps {
     externalLinks: AppExternalLink[];
     filterInit: string;
     onSidebarClick?: Function;
     onCodeRunClick?: Function;
     onCopyClick?: Function;
+}
+
+function ExternalLinks({ externalLinks, maxLinks = 2 }: ExternalLinksProps) {
+    if (externalLinks.length <= maxLinks) {
+        return <ul>
+            {
+                externalLinks.map((externalLink: AppExternalLink, index) => {
+                    return (
+                        <li key={index} className='external-links'><a href={externalLink.href} target='_blank'>{externalLink.label}</a></li>
+                    )
+                })
+            }
+        </ul>;
+    }
+
+    const [fullView, setFullView] = useState(false);
+
+    if (fullView) {
+        return <ul>
+            {
+                externalLinks.map((externalLink: AppExternalLink, index) => {
+                    return (
+                        <li key={index} className='external-links'><a href={externalLink.href} target='_blank'>{externalLink.label}</a></li>
+                    )
+                })
+            }
+            <li className='collapse' onClick={() => setFullView(false)}>less</li>
+        </ul>;
+    }
+
+    return <ul>
+        {
+            externalLinks.slice(0, maxLinks).map((externalLink: AppExternalLink, index) => {
+                return (
+                    <li key={index} className='external-links'><a href={externalLink.href} target='_blank'>{externalLink.label}</a></li>
+                )
+            })
+        }
+        <li className='collapse' onClick={() => setFullView(true)}>more</li>
+    </ul>;
 }
 
 export default function({ filterInit, externalLinks, onSidebarClick = () => {}, onCodeRunClick = () => {}, onCopyClick = () => {} }: AppProps) {
@@ -45,15 +90,7 @@ export default function({ filterInit, externalLinks, onSidebarClick = () => {}, 
             <div className='content-wrapper'>
                 <div className='readme'>
                     <h1>GreyScript API (unofficial)</h1>
-                    <ul>
-                        {
-                            externalLinks.map((externalLink: AppExternalLink, index) => {
-                                return (
-                                    <li key={index} className='external-links'><a href={externalLink.href} target='_blank'>{externalLink.label}</a></li>
-                                )
-                            })
-                        }
-                    </ul>
+                    <ExternalLinks externalLinks={externalLinks} />
                 </div>
                 <Definitions signatures={signatures} filter={filter} monaco={monaco} onCodeRunClick={onCodeRunClick} onCopyClick={onCopyClick} />
             </div>
