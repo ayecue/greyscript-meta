@@ -36,7 +36,7 @@
             "crypto = include_lib(\"/lib/crypto.so\")",
             "networks = get_shell.host_computer.wifi_networks(\"wlan0\")",
             "for index in range(0, networks.len - 1)",
-            "   print(index + \".) \" + networks[index].split(\" \"))",
+            "   print(index + \".) \" + networks[index])",
             "end for",
             "selectedIndex = user_input(\"Select Wifi: \").to_int",
             "if (typeof(selectedIndex) == \"string\" or selectedIndex < 0 or selectedIndex > networks.len - 1) then",
