@@ -1,14 +1,18 @@
-import React, { ComponentProps, useState } from 'react';
+import React, { useState } from 'react';
 import language from './grammar/language';
 import { signatures } from '../meta';
 import ContentTable from './components/content-table';
 import Definitions from './components/definitions';
-import Basics from './components/basics';
 import monacoLoader from '@monaco-editor/loader';
 
 export interface AppExternalLink {
     label: string;
     href: string;
+}
+
+export interface ExternalLinksProps {
+    externalLinks: AppExternalLink[];
+    maxLinks?: number;
 }
 
 export interface AppProps {
@@ -19,11 +23,44 @@ export interface AppProps {
     onCopyClick?: Function;
 }
 
-function shareLink(type: string, methodName: string) {
-    const url = new URL(location.href);
-    url.searchParams.set('filter', `${type}.${methodName}`);
+function ExternalLinks({ externalLinks, maxLinks = 2 }: ExternalLinksProps) {
+    if (externalLinks.length <= maxLinks) {
+        return <ul>
+            {
+                externalLinks.map((externalLink: AppExternalLink, index) => {
+                    return (
+                        <li key={index} className='external-links'><a href={externalLink.href} target='_blank'>{externalLink.label}</a></li>
+                    )
+                })
+            }
+        </ul>;
+    }
 
-    navigator.clipboard.writeText(url.toString());
+    const [fullView, setFullView] = useState(false);
+
+    if (fullView) {
+        return <ul>
+            {
+                externalLinks.map((externalLink: AppExternalLink, index) => {
+                    return (
+                        <li key={index} className='external-links'><a href={externalLink.href} target='_blank'>{externalLink.label}</a></li>
+                    )
+                })
+            }
+            <li className='collapse' onClick={() => setFullView(false)}>less</li>
+        </ul>;
+    }
+
+    return <ul>
+        {
+            externalLinks.slice(0, maxLinks).map((externalLink: AppExternalLink, index) => {
+                return (
+                    <li key={index} className='external-links'><a href={externalLink.href} target='_blank'>{externalLink.label}</a></li>
+                )
+            })
+        }
+        <li className='collapse' onClick={() => setFullView(true)}>more</li>
+    </ul>;
 }
 
 export default function({ filterInit, externalLinks, onSidebarClick = () => {}, onCodeRunClick = () => {}, onCopyClick = () => {} }: AppProps) {
@@ -43,24 +80,18 @@ export default function({ filterInit, externalLinks, onSidebarClick = () => {}, 
 
     return (
         <div>
-            <div className="navigation">
-                <input type='text' onChange={(ev) => setFilter(ev.target.value)} value={filter} />
+            <div className='navigation'>
+                <div className='search'>
+                    <input type='text' onChange={(ev) => setFilter(ev.target.value)} value={filter} />
+                    { filter.length > 0 ? <span className='clear' onClick={() => setFilter('')}>X</span> : null }
+                </div>
                 <ContentTable signatures={signatures} filter={filter} onClick={onSidebarClick} />
             </div>
             <div className='content-wrapper'>
                 <div className='readme'>
                     <h1>GreyScript API (unofficial)</h1>
-                    <ul>
-                        {
-                            externalLinks.map((externalLink: AppExternalLink, index) => {
-                                return (
-                                    <li key={index}><a href={externalLink.href} target='_blank'>{externalLink.label}</a></li>
-                                )
-                            })
-                        }
-                    </ul>
+                    <ExternalLinks externalLinks={externalLinks} />
                 </div>
-                <Basics monaco={monaco} onCodeRunClick={onCodeRunClick} />
                 <Definitions signatures={signatures} filter={filter} monaco={monaco} onCodeRunClick={onCodeRunClick} onCopyClick={onCopyClick} />
             </div>
         </div>

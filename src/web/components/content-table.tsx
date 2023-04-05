@@ -33,16 +33,16 @@ function renderSignatures({ signatures, filter, onClick }: ContentTableState) {
         <ul className='first'>
             {
                 signatures.sort().map((item, index) => {
+                    const pattern = new RegExp(filter, 'i');
                     let intrinsics = Object.keys(item.definitions).sort();
 
                     if (filter !== '') {
                         intrinsics = intrinsics.filter((methodName) => {
-                            const pattern = new RegExp(filter, 'i');
                             return pattern.test(`${item.type}.${methodName}`);
                         });
                     }
 
-                    if (intrinsics.length === 0) {
+                    if (!pattern.test(`${item.type}`) && intrinsics.length === 0) {
                         return;
                     }
 

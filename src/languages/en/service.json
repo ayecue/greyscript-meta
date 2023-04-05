@@ -1,0 +1,14 @@
+{
+    "$meta": {
+        "description": "The service object can be obtained through using `include_lib`. Here a list of all installable services: FTP, SSH, HTTP, Repository, Chat"
+    },
+    "install_service": {
+        "description": "Installs the necessary files for the correct functioning of the service and starts it. Returns `true` if the installation has been completed successfully, in case of error a `string` with the details is returned."
+    },
+    "start_service": {
+        "description": "Start the service and open its associated `port` on the local machine. The service needs a port forwarded in the router to be accessible from the outside. Returns `true` if the service has started correctly, in case of error a `string` with the details is returned."
+    },
+    "stop_service": {
+        "description": "Stop the service and close its associated `port` on the local machine. Returns `true` if the service has been stopped correctly, in case of error a `string` with the details is returned."
+    }
+}

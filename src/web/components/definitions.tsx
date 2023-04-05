@@ -1,6 +1,6 @@
-import React, { ComponentState } from 'react';
+import React, { ComponentState, useCallback, useRef } from 'react';
 import { Signature, SignatureDefinition, SignatureDefinitionArg } from '../../meta';
-import { getDescription, getExample, getExampleReference } from '../../languages';
+import { getDescription, getExample, getMetaDescription, getMetaExample } from '../../languages';
 import Monaco from 'monaco-editor/esm/vs/editor/editor.api';
 import reactStringReplace from 'react-string-replace';
 import Editor from './editor';
@@ -75,13 +75,20 @@ function renderDescription(description: string) {
 }
 
 function renderDefinition(type: string, methodName: string, definition: SignatureDefinition, monaco: typeof Monaco, onCodeRunClick: Function, onCopyClick: Function) {
+    const containerRef = useRef<HTMLElement>(null);
     const description = getDescription(type, methodName);
     const example = getExample(type, methodName);
-    const exampleRef = getExampleReference(type, methodName);
     const key = `${type.toUpperCase()}_${methodName.toUpperCase()}`;
 
+    const getDimensions = useCallback(() => {
+        return {
+            width: containerRef.current.clientWidth - 110,
+            height: 100
+        };
+    }, [containerRef]);
+
     return (
-        <article className='definition'>
+        <article className='definition' ref={containerRef}>
             <h3 id={key}>{methodName}</h3>
             <a className='share' onClick={() => onCopyClick(type, methodName)}>copy</a>
             <table>
@@ -103,9 +110,9 @@ function renderDefinition(type: string, methodName: string, definition: Signatur
                                 <Editor
                                     monaco={monaco}
                                     content={example.join('\n')}
-                                    contentWithRef={exampleRef.concat(example).join('\n')}
                                     name={key}
                                     onClick={onCodeRunClick}
+                                    getDimensions={getDimensions}
                                 />
                             </td>
                         </tr>
@@ -120,6 +127,7 @@ function renderDefinitions({ signatures, filter, monaco, onCodeRunClick, onCopyC
     const pattern = filter ? new RegExp(filter, 'i') : null;
     const items = signatures.map((item, index) => {
         let visibleItems = 0;
+        const containerRef = useRef<HTMLLIElement>(null);
         const intrinsicKeys = Object.keys(item.definitions).sort();
         const items = intrinsicKeys.map((methodName: string, subIndex: number) => {
             const definition = item.definitions[methodName];
@@ -135,10 +143,33 @@ function renderDefinitions({ signatures, filter, monaco, onCodeRunClick, onCopyC
                 </li>
             );
         });
+        const metaDescription = getMetaDescription(item.type);
+        const metaExample = getMetaExample(item.type);
+        const isHidden = pattern && !pattern.test(`${item.type}`);
+
+        if (!isHidden) {
+            visibleItems++;
+        }
+
+        const getDimensions = useCallback(() => {
+            return {
+                width: containerRef.current.clientWidth - 10,
+                height: 100
+            };
+        }, [containerRef]);
 
         return (
-            <li className={visibleItems === 0 ? 'hidden' : ''} key={index}>
+            <li className={visibleItems === 0 ? 'hidden' : ''} key={index} ref={containerRef}>
                 <h2 id={item.type.toUpperCase()}>{item.type}</h2>
+                {metaDescription ? renderDescription(metaDescription) : null }
+                {metaExample ? <Editor
+                                monaco={monaco}
+                                content={metaExample.join('\n')}
+                                name={item.type.toUpperCase()}
+                                onClick={onCodeRunClick}
+                                getDimensions={getDimensions}
+                            />
+                    : null }
                 <ul className='second'>
                     {items}
                 </ul>

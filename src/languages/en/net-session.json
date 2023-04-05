@@ -1,0 +1,12 @@
+{
+    "dump_lib": {
+        "description": "Returns the `metaLib` associated with the remote service. For example if the `metaxpoit` method `net_use` was used on a ssh port it will return the `metaLib` related to the ssh service. In case the port was zero is will return a `metaLib` related to the kernel router.",
+        "example": [
+            "metax = include_lib(\"/lib/metaxploit.so\")",
+            "ports = get_router(\"1.1.1.1\").used_ports",
+            "netSession = metax.net_use(\"1.1.1.1\", ports[0].port_number)",
+            "metaLib = netSession.dump_lib",
+            "print(\"Library: \" + metaLib.lib_name + \" - \" + metaLib.version + \" on port \" + port.port_number)"
+        ]
+    }
+}

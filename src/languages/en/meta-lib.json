@@ -1,0 +1,47 @@
+{
+    "$meta": {
+        "description": "A `metaLib` object can be obtained by either using `load` or `lib_dump`."
+    },
+    "overflow": {
+        "description": "Enables to exploit vulnerabilities. The returned value can be of various data types. Therefore the usage of `typeof` is advisable. Optionally an extra argument can be passed which can be helpful when for example stumbling upon a change password exploit.",
+        "example": [
+            "metax = include_lib(\"/lib/metaxploit.so\")",
+            "metaLib = metax.load(\"/lib/init.so\")",
+            "scanResult = metax.scan(metaLib)",
+            "target = scanResult[0]",
+            "scanAddress = metax.scan_address(metaLib, target)",
+            "segments = scanAddress.split(\"Unsafe check: \")",
+            "exploit = null",
+           " for segment in segments",
+            "   hasRequirement = segment.indexOf(\"*\") != null",
+            "   if (not hasRequirement) then",
+            "      labelStart = segment.indexOf(\"<b>\")",
+            "      labelEnd = segment.indexOf(\"</b>\")",
+            "      exploit = segment[labelStart + 3: labelEnd]",
+            "   end if",
+            "end for",
+            "if (exploit) then",
+            "   print(\"Exploiting... \" + target + \":\" + exploit)",
+            "   print(metaLib.overflow(target, exploit))",
+            "else",
+            "   print(\"No exploit found with zero requirements\")",
+            "end if"
+        ]
+    },
+    "version": {
+        "description": "Returns a `string` containing the version number of the library. Here an example of a version number: \"1.0.0\"",
+        "example": [
+            "metax = include_lib(\"/lib/metaxploit.so\")",
+            "metaLib = metax.load(\"/lib/init.so\")",
+            "print(\"Init.so version: \" + metaLib.version)"
+        ]
+    },
+    "lib_name": {
+        "description": "Returns a `string` containing the name of the library. Here an example of a name: \"init.so\"",
+        "example": [
+            "metax = include_lib(\"/lib/metaxploit.so\")",
+            "metaLib = metax.load(\"/lib/init.so\")",
+            "print(\"Name for library is: \" + metaLib.lib_name)"
+        ]
+    }
+}

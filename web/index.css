@@ -12,9 +12,14 @@ html {
     right: 0;
     padding: 10px;
     z-index: 999;
+    width: 96%;
 }
 
-.navigation > input {
+.navigation .search {
+    position: relative;
+}
+
+.navigation .search input {
     border: none;
     -webkit-appearance: none;
     -ms-appearance: none;
@@ -26,6 +31,16 @@ html {
     height: 9px;
     width: 96%;
     font-size: 14px;
+}
+
+.navigation .search .clear {
+    cursor: pointer;
+    color: #000;
+    position: absolute;
+    z-index: 999;
+    right: 10px;
+    font-size: 20px;
+    top: 4px;
 }
 
 .readme {
@@ -41,24 +56,27 @@ html {
     margin: 0;
     padding: 0;
     right: 5px;
-    top: 5px;
+    bottom: 5px;
     position: fixed;
     z-index: 999;
+    background: #333;
+    opacity: 0.7;
 }
 
 .readme li {
     margin: 0;
     padding: 0;
     list-style: none;
-    display: inline-block;
-}
-
-.readme a {
     display: none;
 }
 
+.readme ul .collapse {
+    cursor: pointer;
+    padding: 0.7em 1.4em;
+}
+
 .editor {
-    min-height: 100px;
+    height: 100px;
     width: auto;
 	border: 1px groove #333;
 }
@@ -252,6 +270,10 @@ html {
     list-style: none;
 }
 
+.definitions li > p {
+    margin: 10px 0;
+}
+
 .definitions .hidden {
     display: none;
 }
@@ -343,12 +365,20 @@ html {
     color: #569cd6;
 }
 
-.definitions .definition .description .highlight.type {
+.definitions .definition .description {
+    padding: 10px 0 0;
+}
+
+p .highlight.type {
     color: #3dc9b0;
 }
 
-.definitions .definition .description .highlight.string {
+p .highlight.string {
     color: #ce9178;
+}
+
+.definitions .definition .example {
+    padding: 10px 0 0;
 }
 
 @media screen and (min-width: 760px) {
@@ -357,7 +387,17 @@ html {
         padding: 0;
     }
 
-    .navigation > input {
+    .navigation .search {
+        width: 234px;
+    }
+
+    .navigation .search .clear {
+        position: absolute;
+        top: -2px;
+        right: 15px;
+    }
+
+    .navigation .search input {
         position: fixed;
         left: 0;
         top: 0;
@@ -372,7 +412,11 @@ html {
         margin: 0;
     }
 
-    .readme a {
+    .readme li {
+        display: inline-block;
+    }
+
+    .readme .external-links a {
         display: inline-block;
         padding: 0.7em 1.4em;
         margin: 0 0 0 0.3em;
@@ -380,14 +424,11 @@ html {
         box-sizing: border-box;
         text-decoration: none;
         text-transform: uppercase;
-        font-weight: 400;
-        color: #333;
-        background-color: #999;
-        box-shadow: inset 0 -0.6em 0 -0.35em rgb(0 0 0 / 17%);
+        font-weight: bold;
+        color: #fff;
         text-align: center;
         position: relative;
         cursor: pointer;
-        border: 1px solid transparent;
     }
     
     .readme a:active {

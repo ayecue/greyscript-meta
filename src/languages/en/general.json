@@ -1,0 +1,628 @@
+{
+    "mail_login": {
+        "description": "Returns a `MetaMail` entity if the login has been correct. In case an issue appeared this function will return `null`.",
+        "example": [
+            "metaMail = mail_login(\"test@test.com\", \"test\")",
+            "if metaMail == null then",
+            "   print(\"Loggin failed.\")",
+            "else",
+            "   print(\"You've got mail.\")",
+            "end if"
+        ]
+    },
+    "parent_path": {
+        "description": "Returns a `string` which is the potential parent path of the path provided. Keep in mind that the path provided needs to be properly formatted.",
+        "example": [
+            "print(\"Is proper parent path: \" + (parent_path(\"/my/test/path\") == \"/my/test\"))"
+        ]
+    },
+    "hasIndex": {
+        "description": "Depending on data type this function checks if the provided index is available inside the value. To get a better idea about the behaviour look into the `hasIndex` methods related to `string`, `list` and `map`.",
+        "example": [
+            "print(\"List has index: \" + hasIndex([1, 2, 3], 2)"
+        ]
+    },
+    "typeof": {
+        "description": "Returns a `string` containing the type of the entity provided. There are following types by default: \"aptClient\", \"blockchain\", \"coin\", \"computer\", \"crypto\", \"file\", \"function\", \"list\", \"map\", \"metaLib\", \"metaMail\", \"metaxploit\", \"netSession\", \"null\", \"number\", \"port\", \"router\", \"service\", \"shell\", \"string\", \"subWallet\", \"wallet\". Custom types can be added as well by using the `classID` propery in a map.",
+        "example": [
+            "myObj = { \"classID\": \"myType\" }",
+            "if typeof(myObj) == \"myType\" then",
+            "   print(\"Object is myType.\")",
+            "else",
+            "   print(\"Object is not myType.\")",
+            "end if"
+        ]
+    },
+    "get_router": {
+        "description": "Returns by default the `router` to which the executing computer is connected to. Optinally an IP address can be provided. In case of failure `null` is returned.",
+        "example": [
+            "router = get_router",
+            "if router.local_ip == get_shell.host_computer.network_gateway then",
+            "   print(\"Router is equal to network gateway.\")",
+            "else",
+            "   print(\"Router is not equal to network gateway.\")",
+            "end if"
+        ]
+    },
+    "get_switch": {
+        "description": "Returns the switch on the local network whose IP address matches, otherwise it returns `null`.",
+        "example": [
+            "router = get_switch(\"192.168.0.2)",
+            "print(\"IP address of switch: \" + router.local_ip)"
+        ]
+    },
+    "nslookup": {
+        "description": "Returns the IP address for the provided web address. In case the web address cannot be found a `string` gets returned containing the following message: \"Not found\"",
+        "example": [
+            "url = params[0]",
+            "print(\"IP for website is: \" + nslookup(url))"
+        ]
+    },
+    "print": {
+        "description": "Print a message on the Terminal. Optionally replacing can be enabled which will replace the previous print. This can be useful for creating a loading bar for example. There is also the possibility of styling output by using TextMeshPro rich-text tags.",
+        "example": [
+            "for i in range(9)",
+            "   print((\"#\" * (9 - i)) + (\"-\" * i) , true)",
+            "   wait(0.2)",
+            "end for"
+        ]
+    },
+    "clear_screen": {
+        "description": "Removes any text existing in a Terminal previous to this point.",
+        "example": [
+            "for i in range(9)",
+            "   clear_screen",
+            "   print((\"#\" * (9 - i)) + (\"-\" * i))",
+            "   wait(0.2)",
+            "end for"
+        ]
+    },
+    "active_user": {  
+        "description": "Returns a `string` with the name of the user who is executing the current script.",
+        "example": [
+            "print(\"Current active user: \" + active_user)"
+        ]
+    },
+    "home_dir": {
+        "description": "Returns a `string` with the home folder path of the user who is executing the current script.",
+        "example": [
+            "print(\"Home dir of current user: \" + home_dir)"
+        ]
+    },
+    "get_shell": {
+        "description": "Returns the `shell` that is executing the script. Optionally a username and password can be provided. In case the username or password do not match an existing user this method will return `null`.",
+        "example": [
+            "shell = get_shell(\"root\", \"test\")",
+            "if shell == null then",
+            "   print(\"Couldn't obtain root shell.\")",
+            "else",
+            "   print(\"Obtained root shell.\")",
+            "end if"
+        ]
+    },
+    "indexes": {
+        "description": "Depending on data type this function returns a list with all available indexes. To get a better idea about the behaviour look into the `indexes` methods related to `string`, `list` and `map`.",
+        "example": [
+            "indexesOfStr = indexes(\"test\")",
+            "print(\"Following indexes are available: \" + indexesOfStr.join(\", \"))"
+        ]
+    },
+    "values": {
+        "description": "Depending on data type this function returns a list with all available values. To get a better idea about the behaviour look into the `values` methods related to `string`, `list` and `map`.",
+        "example": [
+            "indexesOfStr = values(\"test\")",
+            "print(\"Following values are available: \" + indexesOfStr.join(\", \"))"
+        ]
+    },
+    "indexOf": {
+        "description": "Depending on data type this function searches for the index of the provided value. To get a better idea about the behaviour look into the `indexOf` methods related to `string`, `list` and `map`.",
+        "example": [
+            "index = indexOf(\"test\", \"e\")",
+            "print(\"e is at: \" + index)"
+        ]
+    },
+    "len": {
+        "description": "Depending on data type this function returns the length of the provided value. To get a better idea about the behaviour look into the `len` methods related to `string`, `list` and `map`.",
+        "example": [
+            "length = len(\"test\")",
+            "print(\"Length of string is: \" + length)"
+        ]
+    },
+    "shuffle": {
+        "description": "Depending on data type this function will shuffle data. Instead of returning the newly shuffled data this function will mutate the data. To get a better idea about the behaviour look into the `shuffle` methods related to `list` and `map`.",
+        "example": [
+            "list = [0, 1, 2, 3, 4, 5]",
+            "shuffle(list)",
+            "print(\"And the winner is: \" + list[0])"
+        ]
+    },
+    "val": {
+        "description": "Casts a `string` to a `number`. In case the provided `string` does not represent a valid `number` the `number` zero will get returned.",
+        "example": [
+            "num = val(\"1.25\")",
+            "print(\"Number in string is: \" + num)"
+        ]
+    },
+    "lower": {
+        "description": "Returns a `string` which is the lowercase transformed version of the provided `string`.",
+        "example": [
+            "myString = lower(\"HELLO WORLD\")",
+            "print(myString)"
+        ]
+    },
+    "upper": {
+        "description": "Returns a `string` which is the uppercase transformed version of the provided `string`.",
+        "example": [
+            "myString = upper(\"hello world\")",
+            "print(myString)"
+        ]
+    },
+    "sum": {
+        "description": "Depending on data type this function return the sum of all items. To get a better idea about the behaviour look into the `sum` methods related to `list` and `map`.",
+        "example": [
+            "list = [0, 1, 2, 3, 4, 5]",
+            "print(\"Sum of all items is: \" + sum(list))"
+        ]
+    },
+    "pop": {
+        "description": "Depending on data type this function will return the last item in the provided value. Additional this function removes the last item and therefore mutates the object. To get a better idea about the behaviour look into the `pop` methods related to `list` and `map`.",
+        "example": [
+            "list = [0, 1, 2, 3, 4, 5]",
+            "print(\"The last item is: \" + pop(list))"
+        ]
+    },
+    "pull": {
+        "description": "Depending on data type this function will return the first item in the provided value. Additional this function removes the first item and therefore mutates the object. To get a better idea about the behaviour look into the `pull` methods related to `list` and `map`.",
+        "example": [
+            "list = [0, 1, 2, 3, 4, 5]",
+            "print(\"The first item is: \" + pull(list))"
+        ]
+    },
+    "push": {
+        "description": "Depending on data type this function will append a value to the provided object. As a result the object will get mutated. To get a better idea about the behaviour look into the `push` methods related to `list` and `map`.",
+        "example": [
+            "list = [0, 1, 2, 3, 4, 5]",
+            "push(list, 42)",
+            "print(\"The answer to everything is: \" + pop(list))"
+        ]
+    },
+    "sort": {
+        "description": "Depending on data type this function will sort the values in the provided object. As a result the object will get mutated. To get a better idea about the behaviour look into the `sort` methods related to `list` and `map`.",
+        "example": [
+            "list = [9, 3, 5, 7]",
+            "sort(list)",
+            "print(\"Sorted list: \" + list.join(\", \"))"
+        ]
+    },
+    "remove": {
+        "description": "Depending on data type this function will remove a value in the provided object. As a result the object will get mutated. To get a better idea about the behaviour look into the `remove` methods related to `list` and `map`.",
+        "example": [
+            "list = [9, 3, 5, 7]",
+            "remove(list, 5)",
+            "print(\"List after removal: \" + list.join(\", \"))"
+        ]
+    },
+    "user_input": {
+        "description": "Puts script execution on hold in order to receive input from the user. Input will be submitted by pressing Enter. Additionally it is also possible to style the output message by using TextMeshPro rich-text tags. There are two optional arguments. If the passwordMode flag is `true` the input will be masked by asterik signs. In case the anyKey flag is `true` instead of waiting for the Enter key to be pressed any key press will be captured instantly.",
+        "example": [
+            "num = 0",
+            "aboveIncludingZeroTag = \"<color=yellow>\"",
+            "belowZeroTag = \"<color=red>\"",
+            "while (true)",
+            "   clear_screen" ,
+            "   output = aboveIncludingZeroTag + num" , 
+            "   if (num < 0) then",
+            "      output = belowZeroTag + num",
+            "   end if",
+            "   print(output)",
+            "   key = user_input(\"Press arrow up/down to change value.\", false, true)",
+            "   if (key == \"UpArrow\") then",
+            "      num = num + 1",
+            "   else if (key == \"DownArrow\") then",
+            "       num = num - 1",
+            "   else",
+            "       exit(\"Bye!\")",
+            "   end if",
+            "end while"
+        ]
+    },
+    "include_lib": {
+        "description": "Enables to include library binaries which can be used inside your script. In case of success an object will get returned related to the provided library. Otherwise `null` gets returned. Keep in mind that this function can be only used for library binaries. In case you want to import custom scripts or binaries into your project you should use `import_code` instead.",
+        "example": [
+            "crypto = include_lib(\"/lib/crypto.so\")",
+            "if crypto == null then",
+            "   print(\"Crypto library couldn't get imported.\")",
+            "else",
+            "   print(\"Crypto library got imported.\")",
+            "end if"
+        ]
+    },
+    "import_code": {
+        "description": "Enables to import code from different sources into one file. This is useful in case you want to split code into different files and also to avoid any limitation in regards of text file character limits. Note that `import_code` requires an absolute path and is called while compiling the file into a binary instead of during runtime. Additionally `import_code` cannot be nested. Code can be either imported from plain text files or binaries that have \"allow import\" enabled.",
+        "example": [
+            "//Content of main.src",
+            "import_code(\"/home/user/my_module.src\")",
+            "print(\"bye\")",
+            "//Content of my_module.src",
+            "print(\"hello!\")"
+        ]
+    },
+    "exit": {
+        "description": "Stops any execution of the currently running script. Optionally a message can be provided which will be shown in the Terminal. There is also the possibility of styling output by using TextMeshPro rich-text tags.",
+        "example": [
+            "while (true)",
+            "   shouldExit = lower(user_input(\"Want to exit? (Y/N)\"))",
+            "   if (shouldExit == \"y\") then",
+            "      exit(\"See you!\")",
+            "   end if",
+            "end while"
+        ]
+    },
+    "user_mail_address": {
+        "description": "Returns a `string` containing the email address of the user who is executing the script.",
+        "example": [
+            "print(\"My EMail address is: \" + user_mail_address)"
+        ]
+    },
+    "user_bank_number": {
+        "description": "Returns a `string` containing the bank number of the user who is executing the script.",
+        "example": [
+            "print(\"My Bank number is: \" + user_bank_number)"
+        ]
+    },
+    "whois": {
+        "description": "Returns a `string` containing the administrator information behind an IP address provided. In case of failure the returned `string` will contain an error message instead.",
+        "example": [
+            "adminInfo = whos(\"1.1.1.1\")",
+            "infoLines = adminInfo.split(char(10))",
+            "infoObject = {}",
+            "infoObject.domainName = infoLines[0].split(\":\")[1].trim",
+            "infoObject.administrativeContact = infoLines[1].split(\":\")[1].trim",
+            "infoObject.emailAddress = infoLines[2].split(\":\")[1].trim",
+            "infoObject.phone = infoLines[3].split(\":\")[1].trim",
+            "print(\"Phone number: \" + infoObject.phone)"
+        ]
+    },
+    "wait": {
+        "description": "Puts script execution on hold. Optionally the duration can be provided via the time argument. By default the duration will be 1 second. The duration cannot be below 0.01 or above 300.",
+        "example": [
+            "start = time",
+            "wait(5)",
+            "elapsed = time - start",
+            "print(\"Waited: \" + elapsed)"
+        ]
+    },
+    "command_info": {
+        "description": "Returns a `string` containing the help text for common commands. Including commands provided by the Operation System. Commands such as mkdir, whois, ls, sudo etc.",
+        "example": [
+            "print(command_info(\"ls\"))"
+        ]
+    },
+    "program_path": {
+        "description": "Returns a `string` containing the path of the script that is currently executed.",
+        "example": [
+            "path = program_path",
+            "print(\"Script gets executed within: \" + parent_path(path))"
+        ]
+    },
+    "current_path": {
+        "description": "Returns a `string` containing the path in which script that is currently executed from.",
+        "example": [
+            "path = current_path",
+            "print(\"PWD: \" + path)"
+        ]
+    },
+    "format_columns": {
+        "description": "Returns a `string` which is the formatted version of the provided text. Keep in mind that TextMeshPro rich-text tags might srew up the output. When using tags consider applying these after formatting.",
+        "example": [
+            "text = \"FIRST SECOND THIRD",
+            "1 2 3\"",
+            "print(format_columns(text))"
+        ]
+    },
+    "current_date": {
+        "description": "Returns a `string` containing the current date and time. The format is as follows: \"[day]/[month]/[year] - [hours]:[minutes]\". Here an example: \"27/Jan/2000 - 08:19\"",
+        "example": [
+            "dateStr = current_date",
+            "dateSegments = dateStr.split(\" - \")",
+            "date = dateSegments[0].split(\"/\")",
+            "day = date[0]",
+            "month = date[1]",
+            "year = date[2]",
+            "dateTime = dateSegments[1].split(\":\")",
+            "hours = dateTime[0]",
+            "minutes = dateTime[1]",
+            "print(\"Current day: \" + day)"
+        ]
+    },
+    "is_lan_ip": {
+        "description": "Returns `true` in case the provided IP address is a valid Lan IP address. Otherwise `false` will get returned.",
+        "example": [
+            "print(\"Is Lan IP: \" + is_lan_ip(\"192.168.0.1\"))"
+        ]
+    },
+    "is_valid_ip": {
+        "description": "Returns `true` in case the provided IP address is valid. Otherwise `false` will get returned.",
+        "example": [
+            "print(\"Is valid IP: \" + is_lan_ip(\"1.1.1.1\"))"
+        ]
+    },
+    "bitwise": {
+        "description": "Enables to perform bitwise operations. Supported operators are: \"&\", \"|\", \"^\", \"<<\", \">>\", \">>>\". Returns a `number`.",
+        "example": [
+            "num = params[0].to_int",
+            "isOdd = bitwise(\"&\", num, 1) == 1",
+            "if isOdd then",
+            "   print(\"Number is odd.\")",
+            "else",
+            "   print(\"Number is even.\")",
+            "end if"
+        ]
+    },
+    "abs": {
+        "description": "Returns absolute value of `number`.",
+        "example": [
+            "a = 1",
+            "b = 5",
+            "difference = abs(a - b)",
+            "print(\"Difference between a and b is: \" + difference)"
+        ]
+    },
+    "acos": {
+        "description": "Returns the inverse cosine (in radians) of a `number`.",
+        "example": [
+            "adjacent = 8",
+            "hypotenuse = 10",
+            "calcAngle = acos(adjacent / hypotenuse)",
+            "print(\"Angle: \" + calcAngle)"
+        ]
+    },
+    "asin": {
+        "description": "Returns the inverse sine (in radians) of a `number`.",
+        "example": [
+            "opposite = 6",
+            "hypotenuse = 10",
+            "calcAngle = acos(opposite / hypotenuse)",
+            "print(\"Angle: \" + calcAngle)"
+        ]
+    },
+    "atan": {
+        "description": "Returns the inverse tangent (in radians) of a `number`.",
+        "example": [
+            "opposite = 8",
+            "hypotenuse = 10",
+            "calcAngle = atan(opposite / hypotenuse)",
+            "print(\"Angle: \" + calcAngle)"
+        ]
+    },
+    "tan": {
+        "description": "Returns the tangent of a `number` in radians.",
+        "example": [
+            "degrees = 90",
+            "tanFromDegrees = tan(degress * pi / 180)",
+            "print(\"Tan from degrees: \" + tanFromDegrees)"
+        ]
+    },
+    "cos": {
+        "description": "Returns the cosine of a `number` in radians.",
+        "example": [
+            "radians = 1",
+            "radius = 10",
+            "circleX = cos(radians) * radius",
+            "print(circleX)"
+        ]
+    },
+    "code": {
+        "description": "Returns the unicode `number` of the first character of the string. In case an empty `string` is provided the script execution will crash.",
+        "example": [
+            "key = user_input(\"Press a key!\", false, true)",
+            "isA = key.code == 97",
+            "if isA then",
+            "   print(\"You pressed A.\")",
+            "else",
+            "   print(\"You did not press A.\")",
+            "end if"
+        ]
+    },
+    "char": {
+        "description": "Returns the unicode character `string` related to the provided unicode `number`. The provided `number` needs to be between 0 and 65535. Any `number` which is outside this range will cause the script to throw a runtime error.",
+        "example": [
+            "key = user_input(\"Press a key!\", false, true)",
+            "isA = key == char(97)",
+            "if isA then",
+            "   print(\"You pressed A.\")",
+            "else",
+            "   print(\"You did not press A.\")",
+            "end if"
+        ]
+    },
+    "sin": {
+        "description": "Returns the sine of a `number` in radians.",
+        "example": [
+            "radians = 1",
+            "radius = 10",
+            "circleY = sin(radians) * radius",
+            "print(circleY)"
+        ]
+    },
+    "floor": {
+        "description": "Returns `number` rounded down to the integer value of the provided `number`.",
+        "example": [
+            "price = 25.43467",
+            "floored = floor(price * 100) / 100",
+            "print(\"Floored price: \" + floored)"
+        ]
+    },
+    "range": {
+        "description": "Returns a `list` where each item is a `number`. By default the `list` starts with the `number` zero and incrementing by one each item. Optionally start and end can be defined. Additionally the incremental value can be changed as well. In case the incremental value is zero this function will throw a runtime error.",
+        "example": [
+            "print(\"Countdown:\")",
+            "for num in range(10)",
+            "   print(num)",
+            "end for",
+            "print(\"Done!\")"
+        ]
+    },
+    "round": {
+        "description": "Returns `number` rounded to the integer value of the provided `number`.",
+        "example": [
+            "price = 25.43467",
+            "rounded = round(price * 100) / 100",
+            "print(\"Price: \" + rounded)"
+        ]
+    },
+    "rnd": {
+        "description": "Returns a random `number` between 0 and 1. Optionally a seed `number` can be provided this seeds a random `number` generator with the given value.",
+        "example": [
+            "min = 10",
+            "max = 20",
+            "output = floor(rnd * (max - min + 1) + min)",
+            "input = user_input(\"Guess a number between 10 and 20!\").to_int",
+            "if (input == output) then",
+            "   print(\"You guessed right!\")",
+            "else",
+            "   print(\"You failed! The number was \" + output)",
+            "end if"
+        ]
+    },
+    "sign": {
+        "description": "Returns a one or minus one, indicating the sign of the number passed as argument. If the input is zero, it will be returned as-is.",
+        "example": [
+            "print(sign(40))",
+            "print(sign(-40))",
+            "print(sign(0))"
+        ]
+    },
+    "sqrt": {
+        "description": "Returns the square root of a `number`.",
+        "example": [
+            "a = 3",
+            "b = 4",
+            "calcHypotenuse = sqrt((a * a) + (b * b))",
+            "print(\"Hypotenuse: \" + calcHypotenuse)"
+        ]
+    },
+    "str": {
+        "description": "Returns the `string` value of provided data. Can be used to turn a `number` into a `string` or to get the signature of a `function`.",
+        "example": [
+            "signature = str(@user_input)",
+            "argSegment = signature[9:signature.len - 1]",
+            "args = argSegment.split(\",\")",
+            "print(\"Function has \" + args.len + \" arguments.\")"
+        ]
+    },
+    "ceil": {
+        "description": "Returns `number` rounded up to the integer value of the provided `number`.",
+        "example": [
+            "price = 25.43467",
+            "upperPrice = ceil(price * 100) / 100",
+            "print(\"Upper price: \" + upperPrice)"
+        ]
+    },
+    "pi": {
+        "description": "Returns the `number` PI to the precision of six.",
+        "example": [
+            "radius = 10",
+            "circumference = 2 * pi * radius",
+            "print(\"Circumference: \" + circumference)"
+        ]
+    },
+    "launch_path": {
+        "description": "Returns a `string` containing the path of the script that is currently executed.",
+        "example": [
+            "path = program_path",
+            "print(\"Script gets executed within: \" + parent_path(path))"
+        ]
+    },
+    "slice": {
+        "description": "Returns a sliced `list`. Valid data types for slicing are `string` and `list`. The returned `list` will contain all elements related to the provided start and end index.",
+        "example": [
+            "myString = \"not your text\"",
+            "print(\"my \" + slice(myString, 9))"
+        ]
+    },
+    "md5": {
+        "description": "Returns the md5 hash `string` of the provided `string`.",
+        "example": [
+            "passwordHash = md5(\"test\")",
+            "print(\"Hash for the password 'test' is \" + passwordHash)"
+        ]
+    },
+    "hash": {
+        "description": "Returns numeric hash for the provided data.",
+        "example": [
+            "hashA = hash({ \"a\": 2, \"b\": 1 })",
+            "hashB = hash({ \"b\": 1, \"a\": 2 })",
+            "if (hashA == hashB) then",
+            "   print(\"Objects are alike!\")",
+            "else",
+            "   print(\"Objects are different!\")",
+            "end if"
+        ]
+    },
+    "time": {
+        "description": "Returns a `number` of seconds representing the elapsed time since the script got started.",
+        "example": [
+            "start = time",
+            "for i in range(10000)",
+            "   var = i * 100",
+            "end for",
+            "endTime = time - start",
+            "print(\"Script execution done within: \" + endTime)"
+        ]
+    },
+    "bitAnd": {
+        "description": "Permorms a bitwise AND for the provided values. Returns a `number`.",
+        "example": [
+            "print(\"Result of bitwise AND: \" + bitAnd(1, 2))"
+        ]
+    },
+    "bitOr": {
+        "description": "Permorms a bitwise OR for the provided values. Returns a `number`.",
+        "example": [
+            "print(\"Result of bitwise OR: \" + bitOr(1, 2))"
+        ]
+    },
+    "bitXor": {
+        "description": "Permorms a bitwise XOR for the provided values. Returns a `number`.",
+        "example": [
+            "print(\"Result of bitwise XOR: \" + bitXor(1, 2))"
+        ]
+    },
+    "log": {
+        "description": "Returns the natural logarithm of a `number`. By default the base is 10. Optionally the base can be changed.",
+        "example": [
+            "a = 2",
+            "b = 8",
+            "baseLog = log(a) / log(b)",
+            "print(\"Base log is: \" + baseLog)"
+        ]
+    },
+    "yield": {
+        "description": "Waits for the next tick.",
+        "example": [
+            "while (true)",
+            "   yield",
+            "   print(\"tick\")",
+            "end while"
+        ]
+    },
+    "get_custom_object": {
+        "description": "Returns `map` which shared throughout all script executions. Can be helpful in case forwarding an entity is desired.",
+        "example": [
+            "get_custom_object.shouldEndScript = false",
+            "while (get_custom_object.shouldEndScript)",
+            "   print(\"Waiting...\")",
+            "   wait(2)",
+            "end while"
+        ]
+    },
+    "insert": {
+        "description": "Depending on data type this function will insert a value to the provided index. Due to the insertion the object will be mutated. To get a better idea about the behaviour look into the `insert` method related to `list`.",
+        "example": [
+            "list = [2, 3, 4]",
+            "insert(list, 2, 42)",
+            "print(\"List with inserted item: \" + list.join(\", \"))"
+        ]
+    }
+}

@@ -1,0 +1,99 @@
+{
+    "$meta": {
+        "description": "A map is a set of values associated with unique keys. Create a map with curly braces; get or set a single value with square brackets. Keys and values may be any type.",
+        "example": [
+            "x = { \"test\": 123 }",
+            "x.foo = 42 // set property foo to 42",
+            "print(x.foo) // get value of property foo",
+            "print(x + { \"bar\": 2 }) // concatinate two maps"
+        ]
+    },
+    "remove": {
+        "description": "Removes an item from the `map` with the provided key. Due to the removal the `map` will get mutated.",
+        "example": [
+            "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
+            "myMap.remove(\"answer\")",
+            "print(myMap)"
+        ]
+    },
+    "push": {
+        "description": "Adds the value 1 to the provided key. This operation will mutate the `map`. Additionally this method will return the updated `map`.",
+        "example": [
+            "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
+            "myMap.push(\"answer\")",
+            "print(myMap.answer)"
+        ]
+    },
+    "pop": {
+        "description": "Returns and removes the first item in the `map`. This operation will mutate the `map`.",
+        "example": [
+            "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
+            "print(myMap.pop)"
+        ]
+    },
+    "shuffle": {
+        "description": "Shuffles all values in the `map`. This operation will mutate the `map`.",
+        "example": [
+            "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
+            "myMap.shuffle",
+            "print(myMap)"
+        ]
+    },
+    "sum": {
+        "description": "Returns sum of all values inside the `map`. Any values which are non numeric will be considered as a zero.",
+        "example": [
+            "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
+            "sum = myMap.sum",
+            "print(\"Sum of all items in map: \" + sum)"
+        ]
+    },
+    "hasIndex": {
+        "description": "Returns `true` if the provided key is available in the `map`. Otherwise this method will return `false`.",
+        "example": [
+            "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
+            "containsIndex = myList.hasIndex(\"answer\")",
+            "if containsIndex then",
+            "   print(\"Map contains the answer.\")",
+            "else",
+            "   print(\"Map does not contain the answer.\")",
+            "end if"
+        ]
+    },
+    "indexOf": {
+        "description": "Returns `string` which indicates the key of the provided value inside the `map`. In case the value does not exist inside the `map` a `null` gets returned.",
+        "example": [
+            "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
+            "key = myList.indexOf(42)",
+            "if key != null then",
+            "   print(\"Map contains the answer.\")",
+            "else",
+            "   print(\"Map does not contain the answer.\")",
+            "end if"
+        ]
+    },
+    "indexes": {
+        "description": "Returns a `list` containing all available keys.",
+        "example": [
+            "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
+            "for key in myMap.indexes",
+            "   print(myMap[key])",
+            "end for"
+        ]
+    },
+    "len": {
+        "description": "Returns a `number` representing the amount of items inside the `map`.",
+        "example": [
+            "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
+            "print(\"myMap contains \" + myMap.len + \" items\")"
+        ]
+    },
+    "values": {
+        "description": "Returns a `list` containing all available values.",
+        "example": [
+            "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
+            "for value in myMap.values",
+            "   print(value)",
+            "end for"
+        ]
+    }
+}
