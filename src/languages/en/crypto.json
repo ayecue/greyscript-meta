@@ -6,7 +6,12 @@
         "description": "Returns a `string` with the password generated based on the file which got created by aireplay. In case of failure it will return `null` instead.",
         "example": [
             "crypto = include_lib(\"/lib/crypto.so\")",
-            "aireplayResult = crypto.aireplay(\"BSSID\", \"ESSID\", 20000)",
+            "networks = get_shell.host_computer.wifi_networks(\"wlan0\")",
+            "firstNetwork = networks[1].split(\" \")",
+            "bssid = firstNetwork[0]",
+            "pwr = firstNetwork[1][:-1].to_int",
+            "essid = firstNetwork[2]",
+            "aireplayResult = crypto.aireplay(bssid, essid, 300000 / pwr)",
             "if (aireplayResult == null) then",
             "   result = crypto.aircrack(home_dir + \"/file.cap\")",
             "   print(result)",
@@ -29,9 +34,20 @@
         "description": "Used to inject frames on wireless interfaces. Once the command with `Control+C` is stopped, it will save the captured information in a text file called `file.cap` in the path where the terminal is currently located. Alternatively, a maximum of captured `acks` can be specified for the command to stop automatically, saving the `file.cap` file as described above. In order to figure out how many ACKs are required your can use the following formula: \"300000 / [Wifi PWR]\". In the event that there is an error, a `string` will be returned with the message indicating the problem. On success it will return `null`.",
         "example": [
             "crypto = include_lib(\"/lib/crypto.so\")",
-            "signalPower = params[0].to_int",
-            "potentialAcks = 300000 / signalPower",
-            "crypto.aireplay(\"BSSID\", \"ESSID\", potentialAcks)"
+            "networks = get_shell.host_computer.wifi_networks(\"wlan0\")",
+            "for index in range(0, networks.len - 1)",
+            "   print(index + \".) \" + networks[index].split(\" \"))",
+            "end for",
+            "selectedIndex = user_input(\"Select Wifi: \").to_int",
+            "if (typeof(selectedIndex) == \"string\" or selectedIndex < 0 or selectedIndex > networks.len - 1) then",
+            "   exit(\"Wrong index!\")",
+            "end if",
+            "parsed = networks[selectedIndex].split(\" \")",
+            "bssid = parsed[0]",
+            "pwr = parsed[1][:-1].to_int",
+            "essid = parsed[2]",
+            "potentialAcks = 300000 / pwr",
+            "crypto.aireplay(bssid, essid, potentialAcks)"
         ]
     },
     "decipher": {
