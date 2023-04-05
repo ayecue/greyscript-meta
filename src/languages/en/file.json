@@ -162,7 +162,7 @@
         ]
     },
     "permissions": {
-        "description": "Returns a `string` with the current file permissions. The format for this permissions string is as follows: \"[fileType][wrx](u)[wrx](g)[wrx](o)\". The file type is either \"d\" in case it's an directoy or \"-\". The user type gets defined through three possible types. These user types include user \"u\", group \"g\" and other \"o\". There are three different permission types. Those permissions include read \"r\", write \"w\" and execute \"x\". An example of a `string` which is returned by this method would be \"-rwxr-xr-x\". Using all provided information on this example `string` brings following conclusions. First of the file is not a directory. User has full access. Group and other have almost all permissions beside writing.",
+        "description": "Returns a `string` with the current file permissions. The format for this permissions string is as follows: \"[fileType][wrx](u)[wrx](g)[wrx](o)\". The file type is either \"d\" in case it's an directoy or \"-\". The user type gets defined through three possible types. These user types include user \"u\", group \"g\" and other \"o\". There are three different permission types. Those permissions include read \"r\", write \"w\" and execute \"x\". An example of a `string` which is returned by this method would be \"-rwxr-xr-x\". Using all provided information on this example `string` brings following conclusions. First off the file is not a directory. User has full access. Group and other have almost all permissions beside writing.",
         "example": [
             "host_computer = get_shell.host_computer",
             "binFolder = host_computer.File(\"/bin\")",
