@@ -6,7 +6,7 @@
         "description": "Returns a `string` with the password generated based on the file which got created by aireplay. In case of failure it will return `null` instead.",
         "example": [
             "crypto = include_lib(\"/lib/crypto.so\")",
-            "aireplayResult = crypto.aireplay(\"/BSSID\", \"ESSID\", 20000)",
+            "aireplayResult = crypto.aireplay(\"BSSID\", \"ESSID\", 20000)",
             "if (aireplayResult == null) then",
             "   result = crypto.aircrack(home_dir + \"/file.cap\")",
             "   print(result)",
@@ -31,7 +31,7 @@
             "crypto = include_lib(\"/lib/crypto.so\")",
             "signalPower = params[0].to_int",
             "potentialAcks = 300000 / signalPower",
-            "crypto.aireplay(\"/BSSID\", \"ESSID\", potentialAcks)"
+            "crypto.aireplay(\"BSSID\", \"ESSID\", potentialAcks)"
         ]
     },
     "decipher": {

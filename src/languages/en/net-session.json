@@ -6,7 +6,7 @@
             "ports = get_router(\"1.1.1.1\").used_ports",
             "netSession = metax.net_use(\"1.1.1.1\", ports[0].port_number)",
             "metaLib = netSession.dump_lib",
-            "print(\"Library: \" + metaLib.lib_name + \" - \" + metaLib.version + \" on port \" + port.port_number)"
+            "print(\"Library: \" + metaLib.lib_name + \" - \" + metaLib.version + \" on port \" + ports[0].port_number)"
         ]
     }
 }
