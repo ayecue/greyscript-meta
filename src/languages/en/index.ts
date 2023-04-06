@@ -4,6 +4,8 @@ import Coin from './coin.json';
 import Computer from './computer.json';
 import Crypto from './crypto.json';
 import File from './file.json';
+import FunctionLanguage from './function.json';
+import ClassLanguage from './class.json';
 import FtpShell from './ftp-shell.json';
 import Generic from './general.json';
 import List from './list.json';
@@ -25,9 +27,11 @@ import { Descriptions } from '../default/type';
 const descriptions: Descriptions = {
   'aptClient': AptClient,
   'blockchain': Blockchain,
+  'class': ClassLanguage,
   'coin': Coin,
   'computer': Computer,
   'crypto': Crypto,
+  'function': FunctionLanguage,
   'file': File,
   'ftpShell': FtpShell,
   'general': Generic,

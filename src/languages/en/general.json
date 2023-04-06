@@ -1,4 +1,32 @@
 {
+    "$meta": {
+        "description": "Use `if` blocks to do different things depending on some condition. Include zero or more `else if` blocks and one optional `else` block. Use a `while` block to loop as long as a condition is true. A `for` loop can loop over any `list`, including ones easily created with the `range` function. The `break` statement jumps out of a `while` or `for` loop. The `continue` statement jumps to the top of the loop, skipping the rest of the current iteration.",
+        "example": [
+            "// if block",
+            "if 2+2 == 4 then",
+            "   print \"math works!\"",
+            "else if pi > 3 then",
+            "   print \"pi is tasty\"",
+            "else if \"a\" < \"b\" then",
+            "   print \"I can sort\"",
+            "else",
+            "   print \"last chance\"",
+            "end if",
+            "",
+            "// while loop",
+            "s = \"Spam\"",
+            "while s.len < 50",
+            "   s = s + \", spam\"",
+            "end while",
+            "print s + \" and spam!\"",
+            "",
+            "// for loop",
+            "for i in range(10, 1)",
+            "   print i + \"...\"",
+            "end for",
+            "print \"Liftoff!\""
+        ]
+    },
     "mail_login": {
         "description": "Returns a `MetaMail` entity if the login has been correct. In case an issue appeared this function will return `null`.",
         "example": [

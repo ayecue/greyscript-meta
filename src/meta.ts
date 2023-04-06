@@ -8,8 +8,10 @@ import File from './signatures/file.json';
 import FtpShell from './signatures/ftp-shell.json';
 import Generic from './signatures/general.json';
 import List from './signatures/list.json';
+import ClassSignature from './signatures/class.json';
 import MapSignature from './signatures/map.json';
 import NumberSignature from './signatures/number.json';
+import FunctionSignature from './signatures/function.json';
 import MetaLib from './signatures/meta-lib.json';
 import MetaMail from './signatures/meta-mail.json';
 import Metaxploit from './signatures/metaxploit.json';
@@ -73,6 +75,10 @@ export const signatures: Signature[] = [
     definitions: <SignatureDefinitionContainer>(<unknown>Blockchain)
   },
   {
+    type: 'class',
+    definitions: <SignatureDefinitionContainer>(<unknown>ClassSignature)
+  },
+  {
     type: 'coin',
     definitions: <SignatureDefinitionContainer>(<unknown>Coin)
   },
@@ -91,6 +97,10 @@ export const signatures: Signature[] = [
   {
     type: 'ftpShell',
     definitions: <SignatureDefinitionContainer>(<unknown>FtpShell)
+  },
+  {
+    type: 'function',
+    definitions: <SignatureDefinitionContainer>(<unknown>FunctionSignature)
   },
   {
     type: 'general',

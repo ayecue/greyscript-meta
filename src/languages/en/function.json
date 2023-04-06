@@ -1,0 +1,14 @@
+{
+    "$meta": {
+        "description": "Create a `function` with \"function()\", including parameters with optional default values. Assign the result to a variable. Invoke by using that variable. Use `@` to reference a function without invoking.",
+        "example": [
+            "triple = function(n=1)",
+            "   return n * 3",
+            "end function",
+            "print triple // 3",
+            "print triple(5) // 15",
+            "f = @triple",
+            "print f(5)"
+        ]
+    }
+}

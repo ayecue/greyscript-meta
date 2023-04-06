@@ -170,7 +170,7 @@
             "fileType = permissions[0]",
             "permissionsForUser = permissions[1:4]",
             "permissionsForGroup = permissions[4:7]",
-            "permissionsForOther = permissions[7:9]",
+            "permissionsForOther = permissions[7:10]",
             "print(\"File type: \" + fileType)",
             "print(\"User permissions: \" + permissionsForUser)",
             "print(\"Group permissions: \" + permissionsForGroup)",

@@ -45,6 +45,7 @@
         "description": "Returns a `list` where each item is a `string` representing a memory area which has vulnerabilities related to the provided library. These memory areas can be used to make further scans via `scan_address`. In case of failure this method returns `null` instead. Here is an example of a memory area: \"0x7BFC1EAA\"",
         "example": [
             "metax = include_lib(\"/lib/metaxploit.so\")",
+            "metaLib = metax.load(\"/lib/init.so\")",
             "scanResult = metax.scan(metaLib)",
             "for area in scanResult",
             "   print(\"Memory area containg vulnerability: \" + area)",
@@ -55,6 +56,7 @@
         "description": "Returns a `string` containing information about each vulnerability in the provided library and memory area. In case the scanning fails this method will return `null`.",
         "example": [
             "metax = include_lib(\"/lib/metaxploit.so\")",
+            "metaLib = metax.load(\"/lib/init.so\")",
             "scanResult = metax.scan(metaLib)",
             "scanAddress = metax.scan_address(metaLib, scanResult[0])",
             "segments = scanAddress.split(\"Unsafe check: \")[1:]",
