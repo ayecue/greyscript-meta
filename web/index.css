@@ -12,11 +12,11 @@ html {
     right: 0;
     padding: 10px;
     z-index: 999;
-    width: 96%;
 }
 
 .navigation .search {
     position: relative;
+    width: 100%;
 }
 
 .navigation .search input {
@@ -383,18 +383,18 @@ p .highlight.string {
 
 @media screen and (min-width: 760px) {
     .navigation {
-        position: relative;
         padding: 0;
+        width: 235px;
     }
 
     .navigation .search {
-        width: 234px;
+        width: 100%;
     }
 
     .navigation .search .clear {
         position: absolute;
-        top: -2px;
-        right: 15px;
+        top: 13px;
+        right: 10px;
     }
 
     .navigation .search input {
@@ -403,9 +403,10 @@ p .highlight.string {
         top: 0;
         padding: 12px;
         height: 9px;
-        width: 200px;
+        width: 100%;
         margin: 10px;
         z-index: 999;
+        width: 200px;
     }
 
     .readme {
