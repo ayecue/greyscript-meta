@@ -270,6 +270,7 @@ html {
 .definitions ul, .definitions p {
     margin: 0;
     padding: 0;
+    word-break: break-word;
 }
 
 .definitions li {
@@ -327,6 +328,7 @@ html {
 
 .definitions .definition table {
     width: 100%;
+    table-layout: fixed;
 }
 
 .definitions .definition h3 {
