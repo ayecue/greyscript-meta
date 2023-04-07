@@ -89,7 +89,12 @@ export default function({ filterInit, externalLinks, onSidebarClick = () => {}, 
             </div>
             <div className='content-wrapper'>
                 <div className='readme'>
-                    <h1>GreyScript API (unofficial)</h1>
+                    <h1>GreyScript API – Unofficial Documentation</h1>
+                    <article>
+                        <p>Grey Hack enables players to create their own programs inside the game via the integrated scripting language called GreyScript. GreyScript is a fork of <a href="https://miniscript.org/" target="_blank">MiniScript</a> and can be compared to other language such as JavaScript or Lua.</p>
+                        <p>Programs can be created within Grey Hack via the ingame CodeEditor. Alternatively you can also use <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> with <a href="https://marketplace.visualstudio.com/items?itemName=ayecue.greybel-vs" target="_blank">greybel-vs</a> which includes syntax highlighting and other helpful features. Another alternative is to use the <a href="https://greybel-ui.netlify.app/" target="_blank">online editor</a> provided by <a href="https://github.com/ayecue/greybel-js" target="_blank">greybel-js</a>. The latter also provides a CLI which can be used for script execution outside the game and bundling of code files.</p>
+                        <p>The best sources for Grey Hack scripts to get inspiration from are <a href="https://www.greyrepo.xyz/" target="_blank">greyrepo.xyz</a> and <a href="https://github.com/search?q=grey+hack" target="_blank">github.com</a>.</p>
+                    </article>
                     <ExternalLinks externalLinks={externalLinks} />
                 </div>
                 <Definitions signatures={signatures} filter={filter} monaco={monaco} onCodeRunClick={onCodeRunClick} onCopyClick={onCopyClick} />
