@@ -52,6 +52,14 @@ html {
 	color: #ce9178;
 }
 
+.readme > article {
+    margin: 0.67em 10px;
+}
+
+.readme > article a {
+    color: #fff;
+}
+
 .readme ul {
     margin: 0;
     padding: 0;
