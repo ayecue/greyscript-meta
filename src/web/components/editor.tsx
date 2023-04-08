@@ -1,9 +1,9 @@
-import React, { ComponentState, useRef, useEffect, useState, MutableRefObject } from 'react';
+import React, { ComponentState, useRef, useEffect, useState } from 'react';
 import Monaco, { editor } from 'monaco-editor/esm/vs/editor/editor.api';
 import { useInViewport } from 'react-in-viewport';
 import useWindowSize from '../utils/resize';
 
-const GREYBEL_UI_URL = 'https://greybel-ui.netlify.app/';
+const GREYBEL_UI_URL = 'https://editor.greyscript.org';
 
 export interface EditorState extends ComponentState {
     content: string;
@@ -78,7 +78,7 @@ export default function({ monaco, content, name, onClick, rerenderDelay = 500, g
     return (
         <div className='editorWrapper' ref={wrapperRef}>
             <div className={`editor ${name}`} ref={containerRef}></div>
-            <a className='run' target='_blank' href={url.toString()} onClick={() => onClick(content, name)}>Run code</a>
+            <a className='run material-icons' target='_blank' href={url.toString()} onClick={() => onClick(content, name)}></a>
         </div>
     )
 }

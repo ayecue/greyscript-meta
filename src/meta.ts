@@ -1,4 +1,4 @@
-import { getDescription, getExample } from './languages';
+import { getDescription, getExample } from './descriptions';
 import AptClient from './signatures/apt-client.json';
 import Blockchain from './signatures/blockchain.json';
 import Coin from './signatures/coin.json';
@@ -178,7 +178,7 @@ export const getDefinitions = (
   language?: string
 ): SignatureDefinitionContainer => {
   if (types.includes('any')) {
-    return getDefinitions(allTypes);
+    return getDefinitions(allTypes, language);
   }
   return types
     .map((type) => {
