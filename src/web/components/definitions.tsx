@@ -1,6 +1,6 @@
 import React, { ComponentState, useCallback, useRef } from 'react';
 import { Signature, SignatureDefinition, SignatureDefinitionArg } from '../../meta';
-import { getDescription, getExample, getMetaDescription, getMetaExample } from '../../languages';
+import { getDescription, getExample, getMetaDescription, getMetaExample } from '../../descriptions';
 import Monaco from 'monaco-editor/esm/vs/editor/editor.api';
 import reactStringReplace from 'react-string-replace';
 import Editor from './editor';
