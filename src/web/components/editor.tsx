@@ -3,7 +3,7 @@ import Monaco, { editor } from 'monaco-editor/esm/vs/editor/editor.api';
 import { useInViewport } from 'react-in-viewport';
 import useWindowSize from '../utils/resize';
 
-const GREYBEL_UI_URL = 'https://greybel-ui.netlify.app/';
+const GREYBEL_UI_URL = 'https://editor.greyscript.org';
 
 export interface EditorState extends ComponentState {
     content: string;
