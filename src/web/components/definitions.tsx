@@ -1,6 +1,6 @@
 import React, { ComponentState, useCallback, useRef } from 'react';
 import { Signature, SignatureDefinition, SignatureDefinitionArg } from '../../meta';
-import { getDescription, getExample, getMetaDescription, getMetaExample } from '../../descriptions';
+import { getDescription, getExample, getMetaDescription, getMetaExample, getSiteDescription } from '../../descriptions';
 import Monaco from 'monaco-editor/esm/vs/editor/editor.api';
 import reactStringReplace from 'react-string-replace';
 import Editor from './editor';
@@ -51,7 +51,7 @@ function renderReturn(returns: string[]) {
                     return (
                         <span key={index}>
                             <span className='type'>{subType ? `${type}<${subType}>` : type}</span>
-                            { index < returns.length - 1 ? <span className='or'>or</span> : '' }
+                            { index < returns.length - 1 ? <span className='or'>{getSiteDescription("DEFINITIONS_OR")}</span> : '' }
                         </span>
                     );
                 })}
@@ -90,22 +90,22 @@ function renderDefinition(type: string, methodName: string, definition: Signatur
     return (
         <article className='definition' ref={containerRef}>
             <h3 id={key}>{methodName}</h3>
-            <a className='share' onClick={() => onCopyClick(type, methodName)}>copy</a>
+            <a className='share' onClick={() => onCopyClick(type, methodName)}>{getSiteDescription("DEFINITIONS_COPY")}</a>
             <table>
                 <tbody>
                     <tr>
-                        <td className='signature label'>Signature:</td>
+                        <td className='signature label'>{getSiteDescription("DEFINITIONS_SIGNATURE")}:</td>
                         <td className='signature'>({renderArguments(definition.arguments)}): {renderReturn(definition.returns)}</td>
                     </tr>
                     {description ? (
                         <tr>
-                            <td className='description label'>Description:</td>
+                            <td className='description label'>{getSiteDescription("DEFINITIONS_DESCRIPTION")}:</td>
                             <td className='description'>{renderDescription(description)}</td>
                         </tr>
                     ) : null }
                     {example ? (
                         <tr>
-                            <td className='example label'>Example:</td>
+                            <td className='example label'>{getSiteDescription("DEFINITIONS_EXAMPLE")}:</td>
                             <td className='example'>
                                 <Editor
                                     monaco={monaco}
@@ -163,13 +163,12 @@ function renderDefinitions({ signatures, filter, monaco, onCodeRunClick, onCopyC
                 <h2 id={item.type.toUpperCase()}>{item.type}</h2>
                 {metaDescription ? renderDescription(metaDescription) : null }
                 {metaExample ? <Editor
-                                monaco={monaco}
-                                content={metaExample.join('\n')}
-                                name={item.type.toUpperCase()}
-                                onClick={onCodeRunClick}
-                                getDimensions={getDimensions}
-                            />
-                    : null }
+                    monaco={monaco}
+                    content={metaExample.join('\n')}
+                    name={item.type.toUpperCase()}
+                    onClick={onCodeRunClick}
+                    getDimensions={getDimensions}
+                /> : null }
                 <ul className='second'>
                     {items}
                 </ul>

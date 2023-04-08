@@ -178,7 +178,7 @@ export const getDefinitions = (
   language?: string
 ): SignatureDefinitionContainer => {
   if (types.includes('any')) {
-    return getDefinitions(allTypes);
+    return getDefinitions(allTypes, language);
   }
   return types
     .map((type) => {

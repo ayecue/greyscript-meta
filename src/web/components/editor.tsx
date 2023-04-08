@@ -1,4 +1,4 @@
-import React, { ComponentState, useRef, useEffect, useState, MutableRefObject } from 'react';
+import React, { ComponentState, useRef, useEffect, useState } from 'react';
 import Monaco, { editor } from 'monaco-editor/esm/vs/editor/editor.api';
 import { useInViewport } from 'react-in-viewport';
 import useWindowSize from '../utils/resize';
