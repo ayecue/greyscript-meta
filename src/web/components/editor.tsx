@@ -78,7 +78,7 @@ export default function({ monaco, content, name, onClick, rerenderDelay = 500, g
     return (
         <div className='editorWrapper' ref={wrapperRef}>
             <div className={`editor ${name}`} ref={containerRef}></div>
-            <a className='run' target='_blank' href={url.toString()} onClick={() => onClick(content, name)}>Run code</a>
+            <a className='run material-icons' target='_blank' href={url.toString()} onClick={() => onClick(content, name)} alt=""></a>
         </div>
     )
 }

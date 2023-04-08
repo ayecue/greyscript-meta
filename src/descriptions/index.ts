@@ -11,7 +11,9 @@ export const getLanguageFile = (language: string = 'en'): Descriptions => {
   }
 };
 
-export const getSiteLanguageFile = (language: string = 'en'): Record<string, string> => {
+export const getSiteLanguageFile = (
+  language: string = 'en'
+): Record<string, string> => {
   switch (language) {
     case 'en':
       return enSite;
@@ -48,10 +50,7 @@ export const getExample = (
   return lang?.[type]?.[method]?.example;
 };
 
-export const getSiteDescription = (
-  tag: string,
-  language?: string
-): string => {
+export const getSiteDescription = (tag: string, language?: string): string => {
   const lang = getSiteLanguageFile(language);
   return lang?.[tag];
 };
