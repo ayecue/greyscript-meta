@@ -22,7 +22,7 @@
             }
         ],
         "returns": [
-            "null"
+            "list:any"
         ]
     },
     "push": {
