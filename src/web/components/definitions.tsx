@@ -1,9 +1,10 @@
-import React, { ComponentState, useCallback, useRef } from 'react';
+import React, { ComponentState, useCallback, useMemo, useRef } from 'react';
 import { Signature, SignatureDefinition, SignatureDefinitionArg } from '../../meta';
 import { getDescription, getExample, getMetaDescription, getMetaExample, getSiteDescription } from '../../descriptions';
 import Monaco from 'monaco-editor/esm/vs/editor/editor.api';
 import reactStringReplace from 'react-string-replace';
 import Editor from './editor';
+import useWindowSize from '../utils/resize';
 
 export interface DefinitionsState extends ComponentState {
     signatures: Signature[];
@@ -75,6 +76,7 @@ function renderDescription(description: string) {
 }
 
 function renderDefinition(type: string, methodName: string, definition: SignatureDefinition, monaco: typeof Monaco, onCodeRunClick: Function, onCopyClick: Function) {
+    const [width] = useWindowSize();
     const containerRef = useRef<HTMLElement>(null);
     const description = getDescription(type, methodName);
     const example = getExample(type, methodName);
@@ -87,8 +89,8 @@ function renderDefinition(type: string, methodName: string, definition: Signatur
         };
     }, [containerRef]);
 
-    return (
-        <article className='definition' ref={containerRef}>
+    return useMemo(
+        () => <article className='definition' ref={containerRef}>
             <h3 id={key}>{methodName}</h3>
             <a className='share' onClick={() => onCopyClick(type, methodName)}>{getSiteDescription("DEFINITIONS_COPY")}</a>
             <table>
@@ -120,7 +122,7 @@ function renderDefinition(type: string, methodName: string, definition: Signatur
                 </tbody>
             </table>
         </article>
-    );
+    , [width]);
 }
 
 function renderDefinitions({ signatures, filter, monaco, onCodeRunClick, onCopyClick }: DefinitionsState) {
