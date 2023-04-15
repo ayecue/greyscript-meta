@@ -646,7 +646,7 @@
         ]
     },
     "insert": {
-        "description": "Depending on data type this function will insert a value to the provided index. Due to the insertion the object will be mutated. To get a better idea about the behaviour look into the `insert` method related to `list`.",
+        "description": "Depending on data type this function will insert a value to the provided index. Due to the insertion the object will be mutated. To get a better idea about the behaviour look into the `insert` method related to `list` or `string`.",
         "example": [
             "list = [2, 3, 4]",
             "insert(list, 2, 42)",

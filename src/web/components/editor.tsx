@@ -18,7 +18,7 @@ export interface EditorState extends ComponentState {
 export default function({ monaco, content, name, onClick, rerenderDelay = 500, getDimensions }: EditorState) {
     const wrapperRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
-    const [width, height] = useWindowSize();
+    const [width] = useWindowSize();
     const [visited, setVisited] = useState(false);
     const [visible, setVisible] = useState(false);
     const [editorInstance, setEditorInstance] = useState<editor.IStandaloneCodeEditor>(null)
@@ -65,9 +65,6 @@ export default function({ monaco, content, name, onClick, rerenderDelay = 500, g
         }
 
         const rerender = () => {
-            const firstDefinitionItem = document.querySelector('.second .definition');
-            const width = firstDefinitionItem.clientWidth;
-
             setRerenderTimer(null);
             editorInstance.layout(getDimensions());
         };

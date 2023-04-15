@@ -1,4 +1,5 @@
 import { getDescription, getExample } from './descriptions';
+import Any from './signatures/any.json';
 import AptClient from './signatures/apt-client.json';
 import Blockchain from './signatures/blockchain.json';
 import Coin from './signatures/coin.json';
@@ -23,6 +24,7 @@ import Shell from './signatures/shell.json';
 import String from './signatures/string.json';
 import SubWallet from './signatures/sub-wallet.json';
 import Wallet from './signatures/wallet.json';
+import memoizee from 'memoizee';
 
 export interface SignatureDefinitionArg {
   label: string;
@@ -47,7 +49,7 @@ export interface Signature {
   definitions: SignatureDefinitionContainer;
 }
 
-const enrichContainer = (
+const enrichContainer = memoizee((
   type: string,
   container: SignatureDefinitionContainer,
   language?: string
@@ -63,7 +65,9 @@ const enrichContainer = (
     }),
     {}
   );
-};
+}, { length: false, primitive: true });
+
+export const anyDefinitions = <SignatureDefinitionContainer>(<unknown>Any);
 
 export const signatures: Signature[] = [
   {
@@ -173,7 +177,7 @@ export const signaturesByType: { [key: string]: SignatureDefinitionContainer } =
     return result;
   }, {});
 
-export const getDefinitions = (
+export const getDefinitions = memoizee((
   types: string[],
   language?: string
 ): SignatureDefinitionContainer => {
@@ -186,10 +190,16 @@ export const getDefinitions = (
       return enrichContainer(main, signaturesByType[main] || {}, language);
     })
     .reduce((result, definitions) => {
-      Object.assign(result, definitions);
+      for (const [key, definition] of Object.entries(definitions)) {
+        if (key in result && key in anyDefinitions) {
+          result[key] = anyDefinitions[key];
+        } else {
+          result[key] = definition;
+        }
+      }
       return result;
     }, {});
-};
+}, { length: false, primitive: true });
 
 export const getDefinition = (
   types: string[],
