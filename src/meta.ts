@@ -23,6 +23,7 @@ import Shell from './signatures/shell.json';
 import String from './signatures/string.json';
 import SubWallet from './signatures/sub-wallet.json';
 import Wallet from './signatures/wallet.json';
+import memoizee from 'memoizee';
 
 export interface SignatureDefinitionArg {
   label: string;
@@ -47,7 +48,7 @@ export interface Signature {
   definitions: SignatureDefinitionContainer;
 }
 
-const enrichContainer = (
+const enrichContainer = memoizee((
   type: string,
   container: SignatureDefinitionContainer,
   language?: string
@@ -63,7 +64,7 @@ const enrichContainer = (
     }),
     {}
   );
-};
+}, { length: false, primitive: true });
 
 export const signatures: Signature[] = [
   {
