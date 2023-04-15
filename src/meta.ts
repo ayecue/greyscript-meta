@@ -49,11 +49,13 @@ export interface Signature {
   definitions: SignatureDefinitionContainer;
 }
 
-const enrichContainer = memoizee((
-  type: string,
-  container: SignatureDefinitionContainer,
-  language?: string
-): SignatureDefinitionContainer => {
+export type EnrichContainerFunction = (type: string, container: SignatureDefinitionContainer, language?: string) => SignatureDefinitionContainer;
+
+const enrichContainer: EnrichContainerFunction = memoizee<EnrichContainerFunction>((
+  type,
+  container,
+  language?
+) => {
   return Object.entries(container).reduce(
     (result: SignatureDefinitionContainer, [name, def]) => ({
       ...result,
@@ -177,10 +179,12 @@ export const signaturesByType: { [key: string]: SignatureDefinitionContainer } =
     return result;
   }, {});
 
-export const getDefinitions = memoizee((
-  types: string[],
-  language?: string
-): SignatureDefinitionContainer => {
+export type GetDefinitionsFunction = (types: string[], language?: string) => SignatureDefinitionContainer;
+
+export const getDefinitions: GetDefinitionsFunction = memoizee<GetDefinitionsFunction>((
+  types,
+  language?
+) => {
   if (types.includes('any')) {
     return getDefinitions(allTypes, language);
   }
