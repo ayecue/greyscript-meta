@@ -1,3 +1,4 @@
+import Any from './any.json';
 import AptClient from './apt-client.json';
 import Blockchain from './blockchain.json';
 import Coin from './coin.json';
@@ -25,6 +26,7 @@ import Number from './number.json';
 import { Descriptions } from '../default/type';
 
 const descriptions: Descriptions = {
+  'any': Any,
   'aptClient': AptClient,
   'blockchain': Blockchain,
   'class': ClassLanguage,

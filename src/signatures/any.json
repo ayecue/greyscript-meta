@@ -1,0 +1,96 @@
+{
+    "insert": {
+        "arguments": [
+            {
+                "label": "index",
+                "type": "number"
+            },
+            {
+                "label": "value",
+                "value": "any"
+            }
+        ],
+        "returns": [
+            "any"
+        ]
+    },
+    "indexOf": {
+        "arguments": [
+            {
+                "label": "value",
+                "type": "any"
+            },
+            {
+                "label": "offset",
+                "type": "number",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "any"
+        ]
+      },
+      "hasIndex": {
+        "arguments": [
+            {
+                "label": "value",
+                "type": "any"
+            }
+        ],
+        "returns": [
+            "boolean"
+        ]
+      },
+      "remove": {
+        "arguments": [
+            {
+                "label": "value",
+                "type": "any"
+            }
+        ],
+        "returns": [
+            "null"
+        ]
+      },
+      "push": {
+        "arguments": [
+            {
+                "label": "value",
+                "type": "any"
+            }
+        ],
+        "returns": [
+            "any"
+        ]
+      },
+      "pop": {
+          "returns": [
+              "any"
+          ]
+      },
+      "shuffle": {
+          "returns": [
+              "null"
+          ]
+      },
+      "sum": {
+          "returns": [
+              "number"
+          ]
+      },
+      "indexes": {
+        "returns": [
+            "list:any"
+        ]
+      },
+      "len": {
+          "returns": [
+              "number"
+          ]
+      },
+      "values": {
+          "returns": [
+              "list:any"
+          ]
+      }
+}

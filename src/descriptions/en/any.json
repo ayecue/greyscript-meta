@@ -1,0 +1,82 @@
+{
+  "insert": {
+      "description": "Depending on data type this method will insert a value to the provided index. Due to the insertion the object will be mutated. To get a better idea about the behaviour look into the `insert` method related to `list` or `string`.",
+      "example": [
+          "list = [2, 3, 4]",
+          "list.insert(2, 42)",
+          "print(\"List with inserted item: \" + list.join(\", \"))"
+      ]
+  },
+  "indexOf": {
+    "description": "Depending on data type this function searches for the index of the provided value. To get a better idea about the behaviour look into the `indexOf` methods related to `string`, `list` and `map`.",
+    "example": [
+        "index = \"test\".indexOf(\"e\")",
+        "print(\"e is at: \" + index)"
+    ]
+  },
+  "hasIndex": {
+    "description": "Depending on data type this function checks if the provided index is available inside the value. To get a better idea about the behaviour look into the `hasIndex` methods related to `string`, `list` and `map`.",
+    "example": [
+        "print(\"List has index: \" + [1, 2, 3].hasIndex(2)"
+    ]
+  },
+  "remove": {
+    "description": "Depending on data type this function will remove a value in the provided object. As a result the object will get mutated. To get a better idea about the behaviour look into the `remove` methods related to `list` and `map`.",
+    "example": [
+        "list = [9, 3, 5, 7]",
+        "list.remove(5)",
+        "print(\"List after removal: \" + list.join(\", \"))"
+    ]
+  },
+  "push": {
+    "description": "Depending on data type this function will append a value to the provided object. As a result the object will get mutated. To get a better idea about the behaviour look into the `push` methods related to `list` and `map`.",
+    "example": [
+        "list = [0, 1, 2, 3, 4, 5]",
+        "list.push(42)",
+        "print(\"The answer to everything is: \" + list.pop)"
+    ]
+  },
+  "pop": {
+    "description": "Depending on data type this function will return the last item in the provided value. Additional this function removes the last item and therefore mutates the object. To get a better idea about the behaviour look into the `pop` methods related to `list` and `map`.",
+    "example": [
+        "list = [0, 1, 2, 3, 4, 5]",
+        "print(\"The last item is: \" + list.pop)"
+    ]
+  },
+  "shuffle": {
+    "description": "Depending on data type this function will shuffle data. Instead of returning the newly shuffled data this function will mutate the data. To get a better idea about the behaviour look into the `shuffle` methods related to `list` and `map`.",
+    "example": [
+        "list = [0, 1, 2, 3, 4, 5]",
+        "list.shuffle",
+        "print(\"And the winner is: \" + list[0])"
+    ]
+  },
+  "sum": {
+    "description": "Depending on data type this function return the sum of all items. To get a better idea about the behaviour look into the `sum` methods related to `list` and `map`.",
+    "example": [
+        "list = [0, 1, 2, 3, 4, 5]",
+        "print(\"Sum of all items is: \" + list.sum)"
+    ]
+  },
+  "indexes": {
+    "description": "Depending on data type this function returns a list with all available indexes. To get a better idea about the behaviour look into the `indexes` methods related to `string`, `list` and `map`.",
+    "example": [
+        "indexesOfStr = \"test\".indexes",
+        "print(\"Following indexes are available: \" + indexesOfStr.join(\", \"))"
+    ]
+  },
+  "len": {
+    "description": "Depending on data type this function returns the length of the provided value. To get a better idea about the behaviour look into the `len` methods related to `string`, `list` and `map`.",
+    "example": [
+        "length = \"test\".len",
+        "print(\"Length of string is: \" + length)"
+    ]
+  },
+  "values": {
+      "description": "Depending on data type this function returns a list with all available values. To get a better idea about the behaviour look into the `values` methods related to `string`, `list` and `map`.",
+      "example": [
+          "indexesOfStr = \"test\".values",
+          "print(\"Following values are available: \" + indexesOfStr.join(\", \"))"
+      ]
+  }
+}
