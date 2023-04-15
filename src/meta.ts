@@ -196,7 +196,11 @@ export const getDefinitions: GetDefinitionsFunction = memoizee<GetDefinitionsFun
     .reduce((result, definitions) => {
       for (const [key, definition] of Object.entries(definitions)) {
         if (key in result && key in anyDefinitions) {
-          result[key] = anyDefinitions[key];
+          result[key] = {
+            ...anyDefinitions[key],
+            description: getDescription('any', key, language),
+            example: getExample('any', key, language)
+          };
         } else {
           result[key] = definition;
         }
