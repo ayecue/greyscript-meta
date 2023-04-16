@@ -220,7 +220,7 @@
         ]
     },
     "size": {
-        "description":  "Returns a `string` with the size of the file in bytes. There is no correlation between file size and actual file content.",
+        "description":  "Returns a `string` with the size of the file in bytes. There is no correlation between file size and actual file content. Instead the file size is depending on the name of the file.",
         "example": [
             "host_computer = get_shell.host_computer",
             "lsBinary = host_computer.File(\"/bin/ls\")",
