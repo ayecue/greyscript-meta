@@ -32,7 +32,7 @@
             "filePath = \"/etc/passwd\"",
             "file = get_shell.host_computer.File(filePath)",
             "if file != null then",
-            "   print(file.content)",
+            "   print(file.get_content)",
             "else",
             "   print(\"File at given path \" + filePath + \" does not exist.\")",
             "end if"
