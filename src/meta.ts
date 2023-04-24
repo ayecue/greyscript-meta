@@ -215,7 +215,12 @@ export const getDefinition = (
   language?: string
 ): SignatureDefinition | null => {
   const definitions = getDefinitions(types, language);
-  return definitions[property] || null;
+
+  if (Object.prototype.hasOwnProperty.call(definitions, property)) {
+    return definitions[property];
+  }
+
+  return null;
 };
 
 export const isNative = (types: string[], property: string): boolean => {
