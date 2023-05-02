@@ -4,10 +4,10 @@ export interface DescriptionEntry {
 }
 
 export interface DescriptionContainer {
-  $meta?: DescriptionEntry,
-  [key: string]: DescriptionEntry
+  $meta?: DescriptionEntry;
+  [key: string]: DescriptionEntry;
 }
 
 export interface Descriptions {
-  [key: string]: DescriptionContainer
+  [key: string]: DescriptionContainer;
 }

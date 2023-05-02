@@ -1,22 +1,24 @@
+import memoizee from 'memoizee';
+
 import { getDescription, getExample } from './descriptions';
 import Any from './signatures/any.json';
 import AptClient from './signatures/apt-client.json';
 import Blockchain from './signatures/blockchain.json';
+import ClassSignature from './signatures/class.json';
 import Coin from './signatures/coin.json';
 import Computer from './signatures/computer.json';
 import Crypto from './signatures/crypto.json';
 import File from './signatures/file.json';
 import FtpShell from './signatures/ftp-shell.json';
+import FunctionSignature from './signatures/function.json';
 import Generic from './signatures/general.json';
 import List from './signatures/list.json';
-import ClassSignature from './signatures/class.json';
 import MapSignature from './signatures/map.json';
-import NumberSignature from './signatures/number.json';
-import FunctionSignature from './signatures/function.json';
 import MetaLib from './signatures/meta-lib.json';
 import MetaMail from './signatures/meta-mail.json';
 import Metaxploit from './signatures/metaxploit.json';
 import NetSession from './signatures/net-session.json';
+import NumberSignature from './signatures/number.json';
 import Port from './signatures/port.json';
 import Router from './signatures/router.json';
 import Service from './signatures/service.json';
@@ -24,7 +26,6 @@ import Shell from './signatures/shell.json';
 import String from './signatures/string.json';
 import SubWallet from './signatures/sub-wallet.json';
 import Wallet from './signatures/wallet.json';
-import memoizee from 'memoizee';
 
 export interface SignatureDefinitionArg {
   label: string;
@@ -49,25 +50,29 @@ export interface Signature {
   definitions: SignatureDefinitionContainer;
 }
 
-export type EnrichContainerFunction = (type: string, container: SignatureDefinitionContainer, language?: string) => SignatureDefinitionContainer;
+export type EnrichContainerFunction = (
+  type: string,
+  container: SignatureDefinitionContainer,
+  language?: string
+) => SignatureDefinitionContainer;
 
-const enrichContainer: EnrichContainerFunction = memoizee<EnrichContainerFunction>((
-  type,
-  container,
-  language?
-) => {
-  return Object.entries(container).reduce(
-    (result: SignatureDefinitionContainer, [name, def]) => ({
-      ...result,
-      [name]: {
-        ...def,
-        description: getDescription(type, name, language),
-        example: getExample(type, name, language)
-      }
-    }),
-    {}
+const enrichContainer: EnrichContainerFunction =
+  memoizee<EnrichContainerFunction>(
+    (type, container, language?) => {
+      return Object.entries(container).reduce(
+        (result: SignatureDefinitionContainer, [name, def]) => ({
+          ...result,
+          [name]: {
+            ...def,
+            description: getDescription(type, name, language),
+            example: getExample(type, name, language)
+          }
+        }),
+        {}
+      );
+    },
+    { length: false, primitive: true }
   );
-}, { length: false, primitive: true });
 
 export const anyDefinitions = <SignatureDefinitionContainer>(<unknown>Any);
 
@@ -179,35 +184,39 @@ export const signaturesByType: { [key: string]: SignatureDefinitionContainer } =
     return result;
   }, {});
 
-export type GetDefinitionsFunction = (types: string[], language?: string) => SignatureDefinitionContainer;
+export type GetDefinitionsFunction = (
+  types: string[],
+  language?: string
+) => SignatureDefinitionContainer;
 
-export const getDefinitions: GetDefinitionsFunction = memoizee<GetDefinitionsFunction>((
-  types,
-  language?
-) => {
-  if (types.includes('any')) {
-    return getDefinitions(allTypes, language);
-  }
-  return types
-    .map((type) => {
-      const [main] = type.split(':');
-      return enrichContainer(main, signaturesByType[main] || {}, language);
-    })
-    .reduce((result, definitions) => {
-      for (const [key, definition] of Object.entries(definitions)) {
-        if (key in result && key in anyDefinitions) {
-          result[key] = {
-            ...anyDefinitions[key],
-            description: getDescription('any', key, language),
-            example: getExample('any', key, language)
-          };
-        } else {
-          result[key] = definition;
-        }
+export const getDefinitions: GetDefinitionsFunction =
+  memoizee<GetDefinitionsFunction>(
+    (types, language?) => {
+      if (types.includes('any')) {
+        return getDefinitions(allTypes, language);
       }
-      return result;
-    }, {});
-}, { length: false, primitive: true });
+      return types
+        .map((type) => {
+          const [main] = type.split(':');
+          return enrichContainer(main, signaturesByType[main] || {}, language);
+        })
+        .reduce((result, definitions) => {
+          for (const [key, definition] of Object.entries(definitions)) {
+            if (key in result && key in anyDefinitions) {
+              result[key] = {
+                ...anyDefinitions[key],
+                description: getDescription('any', key, language),
+                example: getExample('any', key, language)
+              };
+            } else {
+              result[key] = definition;
+            }
+          }
+          return result;
+        }, {});
+    },
+    { length: false, primitive: true }
+  );
 
 export const getDefinition = (
   types: string[],
