@@ -15,14 +15,14 @@
     "local_ip": {
         "description": "Returns a `string` with the local IP address of the `computer`.",
         "example": [
-            "localIp = get_router.local_ip",
+            "localIp = get_shell.host_computer.local_ip",
             "print(\"Public ip:\" + localIp)"
         ]
     },
     "public_ip": {
         "description": "Returns a `string` with the public IP address of the `computer`.",
         "example": [
-            "publicIp = get_router.public_ip",
+            "publicIp = get_shell.host_computer.public_ip",
             "print(\"Public ip:\" + publicIp)"
         ]
     },

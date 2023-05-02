@@ -652,5 +652,39 @@
             "insert(list, 2, 42)",
             "print(\"List with inserted item: \" + list.join(\", \"))"
         ]
+    },
+    "to_int": {
+        "description": "Returns a `number` which is parsed from the `string` as integer. In case the `string` is not numeric it will return the original `string`.",
+        "example": [
+            "myString = \"1\"",
+            "print(to_int(myString) + 41)"
+        ]
+    },
+    "join": {
+        "description": "Returns a concatenated `string` containing all stringified values inside the `list`. These values will be separated via the provided separator.",
+        "example": [
+            "myList = [42, 1, 3]",
+            "print(join(myList, \" .-*'*-. \"))"
+        ]
+    },
+    "split": {
+        "description": "Returns a `list` where each item is a segment of the `string`. The separation depends on the provided separator `string`. Keep in mind that for some odd reason this method is using regular expressions for matching.",
+        "example": [
+            "myString = \"42 as an answer is wrong\"",
+            "segments = split(myString, \" \")",
+            "if segments[0] != \"42\" then",
+            "   print(\"Invalid information spotted!\")",
+            "else",
+            "   print(\"Information seems valid!\")",
+            "end if"
+        ]
+    },
+    "replace": {
+        "description": "Depending on data type this function will replace a value in the provided object. Due to the replacement the object might get mutated. To get a better idea about the behaviour look into the `replace` method related to `map`, `list` or `string`.",
+        "example": [
+            "myString = \"42 as an answer is wrong\"",
+            "newString = replace(myString, \"wrong\", \"right\")",
+            "print(newString)"
+        ]
     }
 }

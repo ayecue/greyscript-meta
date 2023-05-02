@@ -72,5 +72,20 @@
         "returns": [
             "list:any"
         ]
+    },
+    "replace": {
+        "arguments": [
+            {
+                "label": "toReplace",
+                "type": "any"
+            },
+            {
+                "label": "newValue",
+                "type": "any"
+            }
+        ],
+        "returns": [
+            "map:any"
+        ]
     }
 }
