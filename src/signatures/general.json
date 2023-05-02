@@ -849,5 +849,66 @@
         "returns": [
             "any"
         ]
+    },
+    "to_int": {
+        "arguments": [
+            {
+                "label": "value",
+                "value": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "number"
+        ]
+    },
+    "join": {
+        "arguments": [
+            {
+                "label": "value",
+                "type": "list:any"
+            },
+            {
+                "label": "delimiter",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "split": {
+        "arguments": [
+            {
+                "label": "value",
+                "type": "string"
+            },
+            {
+                "label": "delimiter",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "list:string"
+        ]
+    },
+    "replace": {
+        "arguments": [
+            {
+                "label": "value",
+                "type": "any"
+            },
+            {
+                "label": "toReplace",
+                "type": "any"
+            },
+            {
+                "label": "newValue",
+                "type": "any"
+            }
+        ],
+        "returns": [
+            "any"
+        ]
     }
 }

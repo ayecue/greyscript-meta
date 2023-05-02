@@ -95,5 +95,13 @@
             "   print(value)",
             "end for"
         ]
+    },
+    "replace": {
+        "description": "Returns updated `map` where each value matching with the provided replace argument gets replaced. This operation will mutate the `map`.",
+        "example": [
+            "myObject = { \"answer\": 45 }",
+            "myObject.replace(45, 42)",
+            "print(myObject.answer)"
+        ]
     }
 }
