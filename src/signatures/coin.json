@@ -7,20 +7,17 @@
             }
         ],
         "returns": [
-            "boolean",
             "number",
             "null"
         ]
     },
     "get_cycle_mining": {
         "returns": [
-            "boolean",
             "number"
         ]
     },
     "get_reward": {
         "returns": [
-            "boolean",
             "number"
         ]
     },
@@ -32,9 +29,9 @@
             }
         ],
         "returns": [
-            "null",
-            "boolean",
-            "string"
+            "number",
+            "string",
+            "null"
         ]
     },
     "transaction": {
@@ -53,9 +50,9 @@
             }
         ],
         "returns": [
-            "null",
             "string",
-            "boolean"
+            "number",
+            "null"
         ]
     },
     "create_subwallet": {
@@ -79,7 +76,7 @@
         ],
         "returns": [
             "string",
-            "boolean"
+            "number"
         ]
     },
     "get_subwallet": {
@@ -90,15 +87,15 @@
             }
         ],
         "returns": [
-            "null",
-            "boolean",
+            "number",
             "string",
-            "subWallet"
+            "subWallet",
+            "null"
         ]
     },
     "get_subwallets": {
         "returns": [
-            "boolean",
+            "number",
             "string",
             "list:subWallet"
         ]
@@ -111,20 +108,19 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string",
             "null"
         ]
     },
     "get_address": {
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     },
     "get_mined_coins": {
         "returns": [
-            "boolean",
             "number"
         ]
     }

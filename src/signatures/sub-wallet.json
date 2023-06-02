@@ -13,37 +13,37 @@
             }
         ],
         "returns": [
-            "boolean",
-            "null",
-            "string"
+            "number",
+            "string",
+            "null"
         ]
     },
     "get_info": {
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     },
     "delete": {
         "returns": [
-            "boolean"
+            "number"
         ]
     },
     "get_user": {
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     },
     "last_transaction": {
         "returns": [
             "list:any",
-            "boolean"
+            "number"
         ]
     },
     "mining": {
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     },
@@ -55,13 +55,13 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     },
     "wallet_username": {
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     }

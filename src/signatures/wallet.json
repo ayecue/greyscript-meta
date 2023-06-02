@@ -3,7 +3,7 @@
         "returns": [
             "list:string",
             "string",
-            "boolean"
+            "number"
         ]
     },
     "get_balance": {
@@ -15,7 +15,6 @@
         ],
         "returns": [
             "number",
-            "boolean",
             "string"
         ]
     },
@@ -39,7 +38,7 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     },
@@ -63,7 +62,7 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     },
@@ -75,7 +74,7 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string",
             "list:any"
         ]
@@ -89,7 +88,7 @@
         ],
         "returns": [
             "string",
-            "boolean"
+            "number"
         ]
     },
     "get_global_offers": {
@@ -100,14 +99,14 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string",
             "map:any"
         ]
     },
     "list_global_coins": {
         "returns": [
-            "boolean",
+            "number",
             "list:string"
         ]
     },
@@ -119,7 +118,7 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string",
             "number"
         ]
@@ -132,13 +131,13 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     },
     "get_pin": {
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     }

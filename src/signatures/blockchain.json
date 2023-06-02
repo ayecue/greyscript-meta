@@ -15,8 +15,8 @@
         ],
         "returns": [
             "map:string",
-            "null",
-            "string"
+            "string",
+            "null"
         ]
     },
     "amount_mined": {
@@ -27,9 +27,9 @@
             }
         ],
         "returns": [
-            "null",
             "string",
-            "number"
+            "number",
+            "null"
         ]
     },
     "get_coin": {
@@ -48,7 +48,7 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "coin"
         ]
     },
@@ -64,9 +64,9 @@
             }
         ],
         "returns": [
-            "null",
             "string",
-            "wallet"
+            "wallet",
+            "null"
         ]
     },
     "create_wallet": {
@@ -82,7 +82,7 @@
         ],
         "returns": [
             "string",
-            "boolean",
+            "number",
             "wallet"
         ]
     },
@@ -102,7 +102,7 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     }

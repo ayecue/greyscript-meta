@@ -39,7 +39,7 @@
             }
         ],
         "returns": [
-            "boolean"
+            "number"
         ]
     },
     "typeof": {
@@ -97,7 +97,7 @@
             },
             {
                 "label": "replaceText",
-                "type": "boolean",
+                "type": "number",
                 "default": "false"
             }
         ],
@@ -323,12 +323,12 @@
             },
             {
                 "label": "isPass",
-                "type": "boolean",
+                "type": "number",
                 "opt": true
             },
             {
                 "label": "anyKey",
-                "type": "boolean",
+                "type": "number",
                 "opt": true
             }
         ],
@@ -454,7 +454,7 @@
             }
         ],
         "returns": [
-            "boolean"
+            "number"
         ]
     },
     "is_valid_ip": {
@@ -465,7 +465,7 @@
             }
         ],
         "returns": [
-            "boolean"
+            "number"
         ]
     },
     "bitwise": {

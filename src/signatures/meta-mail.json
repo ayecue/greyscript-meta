@@ -7,7 +7,7 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     },
@@ -46,7 +46,7 @@
         ],
         "returns": [
             "string",
-            "boolean",
+            "number",
             "null"
         ]
     }

@@ -18,7 +18,7 @@
             }
         ],
         "returns": [
-            "boolean"
+            "number"
         ]
     },
     "insert": {
@@ -49,7 +49,8 @@
             }
         ],
         "returns": [
-            "number"
+            "number",
+            "null"
         ]
     },
     "lastIndexOf": {

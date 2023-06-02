@@ -69,7 +69,7 @@
             }
         ],
         "returns": [
-            "boolean"
+            "number"
         ]
     },
     "indexOf": {
@@ -85,7 +85,8 @@
             }
         ],
         "returns": [
-            "number"
+            "number",
+            "null"
         ]
     },
     "sort": {

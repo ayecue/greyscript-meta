@@ -16,13 +16,12 @@
             }
         ],
         "returns": [
-            "null",
-            "boolean",
             "string",
             "number",
             "shell",
             "computer",
-            "file"
+            "file",
+            "null"
         ]
     },
     "version": {

@@ -44,7 +44,7 @@
             }
         ],
         "returns": [
-            "boolean"
+            "number"
         ]
     },
     "indexOf": {
@@ -55,7 +55,7 @@
             }
         ],
         "returns": [
-            "string"
+            "any"
         ]
     },
     "indexes": {
