@@ -52,11 +52,11 @@
         ]
     },
     "lastIndexOf": {
-        "description": "Returns a `number` which indicates the last matching index of the provided value inside the `list`. Optionally a end index can be provided. In case the value does not exist inside the `string` a `null` gets returned.",
+        "description": "Returns a `number` which indicates the last matching index of the provided value inside the `list`. Optionally a end index can be provided. In case the value does not exist inside the `string` a `-1` gets returned.",
         "example": [
             "myString = \"42 as an answer is wrong\"",
             "index = myString.lastIndexOf(\"wrong\")",
-            "if index != null then",
+            "if index != -1 then",
             "   print(\"Invalid information spotted at: \" + index)",
             "else",
             "   print(\"Information seems valid.\")",

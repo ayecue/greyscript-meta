@@ -49,6 +49,7 @@
             }
         ],
         "returns": [
+            "null",
             "number"
         ]
     },
