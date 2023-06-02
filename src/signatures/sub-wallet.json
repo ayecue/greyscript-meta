@@ -14,8 +14,8 @@
         ],
         "returns": [
             "number",
-            "null",
-            "string"
+            "string",
+            "null"
         ]
     },
     "get_info": {

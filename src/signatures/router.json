@@ -7,9 +7,9 @@
             }
         ],
         "returns": [
-            "null",
             "string",
-            "list:port"
+            "list:port",
+            "null"
         ]
     },
     "devices_lan_ip": {

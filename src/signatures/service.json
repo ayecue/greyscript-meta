@@ -8,8 +8,8 @@
     "start_service": {
         "returns": [
             "number",
-            "null",
-            "string"
+            "string",
+            "null"
         ]
     },
     "stop_service": {

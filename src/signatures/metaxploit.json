@@ -7,8 +7,8 @@
             }
         ],
         "returns": [
-            "null",
-            "metaLib"
+            "metaLib",
+            "null"
         ]
     },
     "net_use": {
@@ -23,8 +23,8 @@
             }
         ],
         "returns": [
-            "null",
-            "netSession"
+            "netSession",
+            "null"
         ]
     },
     "rshell_client": {
@@ -64,8 +64,8 @@
             }
         ],
         "returns": [
-            "null",
-            "list:string"
+            "list:string",
+            "null"
         ]
     },
     "scan_address": {
@@ -80,8 +80,8 @@
             }
         ],
         "returns": [
-            "null",
-            "string"
+            "string",
+            "null"
         ]
     },
     "sniffer": {

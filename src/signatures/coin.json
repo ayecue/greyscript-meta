@@ -29,9 +29,9 @@
             }
         ],
         "returns": [
-            "null",
             "number",
-            "string"
+            "string",
+            "null"
         ]
     },
     "transaction": {
@@ -50,9 +50,9 @@
             }
         ],
         "returns": [
-            "null",
             "string",
-            "number"
+            "number",
+            "null"
         ]
     },
     "create_subwallet": {
@@ -87,10 +87,10 @@
             }
         ],
         "returns": [
-            "null",
             "number",
             "string",
-            "subWallet"
+            "subWallet",
+            "null"
         ]
     },
     "get_subwallets": {

@@ -182,8 +182,8 @@
             }
         ],
         "returns": [
-            "null",
-            "list:string"
+            "list:string",
+            "null"
         ]
     },
     "connect_wifi": {

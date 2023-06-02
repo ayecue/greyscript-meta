@@ -49,8 +49,8 @@
             }
         ],
         "returns": [
-            "null",
-            "number"
+            "number",
+            "null"
         ]
     },
     "lastIndexOf": {
