@@ -35,13 +35,13 @@
         ],
         "returns": [
             "string",
-            "boolean",
+            "number",
             "null"
         ]
     },
     "is_network_active": {
         "returns": [
-            "boolean"
+            "number"
         ]
     },
     "touch": {
@@ -56,7 +56,7 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     },
@@ -82,7 +82,7 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     },
@@ -98,7 +98,7 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     },
@@ -110,12 +110,12 @@
             },
             {
                 "label": "removeHome",
-                "type": "boolean",
+                "type": "number",
                 "opt": true
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     },
@@ -131,7 +131,7 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     },
@@ -147,7 +147,7 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     },
@@ -170,7 +170,7 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     },
@@ -206,7 +206,7 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string",
             "null"
         ]
@@ -227,7 +227,7 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string",
             "null"
         ]

@@ -7,7 +7,7 @@
             },
             {
                 "label": "recursive",
-                "type": "boolean",
+                "type": "number",
                 "opt": true
             }
         ],
@@ -31,7 +31,7 @@
         ],
         "returns": [
             "string",
-            "boolean",
+            "number",
             "null"
         ]
     },
@@ -48,7 +48,7 @@
         ],
         "returns": [
             "string",
-            "boolean",
+            "number",
             "null"
         ]
     },
@@ -61,7 +61,7 @@
         ],
         "returns": [
             "string",
-            "boolean"
+            "number"
         ]
     },
     "path": {
@@ -71,7 +71,7 @@
     },
     "is_folder": {
         "returns": [
-            "boolean"
+            "number"
         ]
     },
     "parent": {
@@ -87,7 +87,7 @@
     },
     "allow_import": {
         "returns": [
-            "boolean"
+            "number"
         ]
     },
     "get_content": {
@@ -105,13 +105,13 @@
         ],
         "returns": [
             "string",
-            "boolean",
+            "number",
             "null"
         ]
     },
     "is_binary": {
         "returns": [
-            "boolean"
+            "number"
         ]
     },
     "has_permission": {
@@ -122,7 +122,7 @@
             }
         ],
         "returns": [
-            "boolean"
+            "number"
         ]
     },
     "delete": {
@@ -158,12 +158,12 @@
             },
             {
                 "label": "recursive",
-                "type": "boolean",
+                "type": "number",
                 "opt": true
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string",
             "null"
         ]
@@ -181,7 +181,7 @@
             },
             {
                 "label": "recursive",
-                "type": "boolean",
+                "type": "number",
                 "opt": true
             }
         ],

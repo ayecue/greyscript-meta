@@ -6,7 +6,7 @@
     },
     "is_closed": {
         "returns": [
-            "boolean"
+            "number"
         ]
     },
     "get_lan_ip": {

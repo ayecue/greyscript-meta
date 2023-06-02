@@ -48,7 +48,7 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "coin"
         ]
     },
@@ -82,7 +82,7 @@
         ],
         "returns": [
             "string",
-            "boolean",
+            "number",
             "wallet"
         ]
     },
@@ -102,7 +102,7 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     }

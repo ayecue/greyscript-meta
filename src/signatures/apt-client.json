@@ -25,7 +25,7 @@
     "update": {
         "returns": [
             "string",
-            "boolean"
+            "number"
         ]
     },
     "add_repo": {
@@ -82,7 +82,7 @@
         ],
         "returns": [
             "string",
-            "boolean"
+            "number"
         ]
     }
 }

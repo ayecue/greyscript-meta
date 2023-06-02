@@ -23,7 +23,7 @@
             }
         ],
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     },

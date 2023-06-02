@@ -38,7 +38,7 @@
             }
         ],
         "returns": [
-            "boolean"
+            "number"
         ]
       },
       "remove": {

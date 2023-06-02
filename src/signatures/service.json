@@ -1,20 +1,20 @@
 {
     "install_service": {
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     },
     "start_service": {
         "returns": [
-            "boolean",
+            "number",
             "null",
             "string"
         ]
     },
     "stop_service": {
         "returns": [
-            "boolean",
+            "number",
             "string"
         ]
     }
