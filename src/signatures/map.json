@@ -55,7 +55,7 @@
             }
         ],
         "returns": [
-            "string"
+            "any"
         ]
     },
     "indexes": {

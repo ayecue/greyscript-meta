@@ -85,7 +85,8 @@
             }
         ],
         "returns": [
-            "number"
+            "number",
+            "null"
         ]
     },
     "sort": {
