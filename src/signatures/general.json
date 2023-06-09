@@ -57,7 +57,8 @@
         "arguments": [
             {
                 "label": "ipAddress",
-                "type": "string"
+                "type": "string",
+                "opt": true
             }
         ],
         "returns": [
@@ -173,7 +174,8 @@
             },
             {
                 "label": "after",
-                "type": "any"
+                "type": "any",
+                "opt": true
             }
         ],
         "returns": [

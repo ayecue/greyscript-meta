@@ -62,7 +62,7 @@
         ]
     },
     "get_router": {
-        "description": "Returns by default the `router` to which the executing computer is connected to. Optinally an IP address can be provided. In case of failure `null` is returned.",
+        "description": "Returns by default the `router` to which the executing computer is connected to. Optionally an IP address can be provided. In case of failure `null` is returned.",
         "example": [
             "router = get_router",
             "if router.local_ip == get_shell.host_computer.network_gateway then",
@@ -321,9 +321,9 @@
         ]
     },
     "command_info": {
-        "description": "Returns a `string` containing the help text for common commands. Including commands provided by the Operation System. Commands such as mkdir, whois, ls, sudo etc.",
+        "description": "Returns a `string` value of a translation. Translations include commands, documentation and other game related things. To ",
         "example": [
-            "print(command_info(\"ls\"))"
+            "print(command_info(\"LS_USAGE\"))"
         ]
     },
     "program_path": {
