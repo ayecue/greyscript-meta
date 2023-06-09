@@ -51,7 +51,7 @@
         ]
     },
     "typeof": {
-        "description": "Returns a `string` containing the type of the entity provided. There are following types by default: \"aptClient\", \"blockchain\", \"coin\", \"computer\", \"crypto\", \"file\", \"function\", \"list\", \"map\", \"metaLib\", \"metaMail\", \"metaxploit\", \"netSession\", \"null\", \"number\", \"port\", \"router\", \"service\", \"shell\", \"string\", \"subWallet\", \"wallet\". Custom types can be added as well by using the `classID` propery in a map.",
+        "description": "Returns a `string` containing the type of the entity provided. There are following types by default: \"aptClient\", \"blockchain\", \"coin\", \"computer\", \"crypto\", \"file\", \"function\", \"list\", \"map\", \"metaLib\", \"metaMail\", \"metaxploit\", \"netSession\", \"null\", \"number\", \"port\", \"router\", \"service\", \"shell\", \"string\", \"subWallet\", \"wallet\". Custom types can be added as well by using the `classID` property in a map.",
         "example": [
             "myObj = { \"classID\": \"myType\" }",
             "if typeof(myObj) == \"myType\" then",
@@ -118,7 +118,7 @@
         ]
     },
     "get_shell": {
-        "description": "Returns the `shell` that is executing the script. Optionally a username and password can be provided. In case the username or password do not match an existing user this method will return `null`.",
+        "description": "Returns the `shell` that is executing the script. Optionally a username and password can be provided. In case the username or password does not match an existing user this method will return `null`.",
         "example": [
             "shell = get_shell(\"root\", \"test\")",
             "if shell == null then",
@@ -143,7 +143,7 @@
         ]
     },
     "indexOf": {
-        "description": "Depending on data type this function searches for the index of the provided value. To get a better idea about the behaviour look into the `indexOf` methods related to `string`, `list` and `map`.",
+        "description": "Depending on the data type this function searches for the index of the provided value. To get a better idea about the behaviour look into the `indexOf` methods related to `string`, `list` and `map`.",
         "example": [
             "index = indexOf(\"test\", \"e\")",
             "print(\"e is at: \" + index)"
@@ -157,7 +157,7 @@
         ]
     },
     "shuffle": {
-        "description": "Depending on data type this function will shuffle data. Instead of returning the newly shuffled data this function will mutate the data. To get a better idea about the behaviour look into the `shuffle` methods related to `list` and `map`.",
+        "description": "Depending on data type this function will shuffle data. Instead of returning the newly shuffled data, this function will mutate the data. To get a better idea about the behaviour look into the `shuffle` methods related to `list` and `map`.",
         "example": [
             "list = [0, 1, 2, 3, 4, 5]",
             "shuffle(list)",
@@ -186,28 +186,28 @@
         ]
     },
     "sum": {
-        "description": "Depending on data type this function return the sum of all items. To get a better idea about the behaviour look into the `sum` methods related to `list` and `map`.",
+        "description": "Depending on data type this function returns the sum of all items. To get a better idea about the behaviour look into the `sum` methods related to `list` and `map`.",
         "example": [
             "list = [0, 1, 2, 3, 4, 5]",
             "print(\"Sum of all items is: \" + sum(list))"
         ]
     },
     "pop": {
-        "description": "Depending on data type this function will return the last item in the provided value. Additional this function removes the last item and therefore mutates the object. To get a better idea about the behaviour look into the `pop` methods related to `list` and `map`.",
+        "description": "Depending on data type this function will return the last item in the provided value. Additionally, this function removes the last item and therefore mutates the object. To get a better idea about the behaviour look into the `pop` methods related to `list` and `map`.",
         "example": [
             "list = [0, 1, 2, 3, 4, 5]",
             "print(\"The last item is: \" + pop(list))"
         ]
     },
     "pull": {
-        "description": "Depending on data type this function will return the first item in the provided value. Additional this function removes the first item and therefore mutates the object. To get a better idea about the behaviour look into the `pull` methods related to `list` and `map`.",
+        "description": "Depending on data type this function will return the first item in the provided value. Additionally, this function removes the first item and therefore mutates the object. To get a better idea about the behaviour look into the `pull` methods related to `list` and `map`.",
         "example": [
             "list = [0, 1, 2, 3, 4, 5]",
             "print(\"The first item is: \" + pull(list))"
         ]
     },
     "push": {
-        "description": "Depending on data type this function will append a value to the provided object. As a result the object will get mutated. To get a better idea about the behaviour look into the `push` methods related to `list` and `map`.",
+        "description": "Depending on data type this function will append a value to the provided object. As a result, the object will get mutated. To get a better idea about the behaviour look into the `push` methods related to `list` and `map`.",
         "example": [
             "list = [0, 1, 2, 3, 4, 5]",
             "push(list, 42)",
@@ -215,7 +215,7 @@
         ]
     },
     "sort": {
-        "description": "Depending on data type this function will sort the values in the provided object. As a result the object will get mutated. To get a better idea about the behaviour look into the `sort` methods related to `list` and `map`.",
+        "description": "Depending on the data type this function will sort the values in the provided object. As a result, the object will get mutated. To get a better idea about the behaviour look into the `sort` methods related to `list` and `map`.",
         "example": [
             "list = [9, 3, 5, 7]",
             "sort(list)",
@@ -223,7 +223,7 @@
         ]
     },
     "remove": {
-        "description": "Depending on data type this function will remove a value in the provided object. As a result the object will get mutated. To get a better idea about the behaviour look into the `remove` methods related to `list` and `map`.",
+        "description": "Depending on the data type this function will remove a value in the provided object. As a result, the object will get mutated. To get a better idea about the behaviour look into the `remove` methods related to `list` and `map`.",
         "example": [
             "list = [9, 3, 5, 7]",
             "remove(list, 5)",
@@ -231,13 +231,13 @@
         ]
     },
     "user_input": {
-        "description": "Puts script execution on hold in order to receive input from the user. Input will be submitted by pressing Enter. Additionally it is also possible to style the output message by using TextMeshPro rich-text tags. There are two optional arguments. If the passwordMode flag is `true` the input will be masked by asterik signs. In case the anyKey flag is `true` instead of waiting for the Enter key to be pressed any key press will be captured instantly.",
+        "description": "Puts script execution on hold to receive input from the user. Input will be submitted by pressing Enter. Additionally, it is also possible to style the output message by using TextMeshPro rich-text tags. There are two optional arguments. If the passwordMode flag is `true` the input will be masked by asterisk signs. In case the anyKey flag is `true` instead of waiting for the Enter key to be pressed any key press will be captured instantly.",
         "example": [
             "num = 0",
             "aboveIncludingZeroTag = \"<color=yellow>\"",
             "belowZeroTag = \"<color=red>\"",
             "while (true)",
-            "   clear_screen" ,
+            "   clear_screen",
             "   output = aboveIncludingZeroTag + num" , 
             "   if (num < 0) then",
             "      output = belowZeroTag + num",
@@ -255,7 +255,7 @@
         ]
     },
     "include_lib": {
-        "description": "Enables to include library binaries which can be used inside your script. In case of success an object will get returned related to the provided library. Otherwise `null` gets returned. Keep in mind that this function can be only used for library binaries. In case you want to import custom scripts or binaries into your project you should use `import_code` instead.",
+        "description": "Enables to include library binaries which can be used inside your script. In case of success, an object will get returned related to the provided library. Otherwise `null` gets returned. Keep in mind that this function can be only used for library binaries. In case you want to import custom scripts or binaries into your project you should use `import_code` instead.",
         "example": [
             "crypto = include_lib(\"/lib/crypto.so\")",
             "if crypto == null then",
@@ -266,7 +266,7 @@
         ]
     },
     "import_code": {
-        "description": "Enables to import code from different sources into one file. This is useful in case you want to split code into different files and also to avoid any limitation in regards of text file character limits. Note that `import_code` requires an absolute path and is called while compiling the file into a binary instead of during runtime. Additionally `import_code` cannot be nested. Code can be either imported from plain text files or binaries that have \"allow import\" enabled.",
+        "description": "Enables to import code from different sources into one file. This is useful in case you want to split code into different files and also to avoid any limitation in regards to text file character limits. Note that `import_code` requires an absolute path and is called while compiling the file into a binary instead of during runtime. Additionally `import_code` cannot be nested. Code can be either imported from plain text files or binaries that have \"allow import\" enabled.",
         "example": [
             "//Content of main.src",
             "import_code(\"/home/user/my_module.src\")",
@@ -312,7 +312,7 @@
         ]
     },
     "wait": {
-        "description": "Puts script execution on hold. Optionally the duration can be provided via the time argument. By default the duration will be 1 second. The duration cannot be below 0.01 or above 300.",
+        "description": "Puts script execution on hold. Optionally the duration can be provided via the time argument. By default, the duration will be 1 second. The duration cannot be below 0.01 or above 300.",
         "example": [
             "start = time",
             "wait(5)",
@@ -321,7 +321,7 @@
         ]
     },
     "command_info": {
-        "description": "Returns a `string` value of a translation. Translations include commands, documentation and other game related things. To ",
+        "description": "Returns a `string` value of a translation. Translations include commands, documentation and other game-related things. To ",
         "example": [
             "print(command_info(\"LS_USAGE\"))"
         ]
@@ -341,7 +341,7 @@
         ]
     },
     "format_columns": {
-        "description": "Returns a `string` which is the formatted version of the provided text. Keep in mind that TextMeshPro rich-text tags might srew up the output. When using tags consider applying these after formatting.",
+        "description": "Returns a `string` which is the formatted version of the provided text. Keep in mind that TextMeshPro rich-text tags might screw up the output. When using tags consider applying these after formatting.",
         "example": [
             "text = \"FIRST SECOND THIRD",
             "1 2 3\"",
@@ -388,7 +388,7 @@
         ]
     },
     "abs": {
-        "description": "Returns absolute value of `number`.",
+        "description": "Returns the absolute value of `number`.",
         "example": [
             "a = 1",
             "b = 5",
@@ -441,7 +441,7 @@
         ]
     },
     "code": {
-        "description": "Returns the unicode `number` of the first character of the string. In case an empty `string` is provided the script execution will crash.",
+        "description": "Returns the Unicode `number` of the first character of the string. In case an empty `string` is provided the script execution will crash.",
         "example": [
             "key = user_input(\"Press a key!\", false, true)",
             "isA = key.code == 97",
@@ -453,7 +453,7 @@
         ]
     },
     "char": {
-        "description": "Returns the unicode character `string` related to the provided unicode `number`. The provided `number` needs to be between 0 and 65535. Any `number` which is outside this range will cause the script to throw a runtime error.",
+        "description": "Returns the Unicode character `string` related to the provided unicode `number`. The provided `number` needs to be between 0 and 65535. Any `number` which is outside this range will cause the script to throw a runtime error.",
         "example": [
             "key = user_input(\"Press a key!\", false, true)",
             "isA = key == char(97)",
@@ -482,7 +482,7 @@
         ]
     },
     "range": {
-        "description": "Returns a `list` where each item is a `number`. By default the `list` starts with the `number` zero and incrementing by one each item. Optionally start and end can be defined. Additionally the incremental value can be changed as well. In case the incremental value is zero this function will throw a runtime error.",
+        "description": "Returns a `list` where each item is a `number`. By default, the `list` starts with the `number` zero and increments by one for each item. Optionally start and end can be defined. Additionally, the incremental value can be changed as well. In case the incremental value is zero this function will throw a runtime error.",
         "example": [
             "print(\"Countdown:\")",
             "for num in range(10)",
@@ -500,7 +500,7 @@
         ]
     },
     "rnd": {
-        "description": "Returns a random `number` between 0 and 1. Optionally a seed `number` can be provided this seeds a random `number` generator with the given value.",
+        "description": "Returns a random `number` between 0 and 1. Optionally a seed `number` can be provided.",
         "example": [
             "min = 10",
             "max = 20",
@@ -600,13 +600,13 @@
         ]
     },
     "bitAnd": {
-        "description": "Permorms a bitwise AND for the provided values. Returns a `number`.",
+        "description": "Performs a bitwise AND for the provided values. Returns a `number`.",
         "example": [
             "print(\"Result of bitwise AND: \" + bitAnd(1, 2))"
         ]
     },
     "bitOr": {
-        "description": "Permorms a bitwise OR for the provided values. Returns a `number`.",
+        "description": "Performs a bitwise OR for the provided values. Returns a `number`.",
         "example": [
             "print(\"Result of bitwise OR: \" + bitOr(1, 2))"
         ]
@@ -618,7 +618,7 @@
         ]
     },
     "log": {
-        "description": "Returns the natural logarithm of a `number`. By default the base is 10. Optionally the base can be changed.",
+        "description": "Returns the natural logarithm of a `number`. By default, the base is 10. Optionally the base can be changed.",
         "example": [
             "a = 2",
             "b = 8",
@@ -636,7 +636,7 @@
         ]
     },
     "get_custom_object": {
-        "description": "Returns `map` which shared throughout all script executions. Can be helpful in case forwarding an entity is desired.",
+        "description": "Returns `map` which is shared throughout all script executions. Can be helpful in case forwarding an entity is desired.",
         "example": [
             "get_custom_object.shouldEndScript = false",
             "while (get_custom_object.shouldEndScript)",
@@ -646,7 +646,7 @@
         ]
     },
     "insert": {
-        "description": "Depending on data type this function will insert a value to the provided index. Due to the insertion the object will be mutated. To get a better idea about the behaviour look into the `insert` method related to `list` or `string`.",
+        "description": "Depending on the data type this function will insert a value to the provided index. Due to the insertion, the object will be mutated. To get a better idea about the behaviour look into the `insert` method related to `list` or `string`.",
         "example": [
             "list = [2, 3, 4]",
             "insert(list, 2, 42)",
@@ -654,7 +654,7 @@
         ]
     },
     "to_int": {
-        "description": "Returns a `number` which is parsed from the `string` as integer. In case the `string` is not numeric it will return the original `string`.",
+        "description": "Returns a `number` which is parsed from the `string` as an integer. In case the `string` is not numeric it will return the original `string`.",
         "example": [
             "myString = \"1\"",
             "print(to_int(myString) + 41)"
@@ -668,7 +668,7 @@
         ]
     },
     "split": {
-        "description": "Returns a `list` where each item is a segment of the `string`. The separation depends on the provided separator `string`. Keep in mind that for some odd reason this method is using regular expressions for matching.",
+        "description": "Returns a `list` where each item is a segment of the `string`. The separation depends on the provided separator `string`. Keep in mind that for some odd reason, this method is using regular expressions for matching.",
         "example": [
             "myString = \"42 as an answer is wrong\"",
             "segments = split(myString, \" \")",
@@ -680,7 +680,7 @@
         ]
     },
     "replace": {
-        "description": "Depending on data type this function will replace a value in the provided object. Due to the replacement the object might get mutated. To get a better idea about the behaviour look into the `replace` method related to `map`, `list` or `string`.",
+        "description": "Depending on the data type this function will replace a value in the provided object. Due to the replacement, the object might get mutated. To get a better idea about the behaviour look into the `replace` method related to `map`, `list` or `string`.",
         "example": [
             "myString = \"42 as an answer is wrong\"",
             "newString = replace(myString, \"wrong\", \"right\")",

@@ -8,7 +8,7 @@
             "print(x[1:3]) // slice items from index 1 to 3",
             "x[2] = 5 // set item at index 2 to 5",
             "print(x)",
-            "print(x + [42]) // concatinate two lists"
+            "print(x + [42]) // concatenate two lists"
         ]
     },
     "remove": {
@@ -28,7 +28,7 @@
         ]
     },
     "push": {
-        "description": "Appends a value to the end of the `list`. This operation will mutate the `list`. Additionally this method will return the updated `list`.",
+        "description": "Appends a value to the end of the `list`. This operation will mutate the `list`. Additionally, this method will return the updated `list`.",
         "example": [
             "myList = [1, 3]",
             "myList.push(42)",
@@ -60,7 +60,7 @@
         ]
     },
     "reverse": {
-        "description": "Reverses order of all values in the `list`. This operation will mutate the `list`.",
+        "description": "Reverses the order of all values in the `list`. This operation will mutate the `list`.",
         "example": [
             "myList = [42, 1, 3]",
             "myList.reverse",
@@ -68,7 +68,7 @@
         ]
     },
     "sum": {
-        "description": "Returns sum of all values inside the `list`. Any values which are non numeric will be considered as a zero.",
+        "description": "Returns sum of all values inside the `list`. Any non-numeric values will be considered a zero.",
         "example": [
             "myList = [42, 1, 3]",
             "sum = myList.sum",
@@ -76,7 +76,7 @@
         ]
     },
     "hasIndex": {
-        "description": "Returns `true` if the provided index is available in the `list`. Otherwise this method will return `false`.",
+        "description": "Returns `true` if the provided index is available in the `list`. Otherwise, this method will return `false`.",
         "example": [
             "myList = [42, 1, 3]",
             "containsIndex = myList.hasIndex(1)",
@@ -100,7 +100,7 @@
         ]
     },
     "sort": {
-        "description": "Sorts `list` values alphanumerically. This operation will mutate the `list`. Optionally a key can be provided which which is used in case the items are maps. Additionally this method will return the updated `list`.",
+        "description": "Sort `list` values alphanumerically. This operation will mutate the `list`. Optionally a key can be provided which which is used in case the items are maps. Additionally, this method will return the updated `list`.",
         "example": [
             "myList = [{ \"key\": 42 }, { \"key\": 2 }, { \"key\": 1 }]",
             "myList.sort(\"key\")",
@@ -124,7 +124,7 @@
         ]
     },
     "len": {
-        "description": "Returns a `number` representing the amount of values inside the `list`.",
+        "description": "Returns a `number` representing the count of values inside the `list`.",
         "example": [
             "myList = [42, 1, 3]",
             "print(\"myList contains \" + myList.len + \" items\")"

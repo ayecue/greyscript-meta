@@ -35,7 +35,7 @@
         ]
     },
     "read": {
-        "description": "Returns a `string` containing the content of a mail related to the provided mail id. The mail id argument can be obtained with `fetch`. In case that the mail cannot be found this method will return \"Mail not found\".",
+        "description": "Returns a `string` containing the content of a mail related to the provided mail id. The mail id argument can be obtained with `fetch`. In case the mail cannot be found this method will return \"Mail not found\".",
         "example": [
             "metaMail = mail_login(user_mail_address, \"test\")",
             "mails = metaMail.fetch",

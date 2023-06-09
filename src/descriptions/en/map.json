@@ -5,7 +5,7 @@
             "x = { \"test\": 123 }",
             "x.foo = 42 // set property foo to 42",
             "print(x.foo) // get value of property foo",
-            "print(x + { \"bar\": 2 }) // concatinate two maps"
+            "print(x + { \"bar\": 2 }) // concatenate two maps"
         ]
     },
     "remove": {
@@ -17,7 +17,7 @@
         ]
     },
     "push": {
-        "description": "Adds the value 1 to the provided key. This operation will mutate the `map`. Additionally this method will return the updated `map`.",
+        "description": "Adds the value 1 to the provided key. This operation will mutate the `map`. Additionally, this method will return the updated `map`.",
         "example": [
             "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
             "myMap.push(\"answer\")",
@@ -40,7 +40,7 @@
         ]
     },
     "sum": {
-        "description": "Returns sum of all values inside the `map`. Any values which are non numeric will be considered as a zero.",
+        "description": "Returns sum of all values inside the `map`. Any non-numeric values will be considered a zero.",
         "example": [
             "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
             "sum = myMap.sum",
@@ -48,7 +48,7 @@
         ]
     },
     "hasIndex": {
-        "description": "Returns `true` if the provided key is available in the `map`. Otherwise this method will return `false`.",
+        "description": "Returns `true` if the provided key is available in the `map`. Otherwise, this method will return `false`.",
         "example": [
             "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
             "containsIndex = myList.hasIndex(\"answer\")",
@@ -81,7 +81,7 @@
         ]
     },
     "len": {
-        "description": "Returns a `number` representing the amount of items inside the `map`.",
+        "description": "Returns a `number` representing the count of items inside the `map`.",
         "example": [
             "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
             "print(\"myMap contains \" + myMap.len + \" items\")"

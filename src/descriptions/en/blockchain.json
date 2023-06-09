@@ -18,6 +18,6 @@
         "description": "Returns a `wallet`, used to manage cryptocurrencies. In case of error a `string` is returned with the details."
     },
     "delete_coin": {
-        "description": "Remove a crypto currency from the world. The credentials used in the creation of the currency are necessary."
+        "description": "Remove a cryptocurrency from the world. The credentials used in the creation of the currency are necessary."
     }
 }

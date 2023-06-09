@@ -1,6 +1,6 @@
 {
     "$meta": {
-        "description": "The FTP `shell` behaves just like the ssh `shell` and can be aquired by using `connect_service` and using the service type \"ftp\". The port used for FTP is usually 21."
+        "description": "The FTP `shell` behaves just like the ssh `shell` and can be acquired by using `connect_service` and using the service type \"ftp\". The port used for FTP is usually 21."
     },
     "host_computer": {
         "description": "Returns a `computer` related to the `shell`.",
@@ -12,7 +12,7 @@
         ]
     },
     "start_terminal": {
-        "description": "Launches an active terminal. The colour of the terminal will change and show the IP of the connected shell. Script execution will be stopped when starting a new terminal.",
+        "description": "Launches an active terminal. The color of the terminal will change and show the IP of the connected shell. Script execution will be stopped when starting a new terminal.",
         "example": [
             "shell = get_shell",
             "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
@@ -20,7 +20,7 @@
         ]
     },
     "put": {
-        "description": "Send a `file` to the `computer` which is related to the provided `shell`. You require permissions to read the `file` on the `computer` from which you are uploading and write permissions in the folder of the `computer` you are trying to upload to. In case of failure this method will return a `string` with the cause. Otherwise `true` gets returned.",
+        "description": "Send a `file` to the `computer` which is related to the provided `shell`. You require permission to read the `file` on the `computer` from which you are uploading and write permissions in the folder of the `computer` you are trying to upload to. In case of failure this method will return a `string` with the cause. Otherwise `true` gets returned.",
         "example": [
             "shell = get_shell",
             "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",

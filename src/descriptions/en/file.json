@@ -1,9 +1,9 @@
 {
     "$meta": {
-        "description": "A `file` object can be aquired by either using `File` or `overflow`."
+        "description": "A `file` object can be acquired by either using `File` or `overflow`."
     },
     "chmod": {
-        "description": "Modifies the `file` permissions. Optionally these permissions can also be applied recursively. The format for applying permissions is as follows: \"[userType][operator][permissionType]\". The user type gets defined through three possible types. These user types include user \"u\", group \"g\" and other \"o\". The operator is used to define if permissions get added \"+\" or removed \"-\". There are three different permission types which can be modified. Those permissions include read \"r\", write \"w\" and execute \"x\". So as an example \"o-wrx\" would remove all possible permissions for other. In order to add all permissions for other again \"o+wrx\" would be used. In case the modification fails this method will return a `string` containing information of the reason. Otherwise an empty `string` gets returned.",
+        "description": "Modifies the `file` permissions. Optionally these permissions can also be applied recursively. The format for applying permissions is as follows: \"[userType][operator][permissionType]\". The user type gets defined through three possible types. These user types include user \"u\", group \"g\" and other \"o\". The operator is used to define if permissions get added \"+\" or removed \"-\". There are three different permission types which can be modified. Those permissions include read \"r\", write \"w\" and execute \"x\". So as an example \"o-wrx\" would remove all possible permissions for other. To add all permissions for other again \"o+wrx\" would be used. In case the modification fails this method will return a `string` containing information of the reason. Otherwise an empty `string` gets returned.",
         "example": [
             "host_computer = get_shell(\"root\", \"test\").host_computer",
             "rootFolder = host_computer.File(\"/\")",
@@ -11,7 +11,7 @@
         ]
     },
     "copy": {
-        "description": "Copies the `file` to the provided path. Files can only be copied if the user has read and write permissions or is root. The new filename has to be below 128 characters and alphanumeric. After success this method will return `true`. Otherwise this method will return a `string` containing information about the reason of failure.",
+        "description": "Copies the `file` to the provided path. Files can only be copied if the user has read and write permissions or is root. The new filename has to be below 128 characters and alphanumeric. After success, this method will return `true`. Otherwise, this method will return a `string` containing information about the reason for failure.",
         "example": [
             "host_computer = get_shell(\"root\", \"test\").host_computer",
             "passwdFile = host_computer.File(\"/etc/passwd\")",
@@ -24,7 +24,7 @@
         ]
     },
     "move": {
-        "description": "Moves the `file` to the provided path. Files can only be moved if the user has read and write permissions or is root. The new filename has to be below 128 characters and alphanumeric. After success this method will return `true`. Otherwise this method will return a `string` containing information about the failure.",
+        "description": "Moves the `file` to the provided path. Files can only be moved if the user has read and write permissions or is root. The new filename has to be below 128 characters and alphanumeric. After success, this method will return `true`. Otherwise, this method will return a `string` containing information about the failure.",
         "example": [
             "host_computer = get_shell(\"root\", \"test\").host_computer",
             "passwdFile = host_computer.File(\"/etc/passwd\")",
@@ -37,7 +37,7 @@
         ]
     },
     "rename": {
-        "description": "Rename the file with the name provided. Files can only be renamed if the user has write permissions or is root. The new filename has to be below 128 characters and alphanumeric. On failure this method will return a `string` containing information about the failure. Otherwise this method will return `true`.",
+        "description": "Rename the file with the name provided. Files can only be renamed if the user has write permissions or is root. The new filename has to be below 128 characters and alphanumeric. On failure, this method will return a `string` containing information about the failure. Otherwise, this method will return `true`.",
         "example": [
             "host_computer = get_shell(\"root\", \"test\").host_computer",
             "passwdFile = host_computer.File(\"/etc/passwd\")",
@@ -66,7 +66,7 @@
         ]
     },
     "parent": {
-        "description": "Returns the folder that contains this file. In case that there is no parent folder `null` will be returned instead.",
+        "description": "Returns the folder that contains this file. In case there is no parent folder `null` will be returned instead.",
         "example": [
             "host_computer = get_shell.host_computer",
             "etcFolder = host_computer.File(\"/etc\")",
@@ -90,7 +90,7 @@
         ]
     },
     "get_content": {
-        "description": "Returns a `string` representing the content of the file. In order to be able to read a file the user requires read access or being root. In case of failure `null` will get returned.",
+        "description": "Returns a `string` representing the content of the file. To read a file the user requires read access or being root. In case of failure `null` will get returned.",
         "example": [
             "host_computer = get_shell(\"root\", \"test\").host_computer",
             "passwdFile = host_computer.File(\"/etc/passwd\")",
@@ -98,7 +98,7 @@
         ]
     },
     "set_content": {
-        "description": "Save the text in the `file`. The content will not get appended to the `file`. Therefore content will get overriden. In order to be able to set new content the user requires write permissions or being root. Keep in mind that text files cannot exceed the character limit of 160000. In case setting the content was successful `true` will get returned. Otherwise a `string` including a description for the reason of failure will be provided.",
+        "description": "Save the text in the `file`. The content will not get appended to the `file`. Therefore content will get overridden. To set new content the user requires write permissions or being root. Keep in mind that text files cannot exceed the character limit of 160000. In case setting the content was successful `true` will get returned. Otherwise, a `string` including a description for the reason of failure will be provided.",
         "example": [
             "host_computer = get_shell(\"root\", \"test\").host_computer",
             "passwdFile = host_computer.File(\"/etc/passwd\")",
@@ -127,7 +127,7 @@
         ]
     },
     "delete": {
-        "description": "Delete the file. In order to be able to delete files write permissions are required or being root. In case of failure a `string` will be returned containing information about the reason. Otherwise an empty string gets returned.",
+        "description": "Delete the file. To delete files write permissions are required or being root. In case of failure a `string` will be returned containing information about the reason. Otherwise, an empty string gets returned.",
         "example": [
             "host_computer = get_shell.host_computer",
             "lsBinary = host_computer.File(\"/bin/ls\")",
@@ -162,7 +162,7 @@
         ]
     },
     "permissions": {
-        "description": "Returns a `string` with the current file permissions. The format for this permissions string is as follows: \"[fileType][wrx](u)[wrx](g)[wrx](o)\". The file type is either \"d\" in case it's an directoy or \"-\". The user type gets defined through three possible types. These user types include user \"u\", group \"g\" and other \"o\". There are three different permission types. Those permissions include read \"r\", write \"w\" and execute \"x\". An example of a `string` which is returned by this method would be \"-rwxr-xr-x\". Using all provided information on this example `string` brings following conclusions. First off the file is not a directory. User has full access. Group and other have almost all permissions beside writing.",
+        "description": "Returns a `string` with the current file permissions. The format for this permissions string is as follows: \"[fileType][wrx](u)[wrx](g)[wrx](o)\". The file type is either \"d\" in case it's a directory or \"-\". The user type gets defined through three possible types. These user types include user \"u\", group \"g\" and other \"o\". There are three different permission types. Those permissions include read \"r\", write \"w\" and execute \"x\". An example of a `string` which is returned by this method would be \"-rwxr-xr-x\". Using all provided information in this example `string` brings the following conclusions. First off the file is not a directory. The user has full access. Group and other have almost all permissions besides writing.",
         "example": [
             "host_computer = get_shell.host_computer",
             "binFolder = host_computer.File(\"/bin\")",
@@ -178,7 +178,7 @@
         ]
     },
     "owner": {
-        "description": "Returns a `string` with the name of the file owner. User permissions get applied to whoever is owner of a file.",
+        "description": "Returns a `string` with the name of the file owner. User permissions get applied to whoever is the owner of a file.",
         "example": [
             "host_computer = get_shell.host_computer",
             "lsBinary = host_computer.File(\"/bin/ls\")",
@@ -186,7 +186,7 @@
         ]
     },
     "set_owner": {
-        "description": "Change the owner of this file. Optionally the owner can get applied recursively. The owner name cannot exceed 15 characters. Additionally either write permissions or being root is required. In case of failure a `string` gets returned containing the cause. Otherwise an empty `string` gets returned.",
+        "description": "Change the owner of this file. Optionally the owner can get applied recursively. The owner's name cannot exceed 15 characters. Additionally either write permissions or being root is required. In case of failure a `string` gets returned containing the cause. Otherwise an empty `string` gets returned.",
         "example": [
             "host_computer = get_shell.host_computer",
             "lsBinary = host_computer.File(\"/bin/ls\")",
@@ -199,7 +199,7 @@
         ]
     },
     "group": {
-        "description": "Returns a `string` with the name of the group to which this file belongs. Group permissions get applied to whoever is owner of a file.",
+        "description": "Returns a `string` with the name of the group to which this file belongs. Group permissions get applied to whoever is the owner of a file.",
         "example": [
             "host_computer = get_shell.host_computer",
             "lsBinary = host_computer.File(\"/bin/ls\")",
@@ -207,7 +207,7 @@
         ]
     },
     "set_group": {
-        "description": "Change the group related this file. Optionally the group can get applied recursively. The group name cannot exceed 15 characters. Additionally either write permissions or being root is required. In case of failure a `string` gets returned containing the cause. Otherwise an empty `string` gets returned.",
+        "description": "Change the group related to this file. Optionally the group can get applied recursively. The group name cannot exceed 15 characters. Additionally either write permissions or being root is required. In case of failure a `string` gets returned containing the cause. Otherwise an empty `string` gets returned.",
         "example": [
             "host_computer = get_shell.host_computer",
             "lsBinary = host_computer.File(\"/bin/ls\")",
@@ -220,7 +220,7 @@
         ]
     },
     "size": {
-        "description":  "Returns a `string` with the size of the file in bytes. There is no correlation between file size and actual file content. Instead the file size is depending on the name of the file.",
+        "description":  "Returns a `string` with the size of the file in bytes. There is no correlation between file size and actual file content. Instead, the file size is depending on the name of the file.",
         "example": [
             "host_computer = get_shell.host_computer",
             "lsBinary = host_computer.File(\"/bin/ls\")",

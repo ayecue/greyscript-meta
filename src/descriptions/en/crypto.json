@@ -3,7 +3,7 @@
         "description": "A `crypto` object can be obtained by using `include_lib`."
     },
     "aircrack": {
-        "description": "Returns a `string` with the password generated based on the file which got created by aireplay. In case of failure it will return `null` instead.",
+        "description": "Returns a `string` with the password generated based on the file which got created by aireplay. In case of failure, it will return `null` instead.",
         "example": [
             "crypto = include_lib(\"/lib/crypto.so\")",
             "networks = get_shell.host_computer.wifi_networks(\"wlan0\")",
@@ -19,7 +19,7 @@
         ]
     },
     "airmon": {
-        "description": "Enables or disables the monitor mode of a network device. The option parameter can only be \"start\" or \"stop\". Monitor mode can only be enabled on Wifi cards. If it wasn't possible to enable or disable the monitor mode this method will return a `string` containing the reason. Otherwise it will return `true`.",
+        "description": "Enables or disables the monitor mode of a network device. The options parameter can only be \"start\" or \"stop\". Monitor mode can only be enabled on Wifi cards. If it wasn't possible to enable or disable the monitor mode this method will return a `string` containing the reason. Otherwise, it will return `true`.",
         "example": [
             "crypto = include_lib(\"/lib/crypto.so\")",
             "airmonResult = crypto.airmon(\"/start\", \"wlan0\")",
@@ -31,7 +31,7 @@
         ]
     },
     "aireplay": {
-        "description": "Used to inject frames on wireless interfaces. Once the command with `Control+C` is stopped, it will save the captured information in a text file called `file.cap` in the path where the terminal is currently located. Alternatively, a maximum of captured `acks` can be specified for the command to stop automatically, saving the `file.cap` file as described above. In order to figure out how many ACKs are required your can use the following formula: \"300000 / [Wifi PWR]\". In the event that there is an error, a `string` will be returned with the message indicating the problem. On success it will return `null`.",
+        "description": "Used to inject frames on wireless interfaces. Once the command with `Control+C` is stopped, it will save the captured information in a text file called `file.cap` in the path where the terminal is currently located. Alternatively, a maximum of captured `acks` can be specified for the command to stop automatically, saving the `file.cap` file as described above. To figure out how many ACKs are required you can use the following formula: \"300000 / [Wifi PWR]\". If there is an error, a `string` will be returned with the message indicating the problem. On success, it will return `null`.",
         "example": [
             "crypto = include_lib(\"/lib/crypto.so\")",
             "networks = get_shell.host_computer.wifi_networks(\"wlan0\")",
@@ -51,7 +51,7 @@
         ]
     },
     "decipher": {
-        "description": "Returns a decrypted password via the provided password md5 hash. Keep in mind that this method is not actually decrypting a password but rather checking for existing passwords within the game world with a matching md5 hash. So in case a password does not exist in the game world the decryption will fail. On failure this method will return `null`.",
+        "description": "Returns a decrypted password via the provided password md5 hash. Keep in mind that this method is not decrypting a password but rather checking for existing passwords within the game world with a matching md5 hash. So in case a password does not exist in the game world the decryption will fail. On failure, this method will return `null`.",
         "example": [
             "crypto = include_lib(\"/lib/crypto.so\")",
             "host_computer = get_shell(\"root\", \"test\").host_computer",
@@ -66,7 +66,7 @@
         ]
     },
     "smtp_user_List": {
-        "description": "SMTP services are mail services. When using this method with the IP of a mail server, due to a vulnerability in the service, it returns a `list` of the existing users on the `computer` where the SMTP service is running. If these users also have an email account registered on the `SMTP` server, it will be indicated in the `list`. SMTP services are usually running on port 25. In case of failure this method will return a string containing the cause.",
+        "description": "SMTP services are mail services. When using this method with the IP of a mail server, due to a vulnerability in the service, it returns a `list` of the existing users on the `computer` where the SMTP service is running. If these users also have an email account registered on the `SMTP` server, it will be indicated in the `list`. SMTP services are usually running on port 25. In case of failure, this method will return a string containing the cause.",
         "example": [
             "crypto = include_lib(\"/lib/crypto.so\")",
             "print(crypto.smtp_user_List(\"192.168.0.4\", 25))"
