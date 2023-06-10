@@ -24,10 +24,10 @@
         "description": "Returns a `list` where each item is a `string` containing the names of all the currencies that exist."
     },
     "show_nodes": {
-        "description": "Returns an `number` of devices mining a specific coin for the same `wallet`. In case of error a `string` is returned with the details."
+        "description": "Returns a `number` of devices mining a specific coin for the same `wallet`. In case of error a `string` is returned with the details."
     },
     "reset_password": {
-        "description": "Change the password of the wallet. Only the account owner can change the password. Returns `true` if the process completed successfully, in case of error a `string` with the details is returned."
+        "description": "Change the password of the wallet. Only the account owner can change the password. Returns `true` if the process is completed successfully, in case of error a `string` with the details is returned."
     },
     "get_pin": {
         "description": "Returns a `string` with a PIN that refreshes every few minutes. This PIN is used to obtain an account in cryptocurrency services."

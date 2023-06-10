@@ -29,7 +29,7 @@
         ]
     },
     "version": {
-        "description": "Returns a `string` containing the version number of the library. Here an example of a version number: \"1.0.0\"",
+        "description": "Returns a `string` containing the version number of the library. Here is an example of a version number: `\"1.0.0\"`",
         "example": [
             "metax = include_lib(\"/lib/metaxploit.so\")",
             "metaLib = metax.load(\"/lib/init.so\")",
@@ -37,7 +37,7 @@
         ]
     },
     "lib_name": {
-        "description": "Returns a `string` containing the name of the library. Here an example of a name: \"init.so\"",
+        "description": "Returns a `string` containing the name of the library. Here is an example of a name: `\"init.so\"`",
         "example": [
             "metax = include_lib(\"/lib/metaxploit.so\")",
             "metaLib = metax.load(\"/lib/init.so\")",

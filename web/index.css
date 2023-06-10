@@ -88,9 +88,12 @@ html {
 }
 
 .editor {
-    height: 100px;
-    width: auto;
-	border: 1px groove #333;
+    height: 100px!important;
+    width: auto!important;
+	border: 1px groove #333!important;
+    margin: 0!important;
+    padding: 5px!important;
+    font-size: 12px!important;
 }
 
 .editorWrapper {
@@ -286,6 +289,21 @@ html {
     word-break: break-word;
 }
 
+.definitions code[class*=language-] {
+    font-size: 14px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.definitions a {
+    color: #FFF;
+    cursor: pointer;
+}
+
+.definitions p {
+    font-size: 14px;
+}
+
 .definitions li {
     margin: 0;
     padding: 0;
@@ -313,7 +331,8 @@ html {
 }
 
 .definitions .second {
-    margin: 0 0 0 10px;
+    margin: 15px 0 0 10px;
+    border-top: 1px groove #333;
 }
 
 .definitions .second > li {
@@ -339,20 +358,13 @@ html {
 	color: #ce9178;
 }
 
-.definitions .definition table {
-    width: 100%;
-    table-layout: fixed;
-}
-
 .definitions .definition h3 {
     margin-top: 0;
     color: #74b0df;
 }
 
-.definitions .definition .label {
-    width: 100px;
-    color: #FFF;
-    vertical-align: top;
+.definitions .definition .signature {
+    font-size: 14px;
 }
 
 .definitions .definition .signature .args, .definitions .definition .returns {
@@ -389,19 +401,16 @@ html {
 }
 
 .definitions .definition .description {
-    padding: 10px 0 0;
+    font-size: 14px;
 }
 
-p .highlight.type {
-    color: #3dc9b0;
-}
-
-p .highlight.string {
-    color: #ce9178;
+.definitions .definition .description li {
+    margin: 5px 0 0 20px;
+    list-style: square;
 }
 
 .definitions .definition .example {
-    padding: 10px 0 0;
+    margin: 10px 0 0;
 }
 
 @media screen and (min-width: 760px) {

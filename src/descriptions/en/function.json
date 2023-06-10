@@ -1,6 +1,6 @@
 {
     "$meta": {
-        "description": "Create a `function` with \"function()\", including parameters with optional default values. Assign the result to a variable. Invoke by using that variable. Use `@` to reference a function without invoking.",
+        "description": "Create a `function` with `\"function()\"`, including parameters with optional default values. Assign the result to a variable. Invoke by using that variable. Use `@` to reference a function without invoking.",
         "example": [
             "triple = function(n=1)",
             "   return n * 3",

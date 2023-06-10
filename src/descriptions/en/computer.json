@@ -39,7 +39,7 @@
         ]
     },
     "create_folder": {
-        "description": "Create a folder at the  path provided in the arguments. There are certain limitations when it comes to creating a folder. The folder name has to be alphanumeric and below 128 characters. Also keep in mind that it will fail when there is already a folder in place or you are lacking permissions. Additionally there is a folder limit of about 250 in each folder and 3125 folders in the computer overall. In case the folder creation fails the method will return a `string` containing the error message which was the cause for the failure. In case of success it will return `true`.",
+        "description": "Create a folder at the path provided in the arguments. There are certain limitations when it comes to creating a folder. The folder name has to be alphanumeric and below 128 characters. Also, keep in mind that it will fail when there is already a folder in place or you are lacking permissions. Additionally, there is a folder limit of about 250 in each folder and 3125 folders in the computer overall. In case the folder creation fails the method will return a `string` containing the error message which was the cause for the failure. In case of success, it will return `true`.",
         "example": [
             "path = \"/home/user/Desktop\"",
             "host_computer = get_shell.host_computer",
@@ -63,7 +63,7 @@
         ]
     },
     "touch": {
-        "description": "Creates an empty text `file` at the path provided in the arguments. There are certain limitations when it comes to file creation. The `file` name has to be alphanumeric and below 128 characters. Also keep in mind that it will fail when there is already `file` in place or you are lacking permissions. Additionally there is a file limit of about 250 in each folder and 3125 files in the computer overall. In case of success it will return `true`.",
+        "description": "Creates an empty text `file` at the path provided in the arguments. There are certain limitations when it comes to file creation. The `file` name has to be alphanumeric and below 128 characters. Also, keep in mind that it will fail when there is already a `file` in place or you are lacking permissions. Additionally, there is a file limit of about 250 in each folder and 3125 files in the computer overall. In case of success, it will return `true`.",
         "example": [
             "path = \"/home/user/Desktop\"",
             "host_computer = get_shell.host_computer",
@@ -76,7 +76,7 @@
         ]
     },
     "show_procs": {
-        "description": "Returns a `string` with an overview of all active processes on the `computer`. It contains information about user, pid, cpu, memory and command.",
+        "description": "Returns a `string` with an overview of all active processes on the `computer`. It contains information about the user, PID, CPU, memory and command.",
         "example": [
             "host_computer = get_shell.host_computer",
             "procs = host_computer.show_procs",
@@ -107,7 +107,7 @@
         ]
     },
     "change_password": {
-        "description": "Change the password of an existing user on the `computer`. It is necessary to be root to be able to successfully change the password. Additionally keep in mind that passwords can only include alphanumeric characters and cannot exceed 15 characters. In case the password change fails this method will return `string` containing information on why it failed. If the change succeeded it will return `true`.",
+        "description": "Change the password of an existing user on the `computer`. It is necessary to be root to be able to successfully change the password. Additionally, keep in mind that passwords can only include alphanumeric characters and cannot exceed 15 characters. In case the password change fails this method will return a `string` containing information on why it failed. If the change succeeded it will return `true`.",
         "example": [
             "host_computer = get_shell(\"root\", \"test\").host_computer",
             "changeResult = host_computer.change_password(\"test\", \"newPassword\")",
@@ -119,7 +119,7 @@
         ]
     },
     "create_user": {
-        "description": "Creates an user on the `computer`, with the specified name and password. It is necessary to be root to be able to successfully create an user. Additionally keep in mind that neither username nor password can exceed more than 15 characters and both need to be alphanumeric. There cannot be more than 15 users created on the same `computer`. In case the creation fails this method will return a `string` containing the reason for the failure. Otherwise it will return `true`.",
+        "description": "Creates a user on the `computer`, with the specified name and password. It is necessary to be root to be able to successfully create a user. Additionally, keep in mind that neither username nor password can exceed more than 15 characters and both need to be alphanumeric. There cannot be more than 15 users created on the same `computer`. In case the creation fails this method will return a `string` containing the reason for the failure. Otherwise, it will return `true`.",
         "example": [
             "host_computer = get_shell(\"root\", \"test\").host_computer",
             "creationResult = host_computer.create_user(\"newUser\", \"123\")",
@@ -131,7 +131,7 @@
         ]
     },
     "delete_user": {
-        "description": "It deletes the indicated user from the `computer`. It can optionally also delete the home folder related to the user. By default the home folder will not be deleted. It is necessary to be root to be able to successfully delete an user. Keep in mind that you cannot delete the root user. In case the deletion fails this method will return a `string` containing the cause of failure. Otherwise it will return `true`.",
+        "description": "It deletes the indicated user from the `computer`. It can optionally also delete the home folder related to the user. By default the home folder will not be deleted. It is necessary to be root to be able to successfully delete a user. Keep in mind that you cannot delete the root user. In case the deletion fails this method will return a `string` containing the cause of failure. Otherwise, it will return `true`.",
         "example": [
             "host_computer = get_shell(\"root\", \"test\").host_computer",
             "deletionResult = host_computer.delete_user(\"test\", true)",
@@ -143,7 +143,7 @@
         ]
     },
     "create_group": {
-        "description": "Create a new group associated with an existing user on the `computer`. It is necessary to be root to be able to successfully create a group. There are a few limitations when creating a group such as a character limit of 15 and that the group name may only contain alphanumeric characters. In case the group creation fails this method will return a `string` containing the cause of failure. Otherwise it will return `true`.",
+        "description": "Create a new group associated with an existing user on the `computer`. It is necessary to be root to be able to successfully create a group. There are a few limitations when creating a group such as a character limit of 15 and that the group name may only contain alphanumeric characters. In case the group creation fails this method will return a `string` containing the cause of failure. Otherwise, it will return `true`.",
         "example": [
             "host_computer = get_shell(\"root\", \"test\").host_computer",
             "creationResult = host_computer.create_group(\"test\", \"staff\")",
@@ -155,7 +155,7 @@
         ]
     },
     "delete_group": {
-        "description": "Delete an existing group associated with an existing user on the `computer`. It is necessary to be root to be able to successfully delete a group. In case the group deletion fails this method will return a `string` containing the cause of failure. Otherwise it will return `true`.",
+        "description": "Delete an existing group associated with an existing user on the `computer`. It is necessary to be root to be able to successfully delete a group. In case the group deletion fails this method will return a `string` containing the cause of failure. Otherwise, it will return `true`.",
         "example": [
             "host_computer = get_shell(\"root\", \"test\").host_computer",
             "deletionResult = host_computer.delete_group(\"test\", \"staff\")",
@@ -177,7 +177,7 @@
         ]
     },
     "close_program": {
-        "description": "Closes a program associated with the provided PID. You can see the list of active programs by either using `show_procs` or typing ps into your terminal. In order to be able to close a program you need to be either owner of the running process or root. In case the closing of a program fails this method will return a `string` containing the cause of failure. Otherwise it will return `true`.",
+        "description": "Closes a program associated with the provided PID. You can see the list of active programs by either using `show_procs` or typing ps into your terminal. To close a program you need to be either owner of the running process or a root. In case the closing of a program fails this method will return a `string` containing the cause of failure. Otherwise, it will return `true`.",
         "example": [
             "host_computer = get_shell(\"root\", \"test\").host_computer",
             "closeResult = host_computer.close_program(\"random-PID\")",
@@ -189,7 +189,7 @@
         ]
     },
     "wifi_networks": {
-        "description": "Returns a list of the Wi-Fi networks that are available for the provided interface. Each item is the list is a string containing information of the BSSID, PWR and ESSID. If no interface is provided it will return null.",
+        "description": "Returns a list of the Wi-Fi networks that are available for the provided interface. Each item in the list is a string containing information on the BSSID, PWR and ESSID. If no interface is provided it will return null.",
         "example": [
             "host_computer = get_shell(\"root\", \"test\").host_computer",
             "networks = host_computer.wifi_networks(\"wlan0\")",
@@ -206,7 +206,7 @@
         ]
     },
     "connect_wifi": {
-       "description": "Connect to the indicated Wifi network. It is not possible to connect to a new Wifi while being logged in as a guest. If connecting to a new Wifi fails this method will return a `string` containing the cause of failure. Otherwise it will return `true`. Wifis can be found via `wifi_networks` or by typing iwlist as a command in the terminal.",
+       "description": "Connect to the indicated Wifi network. It is not possible to connect to a new Wifi while being logged in as a guest. If connecting to a new Wifi fails this method will return a `string` containing the cause of failure. Otherwise, it will return `true`. Wifis can be found via `wifi_networks` or by typing iwlist as a command in the terminal.",
        "example": [
             "host_computer = get_shell.host_computer",
             "networks = host_computer.wifi_networks",
@@ -222,7 +222,7 @@
         ]
     },
     "connect_ethernet": {
-        "description": "Set up a new IP address on the `computer` through the ethernet connection. It is not possible to set up a new IP address while being logged in as a guest. On failure this method will return a `string` containing the cause. Otherwise it will return `null`.",
+        "description": "Set up a new IP address on the `computer` through the ethernet connection. It is not possible to set up a new IP address while being logged in as a guest. On failure, this method will return a `string` containing the cause. Otherwise, it will return `null`.",
         "example": [
             "host_computer = get_shell.host_computer",
             "connectionResult = host_computer.connect_ethernet(\"eth0\", \"192.168.0.4\", \"192.168.0.1\")",
@@ -242,7 +242,7 @@
         ]
     },
     "active_net_card": {
-        "description": "Returns a `string` which contains either the keyword \"WIFI\" or \"ETHERNET\" depending through which connection type your `computer` is connected by.",
+        "description": "Returns a `string` which contains either the keyword `\"WIFI\"` or `\"ETHERNET\"` depending through which connection type your `computer` is connected by.",
         "example": [
             "host_computer = get_shell.host_computer",
             "netCard = host_computer.active_net_card",

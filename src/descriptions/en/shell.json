@@ -1,6 +1,6 @@
 {
     "$meta": {
-        "description": "A `shell` object can be aquired by either using `get_shell`, `connect_service` or `overflow`. In case you want to use `connect_service` to connect to a SSH port it will be usually at port 22."
+        "description": "A `shell` object can be acquired by either using `get_shell`, `connect_service` or `overflow`. In case you want to use `connect_service` to connect to an SSH port it will be usually at port 22."
     },
     "host_computer": {
         "description": "Returns a `computer` related to the `shell`.",
@@ -11,14 +11,14 @@
         ]
     },
     "start_terminal": {
-        "description": "Launches an active terminal. The colour of the terminal will change and show the IP of the connected shell. Script execution will be stopped when starting a new terminal.",
+        "description": "Launches an active terminal. The color of the terminal will change and show the IP of the connected shell. Script execution will be stopped when starting a new terminal.",
         "example": [
             "shell = get_shell",
             "shell.start_terminal"
         ]
     },
     "build": {
-        "description": "Compiles a plain code file provided in the arguments to a binary. On success the new binary will be available under the provided build folder. The binary name will be the same as the source file just without file extension. Optionally an allowImport flag can be set which enables to use `import_code` on the binary. All provided paths must be absolute. Returns an empty `string` on success. On failure it will return a `string` as well but this time containing valuable information on why the compilation failed.",
+        "description": "Compiles a plain code file provided in the arguments to a binary. On success, the new binary will be available under the provided build folder. The binary name will be the same as the source file just without file extension. Optionally an allowImport flag can be set which enables to use `import_code` on the binary. All provided paths must be absolute. Returns an empty `string` on success. On failure, it will return a `string` as well but this time containing valuable information on why the compilation failed.",
         "example": [
             "shell = get_shell",
             "buildResult = shell.build(\"/home/test/myprogram.src\", \"/home/test/Desktop\")",
@@ -30,7 +30,7 @@
         ]
     },
     "connect_service": {
-        "description": "Returns a `shell` if the connection attempt to the provided IP was successful. This method can only connect to ports running a SSH or FTP service. SSH services usually run on port 22 and FTP services usually on port 21. Keep in mind to pass the right service value depending on which service is going to be used. By default it will pass SSH as the used service. In case of failure a `string` is going to be returned containing details.",
+        "description": "Returns a `shell` if the connection attempt to the provided IP was successful. This method can only connect to ports running an SSH or FTP service. SSH services usually run on port 22 and FTP services usually on port 21. Keep in mind to pass the right service value depending on which service is going to be used. By default, it will pass SSH as the used service. In case of failure a `string` is going to be returned containing details.",
         "example": [
             "shell = get_shell",
             "connectionResult = shell.connect_service(\"1.1.1.1\", 22, \"test\", \"test\")",
@@ -61,7 +61,7 @@
         ]
     },
     "scp": {
-        "description": "Send a `file` to the `computer` which is related to the provided `shell`. You require permissions to read the `file` on the `computer` from which you are uploading and write permissions in the folder of the `computer` you are trying to upload to. In case of failure this method will return a `string` with the cause. Otherwise `true` gets returned.",
+        "description": "Send a `file` to the `computer` which is related to the provided `shell`. You require permission to read the `file` on the `computer` from which you are uploading and write permissions in the folder of the `computer` you are trying to upload to. In case of failure this method will return a `string` with the cause. Otherwise `true` gets returned.",
         "example": [
             "shell = get_shell",
             "remoteShell = shell.connect_service(\"1.1.1.1\", 22, \"test\", \"test\")",
