@@ -286,6 +286,16 @@ html {
     word-break: break-word;
 }
 
+.definitions code[class*=language-] {
+    font-size: 14px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.definitions p {
+    font-size: 14px;
+}
+
 .definitions li {
     margin: 0;
     padding: 0;
@@ -350,9 +360,14 @@ html {
 }
 
 .definitions .definition .label {
+    font-size: 14px;
     width: 100px;
     color: #FFF;
     vertical-align: top;
+}
+
+.definitions .definition .signature {
+    font-size: 14px;
 }
 
 .definitions .definition .signature .args, .definitions .definition .returns {
@@ -390,18 +405,7 @@ html {
 
 .definitions .definition .description {
     padding: 10px 0 0;
-}
-
-p .highlight.type {
-    color: #3dc9b0;
-}
-
-p .highlight.string {
-    color: #ce9178;
-}
-
-.definitions .definition .example {
-    padding: 10px 0 0;
+    font-size: 14px;
 }
 
 @media screen and (min-width: 760px) {

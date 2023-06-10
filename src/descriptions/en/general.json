@@ -51,7 +51,7 @@
         ]
     },
     "typeof": {
-        "description": "Returns a `string` containing the type of the entity provided. There are following types by default: \"aptClient\", \"blockchain\", \"coin\", \"computer\", \"crypto\", \"file\", \"function\", \"list\", \"map\", \"metaLib\", \"metaMail\", \"metaxploit\", \"netSession\", \"null\", \"number\", \"port\", \"router\", \"service\", \"shell\", \"string\", \"subWallet\", \"wallet\". Custom types can be added as well by using the `classID` property in a map.",
+        "description": "Returns a `string` containing the type of the entity provided. There are following types by default: `\"aptClient\"`, `\"blockchain\"`, `\"coin\"`, `\"computer\"`, `\"crypto\"`, `\"file\"`, `\"function\"`, `\"list\"`, `\"map\"`, `\"metaLib\"`, `\"metaMail\"`, `\"metaxploit\"`, `\"netSession\"`, `\"null\"`, `\"number\"`, `\"port\"`, `\"router\"`, `\"service\"`, `\"shell\"`, `\"string\"`, `\"subWallet\"`, `\"wallet\"`. Custom types can be added as well by using the `classID` property in a map.",
         "example": [
             "myObj = { \"classID\": \"myType\" }",
             "if typeof(myObj) == \"myType\" then",
@@ -80,7 +80,7 @@
         ]
     },
     "nslookup": {
-        "description": "Returns the IP address for the provided web address. In case the web address cannot be found a `string` gets returned containing the following message: \"Not found\"",
+        "description": "Returns the IP address for the provided web address. In case the web address cannot be found a `string` gets returned containing the following message: `\"Not found\"`",
         "example": [
             "url = params[0]",
             "print(\"IP for website is: \" + nslookup(url))"
@@ -266,7 +266,7 @@
         ]
     },
     "import_code": {
-        "description": "Enables to import code from different sources into one file. This is useful in case you want to split code into different files and also to avoid any limitation in regards to text file character limits. Note that `import_code` requires an absolute path and is called while compiling the file into a binary instead of during runtime. Additionally `import_code` cannot be nested. Code can be either imported from plain text files or binaries that have \"allow import\" enabled.",
+        "description": "Enables to import code from different sources into one file. This is useful in case you want to split code into different files and also to avoid any limitation in regards to text file character limits. Note that `import_code` requires an absolute path and is called while compiling the file into a binary instead of during runtime. Additionally `import_code` cannot be nested. Code can be either imported from plain text files or binaries that have `\"allow import\"` enabled.",
         "example": [
             "//Content of main.src",
             "import_code(\"/home/user/my_module.src\")",
@@ -349,7 +349,7 @@
         ]
     },
     "current_date": {
-        "description": "Returns a `string` containing the current date and time. The format is as follows: \"[day]/[month]/[year] - [hours]:[minutes]\". Here an example: \"27/Jan/2000 - 08:19\"",
+        "description": "Returns a `string` containing the current date and time. The format is as follows: `\"[day]/[month]/[year] - [hours]:[minutes]\"`. Here an example: `\"27/Jan/2000 - 08:19\"`",
         "example": [
             "dateStr = current_date",
             "dateSegments = dateStr.split(\" - \")",
@@ -376,7 +376,7 @@
         ]
     },
     "bitwise": {
-        "description": "Enables to perform bitwise operations. Supported operators are: \"&\", \"|\", \"^\", \"<<\", \">>\", \">>>\". Returns a `number`.",
+        "description": "Enables to perform bitwise operations. Supported operators are: `\"&\"`, `\"|\"`, `\"^\"`, `\"<<\"`, `\">>\"`, `\">>>\"`. Returns a `number`.",
         "example": [
             "num = params[0].to_int",
             "isOdd = bitwise(\"&\", num, 1) == 1",

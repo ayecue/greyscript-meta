@@ -242,7 +242,7 @@
         ]
     },
     "active_net_card": {
-        "description": "Returns a `string` which contains either the keyword \"WIFI\" or \"ETHERNET\" depending through which connection type your `computer` is connected by.",
+        "description": "Returns a `string` which contains either the keyword `\"WIFI\"` or `\"ETHERNET\"` depending through which connection type your `computer` is connected by.",
         "example": [
             "host_computer = get_shell.host_computer",
             "netCard = host_computer.active_net_card",

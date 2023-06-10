@@ -97,7 +97,7 @@
         ]
     },
     "port_info": {
-        "description": "Returns a `string` with information of the port that has been provided. This information contains data on which service is running and which version is used. An example would be: \"http 1.0.0\". In case of failure `null` will get returned",
+        "description": "Returns a `string` with information of the port that has been provided. This information contains data on which service is running and which version is used. An example would be: `\"http 1.0.0\"`. In case of failure `null` will get returned",
         "example": [
             "router = get_router",
             "ports = router.used_ports",

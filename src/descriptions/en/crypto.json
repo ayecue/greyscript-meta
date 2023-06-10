@@ -19,7 +19,7 @@
         ]
     },
     "airmon": {
-        "description": "Enables or disables the monitor mode of a network device. The options parameter can only be \"start\" or \"stop\". Monitor mode can only be enabled on Wifi cards. If it wasn't possible to enable or disable the monitor mode this method will return a `string` containing the reason. Otherwise, it will return `true`.",
+        "description": "Enables or disables the monitor mode of a network device. The options parameter can only be `\"start\"` or `\"stop\"`. Monitor mode can only be enabled on Wifi cards. If it wasn't possible to enable or disable the monitor mode this method will return a `string` containing the reason. Otherwise, it will return `true`.",
         "example": [
             "crypto = include_lib(\"/lib/crypto.so\")",
             "airmonResult = crypto.airmon(\"/start\", \"wlan0\")",
@@ -31,7 +31,7 @@
         ]
     },
     "aireplay": {
-        "description": "Used to inject frames on wireless interfaces. Once the command with `Control+C` is stopped, it will save the captured information in a text file called `file.cap` in the path where the terminal is currently located. Alternatively, a maximum of captured `acks` can be specified for the command to stop automatically, saving the `file.cap` file as described above. To figure out how many ACKs are required you can use the following formula: \"300000 / [Wifi PWR]\". If there is an error, a `string` will be returned with the message indicating the problem. On success, it will return `null`.",
+        "description": "Used to inject frames on wireless interfaces. Once the command with `Control+C` is stopped, it will save the captured information in a text file called `file.cap` in the path where the terminal is currently located. Alternatively, a maximum of captured `acks` can be specified for the command to stop automatically, saving the `file.cap` file as described above. To figure out how many ACKs are required you can use the following formula: `\"300000 / [Wifi PWR]\"`. If there is an error, a `string` will be returned with the message indicating the problem. On success, it will return `null`.",
         "example": [
             "crypto = include_lib(\"/lib/crypto.so\")",
             "networks = get_shell.host_computer.wifi_networks(\"wlan0\")",
