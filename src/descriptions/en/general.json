@@ -349,7 +349,7 @@
         ]
     },
     "current_date": {
-        "description": "Returns a `string` containing the current date and time. The format is as follows: `\"[day]/[month]/[year] - [hours]:[minutes]\"`. Here an example: `\"27/Jan/2000 - 08:19\"`",
+        "description": "Returns a `string` containing the current date and time. Ingame time passes 14 times as fast as real-time. The initial time after every wipe will be the 1st of January 2000 at 6:00 AM. Additionally, the game time will not proceed while the server is offline.\n* Output schema: `\"[day]/[month]/[year] - [hours]:[minutes]\"`\n* Example output: `\"27/Jan/2000 - 08:19\"`",
         "example": [
             "dateStr = current_date",
             "dateSegments = dateStr.split(\" - \")",
