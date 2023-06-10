@@ -88,9 +88,11 @@ html {
 }
 
 .editor {
-    height: 100px;
-    width: auto;
-	border: 1px groove #333;
+    height: 100px!important;
+    width: auto!important;
+	border: 1px groove #333!important;
+    margin: 0!important;
+    padding: 5px!important;
 }
 
 .editorWrapper {
@@ -358,13 +360,6 @@ html {
 .definitions .definition h3 {
     margin-top: 0;
     color: #74b0df;
-}
-
-.definitions .definition .label {
-    font-size: 14px;
-    width: 100px;
-    color: #FFF;
-    vertical-align: top;
 }
 
 .definitions .definition .signature {

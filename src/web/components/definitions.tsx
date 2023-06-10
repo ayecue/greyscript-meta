@@ -1,4 +1,3 @@
-import Monaco from 'monaco-editor/esm/vs/editor/editor.api';
 import React, { useCallback, useMemo, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 
@@ -14,14 +13,12 @@ import {
   SignatureDefinition,
   SignatureDefinitionArg
 } from '../../meta';
-import useWindowSize from '../utils/resize';
 import Editor from './editor';
-import HightlightElement from './hightlight-element';
+import { HighlightInline } from './highlight';
 
 export interface DefinitionsProps {
   signatures: Signature[];
   filter: string;
-  monaco: typeof Monaco;
   onCodeRunClick: (content: string, name: string) => void;
   onCopyClick: (type: string, methodName: string) => void;
 }
@@ -98,7 +95,7 @@ function renderDescription(description: string) {
       <ReactMarkdown
         components={{
           code(props) {
-            return <HightlightElement>{props.children}</HightlightElement>;
+            return <HighlightInline>{props.children}</HighlightInline>;
           }
         }}
       >
@@ -112,58 +109,43 @@ function renderDefinition(
   type: string,
   methodName: string,
   definition: SignatureDefinition,
-  monaco: typeof Monaco,
   onCodeRunClick: DefinitionsProps['onCodeRunClick'],
   onCopyClick: DefinitionsProps['onCopyClick']
 ) {
-  const [width] = useWindowSize();
   const containerRef = useRef<HTMLElement>(null);
   const description = getDescription(type, methodName);
   const example = getExample(type, methodName);
   const key = `${type.toUpperCase()}_${methodName.toUpperCase()}`;
 
-  const getDimensions = useCallback(() => {
-    return {
-      width: containerRef.current.clientWidth - 110,
-      height: 100
-    };
-  }, [containerRef]);
-
-  return useMemo(
-    () => (
-      <article className="definition" ref={containerRef}>
-        <h3 id={key}>
-          <span className="name">{methodName}</span>
-          <span className="signature">
-            ({renderArguments(definition.arguments)}):{' '}
-            {renderReturn(definition.returns)}
-          </span>
-        </h3>
-        <a className="share" onClick={() => onCopyClick(type, methodName)}>
-          {getSiteDescription('DEFINITIONS_COPY')}
-        </a>
-        <div className="description">{renderDescription(description)}</div>
-        {example ? (
-          <div className="example">
-            <Editor
-              monaco={monaco}
-              content={example.join('\n')}
-              name={key}
-              onClick={onCodeRunClick}
-              getDimensions={getDimensions}
-            />
-          </div>
-        ) : null}
-      </article>
-    ),
-    [width]
+  return (
+    <article className="definition" ref={containerRef}>
+      <h3 id={key}>
+        <span className="name">{methodName}</span>
+        <span className="signature">
+          ({renderArguments(definition.arguments)}):{' '}
+          {renderReturn(definition.returns)}
+        </span>
+      </h3>
+      <a className="share" onClick={() => onCopyClick(type, methodName)}>
+        {getSiteDescription('DEFINITIONS_COPY')}
+      </a>
+      <div className="description">{renderDescription(description)}</div>
+      {example ? (
+        <div className="example">
+          <Editor
+            content={example.join('\n')}
+            name={key}
+            onClick={onCodeRunClick}
+          />
+        </div>
+      ) : null}
+    </article>
   );
 }
 
 function renderDefinitions({
   signatures,
   filter,
-  monaco,
   onCodeRunClick,
   onCopyClick
 }: DefinitionsProps) {
@@ -186,7 +168,6 @@ function renderDefinitions({
             item.type,
             methodName,
             definition,
-            monaco,
             onCodeRunClick,
             onCopyClick
           )}
@@ -201,13 +182,6 @@ function renderDefinitions({
       visibleItems++;
     }
 
-    const getDimensions = useCallback(() => {
-      return {
-        width: containerRef.current.clientWidth - 10,
-        height: 100
-      };
-    }, [containerRef]);
-
     return (
       <li
         className={visibleItems === 0 ? 'hidden' : ''}
@@ -218,11 +192,9 @@ function renderDefinitions({
         {metaDescription ? renderDescription(metaDescription) : null}
         {metaExample ? (
           <Editor
-            monaco={monaco}
             content={metaExample.join('\n')}
             name={item.type.toUpperCase()}
             onClick={onCodeRunClick}
-            getDimensions={getDimensions}
           />
         ) : null}
         {items.length > 0 ? <ul className="second">{items}</ul> : null}

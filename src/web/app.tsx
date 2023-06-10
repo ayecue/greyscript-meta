@@ -1,11 +1,9 @@
-import monacoLoader from '@monaco-editor/loader';
 import React, { useState } from 'react';
 
 import { getSiteDescription } from '../descriptions';
 import { signatures } from '../meta';
 import ContentTable from './components/content-table';
 import Definitions from './components/definitions';
-import language from './grammar/language';
 
 export interface AppExternalLink {
   label: string;
@@ -91,18 +89,6 @@ export default function ({
   onCopyClick = () => {}
 }: AppProps) {
   const [filter, setFilter] = useState(filterInit);
-  const [monaco, setMonaco] = useState(null);
-
-  if (monaco === null) {
-    monacoLoader.init().then((resolvedMonaco) => {
-      resolvedMonaco.languages.register({ id: 'greyscript' });
-      resolvedMonaco.languages.setMonarchTokensProvider('greyscript', language);
-
-      setMonaco(resolvedMonaco);
-    });
-
-    return <div>Loading</div>;
-  }
 
   return (
     <div>
@@ -139,7 +125,6 @@ export default function ({
         <Definitions
           signatures={signatures}
           filter={filter}
-          monaco={monaco}
           onCodeRunClick={onCodeRunClick}
           onCopyClick={onCopyClick}
         />
