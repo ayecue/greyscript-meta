@@ -292,6 +292,11 @@ html {
     padding-bottom: 0;
 }
 
+.definitions a {
+    color: #FFF;
+    cursor: pointer;
+}
+
 .definitions p {
     font-size: 14px;
 }
@@ -323,7 +328,8 @@ html {
 }
 
 .definitions .second {
-    margin: 0 0 0 10px;
+    margin: 15px 0 0 10px;
+    border-top: 1px groove #333;
 }
 
 .definitions .second > li {
@@ -347,11 +353,6 @@ html {
 	top: 0;
 	cursor: pointer;
 	color: #ce9178;
-}
-
-.definitions .definition table {
-    width: 100%;
-    table-layout: fixed;
 }
 
 .definitions .definition h3 {
@@ -404,8 +405,11 @@ html {
 }
 
 .definitions .definition .description {
-    padding: 10px 0 0;
     font-size: 14px;
+}
+
+.definitions .definition .example {
+    margin: 10px 0 0;
 }
 
 @media screen and (min-width: 760px) {

@@ -8,9 +8,12 @@ export default function (props: ComponentProps<'code'>) {
     Prism.highlightElement(codeRef.current);
   }, [codeRef]);
 
-  return useMemo(() => (
-    <code ref={codeRef} className="language-javascript">
-      {props.children}
-    </code>
-  ), [codeRef]);
+  return useMemo(
+    () => (
+      <code ref={codeRef} className="language-javascript">
+        {props.children}
+      </code>
+    ),
+    [codeRef]
+  );
 }

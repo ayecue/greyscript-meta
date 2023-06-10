@@ -132,49 +132,28 @@ function renderDefinition(
   return useMemo(
     () => (
       <article className="definition" ref={containerRef}>
-        <h3 id={key}>{methodName}</h3>
+        <h3 id={key}>
+          <span className="name">{methodName}</span>
+          <span className="signature">
+            ({renderArguments(definition.arguments)}):{' '}
+            {renderReturn(definition.returns)}
+          </span>
+        </h3>
         <a className="share" onClick={() => onCopyClick(type, methodName)}>
           {getSiteDescription('DEFINITIONS_COPY')}
         </a>
-        <table>
-          <tbody>
-            <tr>
-              <td className="signature label">
-                {getSiteDescription('DEFINITIONS_SIGNATURE')}:
-              </td>
-              <td className="signature">
-                ({renderArguments(definition.arguments)}):{' '}
-                {renderReturn(definition.returns)}
-              </td>
-            </tr>
-            {description ? (
-              <tr>
-                <td className="description label">
-                  {getSiteDescription('DEFINITIONS_DESCRIPTION')}:
-                </td>
-                <td className="description">
-                  {renderDescription(description)}
-                </td>
-              </tr>
-            ) : null}
-            {example ? (
-              <tr>
-                <td className="example label">
-                  {getSiteDescription('DEFINITIONS_EXAMPLE')}:
-                </td>
-                <td className="example">
-                  <Editor
-                    monaco={monaco}
-                    content={example.join('\n')}
-                    name={key}
-                    onClick={onCodeRunClick}
-                    getDimensions={getDimensions}
-                  />
-                </td>
-              </tr>
-            ) : null}
-          </tbody>
-        </table>
+        <div className="description">{renderDescription(description)}</div>
+        {example ? (
+          <div className="example">
+            <Editor
+              monaco={monaco}
+              content={example.join('\n')}
+              name={key}
+              onClick={onCodeRunClick}
+              getDimensions={getDimensions}
+            />
+          </div>
+        ) : null}
       </article>
     ),
     [width]
@@ -246,7 +225,7 @@ function renderDefinitions({
             getDimensions={getDimensions}
           />
         ) : null}
-        <ul className="second">{items}</ul>
+        {items.length > 0 ? <ul className="second">{items}</ul> : null}
       </li>
     );
   });

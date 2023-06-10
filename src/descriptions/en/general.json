@@ -321,7 +321,7 @@
         ]
     },
     "command_info": {
-        "description": "Returns a `string` value of a translation. Translations include commands, documentation and other game-related things. To ",
+        "description": "Returns a `string` value of a translation. Translations include commands, documentation and other game-related things. Checkout [Grey-Texts](https://github.com/LoadingHome/Grey-Texts/blob/main/EnglishLang.json) for an overview of all available keys.",
         "example": [
             "print(command_info(\"LS_USAGE\"))"
         ]
