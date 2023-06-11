@@ -40,6 +40,8 @@ export default function ({ content, name, onClick }: EditorProps) {
         target="_blank"
         href={url.toString()}
         onClick={() => onClick(content, name)}
+        title="Run code"
+        rel="nofollow"
       ></a>
     </div>
   );

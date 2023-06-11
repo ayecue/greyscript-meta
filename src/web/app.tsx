@@ -98,6 +98,7 @@ export default function ({
             type="text"
             onChange={(ev) => setFilter(ev.target.value)}
             value={filter}
+            aria-label="Search"
           />
           {filter.length > 0 ? (
             <span
