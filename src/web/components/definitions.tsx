@@ -126,7 +126,7 @@ function renderDefinition(
           {renderReturn(definition.returns)}
         </span>
       </h3>
-      <a className="share" onClick={() => onCopyClick(type, methodName)}>
+      <a className="share" onClick={() => onCopyClick(type, methodName)} title="Copy link" rel="nofollow">
         {getSiteDescription('DEFINITIONS_COPY')}
       </a>
       <div className="description">{renderDescription(description)}</div>

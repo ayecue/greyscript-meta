@@ -21,11 +21,11 @@ Prism.languages.greyscript = {
   ],
   boolean: /\b(?:false|true)\b/,
   number: {
-    pattern: /(?<![\\w\\d.])\\d+(\\.\\d+)?([eE]-?\\d*)?/,
+    pattern: /\\d+(\\.\\d+)?([eE]-?\\d*)?/,
     lookbehind: true
   },
   string: {
-    pattern: /"([^"]+("")?)"/,
+    pattern: /"([^"]*?("")?)"/,
     greedy: true
   },
   operator: /([+\-*\/\^\&|]|[\<\>\=\!+*\-\/]?\=|\<\<|\>\>\>?)/,

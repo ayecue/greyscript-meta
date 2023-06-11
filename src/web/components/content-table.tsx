@@ -55,6 +55,7 @@ function renderSignatures({ signatures, filter, onClick }: ContentTableProps) {
                 scrollTo(item.type.toUpperCase());
                 onClick(item.type);
               }}
+              rel="nofollow"
             >
               {item.type}
             </a>
@@ -68,6 +69,7 @@ function renderSignatures({ signatures, filter, onClick }: ContentTableProps) {
                         scrollTo(key);
                         onClick(`${item.type}.${methodName}`);
                       }}
+                      rel="nofollow"
                     >
                       {methodName}
                     </a>
@@ -91,6 +93,7 @@ export default function (props: ContentTableProps) {
       <a
         className={`collapse material-icons ${!hidden ? 'active' : ''}`}
         onClick={() => setHidden(!hidden)}
+        rel="nofollow"
       ></a>
       <div className={hidden ? 'hidden' : ''}>{renderSignatures(props)}</div>
     </div>
