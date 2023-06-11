@@ -4,6 +4,10 @@ html {
     font-family: monospace;
 }
 
+#root {
+    overflow-x: hidden;
+}
+
 .navigation {
     background: #1e1e1e;
     position: fixed;
@@ -117,6 +121,7 @@ html {
     text-align: center;
     cursor: pointer;
     border: 1px solid transparent;
+    z-index: 998;
 }
 
 .editorWrapper .run:before {
