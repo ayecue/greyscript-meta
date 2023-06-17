@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useRef } from 'react';
+import React, { useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import {
@@ -103,7 +103,15 @@ function renderDescription(description: string) {
 
             if (href && href.indexOf('#') !== -1) {
               const item = href.slice(href.indexOf('#') + 1);
-              return <a onClick={() => scrollTo(item)} rel="nofollow">{props.children}</a>
+              return <a
+                href={props.href} 
+                onClick={(ev) => {
+                  ev.preventDefault();
+                  scrollTo(item);
+                  window.history.pushState(null, null, `#${item}`)
+                }}
+                rel="nofollow"
+              >{props.children}</a>
             }
             
             return <a href={props.href}>{props.children}</a>

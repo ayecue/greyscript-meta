@@ -29,7 +29,7 @@ export default function ({
 
   useEffect(() => {
     if (rootRef !== null) {
-      scrollTo(scrollToInit);
+      scrollTo(scrollToInit, 'instant' as ScrollBehavior);
     }
   }, [rootRef]);
 

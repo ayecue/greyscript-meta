@@ -2,7 +2,7 @@ export const SCROLL_OFFSET_MEDIA_QUERY = '(min-width: 760px)';
 export const DEFAULT_SCROLL_OFFSET = 10;
 export const SCROLL_OFFSET_ON_MATCHING_MEDIA_QUERY = 175;
 
-export const scrollTo = (id: string) => {
+export const scrollTo = (id: string, behavior: ScrollBehavior = 'smooth') => {
   const element = document.getElementById(id);
 
   if (!element) return;
@@ -16,6 +16,6 @@ export const scrollTo = (id: string) => {
 
   window.scrollTo({
     top: offsetPosition,
-    behavior: 'smooth'
+    behavior
   });
 };
