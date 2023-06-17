@@ -1,4 +1,7 @@
 {
+    "$meta": {
+        "description": "A `blockchain` object can be obtained by using [include_lib](#GENERAL_INCLUDE_LIB)."
+    },
     "coin_price": {
         "description": "Returns `number` with the current unit value of the currency. In case of error a `string` is returned with the details."
     },

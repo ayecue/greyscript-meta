@@ -30,8 +30,14 @@ function renderSignatures({ signatures, filter, onClick }: ContentTableProps) {
         return (
           <li key={index}>
             <a
-              onClick={() => {
+              onClick={(ev) => {
+                ev.preventDefault();
                 scrollTo(item.type.toUpperCase());
+                window.history.pushState(
+                  null,
+                  null,
+                  `#${item.type.toUpperCase()}`
+                );
                 onClick(item.type);
               }}
               rel="nofollow"
@@ -44,8 +50,10 @@ function renderSignatures({ signatures, filter, onClick }: ContentTableProps) {
                 return (
                   <li key={subIndex}>
                     <a
-                      onClick={() => {
+                      onClick={(ev) => {
+                        ev.preventDefault();
                         scrollTo(key);
+                        window.history.pushState(null, null, `#${key}`);
                         onClick(`${item.type}.${methodName}`);
                       }}
                       rel="nofollow"

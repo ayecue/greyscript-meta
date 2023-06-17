@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import {
@@ -13,7 +13,6 @@ import {
   SignatureDefinition,
   SignatureDefinitionArg
 } from '../../meta';
-import { buildClassName } from '../utils/build-classname';
 import { scrollTo } from '../utils/scrollTo';
 import Editor from './editor';
 import { HighlightInline } from './highlight';

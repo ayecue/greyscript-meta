@@ -1,4 +1,7 @@
 {
+    "$meta": {
+        "description": "A `coin` object can be obtained by using [get_coin](#BLOCKCHAIN_GET_COIN)."
+    },
     "set_cycle_mining": {
         "description": "Assign the hours (game time) that each mining cycle lasts. When a cycle ends, it is decided who gets the reward (1 coin) and the next cycle begins."
     },
