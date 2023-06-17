@@ -173,54 +173,20 @@ function Definition({
   onCodeRunClick,
   onCopyClick
 }: DefinitionProps) {
-  const [body, setBody] = useState(null);
-  const [collapsed, setCollapsed] = useState(false);
   const containerRef = useRef<HTMLElement>(null);
   const description = getDescription(type, methodName);
   const example = getExample(type, methodName);
   const key = `${type.toUpperCase()}_${methodName.toUpperCase()}`;
 
-  useEffect(() => {
-    if (body === null) {
-      setBody(
-        <DefinitionBody
-          description={description}
-          example={example}
-          key={key}
-          onCodeRunClick={onCodeRunClick}
-        />
-      );
-    }
-  }, [collapsed]);
-
   return (
     <article className="definition" ref={containerRef}>
-      <a
-        onClick={() => setCollapsed(!collapsed)}
-        title="Show description & example"
-        rel="nofollow"
-      >
-        <h3 id={key}>
-          <span
-            className={buildClassName(
-              'material-icons',
-              {
-                shouldAdd: !collapsed,
-                className: 'arrow-right'
-              },
-              {
-                shouldAdd: collapsed,
-                className: 'arrow-down'
-              }
-            )}
-          ></span>
-          <span className="name">{methodName}</span>
-          <span className="signature">
-            ({renderArguments(definition.arguments)}):{' '}
-            {renderReturn(definition.returns)}
-          </span>
-        </h3>
-      </a>
+      <h3 id={key}>
+        <span className="name">{methodName}</span>
+        <span className="signature">
+          ({renderArguments(definition.arguments)}):{' '}
+          {renderReturn(definition.returns)}
+        </span>
+      </h3>
       <a
         className="share"
         onClick={() => onCopyClick(type, methodName)}
@@ -229,14 +195,12 @@ function Definition({
       >
         {getSiteDescription('DEFINITIONS_COPY')}
       </a>
-      <div
-        className={buildClassName('body', {
-          shouldAdd: !collapsed,
-          className: 'hidden'
-        })}
-      >
-        {body}
-      </div>
+      <DefinitionBody
+        description={description}
+        example={example}
+        key={key}
+        onCodeRunClick={onCodeRunClick}
+      />
     </article>
   );
 }
