@@ -1,97 +1,41 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { getSiteDescription } from '../descriptions';
 import { signatures } from '../meta';
 import ContentTable from './components/content-table';
 import Definitions from './components/definitions';
-
-export interface AppExternalLink {
-  label: string;
-  href: string;
-}
-
-export interface ExternalLinksProps {
-  externalLinks: AppExternalLink[];
-  maxLinks?: number;
-}
+import { AppExternalLink, ExternalLinks } from './components/external-links';
+import { scrollTo } from './utils/scrollTo';
 
 export interface AppProps {
   externalLinks: AppExternalLink[];
   filterInit: string;
+  scrollToInit: string;
   onSidebarClick?: Function;
   onCodeRunClick?: (content: string, name: string) => void;
   onCopyClick?: (type: string, methodName: string) => void;
 }
 
-function ExternalLinks({ externalLinks, maxLinks = 2 }: ExternalLinksProps) {
-  if (externalLinks.length <= maxLinks) {
-    return (
-      <ul>
-        {externalLinks.map((externalLink: AppExternalLink, index) => {
-          return (
-            <li key={index} className="external-links">
-              <a href={externalLink.href} target="_blank">
-                {externalLink.label}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-    );
-  }
-
-  const [fullView, setFullView] = useState(false);
-
-  if (fullView) {
-    return (
-      <ul>
-        {externalLinks.map((externalLink: AppExternalLink, index) => {
-          return (
-            <li key={index} className="external-links">
-              <a href={externalLink.href} target="_blank">
-                {externalLink.label}
-              </a>
-            </li>
-          );
-        })}
-        <li className="collapse" onClick={() => setFullView(false)}>
-          less
-        </li>
-      </ul>
-    );
-  }
-
-  return (
-    <ul>
-      {externalLinks
-        .slice(0, maxLinks)
-        .map((externalLink: AppExternalLink, index) => {
-          return (
-            <li key={index} className="external-links">
-              <a href={externalLink.href} target="_blank">
-                {externalLink.label}
-              </a>
-            </li>
-          );
-        })}
-      <li className="collapse" onClick={() => setFullView(true)}>
-        more
-      </li>
-    </ul>
-  );
-}
-
 export default function ({
   filterInit,
+  scrollToInit,
   externalLinks,
   onSidebarClick = () => {},
   onCodeRunClick = () => {},
   onCopyClick = () => {}
 }: AppProps) {
+  const rootRef = useRef<HTMLDivElement>(null);
   const [filter, setFilter] = useState(filterInit);
 
+  useEffect(() => {
+    if (rootRef !== null) {
+      console.log(scrollToInit);
+      scrollTo(scrollToInit);
+    }
+  }, [rootRef]);
+
   return (
-    <div>
+    <div ref={rootRef}>
       <div className="navigation">
         <div className="search">
           <input
