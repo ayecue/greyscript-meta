@@ -15,6 +15,7 @@ import {
 } from '../../meta';
 import Editor from './editor';
 import { HighlightInline } from './highlight';
+import { scrollTo } from '../utils/scrollTo';
 
 export interface DefinitionsProps {
   signatures: Signature[];
@@ -96,6 +97,18 @@ function renderDescription(description: string) {
         components={{
           code(props) {
             return <HighlightInline>{props.children}</HighlightInline>;
+          },
+          a(props) {
+            const href = props.href;
+
+            if (href && href.indexOf('#') !== -1) {
+              const item = href.slice(href.indexOf('#'));
+              return <a {...props} onClick={() => {
+                scrollTo(item);
+              }}></a>
+            }
+            
+            return <a {...props}></a>
           }
         }}
       >

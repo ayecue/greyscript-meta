@@ -1,5 +1,6 @@
 import Prism from 'prismjs';
 import React, { ComponentProps, useEffect, useRef } from 'react';
+import { buildClassName } from '../utils/build-classname';
 
 Prism.languages.greyscript = {
   constants: /\b(params|locals|globals)\b/,
@@ -119,7 +120,6 @@ Prism.languages.greyscript = {
 
 export function HighlightBlock(props: ComponentProps<'code'>) {
   const codeRef = useRef<HTMLPreElement>(null);
-  const classList = props.className?.split(' ') ?? [];
 
   useEffect(() => {
     Prism.highlightElement(codeRef.current);
@@ -127,7 +127,7 @@ export function HighlightBlock(props: ComponentProps<'code'>) {
 
   return (
     <pre
-      className={['language-greyscript', ...classList].join(' ')}
+      className={buildClassName('language-greyscript', props.className)}
       ref={codeRef}
     >
       {props.children}
@@ -137,7 +137,6 @@ export function HighlightBlock(props: ComponentProps<'code'>) {
 
 export function HighlightInline(props: ComponentProps<'code'>) {
   const codeRef = useRef<HTMLPreElement>(null);
-  const classList = props.className?.split(' ') ?? [];
 
   useEffect(() => {
     Prism.highlightElement(codeRef.current);
@@ -145,7 +144,7 @@ export function HighlightInline(props: ComponentProps<'code'>) {
 
   return (
     <code
-      className={['language-greyscript', ...classList].join(' ')}
+      className={buildClassName('language-greyscript', props.className)}
       ref={codeRef}
     >
       {props.children}
