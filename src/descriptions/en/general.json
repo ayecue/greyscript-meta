@@ -51,9 +51,9 @@
         ]
     },
     "typeof": {
-        "description": "Returns a `string` containing the type of the entity provided. There are following types by default: `\"aptClient\"`, `\"blockchain\"`, `\"coin\"`, `\"computer\"`, `\"crypto\"`, `\"file\"`, `\"function\"`, `\"list\"`, `\"map\"`, `\"metaLib\"`, `\"metaMail\"`, `\"metaxploit\"`, `\"netSession\"`, `\"null\"`, `\"number\"`, `\"port\"`, `\"router\"`, `\"service\"`, `\"shell\"`, `\"string\"`, `\"subWallet\"`, `\"wallet\"`. Custom types can be added as well by using the `classID` property in a map.",
+        "description": "Returns a `string` containing the type of the entity provided. There are following types by default: `\"aptclientLib\"`, `\"blockchainLib\"`, `\"coin\"`, `\"computer\"`, `\"cryptoLib\"`, `\"file\"`, `\"function\"`, `\"list\"`, `\"map\"`, `\"MetaLib\"`, `\"MetaMail\"`, `\"MetaxploitLib\"`, `\"NetSession\"`, `\"null\"`, `\"number\"`, `\"port\"`, `\"router\"`, `\"service\"`, `\"shell\"`, `\"ftpshell\"`, `\"string\"`, `\"subwallet\"`, `\"wallet\"`. Custom types can be added as well by using the `CLASS_ID` property in a map.",
         "example": [
-            "myObj = { \"classID\": \"myType\" }",
+            "myObj = { \"CLASS_ID\": \"myType\" }",
             "if typeof(myObj) == \"myType\" then",
             "   print(\"Object is myType.\")",
             "else",
