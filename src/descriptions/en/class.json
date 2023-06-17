@@ -1,6 +1,6 @@
 {
     "$meta": {
-        "description": "A class or object is a `map` with a special `__isa` entry that points to the parent. This is set automatically when you use the `new` operator",
+        "description": "A class or object is a `map` with a special `__isa` entry that points to the parent. This is set automatically when you use the `new` operator.",
         "example": [
             "Shape = { \"sides\": 0 }",
             "Square = new Shape",
