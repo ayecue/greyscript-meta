@@ -1,6 +1,6 @@
 {
     "$meta": {
-        "description": "A `netSession` object can be obtained by using [net_use](#METAXPLOIT_NET_USE)."
+        "description": "A `netSession` object can be obtained by using [net_use](#METAXPLOIT_NET_USE). The `classID` used for this object is `\"NetSession\"`."
     },
     "dump_lib": {
         "description": "Returns the `metaLib` associated with the remote service. For example if the `metaxpoit` method `net_use` was used on a ssh port it will return the `metaLib` related to the ssh service. In case the port was zero is will return a `metaLib` related to the kernel router.",

@@ -1,6 +1,6 @@
 {
     "$meta": {
-        "description": "A `wallet` object can be obtained by either using [create_wallet](#BLOCKCHAIN_CREATE_WALLET) or [login_wallet](#BLOCKCHAIN_LOGIN_WALLET)."
+        "description": "A `wallet` object can be obtained by either using [create_wallet](#BLOCKCHAIN_CREATE_WALLET) or [login_wallet](#BLOCKCHAIN_LOGIN_WALLET). The `classID` used for this object is `\"wallet\"`."
     },
     "list_coins": {
         "description": "Returns a `list` where each item is a `string` with the names of the coins available in the `wallet`."

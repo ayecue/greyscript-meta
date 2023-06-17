@@ -1,6 +1,6 @@
 {
     "$meta": {
-        "description": "A `computer` object can be obtained by either using [host_computer](#SHELL_HOST_COMPUTER) or [overflow](#METALIB_OVERFLOW)."
+        "description": "A `computer` object can be obtained by either using [host_computer](#SHELL_HOST_COMPUTER) or [overflow](#METALIB_OVERFLOW). The `classID` used for this object is `\"computer\"`."
     },
     "get_ports": {
         "description": "Returns a `list` of `port`s on the `computer` which are active.",

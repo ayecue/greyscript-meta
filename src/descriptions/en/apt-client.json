@@ -1,6 +1,6 @@
 {
     "$meta": {
-        "description": "A `aptClient` object can be obtained by using [include_lib](#GENERAL_INCLUDE_LIB)."
+        "description": "A `aptClient` object can be obtained by using [include_lib](#GENERAL_INCLUDE_LIB). The `classID` used for this object is `\"aptclientLib\"`."
     },
     "show": {
         "description": "Shows all packages available in the repository. The repository must be added in the `\"/etc/apt/sources.txt\"` file."

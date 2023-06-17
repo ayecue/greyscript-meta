@@ -1,6 +1,6 @@
 {
     "$meta": {
-        "description": "A `subWallet` object can be obtained by either using [get_subwallet](#COIN_GET_SUBWALLET) or [get_subwallets](#COIN_GET_SUBWALLETS)."
+        "description": "A `subWallet` object can be obtained by either using [get_subwallet](#COIN_GET_SUBWALLET) or [get_subwallets](#COIN_GET_SUBWALLETS). The `classID` used for this object is `\"subwallet\"`."
     },
     "get_balance": {
         "description": "Returns a `number` of coins of a given currency. In case of error, a `string` with the details is returned."
