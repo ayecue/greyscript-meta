@@ -1,6 +1,6 @@
 {
     "$meta": {
-        "description": "A `metaxploit` object can be obtained by using `include_lib`."
+        "description": "A `metaxploit` object can be obtained by using [include_lib](#GENERAL_INCLUDE_LIB)."
     },
     "load": {
         "description": "Returns a `metaLib` object for the provided path to the library binary. Keep in mind that this can be only used on library files. On failure, this method will return `null` instead.",

@@ -1,6 +1,6 @@
 {
     "$meta": {
-        "description": "A `router` object can be obtained by either using `host_computer` or `overflow`."
+        "description": "A `router` object can be obtained by either using [host_computer](#SHELL_HOST_COMPUTER) or [overflow](#META_LIB_OVERFLOW)."
     },
     "device_ports": {
         "description": "Returns a `list` where each item is an open `port` related to the device of the provided LAN IP address. The device needs to be within the network of the `router`. In case of failure, this method will return `null`.",

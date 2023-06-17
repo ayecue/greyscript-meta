@@ -1,6 +1,6 @@
 {
     "$meta": {
-        "description": "The service object can be obtained through using `include_lib`. Here is a list of all installable services: FTP, SSH, HTTP, Repository, Chat"
+        "description": "The service object can be obtained through using [include_lib](#GENERAL_INCLUDE_LIB). Here is a list of all installable services: `\"FTP\"`, `\"SSH\"`, `\"HTTP\"`, `\"Repository\"`, `\"Chat\"`"
     },
     "install_service": {
         "description": "Installs the necessary files for the correct functioning of the service and starts it. Returns `true` if the installation has been completed successfully, in case of error a `string` with the details is returned."

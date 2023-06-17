@@ -1,6 +1,6 @@
 {
     "$meta": {
-        "description": "A `crypto` object can be obtained by using [`include_lib`](#GENERAL_INCLUDE_LIB)."
+        "description": "A `crypto` object can be obtained by using [include_lib](#GENERAL_INCLUDE_LIB)."
     },
     "aircrack": {
         "description": "Returns a `string` with the password generated based on the file which got created by aireplay. In case of failure, it will return `null` instead.",

@@ -102,13 +102,11 @@ function renderDescription(description: string) {
             const href = props.href;
 
             if (href && href.indexOf('#') !== -1) {
-              const item = href.slice(href.indexOf('#'));
-              return <a {...props} onClick={() => {
-                scrollTo(item);
-              }}></a>
+              const item = href.slice(href.indexOf('#') + 1);
+              return <a onClick={() => scrollTo(item)} rel="nofollow">{props.children}</a>
             }
             
-            return <a {...props}></a>
+            return <a href={props.href}>{props.children}</a>
           }
         }}
       >

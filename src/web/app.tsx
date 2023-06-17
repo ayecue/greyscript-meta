@@ -29,7 +29,6 @@ export default function ({
 
   useEffect(() => {
     if (rootRef !== null) {
-      console.log(scrollToInit);
       scrollTo(scrollToInit);
     }
   }, [rootRef]);
