@@ -98,6 +98,27 @@ html {
     margin: 0!important;
     padding: 5px!important;
     font-size: 12px!important;
+    overflow: hidden;
+}
+
+.token.type, .token.class {
+    color: #3dc9b0!important;
+}
+
+.token.number {
+    color: #b5cea8!important;
+}
+
+.token.string {
+    color: #ce9178!important;
+}
+
+.token.method {
+    color: #dcdcaa!important;
+}
+
+.token.keyword {
+    color: #c586c0!important;
 }
 
 .editorWrapper {
@@ -343,12 +364,13 @@ html {
 .definitions .second > li {
     border-bottom: 1px groove #333;
     padding: 10px;
-    margin: 0 0 10px;
+    margin: 0;
 }
 
 .definitions h2 {
     color: #3dc9b0;
 	text-transform: capitalize;
+    position: relative;
 }
 
 .definitions .definition {
@@ -364,7 +386,7 @@ html {
 }
 
 .definitions .definition h3 {
-    margin-top: 0;
+    margin: 0;
     color: #74b0df;
 }
 
@@ -407,6 +429,7 @@ html {
 
 .definitions .definition .description {
     font-size: 14px;
+    margin: 10px 0 0;
 }
 
 .definitions .definition .description li {

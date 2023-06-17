@@ -23,8 +23,7 @@ export default function ({ content, name, onClick }: EditorProps) {
     {},
     { disconnectOnLeave: false },
     {
-      onEnterViewport: () => setVisible(true),
-      onLeaveViewport: () => setVisible(false)
+      onEnterViewport: () => setVisible(true)
     }
   );
 

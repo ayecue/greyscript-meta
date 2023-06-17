@@ -1,6 +1,6 @@
 {
     "$meta": {
-        "description": "The FTP `shell` behaves just like the ssh `shell` and can be acquired by using `connect_service` and using the service type `\"ftp\"`. The port used for FTP is usually 21."
+        "description": "The FTP `shell` behaves just like the ssh `shell` and can be acquired by using [connect_service](#SHELL_CONNECT_SERVICE) and using the service type `\"ftp\"`. The port used for FTP is usually 21."
     },
     "host_computer": {
         "description": "Returns a `computer` related to the `shell`.",

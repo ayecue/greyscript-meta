@@ -1,40 +1,35 @@
 import Prism from 'prismjs';
 import React, { ComponentProps, useEffect, useRef } from 'react';
 
-Prism.languages.greyscript = {
-  keyword: [
-    {
-      pattern:
-        /\b(if|then|return|end|else|function|and|or|in|not|continue|break|while|for|new|from|isa)\b/
-    },
-    {
-      pattern: /\b#(include|import|envar)\b/
+import { buildClassName } from '../utils/build-classname';
+import { GreyScriptLanguage } from '../utils/grammar';
+
+class PrismGreyScript {
+  private prism: typeof Prism;
+  private language: string = 'greyscript';
+
+  constructor(prism: typeof Prism) {
+    this.prism = prism;
+    this.setup();
+  }
+
+  getClassName() {
+    return `language-${this.language}`;
+  }
+
+  setup() {
+    if (this.prism) {
+      if (this.prism.languages && Prism.languages.greyscript == null) {
+        Prism.languages.greyscript = GreyScriptLanguage;
+      }
     }
-  ],
-  function: /function(?=\()/,
-  comment: [
-    {
-      pattern: /(^|[^\\:])\/\/.*/,
-      lookbehind: true,
-      greedy: true
-    }
-  ],
-  boolean: /\b(?:false|true)\b/,
-  number: {
-    pattern: /\\d+(\\.\\d+)?([eE]-?\\d*)?/,
-    lookbehind: true
-  },
-  string: {
-    pattern: /"([^"]*?("")?)"/,
-    greedy: true
-  },
-  operator: /([+\-*\/\^\&|]|[\<\>\=\!+*\-\/]?\=|\<\<|\>\>\>?)/,
-  punctuation: /[\{\}\[\]\(\)]/
-};
+  }
+}
+
+const prismGreyScript = new PrismGreyScript(Prism);
 
 export function HighlightBlock(props: ComponentProps<'code'>) {
   const codeRef = useRef<HTMLPreElement>(null);
-  const classList = props.className?.split(' ') ?? [];
 
   useEffect(() => {
     Prism.highlightElement(codeRef.current);
@@ -42,7 +37,10 @@ export function HighlightBlock(props: ComponentProps<'code'>) {
 
   return (
     <pre
-      className={['language-greyscript', ...classList].join(' ')}
+      className={buildClassName(
+        prismGreyScript.getClassName(),
+        props.className
+      )}
       ref={codeRef}
     >
       {props.children}
@@ -52,7 +50,6 @@ export function HighlightBlock(props: ComponentProps<'code'>) {
 
 export function HighlightInline(props: ComponentProps<'code'>) {
   const codeRef = useRef<HTMLPreElement>(null);
-  const classList = props.className?.split(' ') ?? [];
 
   useEffect(() => {
     Prism.highlightElement(codeRef.current);
@@ -60,7 +57,10 @@ export function HighlightInline(props: ComponentProps<'code'>) {
 
   return (
     <code
-      className={['language-greyscript', ...classList].join(' ')}
+      className={buildClassName(
+        prismGreyScript.getClassName(),
+        props.className
+      )}
       ref={codeRef}
     >
       {props.children}

@@ -8,6 +8,10 @@ function getFilterValue() {
   return urlSearchParams.get('filter') || '';
 }
 
+function getScrollToValue() {
+  return location.hash?.slice(1) || '';
+}
+
 function shareLink(type: string, methodName: string) {
   const url = new URL(location.href);
   url.searchParams.set('filter', `${type}.${methodName}`);
@@ -45,6 +49,7 @@ root.render(
       }
     ],
     filterInit: getFilterValue(),
+    scrollToInit: getScrollToValue(),
     onCopyClick: shareLink
   })
 );

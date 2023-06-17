@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useRef } from 'react';
+import React, { useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import {
@@ -13,6 +13,7 @@ import {
   SignatureDefinition,
   SignatureDefinitionArg
 } from '../../meta';
+import { scrollTo } from '../utils/scrollTo';
 import Editor from './editor';
 import { HighlightInline } from './highlight';
 
@@ -96,6 +97,28 @@ function renderDescription(description: string) {
         components={{
           code(props) {
             return <HighlightInline>{props.children}</HighlightInline>;
+          },
+          a(props) {
+            const href = props.href;
+
+            if (href && href.indexOf('#') !== -1) {
+              const item = href.slice(href.indexOf('#') + 1);
+              return (
+                <a
+                  href={props.href}
+                  onClick={(ev) => {
+                    ev.preventDefault();
+                    scrollTo(item);
+                    window.history.pushState(null, null, `#${item}`);
+                  }}
+                  rel="nofollow"
+                >
+                  {props.children}
+                </a>
+              );
+            }
+
+            return <a href={props.href}>{props.children}</a>;
           }
         }}
       >
@@ -105,13 +128,50 @@ function renderDescription(description: string) {
   );
 }
 
-function renderDefinition(
-  type: string,
-  methodName: string,
-  definition: SignatureDefinition,
-  onCodeRunClick: DefinitionsProps['onCodeRunClick'],
-  onCopyClick: DefinitionsProps['onCopyClick']
-) {
+interface DefinitionBodyProps {
+  description: string;
+  example: string[];
+  key: string;
+  onCodeRunClick: DefinitionsProps['onCodeRunClick'];
+}
+
+function DefinitionBody({
+  description,
+  example,
+  key,
+  onCodeRunClick
+}: DefinitionBodyProps) {
+  return (
+    <>
+      <div className="description">{renderDescription(description)}</div>
+      {example ? (
+        <div className="example">
+          <Editor
+            content={example.join('\n')}
+            name={key}
+            onClick={onCodeRunClick}
+          />
+        </div>
+      ) : null}
+    </>
+  );
+}
+
+interface DefinitionProps {
+  type: string;
+  methodName: string;
+  definition: SignatureDefinition;
+  onCodeRunClick: DefinitionsProps['onCodeRunClick'];
+  onCopyClick: DefinitionsProps['onCopyClick'];
+}
+
+function Definition({
+  type,
+  methodName,
+  definition,
+  onCodeRunClick,
+  onCopyClick
+}: DefinitionProps) {
   const containerRef = useRef<HTMLElement>(null);
   const description = getDescription(type, methodName);
   const example = getExample(type, methodName);
@@ -126,19 +186,20 @@ function renderDefinition(
           {renderReturn(definition.returns)}
         </span>
       </h3>
-      <a className="share" onClick={() => onCopyClick(type, methodName)} title="Copy link" rel="nofollow">
+      <a
+        className="share"
+        onClick={() => onCopyClick(type, methodName)}
+        title="Copy link"
+        rel="nofollow"
+      >
         {getSiteDescription('DEFINITIONS_COPY')}
       </a>
-      <div className="description">{renderDescription(description)}</div>
-      {example ? (
-        <div className="example">
-          <Editor
-            content={example.join('\n')}
-            name={key}
-            onClick={onCodeRunClick}
-          />
-        </div>
-      ) : null}
+      <DefinitionBody
+        description={description}
+        example={example}
+        key={key}
+        onCodeRunClick={onCodeRunClick}
+      />
     </article>
   );
 }
@@ -164,13 +225,13 @@ function renderDefinitions({
 
       return (
         <li key={subIndex} className={isHidden ? 'hidden' : ''}>
-          {renderDefinition(
-            item.type,
-            methodName,
-            definition,
-            onCodeRunClick,
-            onCopyClick
-          )}
+          <Definition
+            type={item.type}
+            methodName={methodName}
+            definition={definition}
+            onCodeRunClick={onCodeRunClick}
+            onCopyClick={onCopyClick}
+          />
         </li>
       );
     });

@@ -14,8 +14,8 @@
         "description": "Returns a new `string` where the provided `string` got removed.",
         "example": [
             "myString = \"42 as an answer is wrong\"",
-            "myString.remove(\"wrong\")",
-            "print(myString + \"right\")"
+            "newString = myString.remove(\"wrong\")",
+            "print(newString + \"right\")"
         ]
     },
     "hasIndex": {
@@ -35,8 +35,8 @@
         "example": [
             "myString = \"42 as an answer is wrong\"",
             "index = myString.lastIndexOf(\"w\") - 1",
-            "myString.insert(index, \"not \")",
-            "print(myString)"
+            "newString = myString.insert(index, \"not \")",
+            "print(newString)"
         ]
     },
     "indexOf": {
