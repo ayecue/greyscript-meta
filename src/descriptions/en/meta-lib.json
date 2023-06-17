@@ -1,6 +1,6 @@
 {
     "$meta": {
-        "description": "A `metaLib` object can be obtained by either using [load](#METAXPLOIT_LOAD) or [dump_lib](#NETSESSION_DUMP_LIB)."
+        "description": "A `metaLib` object can be obtained by either using [load](#METAXPLOIT_LOAD) or [dump_lib](#NETSESSION_DUMP_LIB). The `classID` used for this object is `\"MetaLib\"`."
     },
     "overflow": {
         "description": "Enables to exploit vulnerabilities. The returned value can be of various data types. Therefore the usage of `typeof` is advisable. Optionally an extra argument can be passed which can be helpful when for example stumbling upon a change password exploit.",
