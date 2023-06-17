@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import {
@@ -13,9 +13,10 @@ import {
   SignatureDefinition,
   SignatureDefinitionArg
 } from '../../meta';
+import { buildClassName } from '../utils/build-classname';
+import { scrollTo } from '../utils/scrollTo';
 import Editor from './editor';
 import { HighlightInline } from './highlight';
-import { scrollTo } from '../utils/scrollTo';
 
 export interface DefinitionsProps {
   signatures: Signature[];
@@ -103,18 +104,22 @@ function renderDescription(description: string) {
 
             if (href && href.indexOf('#') !== -1) {
               const item = href.slice(href.indexOf('#') + 1);
-              return <a
-                href={props.href} 
-                onClick={(ev) => {
-                  ev.preventDefault();
-                  scrollTo(item);
-                  window.history.pushState(null, null, `#${item}`)
-                }}
-                rel="nofollow"
-              >{props.children}</a>
+              return (
+                <a
+                  href={props.href}
+                  onClick={(ev) => {
+                    ev.preventDefault();
+                    scrollTo(item);
+                    window.history.pushState(null, null, `#${item}`);
+                  }}
+                  rel="nofollow"
+                >
+                  {props.children}
+                </a>
+              );
             }
-            
-            return <a href={props.href}>{props.children}</a>
+
+            return <a href={props.href}>{props.children}</a>;
           }
         }}
       >
@@ -124,35 +129,21 @@ function renderDescription(description: string) {
   );
 }
 
-function renderDefinition(
-  type: string,
-  methodName: string,
-  definition: SignatureDefinition,
-  onCodeRunClick: DefinitionsProps['onCodeRunClick'],
-  onCopyClick: DefinitionsProps['onCopyClick']
-) {
-  const containerRef = useRef<HTMLElement>(null);
-  const description = getDescription(type, methodName);
-  const example = getExample(type, methodName);
-  const key = `${type.toUpperCase()}_${methodName.toUpperCase()}`;
+interface DefinitionBodyProps {
+  description: string;
+  example: string[];
+  key: string;
+  onCodeRunClick: DefinitionsProps['onCodeRunClick'];
+}
 
+function DefinitionBody({
+  description,
+  example,
+  key,
+  onCodeRunClick
+}: DefinitionBodyProps) {
   return (
-    <article className="definition" ref={containerRef}>
-      <h3 id={key}>
-        <span className="name">{methodName}</span>
-        <span className="signature">
-          ({renderArguments(definition.arguments)}):{' '}
-          {renderReturn(definition.returns)}
-        </span>
-      </h3>
-      <a
-        className="share"
-        onClick={() => onCopyClick(type, methodName)}
-        title="Copy link"
-        rel="nofollow"
-      >
-        {getSiteDescription('DEFINITIONS_COPY')}
-      </a>
+    <>
       <div className="description">{renderDescription(description)}</div>
       {example ? (
         <div className="example">
@@ -163,6 +154,89 @@ function renderDefinition(
           />
         </div>
       ) : null}
+    </>
+  );
+}
+
+interface DefinitionProps {
+  type: string;
+  methodName: string;
+  definition: SignatureDefinition;
+  onCodeRunClick: DefinitionsProps['onCodeRunClick'];
+  onCopyClick: DefinitionsProps['onCopyClick'];
+}
+
+function Definition({
+  type,
+  methodName,
+  definition,
+  onCodeRunClick,
+  onCopyClick
+}: DefinitionProps) {
+  const [body, setBody] = useState(null);
+  const [collapsed, setCollapsed] = useState(false);
+  const containerRef = useRef<HTMLElement>(null);
+  const description = getDescription(type, methodName);
+  const example = getExample(type, methodName);
+  const key = `${type.toUpperCase()}_${methodName.toUpperCase()}`;
+
+  useEffect(() => {
+    if (body === null) {
+      setBody(
+        <DefinitionBody
+          description={description}
+          example={example}
+          key={key}
+          onCodeRunClick={onCodeRunClick}
+        />
+      );
+    }
+  }, [collapsed]);
+
+  return (
+    <article className="definition" ref={containerRef}>
+      <a
+        onClick={() => setCollapsed(!collapsed)}
+        title="Show description & example"
+        rel="nofollow"
+      >
+        <h3 id={key}>
+          <span
+            className={buildClassName(
+              'material-icons',
+              {
+                shouldAdd: !collapsed,
+                className: 'arrow-right'
+              },
+              {
+                shouldAdd: collapsed,
+                className: 'arrow-down'
+              }
+            )}
+          ></span>
+          <span className="name">{methodName}</span>
+          <span className="signature">
+            ({renderArguments(definition.arguments)}):{' '}
+            {renderReturn(definition.returns)}
+          </span>
+        </h3>
+      </a>
+      <a
+        className="share"
+        onClick={() => onCopyClick(type, methodName)}
+        title="Copy link"
+        rel="nofollow"
+      >
+        {getSiteDescription('DEFINITIONS_COPY')}
+      </a>
+      <div
+        className={buildClassName('body', {
+          shouldAdd: !collapsed,
+          className: 'hidden'
+        })}
+      >
+        {body}
+      </div>
     </article>
   );
 }
@@ -188,13 +262,13 @@ function renderDefinitions({
 
       return (
         <li key={subIndex} className={isHidden ? 'hidden' : ''}>
-          {renderDefinition(
-            item.type,
-            methodName,
-            definition,
-            onCodeRunClick,
-            onCopyClick
-          )}
+          <Definition
+            type={item.type}
+            methodName={methodName}
+            definition={definition}
+            onCodeRunClick={onCodeRunClick}
+            onCopyClick={onCopyClick}
+          />
         </li>
       );
     });

@@ -364,16 +364,21 @@ html {
 .definitions .second > li {
     border-bottom: 1px groove #333;
     padding: 10px;
-    margin: 0 0 10px;
+    margin: 0;
 }
 
 .definitions h2 {
     color: #3dc9b0;
 	text-transform: capitalize;
+    position: relative;
 }
 
 .definitions .definition {
 	position: relative;
+}
+
+.definitions .definition .body {
+    margin-top: 10px;
 }
 
 .definitions .definition .share {
@@ -385,8 +390,28 @@ html {
 }
 
 .definitions .definition h3 {
-    margin-top: 0;
+    margin: 0;
     color: #74b0df;
+}
+
+.definitions .definition h3 .arrow-right,
+.definitions .definition h3 .arrow-down {
+    position: absolute;
+    font-size: 16px;
+    top: 1px;
+    left: 1px;
+}
+
+.definitions .definition h3 .arrow-right:before {
+    content: '\e5cc';
+}
+
+.definitions .definition h3 .arrow-down:before {
+    content: '\e5cf';
+}
+
+.definitions .definition h3 .name {
+    margin-left: 24px;
 }
 
 .definitions .definition .signature {
