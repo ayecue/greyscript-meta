@@ -100,6 +100,26 @@ html {
     font-size: 12px!important;
 }
 
+.token.type, .token.class {
+    color: #3dc9b0!important;
+}
+
+.token.number {
+    color: #b5cea8!important;
+}
+
+.token.string {
+    color: #ce9178!important;
+}
+
+.token.method {
+    color: #dcdcaa!important;
+}
+
+.token.keyword {
+    color: #c586c0!important;
+}
+
 .editorWrapper {
     position: relative;
 }
