@@ -65,11 +65,11 @@
             "print(\"Password: \" + password)"
         ]
     },
-    "smtp_user_List": {
+    "smtp_user_list": {
         "description": "Returns a `list` of the existing users on the `computer` where the SMTP service is running. If these users also have an email account registered on the `SMTP` server, it will be indicated in the `list`. SMTP services are usually running on port `25`. In case of failure, this method will return a `string` containing the cause.",
         "example": [
             "crypto = include_lib(\"/lib/crypto.so\")",
-            "print(crypto.smtp_user_List(\"192.168.0.4\", 25))"
+            "print(crypto.smtp_user_list(\"192.168.0.4\", 25))"
         ]
     }
 }
