@@ -1,6 +1,6 @@
 {
     "$meta": {
-        "description": "Create a list with square brackets. Then iterate over the list with for, or pull out individual items with a 0-based index in square brackets. A negative index counts from the end. Get a slice (subset) of a list with two indices, separated by a colon.",
+        "description": "Create a `list` with square brackets. Then iterate over the `list` with for, or pull out individual items with a 0-based index in square brackets. A negative index counts from the end. Get a slice (subset) of a `list` with two indices, separated by a colon.",
         "example": [
             "x = [2, 4, 6, 8]",
             "print(x[0]) // get first item from list",

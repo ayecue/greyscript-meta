@@ -3,7 +3,7 @@
         "description": "A `file` object can be acquired by either using [File](#COMPUTER_FILE) or [overflow](#METALIB_OVERFLOW). The `classID` used for this object is `\"file\"`."
     },
     "chmod": {
-        "description": "Modifies the `file` permissions. Optionally these permissions can also be applied recursively. The format for applying permissions is as follows: \"[userType][operator][permissionType]\". The user type gets defined through three possible types. These user types include user `\"u\"`, group `\"g\"` and other `\"o\"`. The operator is used to define if permissions get added `\"+\"` or removed `\"-\"`. There are three different permission types which can be modified. Those permissions include read `\"r\"`, write `\"w\"` and execute `\"x\"`. So as an example `\"o-wrx\"` would remove all possible permissions for other. To add all permissions for other again `\"o+wrx\"` would be used. In case the modification fails this method will return a `string` containing information of the reason. Otherwise an empty `string` gets returned.",
+        "description": "Modifies the `file` permissions. Optionally these permissions can also be applied recursively. The format for applying permissions is as follows: `\"[references][operator][modes]\"`. The references type gets defined through three possible types. These types include user `\"u\"`, group `\"g\"` and other `\"o\"`. The operator is used to define if permissions get added `\"+\"` or removed `\"-\"`. There are three different modes which can be modified. Those modes include read `\"r\"`, write `\"w\"` and execute `\"x\"`. So as an example `\"o-wrx\"` would remove all possible permissions for other. To add all permissions for other again `\"o+wrx\"` would be used. In case the modification fails this method will return a `string` containing information of the reason. Otherwise an empty `string` gets returned.",
         "example": [
             "host_computer = get_shell(\"root\", \"test\").host_computer",
             "rootFolder = host_computer.File(\"/\")",
@@ -127,7 +127,7 @@
         ]
     },
     "delete": {
-        "description": "Delete the file. To delete files write permissions are required or being root. In case of failure a `string` will be returned containing information about the reason. Otherwise, an empty string gets returned.",
+        "description": "Delete the file. To delete files write permissions are required or being root. In case of failure a `string` will be returned containing information about the reason. Otherwise, an empty `string` gets returned.",
         "example": [
             "host_computer = get_shell.host_computer",
             "lsBinary = host_computer.File(\"/bin/ls\")",
@@ -140,7 +140,7 @@
         ]
     },
     "get_folders": {
-        "description": "Returns a list of folders. This method is only available if this entity is a folder, so it is advisable to first use the `is_folder` function before calling this method.",
+        "description": "Returns a `list` of folders. This method is only available if this entity is a folder, so it is advisable to first use the `is_folder` function before calling this method.",
         "example": [
             "host_computer = get_shell.host_computer",
             "binFolder = host_computer.File(\"/bin\")",
@@ -151,7 +151,7 @@
         ]
     },
     "get_files": {
-        "description": "Returns a list of files. This function is only available if this entity is a folder, so it is advisable to first use the is_folder function before calling this method.",
+        "description": "Returns a `list` of files. This function is only available if this entity is a folder, so it is advisable to first use the is_folder function before calling this method.",
         "example": [
             "host_computer = get_shell.host_computer",
             "binFolder = host_computer.File(\"/bin\")",
@@ -162,7 +162,7 @@
         ]
     },
     "permissions": {
-        "description": "Returns a `string` with the current file permissions. The format for this permissions string is as follows: `\"[fileType][wrx](u)[wrx](g)[wrx](o)\"`. The file type is either `\"d\"` in case it's a directory or `\"-\"`. The user type gets defined through three possible types. These user types include user `\"u\"`, group `\"g\"` and other `\"o\"`. There are three different permission types. Those permissions include read `\"r\"`, write `\"w\"` and execute `\"x\"`. An example of a `string` which is returned by this method would be `\"-rwxr-xr-x\"`. Taking the latter as an example following things become clear:\n* the provided file is not a directory\n* user has full access\n* group and other have almost all permissions besides writing\n",
+        "description": "Returns a `string` with the current file permissions. The format for this permissions `string` is as follows: `\"[fileType][wrx](u)[wrx](g)[wrx](o)\"`. The file type is either `\"d\"` in case it's a directory or `\"-\"`. The user type gets defined through three possible types. These user types include user `\"u\"`, group `\"g\"` and other `\"o\"`. There are three different permission types. Those permissions include read `\"r\"`, write `\"w\"` and execute `\"x\"`. An example of a `string` which is returned by this method would be `\"-rwxr-xr-x\"`. Taking the latter as an example following things become clear:\n* the provided file is not a directory\n* user has full access\n* group and other have almost all permissions besides writing\n",
         "example": [
             "host_computer = get_shell.host_computer",
             "binFolder = host_computer.File(\"/bin\")",
