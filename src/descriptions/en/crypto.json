@@ -3,7 +3,7 @@
         "description": "A `crypto` object can be obtained by using [include_lib](#GENERAL_INCLUDE_LIB). The `classID` used for this object is `\"cryptoLib\"`."
     },
     "aircrack": {
-        "description": "Returns a `string` with the password generated based on the file which got created by aireplay. In case of failure, it will return `null` instead.",
+        "description": "Returns a `string` containing the password  based on the file which got generated via aireplay. In case of failure, it will return `null` instead.",
         "example": [
             "crypto = include_lib(\"/lib/crypto.so\")",
             "networks = get_shell.host_computer.wifi_networks(\"wlan0\")",
@@ -66,7 +66,7 @@
         ]
     },
     "smtp_user_List": {
-        "description": "SMTP services are mail services. When using this method with the IP of a mail server, due to a vulnerability in the service, it returns a `list` of the existing users on the `computer` where the SMTP service is running. If these users also have an email account registered on the `SMTP` server, it will be indicated in the `list`. SMTP services are usually running on port 25. In case of failure, this method will return a string containing the cause.",
+        "description": "Returns a `list` of the existing users on the `computer` where the SMTP service is running. If these users also have an email account registered on the `SMTP` server, it will be indicated in the `list`. SMTP services are usually running on port `25`. In case of failure, this method will return a `string` containing the cause.",
         "example": [
             "crypto = include_lib(\"/lib/crypto.so\")",
             "print(crypto.smtp_user_List(\"192.168.0.4\", 25))"
