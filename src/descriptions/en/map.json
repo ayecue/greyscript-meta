@@ -1,6 +1,6 @@
 {
     "$meta": {
-        "description": "A map is a set of values associated with unique keys. Create a map with curly braces; get or set a single value with square brackets. Keys and values may be any type.",
+        "description": "A `map` is a set of values associated with unique keys. Create a `map` with curly braces; get or set a single value with square brackets. Keys and values may be any type.",
         "example": [
             "x = { \"test\": 123 }",
             "x.foo = 42 // set property foo to 42",

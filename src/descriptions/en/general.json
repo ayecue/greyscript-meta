@@ -51,7 +51,7 @@
         ]
     },
     "typeof": {
-        "description": "Returns a `string` containing the type of the entity provided. There are following types by default: `\"aptclientLib\"`, `\"blockchainLib\"`, `\"coin\"`, `\"computer\"`, `\"cryptoLib\"`, `\"file\"`, `\"function\"`, `\"list\"`, `\"map\"`, `\"MetaLib\"`, `\"MetaMail\"`, `\"MetaxploitLib\"`, `\"NetSession\"`, `\"null\"`, `\"number\"`, `\"port\"`, `\"router\"`, `\"service\"`, `\"shell\"`, `\"ftpshell\"`, `\"string\"`, `\"subwallet\"`, `\"wallet\"`. Custom types can be added as well by using the `classID` property in a map.",
+        "description": "Returns a `string` containing the type of the entity provided. There are following types by default: `\"aptclientLib\"`, `\"blockchainLib\"`, `\"coin\"`, `\"computer\"`, `\"cryptoLib\"`, `\"file\"`, `\"function\"`, `\"list\"`, `\"map\"`, `\"MetaLib\"`, `\"MetaMail\"`, `\"MetaxploitLib\"`, `\"NetSession\"`, `\"null\"`, `\"number\"`, `\"port\"`, `\"router\"`, `\"service\"`, `\"shell\"`, `\"ftpshell\"`, `\"string\"`, `\"subwallet\"`, `\"wallet\"`. Custom types can be added as well by using the `classID` property in a `map`.",
         "example": [
             "myObj = { \"classID\": \"myType\" }",
             "if typeof(myObj) == \"myType\" then",
@@ -129,14 +129,14 @@
         ]
     },
     "indexes": {
-        "description": "Depending on data type this function returns a list with all available indexes. To get a better idea about the behaviour look into the `indexes` methods related to `string`, `list` and `map`.",
+        "description": "Depending on data type this function returns a `list` with all available indexes. To get a better idea about the behaviour look into the `indexes` methods related to `string`, `list` and `map`.",
         "example": [
             "indexesOfStr = indexes(\"test\")",
             "print(\"Following indexes are available: \" + indexesOfStr.join(\", \"))"
         ]
     },
     "values": {
-        "description": "Depending on data type this function returns a list with all available values. To get a better idea about the behaviour look into the `values` methods related to `string`, `list` and `map`.",
+        "description": "Depending on data type this function returns a `list` with all available values. To get a better idea about the behaviour look into the `values` methods related to `string`, `list` and `map`.",
         "example": [
             "indexesOfStr = values(\"test\")",
             "print(\"Following values are available: \" + indexesOfStr.join(\", \"))"

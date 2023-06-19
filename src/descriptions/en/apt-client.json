@@ -9,7 +9,7 @@
         "description": "Search specifically for the package in any of the repositories listed in `\"/etc/apt/sources.txt\"`."
     },
     "update": {
-        "description": "Update the list of available packages after adding a new repository in `\"/etc/apt/sources.txt\"`, or if the remote repository has updated its information in `\"/server/conf/repod.conf\"`."
+        "description": "Update the `list` of available packages after adding a new repository in `\"/etc/apt/sources.txt\"`, or if the remote repository has updated its information in `\"/server/conf/repod.conf\"`."
     },
     "add_repo": {
         "description": "Add the repository address in the `\"/etc/apt/sources.txt\"` file."

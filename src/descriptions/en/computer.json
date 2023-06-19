@@ -96,7 +96,7 @@
         ]
     },
     "network_devices": {
-        "description": "Returns a string containing all network devices available on the `computer`. Each item provides information about interface name, chipset and if monitoring support is enabled.",
+        "description": "Returns a `string` containing all network devices available on the `computer`. Each item provides information about interface name, chipset and if monitoring support is enabled.",
         "example": [
             "host_computer = get_shell.host_computer",
             "devices = host_computer.network_devices",
@@ -177,7 +177,7 @@
         ]
     },
     "close_program": {
-        "description": "Closes a program associated with the provided PID. You can see the list of active programs by either using `show_procs` or typing ps into your terminal. To close a program you need to be either owner of the running process or a root. In case the closing of a program fails this method will return a `string` containing the cause of failure. Otherwise, it will return `true`.",
+        "description": "Closes a program associated with the provided PID. You can see the `list` of active programs by either using `show_procs` or typing ps into your terminal. To close a program you need to be either owner of the running process or a root. In case the closing of a program fails this method will return a `string` containing the cause of failure. Otherwise, it will return `true`.",
         "example": [
             "host_computer = get_shell(\"root\", \"test\").host_computer",
             "closeResult = host_computer.close_program(\"random-PID\")",
@@ -189,7 +189,7 @@
         ]
     },
     "wifi_networks": {
-        "description": "Returns a list of the Wi-Fi networks that are available for the provided interface. Each item in the list is a string containing information on the BSSID, PWR and ESSID. If no interface is provided it will return null.",
+        "description": "Returns a `list` of the Wi-Fi networks that are available for the provided interface. Each item in the `list` is a `string` containing information on the BSSID, PWR and ESSID. If no interface is provided it will return null.",
         "example": [
             "host_computer = get_shell(\"root\", \"test\").host_computer",
             "networks = host_computer.wifi_networks(\"wlan0\")",
