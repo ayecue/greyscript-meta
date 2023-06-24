@@ -7,7 +7,7 @@
             },
             {
                 "label": "value",
-                "value": "any"
+                "type": "any"
             }
         ],
         "returns": [

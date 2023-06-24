@@ -837,7 +837,7 @@
         "arguments": [
             {
                 "label": "object",
-                "value": "any"
+                "type": "any"
             },
             {
                 "label": "index",
@@ -845,7 +845,7 @@
             },
             {
                 "label": "value",
-                "value": "any"
+                "type": "any"
             }
         ],
         "returns": [
@@ -856,7 +856,7 @@
         "arguments": [
             {
                 "label": "value",
-                "value": "string"
+                "type": "string"
             }
         ],
         "returns": [
