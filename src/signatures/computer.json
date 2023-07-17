@@ -29,8 +29,13 @@
     "create_folder": {
         "arguments": [
             {
-                "label": "folder",
+                "label": "path",
                 "type": "string"
+            },
+            {
+                "label": "folder",
+                "type": "nameFolder",
+                "default": "\"newFolder\""
             }
         ],
         "returns": [
