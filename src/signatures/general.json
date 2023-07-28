@@ -709,6 +709,27 @@
             "number"
         ]
     },
+    "launch": {
+        "arguments": [
+            {
+                "label": "shell",
+                "type": "shell"
+            },
+            {
+                "label": "program",
+                "type": "string"
+            },
+            {
+                "label": "params",
+                "type": "string",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "string",
+            "number"
+        ]
+    },
     "launch_path": {
         "returns": [
             "string"

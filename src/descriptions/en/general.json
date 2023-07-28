@@ -555,6 +555,13 @@
             "print(\"Circumference: \" + circumference)"
         ]
     },
+    "launch": {
+        "description": "Launches the binary which is at the provided path. Optionally parameters can be passed. Returns `true` when launch was successful otherwise this method will return `false`. Cannot be used to execute binaries with an EXE extension.",
+        "example": [
+            "shell = get_shell(\"root\", \"test\")",
+            "launch(shell, \"/bin/cat\", \"/etc/passwd\")"
+        ]
+    },
     "launch_path": {
         "description": "Returns a `string` containing the path of the script that is currently executed.",
         "example": [
