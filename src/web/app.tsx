@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import { getSiteDescription } from '../descriptions';
-import { signatures } from '../meta';
+import { greyscriptMeta, getSiteDescription } from '../meta';
 import ContentTable from './components/content-table';
 import Definitions from './components/definitions';
 import { AppExternalLink, ExternalLinks } from './components/external-links';
@@ -26,6 +25,9 @@ export default function ({
 }: AppProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const [filter, setFilter] = useState(filterInit);
+  const signatures = greyscriptMeta.getAllSignatures()
+    .filter((it) => it.type !== 'any')
+    .sort((a, b) => a.type.localeCompare(b.type));
 
   useEffect(() => {
     if (rootRef !== null) {

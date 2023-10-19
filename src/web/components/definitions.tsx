@@ -1,21 +1,11 @@
 import React, { useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import {
-  getDescription,
-  getExample,
-  getMetaDescription,
-  getMetaExample,
-  getSiteDescription
-} from '../../descriptions';
-import {
-  Signature,
-  SignatureDefinition,
-  SignatureDefinitionArg
-} from '../../meta';
 import { scrollTo } from '../utils/scrollTo';
 import Editor from './editor';
 import { HighlightInline } from './highlight';
+import { Signature, SignatureDefinition, SignatureDefinitionArg } from 'meta-utils';
+import { getSiteDescription, greyscriptMeta } from '../../meta';
 
 export interface DefinitionsProps {
   signatures: Signature[];
@@ -173,8 +163,8 @@ function Definition({
   onCopyClick
 }: DefinitionProps) {
   const containerRef = useRef<HTMLElement>(null);
-  const description = getDescription(type, methodName);
-  const example = getExample(type, methodName);
+  const description = greyscriptMeta.getDescription(type, methodName);
+  const example = greyscriptMeta.getExample(type, methodName);
   const key = `${type.toUpperCase()}_${methodName.toUpperCase()}`;
 
   return (
@@ -235,8 +225,8 @@ function renderDefinitions({
         </li>
       );
     });
-    const metaDescription = getMetaDescription(item.type);
-    const metaExample = getMetaExample(item.type);
+    const metaDescription = greyscriptMeta.getDescription(item.type, '$meta');
+    const metaExample = greyscriptMeta.getExample(item.type, '$meta');
     const isHidden = pattern && !pattern.test(`${item.type}`);
 
     if (!isHidden) {
