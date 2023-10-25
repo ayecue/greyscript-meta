@@ -64,7 +64,7 @@
         ]
     },
     "split": {
-        "description": "Returns a `list` where each item is a segment of the `string`. The separation depends on the provided separator `string`. Keep in mind that for some odd reason, this method is using regular expressions for matching.",
+        "description": "Returns a `list` where each item is a segment of the `string`. The separation depends on the provided separator `string`. The separator string supports regular expressions. Supported regular expression options: [click here](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options)",
         "example": [
             "myString = \"42 as an answer is wrong\"",
             "segments = myString.split(\" \")",
@@ -76,7 +76,7 @@
         ]
     },
     "replace": {
-        "description": "Returns a new `string` where the provided `string` got replaced by the second provided `string`.",
+        "description": "Returns a new `string` where the provided `string` gets replaced by the second provided `string`. Since the latest version the search string supports regular expressions. Supported regular expression options: [click here](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options)",
         "example": [
             "myString = \"42 as an answer is wrong\"",
             "newString = myString.replace(\"wrong\", \"right\")",
@@ -144,6 +144,22 @@
         "example": [
             "myString = \"1\"",
             "print(myString.to_int + 41)"
+        ]
+    },
+    "is_match": {
+        "description": "Uses regular expression to check if a string is matching a certain pattern. Supported regular expression options: [click here](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options)",
+        "example": [
+            "myString = \"42 as an answer is wrong\"",
+            "hasWordAtTheEnd = myString.is_match(\"\\w+$\")",
+            "print(hasWordAtTheEnd)"
+        ]
+    },
+    "matches": {
+        "description": "Returns all search results for the provided regular expression. The result will be a map where the key contains the index and the value contains the match value. Supported regular expression options: [click here](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options)",
+        "example": [
+            "myString = \"42 as an answer is wrong\"",
+            "result = myString.matches(\"w\")",
+            "print(result)"
         ]
     }
 }
