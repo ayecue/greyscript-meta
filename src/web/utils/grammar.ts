@@ -6,8 +6,11 @@ export const GreyScriptLanguage = {
   super: /\b(super)\b/,
   type: /\b(number|string|null|any|list|map)\b/,
   class:
-    /\b(aptClient|computer|crypto|file|ftpShell|metaLib|metaMail|metaxploit|netSession|port|router|shell|blockchain|service|subWallet|wallet|coin)\b/,
+    /\b(aptClient|computer|crypto|file|ftpShell|metaLib|metaMail|metaxploit|netSession|port|router|shell|blockchain|service|subWallet|wallet|coin|ctfEvent)\b/,
   method: [
+    {
+      pattern: /\.(get_description|get_template|player_success|get_creator_name|get_mail_content)\b/
+    },
     {
       pattern:
         /\.(show|search|update|add_repo|del_repo|install|check_upgrade)\b/
@@ -83,7 +86,7 @@ export const GreyScriptLanguage = {
     },
     {
       pattern:
-        /\b(mail_login|typeof|get_router|get_switch|nslookup|print|clear_screen|active_user|home_dir|get_shell|user_input|include_lib|import_code|exit|user_mail_address|user_bank_number|whois|wait|command_info|program_path|current_path|format_columns|current_date|is_lan_ip|is_valid_ip|bitwise|abs|acos|asin|atan|tan|cos|char|sin|floor|range|round|rnd|sign|sqrt|str|ceil|pi|launch_path|slice|md5|hash|time|replace_regex|is_match|matches)\b/
+        /\b(mail_login|typeof|get_router|get_switch|nslookup|print|clear_screen|active_user|home_dir|get_shell|user_input|include_lib|import_code|exit|user_mail_address|user_bank_number|whois|wait|command_info|program_path|current_path|format_columns|current_date|is_lan_ip|is_valid_ip|bitwise|abs|acos|asin|atan|tan|cos|char|sin|floor|range|round|rnd|sign|sqrt|str|ceil|pi|launch_path|slice|md5|hash|time|replace_regex|is_match|matches|get_ctf)\b/
     }
   ],
   keyword: [

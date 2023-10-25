@@ -3,5 +3,30 @@
         "returns": [
             "metaLib"
         ]
+    },
+    "get_num_users": {
+        "returns": [
+            "number"
+        ]
+    },
+    "get_num_portforward": {
+        "returns": [
+            "number"
+        ]
+    },
+    "get_num_conn_gateway": {
+        "returns": [
+            "number"
+        ]
+    },
+    "is_any_active_user": {
+        "returns": [
+            "number"
+        ]
+    },
+    "is_root_active_user": {
+        "returns": [
+            "number"
+        ]
     }
 }

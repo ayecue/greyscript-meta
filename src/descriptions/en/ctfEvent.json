@@ -1,0 +1,20 @@
+{
+    "$meta": {
+        "description": "A `ctfEvent` object can be obtained by using [get_ctf](#GENERAL_GET_CTF). The `classID` used for this object is `\"ctfEvent\"`."
+    },
+    "get_description": {
+        "description": "Get CTF event description."
+    },
+    "get_template": {
+        "description": "Get CTF event template."
+    },
+    "player_success": {
+        "description": "Checks if CTF event got completed successfully."
+    },
+    "get_creator_name": {
+        "description": "The the name of the CTF event creator."
+    },
+    "get_mail_content": {
+        "description": "Get mail content for CTF event."
+    }
+}

@@ -3,6 +3,7 @@ import Any from './any.json';
 import AptClient from './apt-client.json';
 import Blockchain from './blockchain.json';
 import ClassLanguage from './class.json';
+import CTFEvent from './ctfEvent.json';
 import Coin from './coin.json';
 import Computer from './computer.json';
 import Crypto from './crypto.json';
@@ -30,6 +31,7 @@ const descriptions: Descriptions = {
   aptClient: AptClient,
   blockchain: Blockchain,
   class: ClassLanguage,
+  ctfEvent: CTFEvent,
   coin: Coin,
   computer: Computer,
   crypto: Crypto,

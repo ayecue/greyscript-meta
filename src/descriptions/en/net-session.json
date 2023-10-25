@@ -11,5 +11,20 @@
             "metaLib = netSession.dump_lib",
             "print(\"Library: \" + metaLib.lib_name + \" - \" + metaLib.version + \" on port \" + ports[0].port_number)"
         ]
+    },
+    "get_num_users": {
+        "description": "Check how many users the target computer has. Can be useful to check conditions related to using [scan_address](#METAXPLOIT_SCAN_ADDRESS)."
+    },
+    "get_num_portforward": {
+        "description": "Check how many ports are forwarded on the router of the target computer. Can be useful to check conditions related to using [scan_address](#METAXPLOIT_SCAN_ADDRESS)."
+    },
+    "get_num_conn_gateway": {
+        "description": "Check how many devices are connected to the router of the target computer. Can be useful to check conditions related to using [scan_address](#METAXPLOIT_SCAN_ADDRESS)."
+    },
+    "is_any_active_user": {
+        "description": "Check if there is any active user on the target computer. Can be useful to check conditions related to using [scan_address](#METAXPLOIT_SCAN_ADDRESS)."
+    },
+    "is_root_active_user": {
+        "description": "Check if there is any root user active on the target computer. Can be useful to check conditions related to using [scan_address](#METAXPLOIT_SCAN_ADDRESS)."
     }
 }

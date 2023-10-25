@@ -5,6 +5,7 @@ import Any from './signatures/any.json';
 import AptClient from './signatures/apt-client.json';
 import Blockchain from './signatures/blockchain.json';
 import ClassSignature from './signatures/class.json';
+import CTFEvent from './signatures/ctfEvent.json';
 import Coin from './signatures/coin.json';
 import Computer from './signatures/computer.json';
 import Crypto from './signatures/crypto.json';
@@ -84,6 +85,10 @@ export const signatures: Signature[] = [
   {
     type: 'blockchain',
     definitions: <SignatureDefinitionContainer>(<unknown>Blockchain)
+  },
+  {
+    type: 'ctfEvent',
+    definitions: <SignatureDefinitionContainer>(<unknown>CTFEvent)
   },
   {
     type: 'class',

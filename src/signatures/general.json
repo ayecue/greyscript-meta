@@ -1007,5 +1007,24 @@
         "returns": [
             "map:string"
         ]
+    },
+    "get_ctf": {
+        "arguments": [
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "password",
+                "type": "string"
+            },
+            {
+                "label": "eventName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "ctfEvent"
+        ]
     }
 }
