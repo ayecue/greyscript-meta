@@ -248,5 +248,8 @@
             "netCard = host_computer.active_net_card",
             "print(\"Connected by: \" + netCard)"
         ]
+    },
+    "get_name": {
+        "description": "Get name of computer."
     }
 }
