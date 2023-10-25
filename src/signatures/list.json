@@ -135,6 +135,11 @@
             {
                 "label": "newValue",
                 "type": "any"
+            },
+            {
+                "label": "maxCount",
+                "type": "number",
+                "opt": true
             }
         ],
         "returns": [

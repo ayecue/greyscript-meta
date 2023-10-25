@@ -907,8 +907,13 @@
                 "type": "string"
             },
             {
-                "label": "delimiter",
+                "label": "pattern",
                 "type": "string"
+            },
+            {
+                "label": "regexOptions",
+                "type": "string",
+                "default": "\"none\""
             }
         ],
         "returns": [
@@ -928,10 +933,79 @@
             {
                 "label": "newValue",
                 "type": "any"
+            },
+            {
+                "label": "maxCount",
+                "type": "number",
+                "opt": true
             }
         ],
         "returns": [
             "any"
+        ]
+    },
+    "replace_regex": {
+        "arguments": [
+            {
+                "label": "value",
+                "type": "string"
+            },
+            {
+                "label": "pattern",
+                "type": "string"
+            },
+            {
+                "label": "newValue",
+                "type": "string"
+            },
+            {
+                "label": "regexOptions",
+                "type": "string",
+                "default": "\"none\""
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "is_match": {
+        "arguments": [
+            {
+                "label": "value",
+                "type": "string"
+            },
+            {
+                "label": "pattern",
+                "type": "string"
+            },
+            {
+                "label": "regexOptions",
+                "type": "string",
+                "default": "\"none\""
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "matches": {
+        "arguments": [
+            {
+                "label": "value",
+                "type": "string"
+            },
+            {
+                "label": "pattern",
+                "type": "string"
+            },
+            {
+                "label": "regexOptions",
+                "type": "string",
+                "default": "\"none\""
+            }
+        ],
+        "returns": [
+            "map:string"
         ]
     }
 }

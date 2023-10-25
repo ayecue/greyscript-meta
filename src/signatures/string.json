@@ -67,8 +67,13 @@
     "split": {
         "arguments": [
             {
-                "label": "delimiter",
+                "label": "pattern",
                 "type": "string"
+            },
+            {
+                "label": "regexOptions",
+                "type": "string",
+                "default": "\"none\""
             }
         ],
         "returns": [
@@ -78,12 +83,17 @@
     "replace": {
         "arguments": [
             {
-                "label": "toReplace",
+                "label": "pattern",
                 "type": "string"
             },
             {
-                "label": "newString",
+                "label": "newValue",
                 "type": "string"
+            },
+            {
+                "label": "regexOptions",
+                "type": "string",
+                "default": "\"none\""
             }
         ],
         "returns": [
@@ -134,6 +144,38 @@
         "returns": [
             "string",
             "number"
+        ]
+    },
+    "is_match": {
+        "arguments": [
+            {
+                "label": "pattern",
+                "type": "string"
+            },
+            {
+                "label": "regexOptions",
+                "type": "string",
+                "default": "\"none\""
+            }
+        ],
+        "returns": [
+            "boolean"
+        ]
+    },
+    "matches": {
+        "arguments": [
+            {
+                "label": "pattern",
+                "type": "string"
+            },
+            {
+                "label": "regexOptions",
+                "type": "string",
+                "default": "\"none\""
+            }
+        ],
+        "returns": [
+            "map:string"
         ]
     }
 }

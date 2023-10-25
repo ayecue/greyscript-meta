@@ -60,7 +60,7 @@ export const GreyScriptLanguage = {
     },
     {
       pattern:
-        /\.(remove|hasIndex|indexOf|lastIndexOf|split|replace|trim|indexes|code|len|lower|upper|val|values|to_int)\b/
+        /\.(remove|hasIndex|indexOf|lastIndexOf|split|replace|trim|indexes|code|len|lower|upper|val|values|to_int|is_match|matches)\b/
     },
     {
       pattern:
@@ -83,7 +83,7 @@ export const GreyScriptLanguage = {
     },
     {
       pattern:
-        /\b(mail_login|typeof|get_router|get_switch|nslookup|print|clear_screen|active_user|home_dir|get_shell|user_input|include_lib|import_code|exit|user_mail_address|user_bank_number|whois|wait|command_info|program_path|current_path|format_columns|current_date|is_lan_ip|is_valid_ip|bitwise|abs|acos|asin|atan|tan|cos|char|sin|floor|range|round|rnd|sign|sqrt|str|ceil|pi|launch_path|slice|md5|hash|time)\b/
+        /\b(mail_login|typeof|get_router|get_switch|nslookup|print|clear_screen|active_user|home_dir|get_shell|user_input|include_lib|import_code|exit|user_mail_address|user_bank_number|whois|wait|command_info|program_path|current_path|format_columns|current_date|is_lan_ip|is_valid_ip|bitwise|abs|acos|asin|atan|tan|cos|char|sin|floor|range|round|rnd|sign|sqrt|str|ceil|pi|launch_path|slice|md5|hash|time|replace_regex|is_match|matches)\b/
     }
   ],
   keyword: [

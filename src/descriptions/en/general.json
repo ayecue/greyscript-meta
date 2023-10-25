@@ -693,5 +693,29 @@
             "newString = replace(myString, \"wrong\", \"right\")",
             "print(newString)"
         ]
+    },
+    "replace_regex": {
+        "description": "Similar behaviour to replace but instead supporting regular expressions. Supported regular expression options: [click here](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options)",
+        "example": [
+            "myString = \"42 as an answer is wrong\"",
+            "newString = replace_regex(myString, \"\\w+$\", \"right\")",
+            "print(newString)"
+        ]
+    },
+    "is_match": {
+        "description": "Uses regular expression to check if a string is matching a certain pattern. Supported regular expression options: [click here](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options)",
+        "example": [
+            "myString = \"42 as an answer is wrong\"",
+            "hasWordAtTheEnd = is_match(myString, \"\\w+$\")",
+            "print(hasWordAtTheEnd)"
+        ]
+    },
+    "matches": {
+        "description": "Returns all search results for the provided regular expression. The result will be a map where the key contains the index and the value contains the match value. Supported regular expression options: [click here](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options)",
+        "example": [
+            "myString = \"42 as an answer is wrong\"",
+            "result = matches(myString, \"w\")",
+            "print(result)"
+        ]
     }
 }
