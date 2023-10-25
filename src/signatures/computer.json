@@ -4,6 +4,11 @@
             "list:port"
         ]
     },
+    "get_name": {
+        "returns": [
+            "string"
+        ]
+    },
     "local_ip": {
         "returns": [
             "string"
