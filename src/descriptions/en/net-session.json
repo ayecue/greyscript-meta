@@ -13,7 +13,7 @@
         ]
     },
     "get_num_conn_gateway": {
-        "description": "Returns the number of devices using this router as a gateway. If you obtained your `NetSession` from a computer, it will fetch and return the value from its gateway router.",
+        "description": "Returns the number of devices using this router as a gateway. If you obtained your `netSession` from a computer, it will fetch and return the value from its gateway router.",
         "example": [
             "metax = include_lib(\"/lib/metaxploit.so\")",
             "ports = get_router(\"1.1.1.1\").used_ports",
@@ -22,7 +22,7 @@
         ]
     },
     "get_num_portforward": {
-        "description": "Returns the number of ports forwarded by this router. If you obtained your `NetSession` from a computer, it will fetch and return the value from its gateway router.",
+        "description": "Returns the number of ports forwarded by this router. If you obtained your `netSession` from a computer, it will fetch and return the value from its gateway router.",
         "example": [
             "metax = include_lib(\"/lib/metaxploit.so\")",
             "ports = get_router(\"1.1.1.1\").used_ports",
