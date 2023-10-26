@@ -251,10 +251,5 @@
         "returns": [
             "string"
         ]
-    },
-    "get_name": {
-        "returns": [
-            "string"
-        ]
     }
 }
