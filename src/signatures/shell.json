@@ -110,56 +110,5 @@
             "number",
             "string"
         ]
-    },
-    "masterkey": {
-        "arguments": [
-            {
-                "label": "ip",
-                "type": "string"
-            },
-            {
-                "label": "port",
-                "type": "number"
-            },
-            {
-                "label": "user",
-                "type": "string"
-            }
-        ],
-        "returns": [
-            "shell",
-            "null"
-        ]
-    },
-    "masterkey_direct": {
-        "arguments": [
-            {
-                "label": "publicIp",
-                "type": "string"
-            },
-            {
-                "label": "localIp",
-                "type": "number"
-            },
-            {
-                "label": "user",
-                "type": "string"
-            }
-        ],
-        "returns": [
-            "shell",
-            "null"
-        ]
-    },
-    "restore_network": {
-        "arguments": [
-            {
-                "label": "publicIp",
-                "type": "string"
-            }
-        ],
-        "returns": [
-            "null"
-        ]
     }
 }
