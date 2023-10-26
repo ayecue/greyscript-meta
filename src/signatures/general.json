@@ -27,6 +27,17 @@
             "string"
         ]
     },
+    "trim": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
     "hasIndex": {
         "arguments": [
             {
@@ -296,6 +307,11 @@
             {
                 "label": "byKey",
                 "type": "any"
+            },
+            {
+                "label": "ascending",
+                "type": "number",
+                "default": "1"
             }
         ],
         "returns": [
@@ -920,6 +936,17 @@
             "list:string"
         ]
     },
+    "reverse": {
+        "arguments": [
+            {
+                "label": "value",
+                "type": "list:any"
+            }
+        ],
+        "returns": [
+            "null"
+        ]
+    },
     "replace": {
         "arguments": [
             {
@@ -982,6 +1009,21 @@
                 "label": "regexOptions",
                 "type": "string",
                 "default": "\"none\""
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "lastIndexOf": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "string"
+            },
+            {
+                "label": "value",
+                "type": "string"
             }
         ],
         "returns": [
