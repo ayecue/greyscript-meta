@@ -12,6 +12,12 @@
             "end for"
         ]
     },
+    "get_name": {
+        "description": "Returns the hostname of the machine.",
+        "example": [
+            "print get_shell.host_computer.get_name"
+        ]
+    },
     "local_ip": {
         "description": "Returns a `string` with the local IP address of the `computer`.",
         "example": [
@@ -248,8 +254,5 @@
             "netCard = host_computer.active_net_card",
             "print(\"Connected by: \" + netCard)"
         ]
-    },
-    "get_name": {
-        "description": "Get name of computer."
     }
 }

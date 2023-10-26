@@ -4,6 +4,11 @@
             "list:port"
         ]
     },
+    "get_name": {
+        "returns": [
+            "string"
+        ]
+    },
     "local_ip": {
         "returns": [
             "string"
@@ -243,11 +248,6 @@
         ]
     },
     "active_net_card": {
-        "returns": [
-            "string"
-        ]
-    },
-    "get_name": {
         "returns": [
             "string"
         ]

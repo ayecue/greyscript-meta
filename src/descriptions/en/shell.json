@@ -11,7 +11,7 @@
         ]
     },
     "start_terminal": {
-        "description": "Launches an active terminal. The color of the terminal will change and show the IP of the connected shell. Script execution will be stopped when starting a new terminal.",
+        "description": "Launches an active terminal. The color of the terminal will change and show the IP of the connected shell. Script execution will be stopped when starting a new terminal unless this is called from another script that was executed via `shell.launch` in which case, you will only enter the shell after closing your root-level script within that terminal window.",
         "example": [
             "shell = get_shell",
             "shell.start_terminal"
@@ -72,14 +72,5 @@
             "   print(\"File got sent successfully.\")",
             "end if"
         ]
-    },
-    "masterkey": {
-        "description": "Unknown usage. Only usable for admins."
-    },
-    "masterkey_direct": {
-        "description": "Unknown usage. Only usable for admins."
-    },
-    "restore_network": {
-        "description": "Unknown usage. Only usable for admins."
     }
 }

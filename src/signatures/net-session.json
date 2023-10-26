@@ -4,7 +4,7 @@
             "metaLib"
         ]
     },
-    "get_num_users": {
+    "get_num_conn_gateway": {
         "returns": [
             "number"
         ]
@@ -14,7 +14,7 @@
             "number"
         ]
     },
-    "get_num_conn_gateway": {
+    "get_num_users": {
         "returns": [
             "number"
         ]

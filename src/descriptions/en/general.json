@@ -231,7 +231,7 @@
         ]
     },
     "user_input": {
-        "description": "Puts script execution on hold to receive input from the user. Input will be submitted by pressing Enter. Additionally, it is also possible to style the output message by using TextMeshPro rich-text tags. There are two optional arguments. If the passwordMode flag is `true` the input will be masked by asterisk signs. In case the anyKey flag is `true` instead of waiting for the Enter key to be pressed any key press will be captured instantly.",
+        "description": "Puts script execution on hold to receive input from the user. Input will be submitted by pressing Enter. Additionally, it is also possible to style the output message by using TextMeshPro rich-text tags. There are two optional arguments. If the `isPass` flag is `true` the input will be masked by asterisk signs. In case the anyKey flag is `true` instead of waiting for the Enter key to be pressed any key press will be captured instantly.",
         "example": [
             "num = 0",
             "aboveIncludingZeroTag = \"<color=yellow>\"",
@@ -266,7 +266,7 @@
         ]
     },
     "import_code": {
-        "description": "Enables to import code from different sources into one file. This is useful in case you want to split code into different files and also to avoid any limitation in regards to text file character limits. Note that `import_code` requires an absolute path and is called while compiling the file into a binary instead of during runtime. Additionally `import_code` cannot be nested. Code can be either imported from plain text files or binaries that have `\"allow import\"` enabled.",
+        "description": "Enables to import code from different sources into one file. This is useful in case you want to split code into different files and also to avoid any limitation in regards to text file character limits. Note that `import_code` requires an absolute path and is called while compiling the file into a binary instead of during runtime. Additionally `import_code` cannot be nested. Code can be either imported from plain text files or binaries that have `\"allow import\"` enabled. `import_code` is also parsed wherever it is found, not even a `//` comment will prevent it being evaluated.",
         "example": [
             "//Content of main.src",
             "import_code(\"/home/user/my_module.src\")",
@@ -349,7 +349,7 @@
         ]
     },
     "current_date": {
-        "description": "Returns a `string` containing the current date and time. Ingame time passes 14 times as fast as real-time. The initial time after every wipe will be the 1st of January 2000 at 6:00 AM. Additionally, the game time will not proceed while the server is offline.\n* Output schema: `\"[day]/[month]/[year] - [hours]:[minutes]\"`\n* Example output: `\"27/Jan/2000 - 08:19\"`\n",
+        "description": "Returns a `string` containing the current date and time. Ingame time passes 15 times as fast as real-time - 4 seconds per in-game minute. The initial time after every wipe will be the 1st of January 2000 at 6:00 AM. Additionally, the game time will not proceed while the server is offline.\n* Output schema: `\"[day]/[month]/[year] - [hours]:[minutes]\"`\n* Example output: `\"27/Jan/2000 - 08:19\"`\n",
         "example": [
             "dateStr = current_date",
             "dateSegments = dateStr.split(\" - \")",
@@ -376,7 +376,7 @@
         ]
     },
     "bitwise": {
-        "description": "Enables to perform bitwise operations. Supported operators are: `\"&\"`, `\"|\"`, `\"^\"`, `\"<<\"`, `\">>\"`, `\">>>\"`. Returns a `number`.",
+        "description": "Enables to perform bitwise operations. Supported operators are: `\"&\"`, `\"|\"`, `\"^\"`, `\"<<\"`, `\">>\"`, `\">>>\"`. Returns a `number`. Warning: If either operand is >= `0x80000000`, it always returns 0",
         "example": [
             "num = params[0].to_int",
             "isOdd = bitwise(\"&\", num, 1) == 1",
@@ -453,7 +453,7 @@
         ]
     },
     "char": {
-        "description": "Returns the Unicode character `string` related to the provided unicode `number`. The provided `number` needs to be between 0 and 65535. Any `number` which is outside this range will cause the script to throw a runtime error.",
+        "description": "Returns the UTF-16 character `string` related to the provided unicode `number`. The provided `number` needs to be between 0 and 65535. Any `number` which is outside this range will cause the script to throw a runtime error. Beware when passing non-ASCII values to intrinsics as they will likely get re-encoded as UTF-8. For example, `md5(char(255))` will actually return the hash of the two-byte sequence `0xC3` `0xBF`.",
         "example": [
             "key = user_input(\"Press a key!\", false, true)",
             "isA = key == char(97)",
@@ -607,19 +607,19 @@
         ]
     },
     "bitAnd": {
-        "description": "Performs a bitwise AND for the provided values. Returns a `number`.",
+        "description": "Performs a bitwise AND for the provided values. Returns a `number`. Warning: If either operand is >= `0x80000000`, it always returns 0.",
         "example": [
             "print(\"Result of bitwise AND: \" + bitAnd(1, 2))"
         ]
     },
     "bitOr": {
-        "description": "Performs a bitwise OR for the provided values. Returns a `number`.",
+        "description": "Performs a bitwise OR for the provided values. Returns a `number`. Warning: If either operand is >= `0x80000000`, it always returns 0.",
         "example": [
             "print(\"Result of bitwise OR: \" + bitOr(1, 2))"
         ]
     },
     "bitXor": {
-        "description": "Permorms a bitwise XOR for the provided values. Returns a `number`.",
+        "description": "Performs a bitwise XOR for the provided values. Returns a `number`. Warning: If either operand is >= `0x80000000`, it always returns 0.",
         "example": [
             "print(\"Result of bitwise XOR: \" + bitXor(1, 2))"
         ]
