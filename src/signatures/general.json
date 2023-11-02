@@ -2509,5 +2509,71 @@
         "returns": [
             "string"
         ]
+    },
+    "dump_lib": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "netSession"
+            }
+        ],
+        "returns": [
+            "metaLib"
+        ]
+    },
+    "get_num_conn_gateway": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "netSession"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "get_num_portforward": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "netSession"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "get_num_users": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "netSession"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "is_any_active_user": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "netSession"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "is_root_active_user": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "netSession"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
     }
 }
