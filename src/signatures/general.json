@@ -2575,5 +2575,141 @@
         "returns": [
             "number"
         ]
+    },
+    "device_ports": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            },
+            {
+                "label": "ip",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "list:port",
+            "null"
+        ]
+    },
+    "devices_lan_ip": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            }
+        ],
+        "returns": [
+            "list:string"
+        ]
+    },
+    "bssid_name": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "essid_name": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "firewall_rules": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            }
+        ],
+        "returns": [
+            "list:string"
+        ]
+    },
+    "kernel_version": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "local_ip": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "public_ip": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "used_ports": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            }
+        ],
+        "returns": [
+            "list:port"
+        ]
+    },
+    "ping_port": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            },
+            {
+                "label": "port",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "port",
+            "null"
+        ]
+    },
+    "port_info": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            },
+            {
+                "label": "port",
+                "type": "port"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
     }
 }
