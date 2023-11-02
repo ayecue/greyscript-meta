@@ -1500,5 +1500,364 @@
         "returns": [
             "number"
         ]
+    },
+    "get_ports": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            }
+        ],
+        "returns": [
+            "list:port"
+        ]
+    },
+    "get_name": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "lan_ip": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "public_ip_pc": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "File": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "path",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "file",
+            "null"
+        ]
+    },
+    "create_folder": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "path",
+                "type": "string"
+            },
+            {
+                "label": "folder",
+                "type": "nameFolder",
+                "default": "\"newFolder\""
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "null"
+        ]
+    },
+    "is_network_active": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "touch": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "path",
+                "type": "string"
+            },
+            {
+                "label": "fileName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "show_procs": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "network_devices": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "change_password": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "pass",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "create_user": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "pass",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "delete_user": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "removeHome",
+                "type": "number",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "create_group": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "group",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "delete_group": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "group",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "groups": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "close_program": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "pid",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "wifi_networks": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "interface",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "list:string",
+            "null"
+        ]
+    },
+    "connect_wifi": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "netDevice",
+                "type": "string"
+            },
+            {
+                "label": "bssid",
+                "type": "string"
+            },
+            {
+                "label": "essid",
+                "type": "string"
+            },
+            {
+                "label": "pass",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string",
+            "null"
+        ]
+    },
+    "connect_ethernet": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "netDevice",
+                "type": "string"
+            },
+            {
+                "label": "localIp",
+                "type": "string"
+            },
+            {
+                "label": "gateway",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string",
+            "null"
+        ]
+    },
+    "network_gateway": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "active_net_card": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
     }
 }
