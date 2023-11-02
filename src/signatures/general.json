@@ -1068,5 +1068,121 @@
         "returns": [
             "ctfEvent"
         ]
+    },
+    "check_upgrade": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "aptClient"
+            },
+            {
+                "label": "filePath",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "number"
+        ]
+    },
+    "show": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "aptClient"
+            },
+            {
+                "label": "repoName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "search": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "aptClient"
+            },
+            {
+                "label": "packageName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "update": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "aptClient"
+            }
+        ],
+        "returns": [
+            "string",
+            "number"
+        ]
+    },
+    "add_repo": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "aptClient"
+            },
+            {
+                "label": "repo",
+                "type": "string"
+            },
+            {
+                "label": "port",
+                "type": "number",
+                "default": "1542.0"
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "del_repo": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "aptClient"
+            },
+            {
+                "label": "repo",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "install": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "aptClient"
+            },
+            {
+                "label": "packageName",
+                "type": "string"
+            },
+            {
+                "label": "installPath",
+                "type": "string",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "string"
+        ]
     }
 }
