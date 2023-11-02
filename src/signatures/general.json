@@ -1184,5 +1184,142 @@
         "returns": [
             "string"
         ]
+    },
+    "coin_price": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "blockchain"
+            }
+        ],
+        "returns": [
+            "null",
+            "string",
+            "number"
+        ]
+    },
+    "show_history": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "blockchain"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "map:string",
+            "string",
+            "null"
+        ]
+    },
+    "amount_mined": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "blockchain"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "null"
+        ]
+    },
+    "get_coin": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "blockchain"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "password",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "coin"
+        ]
+    },
+    "login_wallet": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "blockchain"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "password",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "wallet",
+            "null"
+        ]
+    },
+    "create_wallet": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "blockchain"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "password",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "wallet"
+        ]
+    },
+    "delete_coin": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "blockchain"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "password",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
     }
 }
