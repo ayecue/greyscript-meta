@@ -1363,5 +1363,80 @@
             "   print(\"File size is below 1000 bytes.\")",
             "end if"
         ]
+    },
+    "load": {
+        "description": "Returns a `metaLib` object for the provided path to the library binary. Keep in mind that this can be only used on library files. On failure, this method will return `null` instead.",
+        "example": [
+            "metax = include_lib(\"/lib/metaxploit.so\")",
+            "libFolder = File(host_computer(get_shell), \"/lib\")",
+            "for file in get_files(libFolder)",
+            "   metaLib = load(metax, file.path)",
+            "   print(\"Library: \" + lib_name(metaLib) + \" - \" + version(metaLib))",
+            "end for"
+        ]
+    },
+    "net_use": {
+        "description": "Returns a `netSession` object for the provided IP address and port. Note that if the port zero is provided it will return a `netSession` related to the kernel router. The difference to `load` is that it can be used remotely. The main purpose is to gain a `netSession` and then use `dump_lib` to receive a `metaLib` object to exploit vulnerabilities. In case of failure, this method will return `null`.",
+        "example": [
+            "metax = include_lib(\"/lib/metaxploit.so\")",
+            "ports = used_ports(get_router(\"1.1.1.1\"))",
+            "for port in ports",
+            "   netSession = net_use(metax, \"1.1.1.1\", port_number(port))",
+            "   metaLib = dump_lib(netSession)",
+            "   print(\"Library: \" + lib_name(metaLib) + \" - \" + version(metaLib) + \" on port \" + port_number(port))",
+            "end for"
+        ]
+    },
+    "rshell_client": {
+        "description": "Launches a process on the victim's `computer`, which silently tries to continuously connect in the background to the specified address and port. For the reverse shell to run successfully, the `rshell` service must be installed and the port forward configured correctly on the machine where the server is waiting for the victim's connection.",
+        "example": [
+            "metax = include_lib(\"/lib/metaxploit.so\")",
+            "rshell_client(metax, \"1.1.1.1\", 1222, \"bgprocess\")"
+        ]
+    },
+    "rshell_server": {
+        "description": "This method returns a `list` of `shell` objects that have been reverse shell connected to this computer. To manage the connections received, the `rshell` service must be installed on the machine that receives the victims' connections.",
+        "example": [
+            "metax = include_lib(\"/lib/metaxploit.so\")",
+            "shells = rshell_server(metax)",
+            "firstShell = shells[0]",
+            "chmod(File(host_computer(firstShell), \"/\"), \"o-wrx\", true)"
+        ]
+    },
+    "scan": {
+        "description": "Returns a `list` where each item is a `string` representing a memory area which has vulnerabilities related to the provided library. These memory areas can be used to make further scans via `scan_address`. In case of failure, this method returns `null` instead. Here is an example of a memory area: \"0x7BFC1EAA\"",
+        "example": [
+            "metax = include_lib(\"/lib/metaxploit.so\")",
+            "metaLib = load(metax, \"/lib/init.so\")",
+            "scanResult = scan(metax, metaLib)",
+            "for area in scanResult",
+            "   print(\"Memory area containg vulnerability: \" + area)",
+            "end for"
+        ]
+    },
+    "scan_address": {
+        "description": "Returns a `string` containing information about each vulnerability in the provided library and memory area. In case the scanning fails this method will return `null`.",
+        "example": [
+            "metax = include_lib(\"/lib/metaxploit.so\")",
+            "metaLib = load(metax, \"/lib/init.so\")",
+            "scanResult = scan(metax, metaLib)",
+            "scanAddress = scan_address(metax, metaLib, scanResult[0])",
+            "segments = split(scanAddress, \"Unsafe check: \")[1:]",
+            "exploits = []",
+            "for segment in segments",
+            "   labelStart = indexOf(segment, \"<b>\")",
+            "   labelEnd = indexOf(segment, \"</b>\")",
+            "   push(exploits, segment[labelStart + 3: labelEnd])",
+            "end for",
+            "print(\"Available vulnerabilities: \" + join(exploits, \", \"))"
+        ]
+    },
+    "sniffer": {
+        "description": "The terminal listens to the network packets of any connection that passes through the computer. When any connection information gets captured, it will print a `string` with the obtained data. In case `saveEncSource` is `true` it will download the source code of the script responsible for encoding. In case the operation fails this method will return `null`.",
+        "example": [
+            "metax = include_lib(\"/lib/metaxploit.so\")",
+            "result = sniffer(metax)",
+            "print(result)"
+        ]
     }
 }

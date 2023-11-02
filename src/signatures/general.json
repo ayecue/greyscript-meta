@@ -2331,5 +2331,132 @@
         "returns": [
             "string"
         ]
+    },
+    "load": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaxploit"
+            },
+            {
+                "label": "path",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "metaLib",
+            "null"
+        ]
+    },
+    "net_use": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaxploit"
+            },
+            {
+                "label": "ip",
+                "type": "string"
+            },
+            {
+                "label": "port",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "netSession",
+            "null"
+        ]
+    },
+    "rshell_client": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaxploit"
+            },
+            {
+                "label": "ip",
+                "type": "string"
+            },
+            {
+                "label": "port",
+                "type": "number",
+                "default": "1222"
+            },
+            {
+                "label": "processName",
+                "type": "string",
+                "default": "\"rshell_client\""
+            }
+        ],
+        "returns": [
+            "string",
+            "number"
+        ]
+    },
+    "rshell_server": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaxploit"
+            }
+        ],
+        "returns": [
+            "string",
+            "list:shell"
+        ]
+    },
+    "scan": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaxploit"
+            },
+            {
+                "label": "metaLib",
+                "type": "metaLib"
+            }
+        ],
+        "returns": [
+            "list:string",
+            "null"
+        ]
+    },
+    "scan_address": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaxploit"
+            },
+            {
+                "label": "metaLib",
+                "type": "metaLib"
+            },
+            {
+                "label": "memoryAddress",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "sniffer": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaxploit"
+            },
+            {
+                "label": "saveEncSource",
+                "type": "number",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
     }
 }
