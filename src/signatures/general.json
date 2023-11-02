@@ -2019,5 +2019,317 @@
             "number",
             "null"
         ]
+    },
+    "chmod": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            },
+            {
+                "label": "perms",
+                "type": "string"
+            },
+            {
+                "label": "recursive",
+                "type": "number",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "copy": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            },
+            {
+                "label": "path",
+                "type": "string",
+                "default": "\"\""
+            },
+            {
+                "label": "name",
+                "type": "string",
+                "default": "\"\""
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "null"
+        ]
+    },
+    "move": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            },
+            {
+                "label": "path",
+                "type": "string"
+            },
+            {
+                "label": "name",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "null"
+        ]
+    },
+    "rename": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            },
+            {
+                "label": "name",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "number"
+        ]
+    },
+    "path": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "is_folder": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "parent": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "file",
+            "null"
+        ]
+    },
+    "name": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "allow_import": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "get_content": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "set_content": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            },
+            {
+                "label": "content",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "null"
+        ]
+    },
+    "is_binary": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "has_permission": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            },
+            {
+                "label": "perms",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "delete": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "get_folders": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "list:file"
+        ]
+    },
+    "get_files": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "list:file"
+        ]
+    },
+    "permissions": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "owner": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "set_owner": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            },
+            {
+                "label": "owner",
+                "type": "string"
+            },
+            {
+                "label": "recursive",
+                "type": "number",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "number",
+            "string",
+            "null"
+        ]
+    },
+    "group": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "set_group": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            },
+            {
+                "label": "group",
+                "type": "string"
+            },
+            {
+                "label": "recursive",
+                "type": "number",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "size": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
     }
 }
