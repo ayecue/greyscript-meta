@@ -1438,5 +1438,47 @@
             "result = sniffer(metax)",
             "print(result)"
         ]
+    },
+    "overflow": {
+        "description": "Exploits vulnerabilities. The returned value can be of various data types. Therefore the usage of `typeof` is advisable. `optArgs` is required when changing a password or obtaining a `computer` via a router. It should be the desired password or LAN IP, respectively.",
+        "example": [
+            "metax = include_lib(\"/lib/metaxploit.so\")",
+            "metaLib = load(metax, \"/lib/init.so\")",
+            "scanResult = scan(metax, metaLib)",
+            "target = scanResult[0]",
+            "scanAddress = scan_address(metax, metaLib, target)",
+            "segments = split(scanAddress, \"Unsafe check: \")",
+            "exploit = null",
+           " for segment in segments",
+            "   hasRequirement = indexOf(segment, \"*\") != null",
+            "   if (not hasRequirement) then",
+            "      labelStart = indexOf(segment, \"<b>\")",
+            "      labelEnd = indexOf(segment, \"</b>\")",
+            "      exploit = segment[labelStart + 3: labelEnd]",
+            "   end if",
+            "end for",
+            "if (exploit) then",
+            "   print(\"Exploiting... \" + target + \":\" + exploit)",
+            "   print(overflow(metaLib, target, exploit))",
+            "else",
+            "   print(\"No exploit found with zero requirements\")",
+            "end if"
+        ]
+    },
+    "version": {
+        "description": "Returns a `string` containing the version number of the library. Here is an example of a version number: `\"1.0.0\"`",
+        "example": [
+            "metax = include_lib(\"/lib/metaxploit.so\")",
+            "metaLib = load(metax, \"/lib/init.so\")",
+            "print(\"Init.so version: \" + version(metaLib))"
+        ]
+    },
+    "lib_name": {
+        "description": "Returns a `string` containing the name of the library. Here is an example of a name: `\"init.so\"`",
+        "example": [
+            "metax = include_lib(\"/lib/metaxploit.so\")",
+            "metaLib = load(metax, \"/lib/init.so\")",
+            "print(\"Name for library is: \" + lib_name(metaLib))"
+        ]
     }
 }

@@ -2458,5 +2458,56 @@
             "string",
             "null"
         ]
+    },
+    "overflow": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaLib"
+            },
+            {
+                "label": "memoryAddress",
+                "type": "string"
+            },
+            {
+                "label": "unsecZone",
+                "type": "string"
+            },
+            {
+                "label": "optArgs",
+                "type": "string",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "shell",
+            "computer",
+            "file",
+            "null"
+        ]
+    },
+    "version": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaLib"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "lib_name": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaLib"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
     }
 }
