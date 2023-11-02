@@ -800,7 +800,7 @@
         "description": "Returns a `list` of `port`s on the `computer` which are active.",
         "example": [
             "router = get_router",
-            "ports = get_ports(get_shell.host_computer)",
+            "ports = get_ports(host_computer(get_shell))",
             "for port in ports",
             "    print(\"Info: \" + router.port_info(port))",
             "end for"
@@ -809,20 +809,20 @@
     "get_name": {
         "description": "Returns the hostname of the machine.",
         "example": [
-            "print get_name(get_shell.host_computer)"
+            "print get_name(host_computer(get_shell))"
         ]
     },
     "lan_ip": {
         "description": "Returns a `string` with the local IP address of the `computer`.",
         "example": [
-            "localIp = lan_ip(get_shell.host_computer)",
+            "localIp = lan_ip(host_computer(get_shell))",
             "print(\"Public ip:\" + localIp)"
         ]
     },
     "public_ip_pc": {
         "description": "Returns a `string` with the public IP address of the `computer`.",
         "example": [
-            "publicIp = public_ip_pc(get_shell.host_computer)",
+            "publicIp = public_ip_pc(host_computer(get_shell))",
             "print(\"Public ip:\" + publicIp)"
         ]
     },
@@ -830,7 +830,7 @@
         "description": "Returns a `file` located at the path provided in the arguments. It can be either relative or absolute. Keep in mind that the `file` returned might be a folder. If there is no `file` existing at the provided path it will return `null`.",
         "example": [
             "filePath = \"/etc/passwd\"",
-            "file = File(get_shell.host_computer, filePath)",
+            "file = File(host_computer(get_shell), filePath)",
             "if file != null then",
             "   print(file.get_content)",
             "else",
@@ -842,7 +842,7 @@
         "description": "Create a folder at the path provided in the arguments. There are certain limitations when it comes to creating a folder. The folder name has to be alphanumeric and below 128 characters. Also, keep in mind that it will fail when there is already a folder in place or you are lacking permissions. Additionally, there is a folder limit of about 250 in each folder and 3125 folders in the computer overall. In case the folder creation fails the method will return a `string` containing the error message which was the cause for the failure. In case of success, it will return `true`.",
         "example": [
             "path = \"/home/user/Desktop\"",
-            "host_computer = get_shell.host_computer",
+            "host_computer = host_computer(get_shell)",
             "createResult = create_folder(host_computer, path, \"myfolder\")",
             "if typeof(createResult) == \"string\" then",
             "   print(\"There was an error when creating the folder: \" + createResult)",
@@ -854,7 +854,7 @@
     "is_network_active": {
         "description": "Returns `true` if the `computer` has internet access. If there is no internet access it will return `false` instead.",
         "example": [
-            "host_computer = get_shell.host_computer",
+            "host_computer = host_computer(get_shell)",
             "if is_network_active(host_computer) then",
             "   print(\"You're connected.\")",
             "else",
@@ -866,7 +866,7 @@
         "description": "Creates an empty text `file` at the path provided in the arguments. There are certain limitations when it comes to file creation. The `file` name has to be alphanumeric and below 128 characters. Also, keep in mind that it will fail when there is already a `file` in place or you are lacking permissions. Additionally, there is a file limit of about 250 in each folder and 3125 files in the computer overall. In case of success, it will return `true`.",
         "example": [
             "path = \"/home/user/Desktop\"",
-            "host_computer = get_shell.host_computer",
+            "host_computer = host_computer(get_shell)",
             "createResult = touch(host_computer, path, \"myFile.txt\")",
             "if typeof(createResult) == \"string\" then",
             "   print(\"There was an error when creating the file: \" + createResult)",
@@ -878,7 +878,7 @@
     "show_procs": {
         "description": "Returns a `string` with an overview of all active processes on the `computer`. It contains information about the user, PID, CPU, memory and command.",
         "example": [
-            "host_computer = get_shell.host_computer",
+            "host_computer = host_computer(get_shell)",
             "procs = show_procs(host_computer)",
             "list = procs.split(char(10))[1:]",
             "processes = []",
@@ -898,7 +898,7 @@
     "network_devices": {
         "description": "Returns a `string` containing all network devices available on the `computer`. Each item provides information about interface name, chipset and if monitoring support is enabled.",
         "example": [
-            "host_computer = get_shell.host_computer",
+            "host_computer = host_computer(get_shell)",
             "devices = network_devices(host_computer)",
             "deviceList = devices.split(char(10))",
             "for item in deviceList",
@@ -909,7 +909,7 @@
     "change_password": {
         "description": "Change the password of an existing user on the `computer`. It is necessary to be root to be able to successfully change the password. Additionally, keep in mind that passwords can only include alphanumeric characters and cannot exceed 15 characters. In case the password change fails this method will return a `string` containing information on why it failed. If the change succeeded it will return `true`.",
         "example": [
-            "host_computer = get_shell(\"root\", \"test\").host_computer",
+            "host_computer = host_computer(get_shell(\"root\", \"test\"))",
             "changeResult = change_password(host_computer, \"test\", \"newPassword\")",
             "if typeof(changeResult) == \"string\" then",
             "   print(\"There was an error when changing the password: \" + changeResult)",
@@ -921,7 +921,7 @@
     "create_user": {
         "description": "Creates a user on the `computer`, with the specified name and password. It is necessary to be root to be able to successfully create a user. Additionally, keep in mind that neither username nor password can exceed more than 15 characters and both need to be alphanumeric. There cannot be more than 15 users created on the same `computer`. In case the creation fails this method will return a `string` containing the reason for the failure. Otherwise, it will return `true`.",
         "example": [
-            "host_computer = get_shell(\"root\", \"test\").host_computer",
+            "host_computer = host_computer(get_shell(\"root\", \"test\"))",
             "creationResult = create_user(host_computer, \"newUser\", \"123\")",
             "if typeof(creationResult) == \"string\" then",
             "   print(\"There was an error when creating an user: \" + creationResult)",
@@ -933,7 +933,7 @@
     "delete_user": {
         "description": "It deletes the indicated user from the `computer`. It can optionally also delete the home folder related to the user. By default the home folder will not be deleted. It is necessary to be root to be able to successfully delete a user. Keep in mind that you cannot delete the root user. In case the deletion fails this method will return a `string` containing the cause of failure. Otherwise, it will return `true`.",
         "example": [
-            "host_computer = get_shell(\"root\", \"test\").host_computer",
+            "host_computer = host_computer(get_shell(\"root\", \"test\"))",
             "deletionResult = delete_user(host_computer, \"test\", true)",
             "if typeof(deletionResult) == \"string\" then",
             "   print(\"There was an error when deleting an user: \" + deletionResult)",
@@ -945,7 +945,7 @@
     "create_group": {
         "description": "Create a new group associated with an existing user on the `computer`. It is necessary to be root to be able to successfully create a group. There are a few limitations when creating a group such as a character limit of 15 and that the group name may only contain alphanumeric characters. In case the group creation fails this method will return a `string` containing the cause of failure. Otherwise, it will return `true`.",
         "example": [
-            "host_computer = get_shell(\"root\", \"test\").host_computer",
+            "host_computer = host_computer(get_shell(\"root\", \"test\"))",
             "creationResult = create_group(host_computer, \"test\", \"staff\")",
             "if typeof(creationResult) == \"string\" then",
             "   print(\"There was an error when creating a group: \" + creationResult)",
@@ -957,7 +957,7 @@
     "delete_group": {
         "description": "Delete an existing group associated with an existing user on the `computer`. It is necessary to be root to be able to successfully delete a group. In case the group deletion fails this method will return a `string` containing the cause of failure. Otherwise, it will return `true`.",
         "example": [
-            "host_computer = get_shell(\"root\", \"test\").host_computer",
+            "host_computer = host_computer(get_shell(\"root\", \"test\"))",
             "deletionResult = delete_group(host_computer, \"test\", \"staff\")",
             "if typeof(deletionResult) == \"string\" then",
             "   print(\"There was an error when deleting a group: \" + deletionResult)",
@@ -969,7 +969,7 @@
     "groups": {
         "description": "Returns a `string` containing groups associated with an existing user on the `computer`.",
         "example": [
-            "host_computer = get_shell(\"root\", \"test\").host_computer",
+            "host_computer = host_computer(get_shell(\"root\", \"test\"))",
             "create_group(host_computer, \"root\", \"staff\")",
             "groups = groups(host_computer, \"root\")",
             "listOfGroups = groups.split(char(10))",
@@ -979,7 +979,7 @@
     "close_program": {
         "description": "Closes a program associated with the provided PID. You can see the `list` of active programs by either using `show_procs` or typing ps into your terminal. To close a program you need to be either owner of the running process or a root. In case the closing of a program fails this method will return a `string` containing the cause of failure. Otherwise, it will return `true`.",
         "example": [
-            "host_computer = get_shell(\"root\", \"test\").host_computer",
+            "host_computer = host_computer(get_shell(\"root\", \"test\"))",
             "closeResult = close_program(host_computer, \"random-PID\")",
             "if typeof(closeResult) == \"string\" then",
             "   print(\"There was an error when closing a program: \" + closeResult)",
@@ -991,7 +991,7 @@
     "wifi_networks": {
         "description": "Returns a `list` of the Wi-Fi networks that are available for the provided interface. Each item in the `list` is a `string` containing information on the BSSID, PWR and ESSID. If no interface is provided it will return null.",
         "example": [
-            "host_computer = get_shell(\"root\", \"test\").host_computer",
+            "host_computer = host_computer(get_shell(\"root\", \"test\"))",
             "networks = wifi_networks(host_computer, \"wlan0\")",
             "result = []",
             "for network in networks",
@@ -1008,7 +1008,7 @@
     "connect_wifi": {
        "description": "Connect to the indicated Wifi network. It is not possible to connect to a new Wifi while being logged in as a guest. If connecting to a new Wifi fails this method will return a `string` containing the cause of failure. Otherwise, it will return `true`. Wifis can be found via `wifi_networks` or by typing iwlist as a command in the terminal.",
        "example": [
-            "host_computer = get_shell.host_computer",
+            "host_computer = host_computer(get_shell)",
             "networks = wifi_networks(host_computer)",
             "firstNetwork = networks[0].split(\" \")",
             "BSSID = firstNetwork[0]",
@@ -1024,7 +1024,7 @@
     "connect_ethernet": {
         "description": "Set up a new IP address on the `computer` through the ethernet connection. It is not possible to set up a new IP address while being logged in as a guest. On failure, this method will return a `string` containing the cause. Otherwise, it will return `null`.",
         "example": [
-            "host_computer = get_shell.host_computer",
+            "host_computer = host_computer(get_shell)",
             "connectionResult = connect_ethernet(host_computer, \"eth0\", \"192.168.0.4\", \"192.168.0.1\")",
             "if typeof(connectionResult) == \"string\" then",
             "   print(\"There was an error while connecting: \" + connectionResult)",
@@ -1036,7 +1036,7 @@
     "network_gateway": {
         "description":  "Returns a `string` with the gateway IP address configured on the `computer`.",
         "example": [
-            "host_computer = get_shell.host_computer",
+            "host_computer = host_computer(get_shell)",
             "gatewayIp = network_gateway(host_computer)",
             "print(\"Gatway IP: \" + gatewayIp)"
         ]
@@ -1044,9 +1044,79 @@
     "active_net_card": {
         "description": "Returns a `string` which contains either the keyword `\"WIFI\"` or `\"ETHERNET\"` depending through which connection type your `computer` is connected by.",
         "example": [
-            "host_computer = get_shell.host_computer",
+            "host_computer = host_computer(get_shell)",
             "netCard = active_net_card(host_computer)",
             "print(\"Connected by: \" + netCard)"
+        ]
+    },
+    "aircrack": {
+        "description": "Returns a `string` containing the password  based on the file which got generated via aireplay. In case of failure, it will return `null` instead.",
+        "example": [
+            "crypto = include_lib(\"/lib/crypto.so\")",
+            "networks = wifi_networks(host_computer(get_shell), \"wlan0\")",
+            "firstNetwork = networks[1].split(\" \")",
+            "bssid = firstNetwork[0]",
+            "pwr = firstNetwork[1][:-1].to_int",
+            "essid = firstNetwork[2]",
+            "aireplayResult = aireplay(crypto, bssid, essid, 300000 / pwr)",
+            "if (aireplayResult == null) then",
+            "   result = aircrack(crypto, home_dir + \"/file.cap\")",
+            "   print(result)",
+            "end if"
+        ]
+    },
+    "airmon": {
+        "description": "Enables or disables the monitor mode of a network device. The options parameter can only be `\"start\"` or `\"stop\"`. Monitor mode can only be enabled on Wifi cards. If it wasn't possible to enable or disable the monitor mode this method will return a `string` containing the reason. Otherwise, it will return `true`.",
+        "example": [
+            "crypto = include_lib(\"/lib/crypto.so\")",
+            "airmonResult = airmon(crypto, \"/start\", \"wlan0\")",
+            "if typeof(airmonResult) == \"string\" then",
+            "   print(\"There was an error while switching monitoring mode: \" + airmonResult)",
+            "else",
+            "   print(\"Monitoring mode switched successfully.\")",
+            "end if"
+        ]
+    },
+    "aireplay": {
+        "description": "Used to inject frames on wireless interfaces. Once the command with `\"Control+C\"` is stopped, it will save the captured information in a text file called `\"file.cap\"` in the path where the terminal is currently located. Alternatively, a maximum of captured `acks` can be specified for the command to stop automatically, saving the `\"file.cap\"` file as described above. To figure out how many ACKs are required you can use the following formula: `\"300000 / [Wifi PWR]\"`. If there is an error, a `string` will be returned with the message indicating the problem. On success, it will return `null`.",
+        "example": [
+            "crypto = include_lib(\"/lib/crypto.so\")",
+            "networks = wifi_networks(host_computer(get_shell), \"wlan0\")",
+            "for index in range(0, networks.len - 1)",
+            "   print(index + \".) \" + networks[index])",
+            "end for",
+            "selectedIndex = user_input(\"Select Wifi: \").to_int",
+            "if (typeof(selectedIndex) == \"string\" or selectedIndex < 0 or selectedIndex > networks.len - 1) then",
+            "   exit(\"Wrong index!\")",
+            "end if",
+            "parsed = networks[selectedIndex].split(\" \")",
+            "bssid = parsed[0]",
+            "pwr = parsed[1][:-1].to_int",
+            "essid = parsed[2]",
+            "potentialAcks = 300000 / pwr",
+            "aireplay(crypto, bssid, essid, potentialAcks)"
+        ]
+    },
+    "decipher": {
+        "description": "Returns a decrypted password via the provided password md5 hash. Keep in mind that this method is not decrypting a password but rather checking for existing passwords within the game world with a matching md5 hash. So in case a password does not exist in the game world the decryption will fail. On failure, this method will return `null`.",
+        "example": [
+            "crypto = include_lib(\"/lib/crypto.so\")",
+            "host_computer = host_computer(get_shell(\"root\", \"test\"))",
+            "passwdContent = get_content(File(host_computer, \"/etc/passwd\"))",
+            "firstAccount = passwdContent.split(char(10))[0]",
+            "parsed = firstAccount.split(\":\")",
+            "username = parsed[0]",
+            "passwordHash = parsed[1]",
+            "password = decipher(crypto, passwordHash)",
+            "print(\"User: \" + username)",
+            "print(\"Password: \" + password)"
+        ]
+    },
+    "smtp_user_list": {
+        "description": "Returns a `list` of the existing users on the `computer` where the SMTP service is running. If these users also have an email account registered on the `SMTP` server, it will be indicated in the `list`. SMTP services are usually running on port `25`. In case of failure, this method will return a `string` containing the cause.",
+        "example": [
+            "crypto = include_lib(\"/lib/crypto.so\")",
+            "print(smtp_user_list(crypto, \"192.168.0.4\", 25))"
         ]
     }
 }

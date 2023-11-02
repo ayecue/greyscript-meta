@@ -1859,5 +1859,102 @@
         "returns": [
             "string"
         ]
+    },
+    "aircrack": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "crypto"
+            },
+            {
+                "label": "path",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "airmon": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "crypto"
+            },
+            {
+                "label": "option",
+                "type": "string"
+            },
+            {
+                "label": "device",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "aireplay": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "crypto"
+            },
+            {
+                "label": "bssid",
+                "type": "string"
+            },
+            {
+                "label": "essid",
+                "type": "string"
+            },
+            {
+                "label": "maxAcks",
+                "type": "string",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "decipher": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "crypto"
+            },
+            {
+                "label": "encPass",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "smtp_user_list": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "crypto"
+            },
+            {
+                "label": "ip",
+                "type": "string"
+            },
+            {
+                "label": "port",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "list:string",
+            "string"
+        ]
     }
 }
