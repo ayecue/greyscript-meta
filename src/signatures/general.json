@@ -1956,5 +1956,68 @@
             "list:string",
             "string"
         ]
+    },
+    "get_description": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "ctfEvent"
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "get_template": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "ctfEvent"
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "null"
+        ]
+    },
+    "player_success": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "ctfEvent"
+            }
+        ],
+        "returns": [
+            "number",
+            "null"
+        ]
+    },
+    "get_creator_name": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "ctfEvent"
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "null"
+        ]
+    },
+    "get_mail_content": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "ctfEvent"
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "null"
+        ]
     }
 }

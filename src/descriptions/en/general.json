@@ -1118,5 +1118,20 @@
             "crypto = include_lib(\"/lib/crypto.so\")",
             "print(smtp_user_list(crypto, \"192.168.0.4\", 25))"
         ]
+    },
+    "get_description": {
+        "description": "Get CTF event description."
+    },
+    "get_template": {
+        "description": "Get CTF event template."
+    },
+    "player_success": {
+        "description": "Checks if CTF event got completed successfully."
+    },
+    "get_creator_name": {
+        "description": "The the name of the CTF event creator."
+    },
+    "get_mail_content": {
+        "description": "Get mail content for CTF event."
     }
 }
