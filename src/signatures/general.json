@@ -2711,5 +2711,42 @@
         "returns": [
             "string"
         ]
+    },
+    "install_service": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "service"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "start_service": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "service"
+            }
+        ],
+        "returns": [
+            "number",
+            "string",
+            "null"
+        ]
+    },
+    "stop_service": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "service"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
     }
 }
