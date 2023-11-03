@@ -3008,5 +3008,191 @@
             "number",
             "string"
         ]
+    },
+    "list_coins": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "wallet"
+            }
+        ],
+        "returns": [
+            "list:string",
+            "string",
+            "number"
+        ]
+    },
+    "get_balance": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "wallet"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "buy_coin": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "wallet"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            },
+            {
+                "label": "coinAmount",
+                "type": "number"
+            },
+            {
+                "label": "unitPrice",
+                "type": "number"
+            },
+            {
+                "label": "subwalletUser",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "sell_coin": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "wallet"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            },
+            {
+                "label": "coinAmount",
+                "type": "number"
+            },
+            {
+                "label": "unitPrice",
+                "type": "number"
+            },
+            {
+                "label": "subwalletUser",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "get_pending_trade": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "wallet"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string",
+            "list:any"
+        ]
+    },
+    "cancel_pending_trade": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "wallet"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "number"
+        ]
+    },
+    "get_global_offers": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "wallet"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string",
+            "map:any"
+        ]
+    },
+    "list_global_coins": {
+        "returns": [
+            "number",
+            "list:string"
+        ]
+    },
+    "show_nodes": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "wallet"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string",
+            "number"
+        ]
+    },
+    "reset_password": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "wallet"
+            },
+            {
+                "label": "newPassword",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "get_pin": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "wallet"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
     }
 }
