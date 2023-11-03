@@ -1068,5 +1068,2232 @@
         "returns": [
             "ctfEvent"
         ]
+    },
+    "check_upgrade": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "aptClient"
+            },
+            {
+                "label": "filePath",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "number"
+        ]
+    },
+    "show": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "aptClient"
+            },
+            {
+                "label": "repoName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "search": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "aptClient"
+            },
+            {
+                "label": "packageName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "update": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "aptClient"
+            }
+        ],
+        "returns": [
+            "string",
+            "number"
+        ]
+    },
+    "add_repo": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "aptClient"
+            },
+            {
+                "label": "repo",
+                "type": "string"
+            },
+            {
+                "label": "port",
+                "type": "number",
+                "default": "1542.0"
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "del_repo": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "aptClient"
+            },
+            {
+                "label": "repo",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "install": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "aptClient"
+            },
+            {
+                "label": "packageName",
+                "type": "string"
+            },
+            {
+                "label": "installPath",
+                "type": "string",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "coin_price": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "blockchain"
+            }
+        ],
+        "returns": [
+            "null",
+            "string",
+            "number"
+        ]
+    },
+    "show_history": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "blockchain"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "map:string",
+            "string",
+            "null"
+        ]
+    },
+    "amount_mined": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "blockchain"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "null"
+        ]
+    },
+    "get_coin": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "blockchain"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "password",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "coin"
+        ]
+    },
+    "login_wallet": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "blockchain"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "password",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "wallet",
+            "null"
+        ]
+    },
+    "create_wallet": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "blockchain"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "password",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "wallet"
+        ]
+    },
+    "delete_coin": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "blockchain"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "password",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "set_cycle_mining": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "coin"
+            },
+            {
+                "label": "rateHours",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "number",
+            "null"
+        ]
+    },
+    "get_cycle_mining": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "coin"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "get_reward": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "coin"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "set_reward": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "coin"
+            },
+            {
+                "label": "coinAmount",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "number",
+            "string",
+            "null"
+        ]
+    },
+    "transaction": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "coin"
+            },
+            {
+                "label": "subWalletOrig",
+                "type": "string"
+            },
+            {
+                "label": "subWalletDest",
+                "type": "string"
+            },
+            {
+                "label": "valAmount",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "null"
+        ]
+    },
+    "create_subwallet": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "coin"
+            },
+            {
+                "label": "walletID",
+                "type": "string"
+            },
+            {
+                "label": "pin",
+                "type": "string"
+            },
+            {
+                "label": "subWalletUser",
+                "type": "string"
+            },
+            {
+                "label": "subWalletPass",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "number"
+        ]
+    },
+    "get_subwallet": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "coin"
+            },
+            {
+                "label": "subWalletUser",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string",
+            "subWallet",
+            "null"
+        ]
+    },
+    "get_subwallets": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "coin"
+            }
+        ],
+        "returns": [
+            "number",
+            "string",
+            "list:subWallet"
+        ]
+    },
+    "set_address": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "coin"
+            },
+            {
+                "label": "address",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string",
+            "null"
+        ]
+    },
+    "get_address": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "coin"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "get_mined_coins": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "coin"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "get_ports": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            }
+        ],
+        "returns": [
+            "list:port"
+        ]
+    },
+    "get_name": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "lan_ip": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "public_ip_pc": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "File": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "path",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "file",
+            "null"
+        ]
+    },
+    "create_folder": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "path",
+                "type": "string"
+            },
+            {
+                "label": "folder",
+                "type": "nameFolder",
+                "default": "\"newFolder\""
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "null"
+        ]
+    },
+    "is_network_active": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "touch": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "path",
+                "type": "string"
+            },
+            {
+                "label": "fileName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "show_procs": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "network_devices": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "change_password": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "pass",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "create_user": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "pass",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "delete_user": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "removeHome",
+                "type": "number",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "create_group": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "group",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "delete_group": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "group",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "groups": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "close_program": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "pid",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "wifi_networks": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "interface",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "list:string",
+            "null"
+        ]
+    },
+    "connect_wifi": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "netDevice",
+                "type": "string"
+            },
+            {
+                "label": "bssid",
+                "type": "string"
+            },
+            {
+                "label": "essid",
+                "type": "string"
+            },
+            {
+                "label": "pass",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string",
+            "null"
+        ]
+    },
+    "connect_ethernet": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            },
+            {
+                "label": "netDevice",
+                "type": "string"
+            },
+            {
+                "label": "localIp",
+                "type": "string"
+            },
+            {
+                "label": "gateway",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string",
+            "null"
+        ]
+    },
+    "network_gateway": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "active_net_card": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "computer"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "aircrack": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "crypto"
+            },
+            {
+                "label": "path",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "airmon": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "crypto"
+            },
+            {
+                "label": "option",
+                "type": "string"
+            },
+            {
+                "label": "device",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "aireplay": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "crypto"
+            },
+            {
+                "label": "bssid",
+                "type": "string"
+            },
+            {
+                "label": "essid",
+                "type": "string"
+            },
+            {
+                "label": "maxAcks",
+                "type": "string",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "decipher": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "crypto"
+            },
+            {
+                "label": "encPass",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "smtp_user_list": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "crypto"
+            },
+            {
+                "label": "ip",
+                "type": "string"
+            },
+            {
+                "label": "port",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "list:string",
+            "string"
+        ]
+    },
+    "get_description": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "ctfEvent"
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "get_template": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "ctfEvent"
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "null"
+        ]
+    },
+    "player_success": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "ctfEvent"
+            }
+        ],
+        "returns": [
+            "number",
+            "null"
+        ]
+    },
+    "get_creator_name": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "ctfEvent"
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "null"
+        ]
+    },
+    "get_mail_content": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "ctfEvent"
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "null"
+        ]
+    },
+    "chmod": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            },
+            {
+                "label": "perms",
+                "type": "string"
+            },
+            {
+                "label": "recursive",
+                "type": "number",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "copy": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            },
+            {
+                "label": "path",
+                "type": "string",
+                "default": "\"\""
+            },
+            {
+                "label": "name",
+                "type": "string",
+                "default": "\"\""
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "null"
+        ]
+    },
+    "move": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            },
+            {
+                "label": "path",
+                "type": "string"
+            },
+            {
+                "label": "name",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "null"
+        ]
+    },
+    "rename": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            },
+            {
+                "label": "name",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "number"
+        ]
+    },
+    "path": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "is_folder": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "parent": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "file",
+            "null"
+        ]
+    },
+    "name": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "allow_import": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "get_content": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "set_content": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            },
+            {
+                "label": "content",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "null"
+        ]
+    },
+    "is_binary": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "has_permission": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            },
+            {
+                "label": "perms",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "delete": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "get_folders": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "list:file"
+        ]
+    },
+    "get_files": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "list:file"
+        ]
+    },
+    "permissions": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "owner": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "set_owner": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            },
+            {
+                "label": "owner",
+                "type": "string"
+            },
+            {
+                "label": "recursive",
+                "type": "number",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "number",
+            "string",
+            "null"
+        ]
+    },
+    "group": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "set_group": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            },
+            {
+                "label": "group",
+                "type": "string"
+            },
+            {
+                "label": "recursive",
+                "type": "number",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "size": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "file"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "load": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaxploit"
+            },
+            {
+                "label": "path",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "metaLib",
+            "null"
+        ]
+    },
+    "net_use": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaxploit"
+            },
+            {
+                "label": "ip",
+                "type": "string"
+            },
+            {
+                "label": "port",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "netSession",
+            "null"
+        ]
+    },
+    "rshell_client": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaxploit"
+            },
+            {
+                "label": "ip",
+                "type": "string"
+            },
+            {
+                "label": "port",
+                "type": "number",
+                "default": "1222"
+            },
+            {
+                "label": "processName",
+                "type": "string",
+                "default": "\"rshell_client\""
+            }
+        ],
+        "returns": [
+            "string",
+            "number"
+        ]
+    },
+    "rshell_server": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaxploit"
+            }
+        ],
+        "returns": [
+            "string",
+            "list:shell"
+        ]
+    },
+    "scan": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaxploit"
+            },
+            {
+                "label": "metaLib",
+                "type": "metaLib"
+            }
+        ],
+        "returns": [
+            "list:string",
+            "null"
+        ]
+    },
+    "scan_address": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaxploit"
+            },
+            {
+                "label": "metaLib",
+                "type": "metaLib"
+            },
+            {
+                "label": "memoryAddress",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "sniffer": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaxploit"
+            },
+            {
+                "label": "saveEncSource",
+                "type": "number",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "string",
+            "null"
+        ]
+    },
+    "overflow": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaLib"
+            },
+            {
+                "label": "memoryAddress",
+                "type": "string"
+            },
+            {
+                "label": "unsecZone",
+                "type": "string"
+            },
+            {
+                "label": "optArgs",
+                "type": "string",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "shell",
+            "computer",
+            "file",
+            "null"
+        ]
+    },
+    "version": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaLib"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "lib_name": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaLib"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "dump_lib": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "netSession"
+            }
+        ],
+        "returns": [
+            "metaLib"
+        ]
+    },
+    "get_num_conn_gateway": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "netSession"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "get_num_portforward": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "netSession"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "get_num_users": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "netSession"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "is_any_active_user": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "netSession"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "is_root_active_user": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "netSession"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "device_ports": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            },
+            {
+                "label": "ip",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "list:port",
+            "null"
+        ]
+    },
+    "devices_lan_ip": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            }
+        ],
+        "returns": [
+            "list:string"
+        ]
+    },
+    "bssid_name": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "essid_name": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "firewall_rules": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            }
+        ],
+        "returns": [
+            "list:string"
+        ]
+    },
+    "kernel_version": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "local_ip": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "public_ip": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "used_ports": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            }
+        ],
+        "returns": [
+            "list:port"
+        ]
+    },
+    "ping_port": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            },
+            {
+                "label": "port",
+                "type": "number"
+            }
+        ],
+        "returns": [
+            "port",
+            "null"
+        ]
+    },
+    "port_info": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "router"
+            },
+            {
+                "label": "port",
+                "type": "port"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "install_service": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "service"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "start_service": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "service"
+            }
+        ],
+        "returns": [
+            "number",
+            "string",
+            "null"
+        ]
+    },
+    "stop_service": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "service"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "host_computer": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "shell"
+            }
+        ],
+        "returns": [
+            "computer",
+            "null"
+        ]
+    },
+    "start_terminal": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "shell"
+            }
+        ],
+        "returns": [
+            "null"
+        ]
+    },
+    "build": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "shell"
+            },
+            {
+                "label": "pathSource",
+                "type": "string"
+            },
+            {
+                "label": "pathBinary",
+                "type": "string"
+            },
+            {
+                "label": "allowImport",
+                "type": "number",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "connect_service": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "shell"
+            },
+            {
+                "label": "ip",
+                "type": "string"
+            },
+            {
+                "label": "port",
+                "type": "number"
+            },
+            {
+                "label": "user",
+                "type": "string"
+            },
+            {
+                "label": "pass",
+                "type": "string"
+            },
+            {
+                "label": "service",
+                "type": "string",
+                "default": "\"ssh\""
+            }
+        ],
+        "returns": [
+            "shell",
+            "ftpShell",
+            "string",
+            "null"
+        ]
+    },
+    "launch": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "shell"
+            },
+            {
+                "label": "program",
+                "type": "string"
+            },
+            {
+                "label": "params",
+                "type": "string",
+                "opt": true
+            }
+        ],
+        "returns": [
+            "string",
+            "number"
+        ]
+    },
+    "ping": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "shell"
+            },
+            {
+                "label": "ip",
+                "type": "string",
+                "opt": false
+            }
+        ],
+        "returns": [
+            "string",
+            "number"
+        ]
+    },
+    "scp": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "shell"
+            },
+            {
+                "label": "file",
+                "type": "string"
+            },
+            {
+                "label": "folder",
+                "type": "string"
+            },
+            {
+                "label": "remoteShell",
+                "type": "shell"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "get_balance_subwallet": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "subWallet"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "set_info": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "subWallet"
+            },
+            {
+                "label": "info",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string",
+            "null"
+        ]
+    },
+    "get_info": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "subWallet"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "delete_subwallet": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "subWallet"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "get_user": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "subWallet"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "last_transaction": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "subWallet"
+            }
+        ],
+        "returns": [
+            "list:any",
+            "number"
+        ]
+    },
+    "mining": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "subWallet"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "check_password": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "subWallet"
+            },
+            {
+                "label": "password",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "wallet_username": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "subWallet"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "list_coins": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "wallet"
+            }
+        ],
+        "returns": [
+            "list:string",
+            "string",
+            "number"
+        ]
+    },
+    "get_balance": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "wallet"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "buy_coin": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "wallet"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            },
+            {
+                "label": "coinAmount",
+                "type": "number"
+            },
+            {
+                "label": "unitPrice",
+                "type": "number"
+            },
+            {
+                "label": "subwalletUser",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "sell_coin": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "wallet"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            },
+            {
+                "label": "coinAmount",
+                "type": "number"
+            },
+            {
+                "label": "unitPrice",
+                "type": "number"
+            },
+            {
+                "label": "subwalletUser",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "get_pending_trade": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "wallet"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string",
+            "list:any"
+        ]
+    },
+    "cancel_pending_trade": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "wallet"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "number"
+        ]
+    },
+    "get_global_offers": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "wallet"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string",
+            "map:any"
+        ]
+    },
+    "list_global_coins": {
+        "returns": [
+            "number",
+            "list:string"
+        ]
+    },
+    "show_nodes": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "wallet"
+            },
+            {
+                "label": "coinName",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string",
+            "number"
+        ]
+    },
+    "reset_password": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "wallet"
+            },
+            {
+                "label": "newPassword",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "get_pin": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "wallet"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "delete_mail": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaMail"
+            },
+            {
+                "label": "mailId",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "fetch": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaMail"
+            }
+        ],
+        "returns": [
+            "list:string",
+            "string"
+        ]
+    },
+    "read": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaMail"
+            },
+            {
+                "label": "mailId",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "send": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaMail"
+            },
+            {
+                "label": "emailAddress",
+                "type": "string"
+            },
+            {
+                "label": "subject",
+                "type": "string"
+            },
+            {
+                "label": "message",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "null"
+        ]
+    },
+    "port_number": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "port"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "is_closed": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "port"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "get_lan_ip": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "port"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
     }
 }
