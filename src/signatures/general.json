@@ -2892,5 +2892,121 @@
             "number",
             "string"
         ]
+    },
+    "get_balance_subwallet": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "subWallet"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "set_info": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "subWallet"
+            },
+            {
+                "label": "info",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string",
+            "null"
+        ]
+    },
+    "get_info": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "subWallet"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "delete_subwallet": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "subWallet"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "get_user": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "subWallet"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "last_transaction": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "subWallet"
+            }
+        ],
+        "returns": [
+            "list:any",
+            "number"
+        ]
+    },
+    "mining": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "subWallet"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "check_password": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "subWallet"
+            },
+            {
+                "label": "password",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "wallet_username": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "subWallet"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
     }
 }
