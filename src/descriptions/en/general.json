@@ -1649,5 +1649,68 @@
     },
     "stop_service": {
         "description": "Stop the service and close its associated `port` on the local machine. Returns `true` if the service has been stopped correctly, in case of error a `string` with the details is returned."
+    },
+    "host_computer": {
+        "description": "Returns a `computer` related to the `shell`.",
+        "example": [
+            "shell = get_shell",
+            "computer = host_computer(shell)",
+            "print(\"Computer public IP is: \" + public_ip(computer))"
+        ]
+    },
+    "start_terminal": {
+        "description": "Launches an active terminal. The color of the terminal will change and show the IP of the connected shell. Script execution will be stopped when starting a new terminal unless this is called from another script that was executed via `shell.launch` in which case, you will only enter the shell after closing your root-level script within that terminal window.",
+        "example": [
+            "start_terminal(get_shell)"
+        ]
+    },
+    "build": {
+        "description": "Compiles a plain code file provided in the arguments to a binary. On success, the new binary will be available under the provided build folder. The binary name will be the same as the source file just without file extension. Optionally an allowImport flag can be set which enables to use `import_code` on the binary. All provided paths must be absolute. Returns an empty `string` on success. On failure, it will return a `string` as well but this time containing valuable information on why the compilation failed.",
+        "example": [
+            "shell = get_shell",
+            "buildResult = build(shell, \"/home/test/myprogram.src\", \"/home/test/Desktop\")",
+            "if buildResult != \"\" then",
+            "   print(\"There was an error while compiling: \" + buildResult)",
+            "else",
+            "   print(\"File has been compiled.\")",
+            "end if"
+        ]
+    },
+    "connect_service": {
+        "description": "Returns a `shell` if the connection attempt to the provided IP was successful. This method can only connect to ports running an SSH or FTP service. SSH services usually run on port 22 and FTP services usually on port 21. Keep in mind to pass the right service value depending on which service is going to be used. By default, it will pass SSH as the used service. In case of failure a `string` is going to be returned containing details.",
+        "example": [
+            "shell = get_shell",
+            "connectionResult = connect_service(shell, \"1.1.1.1\", 22, \"test\", \"test\")",
+            "if typeof(connectionResult) != \"shell\" then",
+            "   print(\"There was an error while connecting: \" + connectionResult)",
+            "else",
+            "   print(\"Connected!\")",
+            "end if"
+        ]
+    },
+    "ping": {
+        "description": "Returns `true` if the remote address could be reached, `false` otherwise. Firewalls do not block ping requests.",
+        "example": [
+            "shell = get_shell",
+            "isPingable = ping(shell, \"1.1.1.1\")",
+            "if isPingable then",
+            "   print(\"Ping was successful!\")",
+            "else",
+            "   print(\"Ping failed!\")",
+            "end if"
+        ]
+    },
+    "scp": {
+        "description": "Send a `file` to the `computer` which is related to the provided `shell`. You require permission to read the `file` on the `computer` from which you are uploading and write permissions in the folder of the `computer` you are trying to upload to. In case of failure this method will return a `string` with the cause. Otherwise `true` gets returned.",
+        "example": [
+            "shell = get_shell",
+            "remoteShell = connect_service(shell, \"1.1.1.1\", 22, \"test\", \"test\")",
+            "result = scp(remoteShell, \"/bin/ls\", \"/etc/\", shell)",
+            "if typeof(result) == \"string\" then",
+            "   print(\"There was an error while sending file: \" + result)",
+            "else",
+            "   print(\"File got sent successfully.\")",
+            "end if"
+        ]
     }
 }
