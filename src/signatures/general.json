@@ -3194,5 +3194,73 @@
             "number",
             "string"
         ]
+    },
+    "delete_mail": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaMail"
+            },
+            {
+                "label": "mailId",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "number",
+            "string"
+        ]
+    },
+    "fetch": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaMail"
+            }
+        ],
+        "returns": [
+            "list:string",
+            "string"
+        ]
+    },
+    "read": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaMail"
+            },
+            {
+                "label": "mailId",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
+    },
+    "send": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "metaMail"
+            },
+            {
+                "label": "emailAddress",
+                "type": "string"
+            },
+            {
+                "label": "subject",
+                "type": "string"
+            },
+            {
+                "label": "message",
+                "type": "string"
+            }
+        ],
+        "returns": [
+            "string",
+            "number",
+            "null"
+        ]
     }
 }
