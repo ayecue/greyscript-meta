@@ -3262,5 +3262,38 @@
             "number",
             "null"
         ]
+    },
+    "port_number": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "port"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "is_closed": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "port"
+            }
+        ],
+        "returns": [
+            "number"
+        ]
+    },
+    "get_lan_ip": {
+        "arguments": [
+            {
+                "label": "self",
+                "type": "port"
+            }
+        ],
+        "returns": [
+            "string"
+        ]
     }
 }

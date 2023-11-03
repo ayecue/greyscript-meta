@@ -1829,5 +1829,37 @@
             "   print(\"Mail got send successfully.\")",
             "end if"
         ]
+    },
+    "port_number": {
+        "description": "Returns the `number` which is used for the port.",
+        "example": [
+            "router = get_router",
+            "ports = used_ports(router)",
+            "for port in ports",
+            "   print(\"Port \" + port_number(port) + \" is in use!\")",
+            "end for"
+        ]
+    },
+    "is_closed": {
+        "description": "Returns `true` if this port is closed, `false` if the port is open.",
+        "example": [
+            "router = get_router",
+            "ports = used_ports(router)",
+            "for port in ports",
+            "   state = \"open\"",
+            "   if (is_closed(port)) then state = \"closed\"",
+            "   print(\"Port \" + port_number(port) + \" is \" + state + \"!\")",
+            "end for"
+        ]
+    },
+    "get_lan_ip": {
+        "description": "Returns a `string` containing the local IP address of the computer to which the port is pointing.",
+        "example": [
+            "router = get_router",
+            "ports = used_ports(router)",
+            "for port in ports",
+            "   print(\"Port \" + port_number(port) + \" is pointed to \" + get_lan_ip(port) + \"!\")",
+            "end for"
+        ]
     }
 }
