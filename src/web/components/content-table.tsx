@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-
-import { Signature } from '../../meta';
 import { scrollTo } from '../utils/scrollTo';
+import { Signature } from 'meta-utils';
 
 export interface ContentTableProps {
   signatures: Signature[];

@@ -1,4 +1,5 @@
-import { Descriptions } from '../default/type';
+import { Descriptions } from 'meta-utils';
+
 import Any from './any.json';
 import AptClient from './apt-client.json';
 import Blockchain from './blockchain.json';

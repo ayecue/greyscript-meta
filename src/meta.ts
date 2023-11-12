@@ -1,6 +1,7 @@
-import memoizee from 'memoizee';
+import { Collection } from 'meta-utils';
 
-import { getDescription, getExample } from './descriptions';
+import EN from './descriptions/en/index';
+import enSite from './descriptions/en/site.json';
 import Any from './signatures/any.json';
 import AptClient from './signatures/apt-client.json';
 import Blockchain from './signatures/blockchain.json';
@@ -28,215 +29,53 @@ import String from './signatures/string.json';
 import SubWallet from './signatures/sub-wallet.json';
 import Wallet from './signatures/wallet.json';
 
-export interface SignatureDefinitionArg {
-  label: string;
-  type: string;
-  opt?: boolean;
-  default?: string;
-}
+export const greyscriptMeta = new Collection();
 
-export interface SignatureDefinition {
-  arguments?: SignatureDefinitionArg[];
-  returns: string[];
-  description?: string;
-  example?: string[];
-}
+greyscriptMeta.addSignature('any', Any);
+greyscriptMeta.addSignature('aptClient', AptClient);
+greyscriptMeta.addSignature('blockchain', Blockchain);
+greyscriptMeta.addSignature('ctfEvent', CTFEvent);
+greyscriptMeta.addSignature('class', ClassSignature);
+greyscriptMeta.addSignature('coin', Coin);
+greyscriptMeta.addSignature('computer', Computer);
+greyscriptMeta.addSignature('crypto', Crypto);
+greyscriptMeta.addSignature('file', File);
+greyscriptMeta.addSignature('ftpShell', FtpShell);
+greyscriptMeta.addSignature('function', FunctionSignature);
+greyscriptMeta.addSignature('general', Generic);
+greyscriptMeta.addSignature('list', List);
+greyscriptMeta.addSignature('map', MapSignature);
+greyscriptMeta.addSignature('metaLib', MetaLib);
+greyscriptMeta.addSignature('metaMail', MetaMail);
+greyscriptMeta.addSignature('metaxploit', Metaxploit);
+greyscriptMeta.addSignature('netSession', NetSession);
+greyscriptMeta.addSignature('number', NumberSignature);
+greyscriptMeta.addSignature('port', Port);
+greyscriptMeta.addSignature('router', Router);
+greyscriptMeta.addSignature('service', Service);
+greyscriptMeta.addSignature('shell', Shell);
+greyscriptMeta.addSignature('string', String);
+greyscriptMeta.addSignature('subWallet', SubWallet);
+greyscriptMeta.addSignature('wallet', Wallet);
 
-export type SignatureDefinitionContainer = {
-  [key: string]: SignatureDefinition;
-};
-
-export interface Signature {
-  type: string;
-  definitions: SignatureDefinitionContainer;
-}
-
-export type EnrichContainerFunction = (
-  type: string,
-  container: SignatureDefinitionContainer,
-  language?: string
-) => SignatureDefinitionContainer;
-
-const enrichContainer: EnrichContainerFunction =
-  memoizee<EnrichContainerFunction>(
-    (type, container, language?) => {
-      return Object.entries(container).reduce(
-        (result: SignatureDefinitionContainer, [name, def]) => ({
-          ...result,
-          [name]: {
-            ...def,
-            description: getDescription(type, name, language),
-            example: getExample(type, name, language)
-          }
-        }),
-        {}
-      );
-    },
-    { length: false, primitive: true }
-  );
-
-export const anyDefinitions = <SignatureDefinitionContainer>(<unknown>Any);
-
-export const signatures: Signature[] = [
-  {
-    type: 'aptClient',
-    definitions: <SignatureDefinitionContainer>(<unknown>AptClient)
-  },
-  {
-    type: 'blockchain',
-    definitions: <SignatureDefinitionContainer>(<unknown>Blockchain)
-  },
-  {
-    type: 'ctfEvent',
-    definitions: <SignatureDefinitionContainer>(<unknown>CTFEvent)
-  },
-  {
-    type: 'class',
-    definitions: <SignatureDefinitionContainer>(<unknown>ClassSignature)
-  },
-  {
-    type: 'coin',
-    definitions: <SignatureDefinitionContainer>(<unknown>Coin)
-  },
-  {
-    type: 'computer',
-    definitions: <SignatureDefinitionContainer>(<unknown>Computer)
-  },
-  {
-    type: 'crypto',
-    definitions: <SignatureDefinitionContainer>(<unknown>Crypto)
-  },
-  {
-    type: 'file',
-    definitions: <SignatureDefinitionContainer>(<unknown>File)
-  },
-  {
-    type: 'ftpShell',
-    definitions: <SignatureDefinitionContainer>(<unknown>FtpShell)
-  },
-  {
-    type: 'function',
-    definitions: <SignatureDefinitionContainer>(<unknown>FunctionSignature)
-  },
-  {
-    type: 'general',
-    definitions: <SignatureDefinitionContainer>(<unknown>Generic)
-  },
-  {
-    type: 'list',
-    definitions: <SignatureDefinitionContainer>(<unknown>List)
-  },
-  {
-    type: 'map',
-    definitions: <SignatureDefinitionContainer>(<unknown>MapSignature)
-  },
-  {
-    type: 'metaLib',
-    definitions: <SignatureDefinitionContainer>(<unknown>MetaLib)
-  },
-  {
-    type: 'metaMail',
-    definitions: <SignatureDefinitionContainer>(<unknown>MetaMail)
-  },
-  {
-    type: 'metaxploit',
-    definitions: <SignatureDefinitionContainer>(<unknown>Metaxploit)
-  },
-  {
-    type: 'netSession',
-    definitions: <SignatureDefinitionContainer>(<unknown>NetSession)
-  },
-  {
-    type: 'number',
-    definitions: <SignatureDefinitionContainer>(<unknown>NumberSignature)
-  },
-  {
-    type: 'port',
-    definitions: <SignatureDefinitionContainer>(<unknown>Port)
-  },
-  {
-    type: 'router',
-    definitions: <SignatureDefinitionContainer>(<unknown>Router)
-  },
-  {
-    type: 'service',
-    definitions: <SignatureDefinitionContainer>(<unknown>Service)
-  },
-  {
-    type: 'shell',
-    definitions: <SignatureDefinitionContainer>(<unknown>Shell)
-  },
-  {
-    type: 'string',
-    definitions: <SignatureDefinitionContainer>(<unknown>String)
-  },
-  {
-    type: 'subWallet',
-    definitions: <SignatureDefinitionContainer>(<unknown>SubWallet)
-  },
-  {
-    type: 'wallet',
-    definitions: <SignatureDefinitionContainer>(<unknown>Wallet)
-  }
-];
-
-export const allTypes: string[] = signatures.map((item) => item.type);
-export const signaturesByType: { [key: string]: SignatureDefinitionContainer } =
-  signatures.reduce((result, item) => {
-    Object.assign(result, {
-      [item.type]: item.definitions
-    });
-    return result;
-  }, {});
-
-export type GetDefinitionsFunction = (
-  types: string[],
-  language?: string
-) => SignatureDefinitionContainer;
-
-export const getDefinitions: GetDefinitionsFunction =
-  memoizee<GetDefinitionsFunction>(
-    (types, language?) => {
-      if (types.includes('any')) {
-        return getDefinitions(allTypes, language);
-      }
-      return types
-        .map((type) => {
-          const [main] = type.split(':');
-          return enrichContainer(main, signaturesByType[main] || {}, language);
-        })
-        .reduce((result, definitions) => {
-          for (const [key, definition] of Object.entries(definitions)) {
-            if (key in result && key in anyDefinitions) {
-              result[key] = {
-                ...anyDefinitions[key],
-                description: getDescription('any', key, language),
-                example: getExample('any', key, language)
-              };
-            } else {
-              result[key] = definition;
-            }
-          }
-          return result;
-        }, {});
-    },
-    { length: false, primitive: true }
-  );
-
-export const getDefinition = (
-  types: string[],
-  property: string,
-  language?: string
-): SignatureDefinition | null => {
-  const definitions = getDefinitions(types, language);
-
-  if (Object.prototype.hasOwnProperty.call(definitions, property)) {
-    return definitions[property];
-  }
-
-  return null;
-};
+greyscriptMeta.addMeta('en', EN);
 
 export const isNative = (types: string[], property: string): boolean => {
-  return !!getDefinition(types, property);
+  return !!greyscriptMeta.getDefinition(types, property);
+};
+
+export const getSiteLanguageFile = (
+  language: string = 'en'
+): Record<string, string> => {
+  switch (language) {
+    case 'en':
+      return enSite;
+    default:
+      throw new Error(`Language "${language}" is unknown.`);
+  }
+};
+
+export const getSiteDescription = (tag: string, language?: string): string => {
+  const lang = getSiteLanguageFile(language);
+  return lang?.[tag];
 };
