@@ -1,6 +1,6 @@
 {
     "name": "greyscript-meta",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "description": "Meta description for GreyScript API",
     "main": "dist/index",
     "typings": "dist/index",
@@ -78,7 +78,7 @@
         "greyhack"
     ],
     "dependencies": {
-        "meta-utils": "^0.1.0",
+        "meta-utils": "^0.2.0",
         "react-in-viewport": "^1.0.0-alpha.30"
     }
 }
