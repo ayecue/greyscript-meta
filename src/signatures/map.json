@@ -21,6 +21,11 @@
             "map:any"
         ]
     },
+    "pull": {
+        "returns": [
+            "any"
+        ]
+    },
     "pop": {
         "returns": [
             "string"

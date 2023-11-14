@@ -63,6 +63,11 @@
             "any"
         ]
       },
+      "pull": {
+        "returns": [
+            "any"
+        ]
+      },
       "pop": {
           "returns": [
               "any"

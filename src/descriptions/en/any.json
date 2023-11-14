@@ -36,6 +36,14 @@
         "print(\"The answer to everything is: \" + list.pop)"
     ]
   },
+  "pull": {
+    "description": "Depending on data type this function will return the first item in the provided value. Additionally, this function removes the last item and therefore mutates the object. To get a better idea about the behaviour look into the `pop` methods related to `list` and `map`.",
+    "example": [
+        "myList = [42, 1, 3]",
+        "answer = myList.pull",
+        "print(\"Answer to everything: \" + answer)"
+    ]
+  },
   "pop": {
     "description": "Depending on data type this function will return the last item in the provided value. Additionally, this function removes the last item and therefore mutates the object. To get a better idea about the behaviour look into the `pop` methods related to `list` and `map`.",
     "example": [
