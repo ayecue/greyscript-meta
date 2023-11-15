@@ -25,14 +25,14 @@
         ]
     },
     "pull": {
-        "description": "Returns and removes the first item in the `list`.  This operation will mutate the `map`.",
+        "description": "Returns and removes the first item in the `map`.  This operation will mutate the `map`.",
         "example": [
             "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
             "print(myMap.pull)"
         ]
     },
     "pop": {
-        "description": "Returns and removes the first item in the `map`. This operation will mutate the `map`.",
+        "description": "Returns and removes the last item in the `map`. This operation will mutate the `map`.",
         "example": [
             "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
             "print(myMap.pop)"
