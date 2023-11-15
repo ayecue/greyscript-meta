@@ -28,7 +28,7 @@
     },
     "pop": {
         "returns": [
-            "string"
+            "any"
         ]
     },
     "shuffle": {
