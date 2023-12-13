@@ -32,31 +32,75 @@ import Wallet from './signatures/wallet.json';
 export const greyscriptMeta = new Collection();
 
 greyscriptMeta.addSignature('any', Any);
-greyscriptMeta.addSignature('aptClient', AptClient);
-greyscriptMeta.addSignature('blockchain', Blockchain);
-greyscriptMeta.addSignature('ctfEvent', CTFEvent);
-greyscriptMeta.addSignature('class', ClassSignature, true);
-greyscriptMeta.addSignature('coin', Coin);
-greyscriptMeta.addSignature('computer', Computer);
-greyscriptMeta.addSignature('crypto', Crypto);
-greyscriptMeta.addSignature('file', File);
-greyscriptMeta.addSignature('ftpShell', FtpShell);
-greyscriptMeta.addSignature('function', FunctionSignature, true);
-greyscriptMeta.addSignature('general', Generic, true);
+greyscriptMeta.addSignature('aptClient', AptClient, {
+  inerhitsFrom: ['map']
+});
+greyscriptMeta.addSignature('blockchain', Blockchain, {
+  inerhitsFrom: ['map']
+});
+greyscriptMeta.addSignature('ctfEvent', CTFEvent, {
+  inerhitsFrom: ['map']
+});
+greyscriptMeta.addSignature('class', ClassSignature, {
+  isInternalType: true
+});
+greyscriptMeta.addSignature('coin', Coin, {
+  inerhitsFrom: ['map']
+});
+greyscriptMeta.addSignature('computer', Computer, {
+  inerhitsFrom: ['map']
+});
+greyscriptMeta.addSignature('crypto', Crypto, {
+  inerhitsFrom: ['map']
+});
+greyscriptMeta.addSignature('file', File, {
+  inerhitsFrom: ['map']
+});
+greyscriptMeta.addSignature('ftpShell', FtpShell, {
+  inerhitsFrom: ['map']
+});
+greyscriptMeta.addSignature('function', FunctionSignature, {
+  isInternalType: true
+});
+greyscriptMeta.addSignature('general', Generic, {
+  isInternalType: true
+});
 greyscriptMeta.addSignature('list', List);
 greyscriptMeta.addSignature('map', MapSignature);
-greyscriptMeta.addSignature('metaLib', MetaLib);
-greyscriptMeta.addSignature('metaMail', MetaMail);
-greyscriptMeta.addSignature('metaxploit', Metaxploit);
-greyscriptMeta.addSignature('netSession', NetSession);
-greyscriptMeta.addSignature('number', NumberSignature, true);
-greyscriptMeta.addSignature('port', Port);
-greyscriptMeta.addSignature('router', Router);
-greyscriptMeta.addSignature('service', Service);
-greyscriptMeta.addSignature('shell', Shell);
+greyscriptMeta.addSignature('metaLib', MetaLib, {
+  inerhitsFrom: ['map']
+});
+greyscriptMeta.addSignature('metaMail', MetaMail, {
+  inerhitsFrom: ['map']
+});
+greyscriptMeta.addSignature('metaxploit', Metaxploit, {
+  inerhitsFrom: ['map']
+});
+greyscriptMeta.addSignature('netSession', NetSession, {
+  inerhitsFrom: ['map']
+});
+greyscriptMeta.addSignature('number', NumberSignature, {
+  isInternalType: true
+});
+greyscriptMeta.addSignature('port', Port, {
+  inerhitsFrom: ['map']
+});
+greyscriptMeta.addSignature('router', Router, {
+  inerhitsFrom: ['map']
+});
+greyscriptMeta.addSignature('service', Service, {
+  inerhitsFrom: ['map']
+});
+greyscriptMeta.addSignature('shell', Shell, {
+  inerhitsFrom: ['map']
+});
 greyscriptMeta.addSignature('string', String);
-greyscriptMeta.addSignature('subWallet', SubWallet);
-greyscriptMeta.addSignature('wallet', Wallet);
+greyscriptMeta.addSignature('subWallet', SubWallet, {
+  inerhitsFrom: ['map']
+});
+greyscriptMeta.addSignature('wallet', Wallet, {
+  inerhitsFrom: ['map']
+});
 
 greyscriptMeta.addMeta('en', EN);
 
