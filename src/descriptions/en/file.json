@@ -147,7 +147,7 @@
         "description": "Returns a `list` of folders. This method is only available if this entity is a folder, so it is advisable to first use the `is_folder` function before calling this method.",
         "example": [
             "hostComputer = get_shell.host_computer",
-            "binFolder = hostComputer.File(\"/bin\")",
+            "binFolder = hostComputer.File(\"/home\")",
             "folders = binFolder.get_folders",
             "for folder in folders",
             "   print(folder.path)",

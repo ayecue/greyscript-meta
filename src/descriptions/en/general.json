@@ -1279,7 +1279,7 @@
         "description": "Returns a `list` of folders. This method is only available if this entity is a folder, so it is advisable to first use the `is_folder` function before calling this method.",
         "example": [
             "computer = host_computer(get_shell)",
-            "binFolder = File(computer, \"/bin\")",
+            "binFolder = File(computer, \"/home\")",
             "folders = get_folders(binFolder)",
             "for folder in folders",
             "   print(folder.path)",
