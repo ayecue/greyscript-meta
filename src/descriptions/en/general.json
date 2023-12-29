@@ -1097,7 +1097,9 @@
             "pwr = parsed[1][:-1].to_int",
             "essid = parsed[2]",
             "potentialAcks = 300000 / pwr",
-            "aireplay(crypto, bssid, essid, potentialAcks)"
+            "aireplaycrypto, bssid, essid, potentialAcks)",
+            "wifiPassword = aircrack(crypto, \"/home/\" + active_user + \"/file.cap\")",
+            "print(\"Wifi password for \" + essid + \" is \" + wifiPassword)"
         ]
     },
     "decipher": {
