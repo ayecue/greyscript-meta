@@ -247,7 +247,7 @@
         "example": [
             "hostComputer = get_shell.host_computer",
             "gatewayIp = hostComputer.network_gateway",
-            "print(\"Gatway IP: \" + gatewayIp)"
+            "print(\"Gateway IP: \" + gatewayIp)"
         ]
     },
     "active_net_card": {

@@ -1041,7 +1041,7 @@
         "example": [
             "computer = host_computer(get_shell)",
             "gatewayIp = network_gateway(computer)",
-            "print(\"Gatway IP: \" + gatewayIp)"
+            "print(\"Gateway IP: \" + gatewayIp)"
         ]
     },
     "active_net_card": {
