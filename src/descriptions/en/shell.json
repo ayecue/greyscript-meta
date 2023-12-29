@@ -21,7 +21,10 @@
         "description": "Compiles a plain code file provided in the arguments to a binary. On success, the new binary will be available under the provided build folder. The binary name will be the same as the source file just without file extension. Optionally an allowImport flag can be set which enables to use `import_code` on the binary. All provided paths must be absolute. Returns an empty `string` on success. On failure, it will return a `string` as well but this time containing valuable information on why the compilation failed.",
         "example": [
             "shell = get_shell",
-            "buildResult = shell.build(\"/home/test/myprogram.src\", \"/home/test/Desktop\")",
+            "computer = shell.host_computer",
+            "computer.touch(home_dir, \"test.src\")",
+            "computer.File(home_dir + \"/test.src\").set_content(\"print(\"\"hello world\"\")\")",
+            "buildResult = shell.build(home_dir + \"/test.src\", home_dir + \"/Desktop\")",
             "if buildResult != \"\" then",
             "   print(\"There was an error while compiling: \" + buildResult)",
             "else",

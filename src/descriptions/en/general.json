@@ -809,7 +809,8 @@
     "get_name": {
         "description": "Returns the hostname of the machine.",
         "example": [
-            "print get_name(host_computer(get_shell))"
+            "computerName = get_name(host_computer(get_shell))",
+            "print(\"The name of your machine is \" + computerName)"
         ]
     },
     "lan_ip": {
@@ -841,7 +842,7 @@
     "create_folder": {
         "description": "Create a folder at the path provided in the arguments. There are certain limitations when it comes to creating a folder. The folder name has to be alphanumeric and below 128 characters. Also, keep in mind that it will fail when there is already a folder in place or you are lacking permissions. Additionally, there is a folder limit of about 250 in each folder and 3125 folders in the computer overall. In case the folder creation fails the method will return a `string` containing the error message which was the cause for the failure. In case of success, it will return `true`.",
         "example": [
-            "path = \"/home/user/Desktop\"",
+            "path = \"/home/\" + active_user + \"/Desktop\"",
             "computer = host_computer(get_shell)",
             "createResult = create_folder(computer, path, \"myfolder\")",
             "if typeof(createResult) == \"string\" then",
@@ -865,7 +866,7 @@
     "touch": {
         "description": "Creates an empty text `file` at the path provided in the arguments. There are certain limitations when it comes to file creation. The `file` name has to be alphanumeric and below 128 characters. Also, keep in mind that it will fail when there is already a `file` in place or you are lacking permissions. Additionally, there is a file limit of about 250 in each folder and 3125 files in the computer overall. In case of success, it will return `true`.",
         "example": [
-            "path = \"/home/user/Desktop\"",
+            "path = \"/home/\" + active_user + \"/Desktop\"",
             "computer = host_computer(get_shell)",
             "createResult = touch(computer, path, \"myFile.txt\")",
             "if typeof(createResult) == \"string\" then",
@@ -980,11 +981,13 @@
         "description": "Closes a program associated with the provided PID. You can see the `list` of active programs by either using `show_procs` or typing ps into your terminal. To close a program you need to be either owner of the running process or a root. In case the closing of a program fails this method will return a `string` containing the cause of failure. Otherwise, it will return `true`.",
         "example": [
             "computer = host_computer(get_shell(\"root\", \"test\"))",
-            "closeResult = close_program(computer, \"random-PID\")",
+            "processes = split(show_procs(computer), char(10))[1:]",
+            "pid = split(processes[1], \" \")[1]",
+            "closeResult = close_program(computer, to_int(pid))",
             "if typeof(closeResult) == \"string\" then",
             "   print(\"There was an error when closing a program: \" + closeResult)",
             "else",
-            "   print(\"Program got successfully closed.\")",
+            "   print(\"Program with pid \" + pid + \" got successfully closed.\")",
             "end if"
         ]
     },
@@ -1025,7 +1028,7 @@
         "description": "Set up a new IP address on the `computer` through the ethernet connection. It is not possible to set up a new IP address while being logged in as a guest. On failure, this method will return a `string` containing the cause. Otherwise, it will return `null`.",
         "example": [
             "computer = host_computer(get_shell)",
-            "connectionResult = connect_ethernet(computer, \"eth0\", \"192.168.0.4\", \"192.168.0.1\")",
+            "connectionResult = connect_ethernet(computer, \"eth0\", \"192.168.0.4\", local_ip(get_router))",
             "if typeof(connectionResult) == \"string\" then",
             "   print(\"There was an error while connecting: \" + connectionResult)",
             "else",
@@ -1038,7 +1041,7 @@
         "example": [
             "computer = host_computer(get_shell)",
             "gatewayIp = network_gateway(computer)",
-            "print(\"Gatway IP: \" + gatewayIp)"
+            "print(\"Gateway IP: \" + gatewayIp)"
         ]
     },
     "active_net_card": {
@@ -1069,7 +1072,7 @@
         "description": "Enables or disables the monitor mode of a network device. The options parameter can only be `\"start\"` or `\"stop\"`. Monitor mode can only be enabled on Wifi cards. If it wasn't possible to enable or disable the monitor mode this method will return a `string` containing the reason. Otherwise, it will return `true`.",
         "example": [
             "crypto = include_lib(\"/lib/crypto.so\")",
-            "airmonResult = airmon(crypto, \"/start\", \"wlan0\")",
+            "airmonResult = airmon(crypto, \"start\", \"wlan0\")",
             "if typeof(airmonResult) == \"string\" then",
             "   print(\"There was an error while switching monitoring mode: \" + airmonResult)",
             "else",
@@ -1094,7 +1097,9 @@
             "pwr = parsed[1][:-1].to_int",
             "essid = parsed[2]",
             "potentialAcks = 300000 / pwr",
-            "aireplay(crypto, bssid, essid, potentialAcks)"
+            "aireplaycrypto, bssid, essid, potentialAcks)",
+            "wifiPassword = aircrack(crypto, \"/home/\" + active_user + \"/file.cap\")",
+            "print(\"Wifi password for \" + essid + \" is \" + wifiPassword)"
         ]
     },
     "decipher": {
@@ -1177,7 +1182,7 @@
         "example": [
             "computer = host_computer(get_shell(\"root\", \"test\"))",
             "passwdFile = File(computer, \"/etc/passwd\")",
-            "renameResult = rename(passwdFile, \"/renamed/\")",
+            "renameResult = rename(passwdFile, \"renamed\")",
             "if typeof(renameResult) == \"string\" then",
             "   print(\"There was an error while renaming file: \" + renameResult)",
             "else",
@@ -1238,7 +1243,7 @@
         "example": [
             "computer = host_computer(get_shell(\"root\", \"test\"))",
             "passwdFile = File(computer, \"/etc/passwd\")",
-            "setResult = set_content(passwdFile, \"/moo\")",
+            "setResult = set_content(passwdFile, \"moo\")",
             "if typeof(setResult) == \"string\" then",
             "   print(\"There was an error while setting file content: \" + setResult)",
             "else",
@@ -1547,10 +1552,20 @@
             "devices = devices_lan_ip(router)",
             "for ip in devices",
             "   ports = device_ports(router, ip)",
-            "   print(ip + \" contains following open ports:\")",
+            "   openPorts = []",
             "   for port in ports",
-            "      print(port_number(port))",
+            "      if is_closed(port) then continue",
+            "      push(openPorts, port)",
             "   end for",
+            "",
+            "   if (len(openPorts) == 0) then",
+            "      print(ip + \" has no open ports\")",
+            "   else",
+            "      print(ip + \" contains following open ports:\")",
+            "      for port in openPorts",
+            "         print(\"|-\" +  port.port_number)",
+            "      end for",
+            "   end if",
             "end for"
         ]
     },
@@ -1672,7 +1687,10 @@
         "description": "Compiles a plain code file provided in the arguments to a binary. On success, the new binary will be available under the provided build folder. The binary name will be the same as the source file just without file extension. Optionally an allowImport flag can be set which enables to use `import_code` on the binary. All provided paths must be absolute. Returns an empty `string` on success. On failure, it will return a `string` as well but this time containing valuable information on why the compilation failed.",
         "example": [
             "shell = get_shell",
-            "buildResult = build(shell, \"/home/test/myprogram.src\", \"/home/test/Desktop\")",
+            "computer = host_computer(shell)",
+            "touch(computer, home_dir, \"test.src\")",
+            "set_content(File(computer, home_dir + \"/test.src\"), \"print(\"\"hello world\"\")\")",
+            "buildResult = build(shell, home_dir + \"/test.src\", home_dir + \"/Desktop\")",
             "if buildResult != \"\" then",
             "   print(\"There was an error while compiling: \" + buildResult)",
             "else",
