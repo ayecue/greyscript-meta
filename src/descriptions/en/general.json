@@ -1182,7 +1182,7 @@
         "example": [
             "computer = host_computer(get_shell(\"root\", \"test\"))",
             "passwdFile = File(computer, \"/etc/passwd\")",
-            "renameResult = rename(passwdFile, \"/renamed/\")",
+            "renameResult = rename(passwdFile, \"renamed\")",
             "if typeof(renameResult) == \"string\" then",
             "   print(\"There was an error while renaming file: \" + renameResult)",
             "else",

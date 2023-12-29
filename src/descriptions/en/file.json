@@ -45,7 +45,7 @@
         "example": [
             "hostComputer = get_shell(\"root\", \"test\").host_computer",
             "passwdFile = hostComputer.File(\"/etc/passwd\")",
-            "renameResult = passwdFile.rename(\"/renamed/\")",
+            "renameResult = passwdFile.rename(\"renamed\")",
             "if typeof(renameResult) == \"string\" then",
             "   print(\"There was an error while renaming file: \" + renameResult)",
             "else",
