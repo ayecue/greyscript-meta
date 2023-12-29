@@ -1151,7 +1151,7 @@
         "example": [
             "computer = host_computer(get_shell(\"root\", \"test\"))",
             "passwdFile = File(computer, \"/etc/passwd\")",
-            "copyResult = copy(passwdFile, \"/etc/\", \"/dubplicate/\")",
+            "copyResult = copy(passwdFile, \"/etc/\", \"duplicate\")",
             "if typeof(copyResult) == \"string\" then",
             "   print(\"There was an error while copying file: \" + copyResult)",
             "else",

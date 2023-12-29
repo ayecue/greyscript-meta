@@ -19,7 +19,7 @@
         "example": [
             "hostComputer = get_shell(\"root\", \"test\").host_computer",
             "passwdFile = hostComputer.File(\"/etc/passwd\")",
-            "copyResult = passwdFile.copy(\"/etc/\", \"/dubplicate/\")",
+            "copyResult = passwdFile.copy(\"/etc/\", \"duplicate\")",
             "if typeof(copyResult) == \"string\" then",
             "   print(\"There was an error while copying file: \" + copyResult)",
             "else",
