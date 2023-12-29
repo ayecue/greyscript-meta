@@ -87,7 +87,7 @@
         ]
     },
     "print": {
-        "description": "Print a message on the Terminal. Optionally replacing can be enabled which will replace the previous print. This can be useful for creating a loading bar for example. There is also the possibility of styling output by using TextMeshPro rich-text tags.",
+        "description": "Print a message on the Terminal. Optionally replacing can be enabled which will replace all previous prints. This can be useful for creating a loading bar for example. There is also the possibility of styling output by using TextMeshPro rich-text tags.",
         "example": [
             "for i in range(9)",
             "   print((\"#\" * (9 - i)) + (\"-\" * i) , true)",
