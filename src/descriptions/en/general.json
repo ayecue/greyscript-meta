@@ -1243,7 +1243,7 @@
         "example": [
             "computer = host_computer(get_shell(\"root\", \"test\"))",
             "passwdFile = File(computer, \"/etc/passwd\")",
-            "setResult = set_content(passwdFile, \"/moo\")",
+            "setResult = set_content(passwdFile, \"moo\")",
             "if typeof(setResult) == \"string\" then",
             "   print(\"There was an error while setting file content: \" + setResult)",
             "else",
