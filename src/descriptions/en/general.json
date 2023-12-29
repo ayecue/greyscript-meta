@@ -87,7 +87,7 @@
         ]
     },
     "print": {
-        "description": "Print a message on the Terminal. Optionally replacing can be enabled which will replace the previous print. This can be useful for creating a loading bar for example. There is also the possibility of styling output by using TextMeshPro rich-text tags.",
+        "description": "Print a message on the Terminal. Optionally replacing can be enabled which will replace all previous prints. This can be useful for creating a loading bar for example. There is also the possibility of styling output by using TextMeshPro rich-text tags.",
         "example": [
             "for i in range(9)",
             "   print((\"#\" * (9 - i)) + (\"-\" * i) , true)",
@@ -1137,9 +1137,13 @@
     "chmod": {
         "description": "Modifies the `file` permissions. Optionally these permissions can also be applied recursively. The format for applying permissions is as follows: `\"[references][operator][modes]\"`. The references type gets defined through three possible types. These types include user `\"u\"`, group `\"g\"` and other `\"o\"`. The operator is used to define if permissions get added `\"+\"` or removed `\"-\"`. There are three different modes which can be modified. Those modes include read `\"r\"`, write `\"w\"` and execute `\"x\"`. So as an example `\"o-wrx\"` would remove all possible permissions for other. To add all permissions for other again `\"o+wrx\"` would be used. In case the modification fails this method will return a `string` containing information of the reason. Otherwise an empty `string` gets returned.",
         "example": [
-            "computer = host_computer(get_shell(\"root\", \"test\"))",
-            "rootFolder = File(computer, \"/\")",
-            "rootFolder.chmod(\"o-wrx\", true)"
+            "hostComputer = host_computer(get_shell(\"root\", \"test\"))",
+            "rootFolder = File(hostComputer, \"/bin\")",
+            "oldPermissions = permissions(rootFolder)",
+            "chmod(rootFolder, \"o-wrx\", true)",
+            "newPermissions = permissions(rootFolder)",
+            "print(\"Old permissions: \" + oldPermissions)",
+            "print(\"New permissions: \" + newPermissions)"
         ]
     },
     "copy": {
@@ -1147,7 +1151,7 @@
         "example": [
             "computer = host_computer(get_shell(\"root\", \"test\"))",
             "passwdFile = File(computer, \"/etc/passwd\")",
-            "copyResult = copy(passwdFile, \"/etc/\", \"/dubplicate/\")",
+            "copyResult = copy(passwdFile, \"/etc/\", \"duplicate\")",
             "if typeof(copyResult) == \"string\" then",
             "   print(\"There was an error while copying file: \" + copyResult)",
             "else",
@@ -1264,7 +1268,7 @@
             "computer = host_computer(get_shell)",
             "lsBinary = File(computer, \"/bin/ls\")",
             "deletionResult = delete(lsBinary)",
-            "if typeof(deletionResult) == \"string\" then",
+            "if typeof(deletionResult) == \"string\" and len(deletionResult) > 0 then",
             "   print(\"There was an error while deleting a file: \" + deletionResult)",
             "else",
             "   print(\"File got deleted successfully.\")",
@@ -1275,7 +1279,7 @@
         "description": "Returns a `list` of folders. This method is only available if this entity is a folder, so it is advisable to first use the `is_folder` function before calling this method.",
         "example": [
             "computer = host_computer(get_shell)",
-            "binFolder = File(computer, \"/bin\")",
+            "binFolder = File(computer, \"/home\")",
             "folders = get_folders(binFolder)",
             "for folder in folders",
             "   print(folder.path)",
