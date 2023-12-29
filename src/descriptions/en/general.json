@@ -1268,7 +1268,7 @@
             "computer = host_computer(get_shell)",
             "lsBinary = File(computer, \"/bin/ls\")",
             "deletionResult = delete(lsBinary)",
-            "if typeof(deletionResult) == \"string\" then",
+            "if typeof(deletionResult) == \"string\" and len(deletionResult) > 0 then",
             "   print(\"There was an error while deleting a file: \" + deletionResult)",
             "else",
             "   print(\"File got deleted successfully.\")",
