@@ -5,16 +5,16 @@
     "chmod": {
         "description": "Modifies the `file` permissions. Optionally these permissions can also be applied recursively. The format for applying permissions is as follows: `\"[references][operator][modes]\"`. The references type gets defined through three possible types. These types include user `\"u\"`, group `\"g\"` and other `\"o\"`. The operator is used to define if permissions get added `\"+\"` or removed `\"-\"`. There are three different modes which can be modified. Those modes include read `\"r\"`, write `\"w\"` and execute `\"x\"`. So as an example `\"o-wrx\"` would remove all possible permissions for other. To add all permissions for other again `\"o+wrx\"` would be used. In case the modification fails this method will return a `string` containing information of the reason. Otherwise an empty `string` gets returned.",
         "example": [
-            "host_computer = get_shell(\"root\", \"test\").host_computer",
-            "rootFolder = host_computer.File(\"/\")",
+            "hostComputer = get_shell(\"root\", \"test\").host_computer",
+            "rootFolder = hostComputer.File(\"/\")",
             "rootFolder.chmod(\"o-wrx\", true)"
         ]
     },
     "copy": {
         "description": "Copies the `file` to the provided path. Files can only be copied if the user has read and write permissions or is root. The new filename has to be below 128 characters and alphanumeric. After success, this method will return `true`. Otherwise, this method will return a `string` containing information about the reason for failure.",
         "example": [
-            "host_computer = get_shell(\"root\", \"test\").host_computer",
-            "passwdFile = host_computer.File(\"/etc/passwd\")",
+            "hostComputer = get_shell(\"root\", \"test\").host_computer",
+            "passwdFile = hostComputer.File(\"/etc/passwd\")",
             "copyResult = passwdFile.copy(\"/etc/\", \"/dubplicate/\")",
             "if typeof(copyResult) == \"string\" then",
             "   print(\"There was an error while copying file: \" + copyResult)",
@@ -26,8 +26,8 @@
     "move": {
         "description": "Moves the `file` to the provided path. Files can only be moved if the user has read and write permissions or is root. The new filename has to be below 128 characters and alphanumeric. After success, this method will return `true`. Otherwise, this method will return a `string` containing information about the failure.",
         "example": [
-            "host_computer = get_shell(\"root\", \"test\").host_computer",
-            "passwdFile = host_computer.File(\"/etc/passwd\")",
+            "hostComputer = get_shell(\"root\", \"test\").host_computer",
+            "passwdFile = hostComputer.File(\"/etc/passwd\")",
             "moveResult = passwdFile.move(\"/etc/\", \"/moved/\")",
             "if typeof(moveResult) == \"string\" then",
             "   print(\"There was an error while moving file: \" + moveResult)",
@@ -39,8 +39,8 @@
     "rename": {
         "description": "Rename the file with the name provided. Files can only be renamed if the user has write permissions or is root. The new filename has to be below 128 characters and alphanumeric. On failure, this method will return a `string` containing information about the failure. Otherwise, this method will return `true`.",
         "example": [
-            "host_computer = get_shell(\"root\", \"test\").host_computer",
-            "passwdFile = host_computer.File(\"/etc/passwd\")",
+            "hostComputer = get_shell(\"root\", \"test\").host_computer",
+            "passwdFile = hostComputer.File(\"/etc/passwd\")",
             "renameResult = passwdFile.rename(\"/renamed/\")",
             "if typeof(renameResult) == \"string\" then",
             "   print(\"There was an error while renaming file: \" + renameResult)",
@@ -52,56 +52,56 @@
     "path": {
         "description": "Returns a `string` with the path of the file. In case the file got deleted it will return `null`.",
         "example": [
-            "host_computer = get_shell.host_computer",
-            "passwdFile = host_computer.File(\"/etc/passwd\")",
+            "hostComputer = get_shell.host_computer",
+            "passwdFile = hostComputer.File(\"/etc/passwd\")",
             "print(\"File location: \" + passwdFile.path)"
         ]
     },
     "is_folder": {
         "description": "Returns `true` if the file is a folder, `false` otherwise.",
         "example": [
-            "host_computer = get_shell.host_computer",
-            "etcFolder = host_computer.File(\"/etc\")",
+            "hostComputer = get_shell.host_computer",
+            "etcFolder = hostComputer.File(\"/etc\")",
             "print(\"Is a folder: \" + etcFolder.is_folder)"
         ]
     },
     "parent": {
         "description": "Returns the folder that contains this file. In case there is no parent folder `null` will be returned instead.",
         "example": [
-            "host_computer = get_shell.host_computer",
-            "etcFolder = host_computer.File(\"/etc\")",
+            "hostComputer = get_shell.host_computer",
+            "etcFolder = hostComputer.File(\"/etc\")",
             "print(\"Parent path: \" + etcFolder.parent.path)"
         ]
     },
     "name": {
         "description": "Returns a `string` with the name of the file.",
         "example": [
-            "host_computer = get_shell.host_computer",
-            "passwdFile = host_computer.File(\"/etc/passwd\")",
+            "hostComputer = get_shell.host_computer",
+            "passwdFile = hostComputer.File(\"/etc/passwd\")",
             "print(\"Filename: \" + passwdFile.name)"
         ]
     },
     "allow_import": {
         "description": "Returns `true` if the file is binary and can be imported by other scripts, `false` otherwise.",
         "example": [
-            "host_computer = get_shell.host_computer",
-            "lsBinary = host_computer.File(\"/bin/ls\")",
+            "hostComputer = get_shell.host_computer",
+            "lsBinary = hostComputer.File(\"/bin/ls\")",
             "print(\"File can be imported: \" + lsBinary.allow_import)"
         ]
     },
     "get_content": {
         "description": "Returns a `string` representing the content of the file. To read a file the user requires read access or being root. In case of failure `null` will get returned.",
         "example": [
-            "host_computer = get_shell(\"root\", \"test\").host_computer",
-            "passwdFile = host_computer.File(\"/etc/passwd\")",
+            "hostComputer = get_shell(\"root\", \"test\").host_computer",
+            "passwdFile = hostComputer.File(\"/etc/passwd\")",
             "print(\"File content: \" + passwdFile.get_content)"
         ]
     },
     "set_content": {
         "description": "Save the text in the `file`. The content will not get appended to the `file`. Therefore content will get overridden. To set new content the user requires write permissions or being root. Keep in mind that text files cannot exceed the character limit of 160000. In case setting the content was successful `true` will get returned. Otherwise, a `string` including a description for the reason of failure will be provided.",
         "example": [
-            "host_computer = get_shell(\"root\", \"test\").host_computer",
-            "passwdFile = host_computer.File(\"/etc/passwd\")",
+            "hostComputer = get_shell(\"root\", \"test\").host_computer",
+            "passwdFile = hostComputer.File(\"/etc/passwd\")",
             "setResult = passwdFile.set_content(\"/moo\")",
             "if typeof(setResult) == \"string\" then",
             "   print(\"There was an error while setting file content: \" + setResult)",
@@ -113,24 +113,24 @@
     "is_binary": {
         "description": "Returns `true` if the file is binary, `false` otherwise.",
         "example": [
-            "host_computer = get_shell.host_computer",
-            "lsBinary = host_computer.File(\"/bin/ls\")",
+            "hostComputer = get_shell.host_computer",
+            "lsBinary = hostComputer.File(\"/bin/ls\")",
             "print(\"File is a binary: \" + lsBinary.is_binary)"
         ]
     },
     "has_permission": {
         "description": "Returns `true` if the user who launched the script has the necessary permissions. In case permissions are lacking `false` will be returned. There are three different permission types. Those permissions include read `\"r\"`, write `\"w\"` and execute `\"x\"`.",
         "example": [
-            "host_computer = get_shell.host_computer",
-            "lsBinary = host_computer.File(\"/bin/ls\")",
+            "hostComputer = get_shell.host_computer",
+            "lsBinary = hostComputer.File(\"/bin/ls\")",
             "print(\"Is able to execute ls: \" + lsBinary.has_permission(\"x\"))"
         ]
     },
     "delete": {
         "description": "Delete the file. To delete files write permissions are required or being root. In case of failure a `string` will be returned containing information about the reason. Otherwise, an empty `string` gets returned.",
         "example": [
-            "host_computer = get_shell.host_computer",
-            "lsBinary = host_computer.File(\"/bin/ls\")",
+            "hostComputer = get_shell.host_computer",
+            "lsBinary = hostComputer.File(\"/bin/ls\")",
             "deletionResult = lsBinary.delete",
             "if typeof(deletionResult) == \"string\" then",
             "   print(\"There was an error while deleting a file: \" + deletionResult)",
@@ -142,8 +142,8 @@
     "get_folders": {
         "description": "Returns a `list` of folders. This method is only available if this entity is a folder, so it is advisable to first use the `is_folder` function before calling this method.",
         "example": [
-            "host_computer = get_shell.host_computer",
-            "binFolder = host_computer.File(\"/bin\")",
+            "hostComputer = get_shell.host_computer",
+            "binFolder = hostComputer.File(\"/bin\")",
             "folders = binFolder.get_folders",
             "for folder in folders",
             "   print(folder.path)",
@@ -153,8 +153,8 @@
     "get_files": {
         "description": "Returns a `list` of files. This function is only available if this entity is a folder, so it is advisable to first use the is_folder function before calling this method.",
         "example": [
-            "host_computer = get_shell.host_computer",
-            "binFolder = host_computer.File(\"/bin\")",
+            "hostComputer = get_shell.host_computer",
+            "binFolder = hostComputer.File(\"/bin\")",
             "files = binFolder.get_files",
             "for file in files",
             "   print(file.path)",
@@ -164,8 +164,8 @@
     "permissions": {
         "description": "Returns a `string` with the current file permissions. The format for this permissions `string` is as follows: `\"[fileType][wrx](u)[wrx](g)[wrx](o)\"`. The file type is either `\"d\"` in case it's a directory or `\"-\"`. The user type gets defined through three possible types. These user types include user `\"u\"`, group `\"g\"` and other `\"o\"`. There are three different permission types. Those permissions include read `\"r\"`, write `\"w\"` and execute `\"x\"`. An example of a `string` which is returned by this method would be `\"-rwxr-xr-x\"`. Taking the latter as an example following things become clear:\n* the provided file is not a directory\n* user has full access\n* group and other have almost all permissions besides writing\n",
         "example": [
-            "host_computer = get_shell.host_computer",
-            "binFolder = host_computer.File(\"/bin\")",
+            "hostComputer = get_shell.host_computer",
+            "binFolder = hostComputer.File(\"/bin\")",
             "permissions = binFolder.permissions",
             "fileType = permissions[0]",
             "permissionsForUser = permissions[1:4]",
@@ -180,16 +180,16 @@
     "owner": {
         "description": "Returns a `string` with the name of the file owner. User permissions get applied to whoever is the owner of a file.",
         "example": [
-            "host_computer = get_shell.host_computer",
-            "lsBinary = host_computer.File(\"/bin/ls\")",
+            "hostComputer = get_shell.host_computer",
+            "lsBinary = hostComputer.File(\"/bin/ls\")",
             "print(\"Owner of ls is: \" + lsBinary.owner)"
         ]
     },
     "set_owner": {
         "description": "Change the owner of this file. Optionally the owner can get applied recursively. The owner's name cannot exceed 15 characters. Additionally either write permissions or being root is required. In case of failure a `string` gets returned containing the cause. Otherwise an empty `string` gets returned.",
         "example": [
-            "host_computer = get_shell.host_computer",
-            "lsBinary = host_computer.File(\"/bin/ls\")",
+            "hostComputer = get_shell.host_computer",
+            "lsBinary = hostComputer.File(\"/bin/ls\")",
             "ownerResult = lsBinary.set_owner(\"root\")",
             "if typeof(ownerResult) == \"string\" then",
             "   print(\"There was an error while changing owner: \" + ownerResult)",
@@ -201,16 +201,16 @@
     "group": {
         "description": "Returns a `string` with the name of the group to which this file belongs. Group permissions get applied to whoever is the owner of a file.",
         "example": [
-            "host_computer = get_shell.host_computer",
-            "lsBinary = host_computer.File(\"/bin/ls\")",
+            "hostComputer = get_shell.host_computer",
+            "lsBinary = hostComputer.File(\"/bin/ls\")",
             "print(\"File is related to following group: \" + lsBinary.group)"
         ]
     },
     "set_group": {
         "description": "Change the group related to this file. Optionally the group can get applied recursively. The group name cannot exceed 15 characters. Additionally either write permissions or being root is required. In case of failure a `string` gets returned containing the cause. Otherwise an empty `string` gets returned.",
         "example": [
-            "host_computer = get_shell.host_computer",
-            "lsBinary = host_computer.File(\"/bin/ls\")",
+            "hostComputer = get_shell.host_computer",
+            "lsBinary = hostComputer.File(\"/bin/ls\")",
             "ownerResult = lsBinary.set_group(\"root\")",
             "if typeof(ownerResult) == \"string\" then",
             "   print(\"There was an error while changing group: \" + ownerResult)",
@@ -222,8 +222,8 @@
     "size": {
         "description":  "Returns a `string` with the size of the file in bytes. There is no correlation between file size and actual file content. Instead, the file size is depending on the name of the file.",
         "example": [
-            "host_computer = get_shell.host_computer",
-            "lsBinary = host_computer.File(\"/bin/ls\")",
+            "hostComputer = get_shell.host_computer",
+            "lsBinary = hostComputer.File(\"/bin/ls\")",
             "size = lsBinary.size",
             "if size.to_int > 1000 then",
             "   print(\"File size is bigger than 1000 bytes.\")",

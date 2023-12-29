@@ -54,8 +54,8 @@
         "description": "Returns a decrypted password via the provided password md5 hash. Keep in mind that this method is not decrypting a password but rather checking for existing passwords within the game world with a matching md5 hash. So in case a password does not exist in the game world the decryption will fail. On failure, this method will return `null`.",
         "example": [
             "crypto = include_lib(\"/lib/crypto.so\")",
-            "host_computer = get_shell(\"root\", \"test\").host_computer",
-            "passwdContent = host_computer.File(\"/etc/passwd\").get_content",
+            "hostComputer = get_shell(\"root\", \"test\").host_computer",
+            "passwdContent = hostComputer.File(\"/etc/passwd\").get_content",
             "firstAccount = passwdContent.split(char(10))[0]",
             "parsed = firstAccount.split(\":\")",
             "username = parsed[0]",
