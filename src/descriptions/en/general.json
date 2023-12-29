@@ -1069,7 +1069,7 @@
         "description": "Enables or disables the monitor mode of a network device. The options parameter can only be `\"start\"` or `\"stop\"`. Monitor mode can only be enabled on Wifi cards. If it wasn't possible to enable or disable the monitor mode this method will return a `string` containing the reason. Otherwise, it will return `true`.",
         "example": [
             "crypto = include_lib(\"/lib/crypto.so\")",
-            "airmonResult = airmon(crypto, \"/start\", \"wlan0\")",
+            "airmonResult = airmon(crypto, \"start\", \"wlan0\")",
             "if typeof(airmonResult) == \"string\" then",
             "   print(\"There was an error while switching monitoring mode: \" + airmonResult)",
             "else",
