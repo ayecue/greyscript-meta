@@ -1027,7 +1027,7 @@
         "description": "Set up a new IP address on the `computer` through the ethernet connection. It is not possible to set up a new IP address while being logged in as a guest. On failure, this method will return a `string` containing the cause. Otherwise, it will return `null`.",
         "example": [
             "computer = host_computer(get_shell)",
-            "connectionResult = connect_ethernet(computer, \"eth0\", \"192.168.0.4\", \"192.168.0.1\")",
+            "connectionResult = connect_ethernet(computer, \"eth0\", \"192.168.0.4\", local_ip(get_router))",
             "if typeof(connectionResult) == \"string\" then",
             "   print(\"There was an error while connecting: \" + connectionResult)",
             "else",

@@ -233,7 +233,7 @@
         "description": "Set up a new IP address on the `computer` through the ethernet connection. It is not possible to set up a new IP address while being logged in as a guest. On failure, this method will return a `string` containing the cause. Otherwise, it will return `null`.",
         "example": [
             "hostComputer = get_shell.host_computer",
-            "connectionResult = hostComputer.connect_ethernet(\"eth0\", \"192.168.0.4\", \"192.168.0.1\")",
+            "connectionResult = hostComputer.connect_ethernet(\"eth0\", \"192.168.0.4\", get_router.local_ip)",
             "if typeof(connectionResult) == \"string\" then",
             "   print(\"There was an error while connecting: \" + connectionResult)",
             "else",
