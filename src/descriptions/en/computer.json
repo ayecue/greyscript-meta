@@ -15,7 +15,8 @@
     "get_name": {
         "description": "Returns the hostname of the machine.",
         "example": [
-            "print get_shell.host_computer.get_name"
+            "computerName = get_shell.host_computer.get_name",
+            "print(\"The name of your machine is \" + computerName)"
         ]
     },
     "local_ip": {

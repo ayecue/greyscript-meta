@@ -809,7 +809,8 @@
     "get_name": {
         "description": "Returns the hostname of the machine.",
         "example": [
-            "print get_name(host_computer(get_shell))"
+            "computerName = get_name(host_computer(get_shell))",
+            "print(\"The name of your machine is \" + computerName)"
         ]
     },
     "lan_ip": {
