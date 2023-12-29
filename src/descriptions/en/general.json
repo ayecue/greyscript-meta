@@ -980,11 +980,13 @@
         "description": "Closes a program associated with the provided PID. You can see the `list` of active programs by either using `show_procs` or typing ps into your terminal. To close a program you need to be either owner of the running process or a root. In case the closing of a program fails this method will return a `string` containing the cause of failure. Otherwise, it will return `true`.",
         "example": [
             "computer = host_computer(get_shell(\"root\", \"test\"))",
-            "closeResult = close_program(computer, \"random-PID\")",
+            "processes = split(show_procs(computer), char(10))[1:]",
+            "pid = split(processes[1], \" \")[1]",
+            "closeResult = close_program(computer, to_int(pid))",
             "if typeof(closeResult) == \"string\" then",
             "   print(\"There was an error when closing a program: \" + closeResult)",
             "else",
-            "   print(\"Program got successfully closed.\")",
+            "   print(\"Program with pid \" + pid + \" got successfully closed.\")",
             "end if"
         ]
     },

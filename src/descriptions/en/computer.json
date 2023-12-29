@@ -186,11 +186,13 @@
         "description": "Closes a program associated with the provided PID. You can see the `list` of active programs by either using `show_procs` or typing ps into your terminal. To close a program you need to be either owner of the running process or a root. In case the closing of a program fails this method will return a `string` containing the cause of failure. Otherwise, it will return `true`.",
         "example": [
             "hostComputer = get_shell(\"root\", \"test\").host_computer",
-            "closeResult = hostComputer.close_program(\"random-PID\")",
+            "processes = hostComputer.show_procs.split(char(10))[1:]",
+            "pid = processes[1].split(\" \")[1]",
+            "closeResult = hostComputer.close_program(pid.to_int)",
             "if typeof(closeResult) == \"string\" then",
             "   print(\"There was an error when closing a program: \" + closeResult)",
             "else",
-            "   print(\"Program got successfully closed.\")",
+            "   print(\"Program with pid \" + pid + \" got successfully closed.\")",
             "end if"
         ]
     },
