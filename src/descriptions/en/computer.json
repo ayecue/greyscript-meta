@@ -22,7 +22,7 @@
         "description": "Returns a `string` with the local IP address of the `computer`.",
         "example": [
             "localIp = get_shell.host_computer.local_ip",
-            "print(\"Public ip:\" + localIp)"
+            "print(\"Local ip:\" + localIp)"
         ]
     },
     "public_ip": {
