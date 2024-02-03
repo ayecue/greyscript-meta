@@ -302,7 +302,7 @@
         "arguments": [
             {
                 "label": "self",
-                "type": "any"
+                "type": "list:any"
             },
             {
                 "label": "byKey",
@@ -315,7 +315,7 @@
             }
         ],
         "returns": [
-            "any"
+            "list:any"
         ]
     },
     "remove": {
