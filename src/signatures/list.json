@@ -94,6 +94,11 @@
             {
                 "label": "key",
                 "type": "string"
+            },
+            {
+                "label": "ascending",
+                "type": "number",
+                "default": "1"
             }
         ],
         "returns": [

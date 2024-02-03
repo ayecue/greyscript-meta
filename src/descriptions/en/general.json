@@ -215,7 +215,7 @@
         ]
     },
     "sort": {
-        "description": "Depending on the data type this function will sort the values in the provided object. As a result, the object will get mutated. To get a better idea about the behaviour look into the `sort` methods related to `list` and `map`.",
+        "description": "Sort `list` values alphanumerically. This operation will mutate the `list`. Optionally a key can be provided which which is used in case the items are maps. Additionally, this method will return the updated `list`.",
         "example": [
             "list = [9, 3, 5, 7]",
             "sort(list)",
