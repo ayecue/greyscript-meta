@@ -3295,5 +3295,22 @@
         "returns": [
             "string"
         ]
+    },
+    "reset_password_coin": {
+      "arguments": [
+          {
+              "label": "self",
+              "type": "coin"
+          },
+          {
+              "label": "newPassword",
+              "type": "string"
+          }
+      ],
+      "returns": [
+          "number",
+          "string",
+          "null"
+      ]
     }
 }

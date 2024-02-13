@@ -123,5 +123,18 @@
         "returns": [
             "number"
         ]
+    },
+    "reset_password": {
+      "arguments": [
+          {
+              "label": "newPassword",
+              "type": "string"
+          }
+      ],
+      "returns": [
+          "number",
+          "string",
+          "null"
+      ]
     }
 }
