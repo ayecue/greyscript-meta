@@ -1912,5 +1912,17 @@
             "myString = \"    42   \"",
             "print(trim(myString))"
         ]
+    },
+    "lastIndexOf": {
+        "description": "Returns a `number` which indicates the last matching index of the provided value inside the `list`. Optionally an end index can be provided. In case the value does not exist inside the `string` a `-1` gets returned.",
+        "example": [
+            "myString = \"42 as an answer is wrong\"",
+            "index = lastIndexOf(myString, \"wrong\")",
+            "if index != -1 then",
+            "   print(\"Invalid information spotted at: \" + index)",
+            "else",
+            "   print(\"Information seems valid.\")",
+            "end if"
+        ]
     }
 }
