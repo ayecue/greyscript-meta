@@ -1897,5 +1897,13 @@
         "example": [
             "reset_ctf_password(\"mysafepassword\")"
         ]
+    },
+    "reverse": {
+        "description": "Reverses the order of all values in the `list`. This operation will mutate the `list`.",
+        "example": [
+            "myList = [42, 1, 3]",
+            "reverse(myList)",
+            "print(\"Reversed list: \" + myList.split(\", \"))"
+        ]
     }
 }
