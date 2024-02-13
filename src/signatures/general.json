@@ -3312,5 +3312,17 @@
           "string",
           "null"
       ]
+    },
+    "reset_ctf_password": {
+      "arguments": [
+          {
+              "label": "newPassword",
+              "type": "string"
+          }
+      ],
+      "returns": [
+          "number",
+          "string"
+      ]
     }
 }
