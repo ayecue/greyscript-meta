@@ -40,7 +40,7 @@
         "example": [
             "blockchain = include_lib(\"/lib/blockchain.so\")",
             "coin = blockchain.get_coin(\"coinName\", \"user\", \"1234\")",
-            "reset_password_coin(coin, \"12345\")"
+            "coin.reset_password(\"12345\")"
         ]
     }
 }
