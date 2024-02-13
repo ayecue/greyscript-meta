@@ -1885,11 +1885,17 @@
         ]
     },
     "reset_password_coin": {
-        "description": "Resets password of coin. Returns `true` if resetting was successful otherwise it will either return a `string` or `null`.",
+        "description": "Resets the password of the coin. Returns `true` if resetting was successful; otherwise, it will either return a `string` or `null`.",
         "example": [
             "blockchain = include_lib(\"/lib/blockchain.so\")",
             "coin = get_coin(blockchain, \"coinName\", \"user\", \"1234\")",
             "reset_password_coin(coin, \"12345\")"
+        ]
+    },
+    "reset_ctf_password": {
+        "description": "Resets the password of your CTF user. Returns `true` if resetting was successful; otherwise, it will return a `string` containing the reason for failure.",
+        "example": [
+            "reset_ctf_password(\"mysafepassword\")"
         ]
     }
 }

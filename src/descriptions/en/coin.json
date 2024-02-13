@@ -36,7 +36,7 @@
         "description": "Returns a `number` of coins that have been mined so far."
     },
     "reset_password": {
-        "description": "Resets password of coin. Returns `true` if resetting was successful otherwise it will either return a `string` or `null`.",
+        "description": "Resets the password of the coin. Returns `true` if resetting was successful; otherwise, it will either return a `string` or `null`.",
         "example": [
             "blockchain = include_lib(\"/lib/blockchain.so\")",
             "coin = blockchain.get_coin(\"coinName\", \"user\", \"1234\")",
