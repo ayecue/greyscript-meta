@@ -1905,5 +1905,12 @@
             "reverse(myList)",
             "print(\"Reversed list: \" + myList.split(\", \"))"
         ]
+    },
+    "trim": {
+        "description": "Returns a new `string` stripped of any spacing at the beginning or ending.",
+        "example": [
+            "myString = \"    42   \"",
+            "print(trim(myString))"
+        ]
     }
 }
