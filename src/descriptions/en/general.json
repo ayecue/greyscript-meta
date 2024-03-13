@@ -1178,7 +1178,7 @@
         ]
     },
     "rename": {
-        "description": "Rename the file with the name provided. Files can only be renamed if the user has write permissions or is root. The new filename has to be below 128 characters and alphanumeric. On failure, this method will return a `string` containing information about the failure. Otherwise, this method will return `true`.",
+        "description": "Rename the file with the name provided. Files can only be renamed if the user has write permissions or is root. The new filename has to be below 128 characters and alphanumeric. On failure, this method will return a `string` containing information about the failure. Otherwise, this method will return an empty string.",
         "example": [
             "computer = host_computer(get_shell(\"root\", \"test\"))",
             "passwdFile = File(computer, \"/etc/passwd\")",
