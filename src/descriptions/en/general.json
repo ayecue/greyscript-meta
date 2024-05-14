@@ -372,7 +372,7 @@
     "is_valid_ip": {
         "description": "Returns `true` in case the provided IP address is valid. Otherwise `false` will get returned.",
         "example": [
-            "print(\"Is valid IP: \" + is_lan_ip(\"1.1.1.1\"))"
+            "print(\"Is valid IP: \" + is_valid_ip(\"1.1.1.1\"))"
         ]
     },
     "bitwise": {
