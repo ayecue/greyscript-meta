@@ -1,6 +1,6 @@
 {
     "name": "greyscript-meta",
-    "version": "2.4.1",
+    "version": "2.4.2",
     "description": "Meta description for GreyScript API",
     "main": "dist/index",
     "typings": "dist/index",
