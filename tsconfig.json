@@ -1,21 +1,23 @@
 {
   "compilerOptions": {
-      "target": "es5",
-      "module": "commonjs",
-      "lib": ["dom","es2016"],                     
-      "allowJs": true,
-      "outDir": "dist",
-      "noImplicitAny": true,
-      "esModuleInterop": true,
-      "resolveJsonModule": true,
-      "declaration": true,
-      "downlevelIteration": true,
-      "jsx": "react"
+    "target": "es5",
+    "module": "commonjs",
+    "lib": [
+      "dom",
+      "es2016"
+    ],
+    "allowJs": true,
+    "outDir": "dist",
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "downlevelIteration": true
   },
   "include": [
-      "src/**/*"
+    "src/**/*"
   ],
   "exclude": [
-      "node_modules"
+    "node_modules"
   ]
 }
