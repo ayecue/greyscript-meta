@@ -1,78 +1,89 @@
 {
-    "device_ports": {
-        "arguments": [
-            {
-                "label": "ip",
-                "type": "string"
-            }
-        ],
-        "returns": [
-            "string",
-            "list:port",
-            "null"
-        ]
-    },
-    "devices_lan_ip": {
-        "returns": [
-            "list:string"
-        ]
-    },
-    "bssid_name": {
-        "returns": [
-            "string"
-        ]
-    },
-    "essid_name": {
-        "returns": [
-            "string"
-        ]
-    },
-    "firewall_rules": {
-        "returns": [
-            "list:string"
-        ]
-    },
-    "kernel_version": {
-        "returns": [
-            "string"
-        ]
-    },
-    "local_ip": {
-        "returns": [
-            "string"
-        ]
-    },
-    "public_ip": {
-        "returns": [
-            "string"
-        ]
-    },
-    "used_ports": {
-        "returns": [
-            "list:port"
-        ]
-    },
-    "ping_port": {
-        "arguments": [
-            {
-                "label": "port",
-                "type": "number"
-            }
-        ],
-        "returns": [
-            "port",
-            "null"
-        ]
-    },
-    "port_info": {
-        "arguments": [
-            {
-                "label": "port",
-                "type": "port"
-            }
-        ],
-        "returns": [
-            "string"
-        ]
-    }
+  "device_ports": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "ip",
+        "type": "string"
+      }
+    ],
+    "returns": [
+      "string",
+      "list:port",
+      "null"
+    ]
+  },
+  "devices_lan_ip": {
+    "type": "function",
+    "returns": [
+      "list:string"
+    ]
+  },
+  "bssid_name": {
+    "type": "function",
+    "returns": [
+      "string"
+    ]
+  },
+  "essid_name": {
+    "type": "function",
+    "returns": [
+      "string"
+    ]
+  },
+  "firewall_rules": {
+    "type": "function",
+    "returns": [
+      "list:string"
+    ]
+  },
+  "kernel_version": {
+    "type": "function",
+    "returns": [
+      "string"
+    ]
+  },
+  "local_ip": {
+    "type": "function",
+    "returns": [
+      "string"
+    ]
+  },
+  "public_ip": {
+    "type": "function",
+    "returns": [
+      "string"
+    ]
+  },
+  "used_ports": {
+    "type": "function",
+    "returns": [
+      "list:port"
+    ]
+  },
+  "ping_port": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "port",
+        "type": "number"
+      }
+    ],
+    "returns": [
+      "port",
+      "null"
+    ]
+  },
+  "port_info": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "port",
+        "type": "port"
+      }
+    ],
+    "returns": [
+      "string"
+    ]
+  }
 }

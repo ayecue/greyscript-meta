@@ -1,79 +1,84 @@
 {
-    "aircrack": {
-        "arguments": [
-            {
-                "label": "path",
-                "type": "string"
-            }
-        ],
-        "returns": [
-            "string",
-            "null"
-        ]
-    },
-    "airmon": {
-        "arguments": [
-            {
-                "label": "option",
-                "type": "string"
-            },
-            {
-                "label": "device",
-                "type": "string"
-            }
-        ],
-        "returns": [
-            "number",
-            "string"
-        ]
-    },
-    "aireplay": {
-        "arguments": [
-            {
-                "label": "bssid",
-                "type": "string"
-            },
-            {
-                "label": "essid",
-                "type": "string"
-            },
-            {
-                "label": "maxAcks",
-                "type": "string",
-                "opt": true
-            }
-        ],
-        "returns": [
-            "string",
-            "null"
-        ]
-    },
-    "decipher": {
-        "arguments": [
-            {
-                "label": "encPass",
-                "type": "string"
-            }
-        ],
-        "returns": [
-            "string",
-            "null"
-        ]
-    },
-    "smtp_user_list": {
-        "arguments": [
-            {
-                "label": "ip",
-                "type": "string"
-            },
-            {
-                "label": "port",
-                "type": "number"
-            }
-        ],
-        "returns": [
-            "list:string",
-            "string"
-        ]
-    }
+  "aircrack": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "path",
+        "type": "string"
+      }
+    ],
+    "returns": [
+      "string",
+      "null"
+    ]
+  },
+  "airmon": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "option",
+        "type": "string"
+      },
+      {
+        "label": "device",
+        "type": "string"
+      }
+    ],
+    "returns": [
+      "number",
+      "string"
+    ]
+  },
+  "aireplay": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "bssid",
+        "type": "string"
+      },
+      {
+        "label": "essid",
+        "type": "string"
+      },
+      {
+        "label": "maxAcks",
+        "type": "string",
+        "opt": true
+      }
+    ],
+    "returns": [
+      "string",
+      "null"
+    ]
+  },
+  "decipher": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "encPass",
+        "type": "string"
+      }
+    ],
+    "returns": [
+      "string",
+      "null"
+    ]
+  },
+  "smtp_user_list": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "ip",
+        "type": "string"
+      },
+      {
+        "label": "port",
+        "type": "number"
+      }
+    ],
+    "returns": [
+      "list:string",
+      "string"
+    ]
+  }
 }

@@ -1,6 +1,6 @@
 {
   "name": "greyscript-meta",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Meta description for GreyScript API",
   "main": "dist/index",
   "typings": "dist/index",
@@ -10,6 +10,7 @@
     "build:local": "npm run clean && tsc -p .",
     "watch": "tsc -w -p .",
     "clean": "rm -rf dist",
+    "test": "jest ./tests",
     "lint": "eslint ./src/**/*.ts",
     "lint:fix": "eslint --fix ./src/**/*.ts"
   },
@@ -56,6 +57,6 @@
     "greyhack"
   ],
   "dependencies": {
-    "meta-utils": "~1.0.0"
+    "meta-utils": "~1.1.3"
   }
 }

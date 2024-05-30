@@ -1,33 +1,36 @@
 {
-    "host_computer": {
-        "returns": [
-            "computer",
-            "null"
-        ]
-    },
-    "start_terminal": {
-        "returns": [
-            "null"
-        ]
-    },
-    "put": {
-        "arguments": [
-            {
-                "label": "file",
-                "type": "string"
-            },
-            {
-                "label": "folder",
-                "type": "string"
-            },
-            {
-                "label": "remoteShell",
-                "type": "shell"
-            }
-        ],
-        "returns": [
-            "number",
-            "string"
-        ]
-    }
+  "host_computer": {
+    "type": "function",
+    "returns": [
+      "computer",
+      "null"
+    ]
+  },
+  "start_terminal": {
+    "type": "function",
+    "returns": [
+      "null"
+    ]
+  },
+  "put": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "file",
+        "type": "string"
+      },
+      {
+        "label": "folder",
+        "type": "string"
+      },
+      {
+        "label": "remoteShell",
+        "type": "shell"
+      }
+    ],
+    "returns": [
+      "number",
+      "string"
+    ]
+  }
 }

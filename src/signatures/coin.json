@@ -1,140 +1,152 @@
 {
-    "set_cycle_mining": {
-        "arguments": [
-            {
-                "label": "rateHours",
-                "type": "number"
-            }
-        ],
-        "returns": [
-            "number",
-            "null"
-        ]
-    },
-    "get_cycle_mining": {
-        "returns": [
-            "number"
-        ]
-    },
-    "get_reward": {
-        "returns": [
-            "number"
-        ]
-    },
-    "set_reward": {
-        "arguments": [
-            {
-                "label": "coinAmount",
-                "type": "number"
-            }
-        ],
-        "returns": [
-            "number",
-            "string",
-            "null"
-        ]
-    },
-    "transaction": {
-        "arguments": [
-            {
-                "label": "subWalletOrig",
-                "type": "string"
-            },
-            {
-                "label": "subWalletDest",
-                "type": "string"
-            },
-            {
-                "label": "valAmount",
-                "type": "number"
-            }
-        ],
-        "returns": [
-            "string",
-            "number",
-            "null"
-        ]
-    },
-    "create_subwallet": {
-        "arguments": [
-            {
-                "label": "walletID",
-                "type": "string"
-            },
-            {
-                "label": "pin",
-                "type": "string"
-            },
-            {
-                "label": "subWalletUser",
-                "type": "string"
-            },
-            {
-                "label": "subWalletPass",
-                "type": "string"
-            }
-        ],
-        "returns": [
-            "string",
-            "number"
-        ]
-    },
-    "get_subwallet": {
-        "arguments": [
-            {
-                "label": "subWalletUser",
-                "type": "string"
-            }
-        ],
-        "returns": [
-            "number",
-            "string",
-            "subWallet",
-            "null"
-        ]
-    },
-    "get_subwallets": {
-        "returns": [
-            "number",
-            "string",
-            "list:subWallet"
-        ]
-    },
-    "set_address": {
-        "arguments": [
-            {
-                "label": "address",
-                "type": "string"
-            }
-        ],
-        "returns": [
-            "number",
-            "string",
-            "null"
-        ]
-    },
-    "get_address": {
-        "returns": [
-            "number",
-            "string"
-        ]
-    },
-    "get_mined_coins": {
-        "returns": [
-            "number"
-        ]
-    },
-    "reset_password": {
-      "arguments": [
-          {
-              "label": "newPassword",
-              "type": "string"
-          }
-      ],
-      "returns": [
-          "number",
-          "string",
-          "null"
-      ]
-    }
+  "set_cycle_mining": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "rateHours",
+        "type": "number"
+      }
+    ],
+    "returns": [
+      "number",
+      "null"
+    ]
+  },
+  "get_cycle_mining": {
+    "type": "function",
+    "returns": [
+      "number"
+    ]
+  },
+  "get_reward": {
+    "type": "function",
+    "returns": [
+      "number"
+    ]
+  },
+  "set_reward": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "coinAmount",
+        "type": "number"
+      }
+    ],
+    "returns": [
+      "number",
+      "string",
+      "null"
+    ]
+  },
+  "transaction": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "subWalletOrig",
+        "type": "string"
+      },
+      {
+        "label": "subWalletDest",
+        "type": "string"
+      },
+      {
+        "label": "valAmount",
+        "type": "number"
+      }
+    ],
+    "returns": [
+      "string",
+      "number",
+      "null"
+    ]
+  },
+  "create_subwallet": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "walletID",
+        "type": "string"
+      },
+      {
+        "label": "pin",
+        "type": "string"
+      },
+      {
+        "label": "subWalletUser",
+        "type": "string"
+      },
+      {
+        "label": "subWalletPass",
+        "type": "string"
+      }
+    ],
+    "returns": [
+      "string",
+      "number"
+    ]
+  },
+  "get_subwallet": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "subWalletUser",
+        "type": "string"
+      }
+    ],
+    "returns": [
+      "number",
+      "string",
+      "subWallet",
+      "null"
+    ]
+  },
+  "get_subwallets": {
+    "type": "function",
+    "returns": [
+      "number",
+      "string",
+      "list:subWallet"
+    ]
+  },
+  "set_address": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "address",
+        "type": "string"
+      }
+    ],
+    "returns": [
+      "number",
+      "string",
+      "null"
+    ]
+  },
+  "get_address": {
+    "type": "function",
+    "returns": [
+      "number",
+      "string"
+    ]
+  },
+  "get_mined_coins": {
+    "type": "function",
+    "returns": [
+      "number"
+    ]
+  },
+  "reset_password": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "newPassword",
+        "type": "string"
+      }
+    ],
+    "returns": [
+      "number",
+      "string",
+      "null"
+    ]
+  }
 }

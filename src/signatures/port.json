@@ -1,17 +1,20 @@
 {
-    "port_number": {
-        "returns": [
-            "number"
-        ]
-    },
-    "is_closed": {
-        "returns": [
-            "number"
-        ]
-    },
-    "get_lan_ip": {
-        "returns": [
-            "string"
-        ]
-    }
+  "port_number": {
+    "type": "function",
+    "returns": [
+      "number"
+    ]
+  },
+  "is_closed": {
+    "type": "function",
+    "returns": [
+      "number"
+    ]
+  },
+  "get_lan_ip": {
+    "type": "function",
+    "returns": [
+      "string"
+    ]
+  }
 }

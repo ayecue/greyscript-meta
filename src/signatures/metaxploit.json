@@ -1,100 +1,107 @@
 {
-    "load": {
-        "arguments": [
-            {
-                "label": "path",
-                "type": "string"
-            }
-        ],
-        "returns": [
-            "metaLib",
-            "null"
-        ]
-    },
-    "net_use": {
-        "arguments": [
-            {
-                "label": "ip",
-                "type": "string"
-            },
-            {
-                "label": "port",
-                "type": "number"
-            }
-        ],
-        "returns": [
-            "netSession",
-            "null"
-        ]
-    },
-    "rshell_client": {
-        "arguments": [
-            {
-                "label": "ip",
-                "type": "string"
-            },
-            {
-                "label": "port",
-                "type": "number",
-                "default": "1222"
-            },
-            {
-                "label": "processName",
-                "type": "string",
-                "default": "\"rshell_client\""
-            }
-        ],
-        "returns": [
-            "string",
-            "number"
-        ]
-    },
-    "rshell_server": {
-        "arguments": [],
-        "returns": [
-            "string",
-            "list:shell"
-        ]
-    },
-    "scan": {
-        "arguments": [
-            {
-                "label": "metaLib",
-                "type": "metaLib"
-            }
-        ],
-        "returns": [
-            "list:string",
-            "null"
-        ]
-    },
-    "scan_address": {
-        "arguments": [
-            {
-                "label": "metaLib",
-                "type": "metaLib"
-            },
-            {
-                "label": "memoryAddress",
-                "type": "string"
-            }
-        ],
-        "returns": [
-            "string",
-            "null"
-        ]
-    },
-    "sniffer": {
-        "arguments": [
-            {
-                "label": "saveEncSource",
-                "type": "number",
-                "opt": true
-            }
-        ],
-        "returns": [
-            "string",
-            "null"
-        ]
-    }
+  "load": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "path",
+        "type": "string"
+      }
+    ],
+    "returns": [
+      "metaLib",
+      "null"
+    ]
+  },
+  "net_use": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "ip",
+        "type": "string"
+      },
+      {
+        "label": "port",
+        "type": "number"
+      }
+    ],
+    "returns": [
+      "netSession",
+      "null"
+    ]
+  },
+  "rshell_client": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "ip",
+        "type": "string"
+      },
+      {
+        "label": "port",
+        "type": "number",
+        "default": "1222"
+      },
+      {
+        "label": "processName",
+        "type": "string",
+        "default": "\"rshell_client\""
+      }
+    ],
+    "returns": [
+      "string",
+      "number"
+    ]
+  },
+  "rshell_server": {
+    "type": "function",
+    "arguments": [],
+    "returns": [
+      "string",
+      "list:shell"
+    ]
+  },
+  "scan": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "metaLib",
+        "type": "metaLib"
+      }
+    ],
+    "returns": [
+      "list:string",
+      "null"
+    ]
+  },
+  "scan_address": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "metaLib",
+        "type": "metaLib"
+      },
+      {
+        "label": "memoryAddress",
+        "type": "string"
+      }
+    ],
+    "returns": [
+      "string",
+      "null"
+    ]
+  },
+  "sniffer": {
+    "type": "function",
+    "arguments": [
+      {
+        "label": "saveEncSource",
+        "type": "number",
+        "opt": true
+      }
+    ],
+    "returns": [
+      "string",
+      "null"
+    ]
+  }
 }

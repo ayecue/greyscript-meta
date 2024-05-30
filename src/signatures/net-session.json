@@ -1,32 +1,38 @@
 {
-    "dump_lib": {
-        "returns": [
-            "metaLib"
-        ]
-    },
-    "get_num_conn_gateway": {
-        "returns": [
-            "number"
-        ]
-    },
-    "get_num_portforward": {
-        "returns": [
-            "number"
-        ]
-    },
-    "get_num_users": {
-        "returns": [
-            "number"
-        ]
-    },
-    "is_any_active_user": {
-        "returns": [
-            "number"
-        ]
-    },
-    "is_root_active_user": {
-        "returns": [
-            "number"
-        ]
-    }
+  "dump_lib": {
+    "type": "function",
+    "returns": [
+      "metaLib"
+    ]
+  },
+  "get_num_conn_gateway": {
+    "type": "function",
+    "returns": [
+      "number"
+    ]
+  },
+  "get_num_portforward": {
+    "type": "function",
+    "returns": [
+      "number"
+    ]
+  },
+  "get_num_users": {
+    "type": "function",
+    "returns": [
+      "number"
+    ]
+  },
+  "is_any_active_user": {
+    "type": "function",
+    "returns": [
+      "number"
+    ]
+  },
+  "is_root_active_user": {
+    "type": "function",
+    "returns": [
+      "number"
+    ]
+  }
 }

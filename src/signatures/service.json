@@ -1,21 +1,24 @@
 {
-    "install_service": {
-        "returns": [
-            "number",
-            "string"
-        ]
-    },
-    "start_service": {
-        "returns": [
-            "number",
-            "string",
-            "null"
-        ]
-    },
-    "stop_service": {
-        "returns": [
-            "number",
-            "string"
-        ]
-    }
+  "install_service": {
+    "type": "function",
+    "returns": [
+      "number",
+      "string"
+    ]
+  },
+  "start_service": {
+    "type": "function",
+    "returns": [
+      "number",
+      "string",
+      "null"
+    ]
+  },
+  "stop_service": {
+    "type": "function",
+    "returns": [
+      "number",
+      "string"
+    ]
+  }
 }
