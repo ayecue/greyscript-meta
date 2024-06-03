@@ -1167,6 +1167,12 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "/etc/apt/aptcache.bin not found. Launch apt with the update option to refresh the file",
+        "${repository} repository not found",
+        "/etc/apt/aptcache.bin content is malformed. Launch apt with the update option to refresh the file"
+      ],
       "returns": [
         "string",
         "null"
@@ -1184,6 +1190,12 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "/etc/apt/aptcache.bin not found. Launch apt with the update option to refresh the file",
+        "${search} not found in any repository",
+        "/etc/apt/aptcache.bin content is malformed. Launch apt with the update option to refresh the file"
+      ],
       "returns": [
         "string",
         "null"
@@ -1196,6 +1208,13 @@
           "label": "self",
           "type": "aptClient"
         }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "apt_update: No internet access.",
+        "${source} repository not found",
+        "/etc/apt/sources.txt content is malformed",
+        0
       ],
       "returns": [
         "string",
@@ -1223,6 +1242,12 @@
           }
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "/etc/apt/sources.txt does not exist",
+        "${repository} it is already added to sources.txt",
+        "/etc/apt/sources.txt content is malformed."
+      ],
       "returns": [
         "string",
         "null"
@@ -1239,6 +1264,12 @@
           "label": "repository",
           "type": "string"
         }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "/etc/apt/sources.txt does not exist",
+        "${repository} not found in sources.txt",
+        "/etc/apt/sources.txt content is malformed."
       ],
       "returns": [
         "string",
@@ -1265,6 +1296,50 @@
           }
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "apt_install: No internet access.",
+        "/etc/apt/aptcache.bin not found. Launch apt with the update option to refresh the file",
+        "package name can not be empty",
+        "There is not enough free space on the hard disk.",
+        "ip address not found",
+        "can't connect: the remote server has been temporarily disabled due to non-payment",
+        "can't connect: port ${port} not found",
+        "can't connect: port closed",
+        "can't connect: There is no active machine behind the port ${port}",
+        "can't connect: service not found behind the port ${port}",
+        "Fatal error: ${filepath} corrupted!",
+        "Kernel panic: missing ${filepath} file!",
+        "Graphics error: ${filepath} not found!",
+        "Fatal error:  ${filepath} not found!",
+        "Connection refused. Address unreachable",
+        "Connection refused. The target is behind a firewall.",
+        "No internet access.",
+        "Remote host is down",
+        "Unable to find service ${service}",
+        "Invalid target service port configuration.",
+        "connection rejected: port forward removed by admin",
+        "Unable to connect: missing ${library}",
+        "Unable to connect: invalid ${library}",
+        "can't connect: invalid or missing kernel_router.so in the target router",
+        "can't connect: unexpected library found. Not a valid kernel_router.so library in the target router.",
+        "can't connect: invalid or missing kernel_router.so in the target router",
+        "Unexpected library found. Not a valid ${library} library.",
+        "Unknown error",
+        "${serviceDBFile} does not exist in the server",
+        "apt folder content does not exist in the server",
+        "${package} does not exist in the server",
+        "unknown error",
+        "Invalid path",
+        "${filepath} not found",
+        "permission denied",
+        "permission denied. ${filename} is protected",
+        "The copy can not be made. Reached maximum number of files in a folder",
+        "The copy can not be made. Reached maximum limit",
+        "/etc/apt/aptcache.bin content is malformed. Launch apt with the update option to refresh the file",
+        "${package} not found in the server",
+        1
+      ],
       "returns": [
         "string",
         "number",
@@ -1282,6 +1357,41 @@
           "label": "filePath",
           "type": "string"
         }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "apt_check_upgrade: No internet access.",
+        "/etc/apt/aptcache.bin not found. Launch apt with the update option to refresh the file",
+        "package name can not be empty",
+        "${filepath} does not exist in this filesystem",
+        "ip address not found",
+        "can't connect: the remote server has been temporarily disabled due to non-payment",
+        "can't connect: port ${port} not found",
+        "can't connect: port closed",
+        "can't connect: There is no active machine behind the port ${port}",
+        "can't connect: service not found behind the port ${port}",
+        "Connection refused. Address unreachable",
+        "Connection refused. The target is behind a firewall.",
+        "Fatal error: ${filepath} corrupted!",
+        "Kernel panic: missing ${filepath} file!",
+        "Graphics error: ${filepath} not found!",
+        "Fatal error:  ${filepath} not found!",
+        "No internet access.",
+        "Remote host is down",
+        "Unable to find service ${service}",
+        "Invalid target service port configuration.",
+        "connection rejected: port forward removed by admin",
+        "Unable to connect: missing ${library}",
+        "Unable to connect: invalid ${library}",
+        "Unexpected library found. Not a valid ${library} library.",
+        "Unknown error",
+        "${serviceDBFile} does not exist in the server",
+        "apt folder content does not exist in the server",
+        "${filepath} does not exist in the server",
+        "${filepath} does not exist in this filesystem",
+        "${serviceDBFile} file content is malformed in the server",
+        "/etc/apt/aptcache.bin content is malformed. Launch apt with the update option to refresh the file",
+        "${filepath} not found in the server"
       ],
       "returns": [
         "string",

@@ -759,7 +759,7 @@
     ]
   },
   "update": {
-    "description": "Refreshes the list of available packages after adding a new repository in `\"/etc/apt/sources.txt\"`, or if the remote repository has updated its information in `\"/server/conf/repod.conf\"`. If an invalid `GreyMap` instance is passed, this method will return a `number` with the value zero. If a `GreyMap` value is passed that isn't a valid `aptClient` instance, this method will return `null`. On a successful update, an empty `string` will be returned. In case of failure, a `string` with an error message will be returned.",
+    "description": "Refreshes the list of available packages after adding a new repository in `\"/etc/apt/sources.txt\"`, or if the remote repository has updated its information in `\"/server/conf/repod.conf\"`. If either the `\"/etc/apt/sources.txt\"` file has an invalid format or an invalid `GreyMap` instance is passed, this method will return a `number` with the value zero. If a `GreyMap` value is passed that isn't a valid `aptClient` instance, this method will return `null`. On a successful update, an empty `string` will be returned. In case of failure, a `string` with an error message will be returned.",
     "example": [
       "aptClient = include_lib(\"/lib/aptclient.so\")",
       "result = update(aptClient)",
