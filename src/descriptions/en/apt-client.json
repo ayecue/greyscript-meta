@@ -1,26 +1,26 @@
 {
-    "$meta": {
-        "description": "A `aptClient` object can be obtained by using [include_lib](#GENERAL_INCLUDE_LIB). The `classID` used for this object is `\"aptclientLib\"`."
-    },
-    "show": {
-        "description": "Shows all packages available in the repository. The repository must be added in the `\"/etc/apt/sources.txt\"` file."
-    },
-    "search": {
-        "description": "Search specifically for the package in any of the repositories listed in `\"/etc/apt/sources.txt\"`."
-    },
-    "update": {
-        "description": "Update the `list` of available packages after adding a new repository in `\"/etc/apt/sources.txt\"`, or if the remote repository has updated its information in `\"/server/conf/repod.conf\"`."
-    },
-    "add_repo": {
-        "description": "Add the repository address in the `\"/etc/apt/sources.txt\"` file."
-    },
-    "del_repo": {
-        "description": "Remove the repository address in the `\"/etc/apt/sources.txt\"` file."
-    },
-    "install": {
-        "description": "Install the program or library from a remote repository listed in `\"/etc/apt/sources.txt\"`. Unless a path is specified, the program installs in `\"/lib\"` if it is a library or in `\"/bin\"` otherwise."
-    },
-    "check_upgrade": {
-        "description": "Check if there is a newer version of the file in the repository."
-    }
+  "$meta": {
+    "description": "A `aptClient` object can be obtained by using [include_lib](#GENERAL_INCLUDE_LIB). The `classID` used for this object is `\"aptclientLib\"`."
+  },
+  "show": {
+    "description": "Show displays all the packages available in a repository. The repository must be listed in the `\"/etc/apt/sources.txt\"` file. If the provided repository value is `null`, this method will return `null`. If it cannot find a repository, it will return various error messages. On success, it will return a `string` containing all packages and their descriptions, with each entry separated by a newline."
+  },
+  "search": {
+    "description": "Search specifically looks for a package in any of the repositories listed in `\"/etc/apt/sources.txt\"`. If the provided search value is `null`, this method will also return `null`. On success, it will return a `string` containing all packages that partially match the provided search value. On failure, it will return a `string` with various error messages."
+  },
+  "update": {
+    "description": "Update refreshes the list of available packages after adding a new repository in `\"/etc/apt/sources.txt\"`, or if the remote repository has updated its information in `\"/server/conf/repod.conf\"`. If the update is successful, an empty `string` will be returned. In case of failure, a `string` with an error message will be returned."
+  },
+  "add_repo": {
+    "description": "Inserts a repository address into the `\"/etc/apt/sources.txt\"` file. If any of the provided parameters are `null`, this method will return `null`. On success, it will return an empty `string`. In case of failure, it will return a `string` with an error message."
+  },
+  "del_repo": {
+    "description": "Deletes a repository address from the `\"/etc/apt/sources.txt\"` file. If the provided repository parameter is `null`, this method will also return `null`. On success, it will return an empty `string`. In case of failure, it will return a `string` with an error message."
+  },
+  "install": {
+    "description": "Installs a program or library from a remote repository listed in `\"/etc/apt/sources.txt\"`. If no path is specified, the program installs in `\"/lib\"` if it is a library or in `\"/bin\"` otherwise. If any of the provided parameters are `null`, this method will return `null`. On success, this method will return a `number` with the value one. In case of failure, it will return a `string` containing an error message."
+  },
+  "check_upgrade": {
+    "description": "Checks if there is a newer version of the program or library in the repository. If the provided `filePath` value is `null`, this method will also return `null`. On success, it will return a `number`, which can be either zero or one. Zero indicates that there is no new version, while one indicates that there is a new version available. In case of failure, it will return a string containing an error message."
+  }
 }

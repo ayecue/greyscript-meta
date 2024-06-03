@@ -1155,23 +1155,6 @@
         "ctfEvent"
       ]
     },
-    "check_upgrade": {
-      "type": "function",
-      "arguments": [
-        {
-          "label": "self",
-          "type": "aptClient"
-        },
-        {
-          "label": "filePath",
-          "type": "string"
-        }
-      ],
-      "returns": [
-        "string",
-        "number"
-      ]
-    },
     "show": {
       "type": "function",
       "arguments": [
@@ -1180,12 +1163,13 @@
           "type": "aptClient"
         },
         {
-          "label": "repoName",
+          "label": "repository",
           "type": "string"
         }
       ],
       "returns": [
-        "string"
+        "string",
+        "null"
       ]
     },
     "search": {
@@ -1196,7 +1180,7 @@
           "type": "aptClient"
         },
         {
-          "label": "packageName",
+          "label": "search",
           "type": "string"
         }
       ],
@@ -1215,7 +1199,8 @@
       ],
       "returns": [
         "string",
-        "number"
+        "number",
+        "null"
       ]
     },
     "add_repo": {
@@ -1226,13 +1211,16 @@
           "type": "aptClient"
         },
         {
-          "label": "repo",
+          "label": "repository",
           "type": "string"
         },
         {
           "label": "port",
           "type": "number",
-          "default": "1542.0"
+          "default": {
+            "type": "number",
+            "value": 1542
+          }
         }
       ],
       "returns": [
@@ -1248,7 +1236,7 @@
           "type": "aptClient"
         },
         {
-          "label": "repo",
+          "label": "repository",
           "type": "string"
         }
       ],
@@ -1265,17 +1253,40 @@
           "type": "aptClient"
         },
         {
-          "label": "packageName",
+          "label": "package",
           "type": "string"
         },
         {
-          "label": "installPath",
+          "label": "customPath",
           "type": "string",
-          "opt": true
+          "default": {
+            "type": "string",
+            "default": ""
+          }
         }
       ],
       "returns": [
-        "string"
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "check_upgrade": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "aptClient"
+        },
+        {
+          "label": "filePath",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
       ]
     },
     "coin_price": {
