@@ -3,24 +3,102 @@
     "description": "A `aptClient` object can be obtained by using [include_lib](#GENERAL_INCLUDE_LIB). The `classID` used for this object is `\"aptclientLib\"`."
   },
   "show": {
-    "description": "Show displays all the packages available in a repository. The repository must be listed in the `\"/etc/apt/sources.txt\"` file. If the provided repository value is `null`, this method will return `null`. If it cannot find a repository, it will return various error messages. On success, it will return a `string` containing all packages and their descriptions, with each entry separated by a newline."
+    "description": "Show displays all the packages available in a repository. The repository must be listed in the `\"/etc/apt/sources.txt\"` file. If the provided repository value is `null`, this method will return `null`. If it cannot find a repository, it will return various error messages. On success, it will return a `string` containing all packages and their descriptions, with each entry separated by a newline.",
+    "example": [
+      "aptClient = include_lib(\"/lib/aptclient.so\")",
+      "packages = aptClient.show(\"177.202.15.132\")",
+      "packageList = packages.split(char(10) + char(10))",
+      "packageList.pop // remove last empty item",
+      "for packageItem in packageList",
+      "    entry = packageItem.split(char(10))",
+      "    packageName = entry[0]",
+      "    packageDescription = entry[1]",
+      "    print \"Title: <b>\" + packageName + \"</b>\"",
+      "    print \"Description: <i>\" + packageDescription + \"</i>\"",
+      "    print \"----------------------------\"",
+      "end for"
+    ]
   },
   "search": {
-    "description": "Search specifically looks for a package in any of the repositories listed in `\"/etc/apt/sources.txt\"`. If the provided search value is `null`, this method will also return `null`. On success, it will return a `string` containing all packages that partially match the provided search value. On failure, it will return a `string` with various error messages."
+    "description": "Search specifically looks for a package in any of the repositories listed in `\"/etc/apt/sources.txt\"`. If the provided search value is `null`, this method will also return `null`. On success, it will return a `string` containing all packages that partially match the provided search value. On failure, it will return a `string` with various error messages.",
+    "example": [
+      "aptClient = include_lib(\"/lib/aptclient.so\")",
+      "packages = aptClient.search(\".so\")",
+      "packageList = packages.split(char(10) + char(10))",
+      "for packageItem in packageList",
+      "    entry = packageItem.split(char(10))",
+      "    if entry.len != 2 then",
+      "        print \"something wrong in: \" + entry",
+      "        continue",
+      "    end if",
+      "    packageName = entry[0]",
+      "    packageDescription = entry[1]",
+      "    print \"Title: <b>\" + packageName + \"</b>\"",
+      "    print \"Description: <i>\" + packageDescription + \"</i>\"",
+      "    print \"----------------------------\"",
+      "end for"
+    ]
   },
   "update": {
-    "description": "Update refreshes the list of available packages after adding a new repository in `\"/etc/apt/sources.txt\"`, or if the remote repository has updated its information in `\"/server/conf/repod.conf\"`. If the update is successful, an empty `string` will be returned. In case of failure, a `string` with an error message will be returned."
+    "description": "Update refreshes the list of available packages after adding a new repository in `\"/etc/apt/sources.txt\"`, or if the remote repository has updated its information in `\"/server/conf/repod.conf\"`. If the update is successful, an empty `string` will be returned. In case of failure, a `string` with an error message will be returned.",
+    "example": [
+      "aptClient = include_lib(\"/lib/aptclient.so\")",
+      "result = aptClient.update",
+      "if result == \"\" then",
+      "    print \"Update successful!\"",
+      "else",
+      "    print \"Error while updating: \" + result",
+      "end if"
+    ]
   },
   "add_repo": {
-    "description": "Inserts a repository address into the `\"/etc/apt/sources.txt\"` file. If any of the provided parameters are `null`, this method will return `null`. On success, it will return an empty `string`. In case of failure, it will return a `string` with an error message."
+    "description": "Inserts a repository address into the `\"/etc/apt/sources.txt\"` file. If any of the provided parameters are `null`, this method will return `null`. On success, it will return an empty `string`. In case of failure, it will return a `string` with an error message.",
+    "example": [
+      "aptClient = include_lib(\"/lib/aptclient.so\")",
+      "result = aptClient.add_repo(\"177.202.15.132\")",
+      "if result == \"\" then",
+      "    print \"Addition successful!\"",
+      "else",
+      "    print \"Error while adding: \" + result",
+      "end if"
+    ]
   },
   "del_repo": {
-    "description": "Deletes a repository address from the `\"/etc/apt/sources.txt\"` file. If the provided repository parameter is `null`, this method will also return `null`. On success, it will return an empty `string`. In case of failure, it will return a `string` with an error message."
+    "description": "Deletes a repository address from the `\"/etc/apt/sources.txt\"` file. If the provided repository parameter is `null`, this method will also return `null`. On success, it will return an empty `string`. In case of failure, it will return a `string` with an error message.",
+    "example": [
+      "aptClient = include_lib(\"/lib/aptclient.so\")",
+      "result = aptClient.del_repo(\"177.202.15.132\")",
+      "if result == \"\" then",
+      "    print \"Deletion successful!\"",
+      "else",
+      "    print \"Error while deleting: \" + result",
+      "end if"
+    ]
   },
   "install": {
-    "description": "Installs a program or library from a remote repository listed in `\"/etc/apt/sources.txt\"`. If no path is specified, the program installs in `\"/lib\"` if it is a library or in `\"/bin\"` otherwise. If any of the provided parameters are `null`, this method will return `null`. On success, this method will return a `number` with the value one. In case of failure, it will return a `string` containing an error message."
+    "description": "Installs a program or library from a remote repository listed in `\"/etc/apt/sources.txt\"`. If no path is specified, the program installs in `\"/lib\"` if it is a library or in `\"/bin\"` otherwise. If any of the provided parameters are `null`, this method will return `null`. On success, this method will return a `number` with the value one. In case of failure, it will return a `string` containing an error message.",
+    "example": [
+      "aptClient = include_lib(\"/lib/aptclient.so\")",
+      "result = aptClient.install(\"rshell_interface\")",
+      "if result == 1 then",
+      "    print \"Installed program successful!\"",
+      "else",
+      "    print \"Error while installing: \" + result",
+      "end if"
+    ]
   },
   "check_upgrade": {
-    "description": "Checks if there is a newer version of the program or library in the repository. If the provided `filePath` value is `null`, this method will also return `null`. On success, it will return a `number`, which can be either zero or one. Zero indicates that there is no new version, while one indicates that there is a new version available. In case of failure, it will return a string containing an error message."
+    "description": "Checks if there is a newer version of the program or library in the repository. If the provided `filePath` value is `null`, this method will also return `null`. On success, it will return a `number`, which can be either zero or one. Zero indicates that there is no new version, while one indicates that there is a new version available. In case of failure, it will return a string containing an error message.",
+    "example": [
+      "aptClient = include_lib(\"/lib/aptclient.so\")",
+      "result = aptClient.check_upgrade(\"/bin/rshell_interface\")",
+      "if result == 0 then",
+      "    print \"Program doesnt need an update!\"",
+      "else if result == 1 then",
+      "    print \"Program does need an update!\"",
+      "else",
+      "    print \"Error while checking version: \" + result",
+      "end if"
+    ]
   }
 }

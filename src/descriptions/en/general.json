@@ -722,25 +722,103 @@
     "description": "Returns `ctfEvent` object if there is one available."
   },
   "show": {
-    "description": "Displays all the packages available in a repository. The repository must be listed in the `\"/etc/apt/sources.txt\"` file. If the provided repository value is `null`, this method will return `null`. If an invalid `aptClient` instance is passed, this method will also return `null`. If it cannot find a repository, it will return a string with an error message. On success, it will return a `string` containing all packages and their descriptions, with each entry separated by a newline."
+    "description": "Displays all the packages available in a repository. The repository must be listed in the `\"/etc/apt/sources.txt\"` file. If the provided repository value is `null`, this method will return `null`. If an invalid `aptClient` instance is passed, this method will also return `null`. If it cannot find a repository, it will return a string with an error message. On success, it will return a `string` containing all packages and their descriptions, with each entry separated by a newline.",
+    "example": [
+      "aptClient = include_lib(\"/lib/aptclient.so\")",
+      "packages = show(aptClient, \"177.202.15.132\")",
+      "packageList = split(packages, char(10) + char(10))",
+      "pop(packageList) // remove last empty item",
+      "for packageItem in packageList",
+      "    entry = split(packageItem, char(10))",
+      "    packageName = entry[0]",
+      "    packageDescription = entry[1]",
+      "    print \"Title: <b>\" + packageName + \"</b>\"",
+      "    print \"Description: <i>\" + packageDescription + \"</i>\"",
+      "    print \"----------------------------\"",
+      "end for"
+    ]
   },
   "search": {
-    "description": "The `search` method specifically looks for a package in any of the repositories listed in `\"/etc/apt/sources.txt\"`. If the provided search value is `null`, this method will also return `null`. If an invalid `aptClient` instance is passed, this method will return `null`. On success, it will return a `string` containing all packages that partially match the provided search value. On failure, it will return a `string` with various error messages."
+    "description": "The `search` method specifically looks for a package in any of the repositories listed in `\"/etc/apt/sources.txt\"`. If the provided search value is `null`, this method will also return `null`. If an invalid `aptClient` instance is passed, this method will return `null`. On success, it will return a `string` containing all packages that partially match the provided search value. On failure, it will return a `string` with various error messages.",
+    "example": [
+      "aptClient = include_lib(\"/lib/aptclient.so\")",
+      "packages = search(aptClient, \".so\")",
+      "packageList = split(packages, char(10) + char(10))",
+      "for packageItem in packageList",
+      "    entry = split(packageItem, char(10))",
+      "    if len(entry) != 2 then",
+      "        print \"something wrong in: \" + entry",
+      "        continue",
+      "    end if",
+      "    packageName = entry[0]",
+      "    packageDescription = entry[1]",
+      "    print \"Title: <b>\" + packageName + \"</b>\"",
+      "    print \"Description: <i>\" + packageDescription + \"</i>\"",
+      "    print \"----------------------------\"",
+      "end for"
+    ]
   },
   "update": {
-    "description": "Refreshes the list of available packages after adding a new repository in `\"/etc/apt/sources.txt\"`, or if the remote repository has updated its information in `\"/server/conf/repod.conf\"`. If an invalid `GreyMap` instance is passed, this method will return a `number` with the value zero. If a `GreyMap` value is passed that isn't a valid `aptClient` instance, this method will return `null`. On a successful update, an empty `string` will be returned. In case of failure, a `string` with an error message will be returned."
+    "description": "Refreshes the list of available packages after adding a new repository in `\"/etc/apt/sources.txt\"`, or if the remote repository has updated its information in `\"/server/conf/repod.conf\"`. If an invalid `GreyMap` instance is passed, this method will return a `number` with the value zero. If a `GreyMap` value is passed that isn't a valid `aptClient` instance, this method will return `null`. On a successful update, an empty `string` will be returned. In case of failure, a `string` with an error message will be returned.",
+    "example": [
+      "aptClient = include_lib(\"/lib/aptclient.so\")",
+      "result = update(aptClient)",
+      "if result == \"\" then",
+      "    print \"Update successful!\"",
+      "else",
+      "    print \"Error while updating: \" + result",
+      "end if"
+    ]
   },
   "add_repo": {
-    "description": "Adds a repository address to the `\"/etc/apt/sources.txt\"` file. If any of the provided parameters are `null`, this method will return `null`. If an invalid `aptClient` instance is passed, this method will also return `null`. On success, it will return an empty `string`. In case of failure, it will return a `string` with an error message."
+    "description": "Adds a repository address to the `\"/etc/apt/sources.txt\"` file. If any of the provided parameters are `null`, this method will return `null`. If an invalid `aptClient` instance is passed, this method will also return `null`. On success, it will return an empty `string`. In case of failure, it will return a `string` with an error message.",
+    "example": [
+      "aptClient = include_lib(\"/lib/aptclient.so\")",
+      "result = add_repo(aptClient, \"177.202.15.132\")",
+      "if result == \"\" then",
+      "    print \"Addition successful!\"",
+      "else",
+      "    print \"Error while adding: \" + result",
+      "end if"
+    ]
   },
   "del_repo": {
-    "description": "Removes a repository address from the `\"/etc/apt/sources.txt\"` file. If the provided repository parameter is `null`, this method will also return `null`. If an invalid `aptClient` instance is passed, this method will also return `null`. On success, it will return an empty `string`. In case of failure, it will return a `string` with an error message."
+    "description": "Removes a repository address from the `\"/etc/apt/sources.txt\"` file. If the provided repository parameter is `null`, this method will also return `null`. If an invalid `aptClient` instance is passed, this method will also return `null`. On success, it will return an empty `string`. In case of failure, it will return a `string` with an error message.",
+    "example": [
+      "aptClient = include_lib(\"/lib/aptclient.so\")",
+      "result = del_repo(aptClient, \"177.202.15.132\")",
+      "if result == \"\" then",
+      "    print \"Deletion successful!\"",
+      "else",
+      "    print \"Error while deleting: \" + result",
+      "end if"
+    ]
   },
   "install": {
-    "description": "Installs a program or library from a remote repository listed in `\"/etc/apt/sources.txt\"`. If no path is specified, the program installs in `\"/lib\"` if it is a library or in `\"/bin\"` otherwise. If any of the provided parameters are `null`, this method will return `null`. If an invalid `aptClient` instance is passed, this method will also return `null`. On success, it will return a `number` with the value one. In case of failure, it will return a `string` containing an error message."
+    "description": "Installs a program or library from a remote repository listed in `\"/etc/apt/sources.txt\"`. If no path is specified, the program installs in `\"/lib\"` if it is a library or in `\"/bin\"` otherwise. If any of the provided parameters are `null`, this method will return `null`. If an invalid `aptClient` instance is passed, this method will also return `null`. On success, it will return a `number` with the value one. In case of failure, it will return a `string` containing an error message.",
+    "example": [
+      "aptClient = include_lib(\"/lib/aptclient.so\")",
+      "result = install(aptClient, \"rshell_interface\")",
+      "if result == 1 then",
+      "    print \"Installed program successful!\"",
+      "else",
+      "    print \"Error while installing: \" + result",
+      "end if"
+    ]
   },
   "check_upgrade": {
-    "description": "Verifies if there is a newer version of the program or library in the repository. If the provided `filePath` value is `null`, this method will also return `null`. If an invalid `aptClient` instance is passed, this method will also return `null`. On success, it will return a `number`, which can be either zero or one. Zero indicates that there is no new version available, while one indicates that there is a new version. In case of failure, it will return a string containing an error message."
+    "description": "Verifies if there is a newer version of the program or library in the repository. If the provided `filePath` value is `null`, this method will also return `null`. If an invalid `aptClient` instance is passed, this method will also return `null`. On success, it will return a `number`, which can be either zero or one. Zero indicates that there is no new version available, while one indicates that there is a new version. In case of failure, it will return a string containing an error message.",
+    "example": [
+      "aptClient = include_lib(\"/lib/aptclient.so\")",
+      "result = check_upgrade(aptClient, \"/bin/rshell_interface\")",
+      "if result == 0 then",
+      "    print \"Program doesnt need an update!\"",
+      "else if result == 1 then",
+      "    print \"Program does need an update!\"",
+      "else",
+      "    print \"Error while checking version: \" + result",
+      "end if"
+    ]
   },
   "coin_price": {
     "description": "Returns `number` with the current unit value of the currency. In case of error a `string` is returned with the details."
