@@ -1,4 +1,4 @@
-import { Collection } from 'meta-utils';
+import { Container } from 'meta-utils';
 
 import EN from './descriptions/en/index';
 import enSite from './descriptions/en/site.json';
@@ -29,80 +29,36 @@ import String from './signatures/string.json';
 import SubWallet from './signatures/sub-wallet.json';
 import Wallet from './signatures/wallet.json';
 
-export const greyscriptMeta = new Collection();
+export const greyscriptMeta = new Container();
 
-greyscriptMeta.addSignature('any', Any);
-greyscriptMeta.addSignature('aptClient', AptClient, {
-  inerhitsFrom: ['map']
-});
-greyscriptMeta.addSignature('blockchain', Blockchain, {
-  inerhitsFrom: ['map']
-});
-greyscriptMeta.addSignature('ctfEvent', CTFEvent, {
-  inerhitsFrom: ['map']
-});
-greyscriptMeta.addSignature('class', ClassSignature, {
-  isInternalType: true
-});
-greyscriptMeta.addSignature('coin', Coin, {
-  inerhitsFrom: ['map']
-});
-greyscriptMeta.addSignature('computer', Computer, {
-  inerhitsFrom: ['map']
-});
-greyscriptMeta.addSignature('crypto', Crypto, {
-  inerhitsFrom: ['map']
-});
-greyscriptMeta.addSignature('file', File, {
-  inerhitsFrom: ['map']
-});
-greyscriptMeta.addSignature('ftpShell', FtpShell, {
-  inerhitsFrom: ['map']
-});
-greyscriptMeta.addSignature('function', FunctionSignature, {
-  isInternalType: true
-});
-greyscriptMeta.addSignature('general', Generic, {
-  isInternalType: true
-});
-greyscriptMeta.addSignature('list', List);
-greyscriptMeta.addSignature('map', MapSignature);
-greyscriptMeta.addSignature('metaLib', MetaLib, {
-  inerhitsFrom: ['map']
-});
-greyscriptMeta.addSignature('metaMail', MetaMail, {
-  inerhitsFrom: ['map']
-});
-greyscriptMeta.addSignature('metaxploit', Metaxploit, {
-  inerhitsFrom: ['map']
-});
-greyscriptMeta.addSignature('netSession', NetSession, {
-  inerhitsFrom: ['map']
-});
-greyscriptMeta.addSignature('number', NumberSignature, {
-  isInternalType: true
-});
-greyscriptMeta.addSignature('port', Port, {
-  inerhitsFrom: ['map']
-});
-greyscriptMeta.addSignature('router', Router, {
-  inerhitsFrom: ['map']
-});
-greyscriptMeta.addSignature('service', Service, {
-  inerhitsFrom: ['map']
-});
-greyscriptMeta.addSignature('shell', Shell, {
-  inerhitsFrom: ['map']
-});
-greyscriptMeta.addSignature('string', String);
-greyscriptMeta.addSignature('subWallet', SubWallet, {
-  inerhitsFrom: ['map']
-});
-greyscriptMeta.addSignature('wallet', Wallet, {
-  inerhitsFrom: ['map']
-});
+greyscriptMeta.addTypeSignatureFromPayload(Any);
+greyscriptMeta.addTypeSignatureFromPayload(AptClient);
+greyscriptMeta.addTypeSignatureFromPayload(Blockchain);
+greyscriptMeta.addTypeSignatureFromPayload(CTFEvent);
+greyscriptMeta.addTypeSignatureFromPayload(ClassSignature);
+greyscriptMeta.addTypeSignatureFromPayload(Coin);
+greyscriptMeta.addTypeSignatureFromPayload(Computer);
+greyscriptMeta.addTypeSignatureFromPayload(Crypto);
+greyscriptMeta.addTypeSignatureFromPayload(File);
+greyscriptMeta.addTypeSignatureFromPayload(FtpShell);
+greyscriptMeta.addTypeSignatureFromPayload(FunctionSignature);
+greyscriptMeta.addTypeSignatureFromPayload(Generic);
+greyscriptMeta.addTypeSignatureFromPayload(List);
+greyscriptMeta.addTypeSignatureFromPayload(MapSignature);
+greyscriptMeta.addTypeSignatureFromPayload(MetaLib);
+greyscriptMeta.addTypeSignatureFromPayload(MetaMail);
+greyscriptMeta.addTypeSignatureFromPayload(Metaxploit);
+greyscriptMeta.addTypeSignatureFromPayload(NetSession);
+greyscriptMeta.addTypeSignatureFromPayload(NumberSignature);
+greyscriptMeta.addTypeSignatureFromPayload(Port);
+greyscriptMeta.addTypeSignatureFromPayload(Router);
+greyscriptMeta.addTypeSignatureFromPayload(Service);
+greyscriptMeta.addTypeSignatureFromPayload(Shell);
+greyscriptMeta.addTypeSignatureFromPayload(String);
+greyscriptMeta.addTypeSignatureFromPayload(SubWallet);
+greyscriptMeta.addTypeSignatureFromPayload(Wallet);
 
-greyscriptMeta.addMeta('en', EN);
+greyscriptMeta.addMetaFromPayload('en', EN);
 
 export const isNative = (types: string[], property: string): boolean => {
   return !!greyscriptMeta.getDefinition(types, property);

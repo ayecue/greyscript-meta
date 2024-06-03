@@ -1,40 +1,44 @@
 {
-  "overflow": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "memoryAddress",
-        "type": "string"
-      },
-      {
-        "label": "unsecZone",
-        "type": "string"
-      },
-      {
-        "label": "optArgs",
-        "type": "string",
-        "opt": true
-      }
-    ],
-    "returns": [
-      "string",
-      "number",
-      "shell",
-      "computer",
-      "file",
-      "null"
-    ]
-  },
-  "version": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "lib_name": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
+  "type": "metaLib",
+  "extends": "map",
+  "definitions": {
+    "overflow": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "memoryAddress",
+          "type": "string"
+        },
+        {
+          "label": "unsecZone",
+          "type": "string"
+        },
+        {
+          "label": "optArgs",
+          "type": "string",
+          "opt": true
+        }
+      ],
+      "returns": [
+        "string",
+        "number",
+        "shell",
+        "computer",
+        "file",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    },
+    "lib_name": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    }
   }
 }

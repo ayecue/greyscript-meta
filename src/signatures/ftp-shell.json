@@ -1,36 +1,40 @@
 {
-  "host_computer": {
-    "type": "function",
-    "returns": [
-      "computer",
-      "null"
-    ]
-  },
-  "start_terminal": {
-    "type": "function",
-    "returns": [
-      "null"
-    ]
-  },
-  "put": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "file",
-        "type": "string"
-      },
-      {
-        "label": "folder",
-        "type": "string"
-      },
-      {
-        "label": "remoteShell",
-        "type": "shell"
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
+  "type": "ftpShell",
+  "extends": "map",
+  "definitions": {
+    "host_computer": {
+      "type": "function",
+      "returns": [
+        "computer",
+        "null"
+      ]
+    },
+    "start_terminal": {
+      "type": "function",
+      "returns": [
+        "null"
+      ]
+    },
+    "put": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "file",
+          "type": "string"
+        },
+        {
+          "label": "folder",
+          "type": "string"
+        },
+        {
+          "label": "remoteShell",
+          "type": "shell"
+        }
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    }
   }
 }

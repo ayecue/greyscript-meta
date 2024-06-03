@@ -1,170 +1,173 @@
 {
-  "remove": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "index",
-        "type": "number"
-      }
-    ],
-    "returns": [
-      "null"
-    ]
-  },
-  "insert": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "index",
-        "type": "number"
-      },
-      {
-        "label": "value",
-        "type": "any"
-      }
-    ],
-    "returns": [
-      "list:any"
-    ]
-  },
-  "push": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "value",
-        "type": "any"
-      }
-    ],
-    "returns": [
-      "list:any"
-    ]
-  },
-  "pop": {
-    "type": "function",
-    "returns": [
-      "any"
-    ]
-  },
-  "pull": {
-    "type": "function",
-    "returns": [
-      "any"
-    ]
-  },
-  "shuffle": {
-    "type": "function",
-    "returns": [
-      "null"
-    ]
-  },
-  "reverse": {
-    "type": "function",
-    "returns": [
-      "null"
-    ]
-  },
-  "sum": {
-    "type": "function",
-    "returns": [
-      "number"
-    ]
-  },
-  "hasIndex": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "index",
-        "type": "number"
-      }
-    ],
-    "returns": [
-      "number"
-    ]
-  },
-  "indexOf": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "value",
-        "type": "any"
-      },
-      {
-        "label": "offset",
-        "type": "number",
-        "opt": true
-      }
-    ],
-    "returns": [
-      "number",
-      "null"
-    ]
-  },
-  "sort": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "key",
-        "type": "string"
-      },
-      {
-        "label": "ascending",
-        "type": "number",
-        "default": "1"
-      }
-    ],
-    "returns": [
-      "list:any"
-    ]
-  },
-  "join": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "delimiter",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string"
-    ]
-  },
-  "indexes": {
-    "type": "function",
-    "returns": [
-      "list:number"
-    ]
-  },
-  "len": {
-    "type": "function",
-    "returns": [
-      "number"
-    ]
-  },
-  "values": {
-    "type": "function",
-    "returns": [
-      "list:any"
-    ]
-  },
-  "replace": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "toReplace",
-        "type": "any"
-      },
-      {
-        "label": "newValue",
-        "type": "any"
-      },
-      {
-        "label": "maxCount",
-        "type": "number",
-        "opt": true
-      }
-    ],
-    "returns": [
-      "list:any"
-    ]
+  "type": "list",
+  "definitions": {
+    "remove": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "index",
+          "type": "number"
+        }
+      ],
+      "returns": [
+        "null"
+      ]
+    },
+    "insert": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "index",
+          "type": "number"
+        },
+        {
+          "label": "value",
+          "type": "any"
+        }
+      ],
+      "returns": [
+        "list:any"
+      ]
+    },
+    "push": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "value",
+          "type": "any"
+        }
+      ],
+      "returns": [
+        "list:any"
+      ]
+    },
+    "pop": {
+      "type": "function",
+      "returns": [
+        "any"
+      ]
+    },
+    "pull": {
+      "type": "function",
+      "returns": [
+        "any"
+      ]
+    },
+    "shuffle": {
+      "type": "function",
+      "returns": [
+        "null"
+      ]
+    },
+    "reverse": {
+      "type": "function",
+      "returns": [
+        "null"
+      ]
+    },
+    "sum": {
+      "type": "function",
+      "returns": [
+        "number"
+      ]
+    },
+    "hasIndex": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "index",
+          "type": "number"
+        }
+      ],
+      "returns": [
+        "number"
+      ]
+    },
+    "indexOf": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "value",
+          "type": "any"
+        },
+        {
+          "label": "offset",
+          "type": "number",
+          "opt": true
+        }
+      ],
+      "returns": [
+        "number",
+        "null"
+      ]
+    },
+    "sort": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "key",
+          "type": "string"
+        },
+        {
+          "label": "ascending",
+          "type": "number",
+          "default": "1"
+        }
+      ],
+      "returns": [
+        "list:any"
+      ]
+    },
+    "join": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "delimiter",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "string"
+      ]
+    },
+    "indexes": {
+      "type": "function",
+      "returns": [
+        "list:number"
+      ]
+    },
+    "len": {
+      "type": "function",
+      "returns": [
+        "number"
+      ]
+    },
+    "values": {
+      "type": "function",
+      "returns": [
+        "list:any"
+      ]
+    },
+    "replace": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "toReplace",
+          "type": "any"
+        },
+        {
+          "label": "newValue",
+          "type": "any"
+        },
+        {
+          "label": "maxCount",
+          "type": "number",
+          "opt": true
+        }
+      ],
+      "returns": [
+        "list:any"
+      ]
+    }
   }
 }

@@ -1,24 +1,28 @@
 {
-  "install_service": {
-    "type": "function",
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "start_service": {
-    "type": "function",
-    "returns": [
-      "number",
-      "string",
-      "null"
-    ]
-  },
-  "stop_service": {
-    "type": "function",
-    "returns": [
-      "number",
-      "string"
-    ]
+  "type": "service",
+  "extends": "map",
+  "definitions": {
+    "install_service": {
+      "type": "function",
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "start_service": {
+      "type": "function",
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "stop_service": {
+      "type": "function",
+      "returns": [
+        "number",
+        "string"
+      ]
+    }
   }
 }

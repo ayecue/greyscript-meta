@@ -1,40 +1,44 @@
 {
-  "get_description": {
-    "type": "function",
-    "returns": [
-      "string",
-      "null"
-    ]
-  },
-  "get_template": {
-    "type": "function",
-    "returns": [
-      "string",
-      "number",
-      "null"
-    ]
-  },
-  "player_success": {
-    "type": "function",
-    "returns": [
-      "number",
-      "null"
-    ]
-  },
-  "get_creator_name": {
-    "type": "function",
-    "returns": [
-      "string",
-      "number",
-      "null"
-    ]
-  },
-  "get_mail_content": {
-    "type": "function",
-    "returns": [
-      "string",
-      "number",
-      "null"
-    ]
+  "type": "ctfEvent",
+  "extends": "map",
+  "definitions": {
+    "get_description": {
+      "type": "function",
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "get_template": {
+      "type": "function",
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "player_success": {
+      "type": "function",
+      "returns": [
+        "number",
+        "null"
+      ]
+    },
+    "get_creator_name": {
+      "type": "function",
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "get_mail_content": {
+      "type": "function",
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    }
   }
 }

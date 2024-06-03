@@ -1,113 +1,116 @@
 {
-  "insert": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "index",
-        "type": "number"
-      },
-      {
-        "label": "value",
-        "type": "any"
-      }
-    ],
-    "returns": [
-      "any"
-    ]
-  },
-  "indexOf": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "value",
-        "type": "any"
-      },
-      {
-        "label": "offset",
-        "type": "number",
-        "opt": true
-      }
-    ],
-    "returns": [
-      "any"
-    ]
-  },
-  "hasIndex": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "value",
-        "type": "any"
-      }
-    ],
-    "returns": [
-      "number"
-    ]
-  },
-  "remove": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "value",
-        "type": "any"
-      }
-    ],
-    "returns": [
-      "null"
-    ]
-  },
-  "push": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "value",
-        "type": "any"
-      }
-    ],
-    "returns": [
-      "any"
-    ]
-  },
-  "pull": {
-    "type": "function",
-    "returns": [
-      "any"
-    ]
-  },
-  "pop": {
-    "type": "function",
-    "returns": [
-      "any"
-    ]
-  },
-  "shuffle": {
-    "type": "function",
-    "returns": [
-      "null"
-    ]
-  },
-  "sum": {
-    "type": "function",
-    "returns": [
-      "number"
-    ]
-  },
-  "indexes": {
-    "type": "function",
-    "returns": [
-      "list:any"
-    ]
-  },
-  "len": {
-    "type": "function",
-    "returns": [
-      "number"
-    ]
-  },
-  "values": {
-    "type": "function",
-    "returns": [
-      "list:any"
-    ]
+  "type": "any",
+  "definitions": {
+    "insert": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "index",
+          "type": "number"
+        },
+        {
+          "label": "value",
+          "type": "any"
+        }
+      ],
+      "returns": [
+        "any"
+      ]
+    },
+    "indexOf": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "value",
+          "type": "any"
+        },
+        {
+          "label": "offset",
+          "type": "number",
+          "opt": true
+        }
+      ],
+      "returns": [
+        "any"
+      ]
+    },
+    "hasIndex": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "value",
+          "type": "any"
+        }
+      ],
+      "returns": [
+        "number"
+      ]
+    },
+    "remove": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "value",
+          "type": "any"
+        }
+      ],
+      "returns": [
+        "null"
+      ]
+    },
+    "push": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "value",
+          "type": "any"
+        }
+      ],
+      "returns": [
+        "any"
+      ]
+    },
+    "pull": {
+      "type": "function",
+      "returns": [
+        "any"
+      ]
+    },
+    "pop": {
+      "type": "function",
+      "returns": [
+        "any"
+      ]
+    },
+    "shuffle": {
+      "type": "function",
+      "returns": [
+        "null"
+      ]
+    },
+    "sum": {
+      "type": "function",
+      "returns": [
+        "number"
+      ]
+    },
+    "indexes": {
+      "type": "function",
+      "returns": [
+        "list:any"
+      ]
+    },
+    "len": {
+      "type": "function",
+      "returns": [
+        "number"
+      ]
+    },
+    "values": {
+      "type": "function",
+      "returns": [
+        "list:any"
+      ]
+    }
   }
 }

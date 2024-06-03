@@ -1,121 +1,125 @@
 {
-  "host_computer": {
-    "type": "function",
-    "returns": [
-      "computer",
-      "null"
-    ]
-  },
-  "start_terminal": {
-    "type": "function",
-    "returns": [
-      "null"
-    ]
-  },
-  "build": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "pathSource",
-        "type": "string"
-      },
-      {
-        "label": "pathBinary",
-        "type": "string"
-      },
-      {
-        "label": "allowImport",
-        "type": "number",
-        "opt": true
-      }
-    ],
-    "returns": [
-      "string"
-    ]
-  },
-  "connect_service": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "ip",
-        "type": "string"
-      },
-      {
-        "label": "port",
-        "type": "number"
-      },
-      {
-        "label": "user",
-        "type": "string"
-      },
-      {
-        "label": "pass",
-        "type": "string"
-      },
-      {
-        "label": "service",
-        "type": "string",
-        "default": "\"ssh\""
-      }
-    ],
-    "returns": [
-      "shell",
-      "ftpShell",
-      "string",
-      "null"
-    ]
-  },
-  "launch": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "program",
-        "type": "string"
-      },
-      {
-        "label": "params",
-        "type": "string",
-        "opt": true
-      }
-    ],
-    "returns": [
-      "string",
-      "number"
-    ]
-  },
-  "ping": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "ip",
-        "type": "string",
-        "opt": false
-      }
-    ],
-    "returns": [
-      "string",
-      "number"
-    ]
-  },
-  "scp": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "file",
-        "type": "string"
-      },
-      {
-        "label": "folder",
-        "type": "string"
-      },
-      {
-        "label": "remoteShell",
-        "type": "shell"
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
+  "type": "shell",
+  "extends": "map",
+  "definitions": {
+    "host_computer": {
+      "type": "function",
+      "returns": [
+        "computer",
+        "null"
+      ]
+    },
+    "start_terminal": {
+      "type": "function",
+      "returns": [
+        "null"
+      ]
+    },
+    "build": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "pathSource",
+          "type": "string"
+        },
+        {
+          "label": "pathBinary",
+          "type": "string"
+        },
+        {
+          "label": "allowImport",
+          "type": "number",
+          "opt": true
+        }
+      ],
+      "returns": [
+        "string"
+      ]
+    },
+    "connect_service": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "ip",
+          "type": "string"
+        },
+        {
+          "label": "port",
+          "type": "number"
+        },
+        {
+          "label": "user",
+          "type": "string"
+        },
+        {
+          "label": "pass",
+          "type": "string"
+        },
+        {
+          "label": "service",
+          "type": "string",
+          "default": "\"ssh\""
+        }
+      ],
+      "returns": [
+        "shell",
+        "ftpShell",
+        "string",
+        "null"
+      ]
+    },
+    "launch": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "program",
+          "type": "string"
+        },
+        {
+          "label": "params",
+          "type": "string",
+          "opt": true
+        }
+      ],
+      "returns": [
+        "string",
+        "number"
+      ]
+    },
+    "ping": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "ip",
+          "type": "string",
+          "opt": false
+        }
+      ],
+      "returns": [
+        "string",
+        "number"
+      ]
+    },
+    "scp": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "file",
+          "type": "string"
+        },
+        {
+          "label": "folder",
+          "type": "string"
+        },
+        {
+          "label": "remoteShell",
+          "type": "shell"
+        }
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    }
   }
 }

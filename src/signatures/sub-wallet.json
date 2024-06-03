@@ -1,77 +1,81 @@
 {
-  "get_balance": {
-    "type": "function",
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "set_info": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "info",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string",
-      "null"
-    ]
-  },
-  "get_info": {
-    "type": "function",
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "delete": {
-    "type": "function",
-    "returns": [
-      "number"
-    ]
-  },
-  "get_user": {
-    "type": "function",
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "last_transaction": {
-    "type": "function",
-    "returns": [
-      "list:any",
-      "number"
-    ]
-  },
-  "mining": {
-    "type": "function",
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "check_password": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "password",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "wallet_username": {
-    "type": "function",
-    "returns": [
-      "number",
-      "string"
-    ]
+  "type": "subWallet",
+  "extends": "map",
+  "definitions": {
+    "get_balance": {
+      "type": "function",
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "set_info": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "info",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "get_info": {
+      "type": "function",
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "delete": {
+      "type": "function",
+      "returns": [
+        "number"
+      ]
+    },
+    "get_user": {
+      "type": "function",
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "last_transaction": {
+      "type": "function",
+      "returns": [
+        "list:any",
+        "number"
+      ]
+    },
+    "mining": {
+      "type": "function",
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "check_password": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "password",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "wallet_username": {
+      "type": "function",
+      "returns": [
+        "number",
+        "string"
+      ]
+    }
   }
 }

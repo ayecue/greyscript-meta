@@ -1,95 +1,99 @@
 {
-  "show": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "repoName",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string"
-    ]
-  },
-  "search": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "packageName",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "null"
-    ]
-  },
-  "update": {
-    "type": "function",
-    "returns": [
-      "string",
-      "number"
-    ]
-  },
-  "add_repo": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "repo",
-        "type": "string"
-      },
-      {
-        "label": "port",
-        "type": "number",
-        "default": "1542.0"
-      }
-    ],
-    "returns": [
-      "string",
-      "null"
-    ]
-  },
-  "del_repo": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "repo",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "null"
-    ]
-  },
-  "install": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "packageName",
-        "type": "string"
-      },
-      {
-        "label": "installPath",
-        "type": "string",
-        "opt": true
-      }
-    ],
-    "returns": [
-      "string"
-    ]
-  },
-  "check_upgrade": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "path",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "number"
-    ]
+  "type": "aptClient",
+  "extends": "map",
+  "definitions": {
+    "show": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "repoName",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "string"
+      ]
+    },
+    "search": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "packageName",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "update": {
+      "type": "function",
+      "returns": [
+        "string",
+        "number"
+      ]
+    },
+    "add_repo": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "repo",
+          "type": "string"
+        },
+        {
+          "label": "port",
+          "type": "number",
+          "default": "1542.0"
+        }
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "del_repo": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "repo",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "install": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "packageName",
+          "type": "string"
+        },
+        {
+          "label": "installPath",
+          "type": "string",
+          "opt": true
+        }
+      ],
+      "returns": [
+        "string"
+      ]
+    },
+    "check_upgrade": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "path",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "string",
+        "number"
+      ]
+    }
   }
 }

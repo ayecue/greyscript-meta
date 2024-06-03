@@ -1,220 +1,224 @@
 {
-  "chmod": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "perms",
-        "type": "string"
-      },
-      {
-        "label": "recursive",
-        "type": "number",
-        "opt": true
-      }
-    ],
-    "returns": [
-      "string",
-      "null"
-    ]
-  },
-  "copy": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "path",
-        "type": "string",
-        "default": "\"\""
-      },
-      {
-        "label": "name",
-        "type": "string",
-        "default": "\"\""
-      }
-    ],
-    "returns": [
-      "string",
-      "number",
-      "null"
-    ]
-  },
-  "move": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "path",
-        "type": "string"
-      },
-      {
-        "label": "name",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "number",
-      "null"
-    ]
-  },
-  "rename": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "name",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "number"
-    ]
-  },
-  "path": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "is_folder": {
-    "type": "function",
-    "returns": [
-      "number"
-    ]
-  },
-  "parent": {
-    "type": "function",
-    "returns": [
-      "file",
-      "null"
-    ]
-  },
-  "name": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "allow_import": {
-    "type": "function",
-    "returns": [
-      "number"
-    ]
-  },
-  "get_content": {
-    "type": "function",
-    "returns": [
-      "string",
-      "null"
-    ]
-  },
-  "set_content": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "content",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "number",
-      "null"
-    ]
-  },
-  "is_binary": {
-    "type": "function",
-    "returns": [
-      "number"
-    ]
-  },
-  "has_permission": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "perms",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number"
-    ]
-  },
-  "delete": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "get_folders": {
-    "type": "function",
-    "returns": [
-      "list:file"
-    ]
-  },
-  "get_files": {
-    "type": "function",
-    "returns": [
-      "list:file"
-    ]
-  },
-  "permissions": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "owner": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "set_owner": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "owner",
-        "type": "string"
-      },
-      {
-        "label": "recursive",
-        "type": "number",
-        "opt": true
-      }
-    ],
-    "returns": [
-      "number",
-      "string",
-      "null"
-    ]
-  },
-  "group": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "set_group": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "group",
-        "type": "string"
-      },
-      {
-        "label": "recursive",
-        "type": "number",
-        "opt": true
-      }
-    ],
-    "returns": [
-      "string",
-      "null"
-    ]
-  },
-  "size": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
+  "type": "file",
+  "extends": "map",
+  "definitions": {
+    "chmod": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "perms",
+          "type": "string"
+        },
+        {
+          "label": "recursive",
+          "type": "number",
+          "opt": true
+        }
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "copy": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "path",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "label": "name",
+          "type": "string",
+          "default": "\"\""
+        }
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "move": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "path",
+          "type": "string"
+        },
+        {
+          "label": "name",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "rename": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "name",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "string",
+        "number"
+      ]
+    },
+    "path": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    },
+    "is_folder": {
+      "type": "function",
+      "returns": [
+        "number"
+      ]
+    },
+    "parent": {
+      "type": "function",
+      "returns": [
+        "file",
+        "null"
+      ]
+    },
+    "name": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    },
+    "allow_import": {
+      "type": "function",
+      "returns": [
+        "number"
+      ]
+    },
+    "get_content": {
+      "type": "function",
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "set_content": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "content",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "is_binary": {
+      "type": "function",
+      "returns": [
+        "number"
+      ]
+    },
+    "has_permission": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "perms",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number"
+      ]
+    },
+    "delete": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    },
+    "get_folders": {
+      "type": "function",
+      "returns": [
+        "list:file"
+      ]
+    },
+    "get_files": {
+      "type": "function",
+      "returns": [
+        "list:file"
+      ]
+    },
+    "permissions": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    },
+    "owner": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    },
+    "set_owner": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "owner",
+          "type": "string"
+        },
+        {
+          "label": "recursive",
+          "type": "number",
+          "opt": true
+        }
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "group": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    },
+    "set_group": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "group",
+          "type": "string"
+        },
+        {
+          "label": "recursive",
+          "type": "number",
+          "opt": true
+        }
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "size": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    }
   }
 }

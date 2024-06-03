@@ -1,116 +1,119 @@
 {
-  "coin_price": {
-    "type": "function",
-    "returns": [
-      "null",
-      "string",
-      "number"
-    ]
-  },
-  "show_history": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "coinName",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "map:string",
-      "string",
-      "null"
-    ]
-  },
-  "amount_mined": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "coinName",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "number",
-      "null"
-    ]
-  },
-  "get_coin": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "coinName",
-        "type": "string"
-      },
-      {
-        "label": "user",
-        "type": "string"
-      },
-      {
-        "label": "password",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "coin"
-    ]
-  },
-  "login_wallet": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "user",
-        "type": "string"
-      },
-      {
-        "label": "password",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "wallet",
-      "null"
-    ]
-  },
-  "create_wallet": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "user",
-        "type": "string"
-      },
-      {
-        "label": "password",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "number",
-      "wallet"
-    ]
-  },
-  "delete_coin": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "coinName",
-        "type": "string"
-      },
-      {
-        "label": "user",
-        "type": "string"
-      },
-      {
-        "label": "password",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
+  "type": "blockchain",
+  "definitions": {
+    "coin_price": {
+      "type": "function",
+      "returns": [
+        "null",
+        "string",
+        "number"
+      ]
+    },
+    "show_history": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "coinName",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "map:string",
+        "string",
+        "null"
+      ]
+    },
+    "amount_mined": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "coinName",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "get_coin": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "coinName",
+          "type": "string"
+        },
+        {
+          "label": "user",
+          "type": "string"
+        },
+        {
+          "label": "password",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number",
+        "coin"
+      ]
+    },
+    "login_wallet": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "user",
+          "type": "string"
+        },
+        {
+          "label": "password",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "string",
+        "wallet",
+        "null"
+      ]
+    },
+    "create_wallet": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "user",
+          "type": "string"
+        },
+        {
+          "label": "password",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "string",
+        "number",
+        "wallet"
+      ]
+    },
+    "delete_coin": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "coinName",
+          "type": "string"
+        },
+        {
+          "label": "user",
+          "type": "string"
+        },
+        {
+          "label": "password",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    }
   }
 }

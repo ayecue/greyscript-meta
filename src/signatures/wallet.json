@@ -1,155 +1,159 @@
 {
-  "list_coins": {
-    "type": "function",
-    "returns": [
-      "list:string",
-      "string",
-      "number"
-    ]
-  },
-  "get_balance": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "coinName",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "buy_coin": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "coinName",
-        "type": "string"
-      },
-      {
-        "label": "coinAmount",
-        "type": "number"
-      },
-      {
-        "label": "unitPrice",
-        "type": "number"
-      },
-      {
-        "label": "subwalletUser",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "sell_coin": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "coinName",
-        "type": "string"
-      },
-      {
-        "label": "coinAmount",
-        "type": "number"
-      },
-      {
-        "label": "unitPrice",
-        "type": "number"
-      },
-      {
-        "label": "subwalletUser",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "get_pending_trade": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "coinName",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string",
-      "list:any"
-    ]
-  },
-  "cancel_pending_trade": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "coinName",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "number"
-    ]
-  },
-  "get_global_offers": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "coinName",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string",
-      "map:any"
-    ]
-  },
-  "list_global_coins": {
-    "type": "function",
-    "returns": [
-      "number",
-      "list:string"
-    ]
-  },
-  "show_nodes": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "coinName",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string",
-      "number"
-    ]
-  },
-  "reset_password": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "newPassword",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "get_pin": {
-    "type": "function",
-    "returns": [
-      "number",
-      "string"
-    ]
+  "type": "wallet",
+  "extends": "map",
+  "definitions": {
+    "list_coins": {
+      "type": "function",
+      "returns": [
+        "list:string",
+        "string",
+        "number"
+      ]
+    },
+    "get_balance": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "coinName",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "buy_coin": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "coinName",
+          "type": "string"
+        },
+        {
+          "label": "coinAmount",
+          "type": "number"
+        },
+        {
+          "label": "unitPrice",
+          "type": "number"
+        },
+        {
+          "label": "subwalletUser",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "sell_coin": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "coinName",
+          "type": "string"
+        },
+        {
+          "label": "coinAmount",
+          "type": "number"
+        },
+        {
+          "label": "unitPrice",
+          "type": "number"
+        },
+        {
+          "label": "subwalletUser",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "get_pending_trade": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "coinName",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number",
+        "string",
+        "list:any"
+      ]
+    },
+    "cancel_pending_trade": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "coinName",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "string",
+        "number"
+      ]
+    },
+    "get_global_offers": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "coinName",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number",
+        "string",
+        "map:any"
+      ]
+    },
+    "list_global_coins": {
+      "type": "function",
+      "returns": [
+        "number",
+        "list:string"
+      ]
+    },
+    "show_nodes": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "coinName",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number",
+        "string",
+        "number"
+      ]
+    },
+    "reset_password": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "newPassword",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "get_pin": {
+      "type": "function",
+      "returns": [
+        "number",
+        "string"
+      ]
+    }
   }
 }

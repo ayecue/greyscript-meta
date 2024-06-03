@@ -1,113 +1,116 @@
 {
-  "remove": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "key",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "null"
-    ]
-  },
-  "push": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "key",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "map:any"
-    ]
-  },
-  "pull": {
-    "type": "function",
-    "returns": [
-      "any"
-    ]
-  },
-  "pop": {
-    "type": "function",
-    "returns": [
-      "any"
-    ]
-  },
-  "shuffle": {
-    "type": "function",
-    "returns": [
-      "null"
-    ]
-  },
-  "sum": {
-    "type": "function",
-    "returns": [
-      "number"
-    ]
-  },
-  "hasIndex": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "key",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number"
-    ]
-  },
-  "indexOf": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "value",
-        "type": "any"
-      }
-    ],
-    "returns": [
-      "any"
-    ]
-  },
-  "indexes": {
-    "type": "function",
-    "returns": [
-      "list:string"
-    ]
-  },
-  "len": {
-    "type": "function",
-    "returns": [
-      "number"
-    ]
-  },
-  "values": {
-    "type": "function",
-    "returns": [
-      "list:any"
-    ]
-  },
-  "replace": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "toReplace",
-        "type": "any"
-      },
-      {
-        "label": "newValue",
-        "type": "any"
-      },
-      {
-        "label": "maxCount",
-        "type": "number",
-        "opt": true
-      }
-    ],
-    "returns": [
-      "map:any"
-    ]
+  "type": "map",
+  "definitions": {
+    "remove": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "key",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "null"
+      ]
+    },
+    "push": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "key",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "map:any"
+      ]
+    },
+    "pull": {
+      "type": "function",
+      "returns": [
+        "any"
+      ]
+    },
+    "pop": {
+      "type": "function",
+      "returns": [
+        "any"
+      ]
+    },
+    "shuffle": {
+      "type": "function",
+      "returns": [
+        "null"
+      ]
+    },
+    "sum": {
+      "type": "function",
+      "returns": [
+        "number"
+      ]
+    },
+    "hasIndex": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "key",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number"
+      ]
+    },
+    "indexOf": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "value",
+          "type": "any"
+        }
+      ],
+      "returns": [
+        "any"
+      ]
+    },
+    "indexes": {
+      "type": "function",
+      "returns": [
+        "list:string"
+      ]
+    },
+    "len": {
+      "type": "function",
+      "returns": [
+        "number"
+      ]
+    },
+    "values": {
+      "type": "function",
+      "returns": [
+        "list:any"
+      ]
+    },
+    "replace": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "toReplace",
+          "type": "any"
+        },
+        {
+          "label": "newValue",
+          "type": "any"
+        },
+        {
+          "label": "maxCount",
+          "type": "number",
+          "opt": true
+        }
+      ],
+      "returns": [
+        "map:any"
+      ]
+    }
   }
 }

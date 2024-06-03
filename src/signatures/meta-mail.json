@@ -1,57 +1,61 @@
 {
-  "delete": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "mailId",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "fetch": {
-    "type": "function",
-    "arguments": [],
-    "returns": [
-      "list:string",
-      "string"
-    ]
-  },
-  "read": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "mailId",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string"
-    ]
-  },
-  "send": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "emailAddress",
-        "type": "string"
-      },
-      {
-        "label": "subject",
-        "type": "string"
-      },
-      {
-        "label": "message",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "number",
-      "null"
-    ]
+  "type": "metaMail",
+  "extends": "map",
+  "definitions": {
+    "delete": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "mailId",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "fetch": {
+      "type": "function",
+      "arguments": [],
+      "returns": [
+        "list:string",
+        "string"
+      ]
+    },
+    "read": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "mailId",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "string"
+      ]
+    },
+    "send": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "emailAddress",
+          "type": "string"
+        },
+        {
+          "label": "subject",
+          "type": "string"
+        },
+        {
+          "label": "message",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    }
   }
 }

@@ -1,277 +1,281 @@
 {
-  "get_ports": {
-    "type": "function",
-    "returns": [
-      "list:port"
-    ]
-  },
-  "get_name": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "local_ip": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "public_ip": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "File": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "path",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "file",
-      "null"
-    ]
-  },
-  "create_folder": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "path",
-        "type": "string"
-      },
-      {
-        "label": "folder",
-        "type": "nameFolder",
-        "default": "\"newFolder\""
-      }
-    ],
-    "returns": [
-      "string",
-      "number",
-      "null"
-    ]
-  },
-  "is_network_active": {
-    "type": "function",
-    "returns": [
-      "number"
-    ]
-  },
-  "touch": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "path",
-        "type": "string"
-      },
-      {
-        "label": "fileName",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "show_procs": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "network_devices": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "change_password": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "user",
-        "type": "string"
-      },
-      {
-        "label": "pass",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "create_user": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "user",
-        "type": "string"
-      },
-      {
-        "label": "pass",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "delete_user": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "user",
-        "type": "string"
-      },
-      {
-        "label": "removeHome",
-        "type": "number",
-        "opt": true
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "create_group": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "user",
-        "type": "string"
-      },
-      {
-        "label": "group",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "delete_group": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "user",
-        "type": "string"
-      },
-      {
-        "label": "group",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "groups": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "user",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string"
-    ]
-  },
-  "close_program": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "pid",
-        "type": "number"
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "wifi_networks": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "interface",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "list:string",
-      "null"
-    ]
-  },
-  "connect_wifi": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "netDevice",
-        "type": "string"
-      },
-      {
-        "label": "bssid",
-        "type": "string"
-      },
-      {
-        "label": "essid",
-        "type": "string"
-      },
-      {
-        "label": "pass",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string",
-      "null"
-    ]
-  },
-  "connect_ethernet": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "netDevice",
-        "type": "string"
-      },
-      {
-        "label": "localIp",
-        "type": "string"
-      },
-      {
-        "label": "gateway",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string",
-      "null"
-    ]
-  },
-  "network_gateway": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "active_net_card": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
+  "type": "computer",
+  "extends": "map",
+  "definitions": {
+    "get_ports": {
+      "type": "function",
+      "returns": [
+        "list:port"
+      ]
+    },
+    "get_name": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    },
+    "local_ip": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    },
+    "public_ip": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    },
+    "File": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "path",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "file",
+        "null"
+      ]
+    },
+    "create_folder": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "path",
+          "type": "string"
+        },
+        {
+          "label": "folder",
+          "type": "nameFolder",
+          "default": "\"newFolder\""
+        }
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "is_network_active": {
+      "type": "function",
+      "returns": [
+        "number"
+      ]
+    },
+    "touch": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "path",
+          "type": "string"
+        },
+        {
+          "label": "fileName",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "show_procs": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    },
+    "network_devices": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    },
+    "change_password": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "user",
+          "type": "string"
+        },
+        {
+          "label": "pass",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "create_user": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "user",
+          "type": "string"
+        },
+        {
+          "label": "pass",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "delete_user": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "user",
+          "type": "string"
+        },
+        {
+          "label": "removeHome",
+          "type": "number",
+          "opt": true
+        }
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "create_group": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "user",
+          "type": "string"
+        },
+        {
+          "label": "group",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "delete_group": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "user",
+          "type": "string"
+        },
+        {
+          "label": "group",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "groups": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "user",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "string"
+      ]
+    },
+    "close_program": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "pid",
+          "type": "number"
+        }
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "wifi_networks": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "interface",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "list:string",
+        "null"
+      ]
+    },
+    "connect_wifi": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "netDevice",
+          "type": "string"
+        },
+        {
+          "label": "bssid",
+          "type": "string"
+        },
+        {
+          "label": "essid",
+          "type": "string"
+        },
+        {
+          "label": "pass",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "connect_ethernet": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "netDevice",
+          "type": "string"
+        },
+        {
+          "label": "localIp",
+          "type": "string"
+        },
+        {
+          "label": "gateway",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "network_gateway": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    },
+    "active_net_card": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    }
   }
 }
