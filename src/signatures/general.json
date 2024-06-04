@@ -1452,7 +1452,8 @@
       ],
       "returns": [
         "string",
-        "coin"
+        "coin",
+        "null"
       ]
     },
     "login_wallet": {
