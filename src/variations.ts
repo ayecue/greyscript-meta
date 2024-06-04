@@ -61,3 +61,13 @@ VariationRegistry.add('Networking.IsRouterAvailable', [
   "can't connect: unexpected library found. Not a valid kernel_router.so library in the target router.",
   "can't connect: invalid or missing kernel_router.so in the target router"
 ]);
+
+VariationRegistry.add('BlockchainSystem.AddWallet', [
+  "Error: Wallet user already exists.",
+  "Error: Only one wallet per player allowed."
+]);
+
+VariationRegistry.add('BlockchainSystem.RemoveCurrency', [
+  "Error: ${coinname} does not exist",
+  "Error: incorrect user/password"
+]);
