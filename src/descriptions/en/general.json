@@ -904,37 +904,152 @@
     ]
   },
   "set_cycle_mining": {
-    "description": "Assign the hours (game time) that each mining cycle lasts. When a cycle ends, it is decided who gets the reward (1 coin) and the next cycle begins."
+    "description": "Define the interval (in-game hours) in which each user receives a coin reward when mining. The interval cannot be lower than 1 and not be higher than 2160. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`. In case of success this method will return a `number` with the value one. In case of failure the method will return a string with details.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
+      "result = set_cycle_mining(coin, 20)",
+      "if result == 1 then",
+      "    print \"Successful updated mining interval\"",
+      "else",
+      "    print \"Failed updating mining interval\"",
+      "end if"
+    ]
   },
   "get_cycle_mining": {
-    "description": "Returns a `number` of hours (game time) that each mining cycle lasts. When a cycle ends, it is decided who gets the reward (1 coin) and the next cycle begins."
+    "description": "Returns a `number` which represents the defined interval in which each user receives a coin reward when mining. In case of failure the method will return a string with details. If an invalid coin object gets provided the method will return `null`.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
+      "result = get_cycle_mining(coin)",
+      "if typeof(result) == \"string\" then",
+      "    exit \"Failed getting cyclic mining value due to: \" + result",
+      "end if",
+      "print \"cyclic mining value: \" + result"
+    ]
   },
   "get_reward": {
-    "description": "Returns a `number` of coins that will be received as a reward after each mining cycle."
+    "description": "Returns a `number` of coins that will be received as a reward after each mining cycle. In case of failure the method will return a string with details. If an invalid coin object gets provided the method will return `null`.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
+      "result = get_reward(coin)",
+      "if typeof(result) == \"string\" then",
+      "    exit \"Failed getting reward value due to: \" + result",
+      "end if",
+      "print \"reward value: \" + result"
+    ]
   },
   "set_reward": {
-    "description": "Assign the reward that miners will receive after each mining cycle."
+    "description": "Assign the reward that miners will receive after each mining cycle. The reward value has to be above one. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`. In case of success this method will return a `number` with the value one. In case of failure the method will return a string with details.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
+      "result = set_reward(coin, -1)",
+      "if typeof(result) == \"string\" then",
+      "    exit \"Failed setting reward due to: \" + result",
+      "end if",
+      "print \"Successfully set reward!\""
+    ]
   },
   "transaction": {
-    "description": "Make a transaction of the currency between the indicated subwallets. In case of error, a `string` with the details is returned."
+    "description": "Make a transaction of the currency between the indicated subwallets. In case of error, a `string` with the details is returned. In case of success a `number` will be returned with a value of one. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
+      "result = transaction(coin, \"test\", \"test2\", 20)",
+      "if typeof(result) == \"string\" then",
+      "    exit \"Failed transaction due to: \" + result",
+      "end if",
+      "print \"Successfully transfered!\""
+    ]
   },
   "create_subwallet": {
-    "description": "Register a new account in the `coin` that can be used to manage services such as stores. It is necessary to use the PIN that the owner of the `wallet` that wants to register has to provide."
+    "description": "Register a new account in the `coin` that can be used to manage services such as stores. It is necessary to provide the PIN of the owners `wallet` that wants to register. In case of success this method will return a `number` with the value one. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`. In case of error, a `string` with the details is returned.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
+      "wallet = login_wallet(blockchain, \"test\", \"test\")",
+      "result = create_subwallet(coin, \"test\", wallet.get_pin, \"test\", \"test\")",
+      "if typeof(result) == \"string\" then",
+      "    exit \"Failed to create subwallet due to: \" + result",
+      "end if",
+      "print \"Successfully created subwallet!\""
+    ]
   },
   "get_subwallet": {
-    "description": "Returns a `subWallet`, in case of error it returns a `string` with the details."
+    "description": "Returns a `list` where each item is a `subWallet` object including all the accounts registered in the cryptocurrency, in case of error it returns a `string` with the details.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
+      "result = get_subwallet(coin, \"test\")",
+      "if typeof(result) == \"string\" then",
+      "    exit \"Failed to get subwallet due to: \" + result",
+      "end if",
+      "print \"Successfully received subwallet!\""
+    ]
   },
   "get_subwallets": {
-    "description": "Returns a `list` where each item is a `subWallet` including all the accounts registered in the cryptocurrency, in case of error it returns a `string` with the details."
+    "description": "Returns a `list` where each item is a `subWallet` including all the accounts registered in the cryptocurrency, in case of error it returns a `string` with the details. If an invalid coin object gets provided the method will return `null`.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
+      "result = get_subwallets(coin)",
+      "if typeof(result) == \"string\" then",
+      "    exit \"Failed to get subwallets due to: \" + result",
+      "end if",
+      "for subwallet in result",
+      "    print get_user(subwallet) + \" has \" + get_balance_subwallet(subwallet) + \" coins\"",
+      "end for"
+    ]
   },
   "set_address": {
-    "description": "Configure a valid address that will be shown to users who do not have the currency, indicating where to register."
+    "description": "Configure a valid address that will be shown to users who do not have the currency, indicating where to register. In case of error, a `string` with the details is returned. In case of success a `number` will be returned with a value of one. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
+      "result = set_address(coin, \"12.12.12.12\")",
+      "if typeof(result) == \"string\" then",
+      "    exit \"Failed to set address due to: \" + result",
+      "end if",
+      "print \"Successfully set address!\""
+    ]
   },
   "get_address": {
-    "description": "Returns the configured address that will be shown to users who do not have the currency, indicating where they have to register."
+    "description": "Returns the configured address that will be shown to users who do not have the currency, indicating where they have to register. In case of an error this method will return a string with details. If an invalid coin object gets provided the method will return `null`.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
+      "result = get_address(coin)",
+      "if not is_valid_ip(result) then",
+      "    exit \"Failed to get address due to: \" + result",
+      "end if",
+      "print \"address: \" + result"
+    ]
   },
   "get_mined_coins": {
-    "description": "Returns a `number` of coins that have been mined so far."
+    "description": "Returns a `number` of coins that have been mined so far. In case of an error this method will return a string with details. If an invalid coin object gets provided the method will return `null`.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
+      "result = get_mined_coins(coin)",
+      "if typeof(result) == \"string\" then",
+      "    exit \"Failed to get mined coins due to: \" + result",
+      "end if",
+      "print \"mined coins: \" + result"
+    ]
+  },
+  "reset_password_coin": {
+    "description": "Resets the password of the coin. Returns a `number` with the value one if resetting was successful; otherwise, it will either return a `string`. If an invalid coin object gets provided the method will return `null`.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
+      "result = reset_password(coin, \"test\")",
+      "if typeof(result) == \"string\" then",
+      "    exit \"Failed to reset password due to: \" + result",
+      "end if",
+      "print \"Successfully reset password\""
+    ]
   },
   "get_ports": {
     "description": "Returns a `list` of `port`s on the `computer` which are active.",
@@ -2022,14 +2137,6 @@
       "for port in ports",
       "   print(\"Port \" + port_number(port) + \" is pointed to \" + get_lan_ip(port) + \"!\")",
       "end for"
-    ]
-  },
-  "reset_password_coin": {
-    "description": "Resets the password of the coin. Returns `true` if resetting was successful; otherwise, it will either return a `string` or `null`.",
-    "example": [
-      "blockchain = include_lib(\"/lib/blockchain.so\")",
-      "coin = get_coin(blockchain, \"coinName\", \"user\", \"1234\")",
-      "reset_password_coin(coin, \"12345\")"
     ]
   },
   "reset_ctf_password": {
