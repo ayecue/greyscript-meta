@@ -821,7 +821,7 @@
     ]
   },
   "coin_price": {
-    "description": "Returns a `number` representing the current unit value of the cryptocurrency. In case of an error, a `string` with the error details will be returned. If any of the provided parameters has a type that deviates from the defined signature, the method will return `null`.",
+    "description": "Returns a `number` representing the current unit value of the cryptocurrency. In case of an error, it will return a `string` with the error details. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "price = coin_price(blockchain, \"test8\")",
@@ -832,7 +832,7 @@
     ]
   },
   "show_history": {
-    "description": "Returns a `map` with the latest changes in the value of a specific cryptocurrency. The key of the `map` is an index represented by a `number`. The value is a `list`, where index 0 is the historical price of the coin, and index 1 is the date when the price change occurred. If any of the provided parameters has a type that deviates from the defined signature or there is no coin existing with this name, the method will return `null`.",
+    "description": "Returns a `map` with the latest changes in the value of a specific cryptocurrency. The key of the `map` is an index represented by a `number`. The value is a `list`, where index 0 is the historical price of the coin and index 1 is the date when the price change occurred. If any of the provided parameters have a type that deviates from the defined signature, or if no coin exists with this name, the method will return `null`.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "history = show_history(blockchain, \"test\")",
@@ -847,7 +847,7 @@
     ]
   },
   "amount_mined": {
-    "description": "Returns a `number` representing the total amount of mined coins. In case of an error this method will return a string with details. If any of the provided parameters has a type that deviates from the defined signature, the method will return `null`.",
+    "description": "Returns a `number` representing the total amount of mined coins. In case of an error, it will return a string with details. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "mined = amount_mined(blockchain, \"test\")",
@@ -858,7 +858,7 @@
     ]
   },
   "get_coin": {
-    "description": "This method returns a `coin` object used to manage the currency. In case of an error, a `string` with the details will be returned. If any of the provided parameters has a type that deviates from the defined signature, the method will return `null`.",
+    "description": "Returns a `coin` object used to manage the currency. In case of an error, it will return a `string` with the details. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
@@ -869,7 +869,7 @@
     ]
   },
   "login_wallet": {
-    "description": "Returns a `wallet` object on success. In case of an error, a `string` indicating the reason will be returned. If any of the provided parameters has a type that deviates from the defined signature, the method will return `null`.",
+    "description": "Returns a `wallet` object on success. In case of an error, it will return a `string` indicating the reason. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "wallet = login_wallet(blockchain, \"test\", \"test\")",
@@ -881,7 +881,7 @@
     ]
   },
   "create_wallet": {
-    "description": "Creates `wallet` and returns a `wallet` object on success, which can be used to manage cryptocurrencies. In case of an error, a `string` with the details will be returned. If any of the provided parameters has a type that deviates from the defined signature, the method will return `null`.",
+    "description": "Creates a `wallet` and returns a `wallet` object on success, which can be used to manage cryptocurrencies. In case of an error, it will return a `string` with the details. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "wallet = create_wallet(blockchain, \"test\", \"test\")",
@@ -893,7 +893,7 @@
     ]
   },
   "delete_coin": {
-    "description": "This method removes a cryptocurrency from the world. It is required to provide the credentials used in the creation of the cryptocurrency. On success, this method will return a `number` with the value one. On failure, a `string` containing details will be returned. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
+    "description": "Removes a cryptocurrency from the world. It is required to provide the credentials used in the creation of the cryptocurrency. On success, it will return a `number` with the value one. On failure, it will return a `string` containing details. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "result = delete_coin(blockchain, \"test\", \"test\", \"test\")",
