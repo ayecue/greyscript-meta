@@ -722,7 +722,7 @@
     "description": "Returns `ctfEvent` object if there is one available."
   },
   "show": {
-    "description": "Displays all the packages available in a repository. The repository must be listed in the `\"/etc/apt/sources.txt\"` file. If the provided repository value is `null`, this method will return `null`. If an invalid `aptClient` instance is passed, this method will also return `null`. If it cannot find a repository, it will return a string with an error message. On success, it will return a `string` containing all packages and their descriptions, with each entry separated by a newline.",
+    "description": "Displays all the packages available in a repository. The repository must be listed in the `\"/etc/apt/sources.txt\"` file. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`. If it cannot find a repository, it will return a string with an error message. On success, it will return a `string` containing all packages and their descriptions, with each entry separated by a newline.",
     "example": [
       "aptClient = include_lib(\"/lib/aptclient.so\")",
       "packages = show(aptClient, \"177.202.15.132\")",
@@ -739,7 +739,7 @@
     ]
   },
   "search": {
-    "description": "The `search` method specifically looks for a package in any of the repositories listed in `\"/etc/apt/sources.txt\"`. If the provided search value is `null`, this method will also return `null`. If an invalid `aptClient` instance is passed, this method will return `null`. On success, it will return a `string` containing all packages that partially match the provided search value. On failure, it will return a `string` with various error messages.",
+    "description": "The `search` method specifically looks for a package in any of the repositories listed in `\"/etc/apt/sources.txt\"`. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`. On success, it will return a `string` containing all packages that partially match the provided search value. On failure, it will return a `string` with various error messages.",
     "example": [
       "aptClient = include_lib(\"/lib/aptclient.so\")",
       "packages = search(aptClient, \".so\")",
@@ -771,7 +771,7 @@
     ]
   },
   "add_repo": {
-    "description": "Adds a repository address to the `\"/etc/apt/sources.txt\"` file. If any of the provided parameters are `null`, this method will return `null`. If an invalid `aptClient` instance is passed, this method will also return `null`. On success, it will return an empty `string`. In case of failure, it will return a `string` with an error message.",
+    "description": "Adds a repository address to the `\"/etc/apt/sources.txt\"` file. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`. On success, it will return an empty `string`. In case of failure, it will return a `string` with an error message.",
     "example": [
       "aptClient = include_lib(\"/lib/aptclient.so\")",
       "result = add_repo(aptClient, \"177.202.15.132\")",
@@ -783,7 +783,7 @@
     ]
   },
   "del_repo": {
-    "description": "Removes a repository address from the `\"/etc/apt/sources.txt\"` file. If the provided repository parameter is `null`, this method will also return `null`. If an invalid `aptClient` instance is passed, this method will also return `null`. On success, it will return an empty `string`. In case of failure, it will return a `string` with an error message.",
+    "description": "Removes a repository address from the `\"/etc/apt/sources.txt\"` file. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`. On success, it will return an empty `string`. In case of failure, it will return a `string` with an error message.",
     "example": [
       "aptClient = include_lib(\"/lib/aptclient.so\")",
       "result = del_repo(aptClient, \"177.202.15.132\")",
@@ -795,7 +795,7 @@
     ]
   },
   "install": {
-    "description": "Installs a program or library from a remote repository listed in `\"/etc/apt/sources.txt\"`. If no path is specified, the program installs in `\"/lib\"` if it is a library or in `\"/bin\"` otherwise. If any of the provided parameters are `null`, this method will return `null`. If an invalid `aptClient` instance is passed, this method will also return `null`. On success, it will return a `number` with the value one. In case of failure, it will return a `string` containing an error message.",
+    "description": "Installs a program or library from a remote repository listed in `\"/etc/apt/sources.txt\"`. If no path is specified, the program installs in `\"/lib\"` if it is a library or in `\"/bin\"` otherwise. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`. On success, it will return a `number` with the value one. In case of failure, it will return a `string` containing an error message.",
     "example": [
       "aptClient = include_lib(\"/lib/aptclient.so\")",
       "result = install(aptClient, \"rshell_interface\")",
@@ -807,7 +807,7 @@
     ]
   },
   "check_upgrade": {
-    "description": "Verifies if there is a newer version of the program or library in the repository. If the provided `filePath` value is `null`, this method will also return `null`. If an invalid `aptClient` instance is passed, this method will also return `null`. On success, it will return a `number`, which can be either zero or one. Zero indicates that there is no new version available, while one indicates that there is a new version. In case of failure, it will return a string containing an error message.",
+    "description": "Verifies if there is a newer version of the program or library in the repository. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`. On success, it will return a `number`, which can be either zero or one. Zero indicates that there is no new version available, while one indicates that there is a new version. In case of failure, it will return a string containing an error message.",
     "example": [
       "aptClient = include_lib(\"/lib/aptclient.so\")",
       "result = check_upgrade(aptClient, \"/bin/rshell_interface\")",
