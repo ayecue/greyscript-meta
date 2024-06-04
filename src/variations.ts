@@ -79,3 +79,27 @@ VariationRegistry.add('BlockchainSystem.AddSubWallet', [
   "Error: Incorrect PIN",
   "Error: only a maximum of 10 subwallets per coin is allowed."
 ]);
+
+VariationRegistry.add('BlockchainSystem.Transaction', [
+  "Error: coin does not exist",
+  "Error: ${subWalletOrig} not found",
+  "Error: ${subWalletDest} not found",
+  "Error: wallet ${subWalletOrig} does not exist",
+  "Error: target wallet does not exist",
+  "${subWalletOrig} need to be registered in ${coinName} to be able to receive this coin.",
+  "Error: subwallet ${subWalletDest} does not have coins in the selected currency",
+  "Error: insufficient funds to complete the transaction"
+]);
+
+VariationRegistry.add('BlockchainSystem.SetAddress', [
+  "Error: ${coinName} does not exist"
+]);
+
+VariationRegistry.add('BlockchainSystem.GetAddress', [
+  "Error: ${coinName} does not exist"
+]);
+
+VariationRegistry.add('BlockchainSystem.ResetCoinPass', [
+  "Error: coin does not exist",
+  "Error: Only the account owner can change the password"
+]);
