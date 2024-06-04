@@ -18,7 +18,7 @@
     "description": "Returns a `wallet` object on success. In case of an error, a `string` indicating the reason will be returned. If any of the provided parameters has a type that deviates from the defined signature, the method will return `null`."
   },
   "create_wallet": {
-    "description": "Returns a `wallet` object, which can be used to manage cryptocurrencies. In case of an error, a `string` with the details will be returned. If any of the provided parameters has a type that deviates from the defined signature, the method will return `null`."
+    "description": "Creates `wallet` and returns a `wallet` object on success, which can be used to manage cryptocurrencies. In case of an error, a `string` with the details will be returned. If any of the provided parameters has a type that deviates from the defined signature, the method will return `null`."
   },
   "delete_coin": {
     "description": "This method removes a cryptocurrency from the world. It is required to provide the credentials used in the creation of the cryptocurrency. On success, this method will return a `number` with the value one. On failure, a `string` containing details will be returned. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`."
