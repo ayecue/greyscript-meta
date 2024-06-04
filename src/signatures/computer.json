@@ -5,7 +5,10 @@
     "get_ports": {
       "type": "function",
       "returns": [
-        "list:port"
+        {
+          "type": "list",
+          "valueType": "port"
+        }
       ]
     },
     "get_name": {
@@ -48,18 +51,32 @@
         },
         {
           "label": "folder",
-          "type": "nameFolder",
-          "default": "\"newFolder\""
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": "newFolder"
+          }
         }
+      ],
+      "returnVariations": [
+        "Error: only alphanumeric allowed as folder name.",
+        "Error: name cannot exceed the limit of 128 characters.",
+        "create_folder: path too large",
+        "Error: invalid path",
+        "!PlayerUtils.CrearCarpeta",
+        1
       ],
       "returns": [
         "string",
-        "number",
-        "null"
+        "number"
       ]
     },
     "is_network_active": {
       "type": "function",
+      "returnVariations": [
+        0,
+        1
+      ],
       "returns": [
         "number"
       ]
@@ -75,6 +92,16 @@
           "label": "fileName",
           "type": "string"
         }
+      ],
+      "returnVariations": [
+        "Error: invalid path",
+        "Error: nameFile must be string",
+        "Error: only alphanumeric allowed as file name.",
+        "Error: name cannot exceed the limit of 128 characters.",
+        "touch: path too large",
+        "The file already exists",
+        "!PlayerUtils.CrearArchivo",
+        1
       ],
       "returns": [
         "number",
@@ -101,13 +128,21 @@
           "type": "string"
         },
         {
-          "label": "pass",
+          "label": "password",
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "Error: only alphanumeric allowed as password.",
+        "Error: the password cannot exceed the limit of 15 characters.",
+        "Denied. Only root user can execute this command.",
+        "user ${username} does not exist",
+        1
+      ],
       "returns": [
         "number",
-        "string"
+        "string",
+        "null"
       ]
     },
     "create_user": {
@@ -118,38 +153,58 @@
           "type": "string"
         },
         {
-          "label": "pass",
+          "label": "password",
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "Error: only alphanumeric allowed as user name and password.",
+        "Denied. Only root user can execute this command.",
+        "!Computer.ValidateNewUser",
+        "Denied. Maximum number of registered users reached.",
+        1
+      ],
       "returns": [
         "number",
-        "string"
+        "string",
+        "null"
       ]
     },
     "delete_user": {
       "type": "function",
       "arguments": [
         {
-          "label": "user",
+          "label": "username",
           "type": "string"
         },
         {
           "label": "removeHome",
           "type": "number",
-          "opt": true
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
+      ],
+      "returnVariations": [
+        "Denied. Only root user can execute this command.",
+        "can't delete user. ${username} does not exist",
+        "the root user can't be deleted.",
+        "sorry, at the moment that account can't be deleted.",
+        "user ${username} not found.",
+        1
       ],
       "returns": [
         "number",
-        "string"
+        "string",
+        "null"
       ]
     },
     "create_group": {
       "type": "function",
       "arguments": [
         {
-          "label": "user",
+          "label": "username",
           "type": "string"
         },
         {
@@ -157,9 +212,16 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "Error: only alphanumeric allowed as user and group names.",
+        "Denied. Only root user can execute this command.",
+        "Error: user ${username} does not exist.",
+        1
+      ],
       "returns": [
         "number",
-        "string"
+        "string",
+        "null"
       ]
     },
     "delete_group": {
@@ -174,18 +236,28 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "Denied. Only root user can execute this command.",
+        "Error: user ${username} does not exist.",
+        "Error: group ${group} not found in user ${username}",
+        1
+      ],
       "returns": [
         "number",
-        "string"
+        "string",
+        "null"
       ]
     },
     "groups": {
       "type": "function",
       "arguments": [
         {
-          "label": "user",
+          "label": "username",
           "type": "string"
         }
+      ],
+      "returnVariations": [
+        "Error: user ${username} does not exist."
       ],
       "returns": [
         "string"
@@ -199,21 +271,32 @@
           "type": "number"
         }
       ],
+      "returnVariations": [
+        "Permission denied. PID ${pid} belongs to user <b>${username}</b>",
+        "Permission denied. Process protected.",
+        "Unable to close this process. The process belongs to this script.",
+        1,
+        0
+      ],
       "returns": [
         "number",
-        "string"
+        "string",
+        "null"
       ]
     },
     "wifi_networks": {
       "type": "function",
       "arguments": [
         {
-          "label": "interface",
+          "label": "netDevice",
           "type": "string"
         }
       ],
       "returns": [
-        "list:string",
+        {
+          "type": "list",
+          "valueType": "string"
+        },
         "null"
       ]
     },
@@ -233,9 +316,20 @@
           "type": "string"
         },
         {
-          "label": "pass",
+          "label": "password",
           "type": "string"
         }
+      ],
+      "returnVariations": [
+        "connect_wifi: permission denied. Guest users can not execute this method",
+        "connect_wifi: Network device not found",
+        "connect_wifi: Only wifi cards are supported",
+        "Can't connect. Incorrect password.",
+        "Can't connect. Router not found.",
+        "can't connect: the remote server has been temporarily disabled due to non-payment",
+        "Can't connect. Target is out of reach.",
+        "Can't connect. Incorrect password.",
+        1
       ],
       "returns": [
         "number",
@@ -251,7 +345,7 @@
           "type": "string"
         },
         {
-          "label": "localIp",
+          "label": "address",
           "type": "string"
         },
         {
@@ -259,8 +353,16 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "connect_ethernet: permission denied. Guest users can not execute this method",
+        "Error: Invalid IP address",
+        "Error: invalid gateway",
+        "Error: the IP address and the gateway must belong to the same subnet",
+        "connect_ethernet: Network device not found",
+        "connect_ethernet: Only ethernet cards are supported",
+        "!NetworkLan.ConnectEthernet"
+      ],
       "returns": [
-        "number",
         "string",
         "null"
       ]

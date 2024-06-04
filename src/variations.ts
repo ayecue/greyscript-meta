@@ -103,3 +103,44 @@ VariationRegistry.add('BlockchainSystem.ResetCoinPass', [
   "Error: coin does not exist",
   "Error: Only the account owner can change the password"
 ]);
+
+// gets called by PreCrearCarpeta
+VariationRegistry.add('PlayerUtils.CrearCarpeta', [
+  "Unknown error.",
+  "Error: empty destination path",
+  "Error: only alphanumeric allowed as folder name.",
+  "Error: name cannot exceed the limit of 128 characters.",
+  "permission denied",
+  "${filename} file exists",
+  "Can't create folder. Reached maximum limit",
+  "The copy can not be made. Reached maximum number of files in a folder",
+  "The maximum number of subfolders has been exceeded"
+]);
+
+// gets called by CrearArchivoSyncClients
+VariationRegistry.add('PlayerUtils.CrearArchivo', [
+  "Can't create file. Unknown error",
+  "Can't create file. Reached maximum limit",
+  "Invalid path",
+  "Can't create file ${pathFolderDest}/${filename}. Permission denied",
+  "There is not enough free space on the hard disk.",
+  "The copy can not be made. Reached maximum number of files in a folder",
+]);
+
+VariationRegistry.add('Computer.ValidateNewUser', [
+  "Error: root user already exists.",
+  "Error: can't create guest user. Reserved user.",
+  "Error: can't create user. ${username} already exists."
+]);
+
+// gets called by EnableEthernetCard
+VariationRegistry.add('NetworkLan.ConnectEthernet', [
+  "Error: Ethernet card not connected to the network",
+  "Unable to find ISP network to connect using Ethernet card",
+  "can't connect: the home network has been temporarily disabled due to non-payment",
+  "Error: the gateway cannot be the same device to connect",
+  "Error: gateway ${gateway} does not exist in the network",
+  "Error: address ${address} is already in use.",
+  "Unknown error: The current IP ${localIp} does not exist in this network",
+  "Error: unable to run command on routers/switches"
+]);
