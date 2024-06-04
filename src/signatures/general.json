@@ -1554,10 +1554,22 @@
         },
         {
           "label": "rateHours",
-          "type": "number"
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 3
+          }
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "the mining cycle cannot exceed the maximum of 2160 hours",
+        "the mining cycle cannot be less than 1 hour",
+        1
+      ],
       "returns": [
+        "string",
         "number",
         "null"
       ]
@@ -1570,8 +1582,14 @@
           "type": "coin"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access."
+      ],
       "returns": [
-        "number"
+        "string",
+        "number",
+        "null"
       ]
     },
     "get_reward": {
@@ -1582,8 +1600,14 @@
           "type": "coin"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access."
+      ],
       "returns": [
-        "number"
+        "string",
+        "number",
+        "null"
       ]
     },
     "set_reward": {
@@ -1595,8 +1619,19 @@
         },
         {
           "label": "coinAmount",
-          "type": "number"
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 1
+          }
         }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "Error: The reward cannot be less than 1 coin",
+        "Error: Coin does not exist",
+        1
       ],
       "returns": [
         "number",
@@ -1623,6 +1658,13 @@
           "label": "valAmount",
           "type": "number"
         }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "Error: amount value cannot be less than 1",
+        "!BlockchainSystem.Transaction",
+        1
       ],
       "returns": [
         "string",
@@ -1654,9 +1696,16 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "!BlockchainSystem.AddSubWallet",
+        1
+      ],
       "returns": [
         "string",
-        "number"
+        "number",
+        "null"
       ]
     },
     "get_subwallet": {
@@ -1671,8 +1720,12 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "get_subwallet: The account does not exist"
+      ],
       "returns": [
-        "number",
         "string",
         "subWallet",
         "null"
@@ -1686,10 +1739,17 @@
           "type": "coin"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access."
+      ],
       "returns": [
-        "number",
         "string",
-        "list:subWallet"
+        {
+          "type": "list",
+          "valueType": "subWallet"
+        },
+        "null"
       ]
     },
     "set_address": {
@@ -1703,6 +1763,13 @@
           "label": "address",
           "type": "string"
         }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "set_address: address ${address}not found",
+        "!BlockchainSystem.SetAddress",
+        1
       ],
       "returns": [
         "number",
@@ -1718,9 +1785,14 @@
           "type": "coin"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "!BlockchainSystem.GetAddress"
+      ],
       "returns": [
-        "number",
-        "string"
+        "string",
+        "null"
       ]
     },
     "get_mined_coins": {
@@ -1731,8 +1803,40 @@
           "type": "coin"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access."
+      ],
       "returns": [
-        "number"
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "reset_password_coin": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "coin"
+        },
+        {
+          "label": "newPassword",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "reset_password: only alphanumeric characters are allowed as password",
+        "reset_password: name and password cannot exceed the 16 character limit.",
+        "!BlockchainSystem.ResetCoinPass",
+        1
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
       ]
     },
     "get_ports": {
@@ -3646,24 +3750,6 @@
       ],
       "returns": [
         "string"
-      ]
-    },
-    "reset_password_coin": {
-      "type": "function",
-      "arguments": [
-        {
-          "label": "self",
-          "type": "coin"
-        },
-        {
-          "label": "newPassword",
-          "type": "string"
-        }
-      ],
-      "returns": [
-        "number",
-        "string",
-        "null"
       ]
     },
     "reset_ctf_password": {
