@@ -904,7 +904,7 @@
     ]
   },
   "set_cycle_mining": {
-    "description": "Define the interval (in-game hours) in which each user receives a coin reward when mining. The interval cannot be lower than 1 and not be higher than 2160. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`. In case of success this method will return a `number` with the value one. In case of failure the method will return a string with details.",
+    "description": "Defines the interval (in-game hours) in which each user receives a coin reward when mining. The interval cannot be lower than 1 and not be higher than 2160. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`. On success, it will return a `number` with the value one. In case of failure, the method will return a `string` with details.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
@@ -917,7 +917,7 @@
     ]
   },
   "get_cycle_mining": {
-    "description": "Returns a `number` which represents the defined interval in which each user receives a coin reward when mining. In case of failure the method will return a string with details. If an invalid coin object gets provided the method will return `null`.",
+    "description": "Returns a `number` representing the defined interval in which each user receives a coin reward when mining. In case of failure, the method will return a `string` with details. If an invalid coin object is provided, the method will return `null`.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
@@ -929,7 +929,7 @@
     ]
   },
   "get_reward": {
-    "description": "Returns a `number` of coins that will be received as a reward after each mining cycle. In case of failure the method will return a string with details. If an invalid coin object gets provided the method will return `null`.",
+    "description": "Returns a `number` representing the amount of coins that will be received as a reward after each mining cycle. In case of failure, the method will return a `string` with details. If an invalid coin object is provided, the method will return `null`.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
@@ -941,7 +941,7 @@
     ]
   },
   "set_reward": {
-    "description": "Assign the reward that miners will receive after each mining cycle. The reward value has to be above one. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`. In case of success this method will return a `number` with the value one. In case of failure the method will return a string with details.",
+    "description": "Assigns the reward that miners will receive after each mining cycle. The reward value has to be above one. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`. On success, the method will return a `number` with the value one. In case of failure, the method will return a `string` with details.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
@@ -953,7 +953,7 @@
     ]
   },
   "transaction": {
-    "description": "Make a transaction of the currency between the indicated subwallets. In case of error, a `string` with the details is returned. In case of success a `number` will be returned with a value of one. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
+    "description": "Makes a transaction of the currency between the indicated subwallets. In case of an error, a `string` with the details is returned. In case of success, a `number` with a value of one will be returned. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
@@ -965,7 +965,7 @@
     ]
   },
   "create_subwallet": {
-    "description": "Register a new account in the `coin` that can be used to manage services such as stores. It is necessary to provide the PIN of the owners `wallet` that wants to register. In case of success this method will return a `number` with the value one. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`. In case of error, a `string` with the details is returned.",
+    "description": "Registers a new account in the `coin` that can be used to manage services such as stores. It is necessary to provide the PIN of the owner's `wallet` that wants to register. In case of success, the method will return a `number` with the value one. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`. In case of an error, a `string` with the details is returned.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
@@ -978,7 +978,7 @@
     ]
   },
   "get_subwallet": {
-    "description": "Returns a `list` where each item is a `subWallet` object including all the accounts registered in the cryptocurrency, in case of error it returns a `string` with the details.",
+    "description": "Returns a `subWallet` object on success. In case of error, it returns a `string` with the details. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
@@ -990,7 +990,7 @@
     ]
   },
   "get_subwallets": {
-    "description": "Returns a `list` where each item is a `subWallet` including all the accounts registered in the cryptocurrency, in case of error it returns a `string` with the details. If an invalid coin object gets provided the method will return `null`.",
+    "description": "Returns a `list` where each item is a `subWallet` object, including all the accounts registered in the cryptocurrency. In case of error, it returns a `string` with the details. If an invalid coin object is provided, the method will return `null`.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
@@ -1004,7 +1004,7 @@
     ]
   },
   "set_address": {
-    "description": "Configure a valid address that will be shown to users who do not have the currency, indicating where to register. In case of error, a `string` with the details is returned. In case of success a `number` will be returned with a value of one. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
+    "description": "Configures a valid address that will be shown to users who do not have the currency, indicating where to register. In case of an error, a `string` with the details is returned. In case of success, a `number` with a value of one will be returned. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
@@ -1016,7 +1016,7 @@
     ]
   },
   "get_address": {
-    "description": "Returns the configured address that will be shown to users who do not have the currency, indicating where they have to register. In case of an error this method will return a string with details. If an invalid coin object gets provided the method will return `null`.",
+    "description": "Returns the configured address that will be shown to users who do not have the currency, indicating where they have to register. In case of an error, the method will return a `string` with details. If an invalid coin object is provided, the method will return `null`.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
@@ -1028,7 +1028,7 @@
     ]
   },
   "get_mined_coins": {
-    "description": "Returns a `number` of coins that have been mined so far. In case of an error this method will return a string with details. If an invalid coin object gets provided the method will return `null`.",
+    "description": "Returns a `number` representing the amount of coins that have been mined so far. In case of an error, the method will return a `string` with details. If an invalid coin object is provided, the method will return `null`.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
@@ -1040,7 +1040,7 @@
     ]
   },
   "reset_password_coin": {
-    "description": "Resets the password of the coin. Returns a `number` with the value one if resetting was successful; otherwise, it will either return a `string`. If an invalid coin object gets provided the method will return `null`.",
+    "description": "Resets the password of the coin. It returns a `number` with the value one if resetting was successful; otherwise, it will return a `string`. If an invalid coin object is provided, the method will return `null`.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
