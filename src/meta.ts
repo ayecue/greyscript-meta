@@ -1,3 +1,5 @@
+import './variations';
+
 import { Container } from 'meta-utils';
 
 import EN from './descriptions/en/index';
@@ -6,10 +8,10 @@ import Any from './signatures/any.json';
 import AptClient from './signatures/apt-client.json';
 import Blockchain from './signatures/blockchain.json';
 import ClassSignature from './signatures/class.json';
-import CTFEvent from './signatures/ctfEvent.json';
 import Coin from './signatures/coin.json';
 import Computer from './signatures/computer.json';
 import Crypto from './signatures/crypto.json';
+import CTFEvent from './signatures/ctfEvent.json';
 import File from './signatures/file.json';
 import FtpShell from './signatures/ftp-shell.json';
 import FunctionSignature from './signatures/function.json';
