@@ -3,40 +3,40 @@
     "description": "A `coin` object can be obtained by using [get_coin](#BLOCKCHAIN_GET_COIN). The `classID` used for this object is `\"coin\"`."
   },
   "set_cycle_mining": {
-    "description": "Assign the hours (game time) that each mining cycle lasts. When a cycle ends, it is decided who gets the reward (1 coin) and the next cycle begins."
+    "description": "Define the interval (in-game hours) in which each user receives a coin reward when mining. The interval cannot be lower than 1 and not be higher than 2160. If the provided rateHours is not a `number` this method will return `null`. In case of success this method will return a `number` with the value one. In case of failure the method will return a string with details."
   },
   "get_cycle_mining": {
-    "description": "Returns a `number` of hours (game time) that each mining cycle lasts. When a cycle ends, it is decided who gets the reward (1 coin) and the next cycle begins."
+    "description": "Returns a `number` which represents the defined interval in which each user receives a coin reward when mining. In case of failure the method will return a string with details."
   },
   "get_reward": {
-    "description": "Returns a `number` of coins that will be received as a reward after each mining cycle."
+    "description": "Returns a `number` of coins that will be received as a reward after each mining cycle. In case of failure the method will return a string with details."
   },
   "set_reward": {
-    "description": "Assign the reward that miners will receive after each mining cycle."
+    "description": "Assign the reward that miners will receive after each mining cycle. If the provided coinAmount is not a `number` this method will return `null`. In case of success this method will return a `number` with the value one. In case of failure the method will return a string with details."
   },
   "transaction": {
-    "description": "Make a transaction of the currency between the indicated subwallets. In case of error, a `string` with the details is returned."
+    "description": "Make a transaction of the currency between the indicated subwallets. In case of error, a `string` with the details is returned. In case of success a `number` will be returned with a value of one. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`."
   },
   "create_subwallet": {
-    "description": "Register a new account in the `coin` that can be used to manage services such as stores. It is necessary to use the PIN that the owner of the `wallet` that wants to register has to provide."
+    "description": "Register a new account in the `coin` that can be used to manage services such as stores. It is necessary to provide the PIN of the owners `wallet` that wants to register. In case of success this method will return a `number` with the value one. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`. In case of error, a `string` with the details is returned."
   },
   "get_subwallet": {
-    "description": "Returns a `subWallet`, in case of error it returns a `string` with the details."
+    "description": "Returns a `subWallet` object on success. In case of error it returns a `string` with the details. If the provided subWalletUser is not a `string` this method will return `null`."
   },
   "get_subwallets": {
-    "description": "Returns a `list` where each item is a `subWallet` including all the accounts registered in the cryptocurrency, in case of error it returns a `string` with the details."
+    "description": "Returns a `list` where each item is a `subWallet` object including all the accounts registered in the cryptocurrency, in case of error it returns a `string` with the details."
   },
   "set_address": {
-    "description": "Configure a valid address that will be shown to users who do not have the currency, indicating where to register."
+    "description": "Configure a valid address that will be shown to users who do not have the currency, indicating where to register. In case of error, a `string` with the details is returned. In case of success a `number` will be returned with a value of one. If the provided address is not a `string` this method will return `null`."
   },
   "get_address": {
-    "description": "Returns the configured address that will be shown to users who do not have the currency, indicating where they have to register."
+    "description": "Returns the configured address that will be shown to users who do not have the currency, indicating where they have to register. In case of an error this method will return a string with details."
   },
   "get_mined_coins": {
-    "description": "Returns a `number` of coins that have been mined so far."
+    "description": "Returns a `number` of coins that have been mined so far. In case of an error this method will return a string with details."
   },
   "reset_password": {
-    "description": "Resets the password of the coin. Returns `true` if resetting was successful; otherwise, it will either return a `string` or `null`.",
+    "description": "Resets the password of the coin. Returns a `number` with the value one if resetting was successful; otherwise, it will either return a `string`.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "coin = blockchain.get_coin(\"coinName\", \"user\", \"1234\")",
