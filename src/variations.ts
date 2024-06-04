@@ -71,3 +71,11 @@ VariationRegistry.add('BlockchainSystem.RemoveCurrency', [
   "Error: ${coinname} does not exist",
   "Error: incorrect user/password"
 ]);
+
+VariationRegistry.add('BlockchainSystem.AddSubWallet', [
+  "Error: Wallet does not exists.",
+  "Error: Coin does not exist.",
+  "Error: This username already exists",
+  "Error: Incorrect PIN",
+  "Error: only a maximum of 10 subwallets per coin is allowed."
+]);
