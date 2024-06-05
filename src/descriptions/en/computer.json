@@ -34,7 +34,7 @@
     ]
   },
   "File": {
-    "description": "Returns a `file` located at the path provided in the arguments. The path can be either relative or absolute. Keep in mind that any `file` object can be a folder as well. If the provided path cannot be resolved, meaning that no file or folder exists, this method will return `null`. Providing any other type than `string` for the path will result in an error thrown interrupting the script execution.",
+    "description": "Returns a `file` located at the path provided in the arguments. The path can be either relative or absolute. Keep in mind that any `file` object can be a folder as well. If the provided path cannot be resolved, meaning that no file or folder exists, this method will return `null`. Providing any other type than `string` or the value being empty for the path will result in an error thrown interrupting the script execution.",
     "example": [
       "filePath = \"/etc/passwd\"",
       "file = get_shell.host_computer.File(filePath)",
@@ -83,7 +83,7 @@
     ]
   },
   "show_procs": {
-    "description": "Returns a `string` with an overview of all active processes on the `computer`. It contains information about the user, PID, CPU, memory and command.",
+    "description": "Returns a `string` with an overview of all active processes on the `computer`. It contains information about the user, PID, CPU, memory and command. Using this method in a ssh encryption process will cause an error to be thrown preventing any further script execution.",
     "example": [
       "hostComputer = get_shell.host_computer",
       "procs = hostComputer.show_procs",
@@ -114,7 +114,7 @@
     ]
   },
   "change_password": {
-    "description": "Change the password of an existing user on the `computer`. It is necessary to be root to be able to successfully change the password. Passwords can only include alphanumeric characters and cannot exceed 15 characters. In case the password change fails this method will return a `string` containing information on why it failed. If the change succeeded it will return a `number` with the value one. If the provided username is empty an error will be thrown preventing any further script execution. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
+    "description": "Changes the password of an existing user on the `computer`. It is necessary to be root to be able to successfully change the password. Passwords can only include alphanumeric characters and cannot exceed 15 characters. In case the password change fails this method will return a `string` containing information on why it failed. If the change succeeded it will return a `number` with the value one. If the provided username is empty an error will be thrown preventing any further script execution. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
     "example": [
       "hostComputer = get_shell(\"root\", \"test\").host_computer",
       "changeResult = hostComputer.change_password(\"test\", \"newPassword\")",
