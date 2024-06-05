@@ -2368,6 +2368,13 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "Error: wifi card is disabled",
+        "airmon: monitor mode can only be activated on wifi cards",
+        "airmon: monitor mode is not supported by the chipset of this network card.",
+        0,
+        1
+      ],
       "returns": [
         "number",
         "string"
@@ -2390,9 +2397,18 @@
         },
         {
           "label": "maxAcks",
-          "type": "string",
-          "opt": true
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": -1
+          }
         }
+      ],
+      "returnVariations": [
+        "Error: wifi card is disabled",
+        "router not found!",
+        "Can't connect. Target is out of reach.",
+        "aireplay: no wifi card found with monitor mode enabled"
       ],
       "returns": [
         "string",
@@ -2432,9 +2448,17 @@
           "type": "number"
         }
       ],
+      "returnVariations": [
+        "Error: Invalid ip address",
+        "!PlayerUtils.GetSmtpServer"
+      ],
       "returns": [
-        "list:string",
-        "string"
+        {
+          "type": "list",
+          "valueType": "string"
+        },
+        "string",
+        "null"
       ]
     },
     "get_description": {
