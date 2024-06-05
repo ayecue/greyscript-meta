@@ -260,7 +260,8 @@
         "Error: user ${username} does not exist."
       ],
       "returns": [
-        "string"
+        "string",
+        "null"
       ]
     },
     "close_program": {

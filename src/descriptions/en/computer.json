@@ -174,7 +174,7 @@
     ]
   },
   "groups": {
-    "description": "Returns a `string` containing groups associated with an existing user on the `computer`. In case the user does not exist a `string` will be returned with an error message. If the provided username is empty an error will be thrown preventing further script execution.",
+    "description": "Returns a `string` containing groups associated with an existing user on the `computer`. In case the user does not exist a `string` will be returned with an error message. If the provided username is empty an error will be thrown preventing further script execution. If the provided username is anything other than a `string` this method will return `null`.",
     "example": [
       "hostComputer = get_shell(\"root\", \"test\").host_computer",
       "hostComputer.create_group(\"root\", \"staff\")",
