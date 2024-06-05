@@ -1380,19 +1380,19 @@
     ]
   },
   "get_description": {
-    "description": "Get CTF event description."
+    "description": "Returns a `string` with the CTF event description. If the provided `ctfEvent` object is invalid or missing, this method will return `null`."
   },
   "get_template": {
-    "description": "Get CTF event template."
+    "description": "Returns a `string` with the CTF event template. If the provided `ctfEvent` object is invalid or missing, this method will return `null`."
   },
   "player_success": {
-    "description": "Checks if CTF event got completed successfully."
+    "description": "Returns a `number` with the value one if the CTF event was completed successfully. Otherwise, this method will return a `number` with the value zero. If the provided `ctfEvent` object is invalid or missing, this method will return `null`."
   },
   "get_creator_name": {
-    "description": "The the name of the CTF event creator."
+    "description": "Returns a `string` with the name of the CTF event creator. If the provided `ctfEvent` object is invalid or missing, this method will return `null`."
   },
   "get_mail_content": {
-    "description": "Get mail content for CTF event."
+    "description": "Returns a `string` with the mail content of the CTF event. If the provided `ctfEvent` object is invalid or missing, this method will return `null`."
   },
   "chmod": {
     "description": "Modifies the `file` permissions. Optionally these permissions can also be applied recursively. The format for applying permissions is as follows: `\"[references][operator][modes]\"`. The references type gets defined through three possible types. These types include user `\"u\"`, group `\"g\"` and other `\"o\"`. The operator is used to define if permissions get added `\"+\"` or removed `\"-\"`. There are three different modes which can be modified. Those modes include read `\"r\"`, write `\"w\"` and execute `\"x\"`. So as an example `\"o-wrx\"` would remove all possible permissions for other. To add all permissions for other again `\"o+wrx\"` would be used. In case the modification fails this method will return a `string` containing information of the reason. Otherwise an empty `string` gets returned.",

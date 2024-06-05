@@ -1,20 +1,20 @@
 {
-    "$meta": {
-        "description": "A `ctfEvent` object can be obtained by using [get_ctf](#GENERAL_GET_CTF). The `classID` used for this object is `\"ctfEvent\"`."
-    },
-    "get_description": {
-        "description": "Get CTF event description."
-    },
-    "get_template": {
-        "description": "Get CTF event template."
-    },
-    "player_success": {
-        "description": "Checks if CTF event got completed successfully."
-    },
-    "get_creator_name": {
-        "description": "The the name of the CTF event creator."
-    },
-    "get_mail_content": {
-        "description": "Get mail content for CTF event."
-    }
+  "$meta": {
+    "description": "A `ctfEvent` object can be obtained by using [get_ctf](#GENERAL_GET_CTF). The `classID` used for this object is `\"ctfEvent\"`."
+  },
+  "get_description": {
+    "description": "Returns `string` with the CTF event description."
+  },
+  "get_template": {
+    "description": "Returns `string` with the CTF event template."
+  },
+  "player_success": {
+    "description": "Returns `number` with the value one if the CTF event got completed successfully. Otherwise this method will return a `number` with the value zero."
+  },
+  "get_creator_name": {
+    "description": "Returns `string` with the name of the CTF event creator."
+  },
+  "get_mail_content": {
+    "description": "Returns `string` with the mail content of the CTF event."
+  }
 }
