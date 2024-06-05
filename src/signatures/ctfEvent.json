@@ -5,39 +5,35 @@
     "get_description": {
       "type": "function",
       "returns": [
-        "string",
-        "null"
+        "string"
       ]
     },
     "get_template": {
       "type": "function",
       "returns": [
-        "string",
-        "number",
-        "null"
+        "string"
       ]
     },
     "player_success": {
       "type": "function",
+      "returnVariations": [
+        0,
+        1
+      ],
       "returns": [
-        "number",
-        "null"
+        "number"
       ]
     },
     "get_creator_name": {
       "type": "function",
       "returns": [
-        "string",
-        "number",
-        "null"
+        "string"
       ]
     },
     "get_mail_content": {
       "type": "function",
       "returns": [
-        "string",
-        "number",
-        "null"
+        "string"
       ]
     }
   }

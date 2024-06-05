@@ -2484,7 +2484,6 @@
       ],
       "returns": [
         "string",
-        "number",
         "null"
       ]
     },
@@ -2495,6 +2494,10 @@
           "label": "self",
           "type": "ctfEvent"
         }
+      ],
+      "returnVariations": [
+        0,
+        1
       ],
       "returns": [
         "number",
@@ -2511,7 +2514,6 @@
       ],
       "returns": [
         "string",
-        "number",
         "null"
       ]
     },
@@ -2525,7 +2527,6 @@
       ],
       "returns": [
         "string",
-        "number",
         "null"
       ]
     },
