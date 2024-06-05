@@ -1052,7 +1052,7 @@
     ]
   },
   "get_ports": {
-    "description": "Returns a `list` of `port`s on the `computer` which are active. In case an invalid `computer` object gets passed this method will return `null`.",
+    "description": "Returns a `list` of `port`s on the `computer` which are active. If an invalid `computer` object is passed, this method will return `null`.",
     "example": [
       "router = get_router",
       "ports = get_ports(host_computer(get_shell))",
@@ -1062,28 +1062,28 @@
     ]
   },
   "get_name": {
-    "description": "Returns the hostname of the machine. In case an invalid `computer` object gets passed this method will return a `string` containing `\"Unknown\"`.",
+    "description": "Returns the hostname of the machine. If an invalid `computer` object is passed, this method will return a `string` containing `\"Unknown\"`.",
     "example": [
       "computerName = get_name(host_computer(get_shell))",
       "print(\"The name of your machine is \" + computerName)"
     ]
   },
   "lan_ip": {
-    "description": "Returns a `string` with the local IP address of the `computer`. In case an invalid `computer` object gets passed this method will return `null`.",
+    "description": "Returns a `string` with the local IP address of the `computer`. If an invalid `computer` object is passed, this method will return `null`.",
     "example": [
       "localIp = lan_ip(host_computer(get_shell))",
       "print(\"Public ip:\" + localIp)"
     ]
   },
   "public_ip_pc": {
-    "description": "Returns a `string` with the public IP address of the `computer`. In case an invalid `computer` object gets passed this method will return `null`.",
+    "description": "Returns a `string` with the public IP address of the `computer`. If an invalid `computer` object is passed, this method will return `null`.",
     "example": [
       "publicIp = public_ip_pc(host_computer(get_shell))",
       "print(\"Public ip:\" + publicIp)"
     ]
   },
   "File": {
-    "description": "Returns a `file` located at the path provided in the arguments. The path can be either relative or absolute. Keep in mind that any `file` object can be a folder as well. If the provided path cannot be resolved, meaning that no file or folder exists, this method will return `null`. Providing any other type than `string` or the value being empty for the path will result in an error thrown interrupting the script execution. In case an invalid `computer` object gets passed this method will return `null`.",
+    "description": "Returns a `file` located at the path provided in the arguments. The path can be either relative or absolute. Keep in mind that any `file` object can be a folder as well. If the provided path cannot be resolved, meaning that no file or folder exists, this method will return `null`. Providing any other type than `string` or the value being empty for the path will result in an error thrown interrupting the script execution. If an invalid `computer` object is passed, this method will return `null`.",
     "example": [
       "filePath = \"/etc/passwd\"",
       "file = File(host_computer(get_shell), filePath)",
@@ -1095,7 +1095,7 @@
     ]
   },
   "create_folder": {
-    "description": "Create a folder at the path provided in the arguments. There are certain limitations when it comes to creating a folder. The folder name has to be alphanumeric and below 128 characters. Creation will fail as well when there is already a folder in place or if there are lacking permissions. Additionally, there is a folder limit of about 250 in each folder and 3125 folders in the computer overall. In case the folder creation fails the method will return a `string` with details. In case of success, it will return a `number` with the value one. Providing any type that deviates from the signature or using this method in a ssh encryption process will cause an error to be thrown aborting further script execution. In case an invalid `computer` object gets passed this method will return `null`.",
+    "description": "Creates a folder at the path provided in the arguments. There are certain limitations when it comes to creating a folder. The folder name has to be alphanumeric and below 128 characters. Creation will fail as well when there is already a folder in place or if there are lacking permissions. Additionally, there is a folder limit of about 250 in each folder and 3125 folders in the computer overall. In case the folder creation fails, the method will return a `string` with details. In case of success, it will return a `number` with the value one. Providing any type that deviates from the signature or using this method in an SSH encryption process will cause an error to be thrown, aborting further script execution. If an invalid `computer` object is passed, this method will return `null`.",
     "example": [
       "path = \"/home/\" + active_user + \"/Desktop\"",
       "computer = host_computer(get_shell)",
@@ -1108,7 +1108,7 @@
     ]
   },
   "is_network_active": {
-    "description": "Returns a `number` with either the value one or zero. The value will be one if the `computer` has internet access. If there is no internet access it will return zero instead. In case an invalid `computer` object gets passed this method will return `null`.",
+    "description": "Returns a `number` with either the value one or zero. The value will be one if the `computer` has internet access. If there is no internet access, it will return zero instead. In case an invalid `computer` object is passed, this method will return `null`.",
     "example": [
       "computer = host_computer(get_shell)",
       "if is_network_active(computer) then",
@@ -1119,7 +1119,7 @@
     ]
   },
   "touch": {
-    "description": "Creates an empty text `file` at the path provided. There are certain limitations when it comes to file creation. The `file` name has to be alphanumeric and below 128 characters. Cretion will fail when there is already a `file` in place or if there are lacking permissions. Additionally, there is a file limit of about 250 in each folder and 3125 files in the computer overall. In case of success, it will return a `number` with the value one. In case of failure it will return a `string` with details. Using this method in a ssh encryption process will cause an error to be thrown preventing any further script execution. In case an invalid `computer` object gets passed this method will return `null`.",
+    "description": "Creates an empty text `file` at the provided path. Certain limitations apply to file creation: the `file` name must be alphanumeric and below 128 characters. Creation will fail if a `file` already exists at the specified path or if there are insufficient permissions. Additionally, there is a file limit of about 250 per folder and 3125 files overall on the computer. If successful, it returns a `number` with the value one. On failure, it returns a `string` with details. Using this method in an SSH encryption process will cause an error to be thrown, preventing further script execution. If an invalid `computer` object is passed, this method will return `null`.",
     "example": [
       "path = \"/home/\" + active_user + \"/Desktop\"",
       "computer = host_computer(get_shell)",
@@ -1132,7 +1132,7 @@
     ]
   },
   "show_procs": {
-    "description": "Returns a `string` with an overview of all active processes on the `computer`. It contains information about the user, PID, CPU, memory and command. Using this method in a ssh encryption process will cause an error to be thrown preventing any further script execution. In case an invalid `computer` object gets passed this method will return `null`.",
+    "description": "Returns a `string` providing an overview of all active processes on the `computer`. This includes information about the username, PID, CPU usage, memory consumption, and command name. Using this method in an SSH encryption process will throw an error, preventing further script execution. If an invalid `computer` object is passed, this method will return `null`.",
     "example": [
       "computer = host_computer(get_shell)",
       "procs = show_procs(computer)",
@@ -1152,7 +1152,7 @@
     ]
   },
   "network_devices": {
-    "description": "Returns a `string` containing all network devices available on the `computer`. Each item provides information about interface name, chipset and if monitoring support is enabled. In case an invalid `computer` object gets passed this method will return `null`.",
+    "description": "Returns a `string` containing all network devices available on the `computer`, with each item providing information about the interface name, chipset, and whether monitoring support is enabled. If an invalid `computer` object is passed, this method will return `null`.",
     "example": [
       "computer = host_computer(get_shell)",
       "devices = network_devices(computer)",
@@ -1163,7 +1163,7 @@
     ]
   },
   "change_password": {
-    "description": "Changes the password of an existing user on the `computer`. It is necessary to be root to be able to successfully change the password. Passwords can only include alphanumeric characters and cannot exceed 15 characters. In case the password change fails this method will return a `string` containing information on why it failed. If the change succeeded it will return a `number` with the value one. If the provided username is empty an error will be thrown preventing any further script execution. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
+    "description": "Changes the password of an existing user on the `computer`. Root permissions are necessary for successful password changes. Passwords can only include alphanumeric characters and cannot exceed 15 characters. If the password change fails, this method will return a `string` containing information on why it failed. If the change succeeds, it will return a `number` with the value one. If the provided username is empty, an error will be thrown, preventing any further script execution. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
     "example": [
       "computer = host_computer(get_shell(\"root\", \"test\"))",
       "changeResult = change_password(computer, \"test\", \"newPassword\")",
@@ -1175,7 +1175,7 @@
     ]
   },
   "create_user": {
-    "description": "Creates a user on the `computer`, with the specified name and password. It is necessary to be root to be able to successfully create a user. Neither username nor password can exceed more than 15 characters and both need to be alphanumeric. There cannot be more than 15 users created on the same `computer`. In case the creation fails this method will return a `string` containing the reason for the failure. On success it will return a `number` with the value one. If the provided username is empty or either of the values exceeds 15 characters an error will be thrown interupting further script execution. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
+    "description": "Creates a user on the `computer`, with the specified name and password. Root permissions are necessary for successful user creation. Neither username nor password can exceed more than 15 characters and both need to be alphanumeric. There cannot be more than 15 users created on the same `computer`. In case the creation fails, this method will return a `string` containing the reason for the failure. On success, it will return a `number` with the value one. If the provided username is empty or either of the values exceeds 15 characters, an error will be thrown, interrupting further script execution. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
     "example": [
       "computer = host_computer(get_shell(\"root\", \"test\"))",
       "creationResult = create_user(computer, \"newUser\", \"123\")",
@@ -1187,7 +1187,7 @@
     ]
   },
   "delete_user": {
-    "description": "It deletes the indicated user from the `computer`. It can optionally also delete the home folder related to the user. By default the home folder will not be deleted. It is necessary to be root to be able to successfully delete a user. Keep in mind that you cannot delete the root user. In case the deletion fails this method will return a `string` containing the cause of failure. On success this method will return a `number` with the value one. If the provided username is empty an error will be thrown interupting further script execution. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
+    "description": "Deletes the indicated user from the `computer`. It can optionally also delete the home folder related to the user. By default, the home folder will not be deleted. Root permissions are necessary to successfully delete a user. Keep in mind that you cannot delete the root user. In case the deletion fails, this method will return a `string` containing the cause of failure. On success, this method will return a `number` with the value one. If the provided username is empty, an error will be thrown, interrupting further script execution. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
     "example": [
       "computer = host_computer(get_shell(\"root\", \"test\"))",
       "deletionResult = delete_user(computer, \"test\", true)",
@@ -1199,7 +1199,7 @@
     ]
   },
   "create_group": {
-    "description": "Create a new group associated with an existing user on the `computer`. It is necessary to be root to be able to successfully create a group. There are a few limitations when creating a group such as a character limit of 15 and that the group name may only contain alphanumeric characters. In case the group creation fails this method will return a `string` containing the cause of failure. On success it will return a `number` with the value one. In case the provided arguments are empty or the username exceeds 15 characters an error will be thrown interupting further script execution. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
+    "description": "Creates a new group associated with an existing user on the `computer`. It is necessary to be root to be able to successfully create a group. There are a few limitations when creating a group such as a character limit of 15 and that the group name may only contain alphanumeric characters. In case the group creation fails, this method will return a `string` containing the cause of failure. On success, it will return a `number` with the value one. In case the provided arguments are empty or the username exceeds 15 characters, an error will be thrown, interrupting further script execution. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
     "example": [
       "computer = host_computer(get_shell(\"root\", \"test\"))",
       "creationResult = create_group(computer, \"test\", \"staff\")",
@@ -1211,7 +1211,7 @@
     ]
   },
   "delete_group": {
-    "description": "Delete an existing group associated with an existing user on the `computer`. It is necessary to be root to be able to successfully delete a group. In case the group deletion fails this method will return a `string` containing the cause of failure. On success it will return `number` with the value one. If either of the provided values is empty an error will be thrown preventing further script execution. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
+    "description": "Deletes an existing group associated with an existing user on the `computer`. It is necessary to be root to be able to successfully delete a group. In case the group deletion fails, this method will return a `string` containing the cause of failure. On success, it will return `number` with the value one. If either of the provided values is empty, an error will be thrown preventing further script execution. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
     "example": [
       "computer = host_computer(get_shell(\"root\", \"test\"))",
       "deletionResult = delete_group(computer, \"test\", \"staff\")",
@@ -1223,7 +1223,7 @@
     ]
   },
   "groups": {
-    "description": "Returns a `string` containing groups associated with an existing user on the `computer`. In case the user does not exist a `string` will be returned with an error message. If the provided username is empty an error will be thrown preventing further script execution. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
+    "description": "Returns a `string` containing groups associated with an existing user on the `computer`. In case the user does not exist, a `string` will be returned with an error message. If the provided username is empty, an error will be thrown preventing further script execution. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
     "example": [
       "computer = host_computer(get_shell(\"root\", \"test\"))",
       "create_group(computer, \"root\", \"staff\")",
@@ -1233,7 +1233,7 @@
     ]
   },
   "close_program": {
-    "description": "Closes a program associated with the provided PID. You can see the `list` of active programs by either using `show_procs` or typing ps into your terminal. To close a program you need to be either owner of the running process or root. In case the closing of a program fails this method will return a `string` containing details. On success it will return a `number` with the value one. If there is no process with the provided pid this method will return a `number` with the value zero. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
+    "description": "Closes a program associated with the provided PID. You can see the list of active programs by either using `show_procs` or typing `ps` into your terminal. To close a program, you need to be either the owner of the running process or root. In case the closing of a program fails, this method will return a `string` containing details. On success, it will return a `number` with the value one. If there is no process with the provided PID, this method will return a `number` with the value zero. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
     "example": [
       "computer = host_computer(get_shell(\"root\", \"test\"))",
       "processes = split(show_procs(computer), char(10))[1:]",
@@ -1247,7 +1247,7 @@
     ]
   },
   "wifi_networks": {
-    "description": "Returns a `list` of the Wi-Fi networks that are available for the provided interface. Each item in the `list` is a `string` containing information on the BSSID, PWR and ESSID. If no matching netDevice can be found or the an invalid `computer` object got passed this method will return `null`. In case the active net card is not a wifi card an error will be thrown preventing any further script execution.",
+    "description": "Returns a list of the Wi-Fi networks that are available for the provided interface. Each item in the `list` is a `string` containing information on the BSSID, PWR, and ESSID. If no matching netDevice can be found or an invalid `computer` object is passed, this method will return `null`. In case the active network card is not a Wi-Fi card, an error will be thrown, preventing any further script execution.",
     "example": [
       "computer = host_computer(get_shell(\"root\", \"test\"))",
       "networks = wifi_networks(computer, \"wlan0\")",
@@ -1264,7 +1264,7 @@
     ]
   },
   "connect_wifi": {
-    "description": "Connect to the indicated Wifi network. It is not possible to connect to a new Wifi while being logged in as a guest. If connecting to a new Wifi fails this method will return a `string` containing details. On success it will return a `number` with the value one. Wifis can be found via `wifi_networks` or by typing iwlist as a command in the terminal. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
+    "description": "Connects to the indicated Wi-Fi network. It is not possible to connect to a new Wi-Fi while being logged in as a guest. If connecting to a new Wi-Fi fails, this method will return a `string` containing details. On success, it will return a `number` with the value one. Wi-Fi networks can be found via `wifi_networks` or by typing `iwlist` as a command in the terminal. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
     "example": [
       "computer = host_computer(get_shell)",
       "networks = wifi_networks(computer)",
@@ -1280,7 +1280,7 @@
     ]
   },
   "connect_ethernet": {
-    "description": "Set up a new IP address on the `computer` through the ethernet connection. It is not possible to set up a new IP address while being logged in as a guest. On failure, this method will either return a `string` with details or `null`. On success it will return an empty `string`. If any of the provided parameters have a type that deviates from the defined signature or the computer is not connected to the internet an error will be thrown preventing any further script execution.",
+    "description": "Sets up a new IP address on the `computer` through the ethernet connection. It is not possible to set up a new IP address while being logged in as a guest. On failure, this method will either return a `string` with details or `null`. On success, it will return an empty `string`. If any of the provided parameters have a type that deviates from the defined signature or the computer is not connected to the internet, an error will be thrown preventing any further script execution.",
     "example": [
       "computer = host_computer(get_shell)",
       "connectionResult = connect_ethernet(computer, \"eth0\", \"192.168.0.4\", local_ip(get_router))",
@@ -1292,7 +1292,7 @@
     ]
   },
   "network_gateway": {
-    "description": "Returns a `string` with the gateway IP address configured on the `computer`. If an invalid `computer` object gets passed this method returns a `string` with the value `\"0.0.0.0\"`.",
+    "description": "Returns a `string` with the gateway IP address configured on the `computer`. If an invalid `computer` object gets passed, this method returns a `string` with the value `\"0.0.0.0\"`.",
     "example": [
       "computer = host_computer(get_shell)",
       "gatewayIp = network_gateway(computer)",
@@ -1300,7 +1300,7 @@
     ]
   },
   "active_net_card": {
-    "description": "Returns a `string` which contains either the keyword `\"WIFI\"` or `\"ETHERNET\"` depending through which connection type your `computer` is connected by. In case an invalid `computer` object gets passed this method will return `null`.",
+    "description": "Returns a `string` which contains either the keyword `\"WIFI\"` or `\"ETHERNET\"` depending on which connection type your `computer` is connected by. In case an invalid `computer` object gets passed, this method will return `null`.",
     "example": [
       "computer = host_computer(get_shell)",
       "netCard = active_net_card(computer)",
