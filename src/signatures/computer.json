@@ -124,7 +124,7 @@
       "type": "function",
       "arguments": [
         {
-          "label": "user",
+          "label": "username",
           "type": "string"
         },
         {
@@ -149,7 +149,7 @@
       "type": "function",
       "arguments": [
         {
-          "label": "user",
+          "label": "usename",
           "type": "string"
         },
         {
@@ -228,7 +228,7 @@
       "type": "function",
       "arguments": [
         {
-          "label": "user",
+          "label": "username",
           "type": "string"
         },
         {
