@@ -144,3 +144,14 @@ VariationRegistry.add('NetworkLan.ConnectEthernet', [
   "Unknown error: The current IP ${localIp} does not exist in this network",
   "Error: unable to run command on routers/switches"
 ]);
+
+VariationRegistry.add('PlayerUtils.GetSmtpServer', [
+  "invalid IP address",
+  "host is down",
+  "host doesn't exist",
+  "ip address not found",
+  "port ${port} not found",
+  "host doesn't exist",
+  "invalid target service",
+  "service not found"
+]);
