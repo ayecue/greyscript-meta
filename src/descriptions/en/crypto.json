@@ -1,77 +1,77 @@
 {
-    "$meta": {
-        "description": "A `crypto` object can be obtained by using [include_lib](#GENERAL_INCLUDE_LIB). The `classID` used for this object is `\"cryptoLib\"`."
-    },
-    "aircrack": {
-        "description": "Returns a `string` containing the password  based on the file which got generated via aireplay. In case of failure, it will return `null` instead.",
-        "example": [
-            "crypto = include_lib(\"/lib/crypto.so\")",
-            "networks = get_shell.host_computer.wifi_networks(\"wlan0\")",
-            "firstNetwork = networks[1].split(\" \")",
-            "bssid = firstNetwork[0]",
-            "pwr = firstNetwork[1][:-1].to_int",
-            "essid = firstNetwork[2]",
-            "aireplayResult = crypto.aireplay(bssid, essid, 300000 / pwr)",
-            "if (aireplayResult == null) then",
-            "   result = crypto.aircrack(home_dir + \"/file.cap\")",
-            "   print(result)",
-            "end if"
-        ]
-    },
-    "airmon": {
-        "description": "Enables or disables the monitor mode of a network device. The options parameter can only be `\"start\"` or `\"stop\"`. Monitor mode can only be enabled on Wifi cards. If it wasn't possible to enable or disable the monitor mode this method will return a `string` containing the reason. Otherwise, it will return `true`.",
-        "example": [
-            "crypto = include_lib(\"/lib/crypto.so\")",
-            "airmonResult = crypto.airmon(\"start\", \"wlan0\")",
-            "if typeof(airmonResult) == \"string\" then",
-            "   print(\"There was an error while switching monitoring mode: \" + airmonResult)",
-            "else",
-            "   print(\"Monitoring mode switched successfully.\")",
-            "end if"
-        ]
-    },
-    "aireplay": {
-        "description": "Used to inject frames on wireless interfaces. Once the command with `\"Control+C\"` is stopped, it will save the captured information in a text file called `\"file.cap\"` in the path where the terminal is currently located. Alternatively, a maximum of captured `acks` can be specified for the command to stop automatically, saving the `\"file.cap\"` file as described above. To figure out how many ACKs are required you can use the following formula: `\"300000 / [Wifi PWR]\"`. If there is an error, a `string` will be returned with the message indicating the problem. On success, it will return `null`.",
-        "example": [
-            "crypto = include_lib(\"/lib/crypto.so\")",
-            "networks = get_shell.host_computer.wifi_networks(\"wlan0\")",
-            "for index in range(0, networks.len - 1)",
-            "   print(index + \".) \" + networks[index])",
-            "end for",
-            "selectedIndex = user_input(\"Select Wifi: \").to_int",
-            "if (typeof(selectedIndex) == \"string\" or selectedIndex < 0 or selectedIndex > networks.len - 1) then",
-            "   exit(\"Wrong index!\")",
-            "end if",
-            "parsed = networks[selectedIndex].split(\" \")",
-            "bssid = parsed[0]",
-            "pwr = parsed[1][:-1].to_int",
-            "essid = parsed[2]",
-            "potentialAcks = 300000 / pwr",
-            "crypto.aireplay(bssid, essid, potentialAcks)",
-            "wifiPassword = crypto.aircrack(\"/home/\" + active_user + \"/file.cap\")",
-            "print(\"Wifi password for \" + essid + \" is \" + wifiPassword)"
-        ]
-    },
-    "decipher": {
-        "description": "Returns a decrypted password via the provided password md5 hash. Keep in mind that this method is not decrypting a password but rather checking for existing passwords within the game world with a matching md5 hash. So in case a password does not exist in the game world the decryption will fail. On failure, this method will return `null`.",
-        "example": [
-            "crypto = include_lib(\"/lib/crypto.so\")",
-            "hostComputer = get_shell(\"root\", \"test\").host_computer",
-            "passwdContent = hostComputer.File(\"/etc/passwd\").get_content",
-            "firstAccount = passwdContent.split(char(10))[0]",
-            "parsed = firstAccount.split(\":\")",
-            "username = parsed[0]",
-            "passwordHash = parsed[1]",
-            "password = crypto.decipher(passwordHash)",
-            "print(\"User: \" + username)",
-            "print(\"Password: \" + password)"
-        ]
-    },
-    "smtp_user_list": {
-        "description": "Returns a `list` of the existing users on the `computer` where the SMTP service is running. If these users also have an email account registered on the `SMTP` server, it will be indicated in the `list`. SMTP services are usually running on port `25`. In case of failure, this method will return a `string` containing the cause.",
-        "example": [
-            "crypto = include_lib(\"/lib/crypto.so\")",
-            "print(crypto.smtp_user_list(\"192.168.0.4\", 25))"
-        ]
-    }
+  "$meta": {
+    "description": "A `crypto` object can be obtained by using [include_lib](#GENERAL_INCLUDE_LIB). The `classID` used for this object is `\"cryptoLib\"`."
+  },
+  "aircrack": {
+    "description": "Returns a `string` containing the password based on the file which was generated via aireplay. In case of failure, it will return `null` instead. If the provided path is empty, an error will be thrown, interrupting the script execution.",
+    "example": [
+      "crypto = include_lib(\"/lib/crypto.so\")",
+      "networks = get_shell.host_computer.wifi_networks(\"wlan0\")",
+      "firstNetwork = networks[1].split(\" \")",
+      "bssid = firstNetwork[0]",
+      "pwr = firstNetwork[1][:-1].to_int",
+      "essid = firstNetwork[2]",
+      "aireplayResult = crypto.aireplay(bssid, essid, 300000 / pwr)",
+      "if (aireplayResult == null) then",
+      "   result = crypto.aircrack(home_dir + \"/file.cap\")",
+      "   print(result)",
+      "end if"
+    ]
+  },
+  "airmon": {
+    "description": "Enables or disables the monitor mode of a network device. The `options` parameter can only be `\"start\"` or `\"stop\"`. Monitor mode can only be enabled on Wifi cards. If it wasn't possible to enable or disable the monitor mode, this method will return either a `number` with the value zero or a `string` with details. In case of success, it will return a `number` with the value one.",
+    "example": [
+      "crypto = include_lib(\"/lib/crypto.so\")",
+      "airmonResult = crypto.airmon(\"start\", \"wlan0\")",
+      "if typeof(airmonResult) == \"string\" then",
+      "   print(\"There was an error while switching monitoring mode: \" + airmonResult)",
+      "else",
+      "   print(\"Monitoring mode switched successfully.\")",
+      "end if"
+    ]
+  },
+  "aireplay": {
+    "description": "Used to inject frames on wireless interfaces. Once the command with `\"Control+C\"` is stopped, it will save the captured information in a text file called `\"file.cap\"` in the path where the terminal is currently located. Alternatively, a maximum of captured `acks` can be specified for the command to stop automatically, saving the `\"file.cap\"` file as described above. To figure out how many ACKs are required, you can use the following formula: `\"300000 / [Wifi PWR]\"`. If there is an error, a `string` will be returned with the message indicating the problem. On success, it will return `null`, it is advised though to verify that the capture file actually exists. In case any of the provided values deviate from the signature types or bssid/essid is empty, an error will be thrown preventing any further script execution.",
+    "example": [
+      "crypto = include_lib(\"/lib/crypto.so\")",
+      "networks = get_shell.host_computer.wifi_networks(\"wlan0\")",
+      "for index in range(0, networks.len - 1)",
+      "   print(index + \".) \" + networks[index])",
+      "end for",
+      "selectedIndex = user_input(\"Select Wifi: \").to_int",
+      "if (typeof(selectedIndex) == \"string\" or selectedIndex < 0 or selectedIndex > networks.len - 1) then",
+      "   exit(\"Wrong index!\")",
+      "end if",
+      "parsed = networks[selectedIndex].split(\" \")",
+      "bssid = parsed[0]",
+      "pwr = parsed[1][:-1].to_int",
+      "essid = parsed[2]",
+      "potentialAcks = 300000 / pwr",
+      "crypto.aireplay(bssid, essid, potentialAcks)",
+      "wifiPassword = crypto.aircrack(\"/home/\" + active_user + \"/file.cap\")",
+      "print(\"Wifi password for \" + essid + \" is \" + wifiPassword)"
+    ]
+  },
+  "decipher": {
+    "description": "Returns a decrypted password via the provided password MD5 hash. Keep in mind that this method is not decrypting a password but rather checking for existing passwords within the game world with a matching MD5 hash. So in case a password does not exist in the game world, the decryption will fail. On failure, this method will return `null`. Using this method in an SSH encryption process will cause an error to be thrown, aborting further script execution.",
+    "example": [
+      "crypto = include_lib(\"/lib/crypto.so\")",
+      "hostComputer = get_shell(\"root\", \"test\").host_computer",
+      "passwdContent = hostComputer.File(\"/etc/passwd\").get_content",
+      "firstAccount = passwdContent.split(char(10))[0]",
+      "parsed = firstAccount.split(\":\")",
+      "username = parsed[0]",
+      "passwordHash = parsed[1]",
+      "password = crypto.decipher(passwordHash)",
+      "print(\"User: \" + username)",
+      "print(\"Password: \" + password)"
+    ]
+  },
+  "smtp_user_list": {
+    "description": "Returns a `list` of the existing users on the `computer` where the SMTP service is running. If these users also have an email account registered on the `SMTP` server, it will be indicated in the `list`. SMTP services are usually running on port `25`. In case of failure, this method will return a `string` containing the cause. If any of the provided values deviate from the signature types, this method will return `null`.",
+    "example": [
+      "crypto = include_lib(\"/lib/crypto.so\")",
+      "print(crypto.smtp_user_list(\"192.168.0.4\", 25))"
+    ]
+  }
 }
