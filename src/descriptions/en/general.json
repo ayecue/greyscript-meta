@@ -1308,7 +1308,7 @@
     ]
   },
   "aircrack": {
-    "description": "Returns a `string` containing the password  based on the file which got generated via aireplay. In case of failure, it will return `null` instead.",
+    "description": "Returns a `string` containing the password based on the file which was generated via aireplay. In case of failure, it will return `null` instead. If the provided path is empty, an error will be thrown, interrupting the script execution.",
     "example": [
       "crypto = include_lib(\"/lib/crypto.so\")",
       "networks = wifi_networks(host_computer(get_shell), \"wlan0\")",
@@ -1324,7 +1324,7 @@
     ]
   },
   "airmon": {
-    "description": "Enables or disables the monitor mode of a network device. The options parameter can only be `\"start\"` or `\"stop\"`. Monitor mode can only be enabled on Wifi cards. If it wasn't possible to enable or disable the monitor mode this method will return a `string` containing the reason. Otherwise, it will return `true`.",
+    "description": "Enables or disables the monitor mode of a network device. The `options` parameter can only be `\"start\"` or `\"stop\"`. Monitor mode can only be enabled on Wifi cards. If it wasn't possible to enable or disable the monitor mode, this method will return either a `number` with the value zero or a `string` with details. In case of success, it will return a `number` with the value one.",
     "example": [
       "crypto = include_lib(\"/lib/crypto.so\")",
       "airmonResult = airmon(crypto, \"start\", \"wlan0\")",
@@ -1336,7 +1336,7 @@
     ]
   },
   "aireplay": {
-    "description": "Used to inject frames on wireless interfaces. Once the command with `\"Control+C\"` is stopped, it will save the captured information in a text file called `\"file.cap\"` in the path where the terminal is currently located. Alternatively, a maximum of captured `acks` can be specified for the command to stop automatically, saving the `\"file.cap\"` file as described above. To figure out how many ACKs are required you can use the following formula: `\"300000 / [Wifi PWR]\"`. If there is an error, a `string` will be returned with the message indicating the problem. On success, it will return `null`.",
+    "description": "Used to inject frames on wireless interfaces. Once the command with `\"Control+C\"` is stopped, it will save the captured information in a text file called `\"file.cap\"` in the path where the terminal is currently located. Alternatively, a maximum of captured `acks` can be specified for the command to stop automatically, saving the `\"file.cap\"` file as described above. To figure out how many ACKs are required, you can use the following formula: `\"300000 / [Wifi PWR]\"`. If there is an error, a `string` will be returned with the message indicating the problem. On success, it will return `null`. It is advised though to verify that the capture file actually exists. If the passed `crypto` object is invalid, it will return `null` as well. In case any of the provided values deviate from the signature types or bssid/essid is empty, an error will be thrown preventing any further script execution.",
     "example": [
       "crypto = include_lib(\"/lib/crypto.so\")",
       "networks = wifi_networks(host_computer(get_shell), \"wlan0\")",
@@ -1358,7 +1358,7 @@
     ]
   },
   "decipher": {
-    "description": "Returns a decrypted password via the provided password md5 hash. Keep in mind that this method is not decrypting a password but rather checking for existing passwords within the game world with a matching md5 hash. So in case a password does not exist in the game world the decryption will fail. On failure, this method will return `null`.",
+    "description": "Returns a decrypted password via the provided password MD5 hash. Keep in mind that this method is not decrypting a password but rather checking for existing passwords within the game world with a matching MD5 hash. So in case a password does not exist in the game world, the decryption will fail. On failure, this method will return `null`. Using this method in an SSH encryption process will cause an error to be thrown, aborting further script execution.",
     "example": [
       "crypto = include_lib(\"/lib/crypto.so\")",
       "computer = host_computer(get_shell(\"root\", \"test\"))",
@@ -1373,7 +1373,7 @@
     ]
   },
   "smtp_user_list": {
-    "description": "Returns a `list` of the existing users on the `computer` where the SMTP service is running. If these users also have an email account registered on the `SMTP` server, it will be indicated in the `list`. SMTP services are usually running on port `25`. In case of failure, this method will return a `string` containing the cause.",
+    "description": "Returns a `list` of the existing users on the `computer` where the SMTP service is running. If these users also have an email account registered on the `SMTP` server, it will be indicated in the `list`. SMTP services are usually running on port `25`. In case of failure, this method will return a `string` containing the cause. If any of the provided values deviate from the signature types, this method will return `null`.",
     "example": [
       "crypto = include_lib(\"/lib/crypto.so\")",
       "print(smtp_user_list(crypto, \"192.168.0.4\", 25))"
