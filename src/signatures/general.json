@@ -598,7 +598,8 @@
         }
       ],
       "returns": [
-        "number"
+        "number",
+        "null"
       ]
     },
     "abs": {
@@ -607,7 +608,10 @@
         {
           "label": "value",
           "type": "number",
-          "default": "0"
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
       "returns": [
@@ -620,7 +624,10 @@
         {
           "label": "value",
           "type": "number",
-          "default": "0"
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
       "returns": [
@@ -633,7 +640,10 @@
         {
           "label": "value",
           "type": "number",
-          "default": "0"
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
       "returns": [
@@ -644,9 +654,20 @@
       "type": "function",
       "arguments": [
         {
-          "label": "value",
+          "label": "y",
           "type": "number",
-          "default": "0"
+          "default": {
+            "type": "number",
+            "value": 0
+          }
+        },
+        {
+          "label": "x",
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 1
+          }
         }
       ],
       "returns": [
@@ -672,7 +693,10 @@
         {
           "label": "value",
           "type": "number",
-          "default": "0"
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
       "returns": [
@@ -697,7 +721,10 @@
         {
           "label": "value",
           "type": "number",
-          "default": "65"
+          "default": {
+            "type": "number",
+            "value": 65
+          }
         }
       ],
       "returns": [
@@ -723,7 +750,10 @@
         {
           "label": "value",
           "type": "number",
-          "default": "0"
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
       "returns": [
@@ -826,7 +856,11 @@
       "arguments": [
         {
           "label": "value",
-          "type": "number"
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
       "returns": [
@@ -924,11 +958,19 @@
       "arguments": [
         {
           "label": "a",
-          "type": "number"
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         },
         {
           "label": "b",
-          "type": "number"
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
       "returns": [
@@ -940,11 +982,19 @@
       "arguments": [
         {
           "label": "a",
-          "type": "number"
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         },
         {
           "label": "b",
-          "type": "number"
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
       "returns": [
@@ -956,11 +1006,19 @@
       "arguments": [
         {
           "label": "a",
-          "type": "number"
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         },
         {
           "label": "b",
-          "type": "number"
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
       "returns": [
@@ -4117,6 +4175,16 @@
       "returns": [
         "number",
         "string"
+      ]
+    },
+    "funcRef": {
+      "type": "function",
+      "returns": [
+        {
+          "type": "map",
+          "keyType": "string",
+          "valueType": "function"
+        }
       ]
     }
   }

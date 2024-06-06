@@ -376,7 +376,7 @@
     ]
   },
   "bitwise": {
-    "description": "Enables to perform bitwise operations. Supported operators are: `\"&\"`, `\"|\"`, `\"^\"`, `\"<<\"`, `\">>\"`, `\">>>\"`. Returns a `number`. Warning: If either operand is >= `0x80000000`, it always returns 0",
+    "description": "Returns a `number` by performing bitwise operations. Supported operators are: `\"~\", \"&\"`, `\"|\"`, `\"^\"`, `\"<<\"`, `\">>\"`, `\">>>\"`. In case you want to use the tilde operator you only need to provide the operator and the left argument. If any of the required arguments is `null` this method will return `null`. Warning: If either operand is >= `0x80000000`, it'll always returns 0.",
     "example": [
       "num = params[0].to_int",
       "isOdd = bitwise(\"&\", num, 1) == 1",
@@ -584,7 +584,7 @@
     ]
   },
   "hash": {
-    "description": "Returns numeric hash for the provided data.",
+    "description": "Returns numeric hash for the provided data. Using this method within a SSH encryption process will cause an error to be thrown causing the script execution to stop.",
     "example": [
       "hashA = hash({ \"a\": 2, \"b\": 1 })",
       "hashB = hash({ \"b\": 1, \"a\": 2 })",
@@ -607,19 +607,19 @@
     ]
   },
   "bitAnd": {
-    "description": "Performs a bitwise AND for the provided values. Returns a `number`. Warning: If either operand is >= `0x80000000`, it always returns 0.",
+    "description": "Performs a bitwise AND for the provided values. Returns a `number`. Warning: If either operand is >= `0x80000000`, it'll always return 0.",
     "example": [
       "print(\"Result of bitwise AND: \" + bitAnd(1, 2))"
     ]
   },
   "bitOr": {
-    "description": "Performs a bitwise OR for the provided values. Returns a `number`. Warning: If either operand is >= `0x80000000`, it always returns 0.",
+    "description": "Performs a bitwise OR for the provided values. Returns a `number`. Warning: If either operand is >= `0x80000000`, it'll always return 0.",
     "example": [
       "print(\"Result of bitwise OR: \" + bitOr(1, 2))"
     ]
   },
   "bitXor": {
-    "description": "Performs a bitwise XOR for the provided values. Returns a `number`. Warning: If either operand is >= `0x80000000`, it always returns 0.",
+    "description": "Performs a bitwise XOR for the provided values. Returns a `number`. Warning: If either operand is >= `0x80000000`, it'll always return 0.",
     "example": [
       "print(\"Result of bitwise XOR: \" + bitXor(1, 2))"
     ]
@@ -2170,6 +2170,15 @@
       "else",
       "   print(\"Information seems valid.\")",
       "end if"
+    ]
+  },
+  "funcRef": {
+    "description": "Returns a `map` which enables to extend function references with custom methods.",
+    "example": [
+      "funcRef.signature = function",
+      "   return str(@self)",
+      "end function",
+      "print (@print).signature"
     ]
   }
 }
