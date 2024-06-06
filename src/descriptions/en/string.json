@@ -1,165 +1,165 @@
 {
-    "$meta": {
-        "description": "Text is stored in strings of Unicode characters. Write strings by surrounding them with quotes. If you need to include a quotation mark in the string, write it twice.",
-        "example": [
-            "a = \"hello\"",
-            "b = \"world\"",
-            "print(a + b) // concatinate a and b",
-            "print(a * 10) // repeat hello ten times",
-            "print(a[0]) // prints h",
-            "print(a[1:3]) // prints ell"
-        ]
-    },
-    "remove": {
-        "description": "Returns a new `string` where the provided `string` got removed.",
-        "example": [
-            "myString = \"42 as an answer is wrong\"",
-            "newString = myString.remove(\"wrong\")",
-            "print(newString + \"right\")"
-        ]
-    },
-    "hasIndex": {
-        "description": "Returns `true` if the provided index is available in the `string`. Otherwise, this method will return `false`.",
-        "example": [
-            "myString = \"42 as an answer is wrong\"",
-            "containsIndex = myString.hasIndex(1)",
-            "if containsIndex then",
-            "   print(\"String contains index of 1.\")",
-            "else",
-            "   print(\"String does not contain index of 1.\")",
-            "end if"
-        ]
-    },
-    "insert": {
-        "description": "Returns a `string` with the newly inserted `string` at the provided index.",
-        "example": [
-            "myString = \"42 as an answer is wrong\"",
-            "index = myString.lastIndexOf(\"w\") - 1",
-            "newString = myString.insert(index, \"not \")",
-            "print(newString)"
-        ]
-    },
-    "indexOf": {
-        "description": "Returns a `number` which indicates the first matching index of the provided value inside the `list`. Optionally a start index can be provided. In case the value does not exist inside the `string` a `null` gets returned.",
-        "example": [
-            "myString = \"42 as an answer is wrong\"",
-            "index = myString.indexOf(\"wrong\")",
-            "if index != null then",
-            "   print(\"Invalid information spotted at: \" + index)",
-            "else",
-            "   print(\"Information seems valid.\")",
-            "end if"
-        ]
-    },
-    "lastIndexOf": {
-        "description": "Returns a `number` which indicates the last matching index of the provided value inside the `list`. Optionally an end index can be provided. In case the value does not exist inside the `string` a `-1` gets returned.",
-        "example": [
-            "myString = \"42 as an answer is wrong\"",
-            "index = myString.lastIndexOf(\"wrong\")",
-            "if index != -1 then",
-            "   print(\"Invalid information spotted at: \" + index)",
-            "else",
-            "   print(\"Information seems valid.\")",
-            "end if"
-        ]
-    },
-    "split": {
-        "description": "Returns a `list` where each item is a segment of the `string`. The separation depends on the provided separator `string`. The separator string supports regular expressions. Supported regular expression options: [click here](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options)",
-        "example": [
-            "myString = \"42 as an answer is wrong\"",
-            "segments = myString.split(\" \")",
-            "if segments[0] != \"42\" then",
-            "   print(\"Invalid information spotted!\")",
-            "else",
-            "   print(\"Information seems valid!\")",
-            "end if"
-        ]
-    },
-    "replace": {
-        "description": "Returns a new `string` where the provided `string` gets replaced by the second provided `string`. Since the latest version the search string supports regular expressions. Supported regular expression options: [click here](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options)",
-        "example": [
-            "myString = \"42 as an answer is wrong\"",
-            "newString = myString.replace(\"wrong\", \"right\")",
-            "print(newString)"
-        ]
-    },
-    "trim": {
-        "description": "Returns a new `string` stripped of any spacing at the beginning or ending.",
-        "example": [
-            "myString = \"    42   \"",
-            "print(myString.trim)"
-        ]
-    },
-    "indexes": {
-        "description": "Returns a `list` where each item is a `number` representing all available indexes in the `string`.",
-        "example": [
-            "myString = \"42\"",
-            "print(myString.indexes)"
-        ]
-    },
-    "code": {
-        "description": "Returns a `number` representing the Unicode code of the first character of the `string`.",
-        "example": [
-            "myString = \"HELLO WORLD\"",
-            "print(myString.code)"
-        ]
-    },
-    "len": {
-        "description": "Returns a `number` representing the length of the `string`.",
-        "example": [
-            "myString = \"HELLO WORLD\"",
-            "print(\"Size of string is: \" + myString.len)"
-        ]
-    },
-    "lower": {
-        "description": "Returns a new `string` in which all characters are transformed into lowercase.",
-        "example": [
-            "myString = \"HELLO WORLD\"",
-            "print(myString.lower)"
-        ]
-    },
-    "upper": {
-        "description": "Returns a new `string` in which all characters are transformed into uppercase.",
-        "example": [
-            "myString = \"hello world\"",
-            "print(myString.upper)"
-        ]
-    },
-    "val": {
-        "description": "Returns a `number` which is parsed from the `string`. In case the `string` is not numeric it will return a zero.",
-        "example": [
-            "myString = \"1.25\"",
-            "print(myString.val + 40.75)"
-        ]
-    },
-    "values": {
-        "description": "Returns a `list` where each item is a `string` representing all available characters in the `string`. Could be compared to using `split` but without any separator.",
-        "example": [
-            "myString = \"hello world\"",
-            "print(myString.values)"
-        ]
-    },
-    "to_int": {
-        "description": "Returns a `number` which is parsed from the `string` as an integer. In case the `string` is not numeric it will return the original `string`.",
-        "example": [
-            "myString = \"1\"",
-            "print(myString.to_int + 41)"
-        ]
-    },
-    "is_match": {
-        "description": "Uses regular expression to check if a string is matching a certain pattern. Supported regular expression options: [click here](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options)",
-        "example": [
-            "myString = \"42 as an answer is wrong\"",
-            "hasWordAtTheEnd = myString.is_match(\"\\w+$\")",
-            "print(hasWordAtTheEnd)"
-        ]
-    },
-    "matches": {
-        "description": "Returns all search results for the provided regular expression. The result will be a map where the key contains the index and the value contains the match value. Supported regular expression options: [click here](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options)",
-        "example": [
-            "myString = \"42 as an answer is wrong\"",
-            "result = myString.matches(\"w\")",
-            "print(result)"
-        ]
-    }
+  "$meta": {
+    "description": "Text is stored in strings of Unicode characters. Write strings by surrounding them with quotes. If you need to include a quotation mark in the string, write it twice.",
+    "example": [
+      "a = \"hello\"",
+      "b = \"world\"",
+      "print(a + b) // concatinate a and b",
+      "print(a * 10) // repeat hello ten times",
+      "print(a[0]) // prints h",
+      "print(a[1:3]) // prints ell"
+    ]
+  },
+  "remove": {
+    "description": "Returns a new `string` where the provided `string` got removed.",
+    "example": [
+      "myString = \"42 as an answer is wrong\"",
+      "newString = myString.remove(\"wrong\")",
+      "print(newString + \"right\")"
+    ]
+  },
+  "hasIndex": {
+    "description": "Returns `true` if the provided index is available in the `string`. Otherwise, this method will return `false`.",
+    "example": [
+      "myString = \"42 as an answer is wrong\"",
+      "containsIndex = myString.hasIndex(1)",
+      "if containsIndex then",
+      "   print(\"String contains index of 1.\")",
+      "else",
+      "   print(\"String does not contain index of 1.\")",
+      "end if"
+    ]
+  },
+  "insert": {
+    "description": "Returns a `string` with the newly inserted `string` at the provided index.",
+    "example": [
+      "myString = \"42 as an answer is wrong\"",
+      "index = myString.lastIndexOf(\"w\") - 1",
+      "newString = myString.insert(index, \"not \")",
+      "print(newString)"
+    ]
+  },
+  "indexOf": {
+    "description": "Returns a `number` which indicates the first matching index of the provided value inside the `list`. Optionally a start index can be provided. In case the value does not exist inside the `string` a `null` gets returned.",
+    "example": [
+      "myString = \"42 as an answer is wrong\"",
+      "index = myString.indexOf(\"wrong\")",
+      "if index != null then",
+      "   print(\"Invalid information spotted at: \" + index)",
+      "else",
+      "   print(\"Information seems valid.\")",
+      "end if"
+    ]
+  },
+  "lastIndexOf": {
+    "description": "Returns a `number` which indicates the last matching index of the provided value inside the `list`. In case the value does not exist inside the `string` a `-1` gets returned. If the provided searchStr is not a `string`, this method will return `null`.",
+    "example": [
+      "myString = \"42 as an answer is wrong\"",
+      "index = myString.lastIndexOf(\"wrong\")",
+      "if index != -1 then",
+      "   print(\"Invalid information spotted at: \" + index)",
+      "else",
+      "   print(\"Information seems valid.\")",
+      "end if"
+    ]
+  },
+  "split": {
+    "description": "Returns a `list` where each item is a segment of the `string`, separated by the provided separator `string`. This method uses regular expressions for matching, so remember to escape special characters such as dots. If any of the provided arguments deviate from the method signature types, this method will return `null`. In case the pattern is empty, the provided [regexOptions](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options) are invalid, or the regular expression times out, an error will be thrown, preventing further script execution.",
+    "example": [
+      "myString = \"42 as an answer is wrong\"",
+      "segments = myString.split(\" \")",
+      "if segments[0] != \"42\" then",
+      "   print(\"Invalid information spotted!\")",
+      "else",
+      "   print(\"Information seems valid!\")",
+      "end if"
+    ]
+  },
+  "replace": {
+    "description": "Returns a `string` with the replaced content by using regular expressions. If any provided arguments deviate from the method signature types, if the pattern is empty, if the provided [regexOptions](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options) are invalid or if the regular expression times out, an error will be thrown, preventing further script execution.",
+    "example": [
+      "myString = \"42 as an answer is wrong\"",
+      "newString = myString.replace(\"wrong\", \"right\")",
+      "print(newString)"
+    ]
+  },
+  "trim": {
+    "description": "Returns a new `string` stripped of any spacing at the beginning and ending.",
+    "example": [
+      "myString = \"    42   \"",
+      "print(myString.trim)"
+    ]
+  },
+  "indexes": {
+    "description": "Returns a `list` where each item is a `number` representing all available indexes in the `string`.",
+    "example": [
+      "myString = \"42\"",
+      "print(myString.indexes)"
+    ]
+  },
+  "code": {
+    "description": "Returns a `number` representing the Unicode code of the first character of the `string`.",
+    "example": [
+      "myString = \"HELLO WORLD\"",
+      "print(myString.code)"
+    ]
+  },
+  "len": {
+    "description": "Returns a `number` representing the length of the `string`.",
+    "example": [
+      "myString = \"HELLO WORLD\"",
+      "print(\"Size of string is: \" + myString.len)"
+    ]
+  },
+  "lower": {
+    "description": "Returns a new `string` in which all characters are transformed into lowercase.",
+    "example": [
+      "myString = \"HELLO WORLD\"",
+      "print(myString.lower)"
+    ]
+  },
+  "upper": {
+    "description": "Returns a new `string` in which all characters are transformed into uppercase.",
+    "example": [
+      "myString = \"hello world\"",
+      "print(myString.upper)"
+    ]
+  },
+  "val": {
+    "description": "Returns a `number` which is parsed from the `string`. In case the `string` is not numeric it will return a zero.",
+    "example": [
+      "myString = \"1.25\"",
+      "print(myString.val + 40.75)"
+    ]
+  },
+  "values": {
+    "description": "Returns a `list` where each item is a `string` representing all available characters in the `string`. Could be compared to using `split` but without any separator.",
+    "example": [
+      "myString = \"hello world\"",
+      "print(myString.values)"
+    ]
+  },
+  "to_int": {
+    "description": "Returns a `number` which is parsed from the `string` as an integer. In case the `string` is not numeric it will return the original `string`.",
+    "example": [
+      "myString = \"1\"",
+      "print(myString.to_int + 41)"
+    ]
+  },
+  "is_match": {
+    "description": "Uses regular expression to check if a string matches a certain pattern. If it matches, it will return a `number` with the value one. If it does not match, the value of the `number` will be zero. If any provided arguments deviate from the method signature types, if the pattern is empty, if the provided [regexOptions](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options) are invalid, or if the regular expression times out, an error will be thrown, preventing further script execution.",
+    "example": [
+      "myString = \"42 as an answer is wrong\"",
+      "hasWordAtTheEnd = myString.is_match(\"\\w+$\")",
+      "print(hasWordAtTheEnd)"
+    ]
+  },
+  "matches": {
+    "description": "Returns a `map` with all search results for the provided regular expression. Each key contains the index and the value contains the matching `string`. If any provided arguments deviate from the method signature types, if the pattern is empty, if the provided [regexOptions](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options) are invalid, or if the regular expression times out, an error will be thrown, preventing further script execution.",
+    "example": [
+      "myString = \"42 as an answer is wrong\"",
+      "result = myString.matches(\"w\")",
+      "print(result)"
+    ]
+  }
 }

@@ -63,7 +63,7 @@
       "type": "function",
       "arguments": [
         {
-          "label": "value",
+          "label": "searchStr",
           "type": "string"
         }
       ],
@@ -81,11 +81,18 @@
         {
           "label": "regexOptions",
           "type": "string",
-          "default": "\"none\""
+          "default": {
+            "type": "string",
+            "value": "none"
+          }
         }
       ],
       "returns": [
-        "list:string"
+        {
+          "type": "list",
+          "valueType": "string"
+        },
+        "null"
       ]
     },
     "replace": {
@@ -102,7 +109,10 @@
         {
           "label": "regexOptions",
           "type": "string",
-          "default": "\"none\""
+          "default": {
+            "type": "string",
+            "value": "none"
+          }
         }
       ],
       "returns": [
@@ -174,11 +184,18 @@
         {
           "label": "regexOptions",
           "type": "string",
-          "default": "\"none\""
+          "default": {
+            "type": "string",
+            "value": "none"
+          }
         }
       ],
+      "returnVariations": [
+        1,
+        0
+      ],
       "returns": [
-        "boolean"
+        "number"
       ]
     },
     "matches": {
@@ -191,11 +208,18 @@
         {
           "label": "regexOptions",
           "type": "string",
-          "default": "\"none\""
+          "default": {
+            "type": "string",
+            "value": "none"
+          }
         }
       ],
       "returns": [
-        "map:string"
+        {
+          "type": "map",
+          "keyType": "number",
+          "valueType": "string"
+        }
       ]
     }
   }

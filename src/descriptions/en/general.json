@@ -661,7 +661,7 @@
     ]
   },
   "to_int": {
-    "description": "Returns a `number` which is parsed from the `string` as an integer. In case the `string` is not numeric it will return the original `string`.",
+    "description": "Returns a `number` which is parsed from the `string` as an integer. In case the `string` is not numeric it will return the original `string`. If the passed value is not a `string` this method will return `null`.",
     "example": [
       "myString = \"1\"",
       "print(to_int(myString) + 41)"
