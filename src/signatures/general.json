@@ -3574,9 +3574,17 @@
           "type": "shell"
         }
       ],
+      "returnVariations": [
+        "${sourceFile} not found",
+        "${destinationFolder} not found",
+        "${destinationFolder} it's not a folder",
+        "!GreyInterpreter.CheckScpUpload",
+        1
+      ],
       "returns": [
         "number",
-        "string"
+        "string",
+        "null"
       ]
     },
     "get_balance_subwallet": {

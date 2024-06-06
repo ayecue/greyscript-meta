@@ -5,8 +5,7 @@
     "host_computer": {
       "type": "function",
       "returns": [
-        "computer",
-        "null"
+        "computer"
       ]
     },
     "start_terminal": {
@@ -31,9 +30,17 @@
           "type": "shell"
         }
       ],
+      "returnVariations": [
+        "${sourceFile} not found",
+        "${destinationFolder} not found",
+        "${destinationFolder} it's not a folder",
+        "!GreyInterpreter.CheckScpUpload",
+        1
+      ],
       "returns": [
         "number",
-        "string"
+        "string",
+        "null"
       ]
     }
   }
