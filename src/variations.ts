@@ -155,3 +155,31 @@ VariationRegistry.add('PlayerUtils.GetSmtpServer', [
   "invalid target service",
   "service not found"
 ]);
+
+VariationRegistry.add('FileSystem.UpdatePermisos', [
+  "permission denied",
+  "permission denied. File protected.",
+  "Wrong format."
+]);
+
+// gets called by CheckMoveFile
+VariationRegistry.add('PlayerUtils.MoverFichero', [
+  "Unknown error",
+  "Error: Invalid path",
+  "${sourceFilepath} not found",
+  "${destinationParentPath} not found",
+  "permission denied",
+  "There is not enough free space on the hard disk.",
+  "permission denied. ${filename} is protected.",
+  "A file cannot overwrite a folder or vice versa",
+  "The copy can not be made. Reached maximum number of files in a folder",
+  "The copy can not be made. Reached maximum limit"
+]);
+
+// gets called by PreRemoveFile
+VariationRegistry.add('PlayerUtils.RemoveFile', [
+  "file not found: ${path}",
+  "permission denied",
+  "permission denied. File protected.",
+  "unknown error :/"
+]);

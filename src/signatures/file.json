@@ -7,13 +7,24 @@
       "arguments": [
         {
           "label": "perms",
-          "type": "string"
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
         },
         {
-          "label": "recursive",
+          "label": "isRecursive",
           "type": "number",
-          "opt": true
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
+      ],
+      "returnVariations": [
+        "${path} not found",
+        "!FileSystem.UpdatePermisos"
       ],
       "returns": [
         "string",
@@ -26,13 +37,24 @@
         {
           "label": "path",
           "type": "string",
-          "default": "\"\""
+          "default": {
+            "type": "string",
+            "value": ""
+          }
         },
         {
           "label": "name",
           "type": "string",
-          "default": "\"\""
+          "default": {
+            "type": "string",
+            "value": ""
+          }
         }
+      ],
+      "returnVariations": [
+        "Error: only alphanumeric allowed as newname",
+        "!PlayerUtils.MoverFichero",
+        1
       ],
       "returns": [
         "string",
@@ -45,12 +67,25 @@
       "arguments": [
         {
           "label": "path",
-          "type": "string"
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
         },
         {
           "label": "name",
-          "type": "string"
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
         }
+      ],
+      "returnVariations": [
+        "Error: only alphanumeric allowed as newname",
+        "!PlayerUtils.MoverFichero",
+        1
       ],
       "returns": [
         "string",
@@ -63,8 +98,18 @@
       "arguments": [
         {
           "label": "name",
-          "type": "string"
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
         }
+      ],
+      "returnVariations": [
+        "Error: only alphanumeric allowed as newname",
+        "Error: name cannot exceed the limit of 128 characters.",
+        "!PlayerUtils.RenameFichero",
+        0
       ],
       "returns": [
         "string",
@@ -79,8 +124,13 @@
     },
     "is_folder": {
       "type": "function",
+      "returnVariations": [
+        1,
+        0
+      ],
       "returns": [
-        "number"
+        "number",
+        "null"
       ]
     },
     "parent": {
@@ -93,7 +143,8 @@
     "name": {
       "type": "function",
       "returns": [
-        "string"
+        "string",
+        "null"
       ]
     },
     "allow_import": {
@@ -104,6 +155,10 @@
     },
     "get_content": {
       "type": "function",
+      "returnVariations": [
+        "Error: can't find the computer of this file",
+        "can't open ${filepath}. Binary file."
+      ],
       "returns": [
         "string",
         "null"
@@ -114,19 +169,34 @@
       "arguments": [
         {
           "label": "content",
-          "type": "string"
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
         }
+      ],
+      "returnVariations": [
+        "I can't save the file. The maximum of 160,000 characters has been exceeded.",
+        "set_content: unable to use this method in encryption configuration",
+        "can't open ${filepath}. Binary file.",
+        1,
+        0
       ],
       "returns": [
         "string",
-        "number",
-        "null"
+        "number"
       ]
     },
     "is_binary": {
       "type": "function",
+      "returnVariations": [
+        1,
+        0
+      ],
       "returns": [
-        "number"
+        "number",
+        "null"
       ]
     },
     "has_permission": {
@@ -137,12 +207,20 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        1,
+        0
+      ],
       "returns": [
-        "number"
+        "number",
+        "null"
       ]
     },
     "delete": {
       "type": "function",
+      "returnVariations": [
+        "!PlayerUtils.RemoveFile"
+      ],
       "returns": [
         "string"
       ]
@@ -150,25 +228,35 @@
     "get_folders": {
       "type": "function",
       "returns": [
-        "list:file"
+        {
+          "type": "list",
+          "valueType": "file"
+        },
+        "null"
       ]
     },
     "get_files": {
       "type": "function",
       "returns": [
-        "list:file"
+        {
+          "type": "list",
+          "valueType": "file"
+        },
+        "null"
       ]
     },
     "permissions": {
       "type": "function",
       "returns": [
-        "string"
+        "string",
+        "null"
       ]
     },
     "owner": {
       "type": "function",
       "returns": [
-        "string"
+        "string",
+        "null"
       ]
     },
     "set_owner": {
@@ -176,16 +264,25 @@
       "arguments": [
         {
           "label": "owner",
-          "type": "string"
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
         },
         {
           "label": "recursive",
           "type": "number",
-          "opt": true
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
+      "returnVariations": [
+        "Permission denied"
+      ],
       "returns": [
-        "number",
         "string",
         "null"
       ]
@@ -193,7 +290,8 @@
     "group": {
       "type": "function",
       "returns": [
-        "string"
+        "string",
+        "null"
       ]
     },
     "set_group": {
@@ -201,13 +299,23 @@
       "arguments": [
         {
           "label": "group",
-          "type": "string"
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
         },
         {
           "label": "recursive",
           "type": "number",
-          "opt": true
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
+      ],
+      "returnVariations": [
+        "Permission denied"
       ],
       "returns": [
         "string",
@@ -217,7 +325,8 @@
     "size": {
       "type": "function",
       "returns": [
-        "string"
+        "string",
+        "null"
       ]
     }
   }
