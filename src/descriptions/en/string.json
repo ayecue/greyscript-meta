@@ -11,7 +11,7 @@
     ]
   },
   "remove": {
-    "description": "Returns a new `string` where the provided `string` got removed.",
+    "description": "Returns a new `string` with the provided value removed. Any value other than `null` can be passed, but note that it will be cast to a string. If `null` is passed, this method will throw an error, preventing further script execution.",
     "example": [
       "myString = \"42 as an answer is wrong\"",
       "newString = myString.remove(\"wrong\")",

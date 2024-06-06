@@ -5,7 +5,7 @@
       "type": "function",
       "arguments": [
         {
-          "label": "toDelete",
+          "label": "value",
           "type": "string"
         }
       ],

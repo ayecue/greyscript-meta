@@ -9,8 +9,12 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        0,
+        1
+      ],
       "returns": [
-        "null"
+        "number"
       ]
     },
     "push": {

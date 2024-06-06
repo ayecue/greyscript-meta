@@ -369,15 +369,25 @@
       "arguments": [
         {
           "label": "self",
-          "type": "any"
+          "types": [
+            "map",
+            "list",
+            "string"
+          ]
         },
         {
           "label": "key",
           "type": "any"
         }
       ],
+      "returnVariations": [
+        0,
+        1
+      ],
       "returns": [
-        "any"
+        "number",
+        "null",
+        "string"
       ]
     },
     "user_input": {

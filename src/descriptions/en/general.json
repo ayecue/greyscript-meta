@@ -223,7 +223,7 @@
     ]
   },
   "remove": {
-    "description": "Depending on the data type this function will remove a value in the provided object. As a result, the object will get mutated. To get a better idea about the behaviour look into the `remove` methods related to `list` and `map`.",
+    "description": "Depending on the data type, this function will remove a value in the provided object, potentially mutating the object. This method works with `map`s, `list`s, and `string`s. Each passed type may support different types for the `key` argument. For example, using this method on a string would treat the key as a character index. Therefore, it is advised to review the signatures of each type. Passing a key with the type `null` may cause an error to be thrown, preventing further script execution. The same will happen if the passed self value deviates from being a `map`, `list`, or `string`.",
     "example": [
       "list = [9, 3, 5, 7]",
       "remove(list, 5)",
