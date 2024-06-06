@@ -577,7 +577,7 @@
     ]
   },
   "md5": {
-    "description": "Returns the md5 hash `string` of the provided `string`.",
+    "description": "Returns the MD5 hash `string` of the provided `string`. Using this method within an SSH encryption process or passing anything other than a `string` will cause an error to be thrown, stopping any further script execution.",
     "example": [
       "passwordHash = md5(\"test\")",
       "print(\"Hash for the password 'test' is \" + passwordHash)"
@@ -675,7 +675,7 @@
     ]
   },
   "split": {
-    "description": "Returns a `list` where each item is a segment of the `string`. The separation depends on the provided separator `string`. Keep in mind that for some odd reason, this method is using regular expressions for matching.",
+    "description": "Returns a `list` where each item is a segment of the `string`, separated by the provided separator `string`. This method uses regular expressions for matching, so remember to escape special characters such as dots. If any of the provided arguments deviate from the method signature types, this method will return `null`. In case the pattern is empty, the provided [regexOptions](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options) are invalid, or the regular expression times out, an error will be thrown, preventing further script execution.",
     "example": [
       "myString = \"42 as an answer is wrong\"",
       "segments = split(myString, \" \")",
@@ -695,7 +695,7 @@
     ]
   },
   "replace_regex": {
-    "description": "Similar behaviour to replace but instead supporting regular expressions. Supported regular expression options: [click here](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options)",
+    "description": "Returns a `string` with the replaced content by using regular expressions. If any provided arguments deviate from the method signature types, if the pattern is empty, if the provided [regexOptions](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options) are invalid or if the regular expression times out, an error will be thrown, preventing further script execution.",
     "example": [
       "myString = \"42 as an answer is wrong\"",
       "newString = replace_regex(myString, \"\\w+$\", \"right\")",
@@ -703,7 +703,7 @@
     ]
   },
   "is_match": {
-    "description": "Uses regular expression to check if a string is matching a certain pattern. Supported regular expression options: [click here](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options)",
+    "description": "Uses regular expression to check if a string matches a certain pattern. If it matches, it will return a `number` with the value one. If it does not match, the value of the `number` will be zero. If any provided arguments deviate from the method signature types, if the pattern is empty, if the provided [regexOptions](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options) are invalid, or if the regular expression times out, an error will be thrown, preventing further script execution.",
     "example": [
       "myString = \"42 as an answer is wrong\"",
       "hasWordAtTheEnd = is_match(myString, \"\\w+$\")",
@@ -711,7 +711,7 @@
     ]
   },
   "matches": {
-    "description": "Returns all search results for the provided regular expression. The result will be a map where the key contains the index and the value contains the match value. Supported regular expression options: [click here](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options)",
+    "description": "Returns a `map` with all search results for the provided regular expression. Each key contains the index and the value contains the matching `string`. If any provided arguments deviate from the method signature types, if the pattern is empty, if the provided [regexOptions](https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options) are invalid, or if the regular expression times out, an error will be thrown, preventing further script execution.",
     "example": [
       "myString = \"42 as an answer is wrong\"",
       "result = matches(myString, \"w\")",
@@ -2154,14 +2154,14 @@
     ]
   },
   "trim": {
-    "description": "Returns a new `string` stripped of any spacing at the beginning or ending.",
+    "description": "Returns a new `string` stripped of any spacing at the beginning and ending. If any value gets passed that is not a `string` this method will return `null`.",
     "example": [
       "myString = \"    42   \"",
       "print(trim(myString))"
     ]
   },
   "lastIndexOf": {
-    "description": "Returns a `number` which indicates the last matching index of the provided value inside the `list`. Optionally an end index can be provided. In case the value does not exist inside the `string` a `-1` gets returned.",
+    "description": "Returns a `number` indicating the last matching index of the provided value inside the `string`. If the value does not exist inside the `string`, `-1` is returned. If any of the provided values deviates from the defined types in the method signature, this method will return `null`.",
     "example": [
       "myString = \"42 as an answer is wrong\"",
       "index = lastIndexOf(myString, \"wrong\")",

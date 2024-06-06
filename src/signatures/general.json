@@ -40,7 +40,8 @@
         }
       ],
       "returns": [
-        "string"
+        "string",
+        "null"
       ]
     },
     "hasIndex": {
@@ -998,7 +999,7 @@
       "type": "function",
       "arguments": [
         {
-          "label": "value",
+          "label": "self",
           "type": "string"
         },
         {
@@ -1008,11 +1009,18 @@
         {
           "label": "regexOptions",
           "type": "string",
-          "default": "\"none\""
+          "default": {
+            "type": "string",
+            "value": "none"
+          }
         }
       ],
       "returns": [
-        "list:string"
+        {
+          "type": "list",
+          "valueType": "string"
+        },
+        "null"
       ]
     },
     "reverse": {
@@ -1056,7 +1064,7 @@
       "type": "function",
       "arguments": [
         {
-          "label": "value",
+          "label": "self",
           "type": "string"
         },
         {
@@ -1070,7 +1078,10 @@
         {
           "label": "regexOptions",
           "type": "string",
-          "default": "\"none\""
+          "default": {
+            "type": "string",
+            "value": "none"
+          }
         }
       ],
       "returns": [
@@ -1094,6 +1105,10 @@
           "default": "\"none\""
         }
       ],
+      "returnVariations": [
+        1,
+        0
+      ],
       "returns": [
         "number"
       ]
@@ -1106,12 +1121,13 @@
           "type": "string"
         },
         {
-          "label": "value",
+          "label": "searchStr",
           "type": "string"
         }
       ],
       "returns": [
-        "number"
+        "number",
+        "null"
       ]
     },
     "matches": {
@@ -1128,11 +1144,18 @@
         {
           "label": "regexOptions",
           "type": "string",
-          "default": "\"none\""
+          "default": {
+            "type": "string",
+            "value": "none"
+          }
         }
       ],
       "returns": [
-        "map:string"
+        {
+          "type": "map",
+          "keyType": "number",
+          "valueType": "string"
+        }
       ]
     },
     "get_ctf": {
