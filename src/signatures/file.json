@@ -185,7 +185,8 @@
       ],
       "returns": [
         "string",
-        "number"
+        "number",
+        "null"
       ]
     },
     "is_binary": {
@@ -204,7 +205,11 @@
       "arguments": [
         {
           "label": "perms",
-          "type": "string"
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
         }
       ],
       "returnVariations": [
