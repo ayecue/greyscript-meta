@@ -3562,11 +3562,11 @@
           "type": "shell"
         },
         {
-          "label": "file",
+          "label": "sourceFile",
           "type": "string"
         },
         {
-          "label": "folder",
+          "label": "destinationFolder",
           "type": "string"
         },
         {

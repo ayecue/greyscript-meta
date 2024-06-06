@@ -1925,7 +1925,7 @@
     "description": "Stop the service and close its associated `port` on the local machine. Returns `true` if the service has been stopped correctly, in case of error a `string` with the details is returned."
   },
   "host_computer": {
-    "description": "Returns a `computer` related to the `shell`.",
+    "description": "Returns a `computer` related to the `shell`. If an invalid `shell` object gets passed this method will return `null`.",
     "example": [
       "shell = get_shell",
       "computer = host_computer(shell)",
@@ -1933,7 +1933,7 @@
     ]
   },
   "start_terminal": {
-    "description": "Launches an active terminal. The color of the terminal will change and show the IP of the connected shell. Script execution will be stopped when starting a new terminal unless this is called from another script that was executed via `shell.launch` in which case, you will only enter the shell after closing your root-level script within that terminal window.",
+    "description": "Launches an active terminal. The terminal's color will change, displaying the IP of the connected shell. Script execution will be stopped upon starting a new terminal, unless this is called from another script that was executed via `shell.launch`. In that case, you will enter the shell after closing your root-level script within that terminal window. Using this method within an SSH encryption process will cause an error to be thrown, preventing further script execution.",
     "example": [
       "start_terminal(get_shell)"
     ]
@@ -1978,7 +1978,7 @@
     ]
   },
   "scp": {
-    "description": "Send a `file` to the `computer` which is related to the provided `shell`. You require permission to read the `file` on the `computer` from which you are uploading and write permissions in the folder of the `computer` you are trying to upload to. In case of failure this method will return a `string` with the cause. Otherwise `true` gets returned.",
+    "description": "Send a `file` to the `computer` related to the provided `shell`. You require permission to read the `file` on the `computer` from which you are uploading and write permissions in the folder of the `computer` you are trying to upload to. In case of failure, this method will return a `string` with the cause. Otherwise, a `number` with the value one gets returned. If any of the passed arguments deviates from the types of the method signature, `null` will be returned. In case the `string` for sourceFile or destinationFolder is empty, an error will be thrown, preventing further script execution.",
     "example": [
       "shell = get_shell",
       "remoteShell = connect_service(shell, \"1.1.1.1\", 22, \"test\", \"test\")",
