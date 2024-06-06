@@ -13,6 +13,11 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "login: No internet access.",
+        "!Database.GetMailAccount"
+      ],
       "returns": [
         "metaMail",
         "string",
@@ -78,7 +83,10 @@
         {
           "label": "ipAddress",
           "type": "string",
-          "opt": true
+          "default": {
+            "type": "string",
+            "default": ""
+          }
         }
       ],
       "returns": [
@@ -103,9 +111,12 @@
       "type": "function",
       "arguments": [
         {
-          "label": "host",
+          "label": "webAddress",
           "type": "string"
         }
+      ],
+      "returnVariations": [
+        "Not found"
       ],
       "returns": [
         "string"
@@ -153,12 +164,18 @@
         {
           "label": "user",
           "type": "string",
-          "opt": true
+          "default": {
+            "type": "string",
+            "value": ""
+          }
         },
         {
           "label": "pass",
           "type": "string",
-          "opt": true
+          "default": {
+            "type": "string",
+            "value": ""
+          }
         }
       ],
       "returns": [
@@ -368,17 +385,27 @@
       "arguments": [
         {
           "label": "message",
-          "type": "string"
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
         },
         {
-          "label": "isPass",
+          "label": "isPassword",
           "type": "number",
-          "opt": true
+          "default": {
+            "type": "string",
+            "value": 0
+          }
         },
         {
           "label": "anyKey",
           "type": "number",
-          "opt": true
+          "default": {
+            "type": "string",
+            "value": 0
+          }
         }
       ],
       "returns": [
@@ -398,7 +425,8 @@
         "metaxploit",
         "service",
         "blockchain",
-        "aptClient"
+        "aptClient",
+        "null"
       ]
     },
     "import_code": {
@@ -419,7 +447,10 @@
         {
           "label": "message",
           "type": "string",
-          "opt": true
+          "default": {
+            "type": "string",
+            "value": ""
+          }
         }
       ],
       "returns": [
@@ -448,6 +479,12 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "Invalid IP address: ${ip}",
+        "Error: the IP address must be public",
+        "No Info available",
+        "Address not found"
+      ],
       "returns": [
         "string"
       ]
@@ -469,9 +506,12 @@
       "type": "function",
       "arguments": [
         {
-          "label": "id",
+          "label": "commandName",
           "type": "string"
         }
+      ],
+      "returnVariations": [
+        "Unknown info"
       ],
       "returns": [
         "string"
@@ -943,7 +983,7 @@
     "get_custom_object": {
       "type": "function",
       "returns": [
-        "map:any"
+        "map"
       ]
     },
     "insert": {
@@ -1178,8 +1218,13 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "get_ctf: user and password cannot be null",
+        "get_ctf: user or password incorrect"
+      ],
       "returns": [
-        "ctfEvent"
+        "ctfEvent",
+        "string"
       ]
     },
     "show": {
@@ -4051,6 +4096,13 @@
           "label": "newPassword",
           "type": "string"
         }
+      ],
+      "returnVariations": [
+        "reset_ctf_password: password cannot be null",
+        "reset_ctf_password: password can't exceed the maximum limit of 32 characters",
+        "reset_ctf_password: password must be alphanumeric",
+        "reset_ctf_password: you do not have a registered CTF account",
+        1
       ],
       "returns": [
         "number",

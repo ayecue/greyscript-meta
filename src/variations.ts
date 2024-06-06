@@ -183,3 +183,10 @@ VariationRegistry.add('PlayerUtils.RemoveFile', [
   "permission denied. File protected.",
   "unknown error :/"
 ]);
+
+VariationRegistry.add('Database.GetMailAccount', [
+  "Unable to login into account. Wrong password.",
+  "${user} user not found",
+  "Unknown error: This email account cannot be obtained.",
+  "Unable to login into account. Wrong password."
+]);
