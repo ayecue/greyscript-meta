@@ -86,7 +86,7 @@
     ]
   },
   "allow_import": {
-    "description": "Returns `true` if the file is binary and can be imported by other scripts, `false` otherwise. In case the file gets deleted this method will cause a crash.",
+    "description": "Returns a `number`. If the file is binary and can be imported by other scripts, the value will be one; otherwise, the value will be zero. In case the file gets deleted, this method will cause a crash.",
     "example": [
       "hostComputer = get_shell.host_computer",
       "lsBinary = hostComputer.File(\"/bin/ls\")",
@@ -190,7 +190,7 @@
     ]
   },
   "set_owner": {
-    "description": "Change the owner of this file. Optionally the owner can get applied recursively. The owner's name cannot exceed 15 characters. Additionally either write permissions or being root is required. In case of failure a `string` gets returned containing the cause. Otherwise an empty `string` gets returned. In case the current file gets deleted or the passed owner value is `null`, this method will return `null`. If the passed owner value is empty, the owner value is longer than 15 characters, or the passed recursive value deviates from its original type, an error will be thrown, interrupting further script execution.",
+    "description": "Change the owner of this file. Optionally the owner can get applied recursively. The owner's name cannot exceed 15 characters. Additionally either write permissions or being root is required. In case of failure a `string` gets returned containing the cause. Otherwise an empty `string` gets returned. In case the current file gets deleted or the passed owner value is not a `string`, this method will return `null`. If the passed owner value is empty, the owner value is longer than 15 characters, or the passed recursive value deviates from its original type, an error will be thrown, interrupting further script execution.",
     "example": [
       "hostComputer = get_shell.host_computer",
       "lsBinary = hostComputer.File(\"/bin/ls\")",
@@ -211,7 +211,7 @@
     ]
   },
   "set_group": {
-    "description": "Change the group related to this file. Optionally the group can get applied recursively. The group name cannot exceed 15 characters. Additionally either write permissions or being root is required. In case of failure, a `string` with details. On success, an empty `string` gets returned. In case the current file gets deleted, this method will return `null`. If the passed group value is empty, the group value is longer than 15 characters, or the passed recursive value deviates from its original type, an error will be thrown, preventing further script execution.",
+    "description": "Change the group related to this file. Optionally the group can get applied recursively. The group name cannot exceed 15 characters. Additionally either write permissions or being root is required. In case of failure, a `string` with details. On success, an empty `string` gets returned. In case the current file gets deleted or the passed group is not a `string`, this method will return `null`. If the passed group value is empty, the group value is longer than 15 characters, or the passed recursive value deviates from its original type, an error will be thrown, preventing further script execution.",
     "example": [
       "hostComputer = get_shell.host_computer",
       "lsBinary = hostComputer.File(\"/bin/ls\")",

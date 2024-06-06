@@ -1395,7 +1395,7 @@
     "description": "Returns a `string` with the mail content of the CTF event. If the provided `ctfEvent` object is invalid or missing, this method will return `null`."
   },
   "chmod": {
-    "description": "Modifies the `file` permissions. Optionally these permissions can also be applied recursively. The format for applying permissions is as follows: `\"[references][operator][modes]\"`. The references type gets defined through three possible types. These types include user `\"u\"`, group `\"g\"` and other `\"o\"`. The operator is used to define if permissions get added `\"+\"` or removed `\"-\"`. There are three different modes which can be modified. Those modes include read `\"r\"`, write `\"w\"` and execute `\"x\"`. So as an example `\"o-wrx\"` would remove all possible permissions for other. To add all permissions for other again `\"o+wrx\"` would be used. In case the modification fails this method will return a `string` containing information of the reason. Otherwise an empty `string` gets returned.",
+    "description": "Modifies the `file` permissions. Optionally, these permissions can also be applied recursively. The format for applying permissions is as follows: `\"[references][operator][modes]\"`. The references type is defined through three possible types: user `\"u\"`, group `\"g\"`, and other `\"o\"`. The operator is used to define if permissions get added `\"+\"` or removed `\"-\"`. There are three different modes that can be modified: read `\"r\"`, write `\"w\"`, and execute `\"x\"`. So, for example, `\"o-wrx\"` would remove all possible permissions for others. To add all permissions for others again, `\"o+wrx\"` would be used. In case the modification fails, this method will return a `string` containing information about the reason. Otherwise, an empty `string` is returned. In case any type other than `number` is used for the `isRecursive` parameter, an error will be thrown preventing further script execution. If an invalid `file` object is passed, this method will return `null`.",
     "example": [
       "hostComputer = host_computer(get_shell(\"root\", \"test\"))",
       "rootFolder = File(hostComputer, \"/bin\")",
@@ -1407,7 +1407,7 @@
     ]
   },
   "copy": {
-    "description": "Copies the `file` to the provided path. Files can only be copied if the user has read and write permissions or is root. The new filename has to be below 128 characters and alphanumeric. After success, this method will return `true`. Otherwise, this method will return a `string` containing information about the reason for failure.",
+    "description": "Copies the `file` to the provided path. Files can only be copied if the user has read and write permissions or is root. The new filename has to be below 128 characters and alphanumeric. After success, this method will return a `number` with the value one. Otherwise, it will return a `string` containing information about the reason for failure. If any of the parameter types deviate from the method signature, this method is used within an SSH encryption process, the new name exceeds 128 characters, or the path is too long, an error will be thrown, causing an interruption of script execution. In case the current file gets deleted or an invalid `file` object is passed, this method will return `null`.",
     "example": [
       "computer = host_computer(get_shell(\"root\", \"test\"))",
       "passwdFile = File(computer, \"/etc/passwd\")",
@@ -1420,7 +1420,7 @@
     ]
   },
   "move": {
-    "description": "Moves the `file` to the provided path. Files can only be moved if the user has read and write permissions or is root. The new filename has to be below 128 characters and alphanumeric. After success, this method will return `true`. Otherwise, this method will return a `string` containing information about the failure.",
+    "description": "Moves the `file` to the provided path. Files can only be moved if the user has read and write permissions or is root. The new filename has to be below 128 characters and alphanumeric. After success, this method will return a `number` with the value one. Otherwise, this method will return a `string` with details. If any of the parameter types deviate from the method signature, this method is used within an SSH encryption process, the new name exceeds 128 characters, or the path is too long, an error will be thrown, causing an interruption of script execution. In case the current file gets deleted or an invalid `file` object is passed, this method will return `null`.",
     "example": [
       "computer = host_computer(get_shell(\"root\", \"test\"))",
       "passwdFile = File(computer, \"/etc/passwd\")",
@@ -1433,7 +1433,7 @@
     ]
   },
   "rename": {
-    "description": "Rename the file with the name provided. Files can only be renamed if the user has write permissions or is root. The new filename has to be below 128 characters and alphanumeric. On failure, this method will return a `string` containing information about the failure. Otherwise, this method will return an empty string.",
+    "description": "Rename the file with the name provided. Files can only be renamed if the user has write permissions or is root. The new filename has to be below 128 characters and alphanumeric. On failure, this method will return a `string` with details. Otherwise, this method will return an empty string. If this method is used within an SSH encryption process, an error will be thrown, causing the script execution to be interrupted. In case the provided name is `null` or an invalid `file` object is passed, this method will return a `number` with the value zero.",
     "example": [
       "computer = host_computer(get_shell(\"root\", \"test\"))",
       "passwdFile = File(computer, \"/etc/passwd\")",
@@ -1446,7 +1446,7 @@
     ]
   },
   "path": {
-    "description": "Returns a `string` with the path of the file. In case the file got deleted it will return `null`.",
+    "description": "Returns a `string` with the path of the file. In case the file gets deleted, it will still return its path prior to deletion. If an invalid `file` object is passed, this method will return `null`.",
     "example": [
       "computer = host_computer(get_shell)",
       "passwdFile = File(computer, \"/etc/passwd\")",
@@ -1454,7 +1454,7 @@
     ]
   },
   "is_folder": {
-    "description": "Returns `true` if the file is a folder, `false` otherwise.",
+    "description": "Returns a `number`. The value is one if the file is a folder, zero otherwise. In case the file gets deleted or an invalid `file` object is passed, this method will return `null` instead.",
     "example": [
       "computer = host_computer(get_shell)",
       "etcFolder = File(computer, \"/etc\")",
@@ -1462,7 +1462,7 @@
     ]
   },
   "parent": {
-    "description": "Returns the folder that contains this file. In case there is no parent folder `null` will be returned instead.",
+    "description": "Returns the parent folder of the current file or folder. In case there is no parent folder `null` will be returned instead. In case the file gets deleted or an invalid `file` object gets passed, this method will return `null` as well.",
     "example": [
       "computer = host_computer(get_shell)",
       "etcFolder = File(computer, \"/etc\")",
@@ -1470,7 +1470,7 @@
     ]
   },
   "name": {
-    "description": "Returns a `string` with the name of the file.",
+    "description": "Returns a `string` with the name of the file. In case the file gets deleted or an invalid `file` object gets passed, this method will return `null` instead.",
     "example": [
       "computer = host_computer(get_shell)",
       "passwdFile = File(computer, \"/etc/passwd\")",
@@ -1478,7 +1478,7 @@
     ]
   },
   "allow_import": {
-    "description": "Returns `true` if the file is binary and can be imported by other scripts, `false` otherwise.",
+    "description": "Returns a `number`. If the file is binary and can be imported by other scripts, the value will be one; otherwise, the value will be zero. In case the file gets deleted, this method will cause a crash. If an invalid `file` object gets passed, this method will return `null` instead.",
     "example": [
       "computer = host_computer(get_shell)",
       "lsBinary = File(computer, \"/bin/ls\")",
@@ -1486,7 +1486,7 @@
     ]
   },
   "get_content": {
-    "description": "Returns a `string` representing the content of the file. To read a file the user requires read access or being root. In case of failure `null` will get returned.",
+    "description": "Returns a `string` representing the content of the file. To read a file, the user requires read access or being root. Note that you cannot read a binary file. In case of failure, `null` will be returned. If this method is used within an SSH encryption process, an error will be thrown, preventing any further script execution.",
     "example": [
       "computer = host_computer(get_shell(\"root\", \"test\"))",
       "passwdFile = File(computer, \"/etc/passwd\")",
@@ -1494,7 +1494,7 @@
     ]
   },
   "set_content": {
-    "description": "Save the text in the `file`. The content will not get appended to the `file`. Therefore content will get overridden. To set new content the user requires write permissions or being root. Keep in mind that text files cannot exceed the character limit of 160000. In case setting the content was successful `true` will get returned. Otherwise, a `string` including a description for the reason of failure will be provided.",
+    "description": "Saves text into a `file`. The content will not get appended to the `file`; therefore, existing content will be overridden. To set new content, the user requires write permissions or being root. Keep in mind that text files cannot exceed the character limit of 160,000. In case setting the content was successful, a `number` with the value one will be returned. Otherwise, a `string` with details will be returned. If this method is used within an SSH encryption process, an error will be thrown, preventing any further script execution. If the provided content is `null`, this method will return a `number` with the value zero. In case the file gets deleted this method will return `null`. In case an invalid `file` object gets passed this method will return a `number` with the value zero.",
     "example": [
       "computer = host_computer(get_shell(\"root\", \"test\"))",
       "passwdFile = File(computer, \"/etc/passwd\")",
@@ -1507,7 +1507,7 @@
     ]
   },
   "is_binary": {
-    "description": "Returns `true` if the file is binary, `false` otherwise.",
+    "description": "Returns a `number`. If the file is binary, the value will be one; otherwise, it will be zero. In case the file gets deleted or an invalid `file` object gets passed, this method will return `null` instead.",
     "example": [
       "computer = host_computer(get_shell)",
       "lsBinary = File(computer, \"/bin/ls\")",
@@ -1515,7 +1515,7 @@
     ]
   },
   "has_permission": {
-    "description": "Returns `true` if the user who launched the script has the necessary permissions. In case permissions are lacking `false` will be returned. There are three different permission types. Those permissions include read `\"r\"`, write `\"w\"` and execute `\"x\"`.",
+    "description": "Returns a `number` indicating if the user who launched the script has the requested permissions. One will indicate that the user has the correct permissions. In case permissions are lacking, the value will be zero. There are three different permission types: read `\"r\"`, write `\"w\"`, and execute `\"x\"`. In case the file gets deleted or an invalid `file` object gets passed, this method will return `null` instead.",
     "example": [
       "computer = host_computer(get_shell)",
       "lsBinary = File(computer, \"/bin/ls\")",
@@ -1523,7 +1523,7 @@
     ]
   },
   "delete": {
-    "description": "Delete the file. To delete files write permissions are required or being root. In case of failure a `string` will be returned containing information about the reason. Otherwise, an empty `string` gets returned.",
+    "description": "Delete the current file. To delete files, write permissions are required or being root. In case of failure, a `string` with details will be returned. Otherwise, an empty `string` gets returned. Please note that deleting a file will leave a log entry. In case an invalid `file` object gets passed, this method will return `null`.",
     "example": [
       "computer = host_computer(get_shell)",
       "lsBinary = File(computer, \"/bin/ls\")",
@@ -1536,7 +1536,7 @@
     ]
   },
   "get_folders": {
-    "description": "Returns a `list` of folders. This method is only available if this entity is a folder, so it is advisable to first use the `is_folder` function before calling this method.",
+    "description": "Returns a `list` of folders. In case the current entity is a file instead of a folder this method will return `null`, so it is advisable to first use the `is_folder` function before calling this method. In case the current folder gets deleted or an invalid `file` object gets passed, this method will return `null` as well.",
     "example": [
       "computer = host_computer(get_shell)",
       "binFolder = File(computer, \"/home\")",
@@ -1547,7 +1547,7 @@
     ]
   },
   "get_files": {
-    "description": "Returns a `list` of files. This function is only available if this entity is a folder, so it is advisable to first use the is_folder function before calling this method.",
+    "description": "Returns a `list` of files. In case the current entity is a file instead of a folder this method will return `null`, so it is advisable to first use the `is_folder` function before calling this method. In case the current folder gets deleted or an invalid `file` object gets passed, this method will return `null` as well.",
     "example": [
       "computer = host_computer(get_shell)",
       "binFolder = File(computer, \"/bin\")",
@@ -1558,7 +1558,7 @@
     ]
   },
   "permissions": {
-    "description": "Returns a `string` with the current file permissions. The format for this permissions `string` is as follows: `\"[fileType][wrx](u)[wrx](g)[wrx](o)\"`. The file type is either `\"d\"` in case it's a directory or `\"-\"`. The user type gets defined through three possible types. These user types include user `\"u\"`, group `\"g\"` and other `\"o\"`. There are three different permission types. Those permissions include read `\"r\"`, write `\"w\"` and execute `\"x\"`. An example of a `string` which is returned by this method would be `\"-rwxr-xr-x\"`. Taking the latter as an example following things become clear:\n* the provided file is not a directory\n* user has full access\n* group and other have almost all permissions besides writing\n",
+    "description": "Returns a `string` with the current file permissions. In case the current file gets deleted or an invalid `file` object gets passed, this method will return `null`. The format for this permissions `string` is as follows: `\"[fileType][wrx](u)[wrx](g)[wrx](o)\"`. The file type is either `\"d\"` in case it's a directory or `\"-\"`. The user type gets defined through three possible types: user `\"u\"`, group `\"g\"`, and other `\"o\"`. There are three different permission types: read `\"r\"`, write `\"w\"`, and execute `\"x\"`. An example of a `string` returned by this method would be `\"-rwxr-xr-x\"`. Taking the latter as an example, the following things become clear:\n* The provided file is not a directory.\n* The user has full access.\n* The group and others have almost all permissions besides writing.\n",
     "example": [
       "computer = host_computer(get_shell)",
       "binFolder = File(computer, \"/bin\")",
@@ -1574,7 +1574,7 @@
     ]
   },
   "owner": {
-    "description": "Returns a `string` with the name of the file owner. User permissions get applied to whoever is the owner of a file.",
+    "description": "Returns a `string` with the name of the file owner. User permissions get applied to whoever is the owner of a file. In case the current file gets deleted or an invalid `file` object gets passed, this method will return `null`.",
     "example": [
       "computer = host_computer(get_shell)",
       "lsBinary = File(computer, \"/bin/ls\")",
@@ -1582,7 +1582,7 @@
     ]
   },
   "set_owner": {
-    "description": "Change the owner of this file. Optionally the owner can get applied recursively. The owner's name cannot exceed 15 characters. Additionally either write permissions or being root is required. In case of failure a `string` gets returned containing the cause. Otherwise an empty `string` gets returned.",
+    "description": "Change the owner of this file. Optionally the owner can get applied recursively. The owner's name cannot exceed 15 characters. Additionally either write permissions or being root is required. In case of failure a `string` gets returned containing the cause. Otherwise an empty `string` gets returned. In case the current file gets deleted, an invalid `file` object gets passed or the passed owner value is not a `string`, this method will return `null`. If the passed owner value is empty, the owner value is longer than 15 characters, or the passed recursive value deviates from its original type, an error will be thrown, interrupting further script execution.",
     "example": [
       "computer = host_computer(get_shell)",
       "lsBinary = File(computer, \"/bin/ls\")",
@@ -1595,7 +1595,7 @@
     ]
   },
   "group": {
-    "description": "Returns a `string` with the name of the group to which this file belongs. Group permissions get applied to whoever is the owner of a file.",
+    "description": "Returns a `string` with the name of the group to which this file belongs. Group permissions get applied to whoever is the owner of a file. In case the current file gets deleted or an invalid `file` object gets passed, this method will return `null`.",
     "example": [
       "computer = host_computer(get_shell)",
       "lsBinary = File(computer, \"/bin/ls\")",
@@ -1603,7 +1603,7 @@
     ]
   },
   "set_group": {
-    "description": "Change the group related to this file. Optionally the group can get applied recursively. The group name cannot exceed 15 characters. Additionally either write permissions or being root is required. In case of failure a `string` gets returned containing the cause. Otherwise an empty `string` gets returned.",
+    "description": "Change the group related to this file. Optionally the group can get applied recursively. The group name cannot exceed 15 characters. Additionally either write permissions or being root is required. In case of failure, a `string` with details. On success, an empty `string` gets returned. In case the current file gets deleted, an invalid `file` object gets passed or the passed group is not a `string`, this method will return `null`. If the passed group value is empty, the group value is longer than 15 characters, or the passed recursive value deviates from its original type, an error will be thrown, preventing further script execution.",
     "example": [
       "computer = host_computer(get_shell)",
       "lsBinary = File(computer, \"/bin/ls\")",
@@ -1616,7 +1616,7 @@
     ]
   },
   "size": {
-    "description": "Returns a `string` with the size of the file in bytes. There is no correlation between file size and actual file content. Instead, the file size is depending on the name of the file.",
+    "description": "Returns a `string` with the size of the file in bytes. There is no correlation between file size and actual file content. Instead, the file size is depending on the name of the file. In case the current file gets deleted or an invalid `file` object gets passed, this method will return `null`.",
     "example": [
       "computer = host_computer(get_shell)",
       "lsBinary = File(computer, \"/bin/ls\")",

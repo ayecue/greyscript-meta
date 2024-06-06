@@ -27,8 +27,7 @@
         "!FileSystem.UpdatePermisos"
       ],
       "returns": [
-        "string",
-        "null"
+        "string"
       ]
     },
     "copy": {
@@ -180,8 +179,7 @@
         "I can't save the file. The maximum of 160,000 characters has been exceeded.",
         "set_content: unable to use this method in encryption configuration",
         "can't open ${filepath}. Binary file.",
-        1,
-        0
+        1
       ],
       "returns": [
         "string",
