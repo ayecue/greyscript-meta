@@ -1076,7 +1076,10 @@
       "arguments": [
         {
           "label": "object",
-          "type": "any"
+          "types": [
+            "list",
+            "string"
+          ]
         },
         {
           "label": "index",
@@ -1088,7 +1091,8 @@
         }
       ],
       "returns": [
-        "any"
+        "list",
+        "string"
       ]
     },
     "to_int": {

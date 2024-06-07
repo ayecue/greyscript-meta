@@ -31,7 +31,7 @@
     ]
   },
   "insert": {
-    "description": "Returns a `string` with the newly inserted `string` at the provided index.",
+    "description": "Returns a `string` with the newly inserted `string` at the provided index. If the passed index is not a `number`, this method throws an error, preventing further script execution.",
     "example": [
       "myString = \"42 as an answer is wrong\"",
       "index = myString.lastIndexOf(\"w\") - 1",

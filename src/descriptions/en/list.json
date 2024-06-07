@@ -20,7 +20,7 @@
     ]
   },
   "insert": {
-    "description": "Inserts a value into the `list` at the index provided. Due to the insertion the `list` will get mutated. Returns the mutated `list`.",
+    "description": "Inserts a value into the `list` at the index provided. Due to the insertion the `list` will get mutated. Returns the mutated `list`. If the passed index is not a `number`, this method throws an error, preventing further script execution.",
     "example": [
       "myList = [1, 3]",
       "myList.insert(1, 42)",

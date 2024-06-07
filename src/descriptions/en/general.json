@@ -653,7 +653,7 @@
     ]
   },
   "insert": {
-    "description": "Depending on the data type this function will insert a value to the provided index. Due to the insertion, the object will be mutated. To get a better idea about the behaviour look into the `insert` method related to `list` or `string`.",
+    "description": "Inserts a value into either a `list` or a `string`. If the method is used on any other data type or the passed index is not a `number`, this method throws an error, preventing further script execution.",
     "example": [
       "list = [2, 3, 4]",
       "insert(list, 2, 42)",
