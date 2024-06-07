@@ -136,7 +136,7 @@
     ]
   },
   "values": {
-    "description": "Depending on data type this function returns a `list` with all available values. To get a better idea about the behaviour look into the `values` methods related to `string`, `list` and `map`.",
+    "description": "Returns a `list` containing all values of an object. Supported types are `map`s and `string`s. In case the passed type deviates from these two, it will return the passed value itself.",
     "example": [
       "indexesOfStr = values(\"test\")",
       "print(\"Following values are available: \" + indexesOfStr.join(\", \"))"
@@ -165,7 +165,7 @@
     ]
   },
   "val": {
-    "description": "Casts a `string` to a `number`. In case the provided `string` does not represent a valid `number` the `number` zero will get returned.",
+    "description": "Casts a `string` to a `number`. If the provided `string` does not represent a valid `number`, the `number` zero will be returned. If any type other than `string` or `number` is passed, this method will return `null`.",
     "example": [
       "num = val(\"1.25\")",
       "print(\"Number in string is: \" + num)"
@@ -596,7 +596,7 @@
     ]
   },
   "time": {
-    "description": "Returns a `number` of seconds representing the elapsed time since the script got started.",
+    "description": "Returns a `number` of seconds representing the elapsed time since the script started.",
     "example": [
       "start = time",
       "for i in range(10000)",

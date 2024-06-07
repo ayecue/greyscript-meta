@@ -95,7 +95,7 @@
     ]
   },
   "values": {
-    "description": "Returns a `list` containing all available values.",
+    "description": "Returns a `list` containing all available values within `map`.",
     "example": [
       "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
       "for value in myMap.values",

@@ -155,7 +155,7 @@
     "values": {
       "type": "function",
       "returns": [
-        "list:any"
+        "list"
       ]
     },
     "replace": {

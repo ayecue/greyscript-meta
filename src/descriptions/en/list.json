@@ -131,7 +131,7 @@
     ]
   },
   "values": {
-    "description": "Returns a `list` containing all available values.",
+    "description": "Returns a `list` containing all available values. Note that this will not create a copy of the original `list`. The returned instance will the same as original `list`, so any mutations made to the returned `list` will also affect the original one.",
     "example": [
       "myList = [42, 1, 3]",
       "for v in myList.values",

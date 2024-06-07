@@ -220,11 +220,14 @@
       "arguments": [
         {
           "label": "self",
-          "type": "any"
+          "type": [
+            "map",
+            "string"
+          ]
         }
       ],
       "returns": [
-        "list:any"
+        "list"
       ]
     },
     "indexOf": {
@@ -289,7 +292,14 @@
       "arguments": [
         {
           "label": "self",
-          "type": "any"
+          "types": [
+            "number",
+            "string"
+          ],
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
       "returns": [
@@ -727,7 +737,10 @@
         {
           "label": "value",
           "type": "number",
-          "default": "0"
+          "default": {
+            "type": "number",
+            "value": 1
+          }
         }
       ],
       "returns": [
