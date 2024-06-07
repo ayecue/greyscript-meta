@@ -3386,8 +3386,16 @@
         {
           "label": "optArgs",
           "type": "string",
-          "opt": true
+          "default": {
+            "type": "string",
+            "value": ""
+          }
         }
+      ],
+      "returnVariations": [
+        "Exploit failed: the remote server has been temporarily disabled due to non-payment",
+        0,
+        1
       ],
       "returns": [
         "string",
@@ -3407,7 +3415,8 @@
         }
       ],
       "returns": [
-        "string"
+        "string",
+        "null"
       ]
     },
     "lib_name": {
@@ -3419,7 +3428,8 @@
         }
       ],
       "returns": [
-        "string"
+        "string",
+        "null"
       ]
     },
     "dump_lib": {

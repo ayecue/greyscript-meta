@@ -1704,7 +1704,7 @@
     ]
   },
   "overflow": {
-    "description": "Exploits vulnerabilities. The returned value can be of various data types. Therefore the usage of `typeof` is advisable. `optArgs` is required when changing a password or obtaining a `computer` via a router. It should be the desired password or LAN IP, respectively.",
+    "description": "Exploits vulnerabilities. The returned value can be of various data types. Therefore, using `typeof` is advisable. `optArgs` are required when changing a password or obtaining a `computer` via a router. It should be the desired password or LAN IP, respectively. Change password and firewall disable exploits will return a `number`, where the value is either one or zero. One indicates success while zero indicates failure. Shell, computer, and file exploits either return an instance of their type or `null`. Providing values that deviate from the defined signature will cause a runtime exception to be thrown.",
     "example": [
       "metax = include_lib(\"/lib/metaxploit.so\")",
       "metaLib = load(metax, \"/lib/init.so\")",
@@ -1730,7 +1730,7 @@
     ]
   },
   "version": {
-    "description": "Returns a `string` containing the version number of the library. Here is an example of a version number: `\"1.0.0\"`",
+    "description": "Returns a `string` containing the version number of the library. An example of a version number would be `\"1.0.0\"`. In case an invalid `metaLib` object gets passed this method will return `null`.",
     "example": [
       "metax = include_lib(\"/lib/metaxploit.so\")",
       "metaLib = load(metax, \"/lib/init.so\")",
@@ -1738,7 +1738,7 @@
     ]
   },
   "lib_name": {
-    "description": "Returns a `string` containing the name of the library. Here is an example of a name: `\"init.so\"`",
+    "description": "Returns a `string` containing the name of the library. An example of a name would be `\"init.so\"`. In case an invalid `metaLib` object gets passed this method will return `null`.",
     "example": [
       "metax = include_lib(\"/lib/metaxploit.so\")",
       "metaLib = load(metax, \"/lib/init.so\")",
