@@ -4215,6 +4215,16 @@
           "valueType": "function"
         }
       ]
+    },
+    "list": {
+      "type": "function",
+      "returns": [
+        {
+          "type": "map",
+          "keyType": "string",
+          "valueType": "function"
+        }
+      ]
     }
   }
 }

@@ -2180,5 +2180,22 @@
       "end function",
       "print (@print).signature"
     ]
+  },
+  "list": {
+    "description": "Returns a `map` which enables to extend list types with custom methods.",
+    "example": [
+      "list.map = function(callback)",
+      "   newList = []",
+      "   for item in self",
+      "      newList.push(callback(item, __item_idx))",
+      "   end for",
+      "   return newList",
+      "end function",
+      "myMapFunction = function(item, index)",
+      "   print \"Mapping value at index: \" + index",
+      "   return item.myValue",
+      "end function",
+      "print [{ \"myValue\": 24 }].map(@myMapFunction)"
+    ]
   }
 }
