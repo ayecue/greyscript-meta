@@ -2206,5 +2206,14 @@
       "end function",
       "print (1234).bitwise(\">>\", 1)"
     ]
+  },
+  "string": {
+    "description": "Returns a `map` which enables to extend string types with custom methods.",
+    "example": [
+      "string.color = function(colorValue = \"red\")",
+      "  return \"<color=\" + colorValue + \">\" + self + \"</color>\"",
+      "end function",
+      "print \"My text: \".color + \"Hello world\".color(\"yellow\")"
+    ]
   }
 }

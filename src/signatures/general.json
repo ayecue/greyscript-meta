@@ -895,7 +895,10 @@
         {
           "label": "value",
           "type": "number",
-          "default": "0"
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
       "returns": [
@@ -907,7 +910,7 @@
       "arguments": [
         {
           "label": "value",
-          "type": "number"
+          "type": "any"
         }
       ],
       "returns": [
@@ -4297,6 +4300,16 @@
       ]
     },
     "number": {
+      "type": "function",
+      "returns": [
+        {
+          "type": "map",
+          "keyType": "string",
+          "valueType": "function"
+        }
+      ]
+    },
+    "string": {
       "type": "function",
       "returns": [
         {
