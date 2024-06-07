@@ -28,12 +28,20 @@
     },
     "is_any_active_user": {
       "type": "function",
+      "returnVariations": [
+        0,
+        1
+      ],
       "returns": [
         "number"
       ]
     },
     "is_root_active_user": {
       "type": "function",
+      "returnVariations": [
+        0,
+        1
+      ],
       "returns": [
         "number"
       ]

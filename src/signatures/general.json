@@ -3478,7 +3478,8 @@
         }
       ],
       "returns": [
-        "metaLib"
+        "metaLib",
+        "null"
       ]
     },
     "get_num_conn_gateway": {
@@ -3490,7 +3491,8 @@
         }
       ],
       "returns": [
-        "number"
+        "number",
+        "null"
       ]
     },
     "get_num_portforward": {
@@ -3502,7 +3504,8 @@
         }
       ],
       "returns": [
-        "number"
+        "number",
+        "null"
       ]
     },
     "get_num_users": {
@@ -3514,7 +3517,8 @@
         }
       ],
       "returns": [
-        "number"
+        "number",
+        "null"
       ]
     },
     "is_any_active_user": {
@@ -3525,8 +3529,13 @@
           "type": "netSession"
         }
       ],
+      "returnVariations": [
+        0,
+        1
+      ],
       "returns": [
-        "number"
+        "number",
+        "null"
       ]
     },
     "is_root_active_user": {
@@ -3537,8 +3546,13 @@
           "type": "netSession"
         }
       ],
+      "returnVariations": [
+        0,
+        1
+      ],
       "returns": [
-        "number"
+        "number",
+        "null"
       ]
     },
     "device_ports": {

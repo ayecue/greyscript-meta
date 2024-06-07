@@ -1746,7 +1746,7 @@
     ]
   },
   "dump_lib": {
-    "description": "Returns the `metaLib` associated with the remote service. For example if the `metaxpoit` method `net_use` was used on a ssh port it will return the `metaLib` related to the ssh service. In case the port was zero is will return a `metaLib` related to the kernel router.",
+    "description": "Returns the `metaLib` associated with the remote service. For example if the `metaxpoit` method `net_use` was used on a ssh port it will return the `metaLib` related to the ssh service. In case the port was zero is will return a `metaLib` related to the kernel router. If an invalid `netSession` gets passed this method will return `null`.",
     "example": [
       "metax = include_lib(\"/lib/metaxploit.so\")",
       "ports = used_ports(get_router(\"1.1.1.1\"))",
@@ -1756,7 +1756,7 @@
     ]
   },
   "get_num_conn_gateway": {
-    "description": "Returns the number of devices using this router as a gateway. If you obtained your `netSession` from a computer, it will fetch and return the value from its gateway router.",
+    "description": "Returns the number of devices using this router as a gateway. If you obtained your `netSession` from a computer, it will fetch and return the value from its gateway router. If an invalid `netSession` gets passed this method will return `null`.",
     "example": [
       "metax = include_lib(\"/lib/metaxploit.so\")",
       "ports = used_ports(get_router(\"1.1.1.1\"))",
@@ -1765,7 +1765,7 @@
     ]
   },
   "get_num_portforward": {
-    "description": "Returns the number of ports forwarded by this router. If you obtained your `netSession` from a computer, it will fetch and return the value from its gateway router.",
+    "description": "Returns the number of ports forwarded by this router. If you obtained your `netSession` from a computer, it will fetch and return the value from its gateway router. If an invalid `netSession` gets passed this method will return `null`.",
     "example": [
       "metax = include_lib(\"/lib/metaxploit.so\")",
       "ports = used_ports(get_router(\"1.1.1.1\"))",
@@ -1774,7 +1774,7 @@
     ]
   },
   "get_num_users": {
-    "description": "Returns the number of user accounts on the system.",
+    "description": "Returns the number of user accounts on the system. If an invalid `netSession` gets passed this method will return `null`.",
     "example": [
       "metax = include_lib(\"/lib/metaxploit.so\")",
       "ports = used_ports(get_router(\"1.1.1.1\"))",
@@ -1783,7 +1783,7 @@
     ]
   },
   "is_any_active_user": {
-    "description": "Returns `true` (1) if there is an active user on the system. Otherwise, `false` (0).",
+    "description": "Returns a `number`. If there is an active user on the system it will be one. Otherwise, it will be zero. If an invalid `netSession` gets passed this method will return `null`.",
     "example": [
       "metax = include_lib(\"/lib/metaxploit.so\")",
       "ports = used_ports(get_router(\"1.1.1.1\"))",
@@ -1792,7 +1792,7 @@
     ]
   },
   "is_root_active_user": {
-    "description": "Returns `true` (1) if there is an active root on the system. Otherwise, `false` (0).",
+    "description": "Returns a `number`. If there is an active root on the system it will be one. Otherwise, it will be zero. If an invalid `netSession` gets passed this method will return `null`.",
     "example": [
       "metax = include_lib(\"/lib/metaxploit.so\")",
       "ports = used_ports(get_router(\"1.1.1.1\"))",
