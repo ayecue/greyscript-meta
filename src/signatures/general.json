@@ -1114,11 +1114,15 @@
       "arguments": [
         {
           "label": "value",
-          "type": "list:any"
+          "type": "list"
         },
         {
           "label": "delimiter",
-          "type": "string"
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": " "
+          }
         }
       ],
       "returns": [

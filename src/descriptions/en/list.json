@@ -108,7 +108,7 @@
     ]
   },
   "join": {
-    "description": "Returns a concatenated `string` containing all stringified values inside the `list`. These values will be separated via the provided separator.",
+    "description": "Returns a concatenated `string` containing all stringified values inside the `list`. These values will be separated via the provided separator. In case the `list` exceeds `16777215L` items or the delimiter exceeds 128 characters, this method will throw an error, interrupting further script execution.",
     "example": [
       "myList = [42, 1, 3]",
       "print(myList.join(\" .-*'*-. \"))"
