@@ -38,7 +38,7 @@
         }
       ],
       "returns": [
-        "list:any"
+        "list"
       ]
     },
     "pop": {

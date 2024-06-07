@@ -365,7 +365,10 @@
       "arguments": [
         {
           "label": "self",
-          "type": "any"
+          "types": [
+            "list",
+            "map"
+          ]
         },
         {
           "label": "value",
@@ -373,7 +376,9 @@
         }
       ],
       "returns": [
-        "any"
+        "list",
+        "map",
+        "null"
       ]
     },
     "sort": {

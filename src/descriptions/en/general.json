@@ -207,7 +207,7 @@
     ]
   },
   "push": {
-    "description": "Depending on data type this function will append a value to the provided object. As a result, the object will get mutated. To get a better idea about the behaviour look into the `push` methods related to `list` and `map`.",
+    "description": "Allows pushing a value into an object, supporting `map`s and `list`s. However, it throws an error if you attempt to push a value into itself or into a map-like object such as a `file`, halting further script execution. If you try to push a value into an object that isn't a `map` or `list`, it returns `null`.",
     "example": [
       "list = [0, 1, 2, 3, 4, 5]",
       "push(list, 42)",

@@ -28,7 +28,7 @@
     ]
   },
   "push": {
-    "description": "Appends a value to the end of the `list`. This operation will mutate the `list`. Additionally, this method will return the updated `list`.",
+    "description": "Appends a value to the end of the `list`. This operation will mutate the `list`. Additionally, this method will return the updated `list`. However, it throws an error if you attempt to push a value into itself or into a map-like object such as a `file`, halting further script execution.",
     "example": [
       "myList = [1, 3]",
       "myList.push(42)",

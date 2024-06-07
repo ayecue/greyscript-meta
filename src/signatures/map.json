@@ -22,11 +22,11 @@
       "arguments": [
         {
           "label": "key",
-          "type": "string"
+          "type": "any"
         }
       ],
       "returns": [
-        "map:any"
+        "map"
       ]
     },
     "pull": {

@@ -17,7 +17,7 @@
     ]
   },
   "push": {
-    "description": "Adds the value 1 to the provided key. This operation will mutate the `map`. Additionally, this method will return the updated `map`.",
+    "description": "Adds the value 1 to the provided key. This operation will mutate the `map`. The updated `map` will be returned. However, it throws an error if you attempt to push a value into itself or into a map-like object such as a `file`, halting further script execution. If the passed key is `null` an error will be thrown as well.",
     "example": [
       "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
       "myMap.push(\"answer\")",
