@@ -24,7 +24,11 @@
         },
         {
           "label": "port",
-          "type": "number"
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
       "returns": [
@@ -42,25 +46,50 @@
         {
           "label": "port",
           "type": "number",
-          "default": "1222"
+          "default": {
+            "type": "number",
+            "value": 1222
+          }
         },
         {
           "label": "processName",
           "type": "string",
-          "default": "\"rshell_client\""
+          "default": {
+            "type": "string",
+            "value": "rshell_client"
+          }
         }
+      ],
+      "returnVariations": [
+        "rshell_client: Invalid IP address",
+        "Error: only alphanumeric allowed as proccess name.",
+        "Error: proccess name cannot exceed the limit of 28 characters.",
+        "Error: ${programName} is a reserved process name",
+        "rshell_client: IP address not found: ${ip}",
+        "rshell_client: unable to find remote server at port ${port}",
+        "!Networking.CheckServiceOnline",
+        1
       ],
       "returns": [
         "string",
-        "number"
+        "number",
+        "null"
       ]
     },
     "rshell_server": {
       "type": "function",
-      "arguments": [],
+      "returnVariations": [
+        "rshell_server: No internet connection",
+        "rshell_server: The service cannot be started on this network.",
+        "error: service rshelld is not running",
+        "error: rshell portforward is not configured correctly"
+      ],
       "returns": [
         "string",
-        "list:shell"
+        {
+          "type": "list",
+          "valueType": "shell"
+        }
       ]
     },
     "scan": {
@@ -72,7 +101,10 @@
         }
       ],
       "returns": [
-        "list:string",
+        {
+          "type": "list",
+          "valueType": "string"
+        },
         "null"
       ]
     },
@@ -99,7 +131,10 @@
         {
           "label": "saveEncSource",
           "type": "number",
-          "opt": true
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
       "returns": [
