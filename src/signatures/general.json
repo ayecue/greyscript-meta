@@ -3567,9 +3567,15 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "device_ports: ${ip} is unreachable"
+      ],
       "returns": [
         "string",
-        "list:port",
+        {
+          "type": "list",
+          "valueType": "port"
+        },
         "null"
       ]
     },
@@ -3582,7 +3588,11 @@
         }
       ],
       "returns": [
-        "list:string"
+        {
+          "type": "list",
+          "valueType": "string"
+        },
+        "null"
       ]
     },
     "bssid_name": {
@@ -3594,7 +3604,8 @@
         }
       ],
       "returns": [
-        "string"
+        "string",
+        "null"
       ]
     },
     "essid_name": {
@@ -3606,7 +3617,8 @@
         }
       ],
       "returns": [
-        "string"
+        "string",
+        "null"
       ]
     },
     "firewall_rules": {
@@ -3618,7 +3630,11 @@
         }
       ],
       "returns": [
-        "list:string"
+        {
+          "type": "list",
+          "valueType": "string"
+        },
+        "null"
       ]
     },
     "kernel_version": {
@@ -3630,7 +3646,8 @@
         }
       ],
       "returns": [
-        "string"
+        "string",
+        "null"
       ]
     },
     "local_ip": {
@@ -3642,7 +3659,8 @@
         }
       ],
       "returns": [
-        "string"
+        "string",
+        "null"
       ]
     },
     "public_ip": {
@@ -3654,7 +3672,8 @@
         }
       ],
       "returns": [
-        "string"
+        "string",
+        "null"
       ]
     },
     "used_ports": {
@@ -3666,7 +3685,11 @@
         }
       ],
       "returns": [
-        "list:port"
+        {
+          "type": "list",
+          "valueType": "port"
+        },
+        "null"
       ]
     },
     "ping_port": {

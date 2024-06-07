@@ -12,14 +12,20 @@
       ],
       "returns": [
         "string",
-        "list:port",
+        {
+          "type": "list",
+          "valueType": "port"
+        },
         "null"
       ]
     },
     "devices_lan_ip": {
       "type": "function",
       "returns": [
-        "list:string"
+        {
+          "type": "list",
+          "valueType": "string"
+        }
       ]
     },
     "bssid_name": {
@@ -37,7 +43,10 @@
     "firewall_rules": {
       "type": "function",
       "returns": [
-        "list:string"
+        {
+          "type": "list",
+          "valueType": "string"
+        }
       ]
     },
     "kernel_version": {
@@ -61,7 +70,10 @@
     "used_ports": {
       "type": "function",
       "returns": [
-        "list:port"
+        {
+          "type": "list",
+          "valueType": "port"
+        }
       ]
     },
     "ping_port": {
