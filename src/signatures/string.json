@@ -132,7 +132,10 @@
     "indexes": {
       "type": "function",
       "returns": [
-        "list:number"
+        {
+          "type": "list",
+          "valueType": "number"
+        }
       ]
     },
     "code": {

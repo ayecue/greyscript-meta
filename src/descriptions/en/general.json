@@ -129,7 +129,7 @@
     ]
   },
   "indexes": {
-    "description": "Depending on data type this function returns a `list` with all available indexes. To get a better idea about the behaviour look into the `indexes` methods related to `string`, `list` and `map`.",
+    "description": "Returns a `list` containing all indexes or keys of the passed object. This method supports `map`s, `list`s, and `string`s. The type of each item may vary when using this method on a `map` since keys could be any type. The other types will return a `list` where each item is a `number`. In case a type is passed that is not supported, this method will return `null`.",
     "example": [
       "indexesOfStr = indexes(\"test\")",
       "print(\"Following indexes are available: \" + indexesOfStr.join(\", \"))"

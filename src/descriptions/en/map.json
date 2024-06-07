@@ -79,7 +79,7 @@
     ]
   },
   "indexes": {
-    "description": "Returns a `list` containing all available keys.",
+    "description": "Returns a `list` containing all available keys. Keys can be of any type.",
     "example": [
       "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
       "for key in myMap.indexes",
