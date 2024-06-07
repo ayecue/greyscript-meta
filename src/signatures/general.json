@@ -804,12 +804,18 @@
         {
           "label": "start",
           "type": "number",
-          "default": "0"
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         },
         {
           "label": "end",
           "type": "number",
-          "default": "0"
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         },
         {
           "label": "inc",
@@ -818,7 +824,10 @@
         }
       ],
       "returns": [
-        "list:number"
+        {
+          "type": "list",
+          "valueType": "number"
+        }
       ]
     },
     "round": {
