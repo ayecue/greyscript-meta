@@ -775,7 +775,10 @@
         {
           "label": "value",
           "type": "number",
-          "default": "0"
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
       "returns": [
@@ -873,7 +876,10 @@
         {
           "label": "value",
           "type": "number",
-          "default": "0"
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
       "returns": [
@@ -960,12 +966,18 @@
       "arguments": [
         {
           "label": "value",
-          "type": "any"
+          "types": [
+            "list",
+            "string"
+          ]
         },
         {
           "label": "from",
           "type": "number",
-          "opt": true
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         },
         {
           "label": "to",
@@ -974,7 +986,9 @@
         }
       ],
       "returns": [
-        "list:any"
+        "list",
+        "string",
+        "null"
       ]
     },
     "md5": {

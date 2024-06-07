@@ -570,7 +570,7 @@
     ]
   },
   "slice": {
-    "description": "Returns a sliced `list`. Valid data types for slicing are `string` and `list`. The returned `list` will contain all elements related to the provided start and end index.",
+    "description": "Returns a sliced version of the passed object. Valid data types for slicing are `string` and `list`. The returned object will contain all elements related to the provided start and end index. If no start or end index is provided this method will essentially return a shallow copy of the passed object. If an invalid data type is passed, `null` is returned.",
     "example": [
       "myString = \"not your text\"",
       "print(\"my \" + slice(myString, 9))"
