@@ -36,7 +36,7 @@
     ]
   },
   "pop": {
-    "description": "Returns and removes the last item in the `list`. This operation will mutate the `list`.",
+    "description": "Returns and removes the last item in the `list`. This operation will mutate the `list`. If the `map` is empty, this method will return `null`.",
     "example": [
       "myList = [1, 3, 42]",
       "answer = myList.pop",
@@ -44,7 +44,7 @@
     ]
   },
   "pull": {
-    "description": "Returns and removes the first item in the `list`.  This operation will mutate the `list`.",
+    "description": "Returns and removes the first item in the `list`.  This operation will mutate the `list`. If the `map` is empty, this method will return `null`.",
     "example": [
       "myList = [42, 1, 3]",
       "answer = myList.pull",

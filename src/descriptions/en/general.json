@@ -193,14 +193,14 @@
     ]
   },
   "pop": {
-    "description": "Depending on data type this function will return the last item in the provided value. Additionally, this function removes the last item and therefore mutates the object. To get a better idea about the behaviour look into the `pop` methods related to `list` and `map`.",
+    "description": "When passing a `list` to this method, it will return the value at the last index and remove it from the `list`. Additionally, if a `map` is passed, it will always return the value corresponding to the first matching key and mutate the `map` object accordingly. However, passing a map-like object such as `file` or `computer` will result in an error, interrupting further script execution. If the passed object is empty or is anything other than a `map` or `list`, the method will return `null`.",
     "example": [
       "list = [0, 1, 2, 3, 4, 5]",
       "print(\"The last item is: \" + pop(list))"
     ]
   },
   "pull": {
-    "description": "Depending on data type this function will return the first item in the provided value. Additionally, this function removes the first item and therefore mutates the object. To get a better idea about the behaviour look into the `pull` methods related to `list` and `map`.",
+    "description": "When passing a `list` to this method, it will return the value at the first index and remove it from the `list`. Additionally, if a `map` is passed, it will always return the value corresponding to the first matching key and mutate the `map` object accordingly. However, passing a map-like object such as `file` or `computer` will result in an error, interrupting further script execution. If the passed object is empty or is anything other than a `map` or `list`, the method will return `null`.",
     "example": [
       "list = [0, 1, 2, 3, 4, 5]",
       "print(\"The first item is: \" + pull(list))"

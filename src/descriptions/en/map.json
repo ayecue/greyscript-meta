@@ -25,14 +25,14 @@
     ]
   },
   "pull": {
-    "description": "Returns and removes the first item in the `map`.  This operation will mutate the `map`.",
+    "description": "Returns and removes the first item in the `map`. This operation will mutate the `map`. Passing a map-like object such as `file` or `computer` will result in an error, interrupting further script execution. If the `map` is empty, this method will return `null`.",
     "example": [
       "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
       "print(myMap.pull)"
     ]
   },
   "pop": {
-    "description": "Returns and removes the last item in the `map`. This operation will mutate the `map`.",
+    "description": "Returns and removes the first item in the `map`. This operation will mutate the `map`. Passing a map-like object such as `file` or `computer` will result in an error, interrupting further script execution. If the `map` is empty, this method will return `null`.",
     "example": [
       "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
       "print(myMap.pop)"
