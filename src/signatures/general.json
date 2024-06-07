@@ -326,7 +326,10 @@
       "arguments": [
         {
           "label": "self",
-          "type": "any"
+          "types": [
+            "list",
+            "map"
+          ]
         }
       ],
       "returns": [

@@ -186,7 +186,7 @@
     ]
   },
   "sum": {
-    "description": "Depending on data type this function returns the sum of all items. To get a better idea about the behaviour look into the `sum` methods related to `list` and `map`.",
+    "description": "Returns a `number` representing the sum of all items within a `map` or a `list`. If any non-supported type is passed, this method will return a `number` with the value zero.",
     "example": [
       "list = [0, 1, 2, 3, 4, 5]",
       "print(\"Sum of all items is: \" + sum(list))"
