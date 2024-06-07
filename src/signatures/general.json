@@ -4232,6 +4232,26 @@
           "valueType": "function"
         }
       ]
+    },
+    "map": {
+      "type": "function",
+      "returns": [
+        {
+          "type": "map",
+          "keyType": "string",
+          "valueType": "function"
+        }
+      ]
+    },
+    "number": {
+      "type": "function",
+      "returns": [
+        {
+          "type": "map",
+          "keyType": "string",
+          "valueType": "function"
+        }
+      ]
     }
   }
 }

@@ -2197,5 +2197,14 @@
       "end function",
       "print [{ \"myValue\": 24 }].map(@myMapFunction)"
     ]
+  },
+  "number": {
+    "description": "Returns a `map` which enables to extend number types with custom methods.",
+    "example": [
+      "number.bitwise = function(operator, right)",
+      "  return bitwise(operator, self, right)",
+      "end function",
+      "print (1234).bitwise(\">>\", 1)"
+    ]
   }
 }
