@@ -143,7 +143,7 @@
     ]
   },
   "indexOf": {
-    "description": "Depending on the data type this function searches for the index of the provided value. To get a better idea about the behaviour look into the `indexOf` methods related to `string`, `list` and `map`.",
+    "description": "Lookups index of value within `map`s, `list`s, or `string`s. For `list`s and `string`s, the behavior is very similar. On success, you'll receive a `number` representing the found index. On failure, it will return `null`. For `map`s, it's a bit different since the returned value could be of any type. On failure, it will return `null` as well. If a value gets passed that is not supported, this method returns `null`.",
     "example": [
       "index = indexOf(\"test\", \"e\")",
       "print(\"e is at: \" + index)"

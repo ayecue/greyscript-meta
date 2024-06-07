@@ -67,7 +67,7 @@
     ]
   },
   "indexOf": {
-    "description": "Returns `string` which indicates the key of the provided value inside the `map`. In case the value does not exist inside the `map` a `null` gets returned.",
+    "description": "Returns a value which can be of any type since `map` keys can be of any type. In case the value does not exist inside the `map`, `null` is returned.",
     "example": [
       "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
       "key = myList.indexOf(42)",
