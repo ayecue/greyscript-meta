@@ -4,6 +4,10 @@
   "definitions": {
     "install_service": {
       "type": "function",
+      "returnVariations": [
+        "Denied. Only root user can install this service.",
+        1
+      ],
       "returns": [
         "number",
         "string"
@@ -11,14 +15,23 @@
     },
     "start_service": {
       "type": "function",
+      "returnVariations": [
+        "Denied. Only root user can install this service.",
+        "<color=yellow>${reason} The chat service can't be accessed.</color>",
+        1
+      ],
       "returns": [
         "number",
-        "string",
-        "null"
+        "string"
       ]
     },
     "stop_service": {
       "type": "function",
+      "returnVariations": [
+        "Denied. Only root user can install this service.",
+        1,
+        0
+      ],
       "returns": [
         "number",
         "string"
