@@ -10,6 +10,10 @@
     },
     "is_closed": {
       "type": "function",
+      "returnVariations": [
+        0,
+        1
+      ],
       "returns": [
         "number"
       ]

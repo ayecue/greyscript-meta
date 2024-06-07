@@ -2108,7 +2108,7 @@
     ]
   },
   "port_number": {
-    "description": "Returns the `number` which is used for the port.",
+    "description": "Returns the `number` which is used for the port. In case the passed object is not a `port` this method will return `null`.",
     "example": [
       "router = get_router",
       "ports = used_ports(router)",
@@ -2118,7 +2118,7 @@
     ]
   },
   "is_closed": {
-    "description": "Returns `true` if this port is closed, `false` if the port is open.",
+    "description": "Returns a `number`, where one indicates that the specified `port` is open and zero indicates that the port is closed. In case the passed object is not a `port` this method will return `null`.",
     "example": [
       "router = get_router",
       "ports = used_ports(router)",
@@ -2130,7 +2130,7 @@
     ]
   },
   "get_lan_ip": {
-    "description": "Returns a `string` containing the local IP address of the computer to which the port is pointing.",
+    "description": "Returns a `string` containing the local IP address of the computer to which the port is pointing. In case the passed object is not a `port` this method will return `null`.",
     "example": [
       "router = get_router",
       "ports = used_ports(router)",

@@ -4334,7 +4334,8 @@
         }
       ],
       "returns": [
-        "number"
+        "number",
+        "null"
       ]
     },
     "is_closed": {
@@ -4345,8 +4346,13 @@
           "type": "port"
         }
       ],
+      "returnVariations": [
+        0,
+        1
+      ],
       "returns": [
-        "number"
+        "number",
+        "null"
       ]
     },
     "get_lan_ip": {
@@ -4358,7 +4364,8 @@
         }
       ],
       "returns": [
-        "string"
+        "string",
+        "null"
       ]
     },
     "reset_ctf_password": {
