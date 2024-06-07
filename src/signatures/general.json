@@ -1211,14 +1211,17 @@
       "arguments": [
         {
           "label": "value",
+          "types": [
+            "map",
+            "list"
+          ]
+        },
+        {
+          "label": "oldVal",
           "type": "any"
         },
         {
-          "label": "toReplace",
-          "type": "any"
-        },
-        {
-          "label": "newValue",
+          "label": "newVal",
           "type": "any"
         },
         {

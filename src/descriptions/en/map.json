@@ -104,7 +104,7 @@
     ]
   },
   "replace": {
-    "description": "Returns updated `map` where each value matching with the provided replace argument gets replaced. This operation will mutate the `map`.",
+    "description": "Returns updated `map` where each value matching with the provided replace argument gets replaced. This operation will mutate the `map`. In case this method gets used on a map-like object such as `file` this method will throw a runtime error.",
     "example": [
       "myObject = { \"answer\": 45 }",
       "myObject.replace(45, 42)",

@@ -159,11 +159,11 @@
       "type": "function",
       "arguments": [
         {
-          "label": "toReplace",
+          "label": "oldVal",
           "type": "any"
         },
         {
-          "label": "newValue",
+          "label": "newVal",
           "type": "any"
         },
         {
@@ -173,7 +173,7 @@
         }
       ],
       "returns": [
-        "list:any"
+        "list"
       ]
     }
   }

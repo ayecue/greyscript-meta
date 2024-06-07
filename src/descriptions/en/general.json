@@ -687,11 +687,11 @@
     ]
   },
   "replace": {
-    "description": "Depending on the data type this function will replace a value in the provided object. Due to the replacement, the object might get mutated. To get a better idea about the behaviour look into the `replace` method related to `map`, `list` or `string`.",
+    "description": "This function replaces a value within an object and returns the mutated object. Currently, it only supports `map`s and `list`s. Previously, it also supported `string`s, but that functionality has been replaced by `replace_regex`. If you use anything other than the supported types, a runtime error will be thrown.",
     "example": [
-      "myString = \"42 as an answer is wrong\"",
-      "newString = replace(myString, \"wrong\", \"right\")",
-      "print(newString)"
+      "list = [1,2,3,42]",
+      "newList = replace(list, 42, 4)",
+      "print(newList)"
     ]
   },
   "replace_regex": {
