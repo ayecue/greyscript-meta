@@ -836,12 +836,18 @@
         {
           "label": "value",
           "type": "number",
-          "default": "0"
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         },
         {
           "label": "fixed",
           "type": "number",
-          "default": "0"
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
       "returns": [
@@ -853,7 +859,8 @@
       "arguments": [
         {
           "label": "seed",
-          "type": "number"
+          "type": "number",
+          "opt": true
         }
       ],
       "returns": [
