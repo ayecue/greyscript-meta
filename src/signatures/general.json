@@ -4184,9 +4184,15 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "read: No internet access.",
+        1
+      ],
       "returns": [
         "number",
-        "string"
+        "string",
+        "null"
       ]
     },
     "fetch": {
@@ -4197,9 +4203,17 @@
           "type": "metaMail"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "fetch: No internet access."
+      ],
       "returns": [
-        "list:string",
-        "string"
+        {
+          "type": "list",
+          "valueType": "string"
+        },
+        "string",
+        "null"
       ]
     },
     "read": {
@@ -4214,8 +4228,14 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "fetch: No internet access.",
+        "Mail not found"
+      ],
       "returns": [
-        "string"
+        "string",
+        "null"
       ]
     },
     "send": {
@@ -4237,6 +4257,16 @@
           "label": "message",
           "type": "string"
         }
+      ],
+      "returnVariations": [
+        "The mail could not be sent. Wait a moment before sending another email.",
+        "Unknown error: Unable to access to local computer",
+        "read: No internet access.",
+        "read: No email account registered",
+        "!PlayerUtils.SendMail",
+        "!Database.GetMailAccount",
+        "Mail not delivered",
+        1
       ],
       "returns": [
         "string",

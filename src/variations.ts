@@ -184,9 +184,22 @@ VariationRegistry.add('PlayerUtils.RemoveFile', [
   "unknown error :/"
 ]);
 
+// gets called by PlayerUtils.SendMail
 VariationRegistry.add('Database.GetMailAccount', [
   "Unable to login into account. Wrong password.",
   "${user} user not found",
   "Unknown error: This email account cannot be obtained.",
   "Unable to login into account. Wrong password."
+]);
+
+VariationRegistry.add('PlayerUtils.SendMail', [
+  "Invalid email address",
+  "Mail subject too large",
+  "Mail message too large",
+  "Unknown error: attachment failed",
+  "Error: attachment not found",
+  "Unable to attach file: permission denied",
+  "The email couldn't be sent. The recipient has blocked this email address.",
+  "The email couldn't be sent. The recipient has blocked emails sent by other players.",
+  "The email couldn't be sent. The recipient has blocked emails sent by other players using npcs accounts."
 ]);

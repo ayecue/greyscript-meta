@@ -1,62 +1,62 @@
 {
-    "$meta": {
-        "description": "A `MetaMail` object can be obtained by using [mail_login](#GENERAL_MAIL_LOGIN). The `classID` used for this object is `\"MetaMail\"`."
-    },
-    "delete": {
-        "description": "Delete the mail that corresponds with the provided mail id. Returns `true` if it was removed successfully or a `string` with the error message on failure.",
-        "example": [
-            "metaMail = mail_login(user_mail_address, \"test\")",
-            "mails = metaMail.fetch",
-            "results = []",
-            "for mail in mails",
-            "   segments = mail.split(char(10))",
-            "   mailId = segments[2][8:]",
-            "   print(metaMail.delete(mailId))",
-            "end for",
-            "print(\"Deleted every mail!\")"
-        ]
-    },
-    "fetch": {
-        "description": "Returns a `list` where each item is a `string` containing mail id, from, subject and a small preview of the content.",
-        "example": [
-            "metaMail = mail_login(user_mail_address, \"test\")",
-            "mails = metaMail.fetch",
-            "results = []",
-            "for mail in mails",
-            "   segments = mail.split(char(10))",
-            "   item = {}",
-            "   item.mailId = segments[2][8:]",
-            "   item.from = segments[3][6:]",
-            "   item.subject = segments[4][9:]",
-            "   item.preview = segments[5:]",
-            "   results.push(item)",
-            "end for",
-            "print(results)"
-        ]
-    },
-    "read": {
-        "description": "Returns a `string` containing the content of a mail related to the provided mail id. The mail id argument can be obtained with `fetch`. In case the mail cannot be found this method will return \"Mail not found\".",
-        "example": [
-            "metaMail = mail_login(user_mail_address, \"test\")",
-            "mails = metaMail.fetch",
-            "results = []",
-            "for mail in mails",
-            "   segments = mail.split(char(10))",
-            "   mailId = segments[2][8:]",
-            "   print(metaMail.read(mailId))",
-            "end for"
-        ]
-    },
-    "send": {
-        "description": "Send a new mail to the provided email address. Keep in mind that the subject can not exceed 128 characters and the content size should not exceed 160000 characters. Returns `true` if the mail has been sent correctly, otherwise returns a `string` containing the error.",
-        "example": [
-            "metaMail = mail_login(user_mail_address, \"test\")",
-            "result = metaMail.send(user_mail_address, \"test subject\", \"test message\")",
-            "if typeof(result) == \"string\" then",
-            "   print(\"There was an error while sending mail: \" + result)",
-            "else",
-            "   print(\"Mail got send successfully.\")",
-            "end if"
-        ]
-    }
+  "$meta": {
+    "description": "A `MetaMail` object can be obtained by using [mail_login](#GENERAL_MAIL_LOGIN). The `classID` used for this object is `\"MetaMail\"`."
+  },
+  "delete": {
+    "description": "Delete the email corresponding to the provided email ID. Returns a `number` with the value one if the email removal was successful. Otherwise, a `string` with an error message will be returned. If the provided mailId is anything other than a `string` this method will return `null`.",
+    "example": [
+      "metaMail = mail_login(user_mail_address, \"test\")",
+      "mails = metaMail.fetch",
+      "results = []",
+      "for mail in mails",
+      "   segments = mail.split(char(10))",
+      "   mailId = segments[2][8:]",
+      "   print(metaMail.delete(mailId))",
+      "end for",
+      "print(\"Deleted every mail!\")"
+    ]
+  },
+  "fetch": {
+    "description": "Returns a `list` where each item is a `string` containing mail id, from, subject and a small preview of the content consisting of the first 125 characters. If there is any issue a `string` will be returned with details.",
+    "example": [
+      "metaMail = mail_login(user_mail_address, \"test\")",
+      "mails = metaMail.fetch",
+      "results = []",
+      "for mail in mails",
+      "   segments = mail.split(char(10))",
+      "   item = {}",
+      "   item.mailId = segments[2][8:]",
+      "   item.from = segments[3][6:]",
+      "   item.subject = segments[4][9:]",
+      "   item.preview = segments[5:]",
+      "   results.push(item)",
+      "end for",
+      "print(results)"
+    ]
+  },
+  "read": {
+    "description": "Returns a `string` containing the content of a mail related to the provided mail id. The mail id argument can be obtained with `fetch`. In case the mail cannot be found this method will return \"Mail not found\". If the provided mailId is not a `string`, this method will return `null`.",
+    "example": [
+      "metaMail = mail_login(user_mail_address, \"test\")",
+      "mails = metaMail.fetch",
+      "results = []",
+      "for mail in mails",
+      "   segments = mail.split(char(10))",
+      "   mailId = segments[2][8:]",
+      "   print(metaMail.read(mailId))",
+      "end for"
+    ]
+  },
+  "send": {
+    "description": "Send a new mail to the provided email address. Keep in mind that the subject can not exceed 128 characters and the message size should not exceed 2500 characters. Returns a `number` with the value one if the mail has been sent correctly, otherwise returns a `string` with an error. If any of the provided values deviate from the method signature, it will return `null`.",
+    "example": [
+      "metaMail = mail_login(user_mail_address, \"test\")",
+      "result = metaMail.send(user_mail_address, \"test subject\", \"test message\")",
+      "if typeof(result) == \"string\" then",
+      "   print(\"There was an error while sending mail: \" + result)",
+      "else",
+      "   print(\"Mail got send successfully.\")",
+      "end if"
+    ]
+  }
 }
