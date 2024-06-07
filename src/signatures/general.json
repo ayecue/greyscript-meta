@@ -386,7 +386,7 @@
       "arguments": [
         {
           "label": "self",
-          "type": "list:any"
+          "type": "list"
         },
         {
           "label": "byKey",
@@ -395,11 +395,14 @@
         {
           "label": "ascending",
           "type": "number",
-          "default": "1"
+          "default": {
+            "type": "number",
+            "value": 1
+          }
         }
       ],
       "returns": [
-        "list:any"
+        "list"
       ]
     },
     "remove": {
@@ -972,7 +975,7 @@
           ]
         },
         {
-          "label": "from",
+          "label": "startIndex",
           "type": "number",
           "default": {
             "type": "number",
@@ -980,7 +983,7 @@
           }
         },
         {
-          "label": "to",
+          "label": "endIndex",
           "type": "number",
           "opt": true
         }

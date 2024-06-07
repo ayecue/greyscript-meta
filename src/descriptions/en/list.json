@@ -100,7 +100,7 @@
     ]
   },
   "sort": {
-    "description": "Sort `list` values alphanumerically. This operation will mutate the `list`. Optionally a key can be provided which which is used in case the items are maps. Additionally, this method will return the updated `list`.",
+    "description": "Sorts the values of a `list` alphanumerically. This operation mutates the original `list`. Optionally, a key can be provided, which is used if the items are `map`s or `list`s. Finally, this method returns the updated `list`.",
     "example": [
       "myList = [{ \"key\": 42 }, { \"key\": 2 }, { \"key\": 1 }]",
       "myList.sort(\"key\")",

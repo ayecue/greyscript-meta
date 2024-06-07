@@ -110,16 +110,19 @@
       "arguments": [
         {
           "label": "key",
-          "type": "string"
+          "type": "any"
         },
         {
           "label": "ascending",
           "type": "number",
-          "default": "1"
+          "default": {
+            "type": "number",
+            "value": 1
+          }
         }
       ],
       "returns": [
-        "list:any"
+        "list"
       ]
     },
     "join": {
