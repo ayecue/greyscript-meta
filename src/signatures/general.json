@@ -274,7 +274,10 @@
       "arguments": [
         {
           "label": "self",
-          "type": "any"
+          "types": [
+            "list",
+            "map"
+          ]
         }
       ],
       "returns": [
@@ -1450,8 +1453,7 @@
       ],
       "returns": [
         "string",
-        "number",
-        "null"
+        "number"
       ]
     },
     "add_repo": {

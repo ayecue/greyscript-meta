@@ -157,7 +157,7 @@
     ]
   },
   "shuffle": {
-    "description": "Depending on data type this function will shuffle data. Instead of returning the newly shuffled data, this function will mutate the data. To get a better idea about the behaviour look into the `shuffle` methods related to `list` and `map`.",
+    "description": "Randomizes content of an object. Valid data types for this method are `list` and `map`. In case a map-like object such as a `file` or `computer` a runtime exception will be thrown.",
     "example": [
       "list = [0, 1, 2, 3, 4, 5]",
       "shuffle(list)",
@@ -759,7 +759,7 @@
     ]
   },
   "update": {
-    "description": "Refreshes the list of available packages after adding a new repository in `\"/etc/apt/sources.txt\"`, or if the remote repository has updated its information in `\"/server/conf/repod.conf\"`. If either the `\"/etc/apt/sources.txt\"` file has an invalid format or an invalid `GreyMap` instance is passed, this method will return a `number` with the value zero. If a `GreyMap` value is passed that isn't a valid `aptClient` instance, this method will return `null`. On a successful update, an empty `string` will be returned. In case of failure, a `string` with an error message will be returned.",
+    "description": "Refreshes the list of available packages after adding a new repository in `\"/etc/apt/sources.txt\"`, or if the remote repository has updated its information in `\"/server/conf/repod.conf\"`. If either the `\"/etc/apt/sources.txt\"` file has an invalid format or an invalid `aptClient` object is passed, this method will return a `number` with the value zero. On a successful update, an empty `string` will be returned. In case of failure, a `string` with an error message will be returned.",
     "example": [
       "aptClient = include_lib(\"/lib/aptclient.so\")",
       "result = update(aptClient)",
