@@ -312,7 +312,7 @@
     ]
   },
   "wait": {
-    "description": "Puts script execution on hold. Optionally the duration can be provided via the time argument. By default, the duration will be 1 second. The duration cannot be below 0.01 or above 300.",
+    "description": "Pauses the script execution. Optionally, the duration can be provided via the `time` argument. By default, the duration will be 1 second. The duration cannot be below 0.01 or above 300; otherwise, this method will throw a runtime exception.",
     "example": [
       "start = time",
       "wait(5)",

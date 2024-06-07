@@ -562,7 +562,10 @@
         {
           "label": "delay",
           "type": "number",
-          "default": "1"
+          "default": {
+            "type": "number",
+            "value": 1
+          }
         }
       ],
       "returns": [
