@@ -150,7 +150,7 @@
     ]
   },
   "len": {
-    "description": "Depending on data type this function returns the length of the provided value. To get a better idea about the behaviour look into the `len` methods related to `string`, `list` and `map`.",
+    "description": "Returns `number` indicating what size the passed object is. In case anything other that a `map`, `list` or `string` gets passed this method will return `null`.",
     "example": [
       "length = len(\"test\")",
       "print(\"Length of string is: \" + length)"
