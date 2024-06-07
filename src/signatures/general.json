@@ -54,15 +54,24 @@
       "arguments": [
         {
           "label": "value",
-          "type": "any"
+          "types": [
+            "map",
+            "list",
+            "string"
+          ]
         },
         {
           "label": "index",
           "type": "any"
         }
       ],
+      "returnVariations": [
+        0,
+        1
+      ],
       "returns": [
-        "number"
+        "number",
+        "null"
       ]
     },
     "typeof": {

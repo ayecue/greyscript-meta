@@ -45,7 +45,7 @@
     ]
   },
   "hasIndex": {
-    "description": "Depending on data type this function checks if the provided index is available inside the value. To get a better idea about the behaviour look into the `hasIndex` methods related to `string`, `list` and `map`.",
+    "description": "Verifies if an index is available within an object. In case of success this method will return a `number` with the value one. In case of failure the value will be a zero. This method supports `map`s, `list`s and `string`s. Each passed type may result in different behavior therefore it is advisable to take a look at each of their specific signatures. In case an unsupported value gets passed this method will return `null`.",
     "example": [
       "print(\"List has index: \" + hasIndex([1, 2, 3], 2)"
     ]

@@ -55,7 +55,7 @@
     ]
   },
   "hasIndex": {
-    "description": "Returns `true` if the provided key is available in the `map`. Otherwise, this method will return `false`.",
+    "description": "Returns a `number`. If the provided key is available in the `map`, the value will be one. Otherwise, the value will be zero.",
     "example": [
       "myMap = { \"answer\": 42, \"bar\": 23, \"foo\": \"moo\" }",
       "containsIndex = myList.hasIndex(\"answer\")",

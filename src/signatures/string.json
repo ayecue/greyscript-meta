@@ -21,6 +21,10 @@
           "type": "number"
         }
       ],
+      "returnVariations": [
+        0,
+        1
+      ],
       "returns": [
         "number"
       ]

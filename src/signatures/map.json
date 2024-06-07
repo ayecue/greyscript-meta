@@ -58,8 +58,12 @@
       "arguments": [
         {
           "label": "key",
-          "type": "string"
+          "type": "any"
         }
+      ],
+      "returnVariations": [
+        0,
+        1
       ],
       "returns": [
         "number"
