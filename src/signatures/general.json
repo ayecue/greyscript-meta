@@ -137,12 +137,18 @@
         {
           "label": "value",
           "type": "any",
-          "default": "\"\""
+          "default": {
+            "type": "string",
+            "value": ""
+          }
         },
         {
           "label": "replaceText",
           "type": "number",
-          "default": "false"
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
       "returns": [
