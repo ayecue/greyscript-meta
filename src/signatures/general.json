@@ -1051,12 +1051,19 @@
       "arguments": [
         {
           "label": "value",
-          "type": "number"
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         },
         {
           "label": "base",
           "type": "number",
-          "default": "10"
+          "default": {
+            "type": "number",
+            "value": 10
+          }
         }
       ],
       "returns": [

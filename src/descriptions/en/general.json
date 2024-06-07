@@ -172,14 +172,14 @@
     ]
   },
   "lower": {
-    "description": "Returns a `string` which is the lowercase transformed version of the provided `string`.",
+    "description": "Returns a `string` which is the lowercase transformed version of the provided `string`. In case anything other than a `string` gets passed this method will return the passed value again.",
     "example": [
       "myString = lower(\"HELLO WORLD\")",
       "print(myString)"
     ]
   },
   "upper": {
-    "description": "Returns a `string` which is the uppercase transformed version of the provided `string`.",
+    "description": "Returns a `string` which is the uppercase transformed version of the provided `string`. In case anything other than a `string` gets passed this method will return the passed value again.",
     "example": [
       "myString = upper(\"hello world\")",
       "print(myString)"
