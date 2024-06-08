@@ -14,7 +14,8 @@
         }
       ],
       "returns": [
-        "any"
+        "list",
+        "string"
       ]
     },
     "indexOf": {
@@ -25,8 +26,12 @@
           "type": "any"
         },
         {
-          "label": "offset",
-          "type": "number",
+          "label": "value",
+          "type": "any"
+        },
+        {
+          "label": "after",
+          "type": "any",
           "opt": true
         }
       ],
@@ -42,6 +47,10 @@
           "type": "any"
         }
       ],
+      "returnVariations": [
+        0,
+        1
+      ],
       "returns": [
         "number"
       ]
@@ -54,8 +63,14 @@
           "type": "any"
         }
       ],
+      "returnVariations": [
+        0,
+        1
+      ],
       "returns": [
-        "null"
+        "number",
+        "null",
+        "string"
       ]
     },
     "push": {
@@ -67,7 +82,8 @@
         }
       ],
       "returns": [
-        "any"
+        "list",
+        "map"
       ]
     },
     "pull": {
@@ -97,7 +113,7 @@
     "indexes": {
       "type": "function",
       "returns": [
-        "list:any"
+        "list"
       ]
     },
     "len": {
@@ -109,7 +125,7 @@
     "values": {
       "type": "function",
       "returns": [
-        "list:any"
+        "list"
       ]
     }
   }

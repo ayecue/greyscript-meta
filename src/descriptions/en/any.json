@@ -1,90 +1,90 @@
 {
   "insert": {
-      "description": "Depending on the data type this method will insert a value to the provided index. Due to the insertion, the object will be mutated. To get a better idea about the behaviour look into the `insert` method related to `list` or `string`.",
-      "example": [
-          "list = [2, 3, 4]",
-          "list.insert(2, 42)",
-          "print(\"List with inserted item: \" + list.join(\", \"))"
-      ]
+    "description": "Inserts a value into either a `list` or a `string`. If the passed index is not a `number`, this method throws an error, preventing further script execution.",
+    "example": [
+      "list = [2, 3, 4]",
+      "list.insert(2, 42)",
+      "print(\"List with inserted item: \" + list.join(\", \"))"
+    ]
   },
   "indexOf": {
-    "description": "Depending on the data type this function searches for the index of the provided value. To get a better idea about the behaviour look into the `indexOf` methods related to `string`, `list` and `map`.",
+    "description": "Lookups index of value within `map`s, `list`s, or `string`s. For `list`s and `string`s, the behavior is very similar. On success, you'll receive a `number` representing the found index. On failure, it will return `null`. For `map`s, it's a bit different since the returned value could be of any type. On failure, it will return `null` as well.",
     "example": [
-        "index = \"test\".indexOf(\"e\")",
-        "print(\"e is at: \" + index)"
+      "index = \"test\".indexOf(\"e\")",
+      "print(\"e is at: \" + index)"
     ]
   },
   "hasIndex": {
-    "description": "Depending on data type this function checks if the provided index is available inside the value. To get a better idea about the behaviour look into the `hasIndex` methods related to `string`, `list` and `map`.",
+    "description": "Verifies if an index is available within an object. In case of success this method will return a `number` with the value one. In case of failure the value will be a zero. This method supports `map`s, `list`s and `string`s. Each passed type may result in different behavior therefore it is advisable to take a look at each of their specific signatures.",
     "example": [
-        "print(\"List has index: \" + [1, 2, 3].hasIndex(2)"
+      "print(\"List has index: \" + [1, 2, 3].hasIndex(2)"
     ]
   },
   "remove": {
-    "description": "Depending on the data type this function will remove a value in the provided object. As a result, the object will get mutated. To get a better idea about the behaviour look into the `remove` methods related to `list` and `map`.",
+    "description": "Depending on the data type, this function will remove a value in the provided object, potentially mutating the object. This method works with `map`s, `list`s, and `string`s. Each passed type may support different types for the `key` argument. For example, using this method on a string would treat the key as a character index. Therefore, it is advised to review the signatures of each type. Passing a key with the type `null` may cause an error to be thrown, preventing further script execution.",
     "example": [
-        "list = [9, 3, 5, 7]",
-        "list.remove(5)",
-        "print(\"List after removal: \" + list.join(\", \"))"
+      "list = [9, 3, 5, 7]",
+      "list.remove(5)",
+      "print(\"List after removal: \" + list.join(\", \"))"
     ]
   },
   "push": {
-    "description": "Depending on data type this function will append a value to the provided object. As a result, the object will get mutated. To get a better idea about the behaviour look into the `push` methods related to `list` and `map`.",
+    "description": "Allows pushing a value into an object, supporting `map`s and `list`s. However, it throws an error if you attempt to push a value into itself or into a map-like object such as a `file`, halting further script execution.",
     "example": [
-        "list = [0, 1, 2, 3, 4, 5]",
-        "list.push(42)",
-        "print(\"The answer to everything is: \" + list.pop)"
+      "list = [0, 1, 2, 3, 4, 5]",
+      "list.push(42)",
+      "print(\"The answer to everything is: \" + list.pop)"
     ]
   },
   "pull": {
-    "description": "Depending on data type this function will return the first item in the provided value. Additionally, this function removes the last item and therefore mutates the object. To get a better idea about the behaviour look into the `pop` methods related to `list` and `map`.",
+    "description": "When passing a `list` to this method, it will return the value at the first index and remove it from the `list`. Additionally, if a `map` is passed, it will always return the value corresponding to the first matching key and mutate the `map` object accordingly. However, passing a map-like object such as `file` or `computer` will result in an error, interrupting further script execution.",
     "example": [
-        "myList = [42, 1, 3]",
-        "answer = myList.pull",
-        "print(\"Answer to everything: \" + answer)"
+      "myList = [42, 1, 3]",
+      "answer = myList.pull",
+      "print(\"Answer to everything: \" + answer)"
     ]
   },
   "pop": {
-    "description": "Depending on data type this function will return the last item in the provided value. Additionally, this function removes the last item and therefore mutates the object. To get a better idea about the behaviour look into the `pop` methods related to `list` and `map`.",
+    "description": "When passing a `list` to this method, it will return the value at the last index and remove it from the `list`. Additionally, if a `map` is passed, it will always return the value corresponding to the first matching key and mutate the `map` object accordingly. However, passing a map-like object such as `file` or `computer` will result in an error, interrupting further script execution.",
     "example": [
-        "list = [0, 1, 2, 3, 4, 5]",
-        "print(\"The last item is: \" + list.pop)"
+      "list = [0, 1, 2, 3, 4, 5]",
+      "print(\"The last item is: \" + list.pop)"
     ]
   },
   "shuffle": {
-    "description": "Depending on data type this function will shuffle data. Instead of returning the newly shuffled data, this function will mutate the data. To get a better idea about the behaviour look into the `shuffle` methods related to `list` and `map`.",
+    "description": "Randomizes content of an object. Valid data types for this method are `list` and `map`. In case a map-like object such as a `file` or `computer` a runtime exception will be thrown.",
     "example": [
-        "list = [0, 1, 2, 3, 4, 5]",
-        "list.shuffle",
-        "print(\"And the winner is: \" + list[0])"
+      "list = [0, 1, 2, 3, 4, 5]",
+      "list.shuffle",
+      "print(\"And the winner is: \" + list[0])"
     ]
   },
   "sum": {
-    "description": "Depending on data type this function returns the sum of all items. To get a better idea about the behaviour look into the `sum` methods related to `list` and `map`.",
+    "description": "Returns a `number` representing the sum of all items within a `map` or a `list`.",
     "example": [
-        "list = [0, 1, 2, 3, 4, 5]",
-        "print(\"Sum of all items is: \" + list.sum)"
+      "list = [0, 1, 2, 3, 4, 5]",
+      "print(\"Sum of all items is: \" + list.sum)"
     ]
   },
   "indexes": {
-    "description": "Depending on data type this function returns a `list` with all available indexes. To get a better idea about the behaviour look into the `indexes` methods related to `string`, `list` and `map`.",
+    "description": "Returns a `list` containing all indexes or keys of the passed object. This method supports `map`s, `list`s, and `string`s. The type of each item may vary when using this method on a `map` since keys could be any type. The other types will return a `list` where each item is a `number`.",
     "example": [
-        "indexesOfStr = \"test\".indexes",
-        "print(\"Following indexes are available: \" + indexesOfStr.join(\", \"))"
+      "indexesOfStr = \"test\".indexes",
+      "print(\"Following indexes are available: \" + indexesOfStr.join(\", \"))"
     ]
   },
   "len": {
-    "description": "Depending on data type this function returns the length of the provided value. To get a better idea about the behaviour look into the `len` methods related to `string`, `list` and `map`.",
+    "description": "Returns `number` indicating what size the object is.",
     "example": [
-        "length = \"test\".len",
-        "print(\"Length of string is: \" + length)"
+      "length = \"test\".len",
+      "print(\"Length of string is: \" + length)"
     ]
   },
   "values": {
-      "description": "Depending on data type this function returns a `list` with all available values. To get a better idea about the behaviour look into the `values` methods related to `string`, `list` and `map`.",
-      "example": [
-          "indexesOfStr = \"test\".values",
-          "print(\"Following values are available: \" + indexesOfStr.join(\", \"))"
-      ]
+    "description": "Returns a `list` containing all values of an object.",
+    "example": [
+      "indexesOfStr = \"test\".values",
+      "print(\"Following values are available: \" + indexesOfStr.join(\", \"))"
+    ]
   }
 }
