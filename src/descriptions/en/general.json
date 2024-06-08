@@ -376,7 +376,7 @@
     ]
   },
   "bitwise": {
-    "description": "Returns a `number` by performing bitwise operations. Supported operators are: `\"~\", \"&\"`, `\"|\"`, `\"^\"`, `\"<<\"`, `\">>\"`, `\">>>\"`. In case you want to use the tilde operator you only need to provide the operator and the left argument. If any of the required arguments is `null` this method will return `null`. Warning: If either operand is >= `0x80000000`, it'll always returns 0.",
+    "description": "Returns a `number` by performing bitwise operations. Supported operators are: `\"~\"`, `\"&\"`, `\"|\"`, `\"^\"`, `\"<<\"`, `\">>\"`, `\">>>\"`. In case you want to use the tilde operator you only need to provide the operator and the left argument. If any of the required arguments is `null` this method will return `null`. Warning: If either operand is >= `0x80000000`, it'll always returns 0.",
     "example": [
       "num = params[0].to_int",
       "isOdd = bitwise(\"&\", num, 1) == 1",
@@ -1373,7 +1373,7 @@
     ]
   },
   "smtp_user_list": {
-    "description": "Returns a `list` of the existing users on the `computer` where the SMTP service is running. If these users also have an email account registered on the `SMTP` server, it will be indicated in the `list`. SMTP services are usually running on port `25`. In case of failure, this method will return a `string` containing the cause. If any of the provided values deviate from the signature types, this method will return `null`.",
+    "description": "Returns a `list` of the existing users on the `computer` where the SMTP service is running. If these users also have an email account registered on the SMTP server, it will be indicated in the `list`. SMTP services are usually running on port `25`. In case of failure, this method will return a `string` containing the cause. If any of the provided values deviate from the signature types, this method will return `null`.",
     "example": [
       "crypto = include_lib(\"/lib/crypto.so\")",
       "print(smtp_user_list(crypto, \"192.168.0.4\", 25))"
@@ -1835,7 +1835,7 @@
     ]
   },
   "bssid_name": {
-    "description": "Returns a `string` with the `BSSID` value of the router. In case the passed object is not a `router` this method will return `null`.",
+    "description": "Returns a `string` with the BSSID value of the router. In case the passed object is not a `router` this method will return `null`.",
     "example": [
       "router = get_router",
       "bssid = bssid_name(router)",
@@ -1843,7 +1843,7 @@
     ]
   },
   "essid_name": {
-    "description": "Returns a `string` with the `ESSID` value of the router. In case the passed object is not a `router` this method will return `null`.",
+    "description": "Returns a `string` with the ESSID value of the router. In case the passed object is not a `router` this method will return `null`.",
     "example": [
       "router = get_router",
       "essid = essid_name(router)",
@@ -1928,7 +1928,7 @@
     ]
   },
   "start_service": {
-    "description": "Start the service and open its associated `port` on the local machine. The service needs a port forwarded to the router to be accessible from the outside. Returns `true` if the service has started correctly, in case of error a `string` with the details is returned. If the passed object is not a `service` this method will cause a crash.",
+    "description": "Starts the service and opens its associated `port` on the local machine. The service requires a port forwarded to the router to be accessible from the outside. If the service starts correctly, it returns a `number` with the value one. In case of an error, it returns a `string` with details. If the passed object is not a `service` this method will cause a crash.",
     "example": [
       "service = include_lib(\"/lib/libhttp.so\")",
       "result = start_service(service)",
@@ -1940,7 +1940,7 @@
     ]
   },
   "stop_service": {
-    "description": "Stop the service and close its associated `port` on the local machine. Returns `true` if the service has been stopped correctly, in case of error a `string` with the details is returned. If the passed object is not a `service` this method will cause a crash.",
+    "description": "Stops the service and closes its associated `port` on the local machine. If the service is stopped successfully, it returns a `number` with the value one. If an error occurs during the process, it returns a `string` with details. In some cases, the returned `number` might be zero, indicating that the service removal failed. If the passed object is not a `service` this method will cause a crash.",
     "example": [
       "service = include_lib(\"/lib/libhttp.so\")",
       "result = stop_service(service)",

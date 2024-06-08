@@ -37,7 +37,7 @@
     ]
   },
   "bssid_name": {
-    "description": "Returns a `string` with the `BSSID` value of the router.",
+    "description": "Returns a `string` with the BSSID value of the router.",
     "example": [
       "router = get_router",
       "bssid = router.bssid_name",
@@ -45,7 +45,7 @@
     ]
   },
   "essid_name": {
-    "description": "Returns a `string` with the `ESSID` value of the router.",
+    "description": "Returns a `string` with the ESSID value of the router.",
     "example": [
       "router = get_router",
       "essid = router.essid_name",
