@@ -975,8 +975,17 @@
         {
           "label": "params",
           "type": "string",
-          "opt": true
+          "default": {
+            "type": "string",
+            "value": ""
+          }
         }
+      ],
+      "returnVariations": [
+        "Invalid shell",
+        "Can't find computer",
+        1,
+        0
       ],
       "returns": [
         "string",
@@ -3824,8 +3833,23 @@
         {
           "label": "allowImport",
           "type": "number",
-          "opt": true
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
+      ],
+      "returnVariations": [
+        "pathSource and programName can't be empty",
+        "Invalid shell",
+        "Unknown error: Unable to access to local computer",
+        "Can't find ${pathSource}",
+        "Can't find ${pathBinary}",
+        "Can't access to ${pathSource}. Permission denied.",
+        "Can't build ${pathSource}. Binary file",
+        "Can't create binary in ${pathBinary}. Permission denied.",
+        "Can't build ${pathSource}. Invalid extension.",
+        "Can't compile. Source code is empty"
       ],
       "returns": [
         "string"
@@ -3851,14 +3875,24 @@
           "type": "string"
         },
         {
-          "label": "pass",
+          "label": "password",
           "type": "string"
         },
         {
           "label": "service",
           "type": "string",
-          "default": "\"ssh\""
+          "default": {
+            "type": "string",
+            "value": "ssh"
+          }
         }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "Direct connections cannot be made outside of this network",
+        "!PlayerUtils.ConnectToService",
+        "!PlayerUtils.ConnectComputer",
+        "!Networking.CheckServiceOnline"
       ],
       "returns": [
         "shell",
@@ -3881,7 +3915,10 @@
         {
           "label": "params",
           "type": "string",
-          "opt": true
+          "default": {
+            "type": "string",
+            "value": ""
+          }
         }
       ],
       "returns": [
@@ -3898,13 +3935,18 @@
         },
         {
           "label": "ip",
-          "type": "string",
-          "opt": false
+          "type": "string"
         }
+      ],
+      "returnVariations": [
+        "ping: invalid ip address",
+        1,
+        0
       ],
       "returns": [
         "string",
-        "number"
+        "number",
+        "null"
       ]
     },
     "scp": {

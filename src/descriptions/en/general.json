@@ -556,7 +556,7 @@
     ]
   },
   "launch": {
-    "description": "Launches the binary which is at the provided path. Optionally parameters can be passed. Returns `true` when launch was successful otherwise this method will return `false`. Cannot be used to execute binaries with an EXE extension.",
+    "description": "Launches the binary located at the provided path. Optionally, parameters can be passed. Returns a `number`. If the launch was successful, the value will be one; otherwise, it will be zero. In some cases, a `string` will be returned containing an error message. This method cannot be used to execute binaries with an EXE extension (GUI interface). If any provided values deviate from the method signature, a runtime exception will be thrown.",
     "example": [
       "shell = get_shell(\"root\", \"test\")",
       "launch(shell, \"/bin/cat\", \"/etc/passwd\")"
@@ -1966,7 +1966,7 @@
     ]
   },
   "build": {
-    "description": "Compiles a plain code file provided in the arguments to a binary. On success, the new binary will be available under the provided build folder. The binary name will be the same as the source file just without file extension. Optionally an allowImport flag can be set which enables to use `import_code` on the binary. All provided paths must be absolute. Returns an empty `string` on success. On failure, it will return a `string` as well but this time containing valuable information on why the compilation failed.",
+    "description": "Compiles a plain code file provided in the arguments to a binary. On success, the new binary will be available under the provided build folder. The binary name will be the same as the source file just without the file extension. Optionally, an allowImport flag can be set which enables the use of `import_code` on the binary. All provided paths must be absolute. Returns an empty string on success. On failure, it will return a string containing details about the reason for failure. In case any provided values deviate from the defined signature a runtime exception will be thrown.",
     "example": [
       "shell = get_shell",
       "computer = host_computer(shell)",
@@ -1981,7 +1981,7 @@
     ]
   },
   "connect_service": {
-    "description": "Returns a `shell` if the connection attempt to the provided IP was successful. This method can only connect to ports running an SSH or FTP service. SSH services usually run on port 22 and FTP services usually on port 21. Keep in mind to pass the right service value depending on which service is going to be used. By default, it will pass SSH as the used service. In case of failure a `string` is going to be returned containing details.",
+    "description": "Returns a `shell` if the connection attempt to the provided IP was successful. This method can only connect to ports running an SSH or FTP service. SSH services usually run on port 22 and FTP services usually on port 21. Keep in mind to pass the right service value depending on which service is going to be used. By default, it will use SSH as the service. Please note that connecting will leave a log entry. In case of failure, a string is returned containing details. If any provided arguments deviate from the method signature, if this method is run in an SSH encryption process, or if the computer is not connected to the internet, a runtime exception will be thrown.",
     "example": [
       "shell = get_shell",
       "connectionResult = connect_service(shell, \"1.1.1.1\", 22, \"test\", \"test\")",
@@ -1993,7 +1993,7 @@
     ]
   },
   "ping": {
-    "description": "Returns `true` if the remote address could be reached, `false` otherwise. Firewalls do not block ping requests.",
+    "description": "Returns a `number`. If the remote address could be reached the value will be one, zero otherwise. Firewalls do not block ping requests. Passing an invalid ip will cause the method to return a `string` with an error message. If any provided arguments deviate from the method signature a runtime exception will be thrown. If the passed object is a map-like object such as `computer` or `file` but not `shell` this method will return `null`.",
     "example": [
       "shell = get_shell",
       "isPingable = ping(shell, \"1.1.1.1\")",

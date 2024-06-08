@@ -203,3 +203,10 @@ VariationRegistry.add('PlayerUtils.SendMail', [
   "The email couldn't be sent. The recipient has blocked emails sent by other players.",
   "The email couldn't be sent. The recipient has blocked emails sent by other players using npcs accounts."
 ]);
+
+// calls PlayerUtils.ConnectComputer
+// calls Networking.CheckServiceOnline
+VariationRegistry.add('PlayerUtils.ConnectToService', [
+  "Invalid service ID",
+  "can't connect: incorrect user/password"
+]);
