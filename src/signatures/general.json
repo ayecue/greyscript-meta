@@ -94,7 +94,7 @@
           "type": "string",
           "default": {
             "type": "string",
-            "default": ""
+            "value": ""
           }
         }
       ],
@@ -220,7 +220,7 @@
       "arguments": [
         {
           "label": "self",
-          "type": [
+          "types": [
             "map",
             "string"
           ]
@@ -462,7 +462,7 @@
           "label": "isPassword",
           "type": "number",
           "default": {
-            "type": "string",
+            "type": "number",
             "value": 0
           }
         },
@@ -470,7 +470,7 @@
           "label": "anyKey",
           "type": "number",
           "default": {
-            "type": "string",
+            "type": "number",
             "value": 0
           }
         }
@@ -1554,7 +1554,7 @@
           "type": "string",
           "default": {
             "type": "string",
-            "default": ""
+            "value": ""
           }
         }
       ],

@@ -112,7 +112,7 @@
           "type": "string",
           "default": {
             "type": "string",
-            "default": ""
+            "value": ""
           }
         }
       ],

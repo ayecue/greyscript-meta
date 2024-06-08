@@ -57,6 +57,6 @@
     "greyhack"
   ],
   "dependencies": {
-    "meta-utils": "~2.4.0"
+    "meta-utils": "~2.4.2"
   }
 }
