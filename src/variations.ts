@@ -223,3 +223,35 @@ VariationRegistry.add('BlockchainSystem.GetInfoSubWallet', [
   "Error: main wallet linked to ${subWalletUser} does not exist anymore",
   "Error: Coin ${coinName}does not exist in the Wallet user"
 ]);
+
+VariationRegistry.add('BlockchainSystem.ResetWalletPass', [
+  "Error: Wallet does not exist.",
+  "Error: Only the account owner can change the password",
+  "Error: The password can only be reset once a day"
+]);
+
+VariationRegistry.add('BlockchainSystem.SellCoin', [
+  "Error: Coin ${coinName} does not exist",
+  "Error: Wallet does not exist",
+  "Subwallet ${subwalletID} does not exist",
+  "Error: subwallet does not contain enough coins to sell",
+  "Error: exceeded maximum of 21 million coins",
+  "Purchase failed: It is necessary to create a bank account to make transactions",
+  "Error: You already have a pending sale. Cancel it to create a new sale.",
+  "Error: You already have a pending purchase. Cancel it to create a new sale.",
+  "Not enough buyers found. Transaction is pending until a buyer is found.",
+  "A partial transaction has occurred. The data of your offer has been updated"
+]);
+
+VariationRegistry.add('BlockchainSystem.BuyCoin', [
+  "Error: Coin ${coinName} does not exist",
+  "Error: Wallet does not exist",
+  "You need to be registered in ${coinName} to be able to buy this coin.",
+  "Subwallet ${subwalletID} does not exist",
+  "Purchase failed: It is necessary to create a bank account to make transactions",
+  "Purchase failed: Insufficient money in the bank. Required $${price}",
+  "Error: You already have a pending sale. Cancel it to create a new purchase.",
+  "Error: You already have a pending purchase. Cancel it to create a new purchase.",
+  "Not enough sellers found. Transaction is pending until a seller is found.",
+  "A partial transaction has occurred. The data of your offer has been updated"
+]);

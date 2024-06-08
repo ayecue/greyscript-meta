@@ -4,10 +4,17 @@
   "definitions": {
     "list_coins": {
       "type": "function",
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access.",
+        "Error: wallet does not exist/incorrect credentials."
+      ],
       "returns": [
-        "list:string",
-        "string",
-        "number"
+        {
+          "type": "list",
+          "valueType": "string"
+        },
+        "string"
       ]
     },
     "get_balance": {
@@ -18,9 +25,16 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access.",
+        "Error: wallet does not exist/incorrect credentials.",
+        "get_balance: wallet does not have coins in the selected currency"
+      ],
       "returns": [
         "number",
-        "string"
+        "string",
+        "null"
       ]
     },
     "buy_coin": {
@@ -42,6 +56,12 @@
           "label": "subwalletUser",
           "type": "string"
         }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access.",
+        "sell_coin: coin amount and proposed price cannot be 0.",
+        1
       ],
       "returns": [
         "number",
@@ -68,6 +88,12 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access.",
+        "sell_coin: coin amount and proposed price cannot be 0.",
+        1
+      ],
       "returns": [
         "number",
         "string"
@@ -81,10 +107,14 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access."
+      ],
       "returns": [
-        "number",
         "string",
-        "list:any"
+        "list",
+        "null"
       ]
     },
     "cancel_pending_trade": {
@@ -95,9 +125,13 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access."
+      ],
       "returns": [
         "string",
-        "number"
+        "null"
       ]
     },
     "get_global_offers": {
@@ -108,17 +142,32 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access."
+      ],
       "returns": [
-        "number",
         "string",
-        "map:any"
+        {
+          "type": "map",
+          "keyType": "string",
+          "valueType": "list"
+        },
+        "null"
       ]
     },
     "list_global_coins": {
       "type": "function",
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access."
+      ],
       "returns": [
-        "number",
-        "list:string"
+        "string",
+        {
+          "type": "list",
+          "valueType": "string"
+        }
       ]
     },
     "show_nodes": {
@@ -129,10 +178,16 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access.",
+        "show_nodes: wallet does not exist",
+        "show_nodes: coin does not exist"
+      ],
       "returns": [
-        "number",
         "string",
-        "number"
+        "number",
+        "null"
       ]
     },
     "reset_password": {
@@ -143,15 +198,27 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access.",
+        "reset_password: only alphanumeric characters are allowed as password",
+        "reset_password: name and password cannot exceed the 16 character limit.",
+        "!BlockchainSystem.ResetWalletPass",
+        1
+      ],
       "returns": [
         "number",
-        "string"
+        "string",
+        "null"
       ]
     },
     "get_pin": {
       "type": "function",
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access."
+      ],
       "returns": [
-        "number",
         "string"
       ]
     }

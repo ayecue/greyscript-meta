@@ -2120,37 +2120,149 @@
     ]
   },
   "list_coins": {
-    "description": "Returns a `list` where each item is a `string` with the names of the coins available in the `wallet`."
+    "description": "Returns a `list` where each item is a `string` with the names of the coins available in the `wallet`. On failure this method returns a `string` with an error message. If the passed value is not a `wallet` this method will return `null`.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "wallet = login_wallet(blockchain, \"test\", \"test\")",
+      "print \"My wallet is connected to: \" + join(list_coins(wallet), \", \")"
+    ]
   },
   "get_balance": {
-    "description": "Returns a `number` of coins of a given currency. In case of error, a `string` with the details is returned."
+    "description": "Returns a `number` of coins of a given currency. In case of error, a `string` with the details is returned. Returns a `number` of coins of a given currency. In case of error, a `string` with the details is returned. Any deviation from the method signature will result in a `null`.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "wallet = login_wallet(blockchain, \"test\", \"test\")",
+      "for coinName in list_coins(wallet)",
+      "    print \"You have \" + get_balance(wallet, coinName) + \" coins of the currency \"\"\" + coinName + \"\"\"\"",
+      "end for"
+    ]
   },
   "buy_coin": {
-    "description": "Publish a purchase offer indicating the `number` of coins you wish to buy and the price ($) per unit you are willing to pay. The purchase will be finalized if there is any sale offer with a price less than or equal to the one proposed in the purchase. If there is no eligible offer to sell at that time, the offer to buy will remain publicly visible until a new offer to sell satisfies the requirements. If the publication has been successful, true is returned, in case of error a `string` with the details is returned."
+    "description": "Publishes a purchase offer indicating the number of coins you wish to buy and the price ($) per unit you are willing to pay. The purchase will be finalized if there is any sale offer with a price less than or equal to the one proposed in the purchase. If there is no eligible offer to sell at that time, the offer to buy will remain publicly visible until a new offer to sell satisfies the requirements. If the publication has been successful, a `number` with the value one is returned. In case of error, a `string` with the details is returned. Any deviation from the method signature will result in a runtime exception preventing further script execution.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "wallet = login_wallet(blockchain, \"test\", \"test\")",
+      "result = buy_coin(wallet, \"test\", 100, 20, \"test\")",
+      "if result == 1 then",
+      "    print \"Sucessfully created purchase offer!\"",
+      "else",
+      "    print \"Failed: \" + result",
+      "end if"
+    ]
   },
   "sell_coin": {
-    "description": "Publish a sale offer indicating the amount of coins you want to sell and the price ($) per unit you want to assign. The sale will be finalized if there is any purchase offer with a price greater than or equal to that proposed in the sale. If there is no existing offer to buy that matches the requirements at that time, the offer to sell will remain publicly visible until a new offer to buy satisfies the requirements. If the publication has been successful, true is returned, in case of error a `string` with the details is returned."
+    "description": "Publishes a sale offer indicating the amount of coins you want to sell and the price ($) per unit you want to assign. The sale will be finalized if there is any purchase offer with a price greater than or equal to that proposed in the sale. If there is no existing offer to buy that matches the requirements at that time, the offer to sell will remain publicly visible until a new offer to buy satisfies the requirements. If the publication has been successful, a `number` with the value one is returned. In case of error, a `string` with the details is returned. Any deviation from the method signature will result in a runtime exception preventing further script execution.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "wallet = login_wallet(blockchain, \"test\", \"test\")",
+      "result = sell_coin(wallet, \"test\", 100, 20, \"test\")",
+      "if result == 1 then",
+      "    print \"Sucessfully created sell offer!\"",
+      "else",
+      "    print \"Failed: \" + result",
+      "end if"
+    ]
   },
   "get_pending_trade": {
-    "description": "Returns a `list` with the pending sale or purchase offer of this wallet of a certain currency. Index 0 of the `list` represents the type of offer with a `string` (Buy/Sell), index 1 represents the quantity to be sold or bought, and index 2 represents the price per unit."
+    "description": "Returns a `list` with the pending sale or purchase offer of this wallet for a certain currency. Index 0 of the `list` represents the type of offer with a `string` (Buy/Sell), index 1 represents the quantity to be sold or bought, and index 2 represents the price per unit. On failure, this method will return a `string` with details. Any deviation from the method signature will result in a `null`.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "wallet = login_wallet(blockchain, \"test\", \"test\")",
+      "result = get_pending_trade(wallet, \"test\")",
+      "isBuying = result[0] == \"Buy\"",
+      "quantity = result[1]",
+      "unitPrice = result[2]",
+      "currentBalance = get_balance(wallet, \"test\")",
+      "if isBuying then",
+      "    print \"After buying was successful your balance will be \" + (quantity * unitPrice + currentBalance)",
+      "else",
+      "    print \"After selling was successful your balance will be \" + (currentBalance - quantity * unitPrice)",
+      "end if"
+    ]
   },
   "cancel_pending_trade": {
-    "description": "Cancel any pending offer of a certain coin."
+    "description": "Cancel any pending offer of a certain coin. On success, an empty `string` will be returned. On failure, a `string` with an error message will be returned. Any deviation from the method signature will result in `null`.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "wallet = login_wallet(blockchain, \"test\", \"test\")",
+      "if cancel_pending_trade(wallet, \"test\") == \"\" then",
+      "    print \"Trade got canceled!\"",
+      "end if"
+    ]
   },
   "get_global_offers": {
-    "description": "Returns a `map` with all the offers made by any player of a given currency. The Key of the `map` represents the WalletID of the player who has made the offer, The Value of the `map` is a `list` where the index 0 represents the type of offer with a `string` (Buy/Sell), the index 1 represents the amount to sell or buy and the index 2 represents the price per unit."
+    "description": "Returns a `map` with all the offers made by any player of a given currency. The key of the `map` represents the WalletID of the player who has made the offer, and the value of the `map` is a `list` where index 0 represents the type of offer with a `string` (Buy/Sell), index 1 represents the amount to sell or buy, and index 2 represents the price per unit. In case of failure, this method returns a `string` with details. Any deviation from the method signature will result in `null`.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "wallet = login_wallet(blockchain, \"test\", \"test\")",
+      "for item in get_global_offers(wallet, \"test\")",
+      "    walletId = item.key",
+      "    trade = item.value",
+      "    isBuying = trade[0] == \"Buy\"",
+      "    quantity = trade[1]",
+      "    unitPrice = trade[2]",
+      "    print \"-\" * 10",
+      "    print \"<b>\" + walletId + \"</b>\"",
+      "    if isBuying then",
+      "        print \"<color=green>Is buying</color>\"",
+      "    else",
+      "        print \"<color=yellow>Is selling</color>\"",
+      "    end if",
+      "    print quantity + \" coins with a unit price of \" + unitPrice",
+      "end for"
+    ]
   },
   "list_global_coins": {
-    "description": "Returns a `list` where each item is a `string` containing the names of all the currencies that exist."
+    "description": "Returns a `list` where each item is a `string` containing the names of all the currencies that exist. In case of failure, this method returns a `string` with details. If the passed value is not a `wallet` this method will return `null`.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "wallet = login_wallet(blockchain, \"test\", \"test\")",
+      "print \"All existing coins: \" join(list_global_coins(wallet), \", \")"
+    ]
   },
   "show_nodes": {
-    "description": "Returns a `number` of devices mining a specific coin for the same `wallet`. In case of error a `string` is returned with the details."
+    "description": "Returns a `number` representing the count of devices mining a specific coin for the same `wallet`. In case of an error, a `string` with details is returned. Any deviation from the method signature will result in `null`.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "wallet = login_wallet(blockchain, \"test\", \"test\")",
+      "print \"Active miners: \" show_nodes(wallet, \"test\")"
+    ]
   },
   "reset_password": {
-    "description": "Change the password of the wallet. Only the account owner can change the password. Returns `true` if the process is completed successfully, in case of error a `string` with the details is returned."
+    "description": "Change the password of the wallet. Only the account owner can perform this action. If the process is completed successfully, a `number` with the value one will be returned. In case of an error, a `string` with details will be returned. Any deviation from the method signature will result in `null`.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "wallet = login_wallet(blockchain, \"test\", \"test\")",
+      "if reset_password(wallet, \"test\") == 1 then",
+      "    print \"You got a new password!\"",
+      "end if"
+    ]
   },
   "get_pin": {
-    "description": "Returns a `string` with a PIN that refreshes every few minutes. This PIN is used to obtain an account in cryptocurrency services."
+    "description": "Returns a `string` with a PIN that refreshes every few minutes. This PIN is used to obtain an account in cryptocurrency services. If the passed value is not a `wallet` this method will return `null`.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "myShell = get_shell",
+      "myComputer = host_computer(myShell)",
+      "wallet = login_wallet(blockchain, \"test\", \"test\")",
+      "touch(myComputer, \"/root\", \"pin_launch.src\")",
+      "myFile = File(myComputer, \"/root/pin_launch.src\")",
+      "set_content(myFile, \"",
+      "    blockchain = include_lib(\"\"/lib/blockchain.so\"\")",
+      "    myShell = get_shell",
+      "    myComputer = host_computer(myShell)",
+      "    wallet = login_wallet(blockchain, \"\"test\"\", \"\"test\"\")",
+      "    if params[0] == get_pin(wallet) then",
+      "        get_custom_object.secret = \"\"The answer is 42\"\"",
+      "    else",
+      "        get_custom_object.secret = \"\"The answer is 10053\"\"",
+      "    end if",
+      "\")",
+      "build(myShell, \"/root/pin_launch.src\", \"/root\")",
+      "delete(myFile)",
+      "launch(myShell, \"/root/pin_launch\", get_pin(wallet))",
+      "print \"The secret: \" + get_custom_object.secret"
+    ]
   },
   "delete_mail": {
     "description": "Delete the email corresponding to the provided email ID. Returns a `number` with the value one if the email removal was successful. Otherwise, a `string` with an error message will be returned. If any of the provided values deviate from the method signature, it will return `null`.",
