@@ -210,3 +210,16 @@ VariationRegistry.add('PlayerUtils.ConnectToService', [
   "Invalid service ID",
   "can't connect: incorrect user/password"
 ]);
+
+VariationRegistry.add('BlockchainSystem.SetInfoSubWallet', [
+  "Error: ${coinName} does not exist",
+  "Error: ${subWalletUser} does not exist",
+  "Error: main wallet linked to ${subWalletUser} does not exist anymore"
+]);
+
+VariationRegistry.add('BlockchainSystem.GetInfoSubWallet', [
+  "Error: ${coinName} does not exist",
+  "Error: ${subWalletUser} does not exist",
+  "Error: main wallet linked to ${subWalletUser} does not exist anymore",
+  "Error: Coin ${coinName}does not exist in the Wallet user"
+]);

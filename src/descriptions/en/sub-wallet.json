@@ -1,32 +1,107 @@
 {
-    "$meta": {
-        "description": "A `subWallet` object can be obtained by either using [get_subwallet](#COIN_GET_SUBWALLET) or [get_subwallets](#COIN_GET_SUBWALLETS). The `classID` used for this object is `\"subwallet\"`."
-    },
-    "get_balance": {
-        "description": "Returns a `number` of coins of a given currency. In case of error, a `string` with the details is returned."
-    },
-    "set_info": {
-        "description": "Optional information that the coin creator can store in the Subwallet for any use."
-    },
-    "get_info": {
-        "description": "Returns a `string` with the information stored by the coin creator."
-    },
-    "delete": {
-        "description": "Delete the account registered in the cryptocurrency. Returns `true` on success or a `string` with the details of the error. It can return `false` if the account to be deleted does not exist."
-    },
-    "get_user": {
-        "description": "Returns a `string` with the username associated with this subwallet."
-    },
-    "last_transaction": {
-        "description": "Returns a `list` with the information of the last transaction. Index 0 is a `string` with the other subWallet. Index 1 is an int with the amount. Index 2 is a `number` with the direction of the transaction (0 Deposit, 1 Withdrawal). Index 3 is a `string` indicating the date of the transaction."
-    },
-    "mining": {
-        "description": "Starts the process of mining the cryptocurrency. The process leaves the terminal busy until a coin is mined, returning `true`."
-    },
-    "check_password": {
-        "description": "Returns `true` if the credentials are correct, `false` otherwise."
-    },
-    "wallet_username": {
-        "description": "Returns a `string` with the name of the `wallet` to which this subwallet belongs."
-    }
+  "$meta": {
+    "description": "A `subWallet` object can be obtained by either using [get_subwallet](#COIN_GET_SUBWALLET) or [get_subwallets](#COIN_GET_SUBWALLETS). The `classID` used for this object is `\"subwallet\"`."
+  },
+  "get_balance": {
+    "description": "Returns a `number` of coins of a given currency. In case of error, a `string` with the details is returned.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coin = blockchain.get_coin(\"test\", \"test\", \"test\")",
+      "subWallet = coin.get_subwallet(\"test\")",
+      "print \"Balance: \" + subWallet.get_balance"
+    ]
+  },
+  "set_info": {
+    "description": "Stores optional information in the Subwallet for any use. Upon success, a `number` with the value one will be returned. In case of failure, a `string` with details will be returned.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
+      "subWallet = get_subwallet(coin, \"test\")",
+      "result = set_info(subWallet, \"test\")",
+      "if result == 1 then",
+      "    print \"Subwallet info got set!\"",
+      "end if"
+    ]
+  },
+  "get_info": {
+    "description": "Returns a `string` with the information stored by the coin creator.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
+      "subWallet = get_subwallet(coin, \"test\")",
+      "print \"Subwallet info: \" + get_info(subWallet)"
+    ]
+  },
+  "delete": {
+    "description": "Deletes the account registered in the cryptocurrency. Returns a `number` where one indicates successful deletion and zero indicates failure. In case of certain failures, this method may return a `string` with details.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
+      "subWallet = get_subwallet(coin, \"test\")",
+      "result = delete_subwallet(subWallet)",
+      "if result == 1 then",
+      "    print \"Subwallet got deleted!\"",
+      "end if"
+    ]
+  },
+  "get_user": {
+    "description": "Returns a `string` with the username associated with this subwallet. On failure, this method returns a `string` with an error message.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
+      "subWallet = get_subwallet(coin, \"test\")",
+      "print \"Subwallet user: \" + get_user(subWallet)"
+    ]
+  },
+  "last_transaction": {
+    "description": "Returns a `list` with the information of the last transaction. Index 0 is a `string` with the other subWallet. Index 1 is an integer with the amount. Index 2 is a `number` indicating the direction of the transaction (0 for Deposit, 1 for Withdrawal). Index 3 is a `string` indicating the date of the transaction. On failure, this method will either return a `number` with the value zero or a `string` with an error message.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
+      "subWallet = get_subwallet(coin, \"test\")",
+      "transactionItem = last_transaction(subWallet)",
+      "destinationAccount = transactionItem[0]",
+      "amount = transactionItem[1]",
+      "direction = transactionItem[2]",
+      "completeDate = transactionItem[3]",
+      "if direction == 0 then",
+      "    print \"Received \" + amount + \" from \" + destinationAccount + \" got completed at the \" + completeDate",
+      "else",
+      "    print \"Send \" + amount + \" to \" + destinationAccount + \" got completed at the \" + completeDate",
+      "end if "
+    ]
+  },
+  "mining": {
+    "description": "Starts the process of mining the cryptocurrency. The process leaves the terminal busy until a coin is mined. On success, this method will return a `number` with the value one. On failure, this method will return a `string` with details.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
+      "subWallet = get_subwallet(coin, \"test\")",
+      "while mining(subWallet) == 1",
+      "    print \"Mining...\", true",
+      "    print \"Balance \" + get_balance_subwallet(subWallet)",
+      "end while"
+    ]
+  },
+  "check_password": {
+    "description": "Returns a `number` with the value one if the credentials are correct, otherwise, the value is zero. For some cases, this method will return a `string` with an error message.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
+      "subWallet = get_subwallet(coin, \"test\")",
+      "password = user_input(\"SubWallet password:\", true)",
+      "if check_password(subWallet, password) == 1 then",
+      "    print \"Password is correct!\"",
+      "end if"
+    ]
+  },
+  "wallet_username": {
+    "description": "Returns a `string` with the name of the `wallet` to which this subwallet belongs.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coin = get_coin(blockchain, \"test\", \"test\", \"test\")",
+      "subWallet = get_subwallet(coin, \"test\")",
+      "print \"SubWallet username: \" + wallet_username(subWallet)"
+    ]
+  }
 }

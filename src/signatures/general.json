@@ -3990,9 +3990,15 @@
           "type": "subWallet"
         }
       ],
+      "returnVariations": [
+        "get_balance: The account does not exist.",
+        "Unknown error: Unable to access to local computer",
+        "No internet access."
+      ],
       "returns": [
         "number",
-        "string"
+        "string",
+        "null"
       ]
     },
     "set_info": {
@@ -4006,6 +4012,13 @@
           "label": "info",
           "type": "string"
         }
+      ],
+      "returnVariations": [
+        "Error: exceeded maximum of 256 characters",
+        "Unknown error: Unable to access to local computer",
+        "No internet access.",
+        "!BlockchainSystem.SetInfoSubWallet",
+        1
       ],
       "returns": [
         "number",
@@ -4021,9 +4034,14 @@
           "type": "subWallet"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access.",
+        "!BlockchainSystem.GetInfoSubWallet"
+      ],
       "returns": [
-        "number",
-        "string"
+        "string",
+        "null"
       ]
     },
     "delete_subwallet": {
@@ -4034,8 +4052,16 @@
           "type": "subWallet"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access.",
+        1,
+        0
+      ],
       "returns": [
-        "number"
+        "string",
+        "number",
+        "null"
       ]
     },
     "get_user": {
@@ -4046,9 +4072,13 @@
           "type": "subWallet"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access."
+      ],
       "returns": [
-        "number",
-        "string"
+        "string",
+        "null"
       ]
     },
     "last_transaction": {
@@ -4059,9 +4089,19 @@
           "type": "subWallet"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access.",
+        0
+      ],
       "returns": [
-        "list:any",
-        "number"
+        {
+          "type": "list",
+          "valueType": "list"
+        },
+        "number",
+        "string",
+        "null"
       ]
     },
     "mining": {
@@ -4072,9 +4112,20 @@
           "type": "subWallet"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access.",
+        "all existing coins of ${coinName} have been mined.",
+        "Only one mining process is allowed.",
+        "Error: GPU is damaged. Unable to start the mining process.",
+        "Error: GPU returned corrupted data while performing floating point tests. Unable to start the mining process.",
+        "Hardware error",
+        1
+      ],
       "returns": [
         "number",
-        "string"
+        "string",
+        "null"
       ]
     },
     "check_password": {
@@ -4089,9 +4140,17 @@
           "type": "string"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access.",
+        "login_subwallet: the account does not exist.",
+        1,
+        0
+      ],
       "returns": [
         "number",
-        "string"
+        "string",
+        "null"
       ]
     },
     "wallet_username": {
@@ -4102,9 +4161,13 @@
           "type": "subWallet"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access."
+      ],
       "returns": [
-        "number",
-        "string"
+        "string",
+        "null"
       ]
     },
     "list_coins": {
