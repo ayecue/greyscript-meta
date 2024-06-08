@@ -1,37 +1,37 @@
 {
-    "$meta": {
-        "description": "A `port` object can be obtained by using [get_ports](#COMPUTER_GET_PORTS), [ping_port](#ROUTER_PING_PORT), [used_ports](#ROUTER_USED_PORTS) or [device_ports](#ROUTER_DEVICE_PORTS). The `classID` used for this object is `\"port\"`. Generally there are no restrictions in regards to which service runs on which port but there are some default ports for each service. List of the most common ports: `21` (FTP), `22` (SSH), `25` (SMTP), `80` (HTTP), `141` (SQL), `8080` (HTTP), `1222` (RSHELL), `1542` (Repository), `3306` (SQL), `3307` (SQL), `3308` (SQL), `6667` (Chat), `37777` (CCTV)"
-    },
-    "port_number": {
-        "description": "Returns the `number` which is used for the port.",
-        "example": [
-            "router = get_router",
-            "ports = router.used_ports",
-            "for port in ports",
-            "   print(\"Port \" + port.port_number + \" is in use!\")",
-            "end for"
-        ]
-    },
-    "is_closed": {
-        "description": "Returns `true` if this port is closed, `false` if the port is open.",
-        "example": [
-            "router = get_router",
-            "ports = router.used_ports",
-            "for port in ports",
-            "   state = \"open\"",
-            "   if (port.is_closed) then state = \"closed\"",
-            "   print(\"Port \" + port.port_number + \" is \" + state + \"!\")",
-            "end for"
-        ]
-    },
-    "get_lan_ip": {
-        "description": "Returns a `string` containing the local IP address of the computer to which the port is pointing.",
-        "example": [
-            "router = get_router",
-            "ports = router.used_ports",
-            "for port in ports",
-            "   print(\"Port \" + port.port_number + \" is pointed to \" + port.get_lan_ip + \"!\")",
-            "end for"
-        ]
-    }
+  "$meta": {
+    "description": "A `port` object can be obtained by using [get_ports](#COMPUTER_GET_PORTS), [ping_port](#ROUTER_PING_PORT), [used_ports](#ROUTER_USED_PORTS) or [device_ports](#ROUTER_DEVICE_PORTS). The `classID` used for this object is `\"port\"`. Generally there are no restrictions in regards to which service runs on which port but there are some default ports for each service. List of the most common ports: `21` (FTP), `22` (SSH), `25` (SMTP), `80` (HTTP), `141` (SQL), `8080` (HTTP), `1222` (RSHELL), `1542` (Repository), `3306` (SQL), `3307` (SQL), `3308` (SQL), `6667` (Chat), `37777` (CCTV)"
+  },
+  "port_number": {
+    "description": "Returns the `number` which is used for the port.",
+    "example": [
+      "router = get_router",
+      "ports = router.used_ports",
+      "for port in ports",
+      "   print(\"Port \" + port.port_number + \" is in use!\")",
+      "end for"
+    ]
+  },
+  "is_closed": {
+    "description": "Returns a `number`, where one indicates that the specified `port` is open and zero indicates that the port is closed.",
+    "example": [
+      "router = get_router",
+      "ports = router.used_ports",
+      "for port in ports",
+      "   state = \"open\"",
+      "   if (port.is_closed) then state = \"closed\"",
+      "   print(\"Port \" + port.port_number + \" is \" + state + \"!\")",
+      "end for"
+    ]
+  },
+  "get_lan_ip": {
+    "description": "Returns a `string` containing the local IP address of the computer to which the port is pointing.",
+    "example": [
+      "router = get_router",
+      "ports = router.used_ports",
+      "for port in ports",
+      "   print(\"Port \" + port.port_number + \" is pointed to \" + port.get_lan_ip + \"!\")",
+      "end for"
+    ]
+  }
 }

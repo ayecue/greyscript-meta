@@ -1,199 +1,236 @@
 {
-  "remove": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "toDelete",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string"
-    ]
-  },
-  "hasIndex": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "index",
-        "type": "number"
-      }
-    ],
-    "returns": [
-      "number"
-    ]
-  },
-  "insert": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "index",
-        "type": "number"
-      },
-      {
-        "label": "value",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string"
-    ]
-  },
-  "indexOf": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "value",
-        "type": "string"
-      },
-      {
-        "label": "offset",
-        "type": "number",
-        "opt": true
-      }
-    ],
-    "returns": [
-      "number",
-      "null"
-    ]
-  },
-  "lastIndexOf": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "value",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number"
-    ]
-  },
-  "split": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "pattern",
-        "type": "string"
-      },
-      {
-        "label": "regexOptions",
-        "type": "string",
-        "default": "\"none\""
-      }
-    ],
-    "returns": [
-      "list:string"
-    ]
-  },
-  "replace": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "pattern",
-        "type": "string"
-      },
-      {
-        "label": "newValue",
-        "type": "string"
-      },
-      {
-        "label": "regexOptions",
-        "type": "string",
-        "default": "\"none\""
-      }
-    ],
-    "returns": [
-      "string"
-    ]
-  },
-  "trim": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "indexes": {
-    "type": "function",
-    "returns": [
-      "list:number"
-    ]
-  },
-  "code": {
-    "type": "function",
-    "returns": [
-      "number"
-    ]
-  },
-  "len": {
-    "type": "function",
-    "returns": [
-      "number"
-    ]
-  },
-  "lower": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "upper": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "val": {
-    "type": "function",
-    "returns": [
-      "number"
-    ]
-  },
-  "values": {
-    "type": "function",
-    "returns": [
-      "list:string"
-    ]
-  },
-  "to_int": {
-    "type": "function",
-    "returns": [
-      "string",
-      "number"
-    ]
-  },
-  "is_match": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "pattern",
-        "type": "string"
-      },
-      {
-        "label": "regexOptions",
-        "type": "string",
-        "default": "\"none\""
-      }
-    ],
-    "returns": [
-      "boolean"
-    ]
-  },
-  "matches": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "pattern",
-        "type": "string"
-      },
-      {
-        "label": "regexOptions",
-        "type": "string",
-        "default": "\"none\""
-      }
-    ],
-    "returns": [
-      "map:string"
-    ]
+  "type": "string",
+  "definitions": {
+    "remove": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "value",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "string"
+      ]
+    },
+    "hasIndex": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "index",
+          "type": "number"
+        }
+      ],
+      "returnVariations": [
+        0,
+        1
+      ],
+      "returns": [
+        "number"
+      ]
+    },
+    "insert": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "index",
+          "type": "number"
+        },
+        {
+          "label": "value",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "string"
+      ]
+    },
+    "indexOf": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "value",
+          "type": "string"
+        },
+        {
+          "label": "offset",
+          "type": "number",
+          "opt": true
+        }
+      ],
+      "returns": [
+        "number",
+        "null"
+      ]
+    },
+    "lastIndexOf": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "searchStr",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "number"
+      ]
+    },
+    "split": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "pattern",
+          "type": "string"
+        },
+        {
+          "label": "regexOptions",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": "none"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "type": "list",
+          "valueType": "string"
+        },
+        "null"
+      ]
+    },
+    "replace": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "pattern",
+          "type": "string"
+        },
+        {
+          "label": "newValue",
+          "type": "string"
+        },
+        {
+          "label": "regexOptions",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": "none"
+          }
+        }
+      ],
+      "returns": [
+        "string"
+      ]
+    },
+    "trim": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    },
+    "indexes": {
+      "type": "function",
+      "returns": [
+        {
+          "type": "list",
+          "valueType": "number"
+        }
+      ]
+    },
+    "code": {
+      "type": "function",
+      "returns": [
+        "number"
+      ]
+    },
+    "len": {
+      "type": "function",
+      "returns": [
+        "number"
+      ]
+    },
+    "lower": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    },
+    "upper": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    },
+    "val": {
+      "type": "function",
+      "returns": [
+        "number"
+      ]
+    },
+    "values": {
+      "type": "function",
+      "returns": [
+        {
+          "type": "list",
+          "valueType": "string"
+        }
+      ]
+    },
+    "to_int": {
+      "type": "function",
+      "returns": [
+        "string",
+        "number"
+      ]
+    },
+    "is_match": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "pattern",
+          "type": "string"
+        },
+        {
+          "label": "regexOptions",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": "none"
+          }
+        }
+      ],
+      "returnVariations": [
+        1,
+        0
+      ],
+      "returns": [
+        "number"
+      ]
+    },
+    "matches": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "pattern",
+          "type": "string"
+        },
+        {
+          "label": "regexOptions",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": "none"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "type": "map",
+          "keyType": "number",
+          "valueType": "string"
+        }
+      ]
+    }
   }
 }

@@ -1,57 +1,89 @@
 {
-  "delete": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "mailId",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "fetch": {
-    "type": "function",
-    "arguments": [],
-    "returns": [
-      "list:string",
-      "string"
-    ]
-  },
-  "read": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "mailId",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string"
-    ]
-  },
-  "send": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "emailAddress",
-        "type": "string"
-      },
-      {
-        "label": "subject",
-        "type": "string"
-      },
-      {
-        "label": "message",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "number",
-      "null"
-    ]
+  "type": "metaMail",
+  "extends": "map",
+  "definitions": {
+    "delete": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "mailId",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "read: No internet access.",
+        1
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "fetch": {
+      "type": "function",
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "fetch: No internet access."
+      ],
+      "returns": [
+        {
+          "type": "list",
+          "valueType": "string"
+        },
+        "string"
+      ]
+    },
+    "read": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "mailId",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "fetch: No internet access.",
+        "Mail not found"
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "send": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "emailAddress",
+          "type": "string"
+        },
+        {
+          "label": "subject",
+          "type": "string"
+        },
+        {
+          "label": "message",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "The mail could not be sent. Wait a moment before sending another email.",
+        "Unknown error: Unable to access to local computer",
+        "read: No internet access.",
+        "read: No email account registered",
+        "!PlayerUtils.SendMail",
+        "!Database.GetMailAccount",
+        "Mail not delivered",
+        1
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    }
   }
 }

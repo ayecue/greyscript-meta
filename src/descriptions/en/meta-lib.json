@@ -1,47 +1,47 @@
 {
-    "$meta": {
-        "description": "A `metaLib` object can be obtained by either using [load](#METAXPLOIT_LOAD) or [dump_lib](#NETSESSION_DUMP_LIB). The `classID` used for this object is `\"MetaLib\"`."
-    },
-    "overflow": {
-        "description": "Exploits vulnerabilities. The returned value can be of various data types. Therefore the usage of `typeof` is advisable. `optArgs` is required when changing a password or obtaining a `computer` via a router. It should be the desired password or LAN IP, respectively.",
-        "example": [
-            "metax = include_lib(\"/lib/metaxploit.so\")",
-            "metaLib = metax.load(\"/lib/init.so\")",
-            "scanResult = metax.scan(metaLib)",
-            "target = scanResult[0]",
-            "scanAddress = metax.scan_address(metaLib, target)",
-            "segments = scanAddress.split(\"Unsafe check: \")",
-            "exploit = null",
-           " for segment in segments",
-            "   hasRequirement = segment.indexOf(\"*\") != null",
-            "   if (not hasRequirement) then",
-            "      labelStart = segment.indexOf(\"<b>\")",
-            "      labelEnd = segment.indexOf(\"</b>\")",
-            "      exploit = segment[labelStart + 3: labelEnd]",
-            "   end if",
-            "end for",
-            "if (exploit) then",
-            "   print(\"Exploiting... \" + target + \":\" + exploit)",
-            "   print(metaLib.overflow(target, exploit))",
-            "else",
-            "   print(\"No exploit found with zero requirements\")",
-            "end if"
-        ]
-    },
-    "version": {
-        "description": "Returns a `string` containing the version number of the library. Here is an example of a version number: `\"1.0.0\"`",
-        "example": [
-            "metax = include_lib(\"/lib/metaxploit.so\")",
-            "metaLib = metax.load(\"/lib/init.so\")",
-            "print(\"Init.so version: \" + metaLib.version)"
-        ]
-    },
-    "lib_name": {
-        "description": "Returns a `string` containing the name of the library. Here is an example of a name: `\"init.so\"`",
-        "example": [
-            "metax = include_lib(\"/lib/metaxploit.so\")",
-            "metaLib = metax.load(\"/lib/init.so\")",
-            "print(\"Name for library is: \" + metaLib.lib_name)"
-        ]
-    }
+  "$meta": {
+    "description": "A `metaLib` object can be obtained by either using [load](#METAXPLOIT_LOAD) or [dump_lib](#NETSESSION_DUMP_LIB). The `classID` used for this object is `\"MetaLib\"`."
+  },
+  "overflow": {
+    "description": "Exploits vulnerabilities. The returned value can be of various data types. Therefore, using `typeof` is advisable. `optArgs` are required when changing a password or obtaining a `computer` via a router. It should be the desired password or LAN IP, respectively. Change password and firewall disable exploits will return a `number`, where the value is either one or zero. One indicates success while zero indicates failure. Shell, computer, and file exploits either return an instance of their type or `null`. Providing values that deviate from the defined signature will cause a runtime exception to be thrown.",
+    "example": [
+      "metax = include_lib(\"/lib/metaxploit.so\")",
+      "metaLib = metax.load(\"/lib/init.so\")",
+      "scanResult = metax.scan(metaLib)",
+      "target = scanResult[0]",
+      "scanAddress = metax.scan_address(metaLib, target)",
+      "segments = scanAddress.split(\"Unsafe check: \")",
+      "exploit = null",
+      " for segment in segments",
+      "   hasRequirement = segment.indexOf(\"*\") != null",
+      "   if (not hasRequirement) then",
+      "      labelStart = segment.indexOf(\"<b>\")",
+      "      labelEnd = segment.indexOf(\"</b>\")",
+      "      exploit = segment[labelStart + 3: labelEnd]",
+      "   end if",
+      "end for",
+      "if (exploit) then",
+      "   print(\"Exploiting... \" + target + \":\" + exploit)",
+      "   print(metaLib.overflow(target, exploit))",
+      "else",
+      "   print(\"No exploit found with zero requirements\")",
+      "end if"
+    ]
+  },
+  "version": {
+    "description": "Returns a `string` containing the version number of the library. An example of a version number would be `\"1.0.0\"`.",
+    "example": [
+      "metax = include_lib(\"/lib/metaxploit.so\")",
+      "metaLib = metax.load(\"/lib/init.so\")",
+      "print(\"Init.so version: \" + metaLib.version)"
+    ]
+  },
+  "lib_name": {
+    "description": "Returns a `string` containing the name of the library. An example of a name would be `\"init.so\"`.",
+    "example": [
+      "metax = include_lib(\"/lib/metaxploit.so\")",
+      "metaLib = metax.load(\"/lib/init.so\")",
+      "print(\"Name for library is: \" + metaLib.lib_name)"
+    ]
+  }
 }

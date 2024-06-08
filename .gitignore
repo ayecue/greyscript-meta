@@ -6,3 +6,4 @@ assets
 extract.js
 # Local Netlify folder
 .netlify
+testing.src

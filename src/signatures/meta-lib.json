@@ -1,40 +1,52 @@
 {
-  "overflow": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "memoryAddress",
-        "type": "string"
-      },
-      {
-        "label": "unsecZone",
-        "type": "string"
-      },
-      {
-        "label": "optArgs",
-        "type": "string",
-        "opt": true
-      }
-    ],
-    "returns": [
-      "string",
-      "number",
-      "shell",
-      "computer",
-      "file",
-      "null"
-    ]
-  },
-  "version": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "lib_name": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
+  "type": "metaLib",
+  "extends": "map",
+  "definitions": {
+    "overflow": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "memoryAddress",
+          "type": "string"
+        },
+        {
+          "label": "unsecZone",
+          "type": "string"
+        },
+        {
+          "label": "optArgs",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        }
+      ],
+      "returnVariations": [
+        "Exploit failed: the remote server has been temporarily disabled due to non-payment",
+        0,
+        1
+      ],
+      "returns": [
+        "string",
+        "number",
+        "shell",
+        "computer",
+        "file",
+        "null"
+      ]
+    },
+    "version": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    },
+    "lib_name": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    }
   }
 }

@@ -1,13 +1,13 @@
-import { Descriptions } from 'meta-utils';
+import { DescriptionsPayload } from 'meta-utils';
 
 import Any from './any.json';
 import AptClient from './apt-client.json';
 import Blockchain from './blockchain.json';
 import ClassLanguage from './class.json';
-import CTFEvent from './ctfEvent.json';
 import Coin from './coin.json';
 import Computer from './computer.json';
 import Crypto from './crypto.json';
+import CTFEvent from './ctfEvent.json';
 import File from './file.json';
 import FtpShell from './ftp-shell.json';
 import FunctionLanguage from './function.json';
@@ -27,7 +27,7 @@ import String from './string.json';
 import SubWallet from './sub-wallet.json';
 import Wallet from './wallet.json';
 
-const descriptions: Descriptions = {
+const descriptions: DescriptionsPayload = {
   any: Any,
   aptClient: AptClient,
   blockchain: Blockchain,

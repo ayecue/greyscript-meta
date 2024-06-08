@@ -1,155 +1,226 @@
 {
-  "list_coins": {
-    "type": "function",
-    "returns": [
-      "list:string",
-      "string",
-      "number"
-    ]
-  },
-  "get_balance": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "coinName",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "buy_coin": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "coinName",
-        "type": "string"
-      },
-      {
-        "label": "coinAmount",
-        "type": "number"
-      },
-      {
-        "label": "unitPrice",
-        "type": "number"
-      },
-      {
-        "label": "subwalletUser",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "sell_coin": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "coinName",
-        "type": "string"
-      },
-      {
-        "label": "coinAmount",
-        "type": "number"
-      },
-      {
-        "label": "unitPrice",
-        "type": "number"
-      },
-      {
-        "label": "subwalletUser",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "get_pending_trade": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "coinName",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string",
-      "list:any"
-    ]
-  },
-  "cancel_pending_trade": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "coinName",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "number"
-    ]
-  },
-  "get_global_offers": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "coinName",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string",
-      "map:any"
-    ]
-  },
-  "list_global_coins": {
-    "type": "function",
-    "returns": [
-      "number",
-      "list:string"
-    ]
-  },
-  "show_nodes": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "coinName",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string",
-      "number"
-    ]
-  },
-  "reset_password": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "newPassword",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "get_pin": {
-    "type": "function",
-    "returns": [
-      "number",
-      "string"
-    ]
+  "type": "wallet",
+  "extends": "map",
+  "definitions": {
+    "list_coins": {
+      "type": "function",
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access.",
+        "Error: wallet does not exist/incorrect credentials."
+      ],
+      "returns": [
+        {
+          "type": "list",
+          "valueType": "string"
+        },
+        "string"
+      ]
+    },
+    "get_balance": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "coinName",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access.",
+        "Error: wallet does not exist/incorrect credentials.",
+        "get_balance: wallet does not have coins in the selected currency"
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "buy_coin": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "coinName",
+          "type": "string"
+        },
+        {
+          "label": "coinAmount",
+          "type": "number"
+        },
+        {
+          "label": "unitPrice",
+          "type": "number"
+        },
+        {
+          "label": "subwalletUser",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access.",
+        "sell_coin: coin amount and proposed price cannot be 0.",
+        1
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "sell_coin": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "coinName",
+          "type": "string"
+        },
+        {
+          "label": "coinAmount",
+          "type": "number"
+        },
+        {
+          "label": "unitPrice",
+          "type": "number"
+        },
+        {
+          "label": "subwalletUser",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access.",
+        "sell_coin: coin amount and proposed price cannot be 0.",
+        1
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "get_pending_trade": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "coinName",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access."
+      ],
+      "returns": [
+        "string",
+        "list",
+        "null"
+      ]
+    },
+    "cancel_pending_trade": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "coinName",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access."
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "get_global_offers": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "coinName",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access."
+      ],
+      "returns": [
+        "string",
+        {
+          "type": "map",
+          "keyType": "string",
+          "valueType": "list"
+        },
+        "null"
+      ]
+    },
+    "list_global_coins": {
+      "type": "function",
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access."
+      ],
+      "returns": [
+        "string",
+        {
+          "type": "list",
+          "valueType": "string"
+        }
+      ]
+    },
+    "show_nodes": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "coinName",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access.",
+        "show_nodes: wallet does not exist",
+        "show_nodes: coin does not exist"
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "reset_password": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "newPassword",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access.",
+        "reset_password: only alphanumeric characters are allowed as password",
+        "reset_password: name and password cannot exceed the 16 character limit.",
+        "!BlockchainSystem.ResetWalletPass",
+        1
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "get_pin": {
+      "type": "function",
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "No internet access."
+      ],
+      "returns": [
+        "string"
+      ]
+    }
   }
 }

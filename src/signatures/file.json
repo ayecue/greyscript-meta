@@ -1,220 +1,336 @@
 {
-  "chmod": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "perms",
-        "type": "string"
-      },
-      {
-        "label": "recursive",
-        "type": "number",
-        "opt": true
-      }
-    ],
-    "returns": [
-      "string",
-      "null"
-    ]
-  },
-  "copy": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "path",
-        "type": "string",
-        "default": "\"\""
-      },
-      {
-        "label": "name",
-        "type": "string",
-        "default": "\"\""
-      }
-    ],
-    "returns": [
-      "string",
-      "number",
-      "null"
-    ]
-  },
-  "move": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "path",
-        "type": "string"
-      },
-      {
-        "label": "name",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "number",
-      "null"
-    ]
-  },
-  "rename": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "name",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "number"
-    ]
-  },
-  "path": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "is_folder": {
-    "type": "function",
-    "returns": [
-      "number"
-    ]
-  },
-  "parent": {
-    "type": "function",
-    "returns": [
-      "file",
-      "null"
-    ]
-  },
-  "name": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "allow_import": {
-    "type": "function",
-    "returns": [
-      "number"
-    ]
-  },
-  "get_content": {
-    "type": "function",
-    "returns": [
-      "string",
-      "null"
-    ]
-  },
-  "set_content": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "content",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "number",
-      "null"
-    ]
-  },
-  "is_binary": {
-    "type": "function",
-    "returns": [
-      "number"
-    ]
-  },
-  "has_permission": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "perms",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number"
-    ]
-  },
-  "delete": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "get_folders": {
-    "type": "function",
-    "returns": [
-      "list:file"
-    ]
-  },
-  "get_files": {
-    "type": "function",
-    "returns": [
-      "list:file"
-    ]
-  },
-  "permissions": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "owner": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "set_owner": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "owner",
-        "type": "string"
-      },
-      {
-        "label": "recursive",
-        "type": "number",
-        "opt": true
-      }
-    ],
-    "returns": [
-      "number",
-      "string",
-      "null"
-    ]
-  },
-  "group": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
-  },
-  "set_group": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "group",
-        "type": "string"
-      },
-      {
-        "label": "recursive",
-        "type": "number",
-        "opt": true
-      }
-    ],
-    "returns": [
-      "string",
-      "null"
-    ]
-  },
-  "size": {
-    "type": "function",
-    "returns": [
-      "string"
-    ]
+  "type": "file",
+  "extends": "map",
+  "definitions": {
+    "chmod": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "perms",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        {
+          "label": "isRecursive",
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      ],
+      "returnVariations": [
+        "${path} not found",
+        "!FileSystem.UpdatePermisos"
+      ],
+      "returns": [
+        "string"
+      ]
+    },
+    "copy": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "path",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        {
+          "label": "name",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        }
+      ],
+      "returnVariations": [
+        "Error: only alphanumeric allowed as newname",
+        "!PlayerUtils.MoverFichero",
+        1
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "move": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "path",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        {
+          "label": "name",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        }
+      ],
+      "returnVariations": [
+        "Error: only alphanumeric allowed as newname",
+        "!PlayerUtils.MoverFichero",
+        1
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "rename": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "name",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        }
+      ],
+      "returnVariations": [
+        "Error: only alphanumeric allowed as newname",
+        "Error: name cannot exceed the limit of 128 characters.",
+        "!PlayerUtils.RenameFichero",
+        0
+      ],
+      "returns": [
+        "string",
+        "number"
+      ]
+    },
+    "path": {
+      "type": "function",
+      "returns": [
+        "string"
+      ]
+    },
+    "is_folder": {
+      "type": "function",
+      "returnVariations": [
+        1,
+        0
+      ],
+      "returns": [
+        "number",
+        "null"
+      ]
+    },
+    "parent": {
+      "type": "function",
+      "returns": [
+        "file",
+        "null"
+      ]
+    },
+    "name": {
+      "type": "function",
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "allow_import": {
+      "type": "function",
+      "returns": [
+        "number"
+      ]
+    },
+    "get_content": {
+      "type": "function",
+      "returnVariations": [
+        "Error: can't find the computer of this file",
+        "can't open ${filepath}. Binary file."
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "set_content": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "content",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        }
+      ],
+      "returnVariations": [
+        "I can't save the file. The maximum of 160,000 characters has been exceeded.",
+        "set_content: unable to use this method in encryption configuration",
+        "can't open ${filepath}. Binary file.",
+        1
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "is_binary": {
+      "type": "function",
+      "returnVariations": [
+        1,
+        0
+      ],
+      "returns": [
+        "number",
+        "null"
+      ]
+    },
+    "has_permission": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "perms",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        }
+      ],
+      "returnVariations": [
+        1,
+        0
+      ],
+      "returns": [
+        "number",
+        "null"
+      ]
+    },
+    "delete": {
+      "type": "function",
+      "returnVariations": [
+        "!PlayerUtils.RemoveFile"
+      ],
+      "returns": [
+        "string"
+      ]
+    },
+    "get_folders": {
+      "type": "function",
+      "returns": [
+        {
+          "type": "list",
+          "valueType": "file"
+        },
+        "null"
+      ]
+    },
+    "get_files": {
+      "type": "function",
+      "returns": [
+        {
+          "type": "list",
+          "valueType": "file"
+        },
+        "null"
+      ]
+    },
+    "permissions": {
+      "type": "function",
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "owner": {
+      "type": "function",
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "set_owner": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "owner",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        {
+          "label": "recursive",
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      ],
+      "returnVariations": [
+        "Permission denied"
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "group": {
+      "type": "function",
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "set_group": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "group",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        {
+          "label": "recursive",
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      ],
+      "returnVariations": [
+        "Permission denied"
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "size": {
+      "type": "function",
+      "returns": [
+        "string",
+        "null"
+      ]
+    }
   }
 }

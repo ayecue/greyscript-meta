@@ -1,84 +1,112 @@
 {
-  "aircrack": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "path",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "null"
-    ]
-  },
-  "airmon": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "option",
-        "type": "string"
-      },
-      {
-        "label": "device",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "aireplay": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "bssid",
-        "type": "string"
-      },
-      {
-        "label": "essid",
-        "type": "string"
-      },
-      {
-        "label": "maxAcks",
-        "type": "string",
-        "opt": true
-      }
-    ],
-    "returns": [
-      "string",
-      "null"
-    ]
-  },
-  "decipher": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "encPass",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "null"
-    ]
-  },
-  "smtp_user_list": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "ip",
-        "type": "string"
-      },
-      {
-        "label": "port",
-        "type": "number"
-      }
-    ],
-    "returns": [
-      "list:string",
-      "string"
-    ]
+  "type": "crypto",
+  "extends": "map",
+  "definitions": {
+    "aircrack": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "path",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "airmon": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "option",
+          "type": "string"
+        },
+        {
+          "label": "device",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Error: wifi card is disabled",
+        "airmon: monitor mode can only be activated on wifi cards",
+        "airmon: monitor mode is not supported by the chipset of this network card.",
+        0,
+        1
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "aireplay": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "bssid",
+          "type": "string"
+        },
+        {
+          "label": "essid",
+          "type": "string"
+        },
+        {
+          "label": "maxAcks",
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": -1
+          }
+        }
+      ],
+      "returnVariations": [
+        "Error: wifi card is disabled",
+        "router not found!",
+        "Can't connect. Target is out of reach.",
+        "aireplay: no wifi card found with monitor mode enabled"
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "decipher": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "encPass",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "smtp_user_list": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "ip",
+          "type": "string"
+        },
+        {
+          "label": "port",
+          "type": "number"
+        }
+      ],
+      "returnVariations": [
+        "Error: Invalid ip address",
+        "!PlayerUtils.GetSmtpServer"
+      ],
+      "returns": [
+        {
+          "type": "list",
+          "valueType": "string"
+        },
+        "string",
+        "null"
+      ]
+    }
   }
 }

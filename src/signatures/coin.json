@@ -1,152 +1,236 @@
 {
-  "set_cycle_mining": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "rateHours",
-        "type": "number"
-      }
-    ],
-    "returns": [
-      "number",
-      "null"
-    ]
-  },
-  "get_cycle_mining": {
-    "type": "function",
-    "returns": [
-      "number"
-    ]
-  },
-  "get_reward": {
-    "type": "function",
-    "returns": [
-      "number"
-    ]
-  },
-  "set_reward": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "coinAmount",
-        "type": "number"
-      }
-    ],
-    "returns": [
-      "number",
-      "string",
-      "null"
-    ]
-  },
-  "transaction": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "subWalletOrig",
-        "type": "string"
-      },
-      {
-        "label": "subWalletDest",
-        "type": "string"
-      },
-      {
-        "label": "valAmount",
-        "type": "number"
-      }
-    ],
-    "returns": [
-      "string",
-      "number",
-      "null"
-    ]
-  },
-  "create_subwallet": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "walletID",
-        "type": "string"
-      },
-      {
-        "label": "pin",
-        "type": "string"
-      },
-      {
-        "label": "subWalletUser",
-        "type": "string"
-      },
-      {
-        "label": "subWalletPass",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "number"
-    ]
-  },
-  "get_subwallet": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "subWalletUser",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string",
-      "subWallet",
-      "null"
-    ]
-  },
-  "get_subwallets": {
-    "type": "function",
-    "returns": [
-      "number",
-      "string",
-      "list:subWallet"
-    ]
-  },
-  "set_address": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "address",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string",
-      "null"
-    ]
-  },
-  "get_address": {
-    "type": "function",
-    "returns": [
-      "number",
-      "string"
-    ]
-  },
-  "get_mined_coins": {
-    "type": "function",
-    "returns": [
-      "number"
-    ]
-  },
-  "reset_password": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "newPassword",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "number",
-      "string",
-      "null"
-    ]
+  "type": "coin",
+  "extends": "map",
+  "definitions": {
+    "set_cycle_mining": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "rateHours",
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 3
+          }
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "the mining cycle cannot exceed the maximum of 2160 hours",
+        "the mining cycle cannot be less than 1 hour",
+        1
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "get_cycle_mining": {
+      "type": "function",
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access."
+      ],
+      "returns": [
+        "string",
+        "number"
+      ]
+    },
+    "get_reward": {
+      "type": "function",
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access."
+      ],
+      "returns": [
+        "string",
+        "number"
+      ]
+    },
+    "set_reward": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "coinAmount",
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "Error: The reward cannot be less than 1 coin",
+        "Error: Coin does not exist",
+        1
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "transaction": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "subWalletOrig",
+          "type": "string"
+        },
+        {
+          "label": "subWalletDest",
+          "type": "string"
+        },
+        {
+          "label": "valAmount",
+          "type": "number"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "Error: amount value cannot be less than 1",
+        "!BlockchainSystem.Transaction",
+        1
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "create_subwallet": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "walletID",
+          "type": "string"
+        },
+        {
+          "label": "pin",
+          "type": "string"
+        },
+        {
+          "label": "subWalletUser",
+          "type": "string"
+        },
+        {
+          "label": "subWalletPass",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "!BlockchainSystem.AddSubWallet",
+        1
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "get_subwallet": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "subWalletUser",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "get_subwallet: The account does not exist"
+      ],
+      "returns": [
+        "string",
+        "subWallet",
+        "null"
+      ]
+    },
+    "get_subwallets": {
+      "type": "function",
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access."
+      ],
+      "returns": [
+        "string",
+        {
+          "type": "list",
+          "valueType": "subWallet"
+        }
+      ]
+    },
+    "set_address": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "address",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "set_address: address ${address}not found",
+        "!BlockchainSystem.SetAddress",
+        1
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "get_address": {
+      "type": "function",
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "!BlockchainSystem.GetAddress"
+      ],
+      "returns": [
+        "string"
+      ]
+    },
+    "get_mined_coins": {
+      "type": "function",
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access."
+      ],
+      "returns": [
+        "string",
+        "number"
+      ]
+    },
+    "reset_password": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "newPassword",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "reset_password: only alphanumeric characters are allowed as password",
+        "reset_password: name and password cannot exceed the 16 character limit.",
+        "!BlockchainSystem.ResetCoinPass",
+        1
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    }
   }
 }

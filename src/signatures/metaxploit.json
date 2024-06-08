@@ -1,107 +1,146 @@
 {
-  "load": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "path",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "metaLib",
-      "null"
-    ]
-  },
-  "net_use": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "ip",
-        "type": "string"
-      },
-      {
-        "label": "port",
-        "type": "number"
-      }
-    ],
-    "returns": [
-      "netSession",
-      "null"
-    ]
-  },
-  "rshell_client": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "ip",
-        "type": "string"
-      },
-      {
-        "label": "port",
-        "type": "number",
-        "default": "1222"
-      },
-      {
-        "label": "processName",
-        "type": "string",
-        "default": "\"rshell_client\""
-      }
-    ],
-    "returns": [
-      "string",
-      "number"
-    ]
-  },
-  "rshell_server": {
-    "type": "function",
-    "arguments": [],
-    "returns": [
-      "string",
-      "list:shell"
-    ]
-  },
-  "scan": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "metaLib",
-        "type": "metaLib"
-      }
-    ],
-    "returns": [
-      "list:string",
-      "null"
-    ]
-  },
-  "scan_address": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "metaLib",
-        "type": "metaLib"
-      },
-      {
-        "label": "memoryAddress",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "null"
-    ]
-  },
-  "sniffer": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "saveEncSource",
-        "type": "number",
-        "opt": true
-      }
-    ],
-    "returns": [
-      "string",
-      "null"
-    ]
+  "type": "metaxploit",
+  "extends": "map",
+  "definitions": {
+    "load": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "path",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "metaLib",
+        "null"
+      ]
+    },
+    "net_use": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "ip",
+          "type": "string"
+        },
+        {
+          "label": "port",
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      ],
+      "returns": [
+        "netSession",
+        "null"
+      ]
+    },
+    "rshell_client": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "ip",
+          "type": "string"
+        },
+        {
+          "label": "port",
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 1222
+          }
+        },
+        {
+          "label": "processName",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": "rshell_client"
+          }
+        }
+      ],
+      "returnVariations": [
+        "rshell_client: Invalid IP address",
+        "Error: only alphanumeric allowed as proccess name.",
+        "Error: proccess name cannot exceed the limit of 28 characters.",
+        "Error: ${programName} is a reserved process name",
+        "rshell_client: IP address not found: ${ip}",
+        "rshell_client: unable to find remote server at port ${port}",
+        "!Networking.CheckServiceOnline",
+        1
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "rshell_server": {
+      "type": "function",
+      "returnVariations": [
+        "rshell_server: No internet connection",
+        "rshell_server: The service cannot be started on this network.",
+        "error: service rshelld is not running",
+        "error: rshell portforward is not configured correctly"
+      ],
+      "returns": [
+        "string",
+        {
+          "type": "list",
+          "valueType": "shell"
+        }
+      ]
+    },
+    "scan": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "metaLib",
+          "type": "metaLib"
+        }
+      ],
+      "returns": [
+        {
+          "type": "list",
+          "valueType": "string"
+        },
+        "null"
+      ]
+    },
+    "scan_address": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "metaLib",
+          "type": "metaLib"
+        },
+        {
+          "label": "memoryAddress",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "sniffer": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "saveEncSource",
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    }
   }
 }

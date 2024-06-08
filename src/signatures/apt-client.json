@@ -1,95 +1,177 @@
 {
-  "show": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "repoName",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string"
-    ]
-  },
-  "search": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "packageName",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "null"
-    ]
-  },
-  "update": {
-    "type": "function",
-    "returns": [
-      "string",
-      "number"
-    ]
-  },
-  "add_repo": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "repo",
-        "type": "string"
-      },
-      {
-        "label": "port",
-        "type": "number",
-        "default": "1542.0"
-      }
-    ],
-    "returns": [
-      "string",
-      "null"
-    ]
-  },
-  "del_repo": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "repo",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "null"
-    ]
-  },
-  "install": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "packageName",
-        "type": "string"
-      },
-      {
-        "label": "installPath",
-        "type": "string",
-        "opt": true
-      }
-    ],
-    "returns": [
-      "string"
-    ]
-  },
-  "check_upgrade": {
-    "type": "function",
-    "arguments": [
-      {
-        "label": "path",
-        "type": "string"
-      }
-    ],
-    "returns": [
-      "string",
-      "number"
-    ]
+  "type": "aptClient",
+  "extends": "map",
+  "definitions": {
+    "show": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "repository",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "/etc/apt/aptcache.bin not found. Launch apt with the update option to refresh the file",
+        "${repository} repository not found",
+        "/etc/apt/aptcache.bin content is malformed. Launch apt with the update option to refresh the file"
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "search": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "search",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "/etc/apt/aptcache.bin not found. Launch apt with the update option to refresh the file",
+        "${search} not found in any repository",
+        "/etc/apt/aptcache.bin content is malformed. Launch apt with the update option to refresh the file"
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "update": {
+      "type": "function",
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "apt_update: No internet access.",
+        "${source} repository not found",
+        "/etc/apt/sources.txt content is malformed",
+        0
+      ],
+      "returns": [
+        "string",
+        "number"
+      ]
+    },
+    "add_repo": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "repository",
+          "type": "string"
+        },
+        {
+          "label": "port",
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 1542
+          }
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "/etc/apt/sources.txt does not exist",
+        "${repository} it is already added to sources.txt",
+        "/etc/apt/sources.txt content is malformed."
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "del_repo": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "repository",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "/etc/apt/sources.txt does not exist",
+        "${repository} not found in sources.txt",
+        "/etc/apt/sources.txt content is malformed."
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "install": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "package",
+          "type": "string"
+        },
+        {
+          "label": "customPath",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "apt_install: No internet access.",
+        "/etc/apt/aptcache.bin not found. Launch apt with the update option to refresh the file",
+        "package name can not be empty",
+        "There is not enough free space on the hard disk.",
+        "!PlayerUtils.ConnectComputer",
+        "!Computer.CheckInicio",
+        "!PlayerUtils.FirewallPingStatus",
+        "!Networking.IsRouterAvailable",
+        "!Networking.CheckServiceOnline",
+        "${serviceDBFile} does not exist in the server",
+        "apt folder content does not exist in the server",
+        "${package} does not exist in the server",
+        "!GreyInterpreter.CheckScpUpload",
+        "/etc/apt/aptcache.bin content is malformed. Launch apt with the update option to refresh the file",
+        "${package} not found in the server",
+        1
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "check_upgrade": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "filepath",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "apt_check_upgrade: No internet access.",
+        "/etc/apt/aptcache.bin not found. Launch apt with the update option to refresh the file",
+        "package name can not be empty",
+        "${filepath} does not exist in this filesystem",
+        "!PlayerUtils.ConnectComputer",
+        "!PlayerUtils.FirewallPingStatus",
+        "!Computer.CheckInicio",
+        "!Networking.CheckServiceOnline",
+        "${serviceDBFile} does not exist in the server",
+        "apt folder content does not exist in the server",
+        "${filepath} does not exist in the server",
+        "${filepath} does not exist in this filesystem",
+        "${serviceDBFile} file content is malformed in the server",
+        "/etc/apt/aptcache.bin content is malformed. Launch apt with the update option to refresh the file",
+        "${filepath} not found in the server"
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    }
   }
 }

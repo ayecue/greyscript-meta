@@ -1,14 +1,41 @@
 {
-    "$meta": {
-        "description": "The service object can be obtained by using [include_lib](#GENERAL_INCLUDE_LIB). The `classID` used for this object is `\"service\"`. List of all installable services: `\"FTP\"`, `\"SSH\"`, `\"HTTP\"`, `\"Repository\"`, `\"Chat\"`"
-    },
-    "install_service": {
-        "description": "Installs the necessary files for the correct functioning of the service and starts it. Returns `true` if the installation has been completed successfully, in case of error a `string` with the details is returned."
-    },
-    "start_service": {
-        "description": "Start the service and open its associated `port` on the local machine. The service needs a port forwarded to the router to be accessible from the outside. Returns `true` if the service has started correctly, in case of error a `string` with the details is returned."
-    },
-    "stop_service": {
-        "description": "Stop the service and close its associated `port` on the local machine. Returns `true` if the service has been stopped correctly, in case of error a `string` with the details is returned."
-    }
+  "$meta": {
+    "description": "The service object can be obtained by using [include_lib](#GENERAL_INCLUDE_LIB). The `classID` used for this object is `\"service\"`. List of all installable services: `\"FTP\"`, `\"SSH\"`, `\"HTTP\"`, `\"Repository\"`, `\"Chat\"`"
+  },
+  "install_service": {
+    "description": "Installs the necessary files for the correct functioning of the service and starts it. If the installation is completed successfully, it returns a `number` with the value one. In case of an error, it returns a `string` with details.",
+    "example": [
+      "service = include_lib(\"/lib/libhttp.so\")",
+      "result = service.install_service",
+      "if result == 1 then",
+      "    print \"Successfully installed service\"",
+      "else",
+      "    print \"Service installation failed: \" + result",
+      "end if"
+    ]
+  },
+  "start_service": {
+    "description": "Starts the service and opens its associated `port` on the local machine. The service requires a port forwarded to the router to be accessible from the outside. If the service starts correctly, it returns a `number` with the value one. In case of an error, it returns a `string` with details.",
+    "example": [
+      "service = include_lib(\"/lib/libhttp.so\")",
+      "result = service.start_service",
+      "if result == 1 then",
+      "    print \"Successfully started service\"",
+      "else",
+      "    print \"Starting service failed: \" + result",
+      "end if"
+    ]
+  },
+  "stop_service": {
+    "description": "Stops the service and closes its associated `port` on the local machine. If the service is stopped successfully, it returns a `number` with the value one. If an error occurs during the process, it returns a `string` with details. In some cases, the returned `number` might be zero, indicating that the service removal failed.",
+    "example": [
+      "service = include_lib(\"/lib/libhttp.so\")",
+      "result = service.stop_service",
+      "if result == 1 then",
+      "    print \"Successfully stopped service\"",
+      "else",
+      "    print \"Stopping service failed: \" + result",
+      "end if"
+    ]
+  }
 }
