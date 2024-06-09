@@ -1611,7 +1611,9 @@
         "${filepath} does not exist in this filesystem",
         "${serviceDBFile} file content is malformed in the server",
         "/etc/apt/aptcache.bin content is malformed. Launch apt with the update option to refresh the file",
-        "${filepath} not found in the server"
+        "${filepath} not found in the server",
+        1,
+        0
       ],
       "returns": [
         "string",
@@ -3731,7 +3733,8 @@
         }
       ],
       "returns": [
-        "string"
+        "string",
+        "null"
       ]
     },
     "install_service": {

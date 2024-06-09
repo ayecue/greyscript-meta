@@ -98,7 +98,8 @@
         }
       ],
       "returns": [
-        "string"
+        "string",
+        "null"
       ]
     }
   }

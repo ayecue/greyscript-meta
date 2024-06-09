@@ -31,7 +31,7 @@
     ]
   },
   "amount_mined": {
-    "description": "Returns a `number` representing the total amount of mined coins. In case of an error, it will return a `string` with the details. If the provided `coinName` is anything other than a `string`, the method will return `null`.",
+    "description": "Returns a `number` representing the total amount of mined coins. In case of an error, it will return a `string` with the details. If the provided coinName is anything other than a `string`, the method will return `null`.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "mined = blockchain.amount_mined(\"test\")",
