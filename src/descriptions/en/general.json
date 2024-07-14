@@ -2429,5 +2429,19 @@
       "end function",
       "print \"My text: \".color + \"Hello world\".color(\"yellow\")"
     ]
+  },
+  "map": {
+    "description": "Returns a `map` which enables to extend map types with custom methods.",
+    "example": [
+      "map.extend = function(value)",
+      "  for item in value",
+      "    self[item.key] = item.value",
+      "  end for",
+      "  return self",
+      "end function",
+      "test = {\"123\":123}",
+      "test.extend({\"bar\": \"foo\"})",
+      "print \"My extended value: \" + test.bar"
+    ]
   }
 }
