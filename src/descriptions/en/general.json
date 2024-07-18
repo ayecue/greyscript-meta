@@ -327,7 +327,7 @@
     ]
   },
   "program_path": {
-    "description": "Returns a `string` containing the path of the script that is currently executed.",
+    "description": "Returns a `string` containing the path of the script that is currently executing, which makes it different from `launch_path` as it won't update through using `launch`.",
     "example": [
       "path = program_path",
       "print(\"Script gets executed within: \" + parent_path(path))"
@@ -563,9 +563,9 @@
     ]
   },
   "launch_path": {
-    "description": "Returns a `string` containing the path of the script that is currently executed.",
+    "description": "Returns a `string` containing the path of the script that was initially executed, meaning that even when using `launch`, it will still return the path of the initially executed script.",
     "example": [
-      "path = program_path",
+      "path = launch_path",
       "print(\"Script gets executed within: \" + parent_path(path))"
     ]
   },
