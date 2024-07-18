@@ -327,7 +327,7 @@
     ]
   },
   "program_path": {
-    "description": "Returns a `string` containing the path of the script that is currently executed.",
+    "description": "Returns a `string` containing the path of the script that is currently executing, which makes it different from `launch_path` as it won't update through using `launch`.",
     "example": [
       "path = program_path",
       "print(\"Script gets executed within: \" + parent_path(path))"
@@ -556,16 +556,16 @@
     ]
   },
   "launch": {
-    "description": "Launches the binary located at the provided path. Optionally, parameters can be passed. Returns a `number`. If the launch was successful, the value will be one; otherwise, it will be zero. In some cases, a `string` will be returned containing an error message. This method cannot be used to execute binaries with an EXE extension (GUI interface). If any provided values deviate from the method signature, a runtime exception will be thrown.",
+    "description": "Launches the binary located at the provided path. Optionally, parameters can be passed. Returns a `number`. If the launch was successful, the value will be one; otherwise, it will be zero. In some cases, a `string` will be returned containing an error message. If you need to share variables between a launched script and the current process, consider using `get_custom_object`. Note that launching a script is not asynchronous, meaning that the current script will pause its execution until the launched script finishes. This method cannot be used to execute binaries with an EXE extension (GUI interface). If any provided values deviate from the method signature, a runtime exception will be thrown.",
     "example": [
       "shell = get_shell(\"root\", \"test\")",
       "launch(shell, \"/bin/cat\", \"/etc/passwd\")"
     ]
   },
   "launch_path": {
-    "description": "Returns a `string` containing the path of the script that is currently executed.",
+    "description": "Returns a `string` containing the path of the script that was initially executed, meaning that even when using `launch`, it will still return the path of the initially executed script.",
     "example": [
-      "path = program_path",
+      "path = launch_path",
       "print(\"Script gets executed within: \" + parent_path(path))"
     ]
   },
