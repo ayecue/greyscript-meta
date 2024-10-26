@@ -88,6 +88,29 @@
         "null"
       ]
     },
+    "get_coin_name": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "user",
+          "type": "string"
+        },
+        {
+          "label": "password",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "get_coin_name: No internet access.",
+        "get_coin_name: Incorrect user/password",
+        "get_coin_name: No currency has been found"
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
     "login_wallet": {
       "type": "function",
       "arguments": [

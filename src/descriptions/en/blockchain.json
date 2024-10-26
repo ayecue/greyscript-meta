@@ -42,7 +42,7 @@
     ]
   },
   "get_coin": {
-    "description": "Returns a `coin` object used to manage the currency. In case of an error, it will return a `string` with the details. If any of the provided parameters are `null`, the method will return `null`.",
+    "description": "Returns a `coin` object used to manage the currency. In case of an error, it will return a `string` with the details. If any of the provided parameters deviate from the defined signature, the method will return `null`.",
     "example": [
       "blockchain = include_lib(\"/lib/blockchain.so\")",
       "coin = blockchain.get_coin(\"test\", \"test\", \"test\")",
@@ -50,6 +50,17 @@
       "    exit \"Couldnt get coin object due to: \" + coin",
       "end if",
       "print \"Your coin address is \" + coin.get_address"
+    ]
+  },
+  "get_coin_name": {
+    "description": "Returns a `string` with the name of the coin owned by the player. In case of an error, it returns a `string` with details. If any provided parameters deviate from the defined signature, this method will return `null`.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coinName = blockchain.get_coin_name(\"test\", \"test\")",
+      "if not coinName.matches(\"^[A-Z]+$\") then",
+      "    exit \"Couldnt get coin name due to: \" + coinName",
+      "end if",
+      "print \"The name of the coin you're owning is \" + coinName"
     ]
   },
   "login_wallet": {

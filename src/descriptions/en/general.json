@@ -868,6 +868,17 @@
       "print \"Your coin address is \" + get_address(coin)"
     ]
   },
+  "get_coin_name": {
+    "description": "Returns a `string` with the name of the coin owned by the player. In case of an error, it will return a `string` with the details. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coinName = get_coin_name(blockchain, \"test\", \"test\")",
+      "if not matches(coinName, \"^[A-Z]+$\") then",
+      "    exit \"Couldnt get coin name due to: \" + coinName",
+      "end if",
+      "print \"The name of the coin you're owning is \" + coinName"
+    ]
+  },
   "login_wallet": {
     "description": "Returns a `wallet` object on success. In case of an error, it will return a `string` indicating the reason. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
     "example": [
