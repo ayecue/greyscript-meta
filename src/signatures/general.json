@@ -1564,6 +1564,8 @@
         "/etc/apt/aptcache.bin not found. Launch apt with the update option to refresh the file",
         "package name can not be empty",
         "There is not enough free space on the hard disk.",
+        "${customPath} not found.",
+        "permission denied",
         "!PlayerUtils.ConnectComputer",
         "!Computer.CheckInicio",
         "!PlayerUtils.FirewallPingStatus",
