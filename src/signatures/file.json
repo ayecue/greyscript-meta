@@ -92,6 +92,40 @@
         "null"
       ]
     },
+    "symlink": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "path",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        {
+          "label": "newName",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        }
+      ],
+      "returnVariations": [
+        "Error: only alphanumeric allowed as newname",
+        "Error: invalid path",
+        "The file already exists",
+        "!PlayerUtils.CrearCarpeta",
+        "!PlayerUtils.CrearArchivo",
+        1
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
     "rename": {
       "type": "function",
       "arguments": [

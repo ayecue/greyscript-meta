@@ -1443,6 +1443,19 @@
       "end if"
     ]
   },
+  "symlink": {
+    "description": "Creates a symlink to the specified path. Symlinks can only be created if the user has write permissions or is root. The new filename must be alphanumeric and under 128 characters. Upon success, this method returns a `number` with the value one. On failure, it returns a `string` with details. If any parameters deviate from the method signature, if used within an SSH encryption process, if the new name exceeds 128 characters, or if the path is too long, an error will be thrown, interrupting script execution. In case the current file gets deleted or an invalid `file` object is passed, this method will return `null`.",
+    "example": [
+      "computer = host_computer(get_shell(\"root\", \"test\"))",
+      "lsFile = File(computer, \"/bin/ls\")",
+      "symResult = symlink(lsFile, \"/bin\", \"alternativeLS\")",
+      "if typeof(symResult) == \"string\" then",
+      "   print(\"There was an error while creating symlink: \" + symResult)",
+      "else",
+      "   print(\"Symlink got created successfully.\")",
+      "end if"
+    ]
+  },
   "rename": {
     "description": "Rename the file with the name provided. Files can only be renamed if the user has write permissions or is root. The new filename has to be below 128 characters and alphanumeric. On failure, this method will return a `string` with details. Otherwise, this method will return an empty string. If this method is used within an SSH encryption process, an error will be thrown, causing the script execution to be interrupted. In case the provided name is `null` or an invalid `file` object is passed, this method will return a `number` with the value zero.",
     "example": [
