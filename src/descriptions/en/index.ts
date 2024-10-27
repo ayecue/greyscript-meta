@@ -7,7 +7,7 @@ import ClassLanguage from './class.json';
 import Coin from './coin.json';
 import Computer from './computer.json';
 import Crypto from './crypto.json';
-import CTFEvent from './ctfEvent.json';
+import CTFEvent from './ctf-event.json';
 import File from './file.json';
 import FtpShell from './ftp-shell.json';
 import FunctionLanguage from './function.json';

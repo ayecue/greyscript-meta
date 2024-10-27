@@ -11,7 +11,7 @@ import ClassSignature from './signatures/class.json';
 import Coin from './signatures/coin.json';
 import Computer from './signatures/computer.json';
 import Crypto from './signatures/crypto.json';
-import CTFEvent from './signatures/ctfEvent.json';
+import CTFEvent from './signatures/ctf-event.json';
 import File from './signatures/file.json';
 import FtpShell from './signatures/ftp-shell.json';
 import FunctionSignature from './signatures/function.json';
