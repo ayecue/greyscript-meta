@@ -493,6 +493,8 @@
         "service",
         "blockchain",
         "aptClient",
+        "smartAppliance",
+        "trafficNet",
         "null"
       ]
     },
