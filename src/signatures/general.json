@@ -4750,6 +4750,74 @@
           "valueType": "function"
         }
       ]
+    },
+    "scan_debuglib": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "debugLibrary"
+        }
+      ],
+      "returnVariations": [
+        "error: file not found",
+        "No potential issues have been found",
+        "Potential problems have been found in the following code:\n\n${callengeDescription}"
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "apply_patch": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "debugLibrary"
+        },
+        {
+          "label": "path",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "error: file not found",
+        "error: The file to apply the patch cannot be binary",
+        "error: The patch code is not correct.",
+        "The patch had already been applied.",
+        "The patch has been applied correctly."
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "unit_testing": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "debugLibrary"
+        },
+        {
+          "label": "error_lines",
+          "type": {
+            "type": "list",
+            "valueType": "number"
+          }
+        }
+      ],
+      "returnVariations": [
+        "error: file not found",
+        "Test failed: No potential issues have been found",
+        "Starting testing in selected lines...\n${methods}\n\nNew vulnerability found: ${vulnerability}",
+        "Test failed: No errors have been found in one or more of the provided lines, or not all lines with errors have been provided."
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
     }
   }
 }

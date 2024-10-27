@@ -30,6 +30,7 @@ import Shell from './signatures/shell.json';
 import String from './signatures/string.json';
 import SubWallet from './signatures/sub-wallet.json';
 import Wallet from './signatures/wallet.json';
+import DebugLibrary from './signatures/debug-library.json';
 
 export const greyscriptMeta = new Container();
 
@@ -59,6 +60,7 @@ greyscriptMeta.addTypeSignatureFromPayload(Shell);
 greyscriptMeta.addTypeSignatureFromPayload(String);
 greyscriptMeta.addTypeSignatureFromPayload(SubWallet);
 greyscriptMeta.addTypeSignatureFromPayload(Wallet);
+greyscriptMeta.addTypeSignatureFromPayload(DebugLibrary);
 
 greyscriptMeta.addMetaFromPayload('en', EN);
 

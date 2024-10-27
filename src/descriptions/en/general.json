@@ -2477,5 +2477,32 @@
       "test.extend({\"bar\": \"foo\"})",
       "print \"My extended value: \" + test.bar"
     ]
+  },
+  "scan_debuglib": {
+    "description": "Scans the library in debug mode to identify potential code errors that may lead to vulnerabilities. If issues are detected, the relevant code snippets are printed. In case of an error, a `string` containing the error message is returned. If an invalid `debugLibrary` object is passed, this method will return `null`.",
+    "example": [
+      "metax = include_lib(\"/lib/metaxploit.so\")",
+      "metaLib = load(metax, \"/lib/init.so\")",
+      "debugLib = debug_tools(metaLib, \"test\", \"test\")",
+      "print(\"Debug Library result: \" + scan_debuglib(debugLib))"
+    ]
+  },
+  "apply_patch": {
+    "description": "Applies a patch containing corrected code to the specified text file at the provided path. Returns a `string` with the result of the operation. If any of the provided values deviates from the defined types in the method signature, this method will return `null`.",
+    "example": [
+      "metax = include_lib(\"/lib/metaxploit.so\")",
+      "metaLib = load(metax, \"/lib/init.so\")",
+      "debugLib = debug_tools(metaLib, \"test\", \"test\")",
+      "print(\"Path result: \" + apply_patch(debugLib, \"/etc/passwd\"))"
+    ]
+  },
+  "unit_testing": {
+    "description": "Conducts automated tests on the specified lines of code. If potential vulnerabilities are detected due to errors in these lines, this method will print partial objects that could be obtained by exploiting the vulnerability, along with the affected memory zone and detailed vulnerability information. In case of failure, this function returns a `string` with an error message. If any of the provided values deviates from the defined types in the method signature, this method will return `null`.",
+    "example": [
+      "metax = include_lib(\"/lib/metaxploit.so\")",
+      "metaLib = load(metax, \"/lib/init.so\")",
+      "debugLib = debug_tools(metaLib, \"test\", \"test\")",
+      "print(\"Unit test results: \" + unit_testing(debugLib, [1, 2, 3]))"
+    ]
   }
 }

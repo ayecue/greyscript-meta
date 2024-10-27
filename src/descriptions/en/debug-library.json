@@ -1,0 +1,32 @@
+{
+  "$meta": {
+    "description": "A `debugLibrary` object can be acquired by using [debug_tools](#METALIB_DEBUG_TOOLS). The `classID` used for this object is `\"debugLibrary\"`."
+  },
+  "scan": {
+    "description": "Scans the library in debug mode to identify potential code errors that may lead to vulnerabilities. If issues are detected, the relevant code snippets are printed. In case of an error, a `string` containing the error message is returned.",
+    "example": [
+      "metax = include_lib(\"/lib/metaxploit.so\")",
+      "metaLib = metax.load(\"/lib/init.so\")",
+      "debugLib = metaLib.debug_tools(\"test\", \"test\")",
+      "print(\"Debug Library result: \" + debugLib.scan)"
+    ]
+  },
+  "apply_patch": {
+    "description": "Applies a patch containing corrected code to the specified text file at the provided path. Returns a `string` with the result of the operation. If the path argument is not a `string` this method will return `null`.",
+    "example": [
+      "metax = include_lib(\"/lib/metaxploit.so\")",
+      "metaLib = metax.load(\"/lib/init.so\")",
+      "debugLib = metaLib.debug_tools(\"test\", \"test\")",
+      "print(\"Path result: \" + debugLib.apply_patch(\"/etc/passwd\"))"
+    ]
+  },
+  "unit_testing": {
+    "description": "Conducts automated tests on the specified lines of code. If potential vulnerabilities are detected due to errors in these lines, this method will print partial objects that could be obtained by exploiting the vulnerability, along with the affected memory zone and detailed vulnerability information. In case of failure, this function returns a `string` with an error message. If the `error lines` argument is not a `list`, the method will return `null`.",
+    "example": [
+      "metax = include_lib(\"/lib/metaxploit.so\")",
+      "metaLib = metax.load(\"/lib/init.so\")",
+      "debugLib = metaLib.debug_tools(\"test\", \"test\")",
+      "print(\"Unit test results: \" + debugLib.unit_testing([1, 2, 3]))"
+    ]
+  }
+}

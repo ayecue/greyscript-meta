@@ -26,6 +26,7 @@ import Shell from './shell.json';
 import String from './string.json';
 import SubWallet from './sub-wallet.json';
 import Wallet from './wallet.json';
+import DebugLibrary from './debug-library.json';
 
 const descriptions: DescriptionsPayload = {
   any: Any,
@@ -53,7 +54,8 @@ const descriptions: DescriptionsPayload = {
   string: String,
   subWallet: SubWallet,
   wallet: Wallet,
-  number: Number
+  number: Number,
+  debugLibrary: DebugLibrary
 };
 
 export default descriptions;
