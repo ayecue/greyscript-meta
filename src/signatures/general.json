@@ -4919,6 +4919,78 @@
       "returns": [
         "string"
       ]
+    },
+    "model": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "smartAppliance"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "error: Device hardware malfunction"
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "override_settings": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "smartAppliance"
+        },
+        {
+          "label": "power",
+          "type": "number"
+        },
+        {
+          "label": "temperature",
+          "type": "number"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "error: Device hardware malfunction",
+        "override_settings: denied: The settings are locked for security reasons.",
+        1
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "set_alarm": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "smartAppliance"
+        },
+        {
+          "label": "enable",
+          "type": "number"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "error: Device hardware malfunction",
+        "set_alarm: denied: The alarm settings are locked for security reasons.",
+        1
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
     }
   }
 }

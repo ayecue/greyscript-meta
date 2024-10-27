@@ -2555,5 +2555,41 @@
       "camera_link_system(libTraffic)",
       "print(traffic_light_config(libTraffic))"
     ]
+  },
+  "model": {
+    "description": "Returns a `string` with the appliance model ID. If the passed object is not a `smartAppliance` this method will return `null`.",
+    "example": [
+      "libSmartapp = include_lib(\"/lib/libsmartappliance.so\")",
+      "modelResult = model(libSmartapp)",
+      "if modelResult.matches(\"^[A-Z]+$\") then",
+      "    print(\"Model is: \" + modelResult)",
+      "else",
+      "    print(\"Model couldn't be determined due to: \" + modelResult)",
+      "end if"
+    ]
+  },
+  "override_settings": {
+    "description": "Overrides the power and temperature settings of the appliance. If successful, it returns a `number` with the value one; otherwise, it returns a `string` detailing the error. If any arguments deviate from the defined signature, this method will return `null`.",
+    "example": [
+      "libSmartapp = include_lib(\"/lib/libsmartappliance.so\")",
+      "overrideResult = override_settings(libSmartapp, 1000, 20)",
+      "if overrideResult == 1 then",
+      "    print(\"Override was successful!\")",
+      "else",
+      "    print(\"Override failed due to: \" + overrideResult)",
+      "end if"
+    ]
+  },
+  "set_alarm": {
+    "description": "Activates or deactivates the sound alarm indicating any appliance malfunction. If the operation is successful, a `number` with the value one is returned; otherwise, a `string` containing error details is returned. If any arguments deviate from the defined signature, this method will return `null`.",
+    "example": [
+      "libSmartapp = include_lib(\"/lib/libsmartappliance.so\")",
+      "setAlarmResult = set_alarm(libSmartapp, false)",
+      "if setAlarmResult == 1 then",
+      "    print(\"Alarm was disabled successfully!\")",
+      "else",
+      "    print(\"Disabling alarm failed due to: \" + setAlarmResult)",
+      "end if"
+    ]
   }
 }

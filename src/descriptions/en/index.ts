@@ -28,6 +28,7 @@ import SubWallet from './sub-wallet.json';
 import Wallet from './wallet.json';
 import DebugLibrary from './debug-library.json';
 import TrafficNet from './traffic-net.json';
+import SmartAppliance from './smart-appliance.json';
 
 const descriptions: DescriptionsPayload = {
   any: Any,
@@ -58,6 +59,7 @@ const descriptions: DescriptionsPayload = {
   number: Number,
   debugLibrary: DebugLibrary,
   trafficNet: TrafficNet,
+  smartAppliance: SmartAppliance
 };
 
 export default descriptions;

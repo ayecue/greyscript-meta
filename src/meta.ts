@@ -32,6 +32,7 @@ import SubWallet from './signatures/sub-wallet.json';
 import Wallet from './signatures/wallet.json';
 import DebugLibrary from './signatures/debug-library.json';
 import TrafficNet from './signatures/traffic-net.json';
+import SmartAppliance from './signatures/smart-appliance.json';
 
 export const greyscriptMeta = new Container();
 
@@ -63,6 +64,7 @@ greyscriptMeta.addTypeSignatureFromPayload(SubWallet);
 greyscriptMeta.addTypeSignatureFromPayload(Wallet);
 greyscriptMeta.addTypeSignatureFromPayload(DebugLibrary);
 greyscriptMeta.addTypeSignatureFromPayload(TrafficNet);
+greyscriptMeta.addTypeSignatureFromPayload(SmartAppliance);
 
 greyscriptMeta.addMetaFromPayload('en', EN);
 
