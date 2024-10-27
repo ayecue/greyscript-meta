@@ -4,7 +4,6 @@
   "definitions": {
     "scan": {
       "type": "function",
-      "arguments": [],
       "returnVariations": [
         "error: file not found",
         "No potential issues have been found",
@@ -38,7 +37,7 @@
       "type": "function",
       "arguments": [
         {
-          "label": "error_lines",
+          "label": "errorLines",
           "type": {
             "type": "list",
             "valueType": "number"

@@ -1,0 +1,76 @@
+{
+  "type": "trafficNet",
+  "extends": "map",
+  "definitions": {
+    "camera_link_system": {
+      "type": "function",
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "error: This device is not registered on any police network",
+        1
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "locate_vehicle": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "licensePlate",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "error: This device is not registered on any police network",
+        "locate_vehicle: License plate not found.",
+        "The vehicle could not be located in the camera system at this time.",
+        1
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "next_camera": {
+      "type": "function",
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "error: This device is not registered on any police network",
+        1
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "prev_camera": {
+      "type": "function",
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "error: This device is not registered on any police network",
+        1
+      ],
+      "returns": [
+        "number",
+        "string"
+      ]
+    },
+    "traffic_light_config": {
+      "type": "function",
+      "returnVariations": [
+        "Feature currently in development"
+      ],
+      "returns": [
+        "string"
+      ]
+    }
+  }
+}

@@ -2504,5 +2504,56 @@
       "debugLib = debug_tools(metaLib, \"test\", \"test\")",
       "print(\"Unit test results: \" + unit_testing(debugLib, [1, 2, 3]))"
     ]
+  },
+  "camera_link_system": {
+    "description": "Accesses the traffic camera system, opening a window with controls to switch between different cameras. If the window opens successfully, this method returns a `number` with the value one. In case of an error, it returns a `string` with details. If an invalid traffic net object gets passed this method will return `null`.",
+    "example": [
+      "libTraffic = include_lib(\"/lib/libtrafficnet.so\")",
+      "linkSystemResult = camera_link_system(libTraffic)",
+      "if linkSystemResult == 1 then",
+      "    print(\"Initiated camera broadcast!\")",
+      "end if"
+    ]
+  },
+  "locate_vehicle": {
+    "description": "Performs a search for the specified license plate to locate the vehicle. If the vehicle is visible on any camera, the viewer will switch to the camera currently displaying it and return a `number` with the value one. If the vehicle cannot be located or the license plate is incorrect, a `string` indicating the error is returned. If any of the provided values deviates from the defined types in the method signature, this method will return `null`.",
+    "example": [
+      "libTraffic = include_lib(\"/lib/libtrafficnet.so\")",
+      "camera_link_system(libTraffic)",
+      "vehicleSearchResult = locate_vehicle(libTraffic, \"1L2M3N\")",
+      "if vehicleSearchResult == 1 then",
+      "    print(\"Found vehicle!\")",
+      "end if"
+    ]
+  },
+  "next_camera": {
+    "description": "Switches the viewer to the next available traffic camera. In case of an error, a `string` containing the details is returned. If an invalid traffic net object gets passed this method will return `null`.",
+    "example": [
+      "libTraffic = include_lib(\"/lib/libtrafficnet.so\")",
+      "camera_link_system(libTraffic)",
+      "switchResult = next_camera(libTraffic)",
+      "if switchResult == 1 then",
+      "    print(\"Switched to next camera!\")",
+      "end if"
+    ]
+  },
+  "prev_camera": {
+    "description": "Switches the viewer to the previous available traffic camera. In case of an error, a `string` containing the details is returned. If an invalid traffic net object gets passed this method will return `null`.",
+    "example": [
+      "libTraffic = include_lib(\"/lib/libtrafficnet.so\")",
+      "camera_link_system(libTraffic)",
+      "switchResult = prev_camera(libTraffic)",
+      "if switchResult == 1 then",
+      "    print(\"Switched to previous camera!\")",
+      "end if"
+    ]
+  },
+  "traffic_light_config": {
+    "description": "This method is not yet implemented.",
+    "example": [
+      "libTraffic = include_lib(\"/lib/libtrafficnet.so\")",
+      "camera_link_system(libTraffic)",
+      "print(traffic_light_config(libTraffic))"
+    ]
   }
 }

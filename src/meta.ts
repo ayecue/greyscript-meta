@@ -31,6 +31,7 @@ import String from './signatures/string.json';
 import SubWallet from './signatures/sub-wallet.json';
 import Wallet from './signatures/wallet.json';
 import DebugLibrary from './signatures/debug-library.json';
+import TrafficNet from './signatures/traffic-net.json';
 
 export const greyscriptMeta = new Container();
 
@@ -61,6 +62,7 @@ greyscriptMeta.addTypeSignatureFromPayload(String);
 greyscriptMeta.addTypeSignatureFromPayload(SubWallet);
 greyscriptMeta.addTypeSignatureFromPayload(Wallet);
 greyscriptMeta.addTypeSignatureFromPayload(DebugLibrary);
+greyscriptMeta.addTypeSignatureFromPayload(TrafficNet);
 
 greyscriptMeta.addMetaFromPayload('en', EN);
 

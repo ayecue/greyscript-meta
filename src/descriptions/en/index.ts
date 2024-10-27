@@ -27,6 +27,7 @@ import String from './string.json';
 import SubWallet from './sub-wallet.json';
 import Wallet from './wallet.json';
 import DebugLibrary from './debug-library.json';
+import TrafficNet from './traffic-net.json';
 
 const descriptions: DescriptionsPayload = {
   any: Any,
@@ -55,7 +56,8 @@ const descriptions: DescriptionsPayload = {
   subWallet: SubWallet,
   wallet: Wallet,
   number: Number,
-  debugLibrary: DebugLibrary
+  debugLibrary: DebugLibrary,
+  trafficNet: TrafficNet,
 };
 
 export default descriptions;
