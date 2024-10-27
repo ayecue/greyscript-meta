@@ -1,0 +1,41 @@
+{
+  "$meta": {
+    "description": "A `smartAppliance` object can be obtained by using [include_lib](#GENERAL_INCLUDE_LIB). The `classID` used for this object is `\"SmartAppliance\"`."
+  },
+  "model": {
+    "description": "Returns a `string` with the appliance model ID.",
+    "example": [
+      "libSmartapp = include_lib(\"/lib/libsmartappliance.so\")",
+      "modelResult = libSmartapp.model",
+      "if modelResult.matches(\"^[A-Z]+$\") then",
+      "    print(\"Model is: \" + modelResult)",
+      "else",
+      "    print(\"Model couldn't be determined due to: \" + modelResult)",
+      "end if"
+    ]
+  },
+  "override_settings": {
+    "description": "Overrides the power and temperature settings of the appliance. If successful, it returns a `number` with the value one; otherwise, it returns a `string` detailing the error. If any arguments deviate from the defined signature, this method will return `null`.",
+    "example": [
+      "libSmartapp = include_lib(\"/lib/libsmartappliance.so\")",
+      "overrideResult = libSmartapp.override_settings(1000, 20)",
+      "if overrideResult == 1 then",
+      "    print(\"Override was successful!\")",
+      "else",
+      "    print(\"Override failed due to: \" + overrideResult)",
+      "end if"
+    ]
+  },
+  "set_alarm": {
+    "description": "Activates or deactivates the sound alarm indicating any appliance malfunction. If the operation is successful, a `number` with the value one is returned; otherwise, a `string` containing error details is returned. If the `enable` argument deviates from the defined signature, the method will return `null`.",
+    "example": [
+      "libSmartapp = include_lib(\"/lib/libsmartappliance.so\")",
+      "setAlarmResult = libSmartapp.set_alarm(false)",
+      "if setAlarmResult == 1 then",
+      "    print(\"Alarm was disabled successfully!\")",
+      "else",
+      "    print(\"Disabling alarm failed due to: \" + setAlarmResult)",
+      "end if"
+    ]
+  }
+}

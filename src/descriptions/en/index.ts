@@ -7,7 +7,7 @@ import ClassLanguage from './class.json';
 import Coin from './coin.json';
 import Computer from './computer.json';
 import Crypto from './crypto.json';
-import CTFEvent from './ctfEvent.json';
+import CTFEvent from './ctf-event.json';
 import File from './file.json';
 import FtpShell from './ftp-shell.json';
 import FunctionLanguage from './function.json';
@@ -26,6 +26,9 @@ import Shell from './shell.json';
 import String from './string.json';
 import SubWallet from './sub-wallet.json';
 import Wallet from './wallet.json';
+import DebugLibrary from './debug-library.json';
+import TrafficNet from './traffic-net.json';
+import SmartAppliance from './smart-appliance.json';
 
 const descriptions: DescriptionsPayload = {
   any: Any,
@@ -53,7 +56,10 @@ const descriptions: DescriptionsPayload = {
   string: String,
   subWallet: SubWallet,
   wallet: Wallet,
-  number: Number
+  number: Number,
+  debugLibrary: DebugLibrary,
+  trafficNet: TrafficNet,
+  smartAppliance: SmartAppliance
 };
 
 export default descriptions;

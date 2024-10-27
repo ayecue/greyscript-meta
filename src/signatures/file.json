@@ -92,6 +92,40 @@
         "null"
       ]
     },
+    "symlink": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "path",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        {
+          "label": "newName",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        }
+      ],
+      "returnVariations": [
+        "Error: only alphanumeric allowed as newname",
+        "Error: invalid path",
+        "The file already exists",
+        "!PlayerUtils.CrearCarpeta",
+        "!PlayerUtils.CrearArchivo",
+        1
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
     "rename": {
       "type": "function",
       "arguments": [
@@ -117,6 +151,16 @@
     },
     "path": {
       "type": "function",
+      "arguments": [
+        {
+          "label": "symlinkOrigPath",
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      ],
       "returns": [
         "string"
       ]
@@ -188,6 +232,17 @@
       ]
     },
     "is_binary": {
+      "type": "function",
+      "returnVariations": [
+        1,
+        0
+      ],
+      "returns": [
+        "number",
+        "null"
+      ]
+    },
+    "is_symlink": {
       "type": "function",
       "returnVariations": [
         1,

@@ -11,7 +11,7 @@ import ClassSignature from './signatures/class.json';
 import Coin from './signatures/coin.json';
 import Computer from './signatures/computer.json';
 import Crypto from './signatures/crypto.json';
-import CTFEvent from './signatures/ctfEvent.json';
+import CTFEvent from './signatures/ctf-event.json';
 import File from './signatures/file.json';
 import FtpShell from './signatures/ftp-shell.json';
 import FunctionSignature from './signatures/function.json';
@@ -30,6 +30,9 @@ import Shell from './signatures/shell.json';
 import String from './signatures/string.json';
 import SubWallet from './signatures/sub-wallet.json';
 import Wallet from './signatures/wallet.json';
+import DebugLibrary from './signatures/debug-library.json';
+import TrafficNet from './signatures/traffic-net.json';
+import SmartAppliance from './signatures/smart-appliance.json';
 
 export const greyscriptMeta = new Container();
 
@@ -59,6 +62,9 @@ greyscriptMeta.addTypeSignatureFromPayload(Shell);
 greyscriptMeta.addTypeSignatureFromPayload(String);
 greyscriptMeta.addTypeSignatureFromPayload(SubWallet);
 greyscriptMeta.addTypeSignatureFromPayload(Wallet);
+greyscriptMeta.addTypeSignatureFromPayload(DebugLibrary);
+greyscriptMeta.addTypeSignatureFromPayload(TrafficNet);
+greyscriptMeta.addTypeSignatureFromPayload(SmartAppliance);
 
 greyscriptMeta.addMetaFromPayload('en', EN);
 

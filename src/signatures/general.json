@@ -493,6 +493,8 @@
         "service",
         "blockchain",
         "aptClient",
+        "smartAppliance",
+        "trafficNet",
         "null"
       ]
     },
@@ -1564,6 +1566,8 @@
         "/etc/apt/aptcache.bin not found. Launch apt with the update option to refresh the file",
         "package name can not be empty",
         "There is not enough free space on the hard disk.",
+        "${customPath} not found.",
+        "permission denied",
         "!PlayerUtils.ConnectComputer",
         "!Computer.CheckInicio",
         "!PlayerUtils.FirewallPingStatus",
@@ -1717,6 +1721,33 @@
       "returns": [
         "string",
         "coin",
+        "null"
+      ]
+    },
+    "get_coin_name": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "blockchain"
+        },
+        {
+          "label": "user",
+          "type": "string"
+        },
+        {
+          "label": "password",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "get_coin_name: No internet access.",
+        "get_coin_name: Incorrect user/password",
+        "get_coin_name: No currency has been found"
+      ],
+      "returns": [
+        "string",
         "null"
       ]
     },
@@ -2897,6 +2928,44 @@
         "null"
       ]
     },
+    "symlink": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "file"
+        },
+        {
+          "label": "path",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        {
+          "label": "newName",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        }
+      ],
+      "returnVariations": [
+        "Error: only alphanumeric allowed as newname",
+        "Error: invalid path",
+        "The file already exists",
+        "!PlayerUtils.CrearCarpeta",
+        "!PlayerUtils.CrearArchivo",
+        1
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
     "rename": {
       "type": "function",
       "arguments": [
@@ -2930,6 +2999,14 @@
         {
           "label": "self",
           "type": "file"
+        },
+        {
+          "label": "symlinkOrigPath",
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
       "returns": [
@@ -3040,6 +3117,23 @@
       ]
     },
     "is_binary": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "file"
+        }
+      ],
+      "returnVariations": [
+        1,
+        0
+      ],
+      "returns": [
+        "number",
+        "null"
+      ]
+    },
+    "is_symlink": {
       "type": "function",
       "arguments": [
         {
@@ -3477,6 +3571,59 @@
       ],
       "returns": [
         "string",
+        "null"
+      ]
+    },
+    "debug_tools": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "user",
+          "type": "string"
+        },
+        {
+          "label": "password",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Error: The file must be a library",
+        "Error: Incorrect password"
+      ],
+      "returns": [
+        "string",
+        "debugLibrary",
+        "null"
+      ]
+    },
+    "payload": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "memZone",
+          "type": "string"
+        },
+        {
+          "label": "pathFile",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        }
+      ],
+      "returnVariations": [
+        "Error: The file must be a library",
+        "Error: The library is patched against this vulnerability.",
+        "Failed: No vulnerabilities have been found in the specified memory area.",
+        "Error acquiring partial object file. Unable to access to resource: ${pathFile}"
+      ],
+      "returns": [
+        "string",
+        {
+          "type": "list",
+          "valueType": "map"
+        },
         "null"
       ]
     },
@@ -4657,6 +4804,247 @@
           "keyType": "string",
           "valueType": "function"
         }
+      ]
+    },
+    "scan_debuglib": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "debugLibrary"
+        }
+      ],
+      "returnVariations": [
+        "error: file not found",
+        "No potential issues have been found",
+        "Potential problems have been found in the following code:\n\n${callengeDescription}"
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "apply_patch": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "debugLibrary"
+        },
+        {
+          "label": "path",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "error: file not found",
+        "error: The file to apply the patch cannot be binary",
+        "error: The patch code is not correct.",
+        "The patch had already been applied.",
+        "The patch has been applied correctly."
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "unit_testing": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "debugLibrary"
+        },
+        {
+          "label": "errorLines",
+          "type": {
+            "type": "list",
+            "valueType": "number"
+          }
+        }
+      ],
+      "returnVariations": [
+        "error: file not found",
+        "Test failed: No potential issues have been found",
+        "Starting testing in selected lines...\n${methods}\n\nNew vulnerability found: ${vulnerability}",
+        "Test failed: No errors have been found in one or more of the provided lines, or not all lines with errors have been provided."
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "camera_link_system": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "trafficNet"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "error: This device is not registered on any police network",
+        1
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "locate_vehicle": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "trafficNet"
+        },
+        {
+          "label": "licensePlate",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "error: This device is not registered on any police network",
+        "locate_vehicle: License plate not found.",
+        "The vehicle could not be located in the camera system at this time.",
+        1
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "next_camera": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "trafficNet"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "error: This device is not registered on any police network",
+        1
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "prev_camera": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "trafficNet"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "error: This device is not registered on any police network",
+        1
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "traffic_light_config": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "trafficNet"
+        }
+      ],
+      "returnVariations": [
+        "Feature currently in development"
+      ],
+      "returns": [
+        "string"
+      ]
+    },
+    "model": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "smartAppliance"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "error: Device hardware malfunction"
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "override_settings": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "smartAppliance"
+        },
+        {
+          "label": "power",
+          "type": "number"
+        },
+        {
+          "label": "temperature",
+          "type": "number"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "error: Device hardware malfunction",
+        "override_settings: denied: The settings are locked for security reasons.",
+        1
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "set_alarm": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "smartAppliance"
+        },
+        {
+          "label": "enable",
+          "type": "number"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "error: No internet access.",
+        "error: Device hardware malfunction",
+        "set_alarm: denied: The alarm settings are locked for security reasons.",
+        1
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
       ]
     }
   }

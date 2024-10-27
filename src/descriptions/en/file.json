@@ -40,6 +40,19 @@
       "end if"
     ]
   },
+  "symlink": {
+    "description": "Creates a symlink to the specified path. Symlinks can only be created if the user has write permissions or is root. The new filename must be alphanumeric and under 128 characters. Upon success, this method returns a `number` with the value one. On failure, it returns a `string` with details. If any parameters deviate from the method signature, if used within an SSH encryption process, if the new name exceeds 128 characters, or if the path is too long, an error will be thrown, interrupting script execution. If the current file is deleted, this method will return `null`.",
+    "example": [
+      "hostComputer = get_shell(\"root\", \"test\").host_computer",
+      "lsFile = hostComputer.File(\"/bin/ls\")",
+      "symResult = lsFile.symlink(\"/bin\", \"alternativeLS\")",
+      "if typeof(symResult) == \"string\" then",
+      "   print(\"There was an error while creating symlink: \" + symResult)",
+      "else",
+      "   print(\"Symlink got created successfully.\")",
+      "end if"
+    ]
+  },
   "rename": {
     "description": "Rename the file with the name provided. Files can only be renamed if the user has write permissions or is root. The new filename has to be below 128 characters and alphanumeric. On failure, this method will return a `string` with details. Otherwise, this method will return an empty string. If this method is used within an SSH encryption process, an error will be thrown, causing the script execution to be interrupted. In case the provided name is `null`, this method will return a `number` with the value zero.",
     "example": [
@@ -54,7 +67,7 @@
     ]
   },
   "path": {
-    "description": "Returns a `string` with the path of the file. In case the file gets deleted it will still returns it's path prior to deletion.",
+    "description": "Returns a `string` containing the file path. If the file is a symlink, the optional `symlinkOrigPath` argument can be set to return the original path of the linked file instead. If the file has been deleted, this method will still return the path it had prior to deletion.",
     "example": [
       "hostComputer = get_shell.host_computer",
       "passwdFile = hostComputer.File(\"/etc/passwd\")",
@@ -117,11 +130,19 @@
     ]
   },
   "is_binary": {
-    "description": "Returns a `number`. If the file is binary, the value will be one; otherwise, it will be zero. In case the file gets deleted, this method will return `null` instead.",
+    "description": "Returns a `number`. If the file is a binary, the value will be one; otherwise, it will be zero. In case the file gets deleted, this method will return `null` instead.",
     "example": [
       "hostComputer = get_shell.host_computer",
       "lsBinary = hostComputer.File(\"/bin/ls\")",
       "print(\"File is a binary: \" + lsBinary.is_binary)"
+    ]
+  },
+  "is_symlink": {
+    "description": "Returns a `number`. If the file is a symlink, the value will be one; otherwise, it will be zero. In case the file gets deleted, this method will return `null` instead.",
+    "example": [
+      "hostComputer = get_shell.host_computer",
+      "lsBinary = hostComputer.File(\"/bin/ls\")",
+      "print(\"File is a symlink: \" + lsBinary.is_symlink)"
     ]
   },
   "has_permission": {

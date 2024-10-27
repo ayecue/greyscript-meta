@@ -51,7 +51,7 @@
     ]
   },
   "typeof": {
-    "description": "Returns a `string` containing the type of the entity provided. There are following types by default: `\"aptclientLib\"`, `\"blockchainLib\"`, `\"ctfEvent\"`, `\"coin\"`, `\"computer\"`, `\"cryptoLib\"`, `\"file\"`, `\"function\"`, `\"list\"`, `\"map\"`, `\"MetaLib\"`, `\"MetaMail\"`, `\"MetaxploitLib\"`, `\"NetSession\"`, `\"null\"`, `\"number\"`, `\"port\"`, `\"router\"`, `\"service\"`, `\"shell\"`, `\"ftpshell\"`, `\"string\"`, `\"subwallet\"`, `\"wallet\"`. Custom types can be added as well by using the `classID` property in a `map`.",
+    "description": "Returns a `string` containing the type of the entity provided. There are following types by default: `\"aptclientLib\"`, `\"blockchainLib\"`, `\"ctfEvent\"`, `\"coin\"`, `\"computer\"`, `\"cryptoLib\"`, `\"debugLibrary\"`, `\"file\"`, `\"function\"`, `\"list\"`, `\"map\"`, `\"MetaLib\"`, `\"MetaMail\"`, `\"MetaxploitLib\"`, `\"NetSession\"`, `\"null\"`, `\"number\"`, `\"port\"`, `\"router\"`, `\"service\"`, `\"shell\"`, `\"ftpshell\"`, `\"SmartAppliance\"`, `\"string\"`, `\"subwallet\"`, `\"TrafficNet\"`, `\"wallet\"`. Custom types can be added as well by using the `classID` property in a `map`.",
     "example": [
       "myObj = { \"classID\": \"myType\" }",
       "if typeof(myObj) == \"myType\" then",
@@ -868,6 +868,17 @@
       "print \"Your coin address is \" + get_address(coin)"
     ]
   },
+  "get_coin_name": {
+    "description": "Returns a `string` with the name of the coin owned by the player. In case of an error, it will return a `string` with the details. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
+    "example": [
+      "blockchain = include_lib(\"/lib/blockchain.so\")",
+      "coinName = get_coin_name(blockchain, \"test\", \"test\")",
+      "if not matches(coinName, \"^[A-Z]+$\") then",
+      "    exit \"Couldnt get coin name due to: \" + coinName",
+      "end if",
+      "print \"The name of the coin you're owning is \" + coinName"
+    ]
+  },
   "login_wallet": {
     "description": "Returns a `wallet` object on success. In case of an error, it will return a `string` indicating the reason. If any of the provided parameters have a type that deviates from the defined signature, the method will return `null`.",
     "example": [
@@ -1432,6 +1443,19 @@
       "end if"
     ]
   },
+  "symlink": {
+    "description": "Creates a symlink to the specified path. Symlinks can only be created if the user has write permissions or is root. The new filename must be alphanumeric and under 128 characters. Upon success, this method returns a `number` with the value one. On failure, it returns a `string` with details. If any parameters deviate from the method signature, if used within an SSH encryption process, if the new name exceeds 128 characters, or if the path is too long, an error will be thrown, interrupting script execution. In case the current file gets deleted or an invalid `file` object is passed, this method will return `null`.",
+    "example": [
+      "computer = host_computer(get_shell(\"root\", \"test\"))",
+      "lsFile = File(computer, \"/bin/ls\")",
+      "symResult = symlink(lsFile, \"/bin\", \"alternativeLS\")",
+      "if typeof(symResult) == \"string\" then",
+      "   print(\"There was an error while creating symlink: \" + symResult)",
+      "else",
+      "   print(\"Symlink got created successfully.\")",
+      "end if"
+    ]
+  },
   "rename": {
     "description": "Rename the file with the name provided. Files can only be renamed if the user has write permissions or is root. The new filename has to be below 128 characters and alphanumeric. On failure, this method will return a `string` with details. Otherwise, this method will return an empty string. If this method is used within an SSH encryption process, an error will be thrown, causing the script execution to be interrupted. In case the provided name is `null` or an invalid `file` object is passed, this method will return a `number` with the value zero.",
     "example": [
@@ -1446,7 +1470,7 @@
     ]
   },
   "path": {
-    "description": "Returns a `string` with the path of the file. In case the file gets deleted, it will still return its path prior to deletion. If an invalid `file` object is passed, this method will return `null`.",
+    "description": "Returns a `string` containing the file path. If the file is a symlink, the optional `symlinkOrigPath` argument can be set to return the original path of the linked file instead. If the file has been deleted, this method will still return the path it had prior to deletion. If an invalid `file` object is passed, this method will return `null`.",
     "example": [
       "computer = host_computer(get_shell)",
       "passwdFile = File(computer, \"/etc/passwd\")",
@@ -1509,11 +1533,19 @@
     ]
   },
   "is_binary": {
-    "description": "Returns a `number`. If the file is binary, the value will be one; otherwise, it will be zero. In case the file gets deleted or an invalid `file` object gets passed, this method will return `null` instead.",
+    "description": "Returns a `number`. If the file is a binary, the value will be one; otherwise, it will be zero. In case the file gets deleted or an invalid `file` object gets passed, this method will return `null` instead.",
     "example": [
       "computer = host_computer(get_shell)",
       "lsBinary = File(computer, \"/bin/ls\")",
       "print(\"File is a binary: \" + is_binary(lsBinary))"
+    ]
+  },
+  "is_symlink": {
+    "description": "Returns a `number`. If the file is a symlink, the value will be one; otherwise, it will be zero. In case the file gets deleted or an invalid `file` object gets passed, this method will return `null` instead.",
+    "example": [
+      "computer = host_computer(get_shell)",
+      "lsBinary = File(computer, \"/bin/ls\")",
+      "print(\"File is a symlink: \" + is_symlink(lsBinary))"
     ]
   },
   "has_permission": {
@@ -2444,6 +2476,142 @@
       "test = {\"123\":123}",
       "test.extend({\"bar\": \"foo\"})",
       "print \"My extended value: \" + test.bar"
+    ]
+  },
+  "scan_debuglib": {
+    "description": "Scans the library in debug mode to identify potential code errors that may lead to vulnerabilities. If issues are detected, the relevant code snippets are printed. In case of an error, a `string` containing the error message is returned. If an invalid `debugLibrary` object is passed, this method will return `null`.",
+    "example": [
+      "metax = include_lib(\"/lib/metaxploit.so\")",
+      "metaLib = load(metax, \"/lib/init.so\")",
+      "debugLib = debug_tools(metaLib, \"test\", \"test\")",
+      "print(\"Debug Library result: \" + scan_debuglib(debugLib))"
+    ]
+  },
+  "apply_patch": {
+    "description": "Applies a patch containing corrected code to the specified text file at the provided path. Returns a `string` with the result of the operation. If any of the provided values deviates from the defined types in the method signature, this method will return `null`.",
+    "example": [
+      "metax = include_lib(\"/lib/metaxploit.so\")",
+      "metaLib = load(metax, \"/lib/init.so\")",
+      "debugLib = debug_tools(metaLib, \"test\", \"test\")",
+      "print(\"Path result: \" + apply_patch(debugLib, \"/etc/passwd\"))"
+    ]
+  },
+  "unit_testing": {
+    "description": "Conducts automated tests on the specified lines of code. If potential vulnerabilities are detected due to errors in these lines, this method will print partial objects that could be obtained by exploiting the vulnerability, along with the affected memory zone and detailed vulnerability information. In case of failure, this function returns a `string` with an error message. If any of the provided values deviates from the defined types in the method signature, this method will return `null`.",
+    "example": [
+      "metax = include_lib(\"/lib/metaxploit.so\")",
+      "metaLib = load(metax, \"/lib/init.so\")",
+      "debugLib = debug_tools(metaLib, \"test\", \"test\")",
+      "print(\"Unit test results: \" + unit_testing(debugLib, [1, 2, 3]))"
+    ]
+  },
+  "camera_link_system": {
+    "description": "Accesses the traffic camera system, opening a window with controls to switch between different cameras. If the window opens successfully, this method returns a `number` with the value one. In case of an error, it returns a `string` with details. If an invalid traffic net object gets passed this method will return `null`.",
+    "example": [
+      "libTraffic = include_lib(\"/lib/libtrafficnet.so\")",
+      "linkSystemResult = camera_link_system(libTraffic)",
+      "if linkSystemResult == 1 then",
+      "    print(\"Initiated camera broadcast!\")",
+      "end if"
+    ]
+  },
+  "locate_vehicle": {
+    "description": "Performs a search for the specified license plate to locate the vehicle. If the vehicle is visible on any camera, the viewer will switch to the camera currently displaying it and return a `number` with the value one. If the vehicle cannot be located or the license plate is incorrect, a `string` indicating the error is returned. If any of the provided values deviates from the defined types in the method signature, this method will return `null`.",
+    "example": [
+      "libTraffic = include_lib(\"/lib/libtrafficnet.so\")",
+      "camera_link_system(libTraffic)",
+      "vehicleSearchResult = locate_vehicle(libTraffic, \"1L2M3N\")",
+      "if vehicleSearchResult == 1 then",
+      "    print(\"Found vehicle!\")",
+      "end if"
+    ]
+  },
+  "next_camera": {
+    "description": "Switches the viewer to the next available traffic camera. In case of an error, a `string` containing the details is returned. If an invalid traffic net object gets passed this method will return `null`.",
+    "example": [
+      "libTraffic = include_lib(\"/lib/libtrafficnet.so\")",
+      "camera_link_system(libTraffic)",
+      "switchResult = next_camera(libTraffic)",
+      "if switchResult == 1 then",
+      "    print(\"Switched to next camera!\")",
+      "end if"
+    ]
+  },
+  "prev_camera": {
+    "description": "Switches the viewer to the previous available traffic camera. In case of an error, a `string` containing the details is returned. If an invalid traffic net object gets passed this method will return `null`.",
+    "example": [
+      "libTraffic = include_lib(\"/lib/libtrafficnet.so\")",
+      "camera_link_system(libTraffic)",
+      "switchResult = prev_camera(libTraffic)",
+      "if switchResult == 1 then",
+      "    print(\"Switched to previous camera!\")",
+      "end if"
+    ]
+  },
+  "traffic_light_config": {
+    "description": "This method is not yet implemented.",
+    "example": [
+      "libTraffic = include_lib(\"/lib/libtrafficnet.so\")",
+      "camera_link_system(libTraffic)",
+      "print(traffic_light_config(libTraffic))"
+    ]
+  },
+  "model": {
+    "description": "Returns a `string` with the appliance model ID. If the passed object is not a `smartAppliance` this method will return `null`.",
+    "example": [
+      "libSmartapp = include_lib(\"/lib/libsmartappliance.so\")",
+      "modelResult = model(libSmartapp)",
+      "if modelResult.matches(\"^[A-Z]+$\") then",
+      "    print(\"Model is: \" + modelResult)",
+      "else",
+      "    print(\"Model couldn't be determined due to: \" + modelResult)",
+      "end if"
+    ]
+  },
+  "override_settings": {
+    "description": "Overrides the power and temperature settings of the appliance. If successful, it returns a `number` with the value one; otherwise, it returns a `string` detailing the error. If any arguments deviate from the defined signature, this method will return `null`.",
+    "example": [
+      "libSmartapp = include_lib(\"/lib/libsmartappliance.so\")",
+      "overrideResult = override_settings(libSmartapp, 1000, 20)",
+      "if overrideResult == 1 then",
+      "    print(\"Override was successful!\")",
+      "else",
+      "    print(\"Override failed due to: \" + overrideResult)",
+      "end if"
+    ]
+  },
+  "set_alarm": {
+    "description": "Activates or deactivates the sound alarm indicating any appliance malfunction. If the operation is successful, a `number` with the value one is returned; otherwise, a `string` containing error details is returned. If any arguments deviate from the defined signature, this method will return `null`.",
+    "example": [
+      "libSmartapp = include_lib(\"/lib/libsmartappliance.so\")",
+      "setAlarmResult = set_alarm(libSmartapp, false)",
+      "if setAlarmResult == 1 then",
+      "    print(\"Alarm was disabled successfully!\")",
+      "else",
+      "    print(\"Disabling alarm failed due to: \" + setAlarmResult)",
+      "end if"
+    ]
+  },
+  "debug_tools": {
+    "description": "Returns a library in debug mode as a `debugLibrary` object. A valid Neurobox engineer's username and password are required to access this mode. If successful, the `debugLibrary` object is returned; in case of an error, a `string` with details is provided. Passing values that deviate from the defined signature will result in `null`.",
+    "example": [
+      "metax = include_lib(\"/lib/metaxploit.so\")",
+      "metaLib = load(metax, \"/lib/init.so\")",
+      "debugLib = debug_tools(metaLib, \"test\", \"test\")",
+      "if typeof(debugLib) == \"debugLibrary\" then",
+      "   print(\"Received debug libary object!\")",
+      "end if"
+    ]
+  },
+  "payload": {
+    "description": "Returns a `list` containing a single partial `computer` object if zero-day vulnerabilities are detected within the specified memory zone. If a file path is provided, a partial `file` object associated with this path will also be included in the `list`. Additionally, if this file is a library, its corresponding `metaLib` object is added to the returned `list`. In case of an error, a `string` with details is returned. Providing arguments that deviate from the defined signature will result in `null`.",
+    "example": [
+      "metax = include_lib(\"/lib/metaxploit.so\")",
+      "metaLib = load(metax, \"/lib/init.so\")",
+      "result = payload(metaLib, \"0x7A69F4C3\")",
+      "if typeof(result) == \"list\" and len(result) > 0 then",
+      "   print(\"Successfully executed payload!\")",
+      "end if"
     ]
   }
 }
