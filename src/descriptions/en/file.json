@@ -67,7 +67,7 @@
     ]
   },
   "path": {
-    "description": "Returns a `string` with the path of the file. In case the file gets deleted it will still returns it's path prior to deletion.",
+    "description": "Returns a `string` containing the file path. If the file is a symlink, the optional `symlinkOrigPath` argument can be set to return the original path of the linked file instead. If the file has been deleted, this method will still return the path it had prior to deletion.",
     "example": [
       "hostComputer = get_shell.host_computer",
       "passwdFile = hostComputer.File(\"/etc/passwd\")",

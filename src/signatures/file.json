@@ -151,6 +151,16 @@
     },
     "path": {
       "type": "function",
+      "arguments": [
+        {
+          "label": "symlinkOrigPath",
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      ],
       "returns": [
         "string"
       ]
