@@ -232,6 +232,17 @@
         "null"
       ]
     },
+    "is_symlink": {
+      "type": "function",
+      "returnVariations": [
+        1,
+        0
+      ],
+      "returns": [
+        "number",
+        "null"
+      ]
+    },
     "has_permission": {
       "type": "function",
       "arguments": [

@@ -3123,6 +3123,23 @@
         "null"
       ]
     },
+    "is_symlink": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "file"
+        }
+      ],
+      "returnVariations": [
+        1,
+        0
+      ],
+      "returns": [
+        "number",
+        "null"
+      ]
+    },
     "has_permission": {
       "type": "function",
       "arguments": [

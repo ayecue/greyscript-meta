@@ -130,11 +130,19 @@
     ]
   },
   "is_binary": {
-    "description": "Returns a `number`. If the file is binary, the value will be one; otherwise, it will be zero. In case the file gets deleted, this method will return `null` instead.",
+    "description": "Returns a `number`. If the file is a binary, the value will be one; otherwise, it will be zero. In case the file gets deleted, this method will return `null` instead.",
     "example": [
       "hostComputer = get_shell.host_computer",
       "lsBinary = hostComputer.File(\"/bin/ls\")",
       "print(\"File is a binary: \" + lsBinary.is_binary)"
+    ]
+  },
+  "is_symlink": {
+    "description": "Returns a `number`. If the file is a symlink, the value will be one; otherwise, it will be zero. In case the file gets deleted, this method will return `null` instead.",
+    "example": [
+      "hostComputer = get_shell.host_computer",
+      "lsBinary = hostComputer.File(\"/bin/ls\")",
+      "print(\"File is a symlink: \" + lsBinary.is_symlink)"
     ]
   },
   "has_permission": {
