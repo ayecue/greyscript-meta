@@ -32,7 +32,7 @@
     "example": [
       "hostComputer = get_shell(\"root\", \"test\").host_computer",
       "passwdFile = hostComputer.File(\"/etc/passwd\")",
-      "moveResult = passwdFile.move(\"/etc/\", \"/moved/\")",
+      "moveResult = passwdFile.move(\"/root/\", \"newFileName\")",
       "if typeof(moveResult) == \"string\" then",
       "   print(\"There was an error while moving file: \" + moveResult)",
       "else",

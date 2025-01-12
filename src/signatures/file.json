@@ -73,7 +73,7 @@
           }
         },
         {
-          "label": "name",
+          "label": "fileName",
           "type": "string",
           "default": {
             "type": "string",
