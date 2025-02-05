@@ -54,6 +54,37 @@
         "string",
         "null"
       ]
+    },
+    "payload": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "memZone",
+          "type": "string"
+        },
+        {
+          "label": "pathFile",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        }
+      ],
+      "returnVariations": [
+        "Error: The file must be a library",
+        "Error: The library is patched against this vulnerability.",
+        "Failed: No vulnerabilities have been found in the specified memory area.",
+        "Error acquiring partial object file. Unable to access to resource: ${pathFile}"
+      ],
+      "returns": [
+        "string",
+        {
+          "type": "list",
+          "valueType": "map"
+        },
+        "null"
+      ]
     }
   }
 }

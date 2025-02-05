@@ -28,5 +28,17 @@
       "debugLib = metaLib.debug_tools(\"test\", \"test\")",
       "print(\"Unit test results: \" + debugLib.unit_testing([1, 2, 3]))"
     ]
+  },
+  "payload": {
+    "description": "Returns a `list` containing a single partial `computer` object if zero-day vulnerabilities are detected within the specified memory zone. If a file path is provided, a partial `file` object associated with this path will also be included in the `list`. Additionally, if this file is a library, its corresponding `metaLib` object is added to the returned `list`. In case of an error, a `string` with details is returned. Providing arguments that deviate from the defined signature will result in `null`.",
+    "example": [
+      "metax = include_lib(\"/lib/metaxploit.so\")",
+      "metaLib = metax.load(\"/lib/init.so\")",
+      "debugLib = metaLib.debug_tools(\"test\", \"test\")",
+      "result = debugLib.payload(\"0x7A69F4C3\")",
+      "if typeof(result) == \"list\" and result.len > 0 then",
+      "   print(\"Successfully executed payload!\")",
+      "end if"
+    ]
   }
 }

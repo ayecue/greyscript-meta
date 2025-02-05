@@ -21,10 +21,20 @@
         {
           "label": "licensePlate",
           "type": "string"
+        },
+        {
+          "label": "password",
+          "type": "string"
         }
       ],
       "returnVariations": [
+        "Error: This user cannot access the global camera system for another 24 hours.",
+        "Error: This network has disabled access to the traffic cameras.",
+        "error: Workstation not found. Unable to get the credentials info from ${credentials}",
+        "error: Incorrect password. Access denied.",
         "Unknown error: Unable to access to local computer",
+        "error: Invalid license plate.",
+        "Error: Unable to use the camera at this time. Too many calls.",
         "error: No internet access.",
         "error: This device is not registered on any police network",
         "locate_vehicle: License plate not found.",
@@ -37,36 +47,13 @@
         "null"
       ]
     },
-    "next_camera": {
+    "get_credentials_info": {
       "type": "function",
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
         "error: No internet access.",
         "error: This device is not registered on any police network",
-        1
-      ],
-      "returns": [
-        "number",
-        "string"
-      ]
-    },
-    "prev_camera": {
-      "type": "function",
-      "returnVariations": [
-        "Unknown error: Unable to access to local computer",
-        "error: No internet access.",
-        "error: This device is not registered on any police network",
-        1
-      ],
-      "returns": [
-        "number",
-        "string"
-      ]
-    },
-    "traffic_light_config": {
-      "type": "function",
-      "returnVariations": [
-        "Feature currently in development"
+        "${job} ${name}"
       ],
       "returns": [
         "string"

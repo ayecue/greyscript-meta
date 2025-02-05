@@ -13,44 +13,21 @@
     ]
   },
   "locate_vehicle": {
-    "description": "Performs a search for the specified license plate to locate the vehicle. If the vehicle is visible on any camera, the viewer will switch to the camera currently displaying it and return a `number` with the value one. If the vehicle cannot be located or the license plate is incorrect, a `string` indicating the error is returned. If the provided license plate is not of `string` type, this method will return `null`.",
+    "description": "Performs a search for the specified license plate to locate the vehicle. If the vehicle is visible on any camera, the viewer will switch to the camera currently displaying it and return a `number` with the value one. If the vehicle cannot be located or the license plate is incorrect, a `string` indicating the error is returned. If any of the provided values deviates from the defined types in the method signature, this method will return `null`.",
     "example": [
       "libTraffic = include_lib(\"/lib/libtrafficnet.so\")",
       "libTraffic.camera_link_system",
-      "vehicleSearchResult = libTraffic.locate_vehicle(\"1L2M3N\")",
+      "vehicleSearchResult = libTraffic.locate_vehicle(\"1L2M3N\", \"pass\")",
       "if vehicleSearchResult == 1 then",
       "    print(\"Found vehicle!\")",
       "end if"
     ]
   },
-  "next_camera": {
-    "description": "Switches the viewer to the next available traffic camera. In case of an error, a `string` containing the details is returned.",
+  "get_credentials_info": {
+    "description": "Returns string which contains job and name of a NPC. If an error occurs, a `string` with details is returned.",
     "example": [
       "libTraffic = include_lib(\"/lib/libtrafficnet.so\")",
-      "libTraffic.camera_link_system",
-      "switchResult = libTraffic.next_camera",
-      "if switchResult == 1 then",
-      "    print(\"Switched to next camera!\")",
-      "end if"
-    ]
-  },
-  "prev_camera": {
-    "description": "Switches the viewer to the previous available traffic camera. In case of an error, a `string` containing the details is returned.",
-    "example": [
-      "libTraffic = include_lib(\"/lib/libtrafficnet.so\")",
-      "libTraffic.camera_link_system",
-      "switchResult = libTraffic.prev_camera",
-      "if switchResult == 1 then",
-      "    print(\"Switched to previous camera!\")",
-      "end if"
-    ]
-  },
-  "traffic_light_config": {
-    "description": "This method is not yet implemented.",
-    "example": [
-      "libTraffic = include_lib(\"/lib/libtrafficnet.so\")",
-      "libTraffic.camera_link_system",
-      "print(libTraffic.traffic_light_config)"
+      "print(libTraffic.get_credentials_info)"
     ]
   }
 }
