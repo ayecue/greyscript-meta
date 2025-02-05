@@ -3578,6 +3578,10 @@
       "type": "function",
       "arguments": [
         {
+          "label": "self",
+          "type": "metaLib"
+        },
+        {
           "label": "user",
           "type": "string"
         },
@@ -3600,6 +3604,10 @@
       "type": "function",
       "arguments": [
         {
+          "label": "self",
+          "type": "debugLibrary"
+        },
+        {
           "label": "memZone",
           "type": "string"
         },
@@ -3613,6 +3621,7 @@
         }
       ],
       "returnVariations": [
+        "error: file not found",
         "Error: The file must be a library",
         "Error: The library is patched against this vulnerability.",
         "Failed: No vulnerabilities have been found in the specified memory area.",
@@ -4904,9 +4913,17 @@
         {
           "label": "licensePlate",
           "type": "string"
+        },
+        {
+          "label": "password",
+          "type": "string"
         }
       ],
       "returnVariations": [
+        "Error: This user cannot access the global camera system for another 24 hours.",
+        "Error: This network has disabled access to the traffic cameras.",
+        "error: Workstation not found. Unable to get the credentials info from ${credentials}",
+        "error: Incorrect password. Access denied.",
         "Unknown error: Unable to access to local computer",
         "error: No internet access.",
         "error: This device is not registered on any police network",

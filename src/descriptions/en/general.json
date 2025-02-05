@@ -1738,7 +1738,7 @@
     ]
   },
   "overflow": {
-    "description": "Exploits vulnerabilities. The returned value can be of various data types. Therefore, using `typeof` is advisable. `optArgs` are required when changing a password or obtaining a `computer` via a router. It should be the desired password or LAN IP, respectively. Change password and firewall disable exploits will return a `number`, where the value is either one or zero. One indicates success while zero indicates failure. Shell, computer, and file exploits either return an instance of their type or `null`. Providing values that deviate from the defined signature will cause a runtime exception to be thrown.",
+    "description": "Exploits vulnerabilities. The returned value can be of various data types. Therefore, using `typeof` is advisable. `optArgs` are required when changing a password or obtaining a `computer` via a router. It should be the desired password or LAN IP, respectively. Change password, traffic light and firewall disable exploits will return a `number`, where the value is either one or zero. One indicates success while zero indicates failure. Shell, computer, and file exploits either return an instance of their type or `null`. Providing values that deviate from the defined signature will cause a runtime exception to be thrown.",
     "example": [
       "metax = include_lib(\"/lib/metaxploit.so\")",
       "metaLib = load(metax, \"/lib/init.so\")",
@@ -2520,7 +2520,7 @@
     "example": [
       "libTraffic = include_lib(\"/lib/libtrafficnet.so\")",
       "camera_link_system(libTraffic)",
-      "vehicleSearchResult = locate_vehicle(libTraffic, \"1L2M3N\")",
+      "vehicleSearchResult = locate_vehicle(libTraffic, \"1L2M3N\", \"pass\")",
       "if vehicleSearchResult == 1 then",
       "    print(\"Found vehicle!\")",
       "end if"
@@ -2608,7 +2608,8 @@
     "example": [
       "metax = include_lib(\"/lib/metaxploit.so\")",
       "metaLib = load(metax, \"/lib/init.so\")",
-      "result = payload(metaLib, \"0x7A69F4C3\")",
+      "debugLib = debug_tools(metaLib, \"test\", \"test\")",
+      "result = payload(debugLib, \"0x7A69F4C3\")",
       "if typeof(result) == \"list\" and len(result) > 0 then",
       "   print(\"Successfully executed payload!\")",
       "end if"
