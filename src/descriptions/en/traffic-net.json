@@ -23,34 +23,11 @@
       "end if"
     ]
   },
-  "next_camera": {
-    "description": "Switches the viewer to the next available traffic camera. In case of an error, a `string` containing the details is returned.",
+  "get_credentials_info": {
+    "description": "Returns string which contains job and name of a NPC. If an error occurs, a `string` with details is returned.",
     "example": [
       "libTraffic = include_lib(\"/lib/libtrafficnet.so\")",
-      "libTraffic.camera_link_system",
-      "switchResult = libTraffic.next_camera",
-      "if switchResult == 1 then",
-      "    print(\"Switched to next camera!\")",
-      "end if"
-    ]
-  },
-  "prev_camera": {
-    "description": "Switches the viewer to the previous available traffic camera. In case of an error, a `string` containing the details is returned.",
-    "example": [
-      "libTraffic = include_lib(\"/lib/libtrafficnet.so\")",
-      "libTraffic.camera_link_system",
-      "switchResult = libTraffic.prev_camera",
-      "if switchResult == 1 then",
-      "    print(\"Switched to previous camera!\")",
-      "end if"
-    ]
-  },
-  "traffic_light_config": {
-    "description": "This method is not yet implemented.",
-    "example": [
-      "libTraffic = include_lib(\"/lib/libtrafficnet.so\")",
-      "libTraffic.camera_link_system",
-      "print(libTraffic.traffic_light_config)"
+      "print(libTraffic.get_credentials_info)"
     ]
   }
 }
