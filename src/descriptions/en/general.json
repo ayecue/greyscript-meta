@@ -1327,7 +1327,7 @@
       "bssid = firstNetwork[0]",
       "pwr = firstNetwork[1][:-1].to_int",
       "essid = firstNetwork[2]",
-      "aireplayResult = aireplay(crypto, bssid, essid, 300000 / pwr)",
+      "aireplayResult = aireplay(crypto, bssid, essid, 300000 / pwr + 15)",
       "if (aireplayResult == null) then",
       "   result = aircrack(crypto, home_dir + \"/file.cap\")",
       "   print(result)",
@@ -1347,7 +1347,7 @@
     ]
   },
   "aireplay": {
-    "description": "Used to inject frames on wireless interfaces. Once the command with `\"Control+C\"` is stopped, it will save the captured information in a text file called `\"file.cap\"` in the path where the terminal is currently located. Alternatively, a maximum of captured `acks` can be specified for the command to stop automatically, saving the `\"file.cap\"` file as described above. To figure out how many ACKs are required, you can use the following formula: `\"300000 / [Wifi PWR]\"`. If there is an error, a `string` will be returned with the message indicating the problem. On success, it will return `null`. It is advised though to verify that the capture file actually exists. If the passed `crypto` object is invalid, it will return `null` as well. In case any of the provided values deviate from the signature types or bssid/essid is empty, an error will be thrown preventing any further script execution.",
+    "description": "Used to inject frames on wireless interfaces. Once the command with `\"Control+C\"` is stopped, it will save the captured information in a text file called `\"file.cap\"` in the path where the terminal is currently located. Alternatively, a maximum of captured `acks` can be specified for the command to stop automatically, saving the `\"file.cap\"` file as described above. To figure out how many ACKs are required, you can use the following formula: `\"300000 / Power + 15\"`. If there is an error, a `string` will be returned with the message indicating the problem. On success, it will return `null`. It is advised though to verify that the capture file actually exists. If the passed `crypto` object is invalid, it will return `null` as well. In case any of the provided values deviate from the signature types or bssid/essid is empty, an error will be thrown preventing any further script execution.",
     "example": [
       "crypto = include_lib(\"/lib/crypto.so\")",
       "networks = wifi_networks(host_computer(get_shell), \"wlan0\")",
@@ -1362,7 +1362,7 @@
       "bssid = parsed[0]",
       "pwr = parsed[1][:-1].to_int",
       "essid = parsed[2]",
-      "potentialAcks = 300000 / pwr",
+      "potentialAcks = 300000 / pwr + 15",
       "aireplaycrypto, bssid, essid, potentialAcks)",
       "wifiPassword = aircrack(crypto, \"/home/\" + active_user + \"/file.cap\")",
       "print(\"Wifi password for \" + essid + \" is \" + wifiPassword)"
