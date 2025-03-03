@@ -3613,7 +3613,9 @@
         }
       ],
       "returnVariations": [
-        "Error: The file must be a library"
+        "Error: The file must be a library",
+        0,
+        1
       ],
       "returns": [
         "number",
