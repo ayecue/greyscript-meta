@@ -69,6 +69,23 @@
         "debugLibrary",
         "null"
       ]
+    },
+    "is_patched": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "getdate",
+          "type": "number"
+        }
+      ],
+      "returnVariations": [
+        "Error: The file must be a library"
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
     }
   }
 }

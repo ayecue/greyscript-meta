@@ -3600,6 +3600,27 @@
         "null"
       ]
     },
+    "is_patched": {
+      "type": "function",
+      "arguments": [
+        {
+          "label": "self",
+          "type": "metaLib"
+        },
+        {
+          "label": "getdate",
+          "type": "number"
+        }
+      ],
+      "returnVariations": [
+        "Error: The file must be a library"
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
     "payload": {
       "type": "function",
       "arguments": [

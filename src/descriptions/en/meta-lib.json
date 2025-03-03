@@ -54,5 +54,16 @@
       "   print(\"Received debug libary object!\")",
       "end if"
     ]
+  },
+  "is_patched": {
+    "description": "Returns by default a number indicating whether the library has been patched. A value of one indicates that the library has been patched, while zero indicates that it has not. If the getdate parameter is set to `true`, the function will return a `string` containing the date of the last patch. The data format is as follows: `\"dd/MM/yyyy\"`. Additionally if there is any error the return value will be a `string`. Providing values that deviate from the defined signature will cause `null` to be returned.",
+    "example": [
+      "metax = include_lib(\"/lib/metaxploit.so\")",
+      "metaLib = metax.load(\"/lib/init.so\")",
+      "isPatchedResult = metaLib.is_patched",
+      "if isPatchedResult == 1 then",
+      "   print(\"init.so has been patched!\")",
+      "end if"
+    ]
   }
 }
