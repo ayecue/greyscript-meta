@@ -2,6 +2,7 @@
   "type": "list",
   "definitions": {
     "remove": {
+      "id": "remove",
       "type": "function",
       "arguments": [
         {
@@ -14,6 +15,7 @@
       ]
     },
     "insert": {
+      "id": "insert",
       "type": "function",
       "arguments": [
         {
@@ -30,6 +32,7 @@
       ]
     },
     "push": {
+      "id": "push",
       "type": "function",
       "arguments": [
         {
@@ -42,36 +45,42 @@
       ]
     },
     "pop": {
+      "id": "pop",
       "type": "function",
       "returns": [
         "any"
       ]
     },
     "pull": {
+      "id": "pull",
       "type": "function",
       "returns": [
         "any"
       ]
     },
     "shuffle": {
+      "id": "shuffle",
       "type": "function",
       "returns": [
         "null"
       ]
     },
     "reverse": {
+      "id": "reverse",
       "type": "function",
       "returns": [
         "null"
       ]
     },
     "sum": {
+      "id": "sum",
       "type": "function",
       "returns": [
         "number"
       ]
     },
     "hasIndex": {
+      "id": "hasIndex",
       "type": "function",
       "arguments": [
         {
@@ -88,6 +97,7 @@
       ]
     },
     "indexOf": {
+      "id": "indexOf",
       "type": "function",
       "arguments": [
         {
@@ -106,6 +116,7 @@
       ]
     },
     "sort": {
+      "id": "sort",
       "type": "function",
       "arguments": [
         {
@@ -126,6 +137,7 @@
       ]
     },
     "join": {
+      "id": "join",
       "type": "function",
       "arguments": [
         {
@@ -138,6 +150,7 @@
       ]
     },
     "indexes": {
+      "id": "indexes",
       "type": "function",
       "returns": [
         {
@@ -147,18 +160,21 @@
       ]
     },
     "len": {
+      "id": "len",
       "type": "function",
       "returns": [
         "number"
       ]
     },
     "values": {
+      "id": "values",
       "type": "function",
       "returns": [
         "list"
       ]
     },
     "replace": {
+      "id": "replace",
       "type": "function",
       "arguments": [
         {
