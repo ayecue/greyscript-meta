@@ -3,6 +3,7 @@
   "extends": "map",
   "definitions": {
     "chmod": {
+      "id": "chmod",
       "type": "function",
       "arguments": [
         {
@@ -31,6 +32,7 @@
       ]
     },
     "copy": {
+      "id": "copy",
       "type": "function",
       "arguments": [
         {
@@ -62,6 +64,7 @@
       ]
     },
     "move": {
+      "id": "move",
       "type": "function",
       "arguments": [
         {
@@ -93,6 +96,7 @@
       ]
     },
     "symlink": {
+      "id": "symlink",
       "type": "function",
       "arguments": [
         {
@@ -127,6 +131,7 @@
       ]
     },
     "rename": {
+      "id": "rename",
       "type": "function",
       "arguments": [
         {
@@ -150,6 +155,7 @@
       ]
     },
     "path": {
+      "id": "path",
       "type": "function",
       "arguments": [
         {
@@ -166,6 +172,7 @@
       ]
     },
     "is_folder": {
+      "id": "is_folder",
       "type": "function",
       "returnVariations": [
         1,
@@ -177,6 +184,7 @@
       ]
     },
     "parent": {
+      "id": "parent",
       "type": "function",
       "returns": [
         "file",
@@ -184,6 +192,7 @@
       ]
     },
     "name": {
+      "id": "name",
       "type": "function",
       "returns": [
         "string",
@@ -191,12 +200,14 @@
       ]
     },
     "allow_import": {
+      "id": "allow_import",
       "type": "function",
       "returns": [
         "number"
       ]
     },
     "get_content": {
+      "id": "get_content",
       "type": "function",
       "returnVariations": [
         "Error: can't find the computer of this file",
@@ -208,6 +219,7 @@
       ]
     },
     "set_content": {
+      "id": "set_content",
       "type": "function",
       "arguments": [
         {
@@ -232,6 +244,7 @@
       ]
     },
     "is_binary": {
+      "id": "is_binary",
       "type": "function",
       "returnVariations": [
         1,
@@ -243,6 +256,7 @@
       ]
     },
     "is_symlink": {
+      "id": "is_symlink",
       "type": "function",
       "returnVariations": [
         1,
@@ -254,6 +268,7 @@
       ]
     },
     "has_permission": {
+      "id": "has_permission",
       "type": "function",
       "arguments": [
         {
@@ -275,6 +290,7 @@
       ]
     },
     "delete": {
+      "id": "delete",
       "type": "function",
       "returnVariations": [
         "!PlayerUtils.RemoveFile"
@@ -284,6 +300,7 @@
       ]
     },
     "get_folders": {
+      "id": "get_folders",
       "type": "function",
       "returns": [
         {
@@ -294,6 +311,7 @@
       ]
     },
     "get_files": {
+      "id": "get_files",
       "type": "function",
       "returns": [
         {
@@ -304,6 +322,7 @@
       ]
     },
     "permissions": {
+      "id": "permissions",
       "type": "function",
       "returns": [
         "string",
@@ -311,6 +330,7 @@
       ]
     },
     "owner": {
+      "id": "owner",
       "type": "function",
       "returns": [
         "string",
@@ -318,6 +338,7 @@
       ]
     },
     "set_owner": {
+      "id": "set_owner",
       "type": "function",
       "arguments": [
         {
@@ -346,6 +367,7 @@
       ]
     },
     "group": {
+      "id": "group",
       "type": "function",
       "returns": [
         "string",
@@ -353,6 +375,7 @@
       ]
     },
     "set_group": {
+      "id": "set_group",
       "type": "function",
       "arguments": [
         {
@@ -381,6 +404,7 @@
       ]
     },
     "size": {
+      "id": "size",
       "type": "function",
       "returns": [
         "string",
