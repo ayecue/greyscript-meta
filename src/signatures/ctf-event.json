@@ -3,18 +3,21 @@
   "extends": "map",
   "definitions": {
     "get_description": {
+      "id": "get_description",
       "type": "function",
       "returns": [
         "string"
       ]
     },
     "get_template": {
+      "id": "get_template",
       "type": "function",
       "returns": [
         "string"
       ]
     },
     "player_success": {
+      "id": "player_success",
       "type": "function",
       "returnVariations": [
         0,
@@ -25,12 +28,14 @@
       ]
     },
     "get_creator_name": {
+      "id": "get_creator_name",
       "type": "function",
       "returns": [
         "string"
       ]
     },
     "get_mail_content": {
+      "id": "get_mail_content",
       "type": "function",
       "returns": [
         "string"
