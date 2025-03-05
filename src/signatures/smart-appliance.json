@@ -3,6 +3,7 @@
   "extends": "map",
   "definitions": {
     "model": {
+      "id": "model",
       "type": "function",
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
@@ -14,6 +15,7 @@
       ]
     },
     "override_settings": {
+      "id": "override_settings",
       "type": "function",
       "arguments": [
         {
@@ -39,6 +41,7 @@
       ]
     },
     "set_alarm": {
+      "id": "set_alarm",
       "type": "function",
       "arguments": [
         {
