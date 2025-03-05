@@ -3,6 +3,7 @@
   "extends": "map",
   "definitions": {
     "camera_link_system": {
+      "id": "camera_link_system",
       "type": "function",
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
@@ -16,6 +17,7 @@
       ]
     },
     "locate_vehicle": {
+      "id": "locate_vehicle",
       "type": "function",
       "arguments": [
         {
@@ -48,6 +50,7 @@
       ]
     },
     "get_credentials_info": {
+      "id": "get_credentials_info",
       "type": "function",
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
