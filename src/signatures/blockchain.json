@@ -2,6 +2,7 @@
   "type": "blockchain",
   "definitions": {
     "coin_price": {
+      "id": "coin_price",
       "type": "function",
       "arguments": [
         {
@@ -21,6 +22,7 @@
       ]
     },
     "show_history": {
+      "id": "show_history",
       "type": "function",
       "arguments": [
         {
@@ -43,6 +45,7 @@
       ]
     },
     "amount_mined": {
+      "id": "amount_mined",
       "type": "function",
       "arguments": [
         {
@@ -62,6 +65,7 @@
       ]
     },
     "get_coin": {
+      "id": "get_coin",
       "type": "function",
       "arguments": [
         {
@@ -89,6 +93,7 @@
       ]
     },
     "get_coin_name": {
+      "id": "get_coin_name",
       "type": "function",
       "arguments": [
         {
@@ -112,6 +117,7 @@
       ]
     },
     "login_wallet": {
+      "id": "login_wallet",
       "type": "function",
       "arguments": [
         {
@@ -135,6 +141,7 @@
       ]
     },
     "create_wallet": {
+      "id": "create_wallet",
       "type": "function",
       "arguments": [
         {
@@ -161,6 +168,7 @@
       ]
     },
     "delete_coin": {
+      "id": "delete_coin",
       "type": "function",
       "arguments": [
         {
