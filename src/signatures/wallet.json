@@ -3,6 +3,7 @@
   "extends": "map",
   "definitions": {
     "list_coins": {
+      "id": "list_coins",
       "type": "function",
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
@@ -18,6 +19,7 @@
       ]
     },
     "get_balance": {
+      "id": "get_balance",
       "type": "function",
       "arguments": [
         {
@@ -38,6 +40,7 @@
       ]
     },
     "buy_coin": {
+      "id": "buy_coin",
       "type": "function",
       "arguments": [
         {
@@ -69,6 +72,7 @@
       ]
     },
     "sell_coin": {
+      "id": "sell_coin",
       "type": "function",
       "arguments": [
         {
@@ -100,6 +104,7 @@
       ]
     },
     "get_pending_trade": {
+      "id": "get_pending_trade",
       "type": "function",
       "arguments": [
         {
@@ -118,6 +123,7 @@
       ]
     },
     "cancel_pending_trade": {
+      "id": "cancel_pending_trade",
       "type": "function",
       "arguments": [
         {
@@ -135,6 +141,7 @@
       ]
     },
     "get_global_offers": {
+      "id": "get_global_offers",
       "type": "function",
       "arguments": [
         {
@@ -157,6 +164,7 @@
       ]
     },
     "list_global_coins": {
+      "id": "list_global_coins",
       "type": "function",
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
@@ -171,6 +179,7 @@
       ]
     },
     "show_nodes": {
+      "id": "show_nodes",
       "type": "function",
       "arguments": [
         {
@@ -191,6 +200,7 @@
       ]
     },
     "reset_password": {
+      "id": "reset_password",
       "type": "function",
       "arguments": [
         {
@@ -213,6 +223,7 @@
       ]
     },
     "get_pin": {
+      "id": "get_pin",
       "type": "function",
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
