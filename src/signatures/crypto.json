@@ -3,7 +3,11 @@
   "extends": "map",
   "definitions": {
     "aircrack": {
+      "id": "aircrack",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "path",
@@ -16,7 +20,11 @@
       ]
     },
     "airmon": {
+      "id": "airmon",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "option",
@@ -40,7 +48,11 @@
       ]
     },
     "aireplay": {
+      "id": "aireplay",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "bssid",
@@ -71,7 +83,11 @@
       ]
     },
     "decipher": {
+      "id": "decipher",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "encPass",
@@ -84,7 +100,11 @@
       ]
     },
     "smtp_user_list": {
+      "id": "smtp_user_list",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "ip",

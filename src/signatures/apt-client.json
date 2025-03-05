@@ -3,7 +3,11 @@
   "extends": "map",
   "definitions": {
     "show": {
+      "id": "show",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "repository",
@@ -22,7 +26,11 @@
       ]
     },
     "search": {
+      "id": "search",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "search",
@@ -41,7 +49,11 @@
       ]
     },
     "update": {
+      "id": "update",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
         "apt_update: No internet access.",
@@ -55,7 +67,11 @@
       ]
     },
     "add_repo": {
+      "id": "add_repo",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "repository",
@@ -82,7 +98,11 @@
       ]
     },
     "del_repo": {
+      "id": "del_repo",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "repository",
@@ -101,7 +121,11 @@
       ]
     },
     "install": {
+      "id": "install",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "package",
@@ -144,7 +168,11 @@
       ]
     },
     "check_upgrade": {
+      "id": "check_upgrade",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "filepath",

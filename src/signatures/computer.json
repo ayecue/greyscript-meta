@@ -3,7 +3,11 @@
   "extends": "map",
   "definitions": {
     "get_ports": {
+      "id": "get_ports",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returns": [
         {
           "type": "list",
@@ -12,25 +16,41 @@
       ]
     },
     "get_name": {
+      "id": "get_name",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returns": [
         "string"
       ]
     },
     "local_ip": {
+      "id": "lan_ip",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returns": [
         "string"
       ]
     },
     "public_ip": {
+      "id": "public_ip_pc",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returns": [
         "string"
       ]
     },
     "File": {
+      "id": "File",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "path",
@@ -43,7 +63,11 @@
       ]
     },
     "create_folder": {
+      "id": "create_folder",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "path",
@@ -72,7 +96,11 @@
       ]
     },
     "is_network_active": {
+      "id": "is_network_active",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         0,
         1
@@ -82,7 +110,11 @@
       ]
     },
     "touch": {
+      "id": "touch",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "path",
@@ -109,19 +141,31 @@
       ]
     },
     "show_procs": {
+      "id": "show_procs",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returns": [
         "string"
       ]
     },
     "network_devices": {
+      "id": "network_devices",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returns": [
         "string"
       ]
     },
     "change_password": {
+      "id": "change_password",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "username",
@@ -146,7 +190,11 @@
       ]
     },
     "create_user": {
+      "id": "create_user",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "usename",
@@ -171,7 +219,11 @@
       ]
     },
     "delete_user": {
+      "id": "delete_user",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "username",
@@ -201,7 +253,11 @@
       ]
     },
     "create_group": {
+      "id": "create_group",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "username",
@@ -225,7 +281,11 @@
       ]
     },
     "delete_group": {
+      "id": "delete_group",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "username",
@@ -249,7 +309,11 @@
       ]
     },
     "groups": {
+      "id": "groups",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "username",
@@ -265,7 +329,11 @@
       ]
     },
     "close_program": {
+      "id": "close_program",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "pid",
@@ -286,7 +354,11 @@
       ]
     },
     "wifi_networks": {
+      "id": "wifi_networks",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "netDevice",
@@ -302,7 +374,11 @@
       ]
     },
     "connect_wifi": {
+      "id": "connect_wifi",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "netDevice",
@@ -339,7 +415,11 @@
       ]
     },
     "connect_ethernet": {
+      "id": "connect_ethernet",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "netDevice",
@@ -369,13 +449,21 @@
       ]
     },
     "network_gateway": {
+      "id": "network_gateway",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returns": [
         "string"
       ]
     },
     "active_net_card": {
+      "id": "active_net_card",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returns": [
         "string"
       ]

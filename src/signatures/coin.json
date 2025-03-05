@@ -3,7 +3,11 @@
   "extends": "map",
   "definitions": {
     "set_cycle_mining": {
+      "id": "set_cycle_mining",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "rateHours",
@@ -28,7 +32,11 @@
       ]
     },
     "get_cycle_mining": {
+      "id": "get_cycle_mining",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
         "error: No internet access."
@@ -39,7 +47,11 @@
       ]
     },
     "get_reward": {
+      "id": "get_reward",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
         "error: No internet access."
@@ -50,7 +62,11 @@
       ]
     },
     "set_reward": {
+      "id": "set_reward",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "coinAmount",
@@ -75,7 +91,11 @@
       ]
     },
     "transaction": {
+      "id": "transaction",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "subWalletOrig",
@@ -104,7 +124,11 @@
       ]
     },
     "create_subwallet": {
+      "id": "create_subwallet",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "walletID",
@@ -136,7 +160,11 @@
       ]
     },
     "get_subwallet": {
+      "id": "get_subwallet",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "subWalletUser",
@@ -155,7 +183,11 @@
       ]
     },
     "get_subwallets": {
+      "id": "get_subwallets",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
         "error: No internet access."
@@ -169,7 +201,11 @@
       ]
     },
     "set_address": {
+      "id": "set_address",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "address",
@@ -190,7 +226,11 @@
       ]
     },
     "get_address": {
+      "id": "get_address",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
         "error: No internet access.",
@@ -201,7 +241,11 @@
       ]
     },
     "get_mined_coins": {
+      "id": "get_mined_coins",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
         "error: No internet access."
@@ -212,7 +256,11 @@
       ]
     },
     "reset_password": {
+      "id": "reset_password_coin",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "newPassword",

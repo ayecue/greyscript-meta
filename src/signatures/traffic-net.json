@@ -3,7 +3,11 @@
   "extends": "map",
   "definitions": {
     "camera_link_system": {
+      "id": "camera_link_system",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
         "error: No internet access.",
@@ -16,7 +20,11 @@
       ]
     },
     "locate_vehicle": {
+      "id": "locate_vehicle",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "licensePlate",
@@ -48,7 +56,11 @@
       ]
     },
     "get_credentials_info": {
+      "id": "get_credentials_info",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
         "error: No internet access.",

@@ -3,7 +3,11 @@
   "extends": "map",
   "definitions": {
     "chmod": {
+      "id": "chmod",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "perms",
@@ -31,7 +35,11 @@
       ]
     },
     "copy": {
+      "id": "copy",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "path",
@@ -62,7 +70,11 @@
       ]
     },
     "move": {
+      "id": "move",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "path",
@@ -93,7 +105,11 @@
       ]
     },
     "symlink": {
+      "id": "symlink",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "path",
@@ -127,7 +143,11 @@
       ]
     },
     "rename": {
+      "id": "rename",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "name",
@@ -150,7 +170,11 @@
       ]
     },
     "path": {
+      "id": "path",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "symlinkOrigPath",
@@ -166,7 +190,11 @@
       ]
     },
     "is_folder": {
+      "id": "is_folder",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         1,
         0
@@ -177,27 +205,43 @@
       ]
     },
     "parent": {
+      "id": "parent",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returns": [
         "file",
         "null"
       ]
     },
     "name": {
+      "id": "name",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returns": [
         "string",
         "null"
       ]
     },
     "allow_import": {
+      "id": "allow_import",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returns": [
         "number"
       ]
     },
     "get_content": {
+      "id": "get_content",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         "Error: can't find the computer of this file",
         "can't open ${filepath}. Binary file."
@@ -208,7 +252,11 @@
       ]
     },
     "set_content": {
+      "id": "set_content",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "content",
@@ -232,7 +280,11 @@
       ]
     },
     "is_binary": {
+      "id": "is_binary",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         1,
         0
@@ -243,7 +295,11 @@
       ]
     },
     "is_symlink": {
+      "id": "is_symlink",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         1,
         0
@@ -254,7 +310,11 @@
       ]
     },
     "has_permission": {
+      "id": "has_permission",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "perms",
@@ -275,7 +335,11 @@
       ]
     },
     "delete": {
+      "id": "delete",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         "!PlayerUtils.RemoveFile"
       ],
@@ -284,7 +348,11 @@
       ]
     },
     "get_folders": {
+      "id": "get_folders",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returns": [
         {
           "type": "list",
@@ -294,7 +362,11 @@
       ]
     },
     "get_files": {
+      "id": "get_files",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returns": [
         {
           "type": "list",
@@ -304,21 +376,33 @@
       ]
     },
     "permissions": {
+      "id": "permissions",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returns": [
         "string",
         "null"
       ]
     },
     "owner": {
+      "id": "owner",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returns": [
         "string",
         "null"
       ]
     },
     "set_owner": {
+      "id": "set_owner",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "owner",
@@ -346,14 +430,22 @@
       ]
     },
     "group": {
+      "id": "group",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returns": [
         "string",
         "null"
       ]
     },
     "set_group": {
+      "id": "set_group",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "group",
@@ -381,7 +473,11 @@
       ]
     },
     "size": {
+      "id": "size",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returns": [
         "string",
         "null"

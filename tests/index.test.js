@@ -14,4 +14,17 @@ describe('greyscriptMeta', () => {
     const matches = greyscriptMeta.searchDefinitionMatches('file', 'hasIndex');
     expect([...matches.keys()]).toEqual(['map']);
   });
+
+  test('should return available tags', () => {
+    const tags = greyscriptMeta.getAvailableTags();
+    expect(tags).toEqual(['method', 'function', 'general', 'detached']);
+  });
+
+  test('should return available signatures for id', () => {
+    const signaturesForHasIndex = greyscriptMeta.getDefinitionsById('hasIndex');
+    expect(signaturesForHasIndex.map((it) => it.getOrigin())).toEqual(['any', 'general', 'string', 'list', 'map']);
+
+    const signaturesForLocalIp = greyscriptMeta.getDefinitionsById('local_ip');
+    expect(signaturesForLocalIp.map((it) => it.getOrigin())).toEqual(['general', 'router']);
+  });
 });

@@ -3,19 +3,31 @@
   "extends": "map",
   "definitions": {
     "host_computer": {
+      "id": "host_computer",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returns": [
         "computer"
       ]
     },
     "start_terminal": {
+      "id": "start_terminal",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returns": [
         "null"
       ]
     },
     "put": {
+      "id": "scp",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "sourceFile",

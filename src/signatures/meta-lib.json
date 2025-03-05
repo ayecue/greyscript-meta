@@ -3,7 +3,11 @@
   "extends": "map",
   "definitions": {
     "overflow": {
+      "id": "overflow",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "memoryAddress",
@@ -37,19 +41,31 @@
       ]
     },
     "version": {
+      "id": "version",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returns": [
         "string"
       ]
     },
     "lib_name": {
+      "id": "lib_name",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "returns": [
         "string"
       ]
     },
     "debug_tools": {
+      "id": "debug_tools",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "user",
@@ -71,7 +87,11 @@
       ]
     },
     "is_patched": {
+      "id": "is_patched",
       "type": "function",
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "getdate",
