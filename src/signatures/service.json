@@ -3,6 +3,7 @@
   "extends": "map",
   "definitions": {
     "install_service": {
+      "id": "install_service",
       "type": "function",
       "returnVariations": [
         "Denied. Only root user can install this service.",
@@ -14,6 +15,7 @@
       ]
     },
     "start_service": {
+      "id": "start_service",
       "type": "function",
       "returnVariations": [
         "Denied. Only root user can install this service.",
@@ -26,6 +28,7 @@
       ]
     },
     "stop_service": {
+      "id": "stop_service",
       "type": "function",
       "returnVariations": [
         "Denied. Only root user can install this service.",
