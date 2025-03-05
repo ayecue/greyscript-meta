@@ -4,7 +4,9 @@
     "insert": {
       "id": "insert",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "index",
@@ -23,7 +25,9 @@
     "indexOf": {
       "id": "indexOf",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "value",
@@ -46,7 +50,9 @@
     "hasIndex": {
       "id": "hasIndex",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "value",
@@ -64,7 +70,9 @@
     "remove": {
       "id": "remove",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "value",
@@ -84,7 +92,9 @@
     "push": {
       "id": "push",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "value",
@@ -99,7 +109,9 @@
     "pull": {
       "id": "pull",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returns": [
         "any"
       ]
@@ -107,7 +119,9 @@
     "pop": {
       "id": "pop",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returns": [
         "any"
       ]
@@ -115,7 +129,9 @@
     "shuffle": {
       "id": "shuffle",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returns": [
         "null"
       ]
@@ -123,7 +139,9 @@
     "sum": {
       "id": "sum",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returns": [
         "number"
       ]
@@ -131,7 +149,9 @@
     "indexes": {
       "id": "indexes",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returns": [
         "list"
       ]
@@ -139,7 +159,9 @@
     "len": {
       "id": "len",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returns": [
         "number"
       ]
@@ -147,7 +169,9 @@
     "values": {
       "id": "values",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returns": [
         "list"
       ]

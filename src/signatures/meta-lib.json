@@ -5,7 +5,9 @@
     "overflow": {
       "id": "overflow",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "memoryAddress",
@@ -41,7 +43,9 @@
     "version": {
       "id": "version",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returns": [
         "string"
       ]
@@ -49,7 +53,9 @@
     "lib_name": {
       "id": "lib_name",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returns": [
         "string"
       ]
@@ -57,7 +63,9 @@
     "debug_tools": {
       "id": "debug_tools",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "user",
@@ -81,7 +89,9 @@
     "is_patched": {
       "id": "is_patched",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "getdate",

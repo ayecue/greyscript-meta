@@ -5,7 +5,9 @@
     "scan": {
       "id": "scan_debuglib",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         "error: file not found",
         "No potential issues have been found",
@@ -18,7 +20,9 @@
     "apply_patch": {
       "id": "apply_patch",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "path",
@@ -40,7 +44,9 @@
     "unit_testing": {
       "id": "unit_testing",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "errorLines",
@@ -64,7 +70,9 @@
     "payload": {
       "id": "payload",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "memZone",

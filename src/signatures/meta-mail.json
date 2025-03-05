@@ -5,7 +5,9 @@
     "delete": {
       "id": "delete_mail",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "mailId",
@@ -26,7 +28,9 @@
     "fetch": {
       "id": "fetch",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
         "fetch: No internet access."
@@ -42,7 +46,9 @@
     "read": {
       "id": "read",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "mailId",
@@ -62,7 +68,9 @@
     "send": {
       "id": "send",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "emailAddress",

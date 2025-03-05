@@ -5,7 +5,9 @@
     "load": {
       "id": "load",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "path",
@@ -20,7 +22,9 @@
     "net_use": {
       "id": "net_use",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "ip",
@@ -43,7 +47,9 @@
     "rshell_client": {
       "id": "rshell_client",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "ip",
@@ -85,7 +91,9 @@
     "rshell_server": {
       "id": "rshell_server",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         "rshell_server: No internet connection",
         "rshell_server: The service cannot be started on this network.",
@@ -103,7 +111,9 @@
     "scan": {
       "id": "scan",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "metaLib",
@@ -121,7 +131,9 @@
     "scan_address": {
       "id": "scan_address",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "metaLib",
@@ -140,7 +152,9 @@
     "sniffer": {
       "id": "sniffer",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "saveEncSource",

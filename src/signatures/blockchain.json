@@ -4,7 +4,9 @@
     "coin_price": {
       "id": "coin_price",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "coinName",
@@ -25,7 +27,9 @@
     "show_history": {
       "id": "show_history",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "coinName",
@@ -49,7 +53,9 @@
     "amount_mined": {
       "id": "amount_mined",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "coinName",
@@ -70,7 +76,9 @@
     "get_coin": {
       "id": "get_coin",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "coinName",
@@ -99,7 +107,9 @@
     "get_coin_name": {
       "id": "get_coin_name",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "user",
@@ -124,7 +134,9 @@
     "login_wallet": {
       "id": "login_wallet",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "user",
@@ -149,7 +161,9 @@
     "create_wallet": {
       "id": "create_wallet",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "user",
@@ -177,7 +191,9 @@
     "delete_coin": {
       "id": "delete_coin",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "coinName",

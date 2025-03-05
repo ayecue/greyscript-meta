@@ -5,7 +5,9 @@
     "get_balance": {
       "id": "get_balance_subwallet",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         "get_balance: The account does not exist.",
         "Unknown error: Unable to access to local computer",
@@ -19,7 +21,9 @@
     "set_info": {
       "id": "set_info",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "info",
@@ -41,7 +45,9 @@
     "get_info": {
       "id": "get_info",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
         "No internet access.",
@@ -54,7 +60,9 @@
     "delete": {
       "id": "delete_subwallet",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
         "No internet access.",
@@ -69,7 +77,9 @@
     "get_user": {
       "id": "get_user",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
         "No internet access."
@@ -81,7 +91,9 @@
     "last_transaction": {
       "id": "last_transaction",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
         "No internet access.",
@@ -96,7 +108,9 @@
     "mining": {
       "id": "mining",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
         "No internet access.",
@@ -115,7 +129,9 @@
     "check_password": {
       "id": "check_password",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "password",
@@ -137,7 +153,9 @@
     "wallet_username": {
       "id": "wallet_username",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
         "No internet access."

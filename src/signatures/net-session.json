@@ -5,7 +5,9 @@
     "dump_lib": {
       "id": "dump_lib",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returns": [
         "metaLib"
       ]
@@ -13,7 +15,9 @@
     "get_num_conn_gateway": {
       "id": "get_num_conn_gateway",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returns": [
         "number"
       ]
@@ -21,7 +25,9 @@
     "get_num_portforward": {
       "id": "get_num_portforward",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returns": [
         "number"
       ]
@@ -29,7 +35,9 @@
     "get_num_users": {
       "id": "get_num_users",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returns": [
         "number"
       ]
@@ -37,7 +45,9 @@
     "is_any_active_user": {
       "id": "is_any_active_user",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         0,
         1
@@ -49,7 +59,9 @@
     "is_root_active_user": {
       "id": "is_root_active_user",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         0,
         1

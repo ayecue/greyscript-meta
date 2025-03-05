@@ -5,7 +5,9 @@
     "model": {
       "id": "model",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
         "error: No internet access.",
@@ -18,7 +20,9 @@
     "override_settings": {
       "id": "override_settings",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "power",
@@ -45,7 +49,9 @@
     "set_alarm": {
       "id": "set_alarm",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "enable",

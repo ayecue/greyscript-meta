@@ -5,7 +5,9 @@
     "host_computer": {
       "id": "host_computer",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returns": [
         "computer"
       ]
@@ -13,7 +15,9 @@
     "start_terminal": {
       "id": "start_terminal",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returns": [
         "null"
       ]
@@ -21,7 +25,9 @@
     "put": {
       "id": "scp",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "sourceFile",

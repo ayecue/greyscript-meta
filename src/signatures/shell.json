@@ -5,7 +5,9 @@
     "host_computer": {
       "id": "host_computer",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returns": [
         "computer"
       ]
@@ -13,7 +15,9 @@
     "start_terminal": {
       "id": "start_terminal",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "returns": [
         "null"
       ]
@@ -21,7 +25,9 @@
     "build": {
       "id": "build",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "pathSource",
@@ -59,7 +65,9 @@
     "connect_service": {
       "id": "connect_service",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "ip",
@@ -103,7 +111,9 @@
     "launch": {
       "id": "launch",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "program",
@@ -132,7 +142,9 @@
     "ping": {
       "id": "ping",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "ip",
@@ -152,7 +164,9 @@
     "scp": {
       "id": "scp",
       "type": "function",
-      "tags": [],
+      "tags": [
+        "method"
+      ],
       "arguments": [
         {
           "label": "file",
