@@ -3,6 +3,7 @@
   "extends": "map",
   "definitions": {
     "scan": {
+      "id": "scan_debuglib",
       "type": "function",
       "returnVariations": [
         "error: file not found",
@@ -14,6 +15,7 @@
       ]
     },
     "apply_patch": {
+      "id": "apply_patch",
       "type": "function",
       "arguments": [
         {
@@ -34,6 +36,7 @@
       ]
     },
     "unit_testing": {
+      "id": "unit_testing",
       "type": "function",
       "arguments": [
         {
@@ -56,6 +59,7 @@
       ]
     },
     "payload": {
+      "id": "payload",
       "type": "function",
       "arguments": [
         {
