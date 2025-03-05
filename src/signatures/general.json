@@ -4,6 +4,7 @@
     "mail_login": {
       "id": "mail_login",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "user",
@@ -28,6 +29,7 @@
     "parent_path": {
       "id": "parent_path",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "directory",
@@ -41,6 +43,7 @@
     "trim": {
       "id": "trim",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -55,6 +58,7 @@
     "hasIndex": {
       "id": "hasIndex",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -81,6 +85,7 @@
     "typeof": {
       "id": "typeof",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -94,6 +99,7 @@
     "get_router": {
       "id": "get_router",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "ipAddress",
@@ -112,6 +118,7 @@
     "get_switch": {
       "id": "get_switch",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "ipAddress",
@@ -126,6 +133,7 @@
     "nslookup": {
       "id": "nslookup",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "webAddress",
@@ -142,6 +150,7 @@
     "print": {
       "id": "print",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -167,6 +176,7 @@
     "clear_screen": {
       "id": "clear_screen",
       "type": "function",
+      "tags": [],
       "returns": [
         "null"
       ]
@@ -174,6 +184,7 @@
     "active_user": {
       "id": "active_user",
       "type": "function",
+      "tags": [],
       "returns": [
         "string"
       ]
@@ -181,6 +192,7 @@
     "home_dir": {
       "id": "home_dir",
       "type": "function",
+      "tags": [],
       "returns": [
         "string"
       ]
@@ -188,6 +200,7 @@
     "get_shell": {
       "id": "get_shell",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "user",
@@ -214,6 +227,7 @@
     "indexes": {
       "id": "indexes",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -232,6 +246,7 @@
     "values": {
       "id": "values",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -248,6 +263,7 @@
     "indexOf": {
       "id": "indexOf",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -274,6 +290,7 @@
     "len": {
       "id": "len",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -292,6 +309,7 @@
     "shuffle": {
       "id": "shuffle",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -308,6 +326,7 @@
     "val": {
       "id": "val",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -329,6 +348,7 @@
     "lower": {
       "id": "lower",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -342,6 +362,7 @@
     "upper": {
       "id": "upper",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -355,6 +376,7 @@
     "sum": {
       "id": "sum",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -371,6 +393,7 @@
     "pop": {
       "id": "pop",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -387,6 +410,7 @@
     "pull": {
       "id": "pull",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -403,6 +427,7 @@
     "push": {
       "id": "push",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -425,6 +450,7 @@
     "sort": {
       "id": "sort",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -450,6 +476,7 @@
     "remove": {
       "id": "remove",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -477,6 +504,7 @@
     "user_input": {
       "id": "user_input",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "message",
@@ -510,6 +538,7 @@
     "include_lib": {
       "id": "include_lib",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "path",
@@ -530,6 +559,7 @@
     "import_code": {
       "id": "import_code",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "path",
@@ -543,6 +573,7 @@
     "exit": {
       "id": "exit",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "message",
@@ -560,6 +591,7 @@
     "user_mail_address": {
       "id": "user_mail_address",
       "type": "function",
+      "tags": [],
       "returns": [
         "string",
         "null"
@@ -568,6 +600,7 @@
     "user_bank_number": {
       "id": "user_bank_number",
       "type": "function",
+      "tags": [],
       "returns": [
         "string",
         "null"
@@ -576,6 +609,7 @@
     "whois": {
       "id": "whois",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "ip",
@@ -595,6 +629,7 @@
     "wait": {
       "id": "wait",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "delay",
@@ -612,6 +647,7 @@
     "command_info": {
       "id": "command_info",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "commandName",
@@ -628,6 +664,7 @@
     "program_path": {
       "id": "program_path",
       "type": "function",
+      "tags": [],
       "returns": [
         "string"
       ]
@@ -635,6 +672,7 @@
     "current_path": {
       "id": "current_path",
       "type": "function",
+      "tags": [],
       "returns": [
         "string"
       ]
@@ -642,6 +680,7 @@
     "format_columns": {
       "id": "format_columns",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "columns",
@@ -655,6 +694,7 @@
     "current_date": {
       "id": "current_date",
       "type": "function",
+      "tags": [],
       "returns": [
         "string"
       ]
@@ -662,6 +702,7 @@
     "is_lan_ip": {
       "id": "is_lan_ip",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "ip",
@@ -675,6 +716,7 @@
     "is_valid_ip": {
       "id": "is_valid_ip",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "ip",
@@ -688,6 +730,7 @@
     "bitwise": {
       "id": "bitwise",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "operator",
@@ -710,6 +753,7 @@
     "abs": {
       "id": "abs",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -727,6 +771,7 @@
     "acos": {
       "id": "acos",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -744,6 +789,7 @@
     "asin": {
       "id": "asin",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -761,6 +807,7 @@
     "atan": {
       "id": "atan",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "y",
@@ -786,6 +833,7 @@
     "tan": {
       "id": "tan",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -803,6 +851,7 @@
     "cos": {
       "id": "cos",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -820,6 +869,7 @@
     "code": {
       "id": "code",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -833,6 +883,7 @@
     "char": {
       "id": "char",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -850,6 +901,7 @@
     "sin": {
       "id": "sin",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -867,6 +919,7 @@
     "floor": {
       "id": "floor",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -884,6 +937,7 @@
     "range": {
       "id": "range",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "start",
@@ -917,6 +971,7 @@
     "round": {
       "id": "round",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -942,6 +997,7 @@
     "rnd": {
       "id": "rnd",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "seed",
@@ -956,6 +1012,7 @@
     "sign": {
       "id": "sign",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -973,6 +1030,7 @@
     "sqrt": {
       "id": "sqrt",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -990,6 +1048,7 @@
     "str": {
       "id": "str",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -1003,6 +1062,7 @@
     "ceil": {
       "id": "ceil",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -1020,6 +1080,7 @@
     "pi": {
       "id": "pi",
       "type": "function",
+      "tags": [],
       "returns": [
         "number"
       ]
@@ -1027,6 +1088,7 @@
     "launch_path": {
       "id": "launch_path",
       "type": "function",
+      "tags": [],
       "returns": [
         "string"
       ]
@@ -1034,6 +1096,7 @@
     "slice": {
       "id": "slice",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -1065,6 +1128,7 @@
     "md5": {
       "id": "md5",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -1078,6 +1142,7 @@
     "hash": {
       "id": "hash",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -1091,6 +1156,7 @@
     "time": {
       "id": "time",
       "type": "function",
+      "tags": [],
       "returns": [
         "number"
       ]
@@ -1098,6 +1164,7 @@
     "bitAnd": {
       "id": "bitAnd",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "a",
@@ -1123,6 +1190,7 @@
     "bitOr": {
       "id": "bitOr",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "a",
@@ -1148,6 +1216,7 @@
     "bitXor": {
       "id": "bitXor",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "a",
@@ -1173,6 +1242,7 @@
     "log": {
       "id": "log",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -1198,6 +1268,7 @@
     "yield": {
       "id": "yield",
       "type": "function",
+      "tags": [],
       "returns": [
         "null"
       ]
@@ -1205,6 +1276,7 @@
     "get_custom_object": {
       "id": "get_custom_object",
       "type": "function",
+      "tags": [],
       "returns": [
         "map"
       ]
@@ -1212,6 +1284,7 @@
     "insert": {
       "id": "insert",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "object",
@@ -1237,6 +1310,7 @@
     "to_int": {
       "id": "to_int",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1252,6 +1326,7 @@
     "join": {
       "id": "join",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -1273,6 +1348,7 @@
     "split": {
       "id": "split",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1302,6 +1378,7 @@
     "reverse": {
       "id": "reverse",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -1315,6 +1392,7 @@
     "replace": {
       "id": "replace",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -1344,6 +1422,7 @@
     "replace_regex": {
       "id": "replace_regex",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1373,6 +1452,7 @@
     "is_match": {
       "id": "is_match",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -1402,6 +1482,7 @@
     "lastIndexOf": {
       "id": "lastIndexOf",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1420,6 +1501,7 @@
     "matches": {
       "id": "matches",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -1449,6 +1531,7 @@
     "get_ctf": {
       "id": "get_ctf",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "user",
@@ -1475,6 +1558,7 @@
     "show": {
       "id": "show",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1499,6 +1583,7 @@
     "search": {
       "id": "search",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1523,6 +1608,7 @@
     "update": {
       "id": "update",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1544,6 +1630,7 @@
     "add_repo": {
       "id": "add_repo",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1576,6 +1663,7 @@
     "del_repo": {
       "id": "del_repo",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1600,6 +1688,7 @@
     "install": {
       "id": "install",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1648,6 +1737,7 @@
     "check_upgrade": {
       "id": "check_upgrade",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1687,6 +1777,7 @@
     "coin_price": {
       "id": "coin_price",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1707,6 +1798,7 @@
     "show_history": {
       "id": "show_history",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1734,6 +1826,7 @@
     "amount_mined": {
       "id": "amount_mined",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1758,6 +1851,7 @@
     "get_coin": {
       "id": "get_coin",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1790,6 +1884,7 @@
     "get_coin_name": {
       "id": "get_coin_name",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1818,6 +1913,7 @@
     "login_wallet": {
       "id": "login_wallet",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1846,6 +1942,7 @@
     "create_wallet": {
       "id": "create_wallet",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1877,6 +1974,7 @@
     "delete_coin": {
       "id": "delete_coin",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1910,6 +2008,7 @@
     "set_cycle_mining": {
       "id": "set_cycle_mining",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1940,6 +2039,7 @@
     "get_cycle_mining": {
       "id": "get_cycle_mining",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1959,6 +2059,7 @@
     "get_reward": {
       "id": "get_reward",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -1978,6 +2079,7 @@
     "set_reward": {
       "id": "set_reward",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2008,6 +2110,7 @@
     "transaction": {
       "id": "transaction",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2042,6 +2145,7 @@
     "create_subwallet": {
       "id": "create_subwallet",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2079,6 +2183,7 @@
     "get_subwallet": {
       "id": "get_subwallet",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2103,6 +2208,7 @@
     "get_subwallets": {
       "id": "get_subwallets",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2125,6 +2231,7 @@
     "set_address": {
       "id": "set_address",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2151,6 +2258,7 @@
     "get_address": {
       "id": "get_address",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2170,6 +2278,7 @@
     "get_mined_coins": {
       "id": "get_mined_coins",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2189,6 +2298,7 @@
     "reset_password_coin": {
       "id": "reset_password_coin",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2216,6 +2326,7 @@
     "get_ports": {
       "id": "get_ports",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2233,6 +2344,7 @@
     "get_name": {
       "id": "get_name",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2249,6 +2361,7 @@
     "lan_ip": {
       "id": "lan_ip",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2263,6 +2376,7 @@
     "public_ip_pc": {
       "id": "public_ip_pc",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2277,6 +2391,7 @@
     "File": {
       "id": "File",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2295,6 +2410,7 @@
     "create_folder": {
       "id": "create_folder",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2330,6 +2446,7 @@
     "is_network_active": {
       "id": "is_network_active",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2348,6 +2465,7 @@
     "touch": {
       "id": "touch",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2381,6 +2499,7 @@
     "show_procs": {
       "id": "show_procs",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2395,6 +2514,7 @@
     "network_devices": {
       "id": "network_devices",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2409,6 +2529,7 @@
     "change_password": {
       "id": "change_password",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2439,6 +2560,7 @@
     "create_user": {
       "id": "create_user",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2469,6 +2591,7 @@
     "delete_user": {
       "id": "delete_user",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2504,6 +2627,7 @@
     "create_group": {
       "id": "create_group",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2533,6 +2657,7 @@
     "delete_group": {
       "id": "delete_group",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2562,6 +2687,7 @@
     "groups": {
       "id": "groups",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2580,6 +2706,7 @@
     "close_program": {
       "id": "close_program",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2606,6 +2733,7 @@
     "wifi_networks": {
       "id": "wifi_networks",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2627,6 +2755,7 @@
     "connect_wifi": {
       "id": "connect_wifi",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2669,6 +2798,7 @@
     "connect_ethernet": {
       "id": "connect_ethernet",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2704,6 +2834,7 @@
     "network_gateway": {
       "id": "network_gateway",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2720,6 +2851,7 @@
     "active_net_card": {
       "id": "active_net_card",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2734,6 +2866,7 @@
     "aircrack": {
       "id": "aircrack",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2752,6 +2885,7 @@
     "airmon": {
       "id": "airmon",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2781,6 +2915,7 @@
     "aireplay": {
       "id": "aireplay",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2817,6 +2952,7 @@
     "decipher": {
       "id": "decipher",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2835,6 +2971,7 @@
     "smtp_user_list": {
       "id": "smtp_user_list",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2865,6 +3002,7 @@
     "get_description": {
       "id": "get_description",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2879,6 +3017,7 @@
     "get_template": {
       "id": "get_template",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2893,6 +3032,7 @@
     "player_success": {
       "id": "player_success",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2911,6 +3051,7 @@
     "get_creator_name": {
       "id": "get_creator_name",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2925,6 +3066,7 @@
     "get_mail_content": {
       "id": "get_mail_content",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2939,6 +3081,7 @@
     "chmod": {
       "id": "chmod",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -2973,6 +3116,7 @@
     "copy": {
       "id": "copy",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3009,6 +3153,7 @@
     "move": {
       "id": "move",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3045,6 +3190,7 @@
     "symlink": {
       "id": "symlink",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3084,6 +3230,7 @@
     "rename": {
       "id": "rename",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3112,6 +3259,7 @@
     "path": {
       "id": "path",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3134,6 +3282,7 @@
     "is_folder": {
       "id": "is_folder",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3152,6 +3301,7 @@
     "parent": {
       "id": "parent",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3166,6 +3316,7 @@
     "name": {
       "id": "name",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3180,6 +3331,7 @@
     "allow_import": {
       "id": "allow_import",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3194,6 +3346,7 @@
     "get_content": {
       "id": "get_content",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3212,6 +3365,7 @@
     "set_content": {
       "id": "set_content",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3242,6 +3396,7 @@
     "is_binary": {
       "id": "is_binary",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3260,6 +3415,7 @@
     "is_symlink": {
       "id": "is_symlink",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3278,6 +3434,7 @@
     "has_permission": {
       "id": "has_permission",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3304,6 +3461,7 @@
     "delete": {
       "id": "delete",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3321,6 +3479,7 @@
     "get_folders": {
       "id": "get_folders",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3338,6 +3497,7 @@
     "get_files": {
       "id": "get_files",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3355,6 +3515,7 @@
     "permissions": {
       "id": "permissions",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3369,6 +3530,7 @@
     "owner": {
       "id": "owner",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3383,6 +3545,7 @@
     "set_owner": {
       "id": "set_owner",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3416,6 +3579,7 @@
     "group": {
       "id": "group",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3430,6 +3594,7 @@
     "set_group": {
       "id": "set_group",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3463,6 +3628,7 @@
     "size": {
       "id": "size",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3477,6 +3643,7 @@
     "load": {
       "id": "load",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3495,6 +3662,7 @@
     "net_use": {
       "id": "net_use",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3521,6 +3689,7 @@
     "rshell_client": {
       "id": "rshell_client",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3566,6 +3735,7 @@
     "rshell_server": {
       "id": "rshell_server",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3590,6 +3760,7 @@
     "scan": {
       "id": "scan",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3611,6 +3782,7 @@
     "scan_address": {
       "id": "scan_address",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3633,6 +3805,7 @@
     "sniffer": {
       "id": "sniffer",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3655,6 +3828,7 @@
     "overflow": {
       "id": "overflow",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3694,6 +3868,7 @@
     "version": {
       "id": "version",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3708,6 +3883,7 @@
     "lib_name": {
       "id": "lib_name",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3722,6 +3898,7 @@
     "debug_tools": {
       "id": "debug_tools",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3749,6 +3926,7 @@
     "is_patched": {
       "id": "is_patched",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3773,6 +3951,7 @@
     "payload": {
       "id": "payload",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3810,6 +3989,7 @@
     "dump_lib": {
       "id": "dump_lib",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3824,6 +4004,7 @@
     "get_num_conn_gateway": {
       "id": "get_num_conn_gateway",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3838,6 +4019,7 @@
     "get_num_portforward": {
       "id": "get_num_portforward",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3852,6 +4034,7 @@
     "get_num_users": {
       "id": "get_num_users",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3866,6 +4049,7 @@
     "is_any_active_user": {
       "id": "is_any_active_user",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3884,6 +4068,7 @@
     "is_root_active_user": {
       "id": "is_root_active_user",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3902,6 +4087,7 @@
     "device_ports": {
       "id": "device_ports",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3927,6 +4113,7 @@
     "devices_lan_ip": {
       "id": "devices_lan_ip",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3944,6 +4131,7 @@
     "bssid_name": {
       "id": "bssid_name",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3958,6 +4146,7 @@
     "essid_name": {
       "id": "essid_name",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3972,6 +4161,7 @@
     "firewall_rules": {
       "id": "firewall_rules",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -3989,6 +4179,7 @@
     "kernel_version": {
       "id": "kernel_version",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4003,6 +4194,7 @@
     "local_ip": {
       "id": "local_ip",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4017,6 +4209,7 @@
     "public_ip": {
       "id": "public_ip",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4031,6 +4224,7 @@
     "used_ports": {
       "id": "used_ports",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4048,6 +4242,7 @@
     "ping_port": {
       "id": "ping_port",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4066,6 +4261,7 @@
     "port_info": {
       "id": "port_info",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4084,6 +4280,7 @@
     "install_service": {
       "id": "install_service",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4103,6 +4300,7 @@
     "start_service": {
       "id": "start_service",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4123,6 +4321,7 @@
     "stop_service": {
       "id": "stop_service",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4143,6 +4342,7 @@
     "host_computer": {
       "id": "host_computer",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4157,6 +4357,7 @@
     "start_terminal": {
       "id": "start_terminal",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4170,6 +4371,7 @@
     "build": {
       "id": "build",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4211,6 +4413,7 @@
     "connect_service": {
       "id": "connect_service",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4258,6 +4461,7 @@
     "launch": {
       "id": "launch",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4290,6 +4494,7 @@
     "ping": {
       "id": "ping",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4314,6 +4519,7 @@
     "scp": {
       "id": "scp",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4348,6 +4554,7 @@
     "get_balance_subwallet": {
       "id": "get_balance_subwallet",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4368,6 +4575,7 @@
     "set_info": {
       "id": "set_info",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4394,6 +4602,7 @@
     "get_info": {
       "id": "get_info",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4413,6 +4622,7 @@
     "delete_subwallet": {
       "id": "delete_subwallet",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4434,6 +4644,7 @@
     "get_user": {
       "id": "get_user",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4452,6 +4663,7 @@
     "last_transaction": {
       "id": "last_transaction",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4476,6 +4688,7 @@
     "mining": {
       "id": "mining",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4501,6 +4714,7 @@
     "check_password": {
       "id": "check_password",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4527,6 +4741,7 @@
     "wallet_username": {
       "id": "wallet_username",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4545,6 +4760,7 @@
     "list_coins": {
       "id": "list_coins",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4568,6 +4784,7 @@
     "get_balance": {
       "id": "get_balance",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4593,6 +4810,7 @@
     "buy_coin": {
       "id": "buy_coin",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4630,6 +4848,7 @@
     "sell_coin": {
       "id": "sell_coin",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4667,6 +4886,7 @@
     "get_pending_trade": {
       "id": "get_pending_trade",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4691,6 +4911,7 @@
     "cancel_pending_trade": {
       "id": "cancel_pending_trade",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4714,6 +4935,7 @@
     "get_global_offers": {
       "id": "get_global_offers",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4741,6 +4963,7 @@
     "list_global_coins": {
       "id": "list_global_coins",
       "type": "function",
+      "tags": [],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
         "No internet access."
@@ -4757,6 +4980,7 @@
     "show_nodes": {
       "id": "show_nodes",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4782,6 +5006,7 @@
     "reset_password": {
       "id": "reset_password",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4809,6 +5034,7 @@
     "get_pin": {
       "id": "get_pin",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4827,6 +5053,7 @@
     "delete_mail": {
       "id": "delete_mail",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4851,6 +5078,7 @@
     "fetch": {
       "id": "fetch",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4873,6 +5101,7 @@
     "read": {
       "id": "read",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4896,6 +5125,7 @@
     "send": {
       "id": "send",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4933,6 +5163,7 @@
     "port_number": {
       "id": "port_number",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4947,6 +5178,7 @@
     "is_closed": {
       "id": "is_closed",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4965,6 +5197,7 @@
     "get_lan_ip": {
       "id": "get_lan_ip",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -4979,6 +5212,7 @@
     "reset_ctf_password": {
       "id": "reset_ctf_password",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "newPassword",
@@ -5000,6 +5234,7 @@
     "funcRef": {
       "id": "funcRef",
       "type": "function",
+      "tags": [],
       "returns": [
         {
           "type": "map",
@@ -5011,6 +5246,7 @@
     "list": {
       "id": "list",
       "type": "function",
+      "tags": [],
       "returns": [
         {
           "type": "map",
@@ -5022,6 +5258,7 @@
     "map": {
       "id": "map",
       "type": "function",
+      "tags": [],
       "returns": [
         {
           "type": "map",
@@ -5033,6 +5270,7 @@
     "number": {
       "id": "number",
       "type": "function",
+      "tags": [],
       "returns": [
         {
           "type": "map",
@@ -5044,6 +5282,7 @@
     "string": {
       "id": "string",
       "type": "function",
+      "tags": [],
       "returns": [
         {
           "type": "map",
@@ -5055,6 +5294,7 @@
     "scan_debuglib": {
       "id": "scan_debuglib",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -5074,6 +5314,7 @@
     "apply_patch": {
       "id": "apply_patch",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -5099,6 +5340,7 @@
     "unit_testing": {
       "id": "unit_testing",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -5126,6 +5368,7 @@
     "camera_link_system": {
       "id": "camera_link_system",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -5147,6 +5390,7 @@
     "locate_vehicle": {
       "id": "locate_vehicle",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -5182,6 +5426,7 @@
     "get_credentials_info": {
       "id": "get_credentials_info",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -5202,6 +5447,7 @@
     "model": {
       "id": "model",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -5221,6 +5467,7 @@
     "override_settings": {
       "id": "override_settings",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",
@@ -5251,6 +5498,7 @@
     "set_alarm": {
       "id": "set_alarm",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "self",

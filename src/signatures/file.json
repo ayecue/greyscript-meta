@@ -5,6 +5,7 @@
     "chmod": {
       "id": "chmod",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "perms",
@@ -34,6 +35,7 @@
     "copy": {
       "id": "copy",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "path",
@@ -66,6 +68,7 @@
     "move": {
       "id": "move",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "path",
@@ -98,6 +101,7 @@
     "symlink": {
       "id": "symlink",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "path",
@@ -133,6 +137,7 @@
     "rename": {
       "id": "rename",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "name",
@@ -157,6 +162,7 @@
     "path": {
       "id": "path",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "symlinkOrigPath",
@@ -174,6 +180,7 @@
     "is_folder": {
       "id": "is_folder",
       "type": "function",
+      "tags": [],
       "returnVariations": [
         1,
         0
@@ -186,6 +193,7 @@
     "parent": {
       "id": "parent",
       "type": "function",
+      "tags": [],
       "returns": [
         "file",
         "null"
@@ -194,6 +202,7 @@
     "name": {
       "id": "name",
       "type": "function",
+      "tags": [],
       "returns": [
         "string",
         "null"
@@ -202,6 +211,7 @@
     "allow_import": {
       "id": "allow_import",
       "type": "function",
+      "tags": [],
       "returns": [
         "number"
       ]
@@ -209,6 +219,7 @@
     "get_content": {
       "id": "get_content",
       "type": "function",
+      "tags": [],
       "returnVariations": [
         "Error: can't find the computer of this file",
         "can't open ${filepath}. Binary file."
@@ -221,6 +232,7 @@
     "set_content": {
       "id": "set_content",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "content",
@@ -246,6 +258,7 @@
     "is_binary": {
       "id": "is_binary",
       "type": "function",
+      "tags": [],
       "returnVariations": [
         1,
         0
@@ -258,6 +271,7 @@
     "is_symlink": {
       "id": "is_symlink",
       "type": "function",
+      "tags": [],
       "returnVariations": [
         1,
         0
@@ -270,6 +284,7 @@
     "has_permission": {
       "id": "has_permission",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "perms",
@@ -292,6 +307,7 @@
     "delete": {
       "id": "delete",
       "type": "function",
+      "tags": [],
       "returnVariations": [
         "!PlayerUtils.RemoveFile"
       ],
@@ -302,6 +318,7 @@
     "get_folders": {
       "id": "get_folders",
       "type": "function",
+      "tags": [],
       "returns": [
         {
           "type": "list",
@@ -313,6 +330,7 @@
     "get_files": {
       "id": "get_files",
       "type": "function",
+      "tags": [],
       "returns": [
         {
           "type": "list",
@@ -324,6 +342,7 @@
     "permissions": {
       "id": "permissions",
       "type": "function",
+      "tags": [],
       "returns": [
         "string",
         "null"
@@ -332,6 +351,7 @@
     "owner": {
       "id": "owner",
       "type": "function",
+      "tags": [],
       "returns": [
         "string",
         "null"
@@ -340,6 +360,7 @@
     "set_owner": {
       "id": "set_owner",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "owner",
@@ -369,6 +390,7 @@
     "group": {
       "id": "group",
       "type": "function",
+      "tags": [],
       "returns": [
         "string",
         "null"
@@ -377,6 +399,7 @@
     "set_group": {
       "id": "set_group",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "group",
@@ -406,6 +429,7 @@
     "size": {
       "id": "size",
       "type": "function",
+      "tags": [],
       "returns": [
         "string",
         "null"

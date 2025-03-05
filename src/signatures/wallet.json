@@ -5,6 +5,7 @@
     "list_coins": {
       "id": "list_coins",
       "type": "function",
+      "tags": [],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
         "No internet access.",
@@ -21,6 +22,7 @@
     "get_balance": {
       "id": "get_balance",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "coinName",
@@ -42,6 +44,7 @@
     "buy_coin": {
       "id": "buy_coin",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "coinName",
@@ -74,6 +77,7 @@
     "sell_coin": {
       "id": "sell_coin",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "coinName",
@@ -106,6 +110,7 @@
     "get_pending_trade": {
       "id": "get_pending_trade",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "coinName",
@@ -125,6 +130,7 @@
     "cancel_pending_trade": {
       "id": "cancel_pending_trade",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "coinName",
@@ -143,6 +149,7 @@
     "get_global_offers": {
       "id": "get_global_offers",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "coinName",
@@ -166,6 +173,7 @@
     "list_global_coins": {
       "id": "list_global_coins",
       "type": "function",
+      "tags": [],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
         "No internet access."
@@ -181,6 +189,7 @@
     "show_nodes": {
       "id": "show_nodes",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "coinName",
@@ -202,6 +211,7 @@
     "reset_password": {
       "id": "reset_password",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "newPassword",
@@ -225,6 +235,7 @@
     "get_pin": {
       "id": "get_pin",
       "type": "function",
+      "tags": [],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
         "No internet access."

@@ -5,6 +5,7 @@
     "aircrack": {
       "id": "aircrack",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "path",
@@ -19,6 +20,7 @@
     "airmon": {
       "id": "airmon",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "option",
@@ -44,6 +46,7 @@
     "aireplay": {
       "id": "aireplay",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "bssid",
@@ -76,6 +79,7 @@
     "decipher": {
       "id": "decipher",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "encPass",
@@ -90,6 +94,7 @@
     "smtp_user_list": {
       "id": "smtp_user_list",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "ip",

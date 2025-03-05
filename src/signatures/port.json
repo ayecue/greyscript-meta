@@ -5,6 +5,7 @@
     "port_number": {
       "id": "port_number",
       "type": "function",
+      "tags": [],
       "returns": [
         "number"
       ]
@@ -12,6 +13,7 @@
     "is_closed": {
       "id": "is_closed",
       "type": "function",
+      "tags": [],
       "returnVariations": [
         0,
         1
@@ -23,6 +25,7 @@
     "get_lan_ip": {
       "id": "get_lan_ip",
       "type": "function",
+      "tags": [],
       "returns": [
         "string"
       ]

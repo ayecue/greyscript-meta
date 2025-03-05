@@ -5,6 +5,7 @@
     "get_description": {
       "id": "get_description",
       "type": "function",
+      "tags": [],
       "returns": [
         "string"
       ]
@@ -12,6 +13,7 @@
     "get_template": {
       "id": "get_template",
       "type": "function",
+      "tags": [],
       "returns": [
         "string"
       ]
@@ -19,6 +21,7 @@
     "player_success": {
       "id": "player_success",
       "type": "function",
+      "tags": [],
       "returnVariations": [
         0,
         1
@@ -30,6 +33,7 @@
     "get_creator_name": {
       "id": "get_creator_name",
       "type": "function",
+      "tags": [],
       "returns": [
         "string"
       ]
@@ -37,6 +41,7 @@
     "get_mail_content": {
       "id": "get_mail_content",
       "type": "function",
+      "tags": [],
       "returns": [
         "string"
       ]

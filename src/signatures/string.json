@@ -4,6 +4,7 @@
     "remove": {
       "id": "remove",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -17,6 +18,7 @@
     "hasIndex": {
       "id": "hasIndex",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "index",
@@ -34,6 +36,7 @@
     "insert": {
       "id": "insert",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "index",
@@ -51,6 +54,7 @@
     "indexOf": {
       "id": "indexOf",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -70,6 +74,7 @@
     "lastIndexOf": {
       "id": "lastIndexOf",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "searchStr",
@@ -83,6 +88,7 @@
     "split": {
       "id": "split",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "pattern",
@@ -108,6 +114,7 @@
     "replace": {
       "id": "replace_regex",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "pattern",
@@ -133,6 +140,7 @@
     "trim": {
       "id": "trim",
       "type": "function",
+      "tags": [],
       "returns": [
         "string"
       ]
@@ -140,6 +148,7 @@
     "indexes": {
       "id": "indexes",
       "type": "function",
+      "tags": [],
       "returns": [
         {
           "type": "list",
@@ -150,6 +159,7 @@
     "code": {
       "id": "code",
       "type": "function",
+      "tags": [],
       "returns": [
         "number"
       ]
@@ -157,6 +167,7 @@
     "len": {
       "id": "len",
       "type": "function",
+      "tags": [],
       "returns": [
         "number"
       ]
@@ -164,6 +175,7 @@
     "lower": {
       "id": "lower",
       "type": "function",
+      "tags": [],
       "returns": [
         "string"
       ]
@@ -171,6 +183,7 @@
     "upper": {
       "id": "upper",
       "type": "function",
+      "tags": [],
       "returns": [
         "string"
       ]
@@ -178,6 +191,7 @@
     "val": {
       "id": "val",
       "type": "function",
+      "tags": [],
       "returns": [
         "number"
       ]
@@ -185,6 +199,7 @@
     "values": {
       "id": "values",
       "type": "function",
+      "tags": [],
       "returns": [
         {
           "type": "list",
@@ -195,6 +210,7 @@
     "to_int": {
       "id": "to_int",
       "type": "function",
+      "tags": [],
       "returns": [
         "string",
         "number"
@@ -203,6 +219,7 @@
     "is_match": {
       "id": "is_match",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "pattern",
@@ -228,6 +245,7 @@
     "matches": {
       "id": "matches",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "pattern",

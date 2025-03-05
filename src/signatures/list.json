@@ -4,6 +4,7 @@
     "remove": {
       "id": "remove",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "index",
@@ -17,6 +18,7 @@
     "insert": {
       "id": "insert",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "index",
@@ -34,6 +36,7 @@
     "push": {
       "id": "push",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -47,6 +50,7 @@
     "pop": {
       "id": "pop",
       "type": "function",
+      "tags": [],
       "returns": [
         "any"
       ]
@@ -54,6 +58,7 @@
     "pull": {
       "id": "pull",
       "type": "function",
+      "tags": [],
       "returns": [
         "any"
       ]
@@ -61,6 +66,7 @@
     "shuffle": {
       "id": "shuffle",
       "type": "function",
+      "tags": [],
       "returns": [
         "null"
       ]
@@ -68,6 +74,7 @@
     "reverse": {
       "id": "reverse",
       "type": "function",
+      "tags": [],
       "returns": [
         "null"
       ]
@@ -75,6 +82,7 @@
     "sum": {
       "id": "sum",
       "type": "function",
+      "tags": [],
       "returns": [
         "number"
       ]
@@ -82,6 +90,7 @@
     "hasIndex": {
       "id": "hasIndex",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "index",
@@ -99,6 +108,7 @@
     "indexOf": {
       "id": "indexOf",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -118,6 +128,7 @@
     "sort": {
       "id": "sort",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "key",
@@ -139,6 +150,7 @@
     "join": {
       "id": "join",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "delimiter",
@@ -152,6 +164,7 @@
     "indexes": {
       "id": "indexes",
       "type": "function",
+      "tags": [],
       "returns": [
         {
           "type": "list",
@@ -162,6 +175,7 @@
     "len": {
       "id": "len",
       "type": "function",
+      "tags": [],
       "returns": [
         "number"
       ]
@@ -169,6 +183,7 @@
     "values": {
       "id": "values",
       "type": "function",
+      "tags": [],
       "returns": [
         "list"
       ]
@@ -176,6 +191,7 @@
     "replace": {
       "id": "replace",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "oldVal",

@@ -4,6 +4,7 @@
     "insert": {
       "id": "insert",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "index",
@@ -22,6 +23,7 @@
     "indexOf": {
       "id": "indexOf",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -44,6 +46,7 @@
     "hasIndex": {
       "id": "hasIndex",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -61,6 +64,7 @@
     "remove": {
       "id": "remove",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -80,6 +84,7 @@
     "push": {
       "id": "push",
       "type": "function",
+      "tags": [],
       "arguments": [
         {
           "label": "value",
@@ -94,6 +99,7 @@
     "pull": {
       "id": "pull",
       "type": "function",
+      "tags": [],
       "returns": [
         "any"
       ]
@@ -101,6 +107,7 @@
     "pop": {
       "id": "pop",
       "type": "function",
+      "tags": [],
       "returns": [
         "any"
       ]
@@ -108,6 +115,7 @@
     "shuffle": {
       "id": "shuffle",
       "type": "function",
+      "tags": [],
       "returns": [
         "null"
       ]
@@ -115,6 +123,7 @@
     "sum": {
       "id": "sum",
       "type": "function",
+      "tags": [],
       "returns": [
         "number"
       ]
@@ -122,6 +131,7 @@
     "indexes": {
       "id": "indexes",
       "type": "function",
+      "tags": [],
       "returns": [
         "list"
       ]
@@ -129,6 +139,7 @@
     "len": {
       "id": "len",
       "type": "function",
+      "tags": [],
       "returns": [
         "number"
       ]
@@ -136,6 +147,7 @@
     "values": {
       "id": "values",
       "type": "function",
+      "tags": [],
       "returns": [
         "list"
       ]

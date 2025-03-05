@@ -5,6 +5,7 @@
     "install_service": {
       "id": "install_service",
       "type": "function",
+      "tags": [],
       "returnVariations": [
         "Denied. Only root user can install this service.",
         1
@@ -17,6 +18,7 @@
     "start_service": {
       "id": "start_service",
       "type": "function",
+      "tags": [],
       "returnVariations": [
         "Denied. Only root user can install this service.",
         "<color=yellow>${reason} The chat service can't be accessed.</color>",
@@ -30,6 +32,7 @@
     "stop_service": {
       "id": "stop_service",
       "type": "function",
+      "tags": [],
       "returnVariations": [
         "Denied. Only root user can install this service.",
         1,
