@@ -3,6 +3,7 @@
   "extends": "map",
   "definitions": {
     "delete": {
+      "id": "delete_mail",
       "type": "function",
       "arguments": [
         {
@@ -22,6 +23,7 @@
       ]
     },
     "fetch": {
+      "id": "fetch",
       "type": "function",
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
@@ -36,6 +38,7 @@
       ]
     },
     "read": {
+      "id": "read",
       "type": "function",
       "arguments": [
         {
@@ -54,6 +57,7 @@
       ]
     },
     "send": {
+      "id": "send",
       "type": "function",
       "arguments": [
         {
