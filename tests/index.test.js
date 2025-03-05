@@ -17,7 +17,7 @@ describe('greyscriptMeta', () => {
 
   test('should return available tags', () => {
     const tags = greyscriptMeta.getAvailableTags();
-    expect(tags).toEqual(['method', 'function', 'general']);
+    expect(tags).toEqual(['method', 'function', 'general', 'detached']);
   });
 
   test('should return available signatures for id', () => {

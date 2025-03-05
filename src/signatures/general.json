@@ -50,7 +50,8 @@
       "id": "trim",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -67,7 +68,8 @@
       "id": "hasIndex",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -265,7 +267,8 @@
       "id": "indexes",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -286,7 +289,8 @@
       "id": "values",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -305,7 +309,8 @@
       "id": "indexOf",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -334,7 +339,8 @@
       "id": "len",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -355,7 +361,8 @@
       "id": "shuffle",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -374,7 +381,8 @@
       "id": "val",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -398,7 +406,8 @@
       "id": "lower",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -414,7 +423,8 @@
       "id": "upper",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -430,7 +440,8 @@
       "id": "sum",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -449,7 +460,8 @@
       "id": "pop",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -468,7 +480,8 @@
       "id": "pull",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -487,7 +500,8 @@
       "id": "push",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -512,7 +526,8 @@
       "id": "sort",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -540,7 +555,8 @@
       "id": "remove",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -1485,7 +1501,8 @@
       "id": "insert",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -1513,7 +1530,8 @@
       "id": "to_int",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -1531,7 +1549,8 @@
       "id": "join",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -1555,7 +1574,8 @@
       "id": "split",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -1587,7 +1607,8 @@
       "id": "reverse",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -1603,7 +1624,8 @@
       "id": "replace",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -1635,7 +1657,8 @@
       "id": "replace_regex",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -1667,7 +1690,8 @@
       "id": "is_match",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -1699,7 +1723,8 @@
       "id": "lastIndexOf",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -1720,7 +1745,8 @@
       "id": "matches",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -1782,7 +1808,8 @@
       "id": "show",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -1809,7 +1836,8 @@
       "id": "search",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -1836,7 +1864,8 @@
       "id": "update",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -1860,7 +1889,8 @@
       "id": "add_repo",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -1895,7 +1925,8 @@
       "id": "del_repo",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -1922,7 +1953,8 @@
       "id": "install",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -1973,7 +2005,8 @@
       "id": "check_upgrade",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2015,7 +2048,8 @@
       "id": "coin_price",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2038,7 +2072,8 @@
       "id": "show_history",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2068,7 +2103,8 @@
       "id": "amount_mined",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2095,7 +2131,8 @@
       "id": "get_coin",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2130,7 +2167,8 @@
       "id": "get_coin_name",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2161,7 +2199,8 @@
       "id": "login_wallet",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2192,7 +2231,8 @@
       "id": "create_wallet",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2226,7 +2266,8 @@
       "id": "delete_coin",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2262,7 +2303,8 @@
       "id": "set_cycle_mining",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2295,7 +2337,8 @@
       "id": "get_cycle_mining",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2317,7 +2360,8 @@
       "id": "get_reward",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2339,7 +2383,8 @@
       "id": "set_reward",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2372,7 +2417,8 @@
       "id": "transaction",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2409,7 +2455,8 @@
       "id": "create_subwallet",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2449,7 +2496,8 @@
       "id": "get_subwallet",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2476,7 +2524,8 @@
       "id": "get_subwallets",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2501,7 +2550,8 @@
       "id": "set_address",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2530,7 +2580,8 @@
       "id": "get_address",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2552,7 +2603,8 @@
       "id": "get_mined_coins",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2574,7 +2626,8 @@
       "id": "reset_password_coin",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2604,7 +2657,8 @@
       "id": "get_ports",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2624,7 +2678,8 @@
       "id": "get_name",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2643,7 +2698,8 @@
       "id": "lan_ip",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2660,7 +2716,8 @@
       "id": "public_ip_pc",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2677,7 +2734,8 @@
       "id": "File",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2698,7 +2756,8 @@
       "id": "create_folder",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2736,7 +2795,8 @@
       "id": "is_network_active",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2757,7 +2817,8 @@
       "id": "touch",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2793,7 +2854,8 @@
       "id": "show_procs",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2810,7 +2872,8 @@
       "id": "network_devices",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2827,7 +2890,8 @@
       "id": "change_password",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2860,7 +2924,8 @@
       "id": "create_user",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2893,7 +2958,8 @@
       "id": "delete_user",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2931,7 +2997,8 @@
       "id": "create_group",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2963,7 +3030,8 @@
       "id": "delete_group",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -2995,7 +3063,8 @@
       "id": "groups",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3016,7 +3085,8 @@
       "id": "close_program",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3045,7 +3115,8 @@
       "id": "wifi_networks",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3069,7 +3140,8 @@
       "id": "connect_wifi",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3114,7 +3186,8 @@
       "id": "connect_ethernet",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3152,7 +3225,8 @@
       "id": "network_gateway",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3171,7 +3245,8 @@
       "id": "active_net_card",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3188,7 +3263,8 @@
       "id": "aircrack",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3209,7 +3285,8 @@
       "id": "airmon",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3241,7 +3318,8 @@
       "id": "aireplay",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3280,7 +3358,8 @@
       "id": "decipher",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3301,7 +3380,8 @@
       "id": "smtp_user_list",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3334,7 +3414,8 @@
       "id": "get_description",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3351,7 +3432,8 @@
       "id": "get_template",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3368,7 +3450,8 @@
       "id": "player_success",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3389,7 +3472,8 @@
       "id": "get_creator_name",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3406,7 +3490,8 @@
       "id": "get_mail_content",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3423,7 +3508,8 @@
       "id": "chmod",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3460,7 +3546,8 @@
       "id": "copy",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3499,7 +3586,8 @@
       "id": "move",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3538,7 +3626,8 @@
       "id": "symlink",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3580,7 +3669,8 @@
       "id": "rename",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3611,7 +3701,8 @@
       "id": "path",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3636,7 +3727,8 @@
       "id": "is_folder",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3657,7 +3749,8 @@
       "id": "parent",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3674,7 +3767,8 @@
       "id": "name",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3691,7 +3785,8 @@
       "id": "allow_import",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3708,7 +3803,8 @@
       "id": "get_content",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3729,7 +3825,8 @@
       "id": "set_content",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3762,7 +3859,8 @@
       "id": "is_binary",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3783,7 +3881,8 @@
       "id": "is_symlink",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3804,7 +3903,8 @@
       "id": "has_permission",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3833,7 +3933,8 @@
       "id": "delete",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3853,7 +3954,8 @@
       "id": "get_folders",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3873,7 +3975,8 @@
       "id": "get_files",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3893,7 +3996,8 @@
       "id": "permissions",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3910,7 +4014,8 @@
       "id": "owner",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3927,7 +4032,8 @@
       "id": "set_owner",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3963,7 +4069,8 @@
       "id": "group",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -3980,7 +4087,8 @@
       "id": "set_group",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4016,7 +4124,8 @@
       "id": "size",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4033,7 +4142,8 @@
       "id": "load",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4054,7 +4164,8 @@
       "id": "net_use",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4083,7 +4194,8 @@
       "id": "rshell_client",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4131,7 +4243,8 @@
       "id": "rshell_server",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4158,7 +4271,8 @@
       "id": "scan",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4182,7 +4296,8 @@
       "id": "scan_address",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4207,7 +4322,8 @@
       "id": "sniffer",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4232,7 +4348,8 @@
       "id": "overflow",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4274,7 +4391,8 @@
       "id": "version",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4291,7 +4409,8 @@
       "id": "lib_name",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4308,7 +4427,8 @@
       "id": "debug_tools",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4338,7 +4458,8 @@
       "id": "is_patched",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4365,7 +4486,8 @@
       "id": "payload",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4405,7 +4527,8 @@
       "id": "dump_lib",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4422,7 +4545,8 @@
       "id": "get_num_conn_gateway",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4439,7 +4563,8 @@
       "id": "get_num_portforward",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4456,7 +4581,8 @@
       "id": "get_num_users",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4473,7 +4599,8 @@
       "id": "is_any_active_user",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4494,7 +4621,8 @@
       "id": "is_root_active_user",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4515,7 +4643,8 @@
       "id": "device_ports",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4543,7 +4672,8 @@
       "id": "devices_lan_ip",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4563,7 +4693,8 @@
       "id": "bssid_name",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4580,7 +4711,8 @@
       "id": "essid_name",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4597,7 +4729,8 @@
       "id": "firewall_rules",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4617,7 +4750,8 @@
       "id": "kernel_version",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4634,7 +4768,8 @@
       "id": "local_ip",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4651,7 +4786,8 @@
       "id": "public_ip",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4668,7 +4804,8 @@
       "id": "used_ports",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4688,7 +4825,8 @@
       "id": "ping_port",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4709,7 +4847,8 @@
       "id": "port_info",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4730,7 +4869,8 @@
       "id": "install_service",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4752,7 +4892,8 @@
       "id": "start_service",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4775,7 +4916,8 @@
       "id": "stop_service",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4798,7 +4940,8 @@
       "id": "host_computer",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4815,7 +4958,8 @@
       "id": "start_terminal",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4831,7 +4975,8 @@
       "id": "build",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4875,7 +5020,8 @@
       "id": "connect_service",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4925,7 +5071,8 @@
       "id": "launch",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4960,7 +5107,8 @@
       "id": "ping",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -4987,7 +5135,8 @@
       "id": "scp",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5024,7 +5173,8 @@
       "id": "get_balance_subwallet",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5047,7 +5197,8 @@
       "id": "set_info",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5076,7 +5227,8 @@
       "id": "get_info",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5098,7 +5250,8 @@
       "id": "delete_subwallet",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5122,7 +5275,8 @@
       "id": "get_user",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5143,7 +5297,8 @@
       "id": "last_transaction",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5170,7 +5325,8 @@
       "id": "mining",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5198,7 +5354,8 @@
       "id": "check_password",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5227,7 +5384,8 @@
       "id": "wallet_username",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5248,7 +5406,8 @@
       "id": "list_coins",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5274,7 +5433,8 @@
       "id": "get_balance",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5302,7 +5462,8 @@
       "id": "buy_coin",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5342,7 +5503,8 @@
       "id": "sell_coin",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5382,7 +5544,8 @@
       "id": "get_pending_trade",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5409,7 +5572,8 @@
       "id": "cancel_pending_trade",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5435,7 +5599,8 @@
       "id": "get_global_offers",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5465,7 +5630,8 @@
       "id": "list_global_coins",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5490,7 +5656,8 @@
       "id": "show_nodes",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5518,7 +5685,8 @@
       "id": "reset_password",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5548,7 +5716,8 @@
       "id": "get_pin",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5569,7 +5738,8 @@
       "id": "delete_mail",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5596,7 +5766,8 @@
       "id": "fetch",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5621,7 +5792,8 @@
       "id": "read",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5647,7 +5819,8 @@
       "id": "send",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5687,7 +5860,8 @@
       "id": "port_number",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5704,7 +5878,8 @@
       "id": "is_closed",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5725,7 +5900,8 @@
       "id": "get_lan_ip",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5842,7 +6018,8 @@
       "id": "scan_debuglib",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5864,7 +6041,8 @@
       "id": "apply_patch",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5892,7 +6070,8 @@
       "id": "unit_testing",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5922,7 +6101,8 @@
       "id": "camera_link_system",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5946,7 +6126,8 @@
       "id": "locate_vehicle",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -5984,7 +6165,8 @@
       "id": "get_credentials_info",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -6007,7 +6189,8 @@
       "id": "model",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -6029,7 +6212,8 @@
       "id": "override_settings",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
@@ -6062,7 +6246,8 @@
       "id": "set_alarm",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "detached"
       ],
       "arguments": [
         {
