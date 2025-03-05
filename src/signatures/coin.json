@@ -3,6 +3,7 @@
   "extends": "map",
   "definitions": {
     "set_cycle_mining": {
+      "id": "set_cycle_mining",
       "type": "function",
       "arguments": [
         {
@@ -28,6 +29,7 @@
       ]
     },
     "get_cycle_mining": {
+      "id": "get_cycle_mining",
       "type": "function",
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
@@ -39,6 +41,7 @@
       ]
     },
     "get_reward": {
+      "id": "get_reward",
       "type": "function",
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
@@ -50,6 +53,7 @@
       ]
     },
     "set_reward": {
+      "id": "set_reward",
       "type": "function",
       "arguments": [
         {
@@ -75,6 +79,7 @@
       ]
     },
     "transaction": {
+      "id": "transaction",
       "type": "function",
       "arguments": [
         {
@@ -104,6 +109,7 @@
       ]
     },
     "create_subwallet": {
+      "id": "create_subwallet",
       "type": "function",
       "arguments": [
         {
@@ -136,6 +142,7 @@
       ]
     },
     "get_subwallet": {
+      "id": "get_subwallet",
       "type": "function",
       "arguments": [
         {
@@ -155,6 +162,7 @@
       ]
     },
     "get_subwallets": {
+      "id": "get_subwallets",
       "type": "function",
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
@@ -169,6 +177,7 @@
       ]
     },
     "set_address": {
+      "id": "set_address",
       "type": "function",
       "arguments": [
         {
@@ -190,6 +199,7 @@
       ]
     },
     "get_address": {
+      "id": "get_address",
       "type": "function",
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
@@ -201,6 +211,7 @@
       ]
     },
     "get_mined_coins": {
+      "id": "get_mined_coins",
       "type": "function",
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
@@ -212,6 +223,7 @@
       ]
     },
     "reset_password": {
+      "id": "reset_password_coin",
       "type": "function",
       "arguments": [
         {
