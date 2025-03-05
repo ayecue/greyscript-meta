@@ -3,6 +3,7 @@
   "extends": "map",
   "definitions": {
     "device_ports": {
+      "id": "device_ports",
       "type": "function",
       "arguments": [
         {
@@ -20,6 +21,7 @@
       ]
     },
     "devices_lan_ip": {
+      "id": "devices_lan_ip",
       "type": "function",
       "returns": [
         {
@@ -29,18 +31,21 @@
       ]
     },
     "bssid_name": {
+      "id": "bssid_name",
       "type": "function",
       "returns": [
         "string"
       ]
     },
     "essid_name": {
+      "id": "essid_name",
       "type": "function",
       "returns": [
         "string"
       ]
     },
     "firewall_rules": {
+      "id": "firewall_rules",
       "type": "function",
       "returns": [
         {
@@ -50,24 +55,28 @@
       ]
     },
     "kernel_version": {
+      "id": "kernel_version",
       "type": "function",
       "returns": [
         "string"
       ]
     },
     "local_ip": {
+      "id": "local_ip",
       "type": "function",
       "returns": [
         "string"
       ]
     },
     "public_ip": {
+      "id": "public_ip",
       "type": "function",
       "returns": [
         "string"
       ]
     },
     "used_ports": {
+      "id": "used_ports",
       "type": "function",
       "returns": [
         {
@@ -77,6 +86,7 @@
       ]
     },
     "ping_port": {
+      "id": "ping_port",
       "type": "function",
       "arguments": [
         {
@@ -90,6 +100,7 @@
       ]
     },
     "port_info": {
+      "id": "port_info",
       "type": "function",
       "arguments": [
         {
