@@ -3,12 +3,14 @@
   "extends": "map",
   "definitions": {
     "port_number": {
+      "id": "port_number",
       "type": "function",
       "returns": [
         "number"
       ]
     },
     "is_closed": {
+      "id": "is_closed",
       "type": "function",
       "returnVariations": [
         0,
@@ -19,6 +21,7 @@
       ]
     },
     "get_lan_ip": {
+      "id": "get_lan_ip",
       "type": "function",
       "returns": [
         "string"
