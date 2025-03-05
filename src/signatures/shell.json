@@ -3,18 +3,21 @@
   "extends": "map",
   "definitions": {
     "host_computer": {
+      "id": "host_computer",
       "type": "function",
       "returns": [
         "computer"
       ]
     },
     "start_terminal": {
+      "id": "start_terminal",
       "type": "function",
       "returns": [
         "null"
       ]
     },
     "build": {
+      "id": "build",
       "type": "function",
       "arguments": [
         {
@@ -51,6 +54,7 @@
       ]
     },
     "connect_service": {
+      "id": "connect_service",
       "type": "function",
       "arguments": [
         {
@@ -93,6 +97,7 @@
       ]
     },
     "launch": {
+      "id": "launch",
       "type": "function",
       "arguments": [
         {
@@ -120,6 +125,7 @@
       ]
     },
     "ping": {
+      "id": "ping",
       "type": "function",
       "arguments": [
         {
@@ -138,6 +144,7 @@
       ]
     },
     "scp": {
+      "id": "scp",
       "type": "function",
       "arguments": [
         {
