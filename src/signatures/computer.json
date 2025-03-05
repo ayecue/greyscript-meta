@@ -3,6 +3,7 @@
   "extends": "map",
   "definitions": {
     "get_ports": {
+      "id": "get_ports",
       "type": "function",
       "returns": [
         {
@@ -12,24 +13,28 @@
       ]
     },
     "get_name": {
+      "id": "get_name",
       "type": "function",
       "returns": [
         "string"
       ]
     },
     "local_ip": {
+      "id": "lan_ip",
       "type": "function",
       "returns": [
         "string"
       ]
     },
     "public_ip": {
+      "id": "public_ip_pc",
       "type": "function",
       "returns": [
         "string"
       ]
     },
     "File": {
+      "id": "File",
       "type": "function",
       "arguments": [
         {
@@ -43,6 +48,7 @@
       ]
     },
     "create_folder": {
+      "id": "create_folder",
       "type": "function",
       "arguments": [
         {
@@ -72,6 +78,7 @@
       ]
     },
     "is_network_active": {
+      "id": "is_network_active",
       "type": "function",
       "returnVariations": [
         0,
@@ -82,6 +89,7 @@
       ]
     },
     "touch": {
+      "id": "touch",
       "type": "function",
       "arguments": [
         {
@@ -109,18 +117,21 @@
       ]
     },
     "show_procs": {
+      "id": "show_procs",
       "type": "function",
       "returns": [
         "string"
       ]
     },
     "network_devices": {
+      "id": "network_devices",
       "type": "function",
       "returns": [
         "string"
       ]
     },
     "change_password": {
+      "id": "change_password",
       "type": "function",
       "arguments": [
         {
@@ -146,6 +157,7 @@
       ]
     },
     "create_user": {
+      "id": "create_user",
       "type": "function",
       "arguments": [
         {
@@ -171,6 +183,7 @@
       ]
     },
     "delete_user": {
+      "id": "delete_user",
       "type": "function",
       "arguments": [
         {
@@ -201,6 +214,7 @@
       ]
     },
     "create_group": {
+      "id": "create_group",
       "type": "function",
       "arguments": [
         {
@@ -225,6 +239,7 @@
       ]
     },
     "delete_group": {
+      "id": "delete_group",
       "type": "function",
       "arguments": [
         {
@@ -249,6 +264,7 @@
       ]
     },
     "groups": {
+      "id": "groups",
       "type": "function",
       "arguments": [
         {
@@ -265,6 +281,7 @@
       ]
     },
     "close_program": {
+      "id": "close_program",
       "type": "function",
       "arguments": [
         {
@@ -286,6 +303,7 @@
       ]
     },
     "wifi_networks": {
+      "id": "wifi_networks",
       "type": "function",
       "arguments": [
         {
@@ -302,6 +320,7 @@
       ]
     },
     "connect_wifi": {
+      "id": "connect_wifi",
       "type": "function",
       "arguments": [
         {
@@ -339,6 +358,7 @@
       ]
     },
     "connect_ethernet": {
+      "id": "connect_ethernet",
       "type": "function",
       "arguments": [
         {
@@ -369,12 +389,14 @@
       ]
     },
     "network_gateway": {
+      "id": "network_gateway",
       "type": "function",
       "returns": [
         "string"
       ]
     },
     "active_net_card": {
+      "id": "active_net_card",
       "type": "function",
       "returns": [
         "string"
