@@ -3,6 +3,7 @@
   "extends": "map",
   "definitions": {
     "overflow": {
+      "id": "overflow",
       "type": "function",
       "arguments": [
         {
@@ -37,18 +38,21 @@
       ]
     },
     "version": {
+      "id": "version",
       "type": "function",
       "returns": [
         "string"
       ]
     },
     "lib_name": {
+      "id": "lib_name",
       "type": "function",
       "returns": [
         "string"
       ]
     },
     "debug_tools": {
+      "id": "debug_tools",
       "type": "function",
       "arguments": [
         {
@@ -71,6 +75,7 @@
       ]
     },
     "is_patched": {
+      "id": "is_patched",
       "type": "function",
       "arguments": [
         {
