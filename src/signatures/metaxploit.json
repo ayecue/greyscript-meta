@@ -3,6 +3,7 @@
   "extends": "map",
   "definitions": {
     "load": {
+      "id": "load",
       "type": "function",
       "arguments": [
         {
@@ -16,6 +17,7 @@
       ]
     },
     "net_use": {
+      "id": "net_use",
       "type": "function",
       "arguments": [
         {
@@ -37,6 +39,7 @@
       ]
     },
     "rshell_client": {
+      "id": "rshell_client",
       "type": "function",
       "arguments": [
         {
@@ -77,6 +80,7 @@
       ]
     },
     "rshell_server": {
+      "id": "rshell_server",
       "type": "function",
       "returnVariations": [
         "rshell_server: No internet connection",
@@ -93,6 +97,7 @@
       ]
     },
     "scan": {
+      "id": "scan",
       "type": "function",
       "arguments": [
         {
@@ -109,6 +114,7 @@
       ]
     },
     "scan_address": {
+      "id": "scan_address",
       "type": "function",
       "arguments": [
         {
@@ -126,6 +132,7 @@
       ]
     },
     "sniffer": {
+      "id": "sniffer",
       "type": "function",
       "arguments": [
         {
