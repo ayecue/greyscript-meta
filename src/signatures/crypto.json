@@ -3,6 +3,7 @@
   "extends": "map",
   "definitions": {
     "aircrack": {
+      "id": "aircrack",
       "type": "function",
       "arguments": [
         {
@@ -16,6 +17,7 @@
       ]
     },
     "airmon": {
+      "id": "airmon",
       "type": "function",
       "arguments": [
         {
@@ -40,6 +42,7 @@
       ]
     },
     "aireplay": {
+      "id": "aireplay",
       "type": "function",
       "arguments": [
         {
@@ -71,6 +74,7 @@
       ]
     },
     "decipher": {
+      "id": "decipher",
       "type": "function",
       "arguments": [
         {
@@ -84,6 +88,7 @@
       ]
     },
     "smtp_user_list": {
+      "id": "smtp_user_list",
       "type": "function",
       "arguments": [
         {
