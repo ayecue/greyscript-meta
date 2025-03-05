@@ -3,6 +3,7 @@
   "extends": "map",
   "definitions": {
     "get_balance": {
+      "id": "get_balance_subwallet",
       "type": "function",
       "returnVariations": [
         "get_balance: The account does not exist.",
@@ -15,6 +16,7 @@
       ]
     },
     "set_info": {
+      "id": "set_info",
       "type": "function",
       "arguments": [
         {
@@ -35,6 +37,7 @@
       ]
     },
     "get_info": {
+      "id": "get_info",
       "type": "function",
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
@@ -46,6 +49,7 @@
       ]
     },
     "delete": {
+      "id": "delete_subwallet",
       "type": "function",
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
@@ -59,6 +63,7 @@
       ]
     },
     "get_user": {
+      "id": "get_user",
       "type": "function",
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
@@ -69,6 +74,7 @@
       ]
     },
     "last_transaction": {
+      "id": "last_transaction",
       "type": "function",
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
@@ -82,6 +88,7 @@
       ]
     },
     "mining": {
+      "id": "mining",
       "type": "function",
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
@@ -99,6 +106,7 @@
       ]
     },
     "check_password": {
+      "id": "check_password",
       "type": "function",
       "arguments": [
         {
@@ -119,6 +127,7 @@
       ]
     },
     "wallet_username": {
+      "id": "wallet_username",
       "type": "function",
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
