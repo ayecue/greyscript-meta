@@ -2366,7 +2366,7 @@
     ]
   },
   "is_closed": {
-    "description": "Returns a `number`, where one indicates that the specified `port` is open and zero indicates that the port is closed. In case the passed object is not a `port` this method will return `null`.",
+    "description": "Returns a `number`, where one indicates that the specified `port` is closed and zero indicates that the port is open. In case the passed object is not a `port` this method will return `null`.",
     "example": [
       "router = get_router",
       "ports = used_ports(router)",

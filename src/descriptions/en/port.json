@@ -13,7 +13,7 @@
     ]
   },
   "is_closed": {
-    "description": "Returns a `number`, where one indicates that the specified `port` is open and zero indicates that the port is closed.",
+    "description": "Returns a `number`, where one indicates that the specified `port` is closed and zero indicates that the port is open.",
     "example": [
       "router = get_router",
       "ports = router.used_ports",
