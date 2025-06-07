@@ -334,7 +334,7 @@
     ]
   },
   "current_path": {
-    "description": "Returns a `string` containing the path in which script that is currently executed from.",
+    "description": "Returns a `string` containing the folder path of the currently running script, equivalent to calling `parent_path(program_path)`. It will update when using `launch`.",
     "example": [
       "path = current_path",
       "print(\"PWD: \" + path)"
