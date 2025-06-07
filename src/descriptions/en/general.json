@@ -645,11 +645,23 @@
   "get_custom_object": {
     "description": "Returns `map` which is shared throughout script execution. Can be helpful if it desired to pass or receive values when using `launch`. Using this method in a SSH encryption process will cause an error to be thrown preventing further script execution.",
     "example": [
-      "get_custom_object.shouldEndScript = false",
-      "while (get_custom_object.shouldEndScript)",
-      "   print(\"Waiting...\")",
-      "   wait(2)",
-      "end while"
+      "get_custom_object.didScriptFail = true",
+      "someScriptContent = \"",
+      "   print \"\"Done!\"\"",
+      "   get_custom_object.didScriptFail = false",
+      "\"",
+      "myShell = get_shell(\"root\", \"test\")",
+      "myComputer = myShell.host_computer",
+      "myComputer.touch(\"/root\", \"someScript.src\")",
+      "someScriptFile = myComputer.File(\"/root/someScript.src\")",
+      "someScriptFile.set_content(someScriptContent)",
+      "myShell.build(\"/root/someScript.src\", \"/root\")",
+      "myShell.launch(\"/root/someScript\")",
+      "if get_custom_object.didScriptFail then",
+      "   print(\"Script did not finish successfully.\")",
+      "else",
+      "   print(\"Script finished successfully.\")",
+      "end if"
     ]
   },
   "insert": {
