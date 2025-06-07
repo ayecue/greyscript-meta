@@ -51,7 +51,7 @@
     ]
   },
   "typeof": {
-    "description": "Returns a `string` containing the type of the entity provided. There are following types by default: `\"aptclientLib\"`, `\"blockchainLib\"`, `\"ctfEvent\"`, `\"coin\"`, `\"computer\"`, `\"cryptoLib\"`, `\"debugLibrary\"`, `\"file\"`, `\"function\"`, `\"list\"`, `\"map\"`, `\"MetaLib\"`, `\"MetaMail\"`, `\"MetaxploitLib\"`, `\"NetSession\"`, `\"null\"`, `\"number\"`, `\"port\"`, `\"router\"`, `\"service\"`, `\"shell\"`, `\"ftpshell\"`, `\"SmartAppliance\"`, `\"string\"`, `\"subwallet\"`, `\"TrafficNet\"`, `\"wallet\"`. Custom types can be added as well by using the `classID` property in a `map`.",
+    "description": "Returns a `string` containing the type of the entity provided. There are following types by default: `\"aptclientLib\"`, `\"blockchainLib\"`, `\"ctfEvent\"`, `\"coin\"`, `\"computer\"`, `\"pcomputer\"`, `\"cryptoLib\"`, `\"debugLibrary\"`, `\"file\"`, `\"pfile\"`, `\"function\"`, `\"list\"`, `\"map\"`, `\"MetaLib\"`, `\"MetaMail\"`, `\"MetaxploitLib\"`, `\"NetSession\"`, `\"null\"`, `\"number\"`, `\"port\"`, `\"router\"`, `\"prouter\"`, `\"service\"`, `\"shell\"`, `\"ftpshell\"`, `\"pshell\"`, `\"SmartAppliance\"`, `\"string\"`, `\"subwallet\"`, `\"TrafficNet\"`, `\"wallet\"`. Custom types can be added as well by using the `classID` property in a `map`.",
     "example": [
       "myObj = { \"classID\": \"myType\" }",
       "if typeof(myObj) == \"myType\" then",
