@@ -56,5 +56,14 @@
       "netSession = metax.net_use(\"1.1.1.1\", ports[0].port_number)",
       "print(\"Root Active?: \" + netSession.is_root_active_user)"
     ]
+  },
+  "flood_connection": {
+    "description": "Initiates a DDoS attack targeting the computer associated with the currently active `netSession` object. To successfully force a reboot, there must be at least 4 concurrent `flood_connection` calls for every 1 unit of net speed on the target computer. Keep in mind that these calls need to come from different IPs. So for example PackS would require 12 active `flood_connection` calls. If the threshold is met, the target computer will be forced to reboot, and the terminal will output: `\"remote connection interrupted\"`. This method always returns `null` and only prints a message upon a successful attack.",
+    "example": [
+      "metax = include_lib(\"/lib/metaxploit.so\")",
+      "ports = get_router(\"1.1.1.1\").used_ports",
+      "netSession = metax.net_use(\"1.1.1.1\", ports[0].port_number)",
+      "netSession.flood_connection"
+    ]
   }
 }

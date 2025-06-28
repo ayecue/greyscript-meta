@@ -2614,5 +2614,14 @@
       "   print(\"Successfully executed payload!\")",
       "end if"
     ]
+  },
+  "flood_connection": {
+    "description": "Initiates a DDoS attack targeting the computer associated with the currently active `netSession` object. To successfully force a reboot, there must be at least 4 concurrent `flood_connection` calls for every 1 unit of net speed on the target computer. Keep in mind that these calls need to come from different IPs. So for example PackS would require 12 active `flood_connection` calls. If the threshold is met, the target computer will be forced to reboot, and the terminal will output: `\"remote connection interrupted\"`. This method always returns `null` and only prints a message upon a successful attack.",
+    "example": [
+      "metax = include_lib(\"/lib/metaxploit.so\")",
+      "ports = used_ports(get_router(\"1.1.1.1\"))",
+      "netSession = net_use(metax, \"1.1.1.1\", port_number(ports[0]))",
+      "flood_connection(netSession)"
+    ]
   }
 }

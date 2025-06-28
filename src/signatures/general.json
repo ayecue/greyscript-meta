@@ -6271,6 +6271,24 @@
         "number",
         "null"
       ]
+    },
+    "flood_connection": {
+      "id": "flood_connection",
+      "type": "function",
+      "tags": [
+        "function",
+        "detached",
+        "nightly"
+      ],
+      "arguments": [
+        {
+          "label": "self",
+          "type": "netSession"
+        }
+      ],
+      "returns": [
+        "null"
+      ]
     }
   }
 }
