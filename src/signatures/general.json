@@ -6289,6 +6289,31 @@
       "returns": [
         "null"
       ]
+    },
+    "get_abs_path": {
+      "id": "get_abs_path",
+      "type": "function",
+      "tags": [
+        "function",
+        "nightly"
+      ],
+      "arguments": [
+        {
+          "label": "path",
+          "type": "string"
+        },
+        {
+          "label": "basePath",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        }
+      ],
+      "returns": [
+        "string"
+      ]
     }
   }
 }

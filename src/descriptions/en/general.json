@@ -2623,5 +2623,14 @@
       "netSession = net_use(metax, \"1.1.1.1\", port_number(ports[0]))",
       "flood_connection(netSession)"
     ]
+  },
+  "get_abs_path": {
+    "description": "Returns the absolute path of the given path string. If the path is already absolute, it is returned unchanged. Otherwise, it is resolved against the current working path by default, or against the provided base path if specified. If the path exceeds 1024 characters, the base path exceeds 64 characters, or the arguments deviate from the expected signature, a runtime exception is thrown.",
+    "example": [
+      "metax = include_lib(\"/lib/metaxploit.so\")",
+      "ports = used_ports(get_router(\"1.1.1.1\"))",
+      "netSession = net_use(metax, \"1.1.1.1\", port_number(ports[0]))",
+      "get_abs_path(netSession)"
+    ]
   }
 }
