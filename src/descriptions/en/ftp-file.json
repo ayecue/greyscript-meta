@@ -1,0 +1,214 @@
+{
+  "$meta": {
+    "description": "A `ftpFile` object can be acquired by using [File](#FTPCOMPUTER_FILE). The `classID` used for this object is `\"ftpFile\"`."
+  },
+  "copy": {
+    "description": "Copies the `file` to the provided path. Files can only be copied if the user has read and write permissions or is root. The new filename has to be below 128 characters and alphanumeric. After success, this method will return a `number` with the value one. Otherwise, it will return a `string` containing information about the reason for failure. If any of the parameter types deviate from the method signature, this method is used within an SSH encryption process, the new name exceeds 128 characters, or the path is too long, an error will be thrown, causing an interruption of script execution. In case the current file gets deleted, this method will return `null`.",
+    "example": [
+      "shell = get_shell",
+      "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
+      "ftpComputer = ftpShell.host_computer",
+      "passwdFile = ftpComputer.File(\"/etc/passwd\")",
+      "copyResult = passwdFile.copy(\"/etc/\", \"duplicate\")",
+      "if typeof(copyResult) == \"string\" then",
+      "   print(\"There was an error while copying file: \" + copyResult)",
+      "else",
+      "   print(\"File got copied successfully.\")",
+      "end if"
+    ]
+  },
+  "move": {
+    "description": "Moves the `file` to the provided path. Files can only be moved if the user has read and write permissions or is root. The new filename has to be below 128 characters and alphanumeric. After success, this method will return a `number` with the value one. Otherwise, this method will return a `string` with details. If any of the parameter types deviate from the method signature, this method is used within an SSH encryption process, the new name exceeds 128 characters, or the path is too long, an error will be thrown, causing an interruption of script execution. In case the current file gets deleted, this method will return `null`.",
+    "example": [
+      "shell = get_shell",
+      "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
+      "ftpComputer = ftpShell.host_computer",
+      "passwdFile = ftpComputer.File(\"/etc/passwd\")",
+      "moveResult = passwdFile.move(\"/root/\", \"newFileName\")",
+      "if typeof(moveResult) == \"string\" then",
+      "   print(\"There was an error while moving file: \" + moveResult)",
+      "else",
+      "   print(\"File got moved successfully.\")",
+      "end if"
+    ]
+  },
+  "rename": {
+    "description": "Rename the file with the name provided. Files can only be renamed if the user has write permissions or is root. The new filename has to be below 128 characters and alphanumeric. On failure, this method will return a `string` with details. Otherwise, this method will return an empty string. If this method is used within an SSH encryption process, an error will be thrown, causing the script execution to be interrupted. In case the provided name is `null`, this method will return a `number` with the value zero.",
+    "example": [
+      "shell = get_shell",
+      "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
+      "ftpComputer = ftpShell.host_computer",
+      "passwdFile = ftpComputer.File(\"/etc/passwd\")",
+      "renameResult = passwdFile.rename(\"renamed\")",
+      "if typeof(renameResult) == \"string\" then",
+      "   print(\"There was an error while renaming file: \" + renameResult)",
+      "else",
+      "   print(\"File got renamed successfully.\")",
+      "end if"
+    ]
+  },
+  "path": {
+    "description": "Returns a `string` containing the file path. If the file is a symlink, the optional `symlinkOrigPath` argument can be set to return the original path of the linked file instead. If the file has been deleted, this method will still return the path it had prior to deletion.",
+    "example": [
+      "shell = get_shell",
+      "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
+      "ftpComputer = ftpShell.host_computer",
+      "passwdFile = ftpComputer.File(\"/etc/passwd\")",
+      "print(\"File location: \" + passwdFile.path)"
+    ]
+  },
+  "is_folder": {
+    "description": "Returns a `number`. The value is one if the file is a folder, zero otherwise. In case the file gets deleted this method will return `null` instead.",
+    "example": [
+      "shell = get_shell",
+      "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
+      "ftpComputer = ftpShell.host_computer",
+      "etcFolder = ftpComputer.File(\"/etc\")",
+      "print(\"Is a folder: \" + etcFolder.is_folder)"
+    ]
+  },
+  "parent": {
+    "description": "Returns the parent folder of the current file or folder. In case there is no parent folder `null` will be returned instead. In case the file gets deleted this method will return `null` as well.",
+    "example": [
+      "shell = get_shell",
+      "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
+      "ftpComputer = ftpShell.host_computer",
+      "etcFolder = ftpComputer.File(\"/etc\")",
+      "print(\"Parent path: \" + etcFolder.parent.path)"
+    ]
+  },
+  "name": {
+    "description": "Returns a `string` with the name of the file. In case the file gets deleted this method will return `null` instead.",
+    "example": [
+      "shell = get_shell",
+      "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
+      "ftpComputer = ftpShell.host_computer",
+      "passwdFile = ftpComputer.File(\"/etc/passwd\")",
+      "print(\"Filename: \" + passwdFile.name)"
+    ]
+  },
+  "is_binary": {
+    "description": "Returns a `number`. If the file is a binary, the value will be one; otherwise, it will be zero. In case the file gets deleted, this method will return `null` instead.",
+    "example": [
+      "shell = get_shell",
+      "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
+      "ftpComputer = ftpShell.host_computer",
+      "lsBinary = ftpComputer.File(\"/bin/ls\")",
+      "print(\"File is a binary: \" + lsBinary.is_binary)"
+    ]
+  },
+  "is_symlink": {
+    "description": "Returns a `number`. If the file is a symlink, the value will be one; otherwise, it will be zero. In case the file gets deleted, this method will return `null` instead.",
+    "example": [
+      "shell = get_shell",
+      "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
+      "ftpComputer = ftpShell.host_computer",
+      "lsBinary = ftpComputer.File(\"/bin/ls\")",
+      "print(\"File is a symlink: \" + lsBinary.is_symlink)"
+    ]
+  },
+  "has_permission": {
+    "description": "Returns a `number` indicating if the user who launched the script has the requested permissions. One will indicate that the user has the correct permissions. In case permissions are lacking, the value will be zero. There are three different permission types: read `\"r\"`, write `\"w\"`, and execute `\"x\"`. In case the file gets deleted, this method will return `null` instead.",
+    "example": [
+      "shell = get_shell",
+      "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
+      "ftpComputer = ftpShell.host_computer",
+      "lsBinary = ftpComputer.File(\"/bin/ls\")",
+      "print(\"Is able to execute ls: \" + lsBinary.has_permission(\"x\"))"
+    ]
+  },
+  "delete": {
+    "description": "Delete the current file. To delete files, write permissions are required or being root. In case of failure, a `string` with details will be returned. Otherwise, an empty `string` gets returned. Please note that deleting a file will leave a log entry.",
+    "example": [
+      "shell = get_shell",
+      "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
+      "ftpComputer = ftpShell.host_computer",
+      "lsBinary = ftpComputer.File(\"/bin/ls\")",
+      "deletionResult = lsBinary.delete",
+      "if typeof(deletionResult) == \"string\" and deletionResult.len > 0 then",
+      "   print(\"There was an error while deleting a file: \" + deletionResult)",
+      "else",
+      "   print(\"File got deleted successfully.\")",
+      "end if"
+    ]
+  },
+  "get_folders": {
+    "description": "Returns a `list` of folders. In case the current entity is a file instead of a folder this method will return `null`, so it is advisable to first use the `is_folder` function before calling this method. In case the current folder gets deleted this method will return `null` as well.",
+    "example": [
+      "shell = get_shell",
+      "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
+      "ftpComputer = ftpShell.host_computer",
+      "binFolder = ftpComputer.File(\"/home\")",
+      "folders = binFolder.get_folders",
+      "for folder in folders",
+      "   print(folder.path)",
+      "end for"
+    ]
+  },
+  "get_files": {
+    "description": "Returns a `list` of files. In case the current entity is a file instead of a folder this method will return `null`, so it is advisable to first use the `is_folder` function before calling this method. In case the current folder gets deleted this method will return `null` as well.",
+    "example": [
+      "shell = get_shell",
+      "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
+      "ftpComputer = ftpShell.host_computer",
+      "binFolder = ftpComputer.File(\"/bin\")",
+      "files = binFolder.get_files",
+      "for file in files",
+      "   print(file.path)",
+      "end for"
+    ]
+  },
+  "permissions": {
+    "description": "Returns a `string` with the current file permissions. In case the current file gets deleted, this method will return `null`. The format for this permissions `string` is as follows: `\"[fileType][wrx](u)[wrx](g)[wrx](o)\"`. The file type is either `\"d\"` in case it's a directory or `\"-\"`. The user type gets defined through three possible types: user `\"u\"`, group `\"g\"`, and other `\"o\"`. There are three different permission types: read `\"r\"`, write `\"w\"`, and execute `\"x\"`. An example of a `string` returned by this method would be `\"-rwxr-xr-x\"`. Taking the latter as an example, the following things become clear:\n* The provided file is not a directory.\n* The user has full access.\n* The group and others have almost all permissions besides writing.\n",
+    "example": [
+      "shell = get_shell",
+      "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
+      "ftpComputer = ftpShell.host_computer",
+      "binFolder = ftpComputer.File(\"/bin\")",
+      "permissions = binFolder.permissions",
+      "fileType = permissions[0]",
+      "permissionsForUser = permissions[1:4]",
+      "permissionsForGroup = permissions[4:7]",
+      "permissionsForOther = permissions[7:10]",
+      "print(\"File type: \" + fileType)",
+      "print(\"User permissions: \" + permissionsForUser)",
+      "print(\"Group permissions: \" + permissionsForGroup)",
+      "print(\"Other permissions: \" + permissionsForOther)"
+    ]
+  },
+  "owner": {
+    "description": "Returns a `string` with the name of the file owner. User permissions get applied to whoever is the owner of a file. In case the current file gets deleted, this method will return `null`.",
+    "example": [
+      "shell = get_shell",
+      "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
+      "ftpComputer = ftpShell.host_computer",
+      "lsBinary = ftpComputer.File(\"/bin/ls\")",
+      "print(\"Owner of ls is: \" + lsBinary.owner)"
+    ]
+  },
+  "group": {
+    "description": "Returns a `string` with the name of the group to which this file belongs. Group permissions get applied to whoever is the owner of a file. In case the current file gets deleted, this method will return `null`.",
+    "example": [
+      "shell = get_shell",
+      "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
+      "ftpComputer = ftpShell.host_computer",
+      "lsBinary = ftpComputer.File(\"/bin/ls\")",
+      "print(\"File is related to following group: \" + lsBinary.group)"
+    ]
+  },
+  "size": {
+    "description": "Returns a `string` with the size of the file in bytes. There is no correlation between file size and actual file content. Instead, the file size is depending on the name of the file. In case the current file gets deleted, this method will return `null`.",
+    "example": [
+      "shell = get_shell",
+      "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
+      "ftpComputer = ftpShell.host_computer",
+      "lsBinary = ftpComputer.File(\"/bin/ls\")",
+      "size = lsBinary.size",
+      "if size.to_int > 1000 then",
+      "   print(\"File size is bigger than 1000 bytes.\")",
+      "else",
+      "   print(\"File size is below 1000 bytes.\")",
+      "end if"
+    ]
+  }
+}

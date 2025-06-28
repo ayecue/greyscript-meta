@@ -1,0 +1,66 @@
+{
+  "type": "ftpComputer",
+  "extends": "map",
+  "definitions": {
+    "get_name": {
+      "id": "get_name",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "returns": [
+        "string"
+      ]
+    },
+    "File": {
+      "id": "File",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "arguments": [
+        {
+          "label": "path",
+          "type": "string"
+        }
+      ],
+      "returns": [
+        "ftpFile",
+        "null"
+      ]
+    },
+    "create_folder": {
+      "id": "create_folder",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "arguments": [
+        {
+          "label": "path",
+          "type": "string"
+        },
+        {
+          "label": "folder",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": "newFolder"
+          }
+        }
+      ],
+      "returnVariations": [
+        "Error: only alphanumeric allowed as folder name.",
+        "Error: name cannot exceed the limit of 128 characters.",
+        "create_folder: path too large",
+        "Error: invalid path",
+        "!PlayerUtils.CrearCarpeta",
+        1
+      ],
+      "returns": [
+        "string",
+        "number"
+      ]
+    }
+  }
+}
