@@ -2647,5 +2647,17 @@
       "    print(\"Failed to encrypt file due to: \" + encryptionResult)",
       "end if"
     ]
+  },
+  "decrypt": {
+    "description": "Decrypts the specified file using the provided key. On success, the method returns a number with the value one. If decryption fails, a descriptive error message is returned as a string. If any arguments deviate from the expected types defined in the method signature, the method returns null.",
+    "example": [
+      "crypto = include_lib(\"/lib/crypto.so\")",
+      "decryptionResult = decrypt(crypto, \"/etc/passwd\", \"mySecretKey\")",
+      "if decryptionResult == 1 then",
+      "    print(\"File got decrypted!\")",
+      "else",
+      "    print(\"Failed to decrypt file due to: \" + decryptionResult)",
+      "end if"
+    ]
   }
 }

@@ -6381,6 +6381,43 @@
         "string",
         "null"
       ]
+    },
+    "decrypt": {
+      "id": "decrypt",
+      "type": "function",
+      "tags": [
+        "function",
+        "detached"
+      ],
+      "arguments": [
+        {
+          "label": "self",
+          "type": "crypto"
+        },
+        {
+          "label": "filePath",
+          "type": "string"
+        },
+        {
+          "label": "password",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Error: only alphanumeric allowed as password.",
+        "Error: the password cannot exceed the limit of 15 characters.",
+        "Unknown error: Unable to access to local computer",
+        "decrypt: Invalid file path",
+        "decrypt: File not found",
+        "decrypt: The file is not encrypted.",
+        "decrypt: Incorrect password",
+        1
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
     }
   }
 }
