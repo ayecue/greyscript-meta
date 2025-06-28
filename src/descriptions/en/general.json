@@ -334,10 +334,10 @@
     ]
   },
   "current_path": {
-    "description": "Returns a `string` containing the folder path of the currently running script, equivalent to calling `parent_path(program_path)`. It will update when using `launch`.",
+    "description": "Returns a `string` with the current active working directory. The working directory can be changed via the `cd` command.",
     "example": [
       "path = current_path",
-      "print(\"PWD: \" + path)"
+      "print(\"My working directory is: \" + path)"
     ]
   },
   "format_columns": {
@@ -2627,10 +2627,13 @@
   "get_abs_path": {
     "description": "Returns the absolute path of the given path string. If the path is already absolute, it is returned unchanged. Otherwise, it is resolved against the current working path by default, or against the provided base path if specified. If the path exceeds 1024 characters, the base path exceeds 64 characters, or the arguments deviate from the expected signature, a runtime exception is thrown.",
     "example": [
-      "metax = include_lib(\"/lib/metaxploit.so\")",
-      "ports = used_ports(get_router(\"1.1.1.1\"))",
-      "netSession = net_use(metax, \"1.1.1.1\", port_number(ports[0]))",
-      "get_abs_path(netSession)"
+      "print(\"Absolute path of file in my current active path: \" + get_abs_path(\"test.src\"))"
+    ]
+  },
+  "cd": {
+    "description": "Changes the current working directory of the active shell to the specified path. On success, an empty string is returned. If the operation fails, a descriptive error message is returned as a string. If this method is invoked during an SSH encryption process, or if the arguments deviate from the expected signature, a runtime error is thrown and further script execution is halted.",
+    "example": [
+      "cd(\"/root\")"
     ]
   }
 }

@@ -6314,6 +6314,31 @@
       "returns": [
         "string"
       ]
+    },
+    "cd": {
+      "id": "cd",
+      "type": "function",
+      "tags": [
+        "function",
+        "nightly"
+      ],
+      "arguments": [
+        {
+          "label": "path",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        }
+      ],
+      "returnVariations": [
+        "Error: permission denied",
+        "Error: No such file or directory"
+      ],
+      "returns": [
+        "string"
+      ]
     }
   }
 }
