@@ -2635,5 +2635,17 @@
     "example": [
       "cd(\"/root\")"
     ]
+  },
+  "encrypt": {
+    "description": "Encrypts the specified file using the provided key. On success, the method returns a number with the value one. If encryption fails, a descriptive error message is returned as a string. If any arguments deviate from the expected types defined in the method signature, the method returns null.",
+    "example": [
+      "crypto = include_lib(\"/lib/crypto.so\")",
+      "encryptionResult = encrypt(crypto, \"/etc/passwd\", \"mySecretKey\")",
+      "if encryptionResult == 1 then",
+      "    print(\"File got encrypted!\")",
+      "else",
+      "    print(\"Failed to encrypt file due to: \" + encryptionResult)",
+      "end if"
+    ]
   }
 }

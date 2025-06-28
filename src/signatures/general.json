@@ -6344,6 +6344,43 @@
       "returns": [
         "string"
       ]
+    },
+    "encrypt": {
+      "id": "encrypt",
+      "type": "function",
+      "tags": [
+        "function",
+        "detached"
+      ],
+      "arguments": [
+        {
+          "label": "self",
+          "type": "crypto"
+        },
+        {
+          "label": "filePath",
+          "type": "string"
+        },
+        {
+          "label": "password",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Error: only alphanumeric allowed as password.",
+        "Error: the password cannot exceed the limit of 15 characters.",
+        "Unknown error: Unable to access to local computer",
+        "encrypt: Invalid file path",
+        "encrypt: File not found",
+        "permission denied",
+        "error: file already encrypted",
+        1
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
     }
   }
 }
