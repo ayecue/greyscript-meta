@@ -6285,8 +6285,7 @@
       "type": "function",
       "tags": [
         "function",
-        "detached",
-        "nightly"
+        "detached"
       ],
       "arguments": [
         {
@@ -6302,8 +6301,7 @@
       "id": "get_abs_path",
       "type": "function",
       "tags": [
-        "function",
-        "nightly"
+        "function"
       ],
       "arguments": [
         {
@@ -6327,8 +6325,7 @@
       "id": "cd",
       "type": "function",
       "tags": [
-        "function",
-        "nightly"
+        "function"
       ],
       "arguments": [
         {
