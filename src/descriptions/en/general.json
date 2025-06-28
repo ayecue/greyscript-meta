@@ -231,7 +231,7 @@
     ]
   },
   "user_input": {
-    "description": "Puts script execution on hold to receive input from the user. Input can be submitted by pressing Enter. You can style the output message using TextMeshPro rich-text tags. Two optional arguments are available: `isPassword`, which defines whether input should be masked by asterisk signs, and `anyKey`, which enables capturing of keys individually. Using this method within an SSH encryption process or passing values deviating from the defined method signature will cause an error to be thrown, interrupting further script execution.",
+    "description": "Pauses script execution to receive input from the user. The prompt message can include TextMeshPro rich-text tags for styling. Input is submitted by pressing Enter. Optional parameters include isPassword, which masks the input with asterisks; anyKey, which allows capturing of individual key presses; and addToHistory, which saves the input to the input history, allowing it to be recalled with the arrow keys. Using this function during an SSH encryption process, or providing arguments that do not match the expected signature, will throw a runtime error and halt further script execution.",
     "example": [
       "num = 0",
       "aboveIncludingZeroTag = \"<color=yellow>\"",
