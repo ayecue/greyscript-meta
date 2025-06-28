@@ -191,6 +191,32 @@
         "string",
         "null"
       ]
+    },
+    "is_encrypted": {
+      "id": "is_encrypted",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "arguments": [
+        {
+          "label": "filePath",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "is_encrypted: Invalid file path",
+        "is_encrypted: File not found",
+        "permission denied",
+        1,
+        0
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
     }
   }
 }

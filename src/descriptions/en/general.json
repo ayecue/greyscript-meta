@@ -2637,7 +2637,7 @@
     ]
   },
   "encrypt": {
-    "description": "Encrypts the specified file using the provided key. On success, the method returns a number with the value one. If encryption fails, a descriptive error message is returned as a string. If any arguments deviate from the expected types defined in the method signature, the method returns null.",
+    "description": "Encrypts the specified file using the provided key. On success, the method returns a `number` with the value one. If encryption fails, a descriptive error message is returned as a `string`. If any arguments deviate from the expected types defined in the method signature, the method returns `null`.",
     "example": [
       "crypto = include_lib(\"/lib/crypto.so\")",
       "encryptionResult = encrypt(crypto, \"/etc/passwd\", \"mySecretKey\")",
@@ -2649,7 +2649,7 @@
     ]
   },
   "decrypt": {
-    "description": "Decrypts the specified file using the provided key. On success, the method returns a number with the value one. If decryption fails, a descriptive error message is returned as a string. If any arguments deviate from the expected types defined in the method signature, the method returns null.",
+    "description": "Decrypts the specified file using the provided key. On success, the method returns a `number` with the value one. If decryption fails, a descriptive error message is returned as a `string`. If any arguments deviate from the expected types defined in the method signature, the method returns `null`.",
     "example": [
       "crypto = include_lib(\"/lib/crypto.so\")",
       "decryptionResult = decrypt(crypto, \"/etc/passwd\", \"mySecretKey\")",
@@ -2657,6 +2657,18 @@
       "    print(\"File got decrypted!\")",
       "else",
       "    print(\"Failed to decrypt file due to: \" + decryptionResult)",
+      "end if"
+    ]
+  },
+  "is_encrypted": {
+    "description": "Checks whether the specified file is encrypted. Returns a `number` with the value one if the file is encrypted, or zero if it is not. If the check fails (e.g., due to a missing or unreadable file), a descriptive error message is returned as a `string`. If the argument does not match the expected type, the method returns `null`.",
+    "example": [
+      "crypto = include_lib(\"/lib/crypto.so\")",
+      "isEncrypted = is_encrypted(crypto, \"/etc/passwd\")",
+      "if isEncrypted == 1 then",
+      "    print(\"File is encrypted!\")",
+      "else",
+      "    print(\"File is not encrypted!\")",
       "end if"
     ]
   }
