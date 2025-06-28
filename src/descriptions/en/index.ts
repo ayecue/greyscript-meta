@@ -9,6 +9,8 @@ import Computer from './computer.json';
 import Crypto from './crypto.json';
 import CTFEvent from './ctf-event.json';
 import File from './file.json';
+import FtpComputer from './ftp-computer.json';
+import FtpFile from './ftp-file.json';
 import FtpShell from './ftp-shell.json';
 import FunctionLanguage from './function.json';
 import Generic from './general.json';
@@ -41,6 +43,8 @@ const descriptions: DescriptionsPayload = {
   crypto: Crypto,
   function: FunctionLanguage,
   file: File,
+  ftpComputer: FtpComputer,
+  ftpFile: FtpFile,
   ftpShell: FtpShell,
   general: Generic,
   list: List,
