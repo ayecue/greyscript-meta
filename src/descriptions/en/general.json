@@ -2671,5 +2671,17 @@
       "    print(\"File is not encrypted!\")",
       "end if"
     ]
+  },
+  "reboot": {
+    "description": "Reboots a computer. By default, it reboots in standard mode. If the optional safeMode parameter is provided and evaluates to a truthy value, the system will reboot in safe mode instead. On success, the method returns a `number` with the value one. If the reboot fails, a descriptive error message is returned as a `string`. If the argument type deviates from the expected signature, the method returns `null`.",
+    "example": [
+      "computer = host_computer(get_shell)",
+      "signal = reboot(computer, true)",
+      "if signal == 1 then",
+      "   print(\"Reboot signal emitted successfully.\")",
+      "else",
+      "   print(\"There was an error when rebooting the computer: \" + signal)",
+      "end if"
+    ]
   }
 }

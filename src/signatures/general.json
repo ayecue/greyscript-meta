@@ -6449,6 +6449,38 @@
         "string",
         "null"
       ]
+    },
+    "reboot": {
+      "id": "reboot",
+      "type": "function",
+      "tags": [
+        "function",
+        "detached"
+      ],
+      "arguments": [
+        {
+          "label": "self",
+          "type": "computer"
+        },
+        {
+          "label": "safeMode",
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      ],
+      "returnVariations": [
+        "Error: unable to call reboot from a Terminal started automatically from /etc/init.d",
+        "Error: unable to restart in safe mode on remote computers.",
+        1
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
     }
   }
 }
