@@ -556,7 +556,7 @@
     ]
   },
   "launch": {
-    "description": "Launches the binary located at the provided path. Optionally, parameters can be passed. Returns a `number`. If the launch was successful, the value will be one; otherwise, it will be zero. In some cases, a `string` will be returned containing an error message. If you need to share variables between a launched script and the current process, consider using `get_custom_object`. Note that launching a script is not asynchronous, meaning that the current script will pause its execution until the launched script finishes. This method cannot be used to execute binaries with an EXE extension (GUI interface). If any provided values deviate from the method signature, a runtime exception will be thrown.",
+    "description": "Launches the binary located at the provided path. Optionally, parameters can be passed. Returns a `number`. If the launch was successful, the value will be one; otherwise, it will be zero. In some cases, a `string` will be returned containing an error message. If you need to share variables between a launched script and the current process, consider using `get_custom_object`. Note that launching a script is not asynchronous, meaning that the current script will pause its execution until the launched script finishes. If any provided values deviate from the method signature, a runtime exception will be thrown. There is a cooldown of 2 seconds between launches to prevent abuse. If you attempt to launch a script during this cooldown period, the method will return zero.",
     "example": [
       "shell = get_shell(\"root\", \"test\")",
       "launch(shell, \"/bin/cat\", \"/etc/passwd\")"
