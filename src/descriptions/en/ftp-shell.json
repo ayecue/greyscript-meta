@@ -1,6 +1,6 @@
 {
   "$meta": {
-    "description": "The FTP `shell` behaves just like the ssh `shell` and can be acquired by using [connect_service](#SHELL_CONNECT_SERVICE) and using the service type `\"ftp\"`. The `classID` used for this object is `\"ftpshell\"`. The port used for FTP is usually `21`."
+    "description": "The FTP `ftpShell` behaves just like the ssh `shell` and can be acquired by using [connect_service](#SHELL_CONNECT_SERVICE) and using the service type `\"ftp\"`. The `classID` used for this object is `\"ftpshell\"`. The port used for FTP is usually `21`."
   },
   "host_computer": {
     "description": "Returns a `computer` related to the `shell`.",
@@ -11,20 +11,12 @@
       "print(\"FTP public ip: \" + ftpComputer.public_ip)"
     ]
   },
-  "start_terminal": {
-    "description": "Launches an active terminal. The terminal's color will change, displaying the IP of the connected shell. Script execution will be stopped upon starting a new terminal, unless this is called from another script that was executed via `shell.launch`. In that case, you will enter the shell after closing your root-level script within that terminal window. Using this method within an SSH encryption process will cause an error to be thrown, preventing further script execution.",
+  "scp": {
+    "description": "Send a `file` to the `computer` related to the provided `shell`. You require permission to read the `file` on the `computer` from which you are uploading and write permissions in the folder of the `computer` you are trying to upload to. In case of failure, this method will return a `string` with the cause. Otherwise, a `number` with the value one gets returned. If any of the passed arguments deviates from the types of the method signature, `null` will be returned. In case the `string` for sourceFile or destinationFolder is empty, an error will be thrown, preventing further script execution. Utilizing this method in an SSH encryption process will trigger an error, halting further script execution.",
     "example": [
       "shell = get_shell",
       "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
-      "ftpShell.start_terminal"
-    ]
-  },
-  "put": {
-    "description": "Send a `file` to the `computer` related to the provided `shell`. You require permission to read the `file` on the `computer` from which you are uploading and write permissions in the folder of the `computer` you are trying to upload to. In case of failure, this method will return a `string` with the cause. Otherwise, a `number` with the value one gets returned. If any of the passed arguments deviates from the types of the method signature, `null` will be returned. In case the `string` for sourceFile or destinationFolder is empty, an error will be thrown, preventing further script execution.",
-    "example": [
-      "shell = get_shell",
-      "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
-      "putResult = ftpShell.put(\"/bin/ls\", \"/etc/\", shell)",
+      "putResult = ftpShell.scp(\"/bin/ls\", \"/etc/\", shell)",
       "if typeof(putResult) == \"string\" then",
       "   print(\"There was an error while sending file: \" + putResult)",
       "else",

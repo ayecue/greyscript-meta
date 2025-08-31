@@ -28,7 +28,7 @@
     ]
   },
   "mail_login": {
-    "description": "Returns a `MetaMail` entity if the login was successful. On failure a `string` with details gets returned. In case any of the provided values deviate from the types defined in the signature this method will return `null`.",
+    "description": "Returns a `MetaMail` entity if the login was successful. On failure a `string` with details gets returned. In case any of the provided values deviate from the types defined in the signature this method will return `null`. Utilizing this method in an SSH encryption process will trigger an error, halting further script execution.",
     "example": [
       "metaMail = mail_login(\"test@test.com\", \"test\")",
       "if metaMail == null then",
@@ -51,7 +51,7 @@
     ]
   },
   "typeof": {
-    "description": "Returns a `string` containing the type of the entity provided. There are following types by default: `\"aptclientLib\"`, `\"blockchainLib\"`, `\"ctfEvent\"`, `\"coin\"`, `\"computer\"`, `\"pcomputer\"`, `\"cryptoLib\"`, `\"debugLibrary\"`, `\"file\"`, `\"pfile\"`, `\"function\"`, `\"list\"`, `\"map\"`, `\"MetaLib\"`, `\"MetaMail\"`, `\"MetaxploitLib\"`, `\"NetSession\"`, `\"null\"`, `\"number\"`, `\"port\"`, `\"router\"`, `\"prouter\"`, `\"service\"`, `\"shell\"`, `\"ftpshell\"`, `\"pshell\"`, `\"SmartAppliance\"`, `\"string\"`, `\"subwallet\"`, `\"TrafficNet\"`, `\"wallet\"`. Custom types can be added as well by using the `classID` property in a `map`.",
+    "description": "Returns a `string` containing the type of the entity provided. There are following types by default: `\"aptclientLib\"`, `\"blockchainLib\"`, `\"ctfEvent\"`, `\"coin\"`, `\"computer\"`, `\"pcomputer\"`, `\"ftpComputer\", `\"cryptoLib\"`, `\"debugLibrary\"`, `\"file\"`, `\"pfile\"`, `\"ftpFile\"`, `\"function\"`, `\"list\"`, `\"map\"`, `\"MetaLib\"`, `\"MetaMail\"`, `\"MetaxploitLib\"`, `\"NetSession\"`, `\"null\"`, `\"number\"`, `\"port\"`, `\"router\"`, `\"prouter\"`, `\"service\"`, `\"shell\"`, `\"ftpshell\"`, `\"pshell\"`, `\"SmartAppliance\"`, `\"string\"`, `\"subwallet\"`, `\"TrafficNet\"`, `\"wallet\"`. Custom types can be added as well by using the `classID` property in a `map`.",
     "example": [
       "myObj = { \"classID\": \"myType\" }",
       "if typeof(myObj) == \"myType\" then",
@@ -231,7 +231,7 @@
     ]
   },
   "user_input": {
-    "description": "Puts script execution on hold to receive input from the user. Input can be submitted by pressing Enter. You can style the output message using TextMeshPro rich-text tags. Two optional arguments are available: `isPassword`, which defines whether input should be masked by asterisk signs, and `anyKey`, which enables capturing of keys individually. Using this method within an SSH encryption process or passing values deviating from the defined method signature will cause an error to be thrown, interrupting further script execution.",
+    "description": "Pauses script execution to receive input from the user. The prompt message can include TextMeshPro rich-text tags for styling. Input is submitted by pressing Enter. Optional parameters include isPassword, which masks the input with asterisks; anyKey, which allows capturing of individual key presses; and addToHistory, which saves the input to the input history, allowing it to be recalled with the arrow keys. Using this function during an SSH encryption process, or providing arguments that do not match the expected signature, will throw a runtime error and halt further script execution.",
     "example": [
       "num = 0",
       "aboveIncludingZeroTag = \"<color=yellow>\"",
@@ -334,10 +334,10 @@
     ]
   },
   "current_path": {
-    "description": "Returns a `string` containing the folder path of the currently running script, equivalent to calling `parent_path(program_path)`. It will update when using `launch`.",
+    "description": "Returns a `string` with the current active working directory. The working directory can be changed via the `cd` command.",
     "example": [
       "path = current_path",
-      "print(\"PWD: \" + path)"
+      "print(\"My working directory is: \" + path)"
     ]
   },
   "format_columns": {
@@ -556,7 +556,7 @@
     ]
   },
   "launch": {
-    "description": "Launches the binary located at the provided path. Optionally, parameters can be passed. Returns a `number`. If the launch was successful, the value will be one; otherwise, it will be zero. In some cases, a `string` will be returned containing an error message. If you need to share variables between a launched script and the current process, consider using `get_custom_object`. Note that launching a script is not asynchronous, meaning that the current script will pause its execution until the launched script finishes. This method cannot be used to execute binaries with an EXE extension (GUI interface). If any provided values deviate from the method signature, a runtime exception will be thrown.",
+    "description": "Launches the binary located at the provided path. Optionally, parameters can be passed. Returns a `number`. If the launch was successful, the value will be one; otherwise, it will be zero. In some cases, a `string` will be returned containing an error message. If you need to share variables between a launched script and the current process, consider using `get_custom_object`. Note that launching a script is not asynchronous, meaning that the current script will pause its execution until the launched script finishes. If any provided values deviate from the method signature, a runtime exception will be thrown. There is a cooldown of 2 seconds between launches to prevent abuse. If you attempt to launch a script during this cooldown period, the method will return zero.",
     "example": [
       "shell = get_shell(\"root\", \"test\")",
       "launch(shell, \"/bin/cat\", \"/etc/passwd\")"
@@ -2051,7 +2051,7 @@
     ]
   },
   "scp": {
-    "description": "Send a `file` to the `computer` related to the provided `shell`. You require permission to read the `file` on the `computer` from which you are uploading and write permissions in the folder of the `computer` you are trying to upload to. In case of failure, this method will return a `string` with the cause. Otherwise, a `number` with the value one gets returned. If any of the passed arguments deviates from the types of the method signature, `null` will be returned. In case the `string` for sourceFile or destinationFolder is empty, an error will be thrown, preventing further script execution.",
+    "description": "Send a `file` to the `computer` related to the provided `shell`. You require permission to read the `file` on the `computer` from which you are uploading and write permissions in the folder of the `computer` you are trying to upload to. In case of failure, this method will return a `string` with the cause. Otherwise, a `number` with the value one gets returned. If any of the passed arguments deviates from the types of the method signature, `null` will be returned. In case the `string` for sourceFile or destinationFolder is empty, an error will be thrown, preventing further script execution. Utilizing this method in an SSH encryption process will trigger an error, halting further script execution.",
     "example": [
       "shell = get_shell",
       "remoteShell = connect_service(shell, \"1.1.1.1\", 22, \"test\", \"test\")",
@@ -2612,6 +2612,75 @@
       "result = payload(debugLib, \"0x7A69F4C3\")",
       "if typeof(result) == \"list\" and len(result) > 0 then",
       "   print(\"Successfully executed payload!\")",
+      "end if"
+    ]
+  },
+  "flood_connection": {
+    "description": "Initiates a DDoS attack targeting the computer associated with the currently active `netSession` object. To successfully force a reboot, there must be at least 4 concurrent `flood_connection` calls for every 1 unit of net speed on the target computer. Keep in mind that these calls need to come from different IPs. So for example PackS would require 12 active `flood_connection` calls. If the threshold is met, the target computer will be forced to reboot, and the terminal will output: `\"remote connection interrupted\"`. This method always returns `null` and only prints a message upon a successful attack.",
+    "example": [
+      "metax = include_lib(\"/lib/metaxploit.so\")",
+      "ports = used_ports(get_router(\"1.1.1.1\"))",
+      "netSession = net_use(metax, \"1.1.1.1\", port_number(ports[0]))",
+      "flood_connection(netSession)"
+    ]
+  },
+  "get_abs_path": {
+    "description": "Returns the absolute path of the given path string. If the path is already absolute, it is returned unchanged. Otherwise, it is resolved against the current working path by default, or against the provided base path if specified. If the path exceeds 1024 characters, the base path exceeds 64 characters, or the arguments deviate from the expected signature, a runtime exception is thrown.",
+    "example": [
+      "print(\"Absolute path of file in my current active path: \" + get_abs_path(\"test.src\"))"
+    ]
+  },
+  "cd": {
+    "description": "Changes the current working directory of the active shell to the specified path. On success, an empty string is returned. If the operation fails, a descriptive error message is returned as a string. If this method is invoked during an SSH encryption process, or if the arguments deviate from the expected signature, a runtime error is thrown and further script execution is halted.",
+    "example": [
+      "cd(\"/root\")"
+    ]
+  },
+  "encrypt": {
+    "description": "Encrypts the specified file using the provided key. On success, the method returns a `number` with the value one. If encryption fails, a descriptive error message is returned as a `string`. If any arguments deviate from the expected types defined in the method signature, the method returns `null`.",
+    "example": [
+      "crypto = include_lib(\"/lib/crypto.so\")",
+      "encryptionResult = encrypt(crypto, \"/etc/passwd\", \"mySecretKey\")",
+      "if encryptionResult == 1 then",
+      "    print(\"File got encrypted!\")",
+      "else",
+      "    print(\"Failed to encrypt file due to: \" + encryptionResult)",
+      "end if"
+    ]
+  },
+  "decrypt": {
+    "description": "Decrypts the specified file using the provided key. On success, the method returns a `number` with the value one. If decryption fails, a descriptive error message is returned as a `string`. If any arguments deviate from the expected types defined in the method signature, the method returns `null`.",
+    "example": [
+      "crypto = include_lib(\"/lib/crypto.so\")",
+      "decryptionResult = decrypt(crypto, \"/etc/passwd\", \"mySecretKey\")",
+      "if decryptionResult == 1 then",
+      "    print(\"File got decrypted!\")",
+      "else",
+      "    print(\"Failed to decrypt file due to: \" + decryptionResult)",
+      "end if"
+    ]
+  },
+  "is_encrypted": {
+    "description": "Checks whether the specified file is encrypted. Returns a `number` with the value one if the file is encrypted, or zero if it is not. If the check fails (e.g., due to a missing or unreadable file), a descriptive error message is returned as a `string`. If the argument does not match the expected type, the method returns `null`.",
+    "example": [
+      "crypto = include_lib(\"/lib/crypto.so\")",
+      "isEncrypted = is_encrypted(crypto, \"/etc/passwd\")",
+      "if isEncrypted == 1 then",
+      "    print(\"File is encrypted!\")",
+      "else",
+      "    print(\"File is not encrypted!\")",
+      "end if"
+    ]
+  },
+  "reboot": {
+    "description": "Reboots a computer. By default, it reboots in standard mode. If the optional safeMode parameter is provided and evaluates to a truthy value, the system will reboot in safe mode instead. On success, the method returns a `number` with the value one. If the reboot fails, a descriptive error message is returned as a `string`. If the argument type deviates from the expected signature, the method returns `null`.",
+    "example": [
+      "computer = host_computer(get_shell)",
+      "signal = reboot(computer, true)",
+      "if signal == 1 then",
+      "   print(\"Reboot signal emitted successfully.\")",
+      "else",
+      "   print(\"There was an error when rebooting the computer: \" + signal)",
       "end if"
     ]
   }

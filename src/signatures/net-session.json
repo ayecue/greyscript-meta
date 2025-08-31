@@ -69,6 +69,16 @@
       "returns": [
         "number"
       ]
+    },
+    "flood_connection": {
+      "id": "flood_connection",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "returns": [
+        "null"
+      ]
     }
   }
 }

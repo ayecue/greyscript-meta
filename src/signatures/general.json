@@ -20,7 +20,8 @@
       ],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
-        "login: No internet access.",
+        "mail_login: No internet access.",
+        "mail_login: Invalid account name.",
         "!Database.GetMailAccount"
       ],
       "returns": [
@@ -608,6 +609,14 @@
         },
         {
           "label": "anyKey",
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
+        },
+        {
+          "label": "addToHistory",
           "type": "number",
           "default": {
             "type": "number",
@@ -5001,7 +5010,7 @@
         }
       ],
       "returnVariations": [
-        "pathSource and programName can't be empty",
+        "pathSource and pathBinary can't be empty",
         "Invalid shell",
         "Unknown error: Unable to access to local computer",
         "Can't find ${pathSource}",
@@ -6269,6 +6278,208 @@
       "returns": [
         "string",
         "number",
+        "null"
+      ]
+    },
+    "flood_connection": {
+      "id": "flood_connection",
+      "type": "function",
+      "tags": [
+        "function",
+        "detached"
+      ],
+      "arguments": [
+        {
+          "label": "self",
+          "type": "netSession"
+        }
+      ],
+      "returns": [
+        "null"
+      ]
+    },
+    "get_abs_path": {
+      "id": "get_abs_path",
+      "type": "function",
+      "tags": [
+        "function"
+      ],
+      "arguments": [
+        {
+          "label": "path",
+          "type": "string"
+        },
+        {
+          "label": "basePath",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        }
+      ],
+      "returns": [
+        "string"
+      ]
+    },
+    "cd": {
+      "id": "cd",
+      "type": "function",
+      "tags": [
+        "function"
+      ],
+      "arguments": [
+        {
+          "label": "path",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        }
+      ],
+      "returnVariations": [
+        "Error: permission denied",
+        "Error: No such file or directory"
+      ],
+      "returns": [
+        "string"
+      ]
+    },
+    "encrypt": {
+      "id": "encrypt",
+      "type": "function",
+      "tags": [
+        "function",
+        "detached"
+      ],
+      "arguments": [
+        {
+          "label": "self",
+          "type": "crypto"
+        },
+        {
+          "label": "filePath",
+          "type": "string"
+        },
+        {
+          "label": "password",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Error: only alphanumeric allowed as password.",
+        "Error: the password cannot exceed the limit of 15 characters.",
+        "Unknown error: Unable to access to local computer",
+        "encrypt: Invalid file path",
+        "encrypt: File not found",
+        "permission denied",
+        "error: file already encrypted",
+        1
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "decrypt": {
+      "id": "decrypt",
+      "type": "function",
+      "tags": [
+        "function",
+        "detached"
+      ],
+      "arguments": [
+        {
+          "label": "self",
+          "type": "crypto"
+        },
+        {
+          "label": "filePath",
+          "type": "string"
+        },
+        {
+          "label": "password",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Error: only alphanumeric allowed as password.",
+        "Error: the password cannot exceed the limit of 15 characters.",
+        "Unknown error: Unable to access to local computer",
+        "decrypt: Invalid file path",
+        "decrypt: File not found",
+        "decrypt: The file is not encrypted.",
+        "decrypt: Incorrect password",
+        1
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "is_encrypted": {
+      "id": "is_encrypted",
+      "type": "function",
+      "tags": [
+        "function",
+        "detached"
+      ],
+      "arguments": [
+        {
+          "label": "self",
+          "type": "crypto"
+        },
+        {
+          "label": "filePath",
+          "type": "string"
+        }
+      ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        "is_encrypted: Invalid file path",
+        "is_encrypted: File not found",
+        "permission denied",
+        1,
+        0
+      ],
+      "returns": [
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "reboot": {
+      "id": "reboot",
+      "type": "function",
+      "tags": [
+        "function",
+        "detached"
+      ],
+      "arguments": [
+        {
+          "label": "self",
+          "type": "computer"
+        },
+        {
+          "label": "safeMode",
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      ],
+      "returnVariations": [
+        "Error: unable to call reboot from a Terminal started automatically from /etc/init.d",
+        "Error: unable to restart in safe mode on remote computers.",
+        1
+      ],
+      "returns": [
+        "number",
+        "string",
         "null"
       ]
     }

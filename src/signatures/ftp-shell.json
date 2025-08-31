@@ -9,20 +9,10 @@
         "method"
       ],
       "returns": [
-        "computer"
+        "ftpComputer"
       ]
     },
-    "start_terminal": {
-      "id": "start_terminal",
-      "type": "function",
-      "tags": [
-        "method"
-      ],
-      "returns": [
-        "null"
-      ]
-    },
-    "put": {
+    "scp": {
       "id": "scp",
       "type": "function",
       "tags": [

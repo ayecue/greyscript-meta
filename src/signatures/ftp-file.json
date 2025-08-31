@@ -1,0 +1,300 @@
+{
+  "type": "ftpFile",
+  "extends": "map",
+  "definitions": {
+    "copy": {
+      "id": "copy",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "arguments": [
+        {
+          "label": "path",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        {
+          "label": "name",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        }
+      ],
+      "returnVariations": [
+        "Error: only alphanumeric allowed as newname",
+        "!PlayerUtils.MoverFichero",
+        1
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "move": {
+      "id": "move",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "arguments": [
+        {
+          "label": "path",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        {
+          "label": "fileName",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        }
+      ],
+      "returnVariations": [
+        "Error: only alphanumeric allowed as newname",
+        "!PlayerUtils.MoverFichero",
+        1
+      ],
+      "returns": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "rename": {
+      "id": "rename",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "arguments": [
+        {
+          "label": "name",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        }
+      ],
+      "returnVariations": [
+        "Error: only alphanumeric allowed as newname",
+        "Error: name cannot exceed the limit of 128 characters.",
+        "!PlayerUtils.RenameFichero",
+        0
+      ],
+      "returns": [
+        "string",
+        "number"
+      ]
+    },
+    "path": {
+      "id": "path",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "arguments": [
+        {
+          "label": "symlinkOrigPath",
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      ],
+      "returns": [
+        "string"
+      ]
+    },
+    "is_folder": {
+      "id": "is_folder",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "returnVariations": [
+        1,
+        0
+      ],
+      "returns": [
+        "number",
+        "null"
+      ]
+    },
+    "parent": {
+      "id": "parent",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "returns": [
+        "ftpFile",
+        "null"
+      ]
+    },
+    "name": {
+      "id": "name",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "is_binary": {
+      "id": "is_binary",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "returnVariations": [
+        1,
+        0
+      ],
+      "returns": [
+        "number",
+        "null"
+      ]
+    },
+    "is_symlink": {
+      "id": "is_symlink",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "returnVariations": [
+        1,
+        0
+      ],
+      "returns": [
+        "number",
+        "null"
+      ]
+    },
+    "has_permission": {
+      "id": "has_permission",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "arguments": [
+        {
+          "label": "perms",
+          "type": "string",
+          "default": {
+            "type": "string",
+            "value": ""
+          }
+        }
+      ],
+      "returnVariations": [
+        1,
+        0
+      ],
+      "returns": [
+        "number",
+        "null"
+      ]
+    },
+    "delete": {
+      "id": "delete",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "returnVariations": [
+        "!PlayerUtils.RemoveFile"
+      ],
+      "returns": [
+        "string"
+      ]
+    },
+    "get_folders": {
+      "id": "get_folders",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "returns": [
+        {
+          "type": "list",
+          "valueType": "ftpFile"
+        },
+        "null"
+      ]
+    },
+    "get_files": {
+      "id": "get_files",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "returns": [
+        {
+          "type": "list",
+          "valueType": "ftpFile"
+        },
+        "null"
+      ]
+    },
+    "permissions": {
+      "id": "permissions",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "owner": {
+      "id": "owner",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "group": {
+      "id": "group",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    },
+    "size": {
+      "id": "size",
+      "type": "function",
+      "tags": [
+        "method"
+      ],
+      "returns": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

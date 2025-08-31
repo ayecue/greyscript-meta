@@ -1,0 +1,43 @@
+{
+  "$meta": {
+    "description": "A `ftpComputer` object can be obtained by using [host_computer](#FTPSHELL_HOST_COMPUTER). The `classID` used for this object is `\"ftpComputer\"`."
+  },
+  "get_name": {
+    "description": "Returns the hostname of the machine.",
+    "example": [
+      "shell = get_shell",
+      "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
+      "ftpComputer = ftpShell.host_computer",
+      "ftpComputerName = ftpComputer.get_name",
+      "print(\"The name of the ftp server is \" + ftpComputerName)"
+    ]
+  },
+  "File": {
+    "description": "Returns a `ftpFile` located at the path provided in the arguments. The path can be either relative or absolute. It's important to note that any `ftpFile` object can represent a folder as well. If the provided path cannot be resolved, meaning that no file or folder exists, this method will return `null`. Providing any other type than `string` or an empty value for the path will result in an error, interrupting the script execution.",
+    "example": [
+      "shell = get_shell",
+      "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
+      "ftpComputer = ftpShell.host_computer",
+      "file = ftpComputer.File(\"/etc/passwd\")",
+      "if file.has_permission(\"r\") then",
+      "   ftpShell.scp(\"/etc/passwd\", \"/home/test/Desktop\", shell)",
+      "else",
+      "   print(\"No permissions to read passwd file.\")",
+      "end if"
+    ]
+  },
+  "create_folder": {
+    "description": "Creates a folder at the path provided in the arguments. There are certain limitations to creating a folder: the folder name has to be alphanumeric and below 128 characters. Creation will fail if there is already a folder in place or if there are lacking permissions. Additionally, there is a folder limit of about 250 in each folder and 3125 folders in the computer overall. In case the folder creation fails, the method will return a `string` with details. In case of success, it will return a `number` with the value one. Providing any type that deviates from the signature or using this method in an SSH encryption process will cause an error to be thrown, aborting further script execution.",
+    "example": [
+      "shell = get_shell",
+      "ftpShell = shell.connect_service(\"172.8.0.5\", 21, \"test\", \"test\", \"ftp\")",
+      "ftpComputer = ftpShell.host_computer",
+      "createResult = ftpComputer.create_folder(path, \"myfolder\")",
+      "if typeof(createResult) == \"string\" then",
+      "   print(\"There was an error when creating the folder: \" + createResult)",
+      "else",
+      "   print(\"Folder got created at given path \" + path)",
+      "end if"
+    ]
+  }
+}
