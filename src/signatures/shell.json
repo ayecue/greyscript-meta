@@ -47,7 +47,7 @@
         }
       ],
       "returnVariations": [
-        "pathSource and programName can't be empty",
+        "pathSource and pathBinary can't be empty",
         "Invalid shell",
         "Unknown error: Unable to access to local computer",
         "Can't find ${pathSource}",

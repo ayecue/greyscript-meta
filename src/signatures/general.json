@@ -20,7 +20,8 @@
       ],
       "returnVariations": [
         "Unknown error: Unable to access to local computer",
-        "login: No internet access.",
+        "mail_login: No internet access.",
+        "mail_login: Invalid account name.",
         "!Database.GetMailAccount"
       ],
       "returns": [
@@ -5009,7 +5010,7 @@
         }
       ],
       "returnVariations": [
-        "pathSource and programName can't be empty",
+        "pathSource and pathBinary can't be empty",
         "Invalid shell",
         "Unknown error: Unable to access to local computer",
         "Can't find ${pathSource}",
