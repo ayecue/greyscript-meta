@@ -5163,6 +5163,14 @@
         {
           "label": "remoteShell",
           "type": "shell"
+        },
+        {
+          "label": "isUpload",
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
       "returnVariations": [

@@ -64,7 +64,7 @@
     ]
   },
   "scp": {
-    "description": "Send a `file` to the `computer` related to the provided `shell`. You require permission to read the `file` on the `computer` from which you are uploading and write permissions in the folder of the `computer` you are trying to upload to. In case of failure, this method will return a `string` with the cause. Otherwise, a `number` with the value one gets returned. If any of the passed arguments deviates from the types of the method signature, `null` will be returned. In case the `string` for sourceFile or destinationFolder is empty, an error will be thrown, preventing further script execution. Utilizing this method in an SSH encryption process will trigger an error, halting further script execution.",
+    "description": "Send a `file` to the `computer` related to the provided `shell`. You require permission to read the `file` on the `computer` from which you are uploading and write permissions in the folder of the `computer` you are trying to upload to. Via the optional isUpload parameter you can define the direction. In case of failure, this method will return a `string` with the cause. Otherwise, a `number` with the value one gets returned. If any of the passed arguments deviates from the types of the method signature, `null` will be returned. In case the `string` for sourceFile or destinationFolder is empty, an error will be thrown, preventing further script execution. Utilizing this method in an SSH encryption process will trigger an error, halting further script execution.",
     "example": [
       "shell = get_shell",
       "remoteShell = shell.connect_service(\"1.1.1.1\", 22, \"test\", \"test\")",
