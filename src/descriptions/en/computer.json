@@ -259,7 +259,7 @@
     ]
   },
   "reboot": {
-    "description": "Reboots the computer. By default, it reboots in standard mode. If the optional safeMode parameter is provided and evaluates to a truthy value, the system will reboot in safe mode instead. On success, the method returns a `number` with the value one. If the reboot fails, a descriptive error message is returned as a `string`. If the argument type deviates from the expected signature, the method returns `null`.",
+    "description": "Reboots the computer. By default, it reboots in standard mode. If the optional safeMode parameter is provided and evaluates to a truthy value, the system will reboot in safe mode instead. On success, the method returns a `number` with the value one. If the reboot fails, a descriptive error message is returned as a `string`. If the argument type deviates from the expected signature, the method returns `null`. Calling this method in an SSH encryption process will trigger an error, halting further script execution.",
     "example": [
       "hostComputer = get_shell.host_computer",
       "signal = hostComputer.reboot(true)",

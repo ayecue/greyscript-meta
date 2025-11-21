@@ -33,7 +33,8 @@
       "id": "create_folder",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "arguments": [
         {

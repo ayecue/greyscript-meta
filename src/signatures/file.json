@@ -38,7 +38,8 @@
       "id": "copy",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -73,7 +74,8 @@
       "id": "move",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -108,7 +110,8 @@
       "id": "symlink",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -146,7 +149,8 @@
       "id": "rename",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -240,7 +244,8 @@
       "id": "get_content",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "returnVariations": [
         "Error: can't find the computer of this file",
@@ -255,7 +260,8 @@
       "id": "set_content",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "arguments": [
         {

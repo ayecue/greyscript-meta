@@ -16,7 +16,8 @@
       "id": "start_terminal",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "returns": [
         "null"
@@ -66,7 +67,8 @@
       "id": "connect_service",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -112,7 +114,8 @@
       "id": "launch",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -165,7 +168,8 @@
       "id": "scp",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "arguments": [
         {

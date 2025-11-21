@@ -86,7 +86,8 @@
       "id": "decipher",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "arguments": [
         {

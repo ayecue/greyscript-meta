@@ -66,7 +66,8 @@
       "id": "create_folder",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -113,7 +114,8 @@
       "id": "touch",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -144,7 +146,8 @@
       "id": "show_procs",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "returns": [
         "string"
@@ -472,7 +475,8 @@
       "id": "reboot",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "arguments": [
         {
