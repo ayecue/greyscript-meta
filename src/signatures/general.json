@@ -6,7 +6,8 @@
       "type": "function",
       "tags": [
         "function",
-        "general"
+        "general",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -206,7 +207,8 @@
       "type": "function",
       "tags": [
         "function",
-        "general"
+        "general",
+        "ssh incompatible"
       ],
       "returns": [
         "null"
@@ -588,7 +590,8 @@
       "type": "function",
       "tags": [
         "function",
-        "general"
+        "general",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -1328,7 +1331,8 @@
       "type": "function",
       "tags": [
         "function",
-        "general"
+        "general",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -1345,7 +1349,8 @@
       "type": "function",
       "tags": [
         "function",
-        "general"
+        "general",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -1500,7 +1505,8 @@
       "type": "function",
       "tags": [
         "function",
-        "general"
+        "general",
+        "ssh incompatible"
       ],
       "returns": [
         "map"
@@ -2766,7 +2772,8 @@
       "type": "function",
       "tags": [
         "function",
-        "detached"
+        "detached",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -2827,7 +2834,8 @@
       "type": "function",
       "tags": [
         "function",
-        "detached"
+        "detached",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -2864,7 +2872,8 @@
       "type": "function",
       "tags": [
         "function",
-        "detached"
+        "detached",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -3368,7 +3377,8 @@
       "type": "function",
       "tags": [
         "function",
-        "detached"
+        "detached",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -3556,7 +3566,8 @@
       "type": "function",
       "tags": [
         "function",
-        "detached"
+        "detached",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -3596,7 +3607,8 @@
       "type": "function",
       "tags": [
         "function",
-        "detached"
+        "detached",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -3636,7 +3648,8 @@
       "type": "function",
       "tags": [
         "function",
-        "detached"
+        "detached",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -3679,7 +3692,8 @@
       "type": "function",
       "tags": [
         "function",
-        "detached"
+        "detached",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -3813,7 +3827,8 @@
       "type": "function",
       "tags": [
         "function",
-        "detached"
+        "detached",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -3835,7 +3850,8 @@
       "type": "function",
       "tags": [
         "function",
-        "detached"
+        "detached",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -4174,7 +4190,8 @@
       "type": "function",
       "tags": [
         "function",
-        "detached"
+        "detached",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -4281,7 +4298,8 @@
       "type": "function",
       "tags": [
         "function",
-        "detached"
+        "detached",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -4306,7 +4324,8 @@
       "type": "function",
       "tags": [
         "function",
-        "detached"
+        "detached",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -4332,7 +4351,8 @@
       "type": "function",
       "tags": [
         "function",
-        "detached"
+        "detached",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -4968,7 +4988,8 @@
       "type": "function",
       "tags": [
         "function",
-        "detached"
+        "detached",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -5030,7 +5051,8 @@
       "type": "function",
       "tags": [
         "function",
-        "detached"
+        "detached",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -5081,7 +5103,8 @@
       "type": "function",
       "tags": [
         "function",
-        "detached"
+        "detached",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -5145,7 +5168,8 @@
       "type": "function",
       "tags": [
         "function",
-        "detached"
+        "detached",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -6334,7 +6358,8 @@
       "id": "cd",
       "type": "function",
       "tags": [
-        "function"
+        "function",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -6464,7 +6489,8 @@
       "type": "function",
       "tags": [
         "function",
-        "detached"
+        "detached",
+        "ssh incompatible"
       ],
       "arguments": [
         {

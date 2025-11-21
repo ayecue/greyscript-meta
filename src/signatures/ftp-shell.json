@@ -16,7 +16,8 @@
       "id": "scp",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "arguments": [
         {

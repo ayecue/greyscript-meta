@@ -556,7 +556,7 @@
     ]
   },
   "launch": {
-    "description": "Launches the binary located at the provided path. Optionally, parameters can be passed. Returns a `number`. If the launch was successful, the value will be one; otherwise, it will be zero. In some cases, a `string` will be returned containing an error message. If you need to share variables between a launched script and the current process, consider using `get_custom_object`. Note that launching a script is not asynchronous, meaning that the current script will pause its execution until the launched script finishes. If any provided values deviate from the method signature, a runtime exception will be thrown. There is a cooldown of 2 seconds between launches to prevent abuse. If you attempt to launch a script during this cooldown period, the method will return zero.",
+    "description": "Launches the binary located at the provided path. Optionally, parameters can be passed. Returns a `number`. If the launch was successful, the value will be one; otherwise, it will be zero. In some cases, a `string` will be returned containing an error message. If you need to share variables between a launched script and the current process, consider using `get_custom_object`. Note that launching a script is not asynchronous, meaning that the current script will pause its execution until the launched script finishes. If any provided values deviate from the method signature or it is used within an SSH encryption process, a runtime exception will be thrown. There is a cooldown of 2 seconds between launches to prevent abuse. If you attempt to launch a script during this cooldown period, the method will return zero.",
     "example": [
       "shell = get_shell(\"root\", \"test\")",
       "launch(shell, \"/bin/cat\", \"/etc/passwd\")"
@@ -2673,7 +2673,7 @@
     ]
   },
   "reboot": {
-    "description": "Reboots a computer. By default, it reboots in standard mode. If the optional safeMode parameter is provided and evaluates to a truthy value, the system will reboot in safe mode instead. On success, the method returns a `number` with the value one. If the reboot fails, a descriptive error message is returned as a `string`. If the argument type deviates from the expected signature, the method returns `null`.",
+    "description": "Reboots a computer. By default, it reboots in standard mode. If the optional safeMode parameter is provided and evaluates to a truthy value, the system will reboot in safe mode instead. On success, the method returns a `number` with the value one. If the reboot fails, a descriptive error message is returned as a `string`. If the argument type deviates from the expected signature, the method returns `null`. Calling this method in an SSH encryption process will trigger an error, halting further script execution.",
     "example": [
       "computer = host_computer(get_shell)",
       "signal = reboot(computer, true)",

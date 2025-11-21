@@ -23,7 +23,8 @@
       "id": "net_use",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -92,7 +93,8 @@
       "id": "rshell_server",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "returnVariations": [
         "rshell_server: No internet connection",
@@ -112,7 +114,8 @@
       "id": "scan",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -132,7 +135,8 @@
       "id": "scan_address",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "arguments": [
         {
@@ -153,7 +157,8 @@
       "id": "sniffer",
       "type": "function",
       "tags": [
-        "method"
+        "method",
+        "ssh incompatible"
       ],
       "arguments": [
         {
