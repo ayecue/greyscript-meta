@@ -16,7 +16,7 @@
     "example": [
       "myList = [1, 42, 3]",
       "myList.remove(1)",
-      "print(\"This list does not contain the answer to everything: \" + myList.split(\", \"))"
+      "print(\"This list does not contain the answer to everything: \" + myList.join(\", \"))"
     ]
   },
   "insert": {
@@ -24,7 +24,7 @@
     "example": [
       "myList = [1, 3]",
       "myList.insert(1, 42)",
-      "print(\"This list does contain the answer to everything: \" + myList.split(\", \"))"
+      "print(\"This list does contain the answer to everything: \" + myList.join(\", \"))"
     ]
   },
   "push": {
@@ -32,7 +32,7 @@
     "example": [
       "myList = [1, 3]",
       "myList.push(42)",
-      "print(\"This list does contain the answer to everything: \" + myList.split(\", \"))"
+      "print(\"This list does contain the answer to everything: \" + myList.join(\", \"))"
     ]
   },
   "pop": {
@@ -56,7 +56,7 @@
     "example": [
       "myList = [42, 1, 3]",
       "myList.shuffle",
-      "print(\"New list order: \" + myList.split(\", \"))"
+      "print(\"New list order: \" + myList.join(\", \"))"
     ]
   },
   "reverse": {
@@ -64,7 +64,7 @@
     "example": [
       "myList = [42, 1, 3]",
       "myList.reverse",
-      "print(\"Reversed list: \" + myList.split(\", \"))"
+      "print(\"Reversed list: \" + myList.join(\", \"))"
     ]
   },
   "sum": {
