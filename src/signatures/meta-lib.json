@@ -95,7 +95,11 @@
       "arguments": [
         {
           "label": "getdate",
-          "type": "number"
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
       "returnVariations": [

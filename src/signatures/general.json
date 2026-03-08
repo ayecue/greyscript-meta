@@ -996,7 +996,7 @@
           "type": "number",
           "default": {
             "type": "number",
-            "value": 1
+            "value": 0
           }
         }
       ],
@@ -2070,6 +2070,10 @@
         {
           "label": "self",
           "type": "blockchain"
+        },
+        {
+          "label": "coinName",
+          "type": "string"
         }
       ],
       "returnVariations": [
@@ -4497,7 +4501,11 @@
         },
         {
           "label": "getdate",
-          "type": "number"
+          "type": "number",
+          "default": {
+            "type": "number",
+            "value": 0
+          }
         }
       ],
       "returnVariations": [
@@ -4997,7 +5005,14 @@
           "type": "shell"
         }
       ],
+      "returnVariations": [
+        "Unknown error: Unable to access to local computer",
+        0,
+        1
+      ],
       "returns": [
+        "number",
+        "string",
         "null"
       ]
     },
@@ -5131,8 +5146,9 @@
         0
       ],
       "returns": [
+        "number",
         "string",
-        "number"
+        "null"
       ]
     },
     "ping": {
